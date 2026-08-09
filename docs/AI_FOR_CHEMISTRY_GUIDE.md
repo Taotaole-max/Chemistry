@@ -10,9 +10,23 @@
 2. **化学信息学工具** —— 学会用 RDKit 把分子变成机器能处理的数字表示，这是所有化学 ML 项目的地基。
 3. **领域交叉应用** —— 用 DeepChem / SchNetPack 跑通一个真实的分子性质预测或势能面拟合任务。
 
-## 机器学习基础入门
+## 先从这里开始：更简单的中文资源
 
-不涉及化学，先把 ML 本身的语言学会。
+如果觉得正式教材（d2l、吴恩达课程）一上来就有点吃力，先从这几个更轻松的入口摸一摸门道，不用数学基础也能看懂。
+
+| 资源 | 类型 | 说明 |
+|---|---|---|
+| [MorvanZhou/tutorials](https://github.com/MorvanZhou/tutorials) | 图文+视频 | "莫烦Python"，公认中文圈最好懂的机器学习/深度学习入门教程，从"什么是神经网络"讲起，例子生活化，几乎不需要数学基础 |
+| [MLEveryday/100-Days-Of-ML-Code](https://github.com/MLEveryday/100-Days-Of-ML-Code) | 每日小任务 | 把机器学习拆成 100 个小步骤，每天只学一点、跑一小段代码，不会有"一节课学不完"的挫败感 |
+| [datawhalechina/leedl-tutorial](https://github.com/datawhalechina/leedl-tutorial) | 课程（苹果书） | 李宏毅老师的深度学习课程讲义，风格幽默、举例生活化，是中文圈公认最好懂的深度学习课之一，配套视频 |
+| [zjtdzyx/machine-learning-project](https://github.com/zjtdzyx/machine-learning-project) | 练习项目 | 六个经典算法的完整小项目，代码、训练、评估、可视化都有，适合"先跑起来一个能用的东西"再回头理解原理 |
+| [fengdu78/machine_learning_beginner](https://github.com/fengdu78/machine_learning_beginner) | 短文合集 | 公众号"机器学习初学者"的文章合集，短小的概念讲解，适合碎片时间读 |
+
+跟着这几个先建立感觉，等不再觉得"看不懂"了，再回到下面更系统、也更硬核的资源。
+
+## 机器学习基础入门（更系统，也更硬核）
+
+不涉及化学，把 ML 当成一门完整的学科来学。这一层数学和工程量都更大，建议在上面的入门资源之后再来。
 
 | 资源 | 类型 | 说明 |
 |---|---|---|
@@ -61,7 +75,7 @@
 
 ## 建议的第一步
 
-别一次啃完整个清单。先跑通 `deepchem` 的 `Introduction_To_Material_Science` 教程 notebook，跑通之后回到 `src/` 下写一个用 RDKit 算分子指纹 + scikit-learn 做简单性质预测的小脚本 —— 这一步能把阶段一和阶段二直接串起来。
+别一次啃完整个清单。先看几集"莫烦Python"或跟着 100-Days-Of-ML-Code 走几天，找到"看得懂"的感觉；之后再跑通 `deepchem` 的 `Introduction_To_Material_Science` 教程 notebook，跑通后回到 `src/` 下写一个用 RDKit 算分子指纹 + scikit-learn 做简单性质预测的小脚本 —— 这一步能把入门、阶段一和阶段二串起来。
 
 ---
 
