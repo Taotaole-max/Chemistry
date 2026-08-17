@@ -1,0 +1,20 @@
+# Fig 4 用数据：玻璃化转变、熔融与热分解温度
+#
+# !!! 全部数值目前是 PROVISIONAL（教科书量级的常见值），必须逐条核对原始文献后
+#     把 ref 列换成真实引用编号，才能进最终报告。核对时注意两件事：
+#     1. Td 的定义不统一——本表统一取"氮气下 TGA 显著失重起始温度"，
+#        文献里也有用 5 % 失重温度或最大失重速率温度的，数值能差 30-50 °C；
+#     2. 生物聚合物的 Tg 强烈依赖含水量与增塑剂，报数据必须同时报测试条件。
+#
+material,class,Tg_C,Tm_C,Td_C,melts,note,ref
+Cellulose,polysaccharide,,,300,no,decomposes before melting; Tg not observable in the dry state,PROVISIONAL
+Starch (native),polysaccharide,,,300,no,gelatinises in water rather than melting,PROVISIONAL
+Thermoplastic starch (glycerol),polysaccharide,-20,,300,no,Tg shifts with glycerol and water content,PROVISIONAL
+Chitosan,polysaccharide,,,280,no,decomposes before melting,PROVISIONAL
+Silk fibroin,protein,175,,300,no,Tg of the amorphous fraction; beta-sheet crystals do not melt,PROVISIONAL
+PHB,polyester,4,175,200,yes,cis-elimination degradation starts just above Tm,PROVISIONAL
+PHBV (20 mol% HV),polyester,0,145,200,yes,HV comonomer lowers Tm and widens the window,PROVISIONAL
+PLLA,polyester,60,175,300,yes,melt degradation and hydrolysis become significant well below Td,PROVISIONAL
+PBS,polyester,-32,114,350,yes,,PROVISIONAL
+LDPE,petro,-120,110,400,yes,reference commodity polymer,PROVISIONAL
+PET,petro,78,255,400,yes,reference commodity polymer,PROVISIONAL

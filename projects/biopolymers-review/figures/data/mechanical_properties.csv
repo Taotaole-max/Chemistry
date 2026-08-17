@@ -1,0 +1,23 @@
+# Fig 5 用数据：拉伸模量与断裂伸长率的文献区间
+#
+# !!! 全部数值目前是 PROVISIONAL（教科书量级的常见区间），必须逐条核对文献后把 ref 列
+#     换成真实引用编号。生物聚合物的力学数据分散度很大，取值时务必注意：
+#     - 试样形态（纤维 / 流延膜 / 注塑件）差别可达一个数量级；
+#     - 含水量与增塑剂含量必须随数据一起报告，尤其是淀粉和壳聚糖；
+#     - 结晶度与热历史（退火、拉伸取向）同样决定数值。
+#     正因为如此，图上画的是**区间椭圆**而不是单点——单点会假装这类材料有确定数值。
+#
+# label_pos 只影响标注位置，不是数据。
+material,class,E_min_GPa,E_max_GPa,eps_min_pct,eps_max_pct,form,label_pos,ref
+Cellulose (Lyocell fibre),polysaccharide,10,30,8,15,regenerated fibre,above,PROVISIONAL
+Thermoplastic starch,polysaccharide,0.02,1.0,20,100,glycerol-plasticised film,below,PROVISIONAL
+Chitosan film,polysaccharide,1.0,4.0,3,30,solvent-cast film,right,PROVISIONAL
+Silk fibroin fibre,protein,5,17,15,30,degummed fibre,right,PROVISIONAL
+PHB,polyester,1.5,4.0,2,8,injection moulded,left,PROVISIONAL
+PHBV (20 mol% HV),polyester,0.8,2.5,5,25,injection moulded,below,PROVISIONAL
+PLLA,polyester,2.5,4.0,3,10,injection moulded,above,PROVISIONAL
+PBS,polyester,0.3,0.7,200,500,film,above,PROVISIONAL
+Natural rubber,other,0.001,0.005,500,800,vulcanised,above,PROVISIONAL
+LDPE,petro,0.15,0.35,200,600,film,below,PROVISIONAL
+PP,petro,1.1,1.6,100,600,injection moulded,right,PROVISIONAL
+PET,petro,2.0,4.0,50,300,injection moulded,above,PROVISIONAL
