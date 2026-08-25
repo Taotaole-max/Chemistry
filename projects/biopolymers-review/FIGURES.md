@@ -1,17 +1,19 @@
 # 图是怎么做的
 
-题目第 5 条要求"不要大量搬网图，欢迎自己画"。所以这里 6 张图**全部由代码生成**，
+题目第 5 条要求"不要大量搬网图，欢迎自己画"。所以这里 10 张图**全部由代码生成**，
 脚本、数据、输出一起进仓库：图形是原创的，数据来自文献并逐条标注来源，
 任何人（包括评卷人）都能重跑一遍验证。
 
 ```
 figures/
-├── make_all.py                  # 一条命令生成全部 6 张图
+├── make_all.py                  # 一条命令生成全部 10 张图
 ├── style.py                     # 统一配色、字号、线宽、导出规格
 ├── verify_stereochemistry.py    # 机器核对糖类与聚酯的构型（Fig 2 出图前自动跑）
-├── fig1_classification.py       ├── fig4_thermal_windows.py
-├── fig2_repeat_units.py         ├── fig5_property_map.py
-├── fig3_cellulose_hierarchy.py  └── fig6_degradation.py
+├── fig1_classification.py       ├── fig6_degradation.py
+├── fig2_repeat_units.py         ├── fig7_causality_chain.py
+├── fig3_cellulose_hierarchy.py  ├── fig8_nr_sbr_comparison.py
+├── fig4_thermal_windows.py      ├── fig9_dispersity.py
+├── fig5_property_map.py         └── fig10_processing_routes.py
 ├── data/
 │   ├── thermal_properties.csv       # Fig 4 数据（附 ref 列）
 │   └── mechanical_properties.csv    # Fig 5 数据（附 ref 列）
@@ -41,11 +43,15 @@ cd figures && python3 make_all.py
 这四色在 all-pairs 模式下最差色盲对 ΔE 9.2、最差常视力对 ΔE 16.3，均达标；
 绿色对白底对比度偏低，所以凡用到绿色的地方都配了直接标注。超过四类的一律折进灰色，不新增色相。
 
-## 六张图
+## 十张图
 
 ### Fig 1 · 分类树（§2）
-手工计算坐标的层级图。横向是来源（提取 / 微生物合成 / 生物基单体聚合），叶子底色是主链化学类别——
-**一张图同时呈现两个分类轴**。没用 graphviz：自动布局控制不了字号和框宽。
+手工计算坐标的层级图。**主分支是主链化学类别**（五类，和 Table 1、Fig 7 完全对齐），
+叶子是正文 §3 实际讨论过的材料，每个叶子右上角一个小圆标来源（E=提取 / M=微生物合成 /
+S=生物基单体聚合）。旧版反过来——来源当主分支、主链化学只做叶子颜色——和正文"backbone
+chemistry is the better predictor... this review is organised on that basis"的论断正好矛盾，
+现在改成主链化学是第一层分支，来源退成次要标签，图和文字的逻辑才对得上。没用 graphviz：
+自动布局控制不了字号和框宽。
 
 ### Fig 2 · 五种重复单元（§3 开头）
 RDKit 从 SMILES 绘制，链接点画成波浪键（聚合物重复单元的通用画法）。选的五个是
@@ -100,6 +106,26 @@ RDKit 从 SMILES 绘制，链接点画成波浪键（聚合物重复单元的通
 
 (c) 只画次序、不标数值，图注明确写了"no calculated values are implied"。
 要变成有数值的图，就得真跑 DFT——见下。
+
+### Fig 7 · 结构–性质因果链一览（§3 总览图）
+七个家族一行一条因果链：重复单元化学 → 主导分子间作用力 → 关键性质结果 → 关键局限，
+颜色跟 CLASS_COLOR 走。目的是替掉 §3 正文里大段的机理复述——读者扫一眼这张图就能抓住
+每个家族的因果链条，正文只留图上放不下的那一两句独特事实。
+
+### Fig 8 · NR vs. SBR 对照记分卡（§7.3）
+七个维度（结构/MW、SIC 与撕裂强度、共混性能、Tg/硫化网络、生物相容性、环境足迹、
+价格稳定性）逐格打分，颜色区分"结构性优势 / 依赖配方 / 有据可查的风险"，每格直接标引用
+编号——这是本文唯一一张信息密度高到需要在图里印引用号的图。
+
+### Fig 9 · 分散度 Đ 跨家族对比（§4）
+把 Table 3 原来散在文字和表格里的 Đ 范围画成一条线一眼看的图：蛋白质/核酸精确等于 1.00
+（模板合成），天然橡胶没有可靠文献定量值，画成开口箭头并写明"未定量"——不编造精度。
+加了这张图之后 Table 3 就不用再重复 Đ 这一列，只留 Mn 和测量方法/局限，表格更窄。
+
+### Fig 10 · 加工路线决策图（§6）
+§6 原来是一整段密文字：有没有熔融窗口决定走熔融加工还是溶液加工，具体材料举例，
+再加一句"拓宽窗口"的通用对策。改成判定流程图之后，正文只留判定逻辑本身说不清楚、
+图上放不下的一句话（多数所谓性能不足其实是加工窗口不足）。
 
 ## 表格
 

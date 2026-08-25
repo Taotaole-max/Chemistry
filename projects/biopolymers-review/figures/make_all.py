@@ -14,6 +14,10 @@ MODULES = [
     "fig4_thermal_windows",
     "fig5_property_map",
     "fig6_degradation",
+    "fig7_causality_chain",
+    "fig8_nr_sbr_comparison",
+    "fig9_dispersity",
+    "fig10_processing_routes",
 ]
 
 

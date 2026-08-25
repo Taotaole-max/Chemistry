@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="388.829056pt" height="287.71937pt" viewBox="0 0 388.829056 287.71937" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-26T00:23:35.907204</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 287.71937 
+L 388.829056 287.71937 
+L 388.829056 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 85.127348 52.650482 
+C 86.060747 52.650482 86.956041 52.363129 87.616054 51.851708 
+C 88.276066 51.340288 88.646909 50.646555 88.646909 49.923297 
+C 88.646909 49.200039 88.276066 48.506306 87.616054 47.994886 
+C 86.956041 47.483465 86.060747 47.196112 85.127348 47.196112 
+C 84.193949 47.196112 83.298655 47.483465 82.638642 47.994886 
+C 81.97863 48.506306 81.607787 49.200039 81.607787 49.923297 
+C 81.607787 50.646555 81.97863 51.340288 82.638642 51.851708 
+C 83.298655 52.363129 84.193949 52.650482 85.127348 52.650482 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 241.552297 52.650482 
+C 242.485696 52.650482 243.380991 52.363129 244.041003 51.851708 
+C 244.701016 51.340288 245.071859 50.646555 245.071859 49.923297 
+C 245.071859 49.200039 244.701016 48.506306 244.041003 47.994886 
+C 243.380991 47.483465 242.485696 47.196112 241.552297 47.196112 
+C 240.618899 47.196112 239.723604 47.483465 239.063592 47.994886 
+C 238.403579 48.506306 238.032736 49.200039 238.032736 49.923297 
+C 238.032736 50.646555 238.403579 51.340288 239.063592 51.851708 
+C 239.723604 52.363129 240.618899 52.650482 241.552297 52.650482 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #2e8b57"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 85.127348 82.952543 
+C 86.060747 82.952543 86.956041 82.66519 87.616054 82.153769 
+C 88.276066 81.642348 88.646909 80.948616 88.646909 80.225358 
+C 88.646909 79.5021 88.276066 78.808367 87.616054 78.296946 
+C 86.956041 77.785526 86.060747 77.498172 85.127348 77.498172 
+C 84.193949 77.498172 83.298655 77.785526 82.638642 78.296946 
+C 81.97863 78.808367 81.607787 79.5021 81.607787 80.225358 
+C 81.607787 80.948616 81.97863 81.642348 82.638642 82.153769 
+C 83.298655 82.66519 84.193949 82.952543 85.127348 82.952543 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #2e8b57"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 241.552297 82.952543 
+C 242.485696 82.952543 243.380991 82.66519 244.041003 82.153769 
+C 244.701016 81.642348 245.071859 80.948616 245.071859 80.225358 
+C 245.071859 79.5021 244.701016 78.808367 244.041003 78.296946 
+C 243.380991 77.785526 242.485696 77.498172 241.552297 77.498172 
+C 240.618899 77.498172 239.723604 77.785526 239.063592 78.296946 
+C 238.403579 78.808367 238.032736 79.5021 238.032736 80.225358 
+C 238.032736 80.948616 238.403579 81.642348 239.063592 82.153769 
+C 239.723604 82.66519 240.618899 82.952543 241.552297 82.952543 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 85.127348 113.254604 
+C 86.060747 113.254604 86.956041 112.96725 87.616054 112.45583 
+C 88.276066 111.944409 88.646909 111.250676 88.646909 110.527418 
+C 88.646909 109.80416 88.276066 109.110428 87.616054 108.599007 
+C 86.956041 108.087586 86.060747 107.800233 85.127348 107.800233 
+C 84.193949 107.800233 83.298655 108.087586 82.638642 108.599007 
+C 81.97863 109.110428 81.607787 109.80416 81.607787 110.527418 
+C 81.607787 111.250676 81.97863 111.944409 82.638642 112.45583 
+C 83.298655 112.96725 84.193949 113.254604 85.127348 113.254604 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 241.552297 113.254604 
+C 242.485696 113.254604 243.380991 112.96725 244.041003 112.45583 
+C 244.701016 111.944409 245.071859 111.250676 245.071859 110.527418 
+C 245.071859 109.80416 244.701016 109.110428 244.041003 108.599007 
+C 243.380991 108.087586 242.485696 107.800233 241.552297 107.800233 
+C 240.618899 107.800233 239.723604 108.087586 239.063592 108.599007 
+C 238.403579 109.110428 238.032736 109.80416 238.032736 110.527418 
+C 238.032736 111.250676 238.403579 111.944409 239.063592 112.45583 
+C 239.723604 112.96725 240.618899 113.254604 241.552297 113.254604 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 85.127348 143.556664 
+C 86.060747 143.556664 86.956041 143.269311 87.616054 142.75789 
+C 88.276066 142.24647 88.646909 141.552737 88.646909 140.829479 
+C 88.646909 140.106221 88.276066 139.412488 87.616054 138.901068 
+C 86.956041 138.389647 86.060747 138.102294 85.127348 138.102294 
+C 84.193949 138.102294 83.298655 138.389647 82.638642 138.901068 
+C 81.97863 139.412488 81.607787 140.106221 81.607787 140.829479 
+C 81.607787 141.552737 81.97863 142.24647 82.638642 142.75789 
+C 83.298655 143.269311 84.193949 143.556664 85.127348 143.556664 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 241.552297 143.556664 
+C 242.485696 143.556664 243.380991 143.269311 244.041003 142.75789 
+C 244.701016 142.24647 245.071859 141.552737 245.071859 140.829479 
+C 245.071859 140.106221 244.701016 139.412488 244.041003 138.901068 
+C 243.380991 138.389647 242.485696 138.102294 241.552297 138.102294 
+C 240.618899 138.102294 239.723604 138.389647 239.063592 138.901068 
+C 238.403579 139.412488 238.032736 140.106221 238.032736 140.829479 
+C 238.032736 141.552737 238.403579 142.24647 239.063592 142.75789 
+C 239.723604 143.269311 240.618899 143.556664 241.552297 143.556664 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 85.127348 173.858725 
+C 86.060747 173.858725 86.956041 173.571372 87.616054 173.059951 
+C 88.276066 172.54853 88.646909 171.854798 88.646909 171.13154 
+C 88.646909 170.408282 88.276066 169.714549 87.616054 169.203128 
+C 86.956041 168.691708 86.060747 168.404354 85.127348 168.404354 
+C 84.193949 168.404354 83.298655 168.691708 82.638642 169.203128 
+C 81.97863 169.714549 81.607787 170.408282 81.607787 171.13154 
+C 81.607787 171.854798 81.97863 172.54853 82.638642 173.059951 
+C 83.298655 173.571372 84.193949 173.858725 85.127348 173.858725 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 241.552297 173.858725 
+C 242.485696 173.858725 243.380991 173.571372 244.041003 173.059951 
+C 244.701016 172.54853 245.071859 171.854798 245.071859 171.13154 
+C 245.071859 170.408282 244.701016 169.714549 244.041003 169.203128 
+C 243.380991 168.691708 242.485696 168.404354 241.552297 168.404354 
+C 240.618899 168.404354 239.723604 168.691708 239.063592 169.203128 
+C 238.403579 169.714549 238.032736 170.408282 238.032736 171.13154 
+C 238.032736 171.854798 238.403579 172.54853 239.063592 173.059951 
+C 239.723604 173.571372 240.618899 173.858725 241.552297 173.858725 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #c94f4f"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 85.127348 204.160786 
+C 86.060747 204.160786 86.956041 203.873432 87.616054 203.362012 
+C 88.276066 202.850591 88.646909 202.156858 88.646909 201.4336 
+C 88.646909 200.710342 88.276066 200.01661 87.616054 199.505189 
+C 86.956041 198.993768 86.060747 198.706415 85.127348 198.706415 
+C 84.193949 198.706415 83.298655 198.993768 82.638642 199.505189 
+C 81.97863 200.01661 81.607787 200.710342 81.607787 201.4336 
+C 81.607787 202.156858 81.97863 202.850591 82.638642 203.362012 
+C 83.298655 203.873432 84.193949 204.160786 85.127348 204.160786 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 241.552297 204.160786 
+C 242.485696 204.160786 243.380991 203.873432 244.041003 203.362012 
+C 244.701016 202.850591 245.071859 202.156858 245.071859 201.4336 
+C 245.071859 200.710342 244.701016 200.01661 244.041003 199.505189 
+C 243.380991 198.993768 242.485696 198.706415 241.552297 198.706415 
+C 240.618899 198.706415 239.723604 198.993768 239.063592 199.505189 
+C 238.403579 200.01661 238.032736 200.710342 238.032736 201.4336 
+C 238.032736 202.156858 238.403579 202.850591 239.063592 203.362012 
+C 239.723604 203.873432 240.618899 204.160786 241.552297 204.160786 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #c94f4f"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 85.127348 234.462846 
+C 86.060747 234.462846 86.956041 234.175493 87.616054 233.664072 
+C 88.276066 233.152652 88.646909 232.458919 88.646909 231.735661 
+C 88.646909 231.012403 88.276066 230.31867 87.616054 229.80725 
+C 86.956041 229.295829 86.060747 229.008475 85.127348 229.008475 
+C 84.193949 229.008475 83.298655 229.295829 82.638642 229.80725 
+C 81.97863 230.31867 81.607787 231.012403 81.607787 231.735661 
+C 81.607787 232.458919 81.97863 233.152652 82.638642 233.664072 
+C 83.298655 234.175493 84.193949 234.462846 85.127348 234.462846 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #c94f4f"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 241.552297 234.462846 
+C 242.485696 234.462846 243.380991 234.175493 244.041003 233.664072 
+C 244.701016 233.152652 245.071859 232.458919 245.071859 231.735661 
+C 245.071859 231.012403 244.701016 230.31867 244.041003 229.80725 
+C 243.380991 229.295829 242.485696 229.008475 241.552297 229.008475 
+C 240.618899 229.008475 239.723604 229.295829 239.063592 229.80725 
+C 238.403579 230.31867 238.032736 231.012403 238.032736 231.735661 
+C 238.032736 232.458919 238.403579 233.152652 239.063592 233.664072 
+C 239.723604 234.175493 240.618899 234.462846 241.552297 234.462846 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 4.959561 272.340422 
+C 5.89296 272.340422 6.788255 272.053069 7.448267 271.541648 
+C 8.10828 271.030227 8.479123 270.336495 8.479123 269.613237 
+C 8.479123 268.889979 8.10828 268.196246 7.448267 267.684825 
+C 6.788255 267.173405 5.89296 266.886051 4.959561 266.886051 
+C 4.026163 266.886051 3.130868 267.173405 2.470856 267.684825 
+C 1.810843 268.196246 1.44 268.889979 1.44 269.613237 
+C 1.44 270.336495 1.810843 271.030227 2.470856 271.541648 
+C 3.130868 272.053069 4.026163 272.340422 4.959561 272.340422 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #2e8b57"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 134.010145 272.340422 
+C 134.943543 272.340422 135.838838 272.053069 136.49885 271.541648 
+C 137.158863 271.030227 137.529706 270.336495 137.529706 269.613237 
+C 137.529706 268.889979 137.158863 268.196246 136.49885 267.684825 
+C 135.838838 267.173405 134.943543 266.886051 134.010145 266.886051 
+C 133.076746 266.886051 132.181451 267.173405 131.521439 267.684825 
+C 130.861427 268.196246 130.490583 268.889979 130.490583 269.613237 
+C 130.490583 270.336495 130.861427 271.030227 131.521439 271.541648 
+C 132.181451 272.053069 133.076746 272.340422 134.010145 272.340422 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #d99a2b"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 306.077589 272.340422 
+C 307.010988 272.340422 307.906282 272.053069 308.566295 271.541648 
+C 309.226307 271.030227 309.597151 270.336495 309.597151 269.613237 
+C 309.597151 268.889979 309.226307 268.196246 308.566295 267.684825 
+C 307.906282 267.173405 307.010988 266.886051 306.077589 266.886051 
+C 305.144191 266.886051 304.248896 267.173405 303.588883 267.684825 
+C 302.928871 268.196246 302.558028 268.889979 302.558028 269.613237 
+C 302.558028 270.336495 302.928871 271.030227 303.588883 271.541648 
+C 304.248896 272.053069 305.144191 272.340422 306.077589 272.340422 
+z
+" clip-path="url(#pcb9e403b39)" style="fill: #c94f4f"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 1.44 30.226958 
+L 374.904567 30.226958 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 1.44 65.074327 
+L 374.904567 65.074327 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 1.44 95.376388 
+L 374.904567 95.376388 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 1.44 125.678449 
+L 374.904567 125.678449 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 1.44 155.980509 
+L 374.904567 155.980509 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 1.44 186.28257 
+L 374.904567 186.28257 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 1.44 216.584631 
+L 374.904567 216.584631 
+" clip-path="url(#pcb9e403b39)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="92.557533" y="20.0211" transform="rotate(-0 92.557533 20.0211)">Natural rubber (NR)</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="248.982483" y="20.021172" transform="rotate(-0 248.982483 20.021172)">SBR</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 48.505832)">Structure /</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 56.237606)">MW control</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 47.786391)">extracted; varies by</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 55.333203)">clone &amp; tree age [19]</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 47.825391)">engineered via emulsion/</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 55.303703)">solution copolymerisation [20,21]</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 78.787408)">SIC &amp; tear</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 86.539666)">resistance</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 78.088451)">strong strain-induced</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 85.605764)">crystallisation [10,23]</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 78.127451)">crystallises far less;</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 85.672764)">relies on filler/cure [24]</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 109.071141)">Blend</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 116.243368)">performance</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 109.064012)">SIC weakens as SBR</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 115.974825)">fraction rises [22]</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 108.390512)">reaches parity via</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 115.974825)">reinforcement, not backbone [24]</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 138.729561)">Tg / cure</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 147.143788)">network</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 138.769073)">depends on formulation</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 146.276885)">&amp; cure conditions [25,26]</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 138.769073)">depends on formulation</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 146.276885)">&amp; cure conditions [25,26]</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 169.675262)">Bio-</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 176.760161)">compatibility</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 169.032133)">real potential, but latex</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 176.511946)">protein allergy risk [27,28]</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 169.630633)">no unconditional</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 176.511946)">biocompatibility claim [27,28]</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 199.977323)">Environmental</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 207.149549)">footprint</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 199.556194)">renewable, but LCA shows</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 206.843507)">real land/energy cost [29,30]</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 199.556194)">fossil feedstock;</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 206.814007)">biodegradable grades emerging [31]</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 230.279384)">Price</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(1.44 237.364282)">stability</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 229.598755)">historically the more</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(92.557533 237.183067)">volatile of the two [32]</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 229.819255)">steadier, but tied to</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(248.982483 237.116067)">petrochemical supply chain [32]</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="12.389746" y="271.243546" transform="rotate(-0 12.389746 271.243546)">structurally favourable</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="141.44033" y="271.243608" transform="rotate(-0 141.44033 271.243608)">formulation- or context-dependent</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="313.507774" y="271.243608" transform="rotate(-0 313.507774 271.243608)">documented risk or caveat</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pcb9e403b39">
+   <rect x="1.44" y="1.44" width="373.464567" height="284.83937"/>
+  </clipPath>
+ </defs>
+</svg>

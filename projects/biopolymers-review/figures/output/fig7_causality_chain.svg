@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="376.344567pt" height="284.258077pt" viewBox="0 0 376.344567 284.258077" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-24T23:06:47.331481</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 284.258077 
+L 376.344567 284.258077 
+L 376.344567 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 1.44 68.887323 
+L 6.236793 68.887323 
+L 6.236793 40.839921 
+L 1.44 40.839921 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 1.44 102.277087 
+L 6.236793 102.277087 
+L 6.236793 74.229685 
+L 1.44 74.229685 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 1.44 135.66685 
+L 6.236793 135.66685 
+L 6.236793 107.619449 
+L 1.44 107.619449 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 1.44 169.056614 
+L 6.236793 169.056614 
+L 6.236793 141.009213 
+L 1.44 141.009213 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 1.44 202.446378 
+L 6.236793 202.446378 
+L 6.236793 174.398976 
+L 1.44 174.398976 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #1baf7a"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 1.44 235.836142 
+L 6.236793 235.836142 
+L 6.236793 207.78874 
+L 1.44 207.78874 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #8a8a85"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 1.44 269.225906 
+L 6.236793 269.225906 
+L 6.236793 241.178504 
+L 1.44 241.178504 
+z
+" clip-path="url(#pdf568ea03f)" style="fill: #8a8a85"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 1.44 33.160276 
+L 374.904567 33.160276 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 1.44 71.558504 
+L 374.904567 71.558504 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 1.44 104.948268 
+L 374.904567 104.948268 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 1.44 138.338031 
+L 374.904567 138.338031 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 1.44 171.727795 
+L 374.904567 171.727795 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 1.44 205.117559 
+L 374.904567 205.117559 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 1.44 238.507323 
+L 374.904567 238.507323 
+" clip-path="url(#pdf568ea03f)" style="fill: none; stroke: #ececea; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="18.571402" y="21.667581" transform="rotate(-0 18.571402 21.667581)">Family</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="109.367834" y="21.667651" transform="rotate(-0 109.367834 21.667651)">Intermolecular force</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="198.451125" y="21.667651" transform="rotate(-0 198.451125 21.667651)">Consequence</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="287.534416" y="21.667651" transform="rotate(-0 287.534416 21.667651)">Limitation</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="12.404097" y="57.476224" transform="rotate(-0 12.404097 57.476224)">Cellulose</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 53.185198)">dense inter- &amp; intrachain</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 60.557218)">H-bonding, sheet stacking</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 191.598564 54.863622 
+Q 196.224042 54.863622 199.619684 54.863622 
+" style="fill: none; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 53.263622 
+L 199.619684 54.863622 
+L 196.419684 56.463622 
+z
+" style="fill: #2a78d6; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 52.505089)">very high axial modulus</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 60.597437)">(~130-150 GPa)</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 280.681855 54.863622 
+Q 285.307334 54.863622 288.702975 54.863622 
+" style="fill: none; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 53.263622 
+L 288.702975 54.863622 
+L 285.502975 56.463622 
+z
+" style="fill: #2a78d6; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 53.160964)">no melt transition —</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 60.636108)">decomposes at ~300 °C</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(12.404097 86.582477)">Starch / chitosan /</text>
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(12.404097 94.379576)">alginate</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 85.894853)">weaker, ionically or</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 93.9872)">chemically tunable forces</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 191.598564 88.253386 
+Q 196.224042 88.253386 199.619684 88.253386 
+" style="fill: none; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 86.653386 
+L 199.619684 88.253386 
+L 196.419684 89.853386 
+z
+" style="fill: #2a78d6; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 85.894853)">tunable solubility,</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 93.946982)">gelation, charge</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 280.681855 88.253386 
+Q 285.307334 88.253386 288.702975 88.253386 
+" style="fill: none; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 86.653386 
+L 288.702975 88.253386 
+L 285.502975 89.853386 
+z
+" style="fill: #2a78d6; stroke: #2a78d6; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 85.973743)">properties drift with</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 93.9872)">DD, G-content, humidity</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="12.404097" y="123.532025" transform="rotate(-0 12.404097 123.532025)">PHA (PHB/PHBV)</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 119.512007)">ester backbone, moderate</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 127.376964)">crystallinity (55-70%)</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 191.598564 121.64315 
+Q 196.224042 121.64315 199.619684 121.64315 
+" style="fill: none; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 120.04315 
+L 199.619684 121.64315 
+L 196.419684 123.24315 
+z
+" style="fill: #eb6834; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 119.323288)">melt-processable</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 127.415636)">phase forms</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 280.681855 121.64315 
+Q 285.307334 121.64315 288.702975 121.64315 
+" style="fill: none; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 120.04315 
+L 288.702975 121.64315 
+L 285.502975 123.24315 
+z
+" style="fill: #eb6834; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 119.284616)">processing window only</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 128.031292)">~25-55 °C wide</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="12.404097" y="157.645515" transform="rotate(-0 12.404097 157.645515)">PLA</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 152.67438)">stereochemistry-controlled</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 160.726509)">chain packing</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 191.598564 155.032913 
+Q 196.224042 155.032913 199.619684 155.032913 
+" style="fill: none; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 153.432913 
+L 199.619684 155.032913 
+L 196.419684 156.632913 
+z
+" style="fill: #eb6834; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 152.713052)">stereocomplex Tm</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 160.766728)">+50 °C over homocrystal</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 280.681855 155.032913 
+Q 285.307334 155.032913 288.702975 155.032913 
+" style="fill: none; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 153.432913 
+L 288.702975 155.032913 
+L 285.502975 156.632913 
+z
+" style="fill: #eb6834; stroke: #eb6834; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 152.714599)">Tg ceiling ~60 °C;</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 160.726509)">slow crystallisation</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(12.404097 186.710706)">Protein</text>
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(12.404097 194.593351)">(silk, collagen)</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 186.143035)">sequence-directed fold,</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 194.116273)">not simple packing</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 191.598564 188.422677 
+Q 196.224042 188.422677 199.619684 188.422677 
+" style="fill: none; stroke: #1baf7a; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 186.822677 
+L 199.619684 188.422677 
+L 196.419684 190.022677 
+z
+" style="fill: #1baf7a; stroke: #1baf7a; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 186.064144)">combined strength +</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 194.156492)">toughness (silk); triple helix</text>
+   </g>
+   <g id="patch_18">
+    <path d="M 280.681855 188.422677 
+Q 285.307334 188.422677 288.702975 188.422677 
+" style="fill: none; stroke: #1baf7a; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 186.822677 
+L 288.702975 188.422677 
+L 285.502975 190.022677 
+z
+" style="fill: #1baf7a; stroke: #1baf7a; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 186.720019)">irreversible denaturation</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 194.154945)">collapses structure</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="12.404097" y="223.656832" transform="rotate(-0 12.404097 223.656832)">Lignin</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 219.453908)">random radical coupling,</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 227.544709)">no periodic chain</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 191.598564 221.812441 
+Q 196.224042 221.812441 199.619684 221.812441 
+" style="fill: none; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 220.212441 
+L 199.619684 221.812441 
+L 196.419684 223.412441 
+z
+" style="fill: #8a8a85; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 219.453908)">chemically recalcitrant</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 228.161912)">aromatic network</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 280.681855 221.812441 
+Q 285.307334 221.812441 288.702975 221.812441 
+" style="fill: none; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 220.212441 
+L 288.702975 221.812441 
+L 285.502975 223.412441 
+z
+" style="fill: #8a8a85; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 219.453908)">no single structure-</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 227.506037)">property relationship</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="12.404097" y="257.772033" transform="rotate(-0 12.404097 257.772033)">Natural rubber</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 253.111281)">free rotation; strain-</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(109.367834 260.8958)">induced crystallisation only</text>
+   </g>
+   <g id="patch_21">
+    <path d="M 191.598564 255.202205 
+Q 196.224042 255.202205 199.619684 255.202205 
+" style="fill: none; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 196.419684 253.602205 
+L 199.619684 255.202205 
+L 196.419684 256.802205 
+z
+" style="fill: #8a8a85; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 252.88389)">self-reinforcing</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(198.451125 261.551675)">elastomer under load</text>
+   </g>
+   <g id="patch_22">
+    <path d="M 280.681855 255.202205 
+Q 285.307334 255.202205 288.702975 255.202205 
+" style="fill: none; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 285.502975 253.602205 
+L 288.702975 255.202205 
+L 285.502975 256.802205 
+z
+" style="fill: #8a8a85; stroke: #8a8a85; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 252.88389)">MW &amp; network vary by</text>
+    <text style="font-size: 6.6px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #52514e" transform="translate(287.534416 260.8958)">clone and tree age</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="1.44" y="281.492123" transform="rotate(-0 1.44 281.492123)">Colour follows backbone-chemistry class (Table 1); arrows read left to right as one causal chain per family.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdf568ea03f">
+   <rect x="1.44" y="1.44" width="373.464567" height="280.474016"/>
+  </clipPath>
+ </defs>
+</svg>
