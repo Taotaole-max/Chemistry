@@ -1,0 +1,352 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>CM5174 模拟题库 30 题</title><style>
+@page { size:A4; margin:17mm 15mm 16mm; }
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{
+  margin:0; font-family:"Noto Sans CJK SC","Noto Sans CJK SC Regular",sans-serif;
+  font-size:9.9pt; line-height:1.62; color:#15202B; background:#fff;
+}
+/* ---- 版心与标题 ---- */
+h1{
+  font-size:20pt; line-height:1.25; margin:0 0 2mm; letter-spacing:-.01em;
+  color:#0F1B26; font-weight:700;
+}
+h2{
+  font-size:13pt; margin:0 0 3mm; padding:0 0 1.6mm; font-weight:700; color:#0F1B26;
+  border-bottom:1.6pt solid #1F4E8C; break-after:avoid; break-inside:avoid;
+}
+h3{
+  font-size:10.8pt; margin:5mm 0 1.8mm; font-weight:700; color:#1F4E8C;
+  break-after:avoid; break-inside:avoid;
+}
+h4{font-size:10pt; margin:4mm 0 1.5mm; font-weight:700; color:#33424F; break-after:avoid}
+p{margin:0 0 2.2mm; orphans:3; widows:3}
+ul,ol{margin:0 0 2.4mm; padding-left:5.2mm}
+li{margin:0 0 1mm}
+b,strong{font-weight:700; color:#0F1B26}
+a{color:#1F4E8C; text-decoration:none}
+hr{border:0; border-top:.5pt solid #D5DDE5; margin:4mm 0}
+sub,sup{font-size:.68em; line-height:0}
+code{font-family:"Noto Sans Mono CJK SC",monospace; font-size:.9em; background:#F1F4F7; padding:.3mm 1mm; border-radius:1mm}
+/* ---- 表格 ---- */
+table{
+  width:100%; border-collapse:collapse; margin:2.6mm 0 3.4mm;
+  font-size:9.1pt; break-inside:avoid;
+}
+th,td{border:.5pt solid #C3CDD8; padding:1.5mm 2.2mm; text-align:left; vertical-align:top}
+th{background:#EDF1F6; font-weight:700; color:#0F1B26}
+/* ---- 公式 ---- */
+.fmb{
+  margin:2.6mm 0; padding:2.4mm 3mm; text-align:center; background:#F5F8FB;
+  border-left:1.6pt solid #1F4E8C; font-size:10.4pt; line-height:2.1;
+  break-inside:avoid; overflow-wrap:anywhere;
+}
+.fmi{white-space:nowrap}
+.fr{display:inline-block; vertical-align:-0.52em; text-align:center; margin:0 .18em}
+.fr-n{display:block; padding:0 .28em}
+.fr-d{display:block; padding:.06em .28em 0; border-top:.7pt solid currentColor}
+.sq{white-space:nowrap}
+.sq-b{border-top:.7pt solid currentColor; padding:0 .12em; margin-left:-.06em}
+.op{font-style:normal; padding:0 .1em}
+.bx{display:inline-block; border:.9pt solid #1F4E8C; border-radius:1.2mm; padding:1mm 2.4mm; background:#fff}
+/* ---- 提示块 ---- */
+blockquote{
+  margin:2.6mm 0; padding:2mm 3mm; border-left:2pt solid #B8843A; background:#FBF6EC;
+  font-size:9.4pt; color:#4A3A22; break-inside:avoid;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote b,blockquote strong{color:#8A5A12}
+/* ---- 封面 ---- */
+.cover{break-after:page; padding-top:24mm}
+.cover .eyebrow{
+  font-size:9pt; letter-spacing:.22em; color:#1F4E8C; font-weight:700; margin:0 0 3mm;
+}
+.cover h1{font-size:27pt; margin:0 0 4mm}
+.cover .tagline{font-size:11.5pt; color:#465563; margin:0 0 10mm}
+.cover .meta{font-size:9.4pt; color:#5A6875; line-height:1.9; border-top:.5pt solid #D5DDE5; padding-top:4mm}
+.cover .meta b{color:#15202B}
+.toc{margin-top:9mm; border-top:.5pt solid #D5DDE5; padding-top:4mm}
+.toc h2{border:0; font-size:10.5pt; margin:0 0 2.5mm; padding:0}
+.toc ol{list-style:none; padding:0; margin:0; font-size:9.4pt; columns:2; column-gap:9mm}
+.toc li{margin:0 0 1.4mm; break-inside:avoid}
+.toc .k{
+  display:inline-block; min-width:8.5mm; font-weight:700; color:#1F4E8C;
+  font-family:"Noto Sans Mono CJK SC",monospace; font-size:8.6pt;
+}
+/* ---- 题目 ---- */
+.q{
+  break-inside:auto; margin:0 0 4.5mm; border:.6pt solid #C9D3DD; border-radius:1.6mm;
+  border-left:2.2pt solid #1F4E8C;
+}
+.q-top{break-inside:avoid; break-after:avoid}
+.q-h{
+  display:flex; align-items:baseline; gap:2.4mm; padding:2mm 3mm 0; flex-wrap:wrap;
+  font-size:8.6pt; color:#5A6875;
+}
+.q-n{
+  font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700; font-size:9.4pt;
+  color:#1F4E8C; background:#E7EEF7; padding:.4mm 1.8mm; border-radius:1mm;
+}
+.q-k{border:.5pt solid #C9D3DD; border-radius:.8mm; padding:.2mm 1.4mm; font-size:8pt}
+.q-t{margin-left:auto; font-size:8.6pt}
+.q-s{padding:1.8mm 3mm 1.4mm; font-size:9.9pt; line-height:1.5}
+.q-o{list-style:none; margin:0; padding:0 3mm 2.4mm; display:block}
+.q-o li{
+  display:flex; gap:2.4mm; align-items:baseline; margin:0 0 1mm;
+  padding:1.1mm 2.2mm; border:.5pt solid #DCE3EA; border-radius:1.2mm; font-size:9.5pt;
+}
+.q-o li.right{border-color:#1B7A52; background:#EDF7F1; font-weight:700}
+.q-o .k{
+  font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700; font-size:9pt;
+  min-width:4.2mm; color:#5A6875;
+}
+.q-o li.right .k{color:#1B7A52}
+.q-o li.right .tick{margin-left:auto; color:#1B7A52; font-size:8.4pt; font-weight:700; white-space:nowrap}
+.q-a{
+  border-top:.5pt solid #DCE3EA; background:#FAFBFD; padding:2.2mm 3mm 2.4mm; font-size:9.3pt;
+}
+.q-a .lab{
+  font-size:8.2pt; letter-spacing:.14em; color:#5A6875; font-weight:700;
+  margin:0 0 1.6mm; display:flex; align-items:center; gap:2mm;
+}
+.q-a .lab::after{content:""; flex:1; height:.5pt; background:#DCE3EA}
+.q-a .ans{color:#1B7A52; font-weight:700}
+.q-a p{margin:0 0 1.6mm}
+.q-a p:last-child{margin-bottom:0}
+.q-a .fb{
+  font-family:"Noto Sans Mono CJK SC",monospace; text-align:center; background:#fff;
+  border:.5pt solid #DCE3EA; border-radius:1.2mm; padding:1.8mm 2.4mm; margin:1.8mm 0;
+  font-size:9.2pt; line-height:1.75; break-inside:avoid; overflow-wrap:anywhere;
+}
+.q-a .trap{
+  background:#FBF3E4; border-left:1.8pt solid #B8843A; border-radius:0 1.2mm 1.2mm 0;
+  padding:1.6mm 2.4mm; margin:1.8mm 0; color:#4A3A22;
+}
+.q-a .trap b{color:#8A5A12}
+.q-a .note{border-left:1.5pt solid #D5DDE5; padding:.4mm 0 .4mm 2.4mm; margin:1.8mm 0; color:#5A6875}
+.q-a .note b{color:#33424F}
+table.mini{margin:1.8mm 0; font-size:8.8pt}
+table.mini th,table.mini td{padding:1.2mm 1.8mm}
+/* ---- 速查/陷阱 ---- */
+.sheet{break-before:page}
+.keytab{font-size:8.8pt}
+.keytab td.a{font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700; color:#1B7A52; text-align:center}
+.keytab td.n{font-family:"Noto Sans Mono CJK SC",monospace; text-align:center; color:#5A6875}
+ol.traps{list-style:none; padding:0; margin:0; counter-reset:t}
+ol.traps li{
+  counter-increment:t; border-left:2pt solid #B8843A; padding:0 0 0 3mm;
+  margin:0 0 3.2mm; break-inside:avoid;
+}
+ol.traps li::before{
+  content:counter(t); font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700;
+  color:#B8843A; font-size:8.4pt; margin-right:2mm;
+}
+ol.traps .t{font-weight:700; font-size:10pt; color:#0F1B26}
+ol.traps .jump{font-family:"Noto Sans Mono CJK SC",monospace; font-size:8.4pt; color:#1F4E8C; margin-left:1.5mm}
+ol.traps .d{margin:.8mm 0 0; font-size:9.2pt; color:#5A6875}
+.lec-break{break-before:page}
+</style></head><body class="">
+<section class="cover">
+  <p class="eyebrow">CM 5174 · 期末复习</p>
+  <h1>高分子物理化学<br>模拟题库 30 题</h1>
+  <p class="tagline">题干英文 · 解析中文 · 答案与分步解析直接印在每题下方</p>
+  <div class="meta">
+    <b>课程</b>　CM5174 Polymer and Macromolecular Chemistry，NUS<br>
+    <b>依据</b>　Lecture 1–10 全部讲义，以及课程发布的 28 道 Question 及其答案<br>
+    <b>题型</b>　计算 18 · 理解 10 · 跨讲综合 2<br>
+    <b>核算</b>　每道计算题的数值都用脚本重算过<br>
+    <b>用法</b>　答案就在题目下面，建议先拿纸盖住解析区自己算完再看。<br>
+    　　　　常数：R = 8.314 J K⁻¹ mol⁻¹　k = 1.381×10⁻²³ J K⁻¹　N<sub>Av</sub> = 6.022×10²³ mol⁻¹　g = 9.81 m s⁻²
+  </div>
+  <div class="toc">
+    <h2>按讲次分布</h2>
+    <ol>
+      <li><span class="k">L1</span>尺寸与构象　Q1–3</li>
+      <li><span class="k">L2</span>混合热力学　Q4–6</li>
+      <li><span class="k">L3</span>Flory-Huggins　Q7–9</li>
+      <li><span class="k">L4</span>相行为　Q10–13</li>
+      <li><span class="k">L5</span>渗透压与粘度　Q14–16</li>
+      <li><span class="k">L6</span>光散射　Q17–18</li>
+      <li><span class="k">L7</span>SEC 与质谱　Q19–21</li>
+      <li><span class="k">—</span>表征方法综合　Q22</li>
+      <li><span class="k">L8</span>玻璃态　Q23–25</li>
+      <li><span class="k">L9</span>力学性质　Q26</li>
+      <li><span class="k">L10</span>弹性体与结晶　Q27–29</li>
+      <li><span class="k">—</span>跨讲综合　Q30</li>
+    </ol>
+  </div>
+</section><h2>题目 · 答案 · 解析</h2><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q01</span><span>L1 尺寸与构象</span><span class="q-k">计算</span><span class="q-t">Mn / Mw / PDI</span></div><p class="q-s">A polymer sample contains 2.0 mol of chains with M = 10 kg/mol and 3.0 mol of chains with M = 20 kg/mol. What is the polydispersity index (PDI) of this sample?</p><ul class="q-o"><li class=""><span class="k">A</span><span>1.00</span></li><li class="right"><span class="k">B</span><span>1.09</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>1.25</span></li><li class=""><span class="k">D</span><span>1.75</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p><b>M<sub>n</sub></b> = Σn<sub>i</sub>M<sub>i</sub> / Σn<sub>i</sub> = [2(10)+3(20)] / 5 = 80/5 = <b>16 kg/mol</b></p>
+<p><b>M<sub>w</sub></b> = Σn<sub>i</sub>M<sub>i</sub><sup>2</sup> / Σn<sub>i</sub>M<sub>i</sub> = [2(100)+3(400)] / 80 = 1400/80 = <b>17.5 kg/mol</b></p>
+<p><b>PDI</b> = 17.5 / 16 = <b>1.09</b></p>
+<p class="trap"><b>陷阱</b>：M<sub>w</sub> 的分母是 Σn<sub>i</sub>M<sub>i</sub>（总质量），<b>不是</b> Σn<sub>i</sub>。误用 Σn<sub>i</sub> 会得到 280。另外 M<sub>w</sub> ≥ M<sub>n</sub> 恒成立，算出 PDI &lt; 1 一定错了。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q02</span><span>L1 尺寸与构象</span><span class="q-k">计算</span><span class="q-t">伸直长度 vs RMS 末端距</span></div><p class="q-s">For a polyethylene chain with M = 280,000 g/mol, what is the ratio of its fully stretched-out (contour) length to its RMS end-to-end distance? Assume C–C bond length = 1.54 Å, tetrahedral bond angle 109.5°, and free rotation.</p><ul class="q-o"><li class=""><span class="k">A</span><span>10</span></li><li class=""><span class="k">B</span><span>50</span></li><li class="right"><span class="k">C</span><span>100</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>200</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><p><b>① 数键数</b>：每个 CH<sub>2</sub> 单元 14 g/mol → n = 280,000 / 14 = <b>20,000 个 C–C 键</b></p>
+<p><b>② 伸直长度</b>：20,000 × 1.54 = <b>30,800 Å</b></p>
+<p><b>③ RMS 末端距</b>（固定键角、自由旋转）：</p>
+<div class="fb">⟨h²⟩ = n l² · (1 + cos θ) / (1 − cos θ)</div>
+<p><b>θ = 180° − 109.5° = 70.5°</b>，cos 70.5° = 0.334 → 因子 = 1.334 / 0.666 = <b>2.00</b></p>
+<p>⟨h²⟩ = 20,000 × 1.54² × 2 = 94,864 Å² → ⟨h²⟩<sup>1/2</sup> = <b>308 Å</b></p>
+<p><b>④</b> 30,800 / 308 = <b>100</b></p>
+<p class="trap"><b>本课最大的陷阱</b>：公式里的 <b>θ 是键角的补角，不是键角本身</b>。若直接代 cos 109.5° = −0.334，因子变成 0.5，答案差 4 倍。课程发布的 Question 4 专门考这个，还加了 hint：“Is θ the bond angle?”</p>
+<p class="note">物理意义：无规线团比伸直链小<b>两个数量级</b>——高分子在溶液里是“球”不是“棍”。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q03</span><span>L1 尺寸与构象</span><span class="q-k">计算</span><span class="q-t">回转半径 Rg</span></div><p class="q-s">An ideal polymer chain has a degree of polymerization N = 10,000 and a statistical segment length b = 5.0 Å. What is its radius of gyration R<sub>g</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>50 Å</span></li><li class="right"><span class="k">B</span><span>204 Å</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>500 Å</span></li><li class=""><span class="k">D</span><span>1,250 Å</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">R<sub>g</sub>² = N b² / 6 = 10,000 × 25 / 6 = 41,667 Å²</div>
+<p>R<sub>g</sub> = √41,667 = <b>204 Å</b></p>
+<p class="trap"><b>陷阱</b>：① 忘记除以 6（得 500 Å，就是选项 C）；② 忘记开方。</p>
+<p><b>必背换算</b>：R<sub>g</sub>² = ⟨h²⟩/6，即 <b>⟨h²⟩<sup>1/2</sup> = √6 · R<sub>g</sub> ≈ 2.45 R<sub>g</sub></b></p>
+<p class="note">顺带：把链密堆成半径 R₀ 的球，则恒有 <b>R<sub>g</sub> &lt; R₀</b>——R<sub>g</sub> 是均方根距离，总有单体比它更远，不代表最大空间尺度。（课程 Question 5）</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q04</span><span>L2 混合热力学</span><span class="q-k">计算</span><span class="q-t">理想混合熵</span></div><p class="q-s">1.0 mol of ideal liquid A is mixed with 1.0 mol of ideal liquid B at 298 K. What is ΔS<sub>mix</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>5.76 J K⁻¹</span></li><li class="right"><span class="k">B</span><span>11.5 J K⁻¹</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>17.3 J K⁻¹</span></li><li class=""><span class="k">D</span><span>23.1 J K⁻¹</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">ΔS<sub>mix</sub> = −nR (x<sub>A</sub> ln x<sub>A</sub> + x<sub>B</sub> ln x<sub>B</sub>)</div>
+<p><b>n 是总摩尔数 = 2.0 mol</b>，x<sub>A</sub> = x<sub>B</sub> = 0.5：</p>
+<p>ΔS = −2.0 × 8.314 × [2 × 0.5 ln 0.5] = −2.0 × 8.314 × (−0.693) = <b>+11.5 J K⁻¹</b></p>
+<p class="trap"><b>陷阱</b>：n 是<b>总</b>摩尔数（2 mol），不是每种 1 mol。用 n = 1 得 5.76（选项 A）。</p>
+<p class="note">理想体系 <b>ΔH<sub>mix</sub> = 0</b>（理想气体无相互作用；理想溶液 A-A、B-B、A-B 作用相同），所以 ΔG<sub>mix</sub> = −TΔS = −3,435 J，自发。<b>理想混合完全由熵驱动</b>；因 0 &lt; x &lt; 1，ΔS 恒正、ΔG 恒负。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q05</span><span>L2 混合热力学</span><span class="q-k">计算</span><span class="q-t">格子模型组合数 Ω</span></div><p class="q-s">A lattice contains 10 sites occupied by 4 molecules of A and 6 molecules of B. What is the number of configurations Ω?</p><ul class="q-o"><li class=""><span class="k">A</span><span>24</span></li><li class="right"><span class="k">B</span><span>210</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>5,040</span></li><li class=""><span class="k">D</span><span>3,628,800</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">Ω = m! / (m<sub>A</sub>! m<sub>B</sub>!) = 10! / (4! · 6!) = 3,628,800 / 17,280 = <b>210</b></div>
+<p class="trap"><b>陷阱</b>：选项 D 是 10!（忘了除），选项 C 是 7!。</p>
+<p><b>为什么重要</b>：这是统计热力学推混合熵的起点。由 S = k lnΩ 配合 Stirling 近似 ln m! ≈ m ln m − m，可得 S = −k(m<sub>A</sub> ln x<sub>A</sub> + m<sub>B</sub> ln x<sub>B</sub>)。</p>
+<p><b>混合前</b>纯物质只有一种排法，Ω = 1 → <b>S = 0</b>，所以 ΔS<sub>mix</sub> 就等于混合后的 S。换成摩尔量（N<sub>Av</sub>k = R）就回到热力学路线的同一个结果。（课程 Question 8 同型）</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q06</span><span>L2 混合热力学</span><span class="q-k">计算</span><span class="q-t">χ 与混合焓</span></div><p class="q-s">For a regular solution with interaction parameter χ = 1.2, an equimolar mixture (2.0 mol total) is prepared at 298 K. What is ΔH<sub>mix</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>372 J</span></li><li class=""><span class="k">B</span><span>743 J</span></li><li class="right"><span class="k">C</span><span>1,487 J</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>2,974 J</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><div class="fb">ΔH<sub>mix</sub> = x<sub>A</sub> x<sub>B</sub> χ n R T</div>
+<p>= (0.5)(0.5)(1.2)(2.0)(8.314)(298)</p>
+<p>分步：0.25 × 1.2 = 0.3；2.0 × 8.314 × 298 = 4,955 J；0.3 × 4,955 = <b>1,487 J</b></p>
+<p class="trap"><b>陷阱</b>：n 仍是总摩尔数 2.0 mol（用 1.0 得选项 B）。</p>
+<p><b>χ 是什么</b>：χ = zΔw / kT，其中 Δw = w<sub>AB</sub> − w<sub>AA</sub>/2 − w<sub>BB</sub>/2 是<b>交换能</b>——把一对 A-A 和一对 B-B 换成两对 A-B 的能量代价，用热能 kT 归一化。</p>
+<div class="fb">ΔG<sub>mix</sub> = nRT [ x<sub>A</sub>ln x<sub>A</sub> + x<sub>B</sub>ln x<sub>B</sub> + x<sub>A</sub>x<sub>B</sub>χ ]</div>
+<p class="note">课程 Question 9 问“油水为什么不互溶”，答案就是 <b>x<sub>A</sub>x<sub>B</sub>χ 这个焓项为正</b>，压过了恒负的熵项。焓项在 x = 0.5 时最大。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q07</span><span>L3 Flory-Huggins</span><span class="q-k">计算</span><span class="q-t">高分子混合熵</span></div><p class="q-s">A polymer B with degree of polymerization N = 1000 is mixed with solvent A at φ<sub>A</sub> = φ<sub>B</sub> = 0.5. Compared with a small-molecule regular solution at the same volume fractions, the entropy of mixing of this polymer solution is approximately:</p><ul class="q-o"><li class=""><span class="k">A</span><span>the same</span></li><li class="right"><span class="k">B</span><span>one half</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>one thousandth</span></li><li class=""><span class="k">D</span><span>one thousand times larger</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">ΔS<sub>mix</sub> = −nR [ φ<sub>A</sub> ln φ<sub>A</sub> + (φ<sub>B</sub>/N) ln φ<sub>B</sub> ]</div>
+<p><b>小分子（N = 1）</b>：−[0.5 ln0.5 + 0.5 ln0.5] = <b>0.693</b> nR</p>
+<p><b>高分子（N = 1000）</b>：−[0.5 ln0.5 + (0.5/1000) ln0.5] = −[−0.3466 − 0.000347] = <b>0.347</b> nR</p>
+<p>比值 = 0.347 / 0.693 = <b>0.50</b></p>
+<p class="trap"><b>最重要的误解澄清</b>：很多人以为除以 N 会让熵变成 1/N（选项 C）。<b>错——只有高分子那一项被 N 除，溶剂项原封不动</b>。所以 φ = 0.5 时 N 再大也只减到约<b>一半</b>（N→∞ 的极限是 0.5，不是 0）。</p>
+<p><b>物理图像</b>：N 个单体被共价键“绑”在一起，可排布方式大幅减少。课程 Question 10 的直观例子：8 格放 2 个黑球，<b>不相连 28 种，连起来只有 10 种</b>。</p>
+<p class="note">推论（课程 Question 11）：ΔS 更小 → −TΔS 这个有利项更弱 → <b>高分子溶解不如小分子自发</b>。<br>而焓项 φ<sub>A</sub>φ<sub>B</sub>χnRT <b>不除 N</b>，因为焓只取决于溶剂-单体的局部接触。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q08</span><span>L3 Flory-Huggins</span><span class="q-k">计算</span><span class="q-t">体积分数</span></div><p class="q-s">A Flory-Huggins lattice contains 800 solvent molecules and 2 polymer chains, each with a degree of polymerization N = 100. What is the volume fraction of polymer φ<sub>B</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>0.002</span></li><li class="right"><span class="k">B</span><span>0.2</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>0.25</span></li><li class=""><span class="k">D</span><span>0.8</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">φ<sub>B</sub> = N m<sub>B</sub> / (m<sub>A</sub> + N m<sub>B</sub>) = (100 × 2) / (800 + 200) = 200 / 1000 = <b>0.2</b></div>
+<p>相应 φ<sub>A</sub> = 0.8，总格点数 m = m<sub>A</sub> + Nm<sub>B</sub> = 1000。</p>
+<p class="trap"><b>陷阱</b>：选项 A 是按<b>摩尔分数</b>算的 2/(800+2) ≈ 0.0025。<b>Flory-Huggins 用体积分数，不用摩尔分数</b>——一条链占 N 个格点，这正是“高分子体积大”在模型里的体现。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q09</span><span>L3 Flory-Huggins</span><span class="q-k">理解</span><span class="q-t">N 对相图的影响</span></div><p class="q-s">According to Flory-Huggins theory, as the degree of polymerization N of the dissolved polymer increases, the phase diagram of the polymer solution (UCST type) changes in which way?</p><ul class="q-o"><li class=""><span class="k">A</span><span>Critical temperature decreases; phase diagram shifts to higher polymer volume fraction</span></li><li class="right"><span class="k">B</span><span>Critical temperature increases; phase diagram shifts to lower polymer volume fraction</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>Critical temperature increases; phase diagram shifts to higher polymer volume fraction</span></li><li class=""><span class="k">D</span><span>The phase diagram is unaffected by N</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p>讲义 Lecture 4「Phase Diagram of Polymer Solutions」页的两条 general conclusions：</p>
+<p>① <b>Critical point increases as N increases</b><br>② <b>Phase diagram shifts towards smaller φ<sub>B</sub> as N increases</b>（means only dilute samples can dissolve）</p>
+<p><b>为什么</b>：N ↑ → 混合熵 ↓ → −TΔS 这个有利项变弱 → 需要<b>更高的温度</b>才能压过焓项 → <b>T<sub>c</sub> 升高，单相区缩小</b>。</p>
+<p class="note"><b>实际含义</b>（常出概念题）：分子量越高<b>越难溶</b>；而且只有<b>稀溶液</b>才溶得了，想溶浓一点就分相。另外高分子相图<b>不对称</b>（因为 φ<sub>B</sub>/N 这一项），不像小分子那样左右对称。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q10</span><span>L4 相行为</span><span class="q-k">理解</span><span class="q-t">spinodal 的数学判据</span></div><p class="q-s">The spinodal boundary at a given temperature is located mathematically by solving:</p><ul class="q-o"><li class=""><span class="k">A</span><span>dΔG<sub>m</sub>/dx<sub>A</sub> = 0</span></li><li class="right"><span class="k">B</span><span>d²ΔG<sub>m</sub>/dx<sub>A</sub>² = 0</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>d³ΔG<sub>m</sub>/dx<sub>A</sub>³ = 0</span></li><li class=""><span class="k">D</span><span>Drawing a common tangent to the ΔG curve</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p>三个判据必须分清楚：</p>
+<table class="mini"><thead><tr><th>目标</th><th>方法</th><th>物理含义</th></tr></thead><tbody>
+<tr><td><b>Binodal</b> 共存曲线</td><td><b>公切线</b>的两个切点（选项 D）</td><td>分相后能达到的最低能量组成</td></tr>
+<tr><td><b>Spinodal</b> 稳定极限</td><td><b>d²ΔG/dx² = 0</b>（拐点）</td><td>曲率由凹向上转为凹向下</td></tr>
+<tr><td><b>临界点 T<sub>c</sub></b></td><td><b>d³ΔG/dx³ = 0</b></td><td>两个拐点合并、“鼓包”刚出现</td></tr>
+</tbody></table>
+<p><b>为什么 spinodal 是拐点</b>：曲线<b>凹向上</b>处，任何<b>微小</b>组成涨落都<b>升高</b> G → 涨落自动退回 → 溶液<b>亚稳</b>；曲线<b>凹向下</b>处，微小涨落<b>降低</b> G → 无势垒自发分相。两者的分界正是曲率变号的<b>拐点</b>。</p>
+<p class="note">所以 binodal 与 spinodal 之间是<b>亚稳区</b>：热力学上分相有利，但要一次足够大的涨落才能启动。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q11</span><span>L4 相行为</span><span class="q-k">理解</span><span class="q-t">两种分相机理</span></div><p class="q-s">Which of the following statements comparing spinodal decomposition (SD) with nucleation and growth (N&amp;G) is <b>FALSE</b>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>SD has no activation barrier, while N&amp;G does</span></li><li class=""><span class="k">B</span><span>SD occurs uniformly throughout the entire volume, while N&amp;G occurs sporadically</span></li><li class="right"><span class="k">C</span><span>SD and N&amp;G give different final phase compositions</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>N&amp;G occurs when the mixture lies outside the spinodal but inside the binodal</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><p>选 C，因为它是<b>错误</b>陈述。讲义 Lecture 4 最后一页的对比表：</p>
+<table class="mini"><thead><tr><th></th><th>Spinodal Decomposition</th><th>Nucleation &amp; Growth</th></tr></thead><tbody>
+<tr><td>发生位置</td><td>spinodal <b>内</b></td><td>spinodal <b>外</b>、binodal <b>内</b>（亚稳区）</td></tr>
+<tr><td>空间分布</td><td><b>整个体积均匀</b></td><td><b>零星散发</b></td></tr>
+<tr><td>活化势垒</td><td><b>无</b></td><td><b>有</b></td></tr>
+<tr><td>最终组成</td><td><b>binodal 组成</b></td><td><b>binodal 组成</b></td></tr>
+</tbody></table>
+<p><b>关键</b>：两种机理的<b>终态组成完全相同，都由 binodal 点决定</b>。区别只在<b>路径和形貌</b>：SD 组成在整个体积内连续演化，固体中给出<b>互穿网络</b>；N&amp;G 先偶然成核，再靠<b>扩散</b>（组成梯度驱动）长大，给出分散的核/液滴。</p>
+<p class="note">课程 Question 15、16 分别问这两种机理的终态，答案都是 “2 phases comprising a and b”（binodal 组成）。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q12</span><span>L4 相行为</span><span class="q-k">理解</span><span class="q-t">binodal 之外不分相</span></div><p class="q-s">A mixture of A and B has a Gibbs energy of mixing curve with a local maximum. Compounds A and B are mixed at a composition x<sub>A</sub> that lies <b>outside</b> the two binodal points, and ΔG<sub>mix</sub> at this composition is negative. What is the resulting state?</p><ul class="q-o"><li class="right"><span class="k">A</span><span>1 phase with composition x<sub>A</sub></span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">B</span><span>2 phases at the spinodal compositions a and b</span></li><li class=""><span class="k">C</span><span>2 phases at the binodal compositions x<sub>A</sub>′ and x<sub>A</sub>″</span></li><li class=""><span class="k">D</span><span>2 phases of pure A and pure B</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">A</span>　·　解析</p><p><b>判据不是“ΔG<sub>mix</sub> 是不是负的”，而是“能不能通过分相得到更低的能量”。</b></p>
+<p>在两个 binodal 点<b>之外</b>，ΔG 曲线<b>凹向上</b>。对凹向上的曲线，无论怎么选 x<sub>A</sub>′ 和 x<sub>A</sub>″，两相的加权平均 Gibbs 能（连接两点的直线在 x<sub>A</sub> 处的高度）<b>总是高于</b>单相曲线上的点 → <b>分相反而升高能量</b> → 保持单相。（课程 Question 17）</p>
+<p><b>三种情况一起记</b>：</p>
+<table class="mini"><thead><tr><th>组成位置</th><th>结果</th></tr></thead><tbody>
+<tr><td>binodal <b>之外</b></td><td><b>单相</b>（本题）</td></tr>
+<tr><td>binodal 与 spinodal 之间</td><td>亚稳单相，需<b>成核-生长</b> → 终态 binodal 组成</td></tr>
+<tr><td>spinodal <b>之内</b></td><td>无势垒自发 <b>SD</b> → 终态仍是 binodal 组成</td></tr>
+</tbody></table>
+<p class="trap"><b>最容易错的一点</b>（课程 Question 13 专门考）：<b>ΔG<sub>mix</sub> &lt; 0 不代表不分相</b>。它只说明“混合比完全不混合好”，但分成两个 binodal 组成<b>可以达到更低的能量</b>。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q13</span><span>L4 相行为</span><span class="q-k">理解</span><span class="q-t">LCST</span></div><p class="q-s">A polymer solution exhibits a <b>lower critical solution temperature (LCST)</b>, i.e. it phase separates upon <b>heating</b>. Using the empirical relation χ = α/T + β, this behaviour requires:</p><ul class="q-o"><li class=""><span class="k">A</span><span>α positive and β negative, so that χ decreases with temperature</span></li><li class="right"><span class="k">B</span><span>α negative and β positive, so that χ increases with temperature</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>α = 0, so that χ is temperature-independent</span></li><li class=""><span class="k">D</span><span>β = 0, so that χ = α/T</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p><b>理论上</b>：χ = zΔw/kT，温度越高 χ 越小 → 焓的不利影响越弱 → 高温互溶。这给出的是<b>常见的 UCST</b>。</p>
+<p><b>但经验上</b> χ = α/T + β，α、β 可正可负。当 <b>α 为负、β 为正</b>时，T 升高使 α/T 这个负项绝对值变小 → <b>χ 整体变得更正</b> → 焓项更不利 → <b>高温反而分相</b> → LCST。</p>
+<p><b>经典例子</b>（讲义点名）：<b>聚环氧乙烷 PEO / 水</b>。机理是靠<b>氢键</b>溶解，而氢键在高温下变弱。</p>
+<p class="note"><b>记忆</b>：UCST 常见，“升温溶解”，符合直觉；<b>LCST 少见</b>（讲义标题写的就是 “Less Usual Case”），“升温分相”，通常涉及<b>氢键或特异性相互作用</b>。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q14</span><span>L5 渗透压与粘度</span><span class="q-k">计算</span><span class="q-t">渗透压</span></div><p class="q-s">A dilute polymer solution of concentration 5.0 g/L has a molar mass of 50,000 g/mol. At 298 K, ignoring virial terms, what height of aqueous solution column would this osmotic pressure support? (ρ = 1000 kg/m³, g = 9.81 m/s²)</p><ul class="q-o"><li class=""><span class="k">A</span><span>0.25 cm</span></li><li class="right"><span class="k">B</span><span>2.5 cm</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>25 cm</span></li><li class=""><span class="k">D</span><span>250 cm</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p><b>① 单位换算（关键）</b>：c 必须是 <b>g/m³</b> 才能得到 Pa。<br>c = 5.0 g/L = <b>5,000 g/m³</b></p>
+<p><b>② 渗透压</b>：Π = RT·c/M = 8.314 × 298 × (5,000 / 50,000) = 8.314 × 298 × 0.1 = <b>248 Pa</b></p>
+<p><b>③ 液柱高度</b>：h = Π / (ρg) = 248 / 9,810 = 0.0253 m = <b>2.5 cm</b></p>
+<p class="trap"><b>最大的坑是单位</b>。若直接代 c = 5 g/L，得 0.248 Pa，差 1000 倍。记住：<b>SI 制下 c 用 g/m³、M 用 g/mol，Π 出来就是 Pa</b>。</p>
+<p class="note"><b>为什么渗透压法好用</b>：248 Pa 很小，但换成液柱是 2.5 cm——肉眼可读，精度高。<br><b>渗透压测 M<sub>n</sub></b>：第一项 RTc/M 只与<b>分子数目</b>有关（依数性），与种类无关。课程 Question 18 就考这点：等浓度葡萄糖和蔗糖溶液渗透压<b>基本相同</b>。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q15</span><span>L5 渗透压与粘度</span><span class="q-k">理解</span><span class="q-t">第二维里系数</span></div><p class="q-s">In the osmotic virial expansion Π = RT[c/M + Bc² + …], what is the sign of B for a polymer dissolved in a <b>poor</b> solvent?</p><ul class="q-o"><li class=""><span class="k">A</span><span>B &gt; 0</span></li><li class=""><span class="k">B</span><span>B = 0</span></li><li class="right"><span class="k">C</span><span>B &lt; 0</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>B is undefined for poor solvents</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><p>讲义 Lecture 5「Some Conclusions on Osmotic Pressure」原文：</p>
+<table class="mini"><thead><tr><th>溶剂</th><th>B</th><th>原因</th></tr></thead><tbody>
+<tr><td><b>良溶剂</b></td><td><b>B &gt; 0</b></td><td>高分子-溶剂作用有利 → 溶剂<b>更想</b>过膜稀释 → 渗透压高于理想值</td></tr>
+<tr><td><b>θ 溶剂</b></td><td><b>B = 0</b></td><td>中间情形，两种作用抵消</td></tr>
+<tr><td><b>不良溶剂</b></td><td><b>B &lt; 0</b></td><td>溶质-溶质作用更有利 → 溶剂<b>不太想</b>过膜</td></tr>
+</tbody></table>
+<p><b>θ 溶剂的重要性</b>（跨讲考点）：B = 0 时链表现为<b>理想链</b>，R<sub>g</sub> ∝ N<sup>1/2</sup>、Mark-Houwink 的 <b>a = 0.5</b>——排除体积效应刚好被链-链吸引抵消。良溶剂中则是 N<sup>3/5</sup>、a ≈ 0.8。</p>
+<p class="note"><b>实验含义</b>：作 Π/RT 对 c 的图，<b>在低浓度处取斜率 = 1/M</b>。B ≠ 0 会让曲线在高浓度弯曲——这正是必须外推到 c → 0 的原因。（课程 Question 19）</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q16</span><span>L5 渗透压与粘度</span><span class="q-k">计算</span><span class="q-t">Mark-Houwink 指数</span></div><p class="q-s">Given the Mark-Houwink equation [η] = kM<sup>a</sup>, what is the value of ‘a’ for a polymer that behaves as a <b>rigid rod</b>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>0</span></li><li class=""><span class="k">B</span><span>0.5</span></li><li class=""><span class="k">C</span><span>0.8</span></li><li class="right"><span class="k">D</span><span>2</span><span class="tick">✓ 正确答案</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">D</span>　·　解析</p><p><b>推导链条</b>（要会推，别死记）：</p>
+<p>① Einstein 定律用到高分子：[η] = (5/2) N<sub>Av</sub>V<sub>h</sub> / M<br>
+② 链看作流体力学等效球：V<sub>h</sub> ∝ (4/3)πR<sub>g</sub>³<br>
+③ 所以 [η] ∝ R<sub>g</sub>³ / M<br>
+④ 若 R<sub>g</sub> ∝ N<sup>ν</sup> ∝ M<sup>ν</sup>，则 [η] ∝ M<sup>3ν</sup>/M = M<sup>3ν−1</sup></p>
+<div class="fb">a = 3ν − 1</div>
+<p><b>刚性棒</b>完全伸直，R<sub>g</sub> ∝ N¹，ν = 1 → a = 3(1) − 1 = <b>2</b></p>
+<table class="mini"><thead><tr><th>链形态</th><th>ν</th><th>a</th></tr></thead><tbody>
+<tr><td>致密球</td><td>1/3</td><td><b>0</b></td></tr>
+<tr><td>θ 溶剂 / 理想链</td><td>1/2</td><td><b>0.5</b></td></tr>
+<tr><td>良溶剂</td><td>3/5</td><td><b>0.8</b></td></tr>
+<tr><td>刚性棒</td><td>1</td><td><b>2</b></td></tr>
+</tbody></table>
+<p class="note">课程 Question 21 考的是良溶剂 → a = 0.8。讲义补充：<b>实际大多数 a 落在 0.5–1 之间</b>。<br>注意粘度法测的 <b>M<sub>v</sub> 接近 M<sub>w</sub></b>（不是 M<sub>n</sub>），且 k、a 必须标定或查文献。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q17</span><span>L6 光散射</span><span class="q-k">计算</span><span class="q-t">Rayleigh λ⁻⁴</span></div><p class="q-s">According to Rayleigh’s equation, what is the ratio of scattered intensity for blue light (450 nm) to that for red light (650 nm) by the same small particle at the same angle?</p><ul class="q-o"><li class=""><span class="k">A</span><span>1.4</span></li><li class=""><span class="k">B</span><span>2.1</span></li><li class="right"><span class="k">C</span><span>4.4</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>8.7</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><div class="fb">I<sub>θ</sub>/I<sub>0</sub> = 8π⁴α²(1 + cos²θ) / (λ⁴ r²)　→　I ∝ λ⁻⁴</div>
+<p>I<sub>450</sub> / I<sub>650</sub> = (650/450)⁴ = (1.444)⁴ = <b>4.35</b></p>
+<p class="trap"><b>陷阱</b>：是 <b>λ⁻⁴</b>，比值要<b>四次方</b>。一次方得 1.44（选项 A），二次方得 2.09（选项 B）——错误选项就是这么设计的。还要注意别把分子分母颠倒：<b>波长短的散射强</b>，蓝光在分子上。</p>
+<p><b>天空为什么是蓝的</b>（课程 Question 22，选项很刁）：<br>✅ 蓝光波长短，被空气分子散射得<b>强得多</b>；我们看天空是朝<b>偏离太阳</b>的方向看，看到的是被散射的蓝光。<br>❌ “其他颜色被水蒸气吸收” / “蓝光是海水反射的” / “非蓝光被散射掉了，剩下蓝光”</p>
+<p class="note">(1 + cos²θ) 说明<b>小粒子散射前后对称</b>。但粒子 <b>&gt; λ/20</b> 时，同一粒子不同部位的散射光<b>相消干涉</b>，强度净减少，且<b>前向 &gt; 后向</b>；唯一不受影响的角度是 <b>θ = 0°</b>。正是这个角度依赖让静态光散射能给出 <b>R<sub>g</sub></b>。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q18</span><span>L6 光散射</span><span class="q-k">计算</span><span class="q-t">Stokes-Einstein</span></div><p class="q-s">In a DLS experiment, the tracer diffusion coefficient of a polymer in water is D<sub>t</sub> = 2.0×10⁻¹¹ m²/s at 298 K. The solvent viscosity is 0.89 mPa·s. What is the hydrodynamic radius R<sub>h</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>1.2 nm</span></li><li class="right"><span class="k">B</span><span>12 nm</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>120 nm</span></li><li class=""><span class="k">D</span><span>1.2 μm</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">D<sub>t</sub> = kT / (6π η<sub>s</sub> R<sub>h</sub>)　→　R<sub>h</sub> = kT / (6π η<sub>s</sub> D<sub>t</sub>)</div>
+<p>分子：kT = 1.381×10⁻²³ × 298 = 4.115×10⁻²¹ J<br>
+分母：6π × 0.89×10⁻³ × 2.0×10⁻¹¹ = 3.355×10⁻¹³</p>
+<p>R<sub>h</sub> = 4.115×10⁻²¹ / 3.355×10⁻¹³ = 1.23×10⁻⁸ m = <b>12.3 nm</b></p>
+<p class="trap"><b>单位</b>：0.89 mPa·s = 0.89×10⁻³ Pa·s。漏掉 10⁻³ 差 1000 倍。</p>
+<p><b>DLS 的整条逻辑链</b>：① 布朗运动 → 干涉明暗斑移动 → <b>强度随时间涨落</b>；② <b>小粒子扩散快 → 涨落快</b>（课程 Question 24）；③ 用<b>时间自相关函数</b> C(t′) 提取衰减速率——t′=0 时自乘最大，t′→∞ 时完全不相关、平均为 0，结果是指数衰减 C ∝ e<sup>−2q²D<sub>m</sub>t′</sup>，<b>D 越大衰减越快</b>；④ 外推零浓度得 D<sub>t</sub>，由 Stokes-Einstein 得 R<sub>h</sub>。</p>
+<p class="note"><b>三种“半径”别混</b>：<b>R<sub>g</sub></b> ← 静态光散射；<b>R<sub>h</sub></b> ← 动态光散射；<b>R₀</b> ← 密堆积球，概念上 R<sub>g</sub> &lt; R₀。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q19</span><span>L7 SEC 与质谱</span><span class="q-k">理解</span><span class="q-t">SEC 洗脱顺序</span></div><p class="q-s">In size exclusion chromatography (SEC), which molecules elute <b>first</b>, and why?</p><ul class="q-o"><li class=""><span class="k">A</span><span>The smallest, because they diffuse fastest through the column</span></li><li class="right"><span class="k">B</span><span>The largest, because they are excluded from the pores of the stationary phase</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>The smallest, because they are retained least strongly by the stationary phase</span></li><li class=""><span class="k">D</span><span>The most polar, because they interact least with the gel</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p>SEC（也叫 GPC）用<b>多孔凝胶</b>作固定相：<b>大分子进不了孔</b> → 只走孔外体积 → 路径短 → <b>V<sub>R</sub> 小、先出</b>；<b>小分子能进孔</b> → 被滞留 → 后出。</p>
+<p class="trap"><b>注意</b>：SEC 分离<b>不靠化学相互作用</b>（排除 D），也不靠扩散速率（排除 A）。纯粹是<b>空间排阻</b>。</p>
+<p><b>两个固有问题</b>（讲义明确列出）：<br>① SEC 依据是<b>尺寸而非 M</b> → 标样的<b>化学组成和结构必须与未知样相同</b>，否则不准；<br>② <b>比孔还大的分子全部一起出来</b>，V<sub>R</sub> 完全没有区分度。</p>
+<p><b>四种检测器</b>：示差折光（∝浓度）· UV-Vis（Beer-Lambert，需发色团）· 光散射（配合前两者给 M<sub>w</sub>，<b>可不需标样</b>）· 粘度计（同上）。</p>
+<p class="note"><b>高频陷阱</b>（课程 Question 26）：用 <b>UV 检测器</b>时信号高度 <b>∝ n<sub>i</sub>M<sub>i</sub></b>，不是 ∝ n<sub>i</sub>。因为吸光度虽正比于摩尔浓度，但<b>每条链上的发色团数目又正比于分子量</b>。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q20</span><span>L7 SEC 与质谱</span><span class="q-k">计算</span><span class="q-t">通用校准</span></div><p class="q-s">Universal calibration is applied to an SEC column. A polystyrene standard (k<sub>s</sub> = 8×10⁻⁵, a<sub>s</sub> = 0.5) with M<sub>s</sub> = 50,000 g/mol elutes at a certain retention volume. An unknown polymer (k<sub>x</sub> = 1×10⁻⁵, a<sub>x</sub> = 0.5) elutes at the <b>same</b> retention volume. What is M<sub>x</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>50,000 g/mol</span></li><li class=""><span class="k">B</span><span>100,000 g/mol</span></li><li class="right"><span class="k">C</span><span>200,000 g/mol</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>400,000 g/mol</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><p><b>核心思想</b>：<b>流体力学体积 V<sub>h</sub> 相同的高分子有相同的 V<sub>R</sub></b>（SEC 按尺寸分离）。</p>
+<p>由 [η] = (5/2)N<sub>Av</sub>V<sub>h</sub>/M 和 [η] = kM<sup>a</sup> 得 <b>V<sub>h</sub> ∝ k M<sup>a+1</sup></b>，同一 V<sub>R</sub> ⇒</p>
+<div class="fb">k<sub>s</sub> M<sub>s</sub><sup>a<sub>s</sub>+1</sup> = k<sub>x</sub> M<sub>x</sub><sup>a<sub>x</sub>+1</sup></div>
+<p>代入（a<sub>s</sub> = a<sub>x</sub> = 0.5，指数都是 1.5）：</p>
+<p>8×10⁻⁵ × (50,000)<sup>1.5</sup> = 1×10⁻⁵ × M<sub>x</sub><sup>1.5</sup><br>
+M<sub>x</sub><sup>1.5</sup> = 8 × (50,000)<sup>1.5</sup> → M<sub>x</sub> = 8<sup>2/3</sup> × 50,000 = 4 × 50,000 = <b>200,000</b></p>
+<p class="trap"><b>陷阱</b>：不能直接按 k 的比值 8 倍去乘 M（得 400,000，选项 D）。指数 1/(a+1) = <b>2/3</b> 必须用上。8<sup>2/3</sup> = (∛8)² = 2² = 4。</p>
+<p class="note"><b>为什么需要它</b>：直接用 PS 标样曲线读未知高分子，会因“同样 M 但尺寸不同”而系统偏差。通用校准用 Mark-Houwink 常数修正 y 轴，前提是两种高分子的 k、a 都已知。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q21</span><span>L7 SEC 与质谱</span><span class="q-k">计算</span><span class="q-t">MALDI-TOF 飞行时间</span></div><p class="q-s">In a MALDI-TOF-MS experiment, a singly-charged polymer ion of m = 1,000 Da reaches the detector in 20 μs. Under identical accelerating conditions, when does a singly-charged ion of m = 4,000 Da arrive?</p><ul class="q-o"><li class=""><span class="k">A</span><span>10 μs</span></li><li class="right"><span class="k">B</span><span>40 μs</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>80 μs</span></li><li class=""><span class="k">D</span><span>320 μs</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p><b>推导</b>：加速阶段电场做功全转为动能</p>
+<div class="fb">qV = ½mv²　→　v = √(2qV/m) ∝ 1/√m　→　t = L/v ∝ √m</div>
+<p>t₂/t₁ = √(4000/1000) = √4 = 2 → t₂ = 20 × 2 = <b>40 μs</b></p>
+<p class="trap"><b>陷阱</b>：飞行时间 <b>∝ √m，不是 ∝ m</b>。按线性算得 80 μs（选项 C）。</p>
+<p><b>定性理解</b>（课程 Question 27）：F = ma，同样电场、同样电荷（<b>MALDI 几乎只产生单电荷离子</b>，一大优势）→ <b>质量小的加速度大、速度快、先到</b>。</p>
+<p><b>其他必考点</b>：<br>· <b>“软”电离</b>：激光被<b>吸收 337 nm 的芳香族基质</b>吸收，迅速加热汽化，把高分子带进气相并与 Na⁺/K⁺ 或质子结合——<b>避免断裂降解</b>。<br>· <b>只适合含极性基团</b>的高分子（聚酯、丙烯酸酯、酰胺），<b>不适合非极性的 PE、PP</b>。<br>· <b>测得偏低的原因</b>（课程 Question 28，答案“以上皆是”）：高分子量更难汽化 + 可能碎裂 + 检测器被先到的低分子量物种饱和。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q22</span><span>综合 跨讲综合</span><span class="q-k">综合</span><span class="q-t">哪个方法测哪种平均</span></div><p class="q-s">Which of the following techniques measures the <b>weight-average</b> molecular weight M<sub>w</sub> rather than the number-average M<sub>n</sub>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>Membrane osmometry</span></li><li class="right"><span class="k">B</span><span>Static light scattering</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>End-group analysis</span></li><li class=""><span class="k">D</span><span>Vapour-phase osmometry</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p><b>静态光散射测 M<sub>w</sub></b>，讲义原文理由：<i>“because the scattering by each particle is weighted relative to its mass”</i>——每个粒子的散射按<b>质量</b>加权，大分子贡献更大。</p>
+<p>其余三个都测 <b>M<sub>n</sub></b>，因为都是<b>依数性</b>方法，只数分子<b>个数</b>：膜渗透压（Π = RTc/M）· VPO（ΔT = K(c/M+…)）· 端基分析（数端基 = 数链条数）。</p>
+<table class="mini"><thead><tr><th>方法</th><th>测得</th></tr></thead><tbody>
+<tr><td>膜渗透压、VPO、端基分析</td><td><b>M<sub>n</sub></b></td></tr>
+<tr><td><b>静态光散射</b></td><td><b>M<sub>w</sub></b> + <b>R<sub>g</sub></b></td></tr>
+<tr><td>粘度法（Mark-Houwink）</td><td><b>M<sub>v</sub> ≈ M<sub>w</sub></b></td></tr>
+<tr><td><b>动态光散射 DLS</b></td><td><b>R<sub>h</sub></b>（不给分子量！）</td></tr>
+<tr><td>SEC / GPC</td><td>整个分布 → M<sub>n</sub>、M<sub>w</sub>、PDI（<b>需校准</b>）</td></tr>
+<tr><td>MALDI-TOF-MS</td><td>整个分布 → M<sub>n</sub>、M<sub>w</sub></td></tr>
+</tbody></table>
+<p class="note"><b>记忆诀窍</b>：“数个数”的（依数性）→ M<sub>n</sub>；“按质量/体积响应”的（散射、粘度）→ M<sub>w</sub>；“把分布整个画出来”的（SEC、MALDI）→ 两个都能算。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q23</span><span>L8 玻璃态</span><span class="q-k">理解</span><span class="q-t">Tg 是二阶转变</span></div><p class="q-s">Which statement about the glass transition is <b>CORRECT</b>?</p><ul class="q-o"><li class=""><span class="k">A</span><span>T<sub>g</sub> is a first-order transition, showing a discontinuity in volume</span></li><li class="right"><span class="k">B</span><span>T<sub>g</sub> is a second-order transition: volume is continuous but its temperature derivative jumps</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>Faster cooling gives a lower T<sub>g</sub> because there is less time to pack</span></li><li class=""><span class="k">D</span><span>T<sub>g</sub> is a material constant, independent of thermal history</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p>由 (∂G/∂p)<sub>T</sub> = V、(∂G/∂T)<sub>p</sub> = −S，而 α = (1/V)(∂V/∂T)<sub>p</sub>、C<sub>p</sub> = (∂H/∂T)<sub>p</sub>：</p>
+<table class="mini"><thead><tr><th></th><th>熔融 T<sub>m</sub></th><th>玻璃化 T<sub>g</sub></th></tr></thead><tbody>
+<tr><td>阶数</td><td><b>一阶</b></td><td><b>二阶</b></td></tr>
+<tr><td>跳变在</td><td>G 的<b>一阶导</b>（V、H）</td><td>G 的<b>二阶导</b>（α、C<sub>p</sub>）</td></tr>
+<tr><td>V–T 曲线</td><td><b>跳变</b></td><td><b>连续</b>，只有斜率变 → T<sub>g</sub> 需<b>外推交点</b></td></tr>
+<tr><td>α、C<sub>p</sub></td><td>尖峰</td><td><b>台阶</b></td></tr>
+</tbody></table>
+<p>所以 A 错（体积连续，不跳变）。</p>
+<p class="trap"><b>C 和 D 也错，而且说反了</b>：<b>快冷</b> → 分子<b>来不及</b>堆砌 → 体积偏大 → 外推得到的 <b>T<sub>g</sub> 更高</b>（不是更低）。T<sub>g</sub> <b>强烈依赖热历史</b>，不是材料常数。快冷样品静置久了会自行收缩到慢冷样品的体积 → <b>aging 老化</b>（工程上不希望）。因此 <b>TMA 和 DSC 都取第二次热扫描</b>来抹掉热历史。</p>
+<p class="note"><b>两台仪器的数据形式别混</b>：<b>TMA/膨胀计</b> → <b>V vs T</b>（高分子用 <b>Hg</b> 作填充介质；DSC 测不出 T<sub>g</sub> 时特别有用）；<b>DSC</b> → <b>(∂q/∂T)<sub>p</sub> vs T</b>（样品盘 + 空参比盘，减去空盘贡献）。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q24</span><span>L8 玻璃态</span><span class="q-k">计算</span><span class="q-t">Flory-Fox 方程</span></div><p class="q-s">Polystyrene obeys the Flory-Fox equation with T<sub>g</sub>(M<sub>∞</sub>) = 100 °C, and a sample with M<sub>n</sub> = 20,000 g/mol has T<sub>g</sub> = 90 °C. What is the T<sub>g</sub> of a sample with M<sub>n</sub> = 10,000 g/mol?</p><ul class="q-o"><li class=""><span class="k">A</span><span>45 °C</span></li><li class="right"><span class="k">B</span><span>80 °C</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>85 °C</span></li><li class=""><span class="k">D</span><span>95 °C</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">T<sub>g</sub>(M<sub>n</sub>) = T<sub>g</sub>(M<sub>∞</sub>) − K / M<sub>n</sub></div>
+<p><b>① 求 K</b>：90 = 100 − K/20,000 → K/20,000 = 10 → <b>K = 2×10⁵</b></p>
+<p><b>② 代入 M<sub>n</sub> = 10,000</b>：T<sub>g</sub> = 100 − 2×10⁵/10⁴ = 100 − 20 = <b>80 °C</b></p>
+<p><b>快捷理解</b>：M<sub>n</sub> 减半 → K/M<sub>n</sub> 加倍 → 偏离量从 10 °C 变 20 °C。</p>
+<p class="trap"><b>陷阱</b>：选项 D 把关系当成正比例；选项 A 把 T<sub>g</sub> 也减半了。</p>
+<p><b>物理原因</b>：<b>链端的自由体积比链中间大</b>。分子量越低 → 链端占比越高 → 链段更易运动 → <b>T<sub>g</sub> 越低</b>。同理<b>低分子量增塑剂降低 T<sub>g</sub></b>，<b>交联升高 T<sub>g</sub></b>。</p>
+<p class="note"><b>影响 T<sub>g</sub> 的因素汇总</b>：主链柔性高 ↓ · 刚性芳环主链 ↑（PEEK 143 °C）· 侧基大且刚性（苯基、酯基）↑ · 极性作用（氯、腈、酯）↑ · 分子量 ↑ · 增塑剂 ↓ · 交联 ↑</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q25</span><span>L8 玻璃态</span><span class="q-k">计算</span><span class="q-t">Fox 方程</span></div><p class="q-s">A miscible blend contains 80 wt% of polymer A (T<sub>g</sub> = 100 °C) and 20 wt% of a plasticizer B (T<sub>g</sub> = −50 °C). Using the Fox equation, estimate the T<sub>g</sub> of the blend.</p><ul class="q-o"><li class=""><span class="k">A</span><span>70 °C</span></li><li class="right"><span class="k">B</span><span>56 °C</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>40 °C</span></li><li class=""><span class="k">D</span><span>20 °C</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">1 / T<sub>g</sub> = w<sub>A</sub>/T<sub>g(A)</sub> + w<sub>B</sub>/T<sub>g(B)</sub></div>
+<p><b>① 换算成绝对温度（关键）</b>：T<sub>g(A)</sub> = 373 K，T<sub>g(B)</sub> = 223 K</p>
+<p><b>②</b> 1/T<sub>g</sub> = 0.8/373 + 0.2/223 = 0.002145 + 0.000897 = 0.003042</p>
+<p>T<sub>g</sub> = 1/0.003042 = 328.8 K = <b>55.6 °C ≈ 56 °C</b></p>
+<p class="trap"><b>两个陷阱，选项 A 同时踩中</b>：<br>① <b>Fox 方程必须用绝对温度 K</b>。用摄氏度算完全错，而且 −50 °C 会让分母出负数。<br>② <b>Fox 不是线性加权</b>。线性加权给 0.8(100) + 0.2(−50) = <b>70 °C</b>，正是选项 A。Fox 是<b>倒数的加权平均</b>，结果总是<b>低于</b>线性值。</p>
+<p class="note"><b>物理含义</b>：<b>可混溶共混物只有一个 T<sub>g</sub></b>，介于两组分之间——这本身就是判断两种高分子是否互溶的实验判据（不互溶会看到<b>两个</b> T<sub>g</sub>）。加 20% 增塑剂把 T<sub>g</sub> 从 100 °C 拉到 56 °C，这就是 PVC 从硬管变软管的原理。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q26</span><span>L9 力学性质</span><span class="q-k">计算</span><span class="q-t">杨氏模量</span></div><p class="q-s">A polymer bar with a cross-sectional area of 2.0 mm² and an original length of 50 mm elongates by 1.0 mm under a 100 N load, within the linear elastic region. What is its Young’s modulus?</p><ul class="q-o"><li class=""><span class="k">A</span><span>0.5 GPa</span></li><li class=""><span class="k">B</span><span>1.0 GPa</span></li><li class="right"><span class="k">C</span><span>2.5 GPa</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>5.0 GPa</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><p><b>应力</b>：σ<sub>t</sub> = f/A = 100 N / (2.0×10⁻⁶ m²) = 5.0×10⁷ Pa = <b>50 MPa</b></p>
+<p><b>应变</b>：ε = ΔL/L₀ = 1.0/50 = <b>0.020</b></p>
+<p><b>模量</b>：E = σ/ε = 50 MPa / 0.020 = 2500 MPa = <b>2.5 GPa</b></p>
+<p class="trap"><b>单位换算</b>：<b>1 mm² = 10⁻⁶ m²</b>（不是 10⁻³）。这是最常见的失分点。应变无量纲，不用换算。</p>
+<p><b>三类应力-应变行为</b>：</p>
+<table class="mini"><thead><tr><th>类型</th><th>特征</th><th>例子</th></tr></thead><tbody>
+<tr><td><b>A 脆性</b></td><td>E <b>高</b>，近似线性直到断裂，<b>无屈服点</b></td><td>PS、PMMA</td></tr>
+<tr><td><b>B 韧性</b></td><td>升到<b>屈服点</b> → 塑性形变 → <b>应变软化</b> → 断裂前 E 回升（<b>应变硬化</b>）</td><td>PP、PE</td></tr>
+<tr><td><b>C 弹性体</b></td><td>E <b>极低</b>，<b>无屈服点</b>，断裂应变 <b>500–1000%</b></td><td>天然橡胶</td></tr>
+</tbody></table>
+<p class="note"><b>两个强度别混</b>：抗拉强度 = <b>断裂点</b>的最大应力；屈服强度 = 开始<b>不可恢复</b>形变时的应力。<br><b>三种形变机理</b>：<b>Crazing 银纹</b>（裂纹扩展，原纤间 10–20 nm 微孔洞，<b>垂直于应力</b>扩展，散射光发白，<b>能起银纹反而强韧</b>）· <b>Shear banding</b>（与应力成 <b>~45°</b>）· <b>Necking 细颈</b>（屈服点<b>之后</b>立即发生）。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q27</span><span>L10 弹性体与结晶</span><span class="q-k">理解</span><span class="q-t">熵弹性</span></div><p class="q-s">When a crosslinked rubber is held at a <b>fixed extension</b> and its temperature is raised, the tensile force f is observed to <b>increase</b>. What does this tell us about the molecular origin of rubber elasticity?</p><ul class="q-o"><li class=""><span class="k">A</span><span>The enthalpy increases strongly with extension, so the restoring force is enthalpic</span></li><li class="right"><span class="k">B</span><span>The entropy decreases with extension, so the restoring force is entropic</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>The entropy increases with extension, so stretching is spontaneous</span></li><li class=""><span class="k">D</span><span>The rubber is below its T<sub>g</sub> at this temperature</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p>由 dG = Vdp − SdT + f dL 及二阶偏导可交换（Maxwell 关系）：</p>
+<div class="fb">(∂f/∂T)<sub>p,L</sub> = − (∂S/∂L)<sub>p,T</sub></div>
+<p><b>实验观察</b>：固定伸长率（讲义用 350%），f 随 T <b>升高</b> → 左边<b>斜率为正</b> → <b>(∂S/∂L) 为负</b> → <b>拉伸使熵下降</b>。</p>
+<p><b>为什么熵下降</b>：伸展的构象是<b>有序</b>的，可及构象数远少于无规线团 → 构象熵减少。</p>
+<p><b>再看截距</b>：由 G = H − TS 得 f = (∂H/∂L)<sub>p,T</sub> − T(∂S/∂L)<sub>p,T</sub>。f–T 直线的 <b>y 轴截距 = (∂H/∂L)</b>，实测<b>接近零</b> → 拉伸几乎不把能量以焓储存 → <b>应力几乎全部用于降低熵</b>。</p>
+<div class="fb">橡胶弹性是<b>熵弹性</b>，不是键的拉伸</div>
+<p class="note"><b>两个必须一起记的推论</b>：① f–T 曲线在低温处的<b>反转点</b> = <b>玻璃化转变</b>（此时已不是弹性体，选项 D 的干扰就在这）；② <b>绝热拉伸橡皮筋会升温</b>：C<sub>V,p</sub>ΔT = AEL²/(2L₀)，弹性功无处可去全变内能。<br><b>弹性体四条件</b>：温度<b>高于 T<sub>g</sub></b> · 结晶度可忽略 · <b>必须交联</b> · 形变完全可恢复。交联靠<b>硫化</b>（硫加热交联 cis-1,4-聚异戊二烯，机理未完全清楚，证据指向<b>离子型反应</b>）。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q28</span><span>L10 弹性体与结晶</span><span class="q-k">计算</span><span class="q-t">Bragg 定律</span></div><p class="q-s">An X-ray diffraction pattern of polyethylene recorded with Cu Kα radiation (λ = 1.54 Å) shows a first-order (n = 1) reflection at a diffraction angle 2θ = 21.5°. What is the spacing between the corresponding crystal planes?</p><ul class="q-o"><li class=""><span class="k">A</span><span>2.06 Å</span></li><li class="right"><span class="k">B</span><span>4.13 Å</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>8.26 Å</span></li><li class=""><span class="k">D</span><span>0.41 Å</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><div class="fb">2 D sin θ = n λ</div>
+<p><b>① 2θ 除以 2</b>：θ = 21.5° / 2 = <b>10.75°</b>，sin(10.75°) = 0.1865</p>
+<p><b>②</b> D = nλ / (2 sin θ) = 1.54 / (2 × 0.1865) = 1.54 / 0.373 = <b>4.13 Å</b></p>
+<p class="trap"><b>最容易错的地方</b>：题目给的是 <b>2θ（衍射角）</b>，公式里用的是 <b>θ</b>。直接把 21.5° 代进 sin 得 2.10 Å——正是选项 A 的陷阱。<br><b>约定的由来</b>：入射光与晶面成 θ，反射光也成 θ，所以反射光相对入射方向偏折 <b>2θ</b>，实验量的就是这个偏折角。</p>
+<p><b>其他要点</b>：<b>Cu Kα 时 λ = 1.54 Å</b>（可能不给，要记）· <b>单晶</b>花样取决于取向，多方向测量给出唯一结构和空间群 · <b>粉末</b>各取向都有 → <b>同心圆环</b> · 每个峰可能是<b>不同晶面</b>，也可能是<b>高级衍射 n &gt; 1</b>。</p>
+<p class="note"><b>晶体三级结构</b>：<b>Unit Cell 晶胞</b> 每边 <b>2–20 Å</b> → <b>Lamellae 片晶</b> 厚 <b>100–500 Å</b>、宽数微米 → <b>Spherulite 球晶</b> <b>数十至数百微米</b>。约定 <b>c 轴 = 主链方向</b>（fiber axis），单斜晶系例外（是 b 轴）。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q29</span><span>L10 弹性体与结晶</span><span class="q-k">理解</span><span class="q-t">Tm 的依赖因素</span></div><p class="q-s">Which of the following changes would <b>lower</b> the melting temperature T<sub>m</sub> of a semicrystalline polymer?</p><ul class="q-o"><li class=""><span class="k">A</span><span>Increasing the lamellar thickness</span></li><li class=""><span class="k">B</span><span>Increasing the number-average molecular weight</span></li><li class="right"><span class="k">C</span><span>Decreasing the lamellar thickness</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">D</span><span>Increasing the enthalpy of fusion per unit volume</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">C</span>　·　解析</p><div class="fb">T<sub>m</sub> / T<sub>m</sub><sup>∞</sup> = 1 − (2γ / ΔH<sub>V</sub><sup>b</sup>) · (1/l + 1/r)</div>
+<p>（l 片晶厚度，r 半径，γ 单位面积表面能）</p>
+<p><b>l 或 r 减小 → 1/l + 1/r 增大 → 右边减小 → T<sub>m</sub> 降低。</b>物理原因：晶体越小，<b>表面能占比越大</b>，而熔融要“回收”这部分表面能。</p>
+<p><b>逐项</b>：A 升高 T<sub>m</sub>（更厚的片晶表面占比小）· B 升高（见下）· <b>C 降低 ✓</b> · D 升高（分母变大 → 修正项变小）</p>
+<p><b>分子量的影响</b>（另一条独立推导）：<b>链端相当于杂质，造成熔点降低</b>（凝固点降低的依数性）。每条链 2 个链端，链端摩尔分数 x<sub>B</sub> = 2M₀/M<sub>n</sub>，故 <b>M<sub>n</sub> 越低 → 链端分数越高 → T<sub>m</sub> 越低</b>。</p>
+<p class="note"><b>结晶机理</b>：高分子按<b>成核-生长</b>结晶。片晶厚度由<b>热力学 + 动力学</b>共同决定——热力学上薄片晶 T<sub>m</sub> 低，<b>只有低温才允许</b>；动力学上薄片晶<b>生长更快</b> → <b>低温下薄片晶占主导</b>，更薄的片晶刚被允许时生长速率出现<b>突变</b>。<br><b>能否结晶</b>：<b>立构规整（isotactic、syndiotactic）才能结晶，无规（atactic）不能</b>；例外是带<b>小极性侧基</b>的（PVA、聚氟乙烯）。结晶的好处：强度提高、抗降解、阻隔性好。<br><b>四种形貌</b>：球晶 · hedrite · 枝晶（深过冷）· <b>shish kebab 串晶（流动下结晶）</b>。</p></div></article><article class="q"><div class="q-top"><div class="q-h"><span class="q-n">Q30</span><span>综合 跨讲综合</span><span class="q-k">综合</span><span class="q-t">折射率不均 → 散射</span></div><p class="q-s">A glassy polymer such as PMMA is optically <b>transparent</b>, whereas a semicrystalline polymer such as high-density polyethylene appears <b>hazy or opaque</b>. What is the reason?</p><ul class="q-o"><li class=""><span class="k">A</span><span>Crystalline regions absorb visible light while amorphous regions do not</span></li><li class="right"><span class="k">B</span><span>The refractive index difference between crystallites and amorphous regions causes light scattering</span><span class="tick">✓ 正确答案</span></li><li class=""><span class="k">C</span><span>Glassy polymers have a lower refractive index than crystalline ones</span></li><li class=""><span class="k">D</span><span>Crystalline polymers have a higher T<sub>g</sub>, which increases absorption</span></li></ul></div><div class="q-a"><p class="lab">答案 <span class="ans">B</span>　·　解析</p><p>讲义 Lecture 8 原文：<b>玻璃态高分子光学透明</b>——链<b>无规堆砌（像液体）</b>，折射率<b>处处均一</b>，因此<b>没有散射</b>；<b>半结晶高分子</b>——<b>晶区与非晶区折射率不同</b> → <b>光散射</b> → 发雾/不透明。</p>
+<p class="trap"><b>关键词是“散射”不是“吸收”</b>（排除 A、D）。两种状态化学结构相同、电子跃迁能级相同，可见光吸收本来就差不多；差别完全来自<b>微观结构的光学均一性</b>。</p>
+<p><b>这题串起三讲</b>：<br>① <b>Lecture 6</b>：光散射的根源是<b>折射率不均匀</b>。讲义说 dn/dc 越大散射越强，同一道理——<b>折射率差别越大散射越强</b>（课程 Question 23）。<br>② <b>Lecture 8</b>：玻璃态 vs 半结晶态的光学性质。<br>③ <b>Lecture 9</b>：<b>crazing 银纹</b>也是同一机理——原纤间 10–20 nm 微孔洞与高分子折射率差极大 → 强散射 → <b>应力发白</b>。把塑料尺弯到发白就是在看银纹。</p>
+<p class="note"><b>顺带的加工性对比</b>：玻璃态高分子<b>更易从熔体加工</b>（冷下来就得到了）；结晶高分子需<b>精细控制结晶动力学</b>；结晶高分子通常<b>力学更强</b>，但<b>高 T<sub>g</sub> 的玻璃态</b>对很多应用已够用。</p></div></article><section class="sheet"><h2>答案速查表</h2><table class="keytab"><thead><tr><th style="width:10%">题号</th><th style="width:10%">答案</th><th style="width:14%">类型</th><th>考点</th></tr></thead><tbody><tr><td class="n">1</td><td class="a">B</td><td class="n">计算</td><td>Mn / Mw / PDI</td></tr><tr><td class="n">2</td><td class="a">C</td><td class="n">计算</td><td>伸直长度 vs RMS 末端距</td></tr><tr><td class="n">3</td><td class="a">B</td><td class="n">计算</td><td>回转半径 Rg</td></tr><tr><td class="n">4</td><td class="a">B</td><td class="n">计算</td><td>理想混合熵</td></tr><tr><td class="n">5</td><td class="a">B</td><td class="n">计算</td><td>格子模型组合数 Ω</td></tr><tr><td class="n">6</td><td class="a">C</td><td class="n">计算</td><td>χ 与混合焓</td></tr><tr><td class="n">7</td><td class="a">B</td><td class="n">计算</td><td>高分子混合熵</td></tr><tr><td class="n">8</td><td class="a">B</td><td class="n">计算</td><td>体积分数</td></tr><tr><td class="n">9</td><td class="a">B</td><td class="n">理解</td><td>N 对相图的影响</td></tr><tr><td class="n">10</td><td class="a">B</td><td class="n">理解</td><td>spinodal 的数学判据</td></tr><tr><td class="n">11</td><td class="a">C</td><td class="n">理解</td><td>两种分相机理</td></tr><tr><td class="n">12</td><td class="a">A</td><td class="n">理解</td><td>binodal 之外不分相</td></tr><tr><td class="n">13</td><td class="a">B</td><td class="n">理解</td><td>LCST</td></tr><tr><td class="n">14</td><td class="a">B</td><td class="n">计算</td><td>渗透压</td></tr><tr><td class="n">15</td><td class="a">C</td><td class="n">理解</td><td>第二维里系数</td></tr><tr><td class="n">16</td><td class="a">D</td><td class="n">计算</td><td>Mark-Houwink 指数</td></tr><tr><td class="n">17</td><td class="a">C</td><td class="n">计算</td><td>Rayleigh λ⁻⁴</td></tr><tr><td class="n">18</td><td class="a">B</td><td class="n">计算</td><td>Stokes-Einstein</td></tr><tr><td class="n">19</td><td class="a">B</td><td class="n">理解</td><td>SEC 洗脱顺序</td></tr><tr><td class="n">20</td><td class="a">C</td><td class="n">计算</td><td>通用校准</td></tr><tr><td class="n">21</td><td class="a">B</td><td class="n">计算</td><td>MALDI-TOF 飞行时间</td></tr><tr><td class="n">22</td><td class="a">B</td><td class="n">综合</td><td>哪个方法测哪种平均</td></tr><tr><td class="n">23</td><td class="a">B</td><td class="n">理解</td><td>Tg 是二阶转变</td></tr><tr><td class="n">24</td><td class="a">B</td><td class="n">计算</td><td>Flory-Fox 方程</td></tr><tr><td class="n">25</td><td class="a">B</td><td class="n">计算</td><td>Fox 方程</td></tr><tr><td class="n">26</td><td class="a">C</td><td class="n">计算</td><td>杨氏模量</td></tr><tr><td class="n">27</td><td class="a">B</td><td class="n">理解</td><td>熵弹性</td></tr><tr><td class="n">28</td><td class="a">B</td><td class="n">计算</td><td>Bragg 定律</td></tr><tr><td class="n">29</td><td class="a">C</td><td class="n">理解</td><td>Tm 的依赖因素</td></tr><tr><td class="n">30</td><td class="a">B</td><td class="n">综合</td><td>折射率不均 → 散射</td></tr></tbody></table><h3>考前最后一小时：八个必记陷阱</h3><ol class="traps"><li><span class="t">θ = 180° − 键角</span><span class="jump">→ Q2</span><p class="d">sp³ 是 <b>70.5°</b> 不是 109.5°，因子恰好 ≈ 2</p></li><li><span class="t">M<sub>w</sub> 的分母是 Σn<sub>i</sub>M<sub>i</sub></span><span class="jump">→ Q1</span><p class="d">不是 Σn<sub>i</sub>；且 M<sub>w</sub> ≥ M<sub>n</sub> 恒成立</p></li><li><span class="t">ΔS / ΔH / ΔG 里的 n 是总摩尔数</span><span class="jump">→ Q4</span><p class="d">1 mol + 1 mol 要代 n = 2</p></li><li><span class="t">Flory-Huggins 只有高分子项除以 N</span><span class="jump">→ Q7</span><p class="d">φ = 0.5 时熵只减<b>一半</b>，不是 1/N</p></li><li><span class="t">ΔG<sub>mix</sub> &lt; 0 不代表不分相</span><span class="jump">→ Q12</span><p class="d">判据是 ΔG 曲线的<b>凹凸性</b></p></li><li><span class="t">渗透压公式里 c 用 g/m³</span><span class="jump">→ Q14</span><p class="d">1 g/L = 1000 g/m³，漏掉差 1000 倍</p></li><li><span class="t">Fox 方程必须用绝对温度 K</span><span class="jump">→ Q25</span><p class="d">而且<b>不是</b>线性加权，是倒数加权</p></li><li><span class="t">Bragg 定律：题目给 2θ，公式用 θ</span><span class="jump">→ Q28</span><p class="d">先除以 2 再取 sin</p></li></ol><p style="margin-top:4mm;font-size:9.2pt;color:#5A6875"><b>其余高频：</b>t ∝ √m（不是 m）　·　I ∝ λ⁻⁴（四次方）　·　a = 3ν − 1　·　R<sub>g</sub>² = Nb²/6　·　1 mm² = 10⁻⁶ m²</p></section></body></html>
