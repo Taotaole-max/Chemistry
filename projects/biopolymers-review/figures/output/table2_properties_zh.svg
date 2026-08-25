@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="605.695748pt" height="491.954867pt" viewBox="0 0 605.695748 491.954867" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-26T01:46:38.872142</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 491.954867 
+L 605.695748 491.954867 
+L 605.695748 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 1.44 39.331276 
+L 604.255748 39.331276 
+L 604.255748 1.44 
+L 1.44 1.44 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #1a1a19"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 1.44 115.113827 
+L 604.255748 115.113827 
+L 604.255748 77.222551 
+L 1.44 77.222551 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #f4f4f1"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 1.44 190.896378 
+L 604.255748 190.896378 
+L 604.255748 153.005102 
+L 1.44 153.005102 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #f4f4f1"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 1.44 266.678929 
+L 604.255748 266.678929 
+L 604.255748 228.787654 
+L 1.44 228.787654 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #f4f4f1"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 1.44 342.46148 
+L 604.255748 342.46148 
+L 604.255748 304.570205 
+L 1.44 304.570205 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #f4f4f1"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 1.44 418.244031 
+L 604.255748 418.244031 
+L 604.255748 380.352756 
+L 1.44 380.352756 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #f4f4f1"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="7.591181" y="22.846736" transform="rotate(-0 7.591181 22.846736)">材料</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="152.143937" y="22.759578" transform="rotate(-0 152.143937 22.759578)">Tg/Tm/Td (°C)</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="225.95811" y="22.822166" transform="rotate(-0 225.95811 22.822166)">模量 (GPa)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="299.772283" y="22.855369" transform="rotate(-0 299.772283 22.855369)">断裂伸长率 (%)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #ffffff" x="379.737638" y="22.871971" transform="rotate(-0 379.737638 22.871971)">结晶度/加工方式</text>
+   </g>
+   <g id="line2d_1">
+    <path d="M 1.44 459.802205 
+L 604.255748 459.802205 
+" clip-path="url(#pf4550149f0)" style="fill: none; stroke: #52514e; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 6.976063 62.860535 
+C 8.199547 62.860535 9.373085 62.377576 10.238219 61.518024 
+C 11.103353 60.658471 11.589449 59.492504 11.589449 58.276913 
+C 11.589449 57.061323 11.103353 55.895356 10.238219 55.035803 
+C 9.373085 54.176251 8.199547 53.693291 6.976063 53.693291 
+C 5.752579 53.693291 4.579041 54.176251 3.713907 55.035803 
+C 2.848773 55.895356 2.362677 57.061323 2.362677 58.276913 
+C 2.362677 59.492504 2.848773 60.658471 3.713907 61.518024 
+C 4.579041 62.377576 5.752579 62.860535 6.976063 62.860535 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #2a78d6"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="60.616992" transform="rotate(-0 17.433071 60.616992)">纤维素</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="60.39957" transform="rotate(-0 182.899843 60.39957)">n/o / no melt / ~300</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="60.39957" transform="rotate(-0 256.714016 60.39957)">10–30</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="60.39957" transform="rotate(-0 333.60378 60.39957)">8–15</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="60.312287" transform="rotate(-0 379.737638 60.312287)">60–70%；NMMO/Lyocell、LiCl/DMAc</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 6.976063 100.751811 
+C 8.199547 100.751811 9.373085 100.268852 10.238219 99.409299 
+C 11.103353 98.549747 11.589449 97.38378 11.589449 96.168189 
+C 11.589449 94.952598 11.103353 93.786631 10.238219 92.927079 
+C 9.373085 92.067526 8.199547 91.584567 6.976063 91.584567 
+C 5.752579 91.584567 4.579041 92.067526 3.713907 92.927079 
+C 2.848773 93.786631 2.362677 94.952598 2.362677 96.168189 
+C 2.362677 97.38378 2.848773 98.549747 3.713907 99.409299 
+C 4.579041 100.268852 5.752579 100.751811 6.976063 100.751811 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #2a78d6"/>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="98.496392" transform="rotate(-0 17.433071 98.496392)">淀粉（TPS）</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="98.290845" transform="rotate(-0 182.899843 98.290845)">~−20 / no melt / ~300</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="98.290845" transform="rotate(-0 256.714016 98.290845)">0.02–1.0</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="98.290845" transform="rotate(-0 333.60378 98.290845)">20–100</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="98.317768" transform="rotate(-0 379.737638 98.317768)">半结晶，依赖湿度；TPS 共混</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 6.976063 138.643087 
+C 8.199547 138.643087 9.373085 138.160127 10.238219 137.300575 
+C 11.103353 136.441022 11.589449 135.275055 11.589449 134.059465 
+C 11.589449 132.843874 11.103353 131.677907 10.238219 130.818354 
+C 9.373085 129.958802 8.199547 129.475843 6.976063 129.475843 
+C 5.752579 129.475843 4.579041 129.958802 3.713907 130.818354 
+C 2.848773 131.677907 2.362677 132.843874 2.362677 134.059465 
+C 2.362677 135.275055 2.848773 136.441022 3.713907 137.300575 
+C 4.579041 138.160127 5.752579 138.643087 6.976063 138.643087 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #2a78d6"/>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="136.368293" transform="rotate(-0 17.433071 136.368293)">壳聚糖</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="136.182121" transform="rotate(-0 182.899843 136.182121)">n/o / no melt / ~280</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="136.182121" transform="rotate(-0 256.714016 136.182121)">1.0–4.0</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="136.182121" transform="rotate(-0 333.60378 136.182121)">3–30</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="136.180528" transform="rotate(-0 379.737638 136.180528)">低–中；稀酸溶液</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 6.976063 176.534362 
+C 8.199547 176.534362 9.373085 176.051403 10.238219 175.19185 
+C 11.103353 174.332298 11.589449 173.166331 11.589449 171.95074 
+C 11.589449 170.735149 11.103353 169.569182 10.238219 168.70963 
+C 9.373085 167.850077 8.199547 167.367118 6.976063 167.367118 
+C 5.752579 167.367118 4.579041 167.850077 3.713907 168.70963 
+C 2.848773 169.569182 2.362677 170.735149 2.362677 171.95074 
+C 2.362677 173.166331 2.848773 174.332298 3.713907 175.19185 
+C 4.579041 176.051403 5.752579 176.534362 6.976063 176.534362 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #1baf7a"/>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="174.282693" transform="rotate(-0 17.433071 174.282693)">丝素蛋白</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="174.073396" transform="rotate(-0 182.899843 174.073396)">~175 / no melt / ~300</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="174.073396" transform="rotate(-0 256.714016 174.073396)">5–17</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="174.073396" transform="rotate(-0 333.60378 174.073396)">15–30</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="174.086061" transform="rotate(-0 379.737638 174.086061)">β-折叠纳米晶；溶液纺丝</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 6.976063 214.425638 
+C 8.199547 214.425638 9.373085 213.942678 10.238219 213.083126 
+C 11.103353 212.223573 11.589449 211.057607 11.589449 209.842016 
+C 11.589449 208.626425 11.103353 207.460458 10.238219 206.600906 
+C 9.373085 205.741353 8.199547 205.258394 6.976063 205.258394 
+C 5.752579 205.258394 4.579041 205.741353 3.713907 206.600906 
+C 2.848773 207.460458 2.362677 208.626425 2.362677 209.842016 
+C 2.362677 211.057607 2.848773 212.223573 3.713907 213.083126 
+C 4.579041 213.942678 5.752579 214.425638 6.976063 214.425638 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #eb6834"/>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="212.076391" transform="rotate(-0 17.433071 212.076391)">PHB</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="211.964672" transform="rotate(-0 182.899843 211.964672)">4 / 175 / ~200</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="211.964672" transform="rotate(-0 256.714016 211.964672)">1.5–4.0</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="211.964672" transform="rotate(-0 333.60378 211.964672)">2–8</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="211.980759" transform="rotate(-0 379.737638 211.980759)">55–70%；熔融，窗口窄</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 6.976063 252.316913 
+C 8.199547 252.316913 9.373085 251.833954 10.238219 250.974402 
+C 11.103353 250.114849 11.589449 248.948882 11.589449 247.733291 
+C 11.589449 246.517701 11.103353 245.351734 10.238219 244.492181 
+C 9.373085 243.632629 8.199547 243.149669 6.976063 243.149669 
+C 5.752579 243.149669 4.579041 243.632629 3.713907 244.492181 
+C 2.848773 245.351734 2.362677 246.517701 2.362677 247.733291 
+C 2.362677 248.948882 2.848773 250.114849 3.713907 250.974402 
+C 4.579041 251.833954 5.752579 252.316913 6.976063 252.316913 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #eb6834"/>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="249.967666" transform="rotate(-0 17.433071 249.967666)">PHBV（20% HV）</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="249.855948" transform="rotate(-0 182.899843 249.855948)">0 / 145 / ~200</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="249.855948" transform="rotate(-0 256.714016 249.855948)">0.8–2.5</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="249.855948" transform="rotate(-0 333.60378 249.855948)">5–25</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="249.872035" transform="rotate(-0 379.737638 249.872035)">低于 PHB；熔融，窗口较宽</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 6.976063 290.208189 
+C 8.199547 290.208189 9.373085 289.72523 10.238219 288.865677 
+C 11.103353 288.006125 11.589449 286.840158 11.589449 285.624567 
+C 11.589449 284.408976 11.103353 283.243009 10.238219 282.383457 
+C 9.373085 281.523904 8.199547 281.040945 6.976063 281.040945 
+C 5.752579 281.040945 4.579041 281.523904 3.713907 282.383457 
+C 2.848773 283.243009 2.362677 284.408976 2.362677 285.624567 
+C 2.362677 286.840158 2.848773 288.006125 3.713907 288.865677 
+C 4.579041 289.72523 5.752579 290.208189 6.976063 290.208189 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #eb6834"/>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="287.858942" transform="rotate(-0 17.433071 287.858942)">PLLA</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="287.747223" transform="rotate(-0 182.899843 287.747223)">60 / 175 / ~300</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="287.747223" transform="rotate(-0 256.714016 287.747223)">2.5–4.0</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="287.747223" transform="rotate(-0 333.60378 287.747223)">3–10</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="287.759888" transform="rotate(-0 379.737638 287.759888)">结晶缓慢；熔融，需干燥</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 6.976063 328.099465 
+C 8.199547 328.099465 9.373085 327.616505 10.238219 326.756953 
+C 11.103353 325.8974 11.589449 324.731433 11.589449 323.515843 
+C 11.589449 322.300252 11.103353 321.134285 10.238219 320.274732 
+C 9.373085 319.41518 8.199547 318.93222 6.976063 318.93222 
+C 5.752579 318.93222 4.579041 319.41518 3.713907 320.274732 
+C 2.848773 321.134285 2.362677 322.300252 2.362677 323.515843 
+C 2.362677 324.731433 2.848773 325.8974 3.713907 326.756953 
+C 4.579041 327.616505 5.752579 328.099465 6.976063 328.099465 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #eb6834"/>
+   </g>
+   <g id="text_41">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="325.750218" transform="rotate(-0 17.433071 325.750218)">PBS</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="325.638499" transform="rotate(-0 182.899843 325.638499)">−32 / 114 / ~350</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="325.638499" transform="rotate(-0 256.714016 325.638499)">0.3–0.7</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="325.638499" transform="rotate(-0 333.60378 325.638499)">200–500</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="325.654586" transform="rotate(-0 379.737638 325.654586)">中等；熔融，窗口宽</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 6.976063 365.99074 
+C 8.199547 365.99074 9.373085 365.507781 10.238219 364.648228 
+C 11.103353 363.788676 11.589449 362.622709 11.589449 361.407118 
+C 11.589449 360.191527 11.103353 359.02556 10.238219 358.166008 
+C 9.373085 357.306455 8.199547 356.823496 6.976063 356.823496 
+C 5.752579 356.823496 4.579041 357.306455 3.713907 358.166008 
+C 2.848773 359.02556 2.362677 360.191527 2.362677 361.407118 
+C 2.362677 362.622709 2.848773 363.788676 3.713907 364.648228 
+C 4.579041 365.507781 5.752579 365.99074 6.976063 365.99074 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #8a8a85"/>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="363.747196" transform="rotate(-0 17.433071 363.747196)">天然橡胶</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="363.526138" transform="rotate(-0 182.899843 363.526138)">low / SIC only / n/a</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="363.529774" transform="rotate(-0 256.714016 363.529774)">0.001–0.005</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="363.529774" transform="rotate(-0 333.60378 363.529774)">500–800</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="363.549283" transform="rotate(-0 379.737638 363.549283)">应变诱导 [19]；胶乳凝结/硫化</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 6.976063 403.882016 
+C 8.199547 403.882016 9.373085 403.399056 10.238219 402.539504 
+C 11.103353 401.679951 11.589449 400.513984 11.589449 399.298394 
+C 11.589449 398.082803 11.103353 396.916836 10.238219 396.057283 
+C 9.373085 395.197731 8.199547 394.714772 6.976063 394.714772 
+C 5.752579 394.714772 4.579041 395.197731 3.713907 396.057283 
+C 2.848773 396.916836 2.362677 398.082803 2.362677 399.298394 
+C 2.362677 400.513984 2.848773 401.679951 3.713907 402.539504 
+C 4.579041 403.399056 5.752579 403.882016 6.976063 403.882016 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #4a3aa7"/>
+   </g>
+   <g id="text_51">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="401.602847" transform="rotate(-0 17.433071 401.602847)">LDPE（对照）</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="401.42105" transform="rotate(-0 182.899843 401.42105)">−120 / 110 / ~400</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="401.42105" transform="rotate(-0 256.714016 401.42105)">0.15–0.35</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="401.42105" transform="rotate(-0 333.60378 401.42105)">200–600</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="401.437137" transform="rotate(-0 379.737638 401.437137)">中等；熔融，窗口很宽</text>
+   </g>
+   <g id="patch_18">
+    <path d="M 6.976063 441.773291 
+C 8.199547 441.773291 9.373085 441.290332 10.238219 440.43078 
+C 11.103353 439.571227 11.589449 438.40526 11.589449 437.189669 
+C 11.589449 435.974079 11.103353 434.808112 10.238219 433.948559 
+C 9.373085 433.089007 8.199547 432.606047 6.976063 432.606047 
+C 5.752579 432.606047 4.579041 433.089007 3.713907 433.948559 
+C 2.848773 434.808112 2.362677 435.974079 2.362677 437.189669 
+C 2.362677 438.40526 2.848773 439.571227 3.713907 440.43078 
+C 4.579041 441.290332 5.752579 441.773291 6.976063 441.773291 
+z
+" clip-path="url(#pf4550149f0)" style="fill: #4a3aa7"/>
+   </g>
+   <g id="text_56">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a19" x="17.433071" y="439.494122" transform="rotate(-0 17.433071 439.494122)">PET（对照）</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="182.899843" y="439.312326" transform="rotate(-0 182.899843 439.312326)">78 / 255 / ~400</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="256.714016" y="439.312326" transform="rotate(-0 256.714016 439.312326)">2.0–4.0</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 7.6px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #52514e" x="333.60378" y="439.312326" transform="rotate(-0 333.60378 439.312326)">50–300</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 7.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="379.737638" y="439.328412" transform="rotate(-0 379.737638 439.328412)">中等；熔融，窗口宽</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 6.3px; font-family: 'Microsoft YaHei', 'SimHei', 'SimSun', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #52514e" x="1.44" y="488.912305" transform="rotate(-0 1.44 488.912305)">数量级估计范围，部分数值仍为 PROVISIONAL，详见正文与 figures/data/*.csv。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf4550149f0">
+   <rect x="1.44" y="1.44" width="602.815748" height="488.308535"/>
+  </clipPath>
+ </defs>
+</svg>

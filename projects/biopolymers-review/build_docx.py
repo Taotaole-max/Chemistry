@@ -53,6 +53,12 @@ FIGURE_MAX_HEIGHT_IN = {
 }
 FIGURE_MAX_WIDTH_IN = 6.2
 
+# Table-as-image placeholder: "*[TableImage — <filename>]*" placed right after a
+# "**Table N.**"/"**表 N.**" caption, in place of the markdown pipe table. The filename
+# is literal (not looked up by number) so report.md and report_zh.md can each point at
+# their own language-specific render of the same data.
+TABLE_IMAGE_MAX_HEIGHT_IN = 4.0
+
 
 def strip_html_comments(text: str) -> str:
     return re.sub(r"<!--.*?-->", "", text, flags=re.S)
@@ -116,13 +122,15 @@ def is_special_line_start(s):
         return True
     if re.match(r"^\*\[(Figure|图) \d+ — ", s):
         return True
+    if re.match(r"^\*\[TableImage — ", s):
+        return True
     if re.match(r"^#{2,4}\s+", s):
         return True
     if s.startswith("|"):
         return True
     if s.startswith("- "):
         return True
-    if re.match(r"^\*\*Table \d+\.\*\*", s):
+    if re.match(r"^\*\*(Table|表) \d+\.\*\*", s):
         return True
     if re.match(r"^\d{1,3}\.\s", s):  # numbered reference-list entry
         return True
@@ -309,6 +317,23 @@ def build():
             i += 1
             continue
 
+        # Table-as-image placeholder: *[TableImage — <filename>]*, sits right after a
+        # "**Table N.**"/"**表 N.**" caption in place of the markdown pipe table.
+        m = re.match(r"^\*\[TableImage — (.+)\]\*$", s)
+        if m:
+            fpath = FIG_DIR / m.group(1).strip()
+            if fpath.exists():
+                native_w, native_h = Image.open(fpath).size
+                aspect_h_over_w = native_h / native_w
+                width_in = min(FIGURE_MAX_WIDTH_IN, TABLE_IMAGE_MAX_HEIGHT_IN / aspect_h_over_w)
+                p_img = doc.add_paragraph()
+                p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                p_img.paragraph_format.space_after = Pt(4)
+                run = p_img.add_run()
+                run.add_picture(str(fpath), width=Inches(width_in))
+            i += 1
+            continue
+
         # Headings
         m = re.match(r"^(#{2,4})\s+(.*)$", s)
         if m:
@@ -408,7 +433,7 @@ def build():
 
         # Table caption line, e.g. "**Table 2.** Provisional summary ..." — single-spaced,
         # smaller, tighter, like a figure caption. Also hard-wrapped across lines in source.
-        if re.match(r"^\*\*Table \d+\.\*\*", s):
+        if re.match(r"^\*\*(Table|表) \d+\.\*\*", s):
             text, i = gather_paragraph(lines, i, n)
             p = doc.add_paragraph()
             p.paragraph_format.line_spacing = 1.0

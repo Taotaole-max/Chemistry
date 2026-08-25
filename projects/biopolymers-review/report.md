@@ -214,19 +214,7 @@ comparative review of biobased thermoplastics by de Beukelaer et al. [11] and, f
 specifically, Aliotta et al. [12]; source data in `figures/data/*.csv`; several individual `ref`
 entries still need a material-specific citation before submission — see Fig. 4–5).
 
-| Material | Tg/Tm/Td (°C) | Modulus (GPa) | Elongation (%) | Crystallinity / processing |
-|---|---|---|---|---|
-| Cellulose | n/o / no melt / ~300 | 10–30 | 8–15 | 60–70%; NMMO/Lyocell, LiCl/DMAc |
-| Starch (TPS) | ~−20 / no melt / ~300 | 0.02–1.0 | 20–100 | semicryst., humidity-dep.; TPS blend |
-| Chitosan | n/o / no melt / ~280 | 1.0–4.0 | 3–30 | low–moderate; dilute-acid solution |
-| Silk fibroin | ~175 / no melt / ~300 | 5–17 | 15–30 | β-sheet nanocrystalline; solution-spun |
-| PHB | 4 / 175 / ~200 | 1.5–4.0 | 2–8 | 55–70%; melt, narrow window |
-| PHBV (20% HV) | 0 / 145 / ~200 | 0.8–2.5 | 5–25 | < PHB; melt, wider window |
-| PLLA | 60 / 175 / ~300 | 2.5–4.0 | 3–10 | slow-crystallising; melt, needs drying |
-| PBS | −32 / 114 / ~350 | 0.3–0.7 | 200–500 | moderate; melt, wide window |
-| Natural rubber | low / SIC only / n/a | 0.001–0.005 | 500–800 | strain-induced [19]; latex coag./vulc. |
-| LDPE (ref.) | −120 / 110 / ~400 | 0.15–0.35 | 200–600 | moderate; melt, very wide window |
-| PET (ref.) | 78 / 255 / ~400 | 2.0–4.0 | 50–300 | moderate; melt, wide window |
+*[TableImage — table2_scatter_en.png]*
 
 *All values PROVISIONAL — teaching-level ranges used to make Fig. 4/5 and this table internally
 consistent; must be replaced with cited literature values before submission.*
