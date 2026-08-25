@@ -1,0 +1,449 @@
+<title>高分子刷题台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --surface-2:#F6F8FA; --line:#D3DAE2; --line-soft:#E3E8EE;
+  --ink:#111A22; --ink-2:#3D4B58; --ink-3:#6B7986;
+  --accent:#2A5CAA; --accent-soft:#E4EBF6; --accent-ink:#16386B;
+  --ok:#1B7A52; --ok-soft:#DFF0E7; --no:#B03A2E; --no-soft:#F8E3E0;
+  --warn:#8A5A12; --warn-soft:#F6EBD6;
+  --shadow:0 1px 2px rgba(17,26,34,.05), 0 6px 18px -10px rgba(17,26,34,.22);
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0C1218; --surface:#141D26; --surface-2:#18232E; --line:#2A3745; --line-soft:#222E3A;
+  --ink:#DCE5EE; --ink-2:#A7B5C3; --ink-3:#78889A;
+  --accent:#6C9FE6; --accent-soft:#1A2A40; --accent-ink:#A8C6F0;
+  --ok:#4FBE80; --ok-soft:#122C21; --no:#E2786B; --no-soft:#331915;
+  --warn:#D5A64F; --warn-soft:#2E2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --bg:#0C1218; --surface:#141D26; --surface-2:#18232E; --line:#2A3745; --line-soft:#222E3A;
+  --ink:#DCE5EE; --ink-2:#A7B5C3; --ink-3:#78889A;
+  --accent:#6C9FE6; --accent-soft:#1A2A40; --accent-ink:#A8C6F0;
+  --ok:#4FBE80; --ok-soft:#122C21; --no:#E2786B; --no-soft:#331915;
+  --warn:#D5A64F; --warn-soft:#2E2415;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+sub,sup{font-size:.72em; line-height:0}
+b,strong{font-weight:600}
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:20; background:var(--surface);
+  border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+}
+.hwrap{max-width:1080px; margin:0 auto; padding:14px 22px 0}
+.hrow{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+.brand{font-size:19px; font-weight:700; letter-spacing:-.01em; margin:0}
+.brand .code{font-family:"IBM Plex Mono",monospace; color:var(--accent); font-weight:600}
+.sub{font-size:12.5px; color:var(--ink-3); font-family:"IBM Plex Mono",monospace}
+.spacer{flex:1}
+.stats{display:flex; gap:16px; align-items:baseline; font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums}
+.stat{display:flex; align-items:baseline; gap:5px; font-size:12.5px; color:var(--ink-3)}
+.stat b{font-size:17px; font-weight:600; color:var(--ink)}
+.stat.ok b{color:var(--ok)} .stat.no b{color:var(--no)}
+.bar{height:3px; background:var(--line-soft); border-radius:2px; overflow:hidden; margin:12px 0 0; display:flex}
+.bar i{display:block; height:100%; transition:width .3s ease}
+.bar .b-ok{background:var(--ok)} .bar .b-no{background:var(--no)}
+.tools{display:flex; gap:7px; align-items:center; flex-wrap:wrap; padding:12px 0 13px}
+.chip{
+  font:inherit; font-size:12px; cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+  padding:5px 9px 5px 7px; border-radius:99px; border:1px solid var(--line);
+  background:var(--surface-2); color:var(--ink-2); transition:.14s;
+}
+.chip:hover{border-color:var(--accent); color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+.chip-k{font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:11px}
+.chip-n{opacity:.85}
+.chip-c{font-family:"IBM Plex Mono",monospace; font-size:10.5px; opacity:.6; font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"] .chip-c{opacity:.85}
+.tsep{width:1px; align-self:stretch; background:var(--line); margin:0 3px}
+.tbtn{
+  font:inherit; font-size:12px; cursor:pointer; padding:5px 11px; border-radius:99px;
+  border:1px solid var(--line); background:transparent; color:var(--ink-2); transition:.14s;
+}
+.tbtn:hover{border-color:var(--accent); color:var(--accent)}
+.tbtn[aria-pressed="true"]{background:var(--warn-soft); border-color:var(--warn); color:var(--warn)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+
+/* ---------- layout ---------- */
+main{max-width:1080px; margin:0 auto; padding:26px 22px 90px}
+.lede{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  padding:16px 20px; margin:0 0 24px; font-size:13.5px; color:var(--ink-2); line-height:1.7;
+}
+.lede b{color:var(--ink)}
+.const{
+  display:block; font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-3);
+  margin-top:11px; padding-top:10px; border-top:1px solid var(--line-soft);
+  word-spacing:.1em; overflow-x:auto; white-space:nowrap;
+}
+.qlist{display:flex; flex-direction:column; gap:16px}
+
+/* ---------- question card ---------- */
+.q{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r);
+  box-shadow:var(--shadow); overflow:hidden; position:relative;
+  border-left:3px solid var(--line);
+}
+.q.is-ok{border-left-color:var(--ok)}
+.q.is-no{border-left-color:var(--no)}
+.q[hidden]{display:none}
+.qhead{display:flex; align-items:center; gap:10px; padding:13px 20px 0; flex-wrap:wrap}
+.qnum{
+  font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600; color:var(--accent);
+  background:var(--accent-soft); padding:2px 8px; border-radius:5px; font-variant-numeric:tabular-nums;
+}
+.q.is-ok .qnum{color:var(--ok); background:var(--ok-soft)}
+.q.is-no .qnum{color:var(--no); background:var(--no-soft)}
+.qtag{font-size:11px; color:var(--ink-3); font-family:"IBM Plex Mono",monospace; letter-spacing:.04em}
+.qkind{
+  font-size:10.5px; letter-spacing:.08em; padding:2px 7px; border-radius:4px;
+  border:1px solid var(--line); color:var(--ink-3);
+}
+.qkind.k-计算{color:var(--accent); border-color:var(--accent)}
+.qtopic{font-size:11.5px; color:var(--ink-3); margin-left:auto}
+.stem{
+  margin:11px 0 15px; padding:0 20px; font-size:15.5px; line-height:1.62;
+  text-wrap:pretty;
+}
+.opts{list-style:none; margin:0; padding:0 20px 16px; display:flex; flex-direction:column; gap:7px}
+.opt{
+  display:flex; align-items:flex-start; gap:11px; width:100%; text-align:left;
+  font:inherit; font-size:14.5px; cursor:pointer; padding:10px 13px;
+  border:1px solid var(--line); border-radius:8px; background:var(--surface-2);
+  color:var(--ink); transition:.13s; line-height:1.5;
+}
+.opt:hover:not(:disabled){border-color:var(--accent); background:var(--accent-soft)}
+.opt:disabled{cursor:default}
+.ok-key{
+  flex:none; font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:12.5px;
+  width:21px; height:21px; border-radius:5px; display:grid; place-items:center;
+  border:1px solid var(--line); color:var(--ink-3); background:var(--surface); margin-top:1px;
+}
+.opt:hover:not(:disabled) .ok-key{border-color:var(--accent); color:var(--accent)}
+.opt.picked-ok{background:var(--ok-soft); border-color:var(--ok); color:var(--ink)}
+.opt.picked-ok .ok-key{background:var(--ok); border-color:var(--ok); color:#fff}
+.opt.picked-no{background:var(--no-soft); border-color:var(--no)}
+.opt.picked-no .ok-key{background:var(--no); border-color:var(--no); color:#fff}
+.opt.reveal-ok{border-color:var(--ok); border-style:dashed; background:transparent}
+.opt.reveal-ok .ok-key{color:var(--ok); border-color:var(--ok)}
+.opt.dim{opacity:.45}
+.mark{margin-left:auto; flex:none; font-size:11.5px; font-family:"IBM Plex Mono",monospace; letter-spacing:.04em; padding-top:2px}
+.opt.picked-ok .mark{color:var(--ok)} .opt.picked-no .mark{color:var(--no)}
+.opt.reveal-ok .mark{color:var(--ok)}
+
+/* ---------- explanation ---------- */
+.exp{
+  border-top:1px solid var(--line-soft); background:var(--surface-2);
+  padding:16px 20px 18px; font-family:"IBM Plex Serif",Georgia,serif;
+  font-size:14.5px; line-height:1.72; color:var(--ink-2);
+}
+.exp[hidden]{display:none}
+.exp-h{
+  font-family:"IBM Plex Sans",sans-serif; font-size:10.5px; letter-spacing:.12em;
+  color:var(--ink-3); margin:0 0 10px; display:flex; align-items:center; gap:9px;
+}
+.exp-h::after{content:""; flex:1; height:1px; background:var(--line)}
+.exp p{margin:0 0 9px} .exp p:last-child{margin-bottom:0}
+.exp b{color:var(--ink); font-weight:600}
+.fb{
+  font-family:"IBM Plex Mono",monospace; font-size:13.5px; text-align:center;
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:11px 13px; margin:11px 0; color:var(--ink); overflow-x:auto; line-height:1.7;
+}
+.exp .trap{
+  background:var(--warn-soft); border-left:3px solid var(--warn); border-radius:0 6px 6px 0;
+  padding:9px 13px; margin:11px 0; font-size:14px;
+}
+.exp .trap b{color:var(--warn)}
+.exp .note{
+  border-left:3px solid var(--line); padding:2px 0 2px 13px; margin:11px 0;
+  font-size:13.5px; color:var(--ink-3);
+}
+.exp .note b{color:var(--ink-2)}
+table.mini{
+  width:100%; border-collapse:collapse; margin:11px 0; font-family:"IBM Plex Sans",sans-serif;
+  font-size:13px; display:block; overflow-x:auto;
+}
+table.mini th,table.mini td{border:1px solid var(--line); padding:6px 10px; text-align:left; vertical-align:top}
+table.mini th{background:var(--surface); font-weight:600; color:var(--ink); font-size:12px; white-space:nowrap}
+table.mini td{background:var(--surface)}
+
+/* ---------- empty / summary / traps ---------- */
+.empty{
+  text-align:center; padding:60px 20px; color:var(--ink-3); font-size:14px;
+  border:1px dashed var(--line); border-radius:var(--r);
+}
+.empty[hidden]{display:none}
+section.panel{
+  margin-top:34px; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden;
+}
+.panel-h{
+  padding:15px 20px; border-bottom:1px solid var(--line-soft);
+  display:flex; align-items:baseline; gap:11px; flex-wrap:wrap;
+}
+.panel-h h2{margin:0; font-size:15px; font-weight:700; letter-spacing:-.005em}
+.panel-h .hint{font-size:12px; color:var(--ink-3)}
+.panel-b{padding:17px 20px 20px}
+.score{display:flex; gap:26px; flex-wrap:wrap; align-items:baseline; margin-bottom:4px}
+.score-i{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums}
+.score-i b{font-size:27px; font-weight:600; letter-spacing:-.02em}
+.score-i span{font-size:12px; color:var(--ink-3); display:block; letter-spacing:.05em}
+.wrongs{display:flex; gap:7px; flex-wrap:wrap; margin-top:14px}
+.wrongs:empty::before{content:"还没有错题。"; font-size:13px; color:var(--ink-3); font-family:"IBM Plex Serif",serif}
+.wj{
+  font:inherit; font-family:"IBM Plex Mono",monospace; font-size:12px; cursor:pointer;
+  padding:4px 10px; border-radius:6px; border:1px solid var(--no); color:var(--no);
+  background:var(--no-soft); transition:.13s;
+}
+.wj:hover{background:var(--no); color:#fff}
+ol.traps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px}
+ol.traps li{border-left:2px solid var(--warn); padding-left:13px}
+.trap-h{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap}
+.trap-i{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; color:var(--warn);
+  background:var(--warn-soft); width:19px; height:19px; border-radius:4px;
+  display:inline-grid; place-items:center; flex:none;
+}
+.trap-t{font-size:14.5px; font-weight:600; color:var(--ink)}
+.trap-j{
+  font:inherit; font-family:"IBM Plex Mono",monospace; font-size:11px; cursor:pointer;
+  margin-left:auto; padding:2px 8px; border-radius:5px; border:1px solid var(--line);
+  background:transparent; color:var(--ink-3); transition:.13s;
+}
+.trap-j:hover{border-color:var(--accent); color:var(--accent)}
+.trap-d{margin:3px 0 0; font-size:13px; color:var(--ink-3); font-family:"IBM Plex Serif",serif}
+.other{
+  margin-top:16px; padding-top:14px; border-top:1px solid var(--line-soft);
+  font-size:12.5px; color:var(--ink-3);
+}
+.other b{color:var(--ink-2); font-family:"IBM Plex Sans",sans-serif}
+.other .mono{font-family:"IBM Plex Mono",monospace}
+footer{
+  max-width:1080px; margin:0 auto; padding:0 22px 40px; font-size:11.5px;
+  color:var(--ink-3); font-family:"IBM Plex Mono",monospace; line-height:1.8;
+}
+@media (max-width:640px){
+  .hwrap,main,footer{padding-left:14px; padding-right:14px}
+  .stem{font-size:15px} .qtopic{display:none} .stats{gap:12px}
+  .chip-n{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<header>
+  <div class="hwrap">
+    <div class="hrow">
+      <h1 class="brand"><span class="code">CM5174</span> 高分子刷题台</h1>
+      <span class="sub">Polymer &amp; Macromolecular Chemistry · 30 题</span>
+      <span class="spacer"></span>
+      <div class="stats">
+        <div class="stat"><b id="s-done">0</b>/30 已答</div>
+        <div class="stat ok"><b id="s-ok">0</b>对</div>
+        <div class="stat no"><b id="s-no">0</b>错</div>
+        <div class="stat"><b id="s-pct">—</b>正确率</div>
+      </div>
+    </div>
+    <div class="bar"><i class="b-ok" id="bar-ok" style="width:0"></i><i class="b-no" id="bar-no" style="width:0"></i></div>
+    <div class="tools">
+      <button class="chip" data-lec="L1" type="button"><span class="chip-k">L1</span><span class="chip-n">尺寸与构象</span><span class="chip-c">3</span></button><button class="chip" data-lec="L2" type="button"><span class="chip-k">L2</span><span class="chip-n">混合热力学</span><span class="chip-c">3</span></button><button class="chip" data-lec="L3" type="button"><span class="chip-k">L3</span><span class="chip-n">Flory-Huggins</span><span class="chip-c">3</span></button><button class="chip" data-lec="L4" type="button"><span class="chip-k">L4</span><span class="chip-n">相行为</span><span class="chip-c">4</span></button><button class="chip" data-lec="L5" type="button"><span class="chip-k">L5</span><span class="chip-n">渗透压与粘度</span><span class="chip-c">3</span></button><button class="chip" data-lec="L6" type="button"><span class="chip-k">L6</span><span class="chip-n">光散射</span><span class="chip-c">2</span></button><button class="chip" data-lec="L7" type="button"><span class="chip-k">L7</span><span class="chip-n">SEC 与质谱</span><span class="chip-c">3</span></button><button class="chip" data-lec="L8" type="button"><span class="chip-k">L8</span><span class="chip-n">玻璃态</span><span class="chip-c">3</span></button><button class="chip" data-lec="L9" type="button"><span class="chip-k">L9</span><span class="chip-n">力学性质</span><span class="chip-c">1</span></button><button class="chip" data-lec="L10" type="button"><span class="chip-k">L10</span><span class="chip-n">弹性体与结晶</span><span class="chip-c">3</span></button><button class="chip" data-lec="综合" type="button"><span class="chip-k">综合</span><span class="chip-n">跨讲综合</span><span class="chip-c">2</span></button>
+      <span class="tsep"></span>
+      <button class="tbtn" id="t-wrong" type="button" aria-pressed="false">只看错题</button>
+      <button class="tbtn" id="t-unans" type="button" aria-pressed="false">只看未答</button>
+      <button class="tbtn" id="t-reset" type="button">重来</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="lede">
+    题干用<b>英文</b>（贴近真题），解析用<b>中文</b>。点选项即判对错并展开解析——<b>先自己算完再点</b>。
+    出题依据是 Lecture 1–10 全部讲义，以及课程发布的 28 道 Question 及其答案；每道计算题的数值都用脚本核算过。
+    进度存在本地浏览器里，关掉页面不会丢。
+    <span class="const">R = 8.314 J K⁻¹ mol⁻¹　k = 1.381×10⁻²³ J K⁻¹　N<sub>Av</sub> = 6.022×10²³ mol⁻¹　g = 9.81 m s⁻²</span>
+  </p>
+
+  <div class="qlist" id="qlist"></div>
+  <p class="empty" hidden id="empty">当前筛选下没有题目。</p>
+
+  <section class="panel">
+    <div class="panel-h"><h2>成绩</h2><span class="hint">点错题编号可跳回该题</span></div>
+    <div class="panel-b">
+      <div class="score">
+        <div class="score-i"><b id="f-ok" style="color:var(--ok)">0</b><span>答对</span></div>
+        <div class="score-i"><b id="f-no" style="color:var(--no)">0</b><span>答错</span></div>
+        <div class="score-i"><b id="f-left">30</b><span>未答</span></div>
+        <div class="score-i"><b id="f-pct">—</b><span>正确率</span></div>
+      </div>
+      <div class="wrongs" id="wrongs"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-h"><h2>考前最后一小时：八个必记陷阱</h2><span class="hint">每条都在题库里对应一道题</span></div>
+    <div class="panel-b">
+      <ol class="traps"><li><div class="trap-h"><span class="trap-i">1</span><span class="trap-t">θ = 180° − 键角</span><button class="trap-j" type="button" data-goto="2">Q2</button></div><p class="trap-d">sp³ 是 <b>70.5°</b> 不是 109.5°，因子恰好 ≈ 2</p></li><li><div class="trap-h"><span class="trap-i">2</span><span class="trap-t">M<sub>w</sub> 的分母是 Σn<sub>i</sub>M<sub>i</sub></span><button class="trap-j" type="button" data-goto="1">Q1</button></div><p class="trap-d">不是 Σn<sub>i</sub>；且 M<sub>w</sub> ≥ M<sub>n</sub> 恒成立</p></li><li><div class="trap-h"><span class="trap-i">3</span><span class="trap-t">ΔS / ΔH / ΔG 里的 n 是总摩尔数</span><button class="trap-j" type="button" data-goto="4">Q4</button></div><p class="trap-d">1 mol + 1 mol 要代 n = 2</p></li><li><div class="trap-h"><span class="trap-i">4</span><span class="trap-t">Flory-Huggins 只有高分子项除以 N</span><button class="trap-j" type="button" data-goto="7">Q7</button></div><p class="trap-d">φ = 0.5 时熵只减<b>一半</b>，不是 1/N</p></li><li><div class="trap-h"><span class="trap-i">5</span><span class="trap-t">ΔG<sub>mix</sub> &lt; 0 不代表不分相</span><button class="trap-j" type="button" data-goto="12">Q12</button></div><p class="trap-d">判据是 ΔG 曲线的<b>凹凸性</b></p></li><li><div class="trap-h"><span class="trap-i">6</span><span class="trap-t">渗透压公式里 c 用 g/m³</span><button class="trap-j" type="button" data-goto="14">Q14</button></div><p class="trap-d">1 g/L = 1000 g/m³，漏掉差 1000 倍</p></li><li><div class="trap-h"><span class="trap-i">7</span><span class="trap-t">Fox 方程必须用绝对温度 K</span><button class="trap-j" type="button" data-goto="25">Q25</button></div><p class="trap-d">而且<b>不是</b>线性加权，是倒数加权</p></li><li><div class="trap-h"><span class="trap-i">8</span><span class="trap-t">Bragg 定律：题目给 2θ，公式用 θ</span><button class="trap-j" type="button" data-goto="28">Q28</button></div><p class="trap-d">先除以 2 再取 sin</p></li></ol>
+      <p class="other"><b>其余高频：</b><span class="mono">t ∝ √m（不是 m） · I ∝ λ⁻⁴（四次方） · a = 3ν − 1 · R<sub>g</sub>² = Nb²/6 · 1 mm² = 10⁻⁶ m²</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  出题依据：CM5174 Lecture 1–10 讲义 + 课程发布的 28 道 Question 及答案<br>
+  分布：L1 尺寸构象 3 · L2 混合热力学 3 · L3 Flory-Huggins 3 · L4 相行为 4 · L5 渗透压与粘度 3 ·
+  L6 光散射 2 · L7 SEC 与质谱 3 · L8 玻璃态 3 · L9 力学性质 1 · L10 弹性体与结晶 3 · 跨讲综合 2<br>
+  题型：计算 18 · 理解 10 · 综合 2
+</footer>
+
+<script>
+const QS = [{"n": 1, "lec": "L1", "kind": "计算", "topic": "Mn / Mw / PDI", "stem": "A polymer sample contains 2.0 mol of chains with M = 10 kg/mol and 3.0 mol of chains with M = 20 kg/mol. What is the polydispersity index (PDI) of this sample?", "opts": ["1.00", "1.09", "1.25", "1.75"], "ans": 1, "exp": "<p><b>M<sub>n</sub></b> = Σn<sub>i</sub>M<sub>i</sub> / Σn<sub>i</sub> = [2(10)+3(20)] / 5 = 80/5 = <b>16 kg/mol</b></p>\n<p><b>M<sub>w</sub></b> = Σn<sub>i</sub>M<sub>i</sub><sup>2</sup> / Σn<sub>i</sub>M<sub>i</sub> = [2(100)+3(400)] / 80 = 1400/80 = <b>17.5 kg/mol</b></p>\n<p><b>PDI</b> = 17.5 / 16 = <b>1.09</b></p>\n<p class=\"trap\"><b>陷阱</b>：M<sub>w</sub> 的分母是 Σn<sub>i</sub>M<sub>i</sub>（总质量），<b>不是</b> Σn<sub>i</sub>。误用 Σn<sub>i</sub> 会得到 280。另外 M<sub>w</sub> ≥ M<sub>n</sub> 恒成立，算出 PDI &lt; 1 一定错了。</p>"}, {"n": 2, "lec": "L1", "kind": "计算", "topic": "伸直长度 vs RMS 末端距", "stem": "For a polyethylene chain with M = 280,000 g/mol, what is the ratio of its fully stretched-out (contour) length to its RMS end-to-end distance? Assume C–C bond length = 1.54 Å, tetrahedral bond angle 109.5°, and free rotation.", "opts": ["10", "50", "100", "200"], "ans": 2, "exp": "<p><b>① 数键数</b>：每个 CH<sub>2</sub> 单元 14 g/mol → n = 280,000 / 14 = <b>20,000 个 C–C 键</b></p>\n<p><b>② 伸直长度</b>：20,000 × 1.54 = <b>30,800 Å</b></p>\n<p><b>③ RMS 末端距</b>（固定键角、自由旋转）：</p>\n<div class=\"fb\">⟨h²⟩ = n l² · (1 + cos θ) / (1 − cos θ)</div>\n<p><b>θ = 180° − 109.5° = 70.5°</b>，cos 70.5° = 0.334 → 因子 = 1.334 / 0.666 = <b>2.00</b></p>\n<p>⟨h²⟩ = 20,000 × 1.54² × 2 = 94,864 Å² → ⟨h²⟩<sup>1/2</sup> = <b>308 Å</b></p>\n<p><b>④</b> 30,800 / 308 = <b>100</b></p>\n<p class=\"trap\"><b>本课最大的陷阱</b>：公式里的 <b>θ 是键角的补角，不是键角本身</b>。若直接代 cos 109.5° = −0.334，因子变成 0.5，答案差 4 倍。课程发布的 Question 4 专门考这个，还加了 hint：“Is θ the bond angle?”</p>\n<p class=\"note\">物理意义：无规线团比伸直链小<b>两个数量级</b>——高分子在溶液里是“球”不是“棍”。</p>"}, {"n": 3, "lec": "L1", "kind": "计算", "topic": "回转半径 Rg", "stem": "An ideal polymer chain has a degree of polymerization N = 10,000 and a statistical segment length b = 5.0 Å. What is its radius of gyration R<sub>g</sub>?", "opts": ["50 Å", "204 Å", "500 Å", "1,250 Å"], "ans": 1, "exp": "<div class=\"fb\">R<sub>g</sub>² = N b² / 6 = 10,000 × 25 / 6 = 41,667 Å²</div>\n<p>R<sub>g</sub> = √41,667 = <b>204 Å</b></p>\n<p class=\"trap\"><b>陷阱</b>：① 忘记除以 6（得 500 Å，就是选项 C）；② 忘记开方。</p>\n<p><b>必背换算</b>：R<sub>g</sub>² = ⟨h²⟩/6，即 <b>⟨h²⟩<sup>1/2</sup> = √6 · R<sub>g</sub> ≈ 2.45 R<sub>g</sub></b></p>\n<p class=\"note\">顺带：把链密堆成半径 R₀ 的球，则恒有 <b>R<sub>g</sub> &lt; R₀</b>——R<sub>g</sub> 是均方根距离，总有单体比它更远，不代表最大空间尺度。（课程 Question 5）</p>"}, {"n": 4, "lec": "L2", "kind": "计算", "topic": "理想混合熵", "stem": "1.0 mol of ideal liquid A is mixed with 1.0 mol of ideal liquid B at 298 K. What is ΔS<sub>mix</sub>?", "opts": ["5.76 J K⁻¹", "11.5 J K⁻¹", "17.3 J K⁻¹", "23.1 J K⁻¹"], "ans": 1, "exp": "<div class=\"fb\">ΔS<sub>mix</sub> = −nR (x<sub>A</sub> ln x<sub>A</sub> + x<sub>B</sub> ln x<sub>B</sub>)</div>\n<p><b>n 是总摩尔数 = 2.0 mol</b>，x<sub>A</sub> = x<sub>B</sub> = 0.5：</p>\n<p>ΔS = −2.0 × 8.314 × [2 × 0.5 ln 0.5] = −2.0 × 8.314 × (−0.693) = <b>+11.5 J K⁻¹</b></p>\n<p class=\"trap\"><b>陷阱</b>：n 是<b>总</b>摩尔数（2 mol），不是每种 1 mol。用 n = 1 得 5.76（选项 A）。</p>\n<p class=\"note\">理想体系 <b>ΔH<sub>mix</sub> = 0</b>（理想气体无相互作用；理想溶液 A-A、B-B、A-B 作用相同），所以 ΔG<sub>mix</sub> = −TΔS = −3,435 J，自发。<b>理想混合完全由熵驱动</b>；因 0 &lt; x &lt; 1，ΔS 恒正、ΔG 恒负。</p>"}, {"n": 5, "lec": "L2", "kind": "计算", "topic": "格子模型组合数 Ω", "stem": "A lattice contains 10 sites occupied by 4 molecules of A and 6 molecules of B. What is the number of configurations Ω?", "opts": ["24", "210", "5,040", "3,628,800"], "ans": 1, "exp": "<div class=\"fb\">Ω = m! / (m<sub>A</sub>! m<sub>B</sub>!) = 10! / (4! · 6!) = 3,628,800 / 17,280 = <b>210</b></div>\n<p class=\"trap\"><b>陷阱</b>：选项 D 是 10!（忘了除），选项 C 是 7!。</p>\n<p><b>为什么重要</b>：这是统计热力学推混合熵的起点。由 S = k lnΩ 配合 Stirling 近似 ln m! ≈ m ln m − m，可得 S = −k(m<sub>A</sub> ln x<sub>A</sub> + m<sub>B</sub> ln x<sub>B</sub>)。</p>\n<p><b>混合前</b>纯物质只有一种排法，Ω = 1 → <b>S = 0</b>，所以 ΔS<sub>mix</sub> 就等于混合后的 S。换成摩尔量（N<sub>Av</sub>k = R）就回到热力学路线的同一个结果。（课程 Question 8 同型）</p>"}, {"n": 6, "lec": "L2", "kind": "计算", "topic": "χ 与混合焓", "stem": "For a regular solution with interaction parameter χ = 1.2, an equimolar mixture (2.0 mol total) is prepared at 298 K. What is ΔH<sub>mix</sub>?", "opts": ["372 J", "743 J", "1,487 J", "2,974 J"], "ans": 2, "exp": "<div class=\"fb\">ΔH<sub>mix</sub> = x<sub>A</sub> x<sub>B</sub> χ n R T</div>\n<p>= (0.5)(0.5)(1.2)(2.0)(8.314)(298)</p>\n<p>分步：0.25 × 1.2 = 0.3；2.0 × 8.314 × 298 = 4,955 J；0.3 × 4,955 = <b>1,487 J</b></p>\n<p class=\"trap\"><b>陷阱</b>：n 仍是总摩尔数 2.0 mol（用 1.0 得选项 B）。</p>\n<p><b>χ 是什么</b>：χ = zΔw / kT，其中 Δw = w<sub>AB</sub> − w<sub>AA</sub>/2 − w<sub>BB</sub>/2 是<b>交换能</b>——把一对 A-A 和一对 B-B 换成两对 A-B 的能量代价，用热能 kT 归一化。</p>\n<div class=\"fb\">ΔG<sub>mix</sub> = nRT [ x<sub>A</sub>ln x<sub>A</sub> + x<sub>B</sub>ln x<sub>B</sub> + x<sub>A</sub>x<sub>B</sub>χ ]</div>\n<p class=\"note\">课程 Question 9 问“油水为什么不互溶”，答案就是 <b>x<sub>A</sub>x<sub>B</sub>χ 这个焓项为正</b>，压过了恒负的熵项。焓项在 x = 0.5 时最大。</p>"}, {"n": 7, "lec": "L3", "kind": "计算", "topic": "高分子混合熵", "stem": "A polymer B with degree of polymerization N = 1000 is mixed with solvent A at φ<sub>A</sub> = φ<sub>B</sub> = 0.5. Compared with a small-molecule regular solution at the same volume fractions, the entropy of mixing of this polymer solution is approximately:", "opts": ["the same", "one half", "one thousandth", "one thousand times larger"], "ans": 1, "exp": "<div class=\"fb\">ΔS<sub>mix</sub> = −nR [ φ<sub>A</sub> ln φ<sub>A</sub> + (φ<sub>B</sub>/N) ln φ<sub>B</sub> ]</div>\n<p><b>小分子（N = 1）</b>：−[0.5 ln0.5 + 0.5 ln0.5] = <b>0.693</b> nR</p>\n<p><b>高分子（N = 1000）</b>：−[0.5 ln0.5 + (0.5/1000) ln0.5] = −[−0.3466 − 0.000347] = <b>0.347</b> nR</p>\n<p>比值 = 0.347 / 0.693 = <b>0.50</b></p>\n<p class=\"trap\"><b>最重要的误解澄清</b>：很多人以为除以 N 会让熵变成 1/N（选项 C）。<b>错——只有高分子那一项被 N 除，溶剂项原封不动</b>。所以 φ = 0.5 时 N 再大也只减到约<b>一半</b>（N→∞ 的极限是 0.5，不是 0）。</p>\n<p><b>物理图像</b>：N 个单体被共价键“绑”在一起，可排布方式大幅减少。课程 Question 10 的直观例子：8 格放 2 个黑球，<b>不相连 28 种，连起来只有 10 种</b>。</p>\n<p class=\"note\">推论（课程 Question 11）：ΔS 更小 → −TΔS 这个有利项更弱 → <b>高分子溶解不如小分子自发</b>。<br>而焓项 φ<sub>A</sub>φ<sub>B</sub>χnRT <b>不除 N</b>，因为焓只取决于溶剂-单体的局部接触。</p>"}, {"n": 8, "lec": "L3", "kind": "计算", "topic": "体积分数", "stem": "A Flory-Huggins lattice contains 800 solvent molecules and 2 polymer chains, each with a degree of polymerization N = 100. What is the volume fraction of polymer φ<sub>B</sub>?", "opts": ["0.002", "0.2", "0.25", "0.8"], "ans": 1, "exp": "<div class=\"fb\">φ<sub>B</sub> = N m<sub>B</sub> / (m<sub>A</sub> + N m<sub>B</sub>) = (100 × 2) / (800 + 200) = 200 / 1000 = <b>0.2</b></div>\n<p>相应 φ<sub>A</sub> = 0.8，总格点数 m = m<sub>A</sub> + Nm<sub>B</sub> = 1000。</p>\n<p class=\"trap\"><b>陷阱</b>：选项 A 是按<b>摩尔分数</b>算的 2/(800+2) ≈ 0.0025。<b>Flory-Huggins 用体积分数，不用摩尔分数</b>——一条链占 N 个格点，这正是“高分子体积大”在模型里的体现。</p>"}, {"n": 9, "lec": "L3", "kind": "理解", "topic": "N 对相图的影响", "stem": "According to Flory-Huggins theory, as the degree of polymerization N of the dissolved polymer increases, the phase diagram of the polymer solution (UCST type) changes in which way?", "opts": ["Critical temperature decreases; phase diagram shifts to higher polymer volume fraction", "Critical temperature increases; phase diagram shifts to lower polymer volume fraction", "Critical temperature increases; phase diagram shifts to higher polymer volume fraction", "The phase diagram is unaffected by N"], "ans": 1, "exp": "<p>讲义 Lecture 4「Phase Diagram of Polymer Solutions」页的两条 general conclusions：</p>\n<p>① <b>Critical point increases as N increases</b><br>② <b>Phase diagram shifts towards smaller φ<sub>B</sub> as N increases</b>（means only dilute samples can dissolve）</p>\n<p><b>为什么</b>：N ↑ → 混合熵 ↓ → −TΔS 这个有利项变弱 → 需要<b>更高的温度</b>才能压过焓项 → <b>T<sub>c</sub> 升高，单相区缩小</b>。</p>\n<p class=\"note\"><b>实际含义</b>（常出概念题）：分子量越高<b>越难溶</b>；而且只有<b>稀溶液</b>才溶得了，想溶浓一点就分相。另外高分子相图<b>不对称</b>（因为 φ<sub>B</sub>/N 这一项），不像小分子那样左右对称。</p>"}, {"n": 10, "lec": "L4", "kind": "理解", "topic": "spinodal 的数学判据", "stem": "The spinodal boundary at a given temperature is located mathematically by solving:", "opts": ["dΔG<sub>m</sub>/dx<sub>A</sub> = 0", "d²ΔG<sub>m</sub>/dx<sub>A</sub>² = 0", "d³ΔG<sub>m</sub>/dx<sub>A</sub>³ = 0", "Drawing a common tangent to the ΔG curve"], "ans": 1, "exp": "<p>三个判据必须分清楚：</p>\n<table class=\"mini\"><thead><tr><th>目标</th><th>方法</th><th>物理含义</th></tr></thead><tbody>\n<tr><td><b>Binodal</b> 共存曲线</td><td><b>公切线</b>的两个切点（选项 D）</td><td>分相后能达到的最低能量组成</td></tr>\n<tr><td><b>Spinodal</b> 稳定极限</td><td><b>d²ΔG/dx² = 0</b>（拐点）</td><td>曲率由凹向上转为凹向下</td></tr>\n<tr><td><b>临界点 T<sub>c</sub></b></td><td><b>d³ΔG/dx³ = 0</b></td><td>两个拐点合并、“鼓包”刚出现</td></tr>\n</tbody></table>\n<p><b>为什么 spinodal 是拐点</b>：曲线<b>凹向上</b>处，任何<b>微小</b>组成涨落都<b>升高</b> G → 涨落自动退回 → 溶液<b>亚稳</b>；曲线<b>凹向下</b>处，微小涨落<b>降低</b> G → 无势垒自发分相。两者的分界正是曲率变号的<b>拐点</b>。</p>\n<p class=\"note\">所以 binodal 与 spinodal 之间是<b>亚稳区</b>：热力学上分相有利，但要一次足够大的涨落才能启动。</p>"}, {"n": 11, "lec": "L4", "kind": "理解", "topic": "两种分相机理", "stem": "Which of the following statements comparing spinodal decomposition (SD) with nucleation and growth (N&amp;G) is <b>FALSE</b>?", "opts": ["SD has no activation barrier, while N&amp;G does", "SD occurs uniformly throughout the entire volume, while N&amp;G occurs sporadically", "SD and N&amp;G give different final phase compositions", "N&amp;G occurs when the mixture lies outside the spinodal but inside the binodal"], "ans": 2, "exp": "<p>选 C，因为它是<b>错误</b>陈述。讲义 Lecture 4 最后一页的对比表：</p>\n<table class=\"mini\"><thead><tr><th></th><th>Spinodal Decomposition</th><th>Nucleation &amp; Growth</th></tr></thead><tbody>\n<tr><td>发生位置</td><td>spinodal <b>内</b></td><td>spinodal <b>外</b>、binodal <b>内</b>（亚稳区）</td></tr>\n<tr><td>空间分布</td><td><b>整个体积均匀</b></td><td><b>零星散发</b></td></tr>\n<tr><td>活化势垒</td><td><b>无</b></td><td><b>有</b></td></tr>\n<tr><td>最终组成</td><td><b>binodal 组成</b></td><td><b>binodal 组成</b></td></tr>\n</tbody></table>\n<p><b>关键</b>：两种机理的<b>终态组成完全相同，都由 binodal 点决定</b>。区别只在<b>路径和形貌</b>：SD 组成在整个体积内连续演化，固体中给出<b>互穿网络</b>；N&amp;G 先偶然成核，再靠<b>扩散</b>（组成梯度驱动）长大，给出分散的核/液滴。</p>\n<p class=\"note\">课程 Question 15、16 分别问这两种机理的终态，答案都是 “2 phases comprising a and b”（binodal 组成）。</p>"}, {"n": 12, "lec": "L4", "kind": "理解", "topic": "binodal 之外不分相", "stem": "A mixture of A and B has a Gibbs energy of mixing curve with a local maximum. Compounds A and B are mixed at a composition x<sub>A</sub> that lies <b>outside</b> the two binodal points, and ΔG<sub>mix</sub> at this composition is negative. What is the resulting state?", "opts": ["1 phase with composition x<sub>A</sub>", "2 phases at the spinodal compositions a and b", "2 phases at the binodal compositions x<sub>A</sub>′ and x<sub>A</sub>″", "2 phases of pure A and pure B"], "ans": 0, "exp": "<p><b>判据不是“ΔG<sub>mix</sub> 是不是负的”，而是“能不能通过分相得到更低的能量”。</b></p>\n<p>在两个 binodal 点<b>之外</b>，ΔG 曲线<b>凹向上</b>。对凹向上的曲线，无论怎么选 x<sub>A</sub>′ 和 x<sub>A</sub>″，两相的加权平均 Gibbs 能（连接两点的直线在 x<sub>A</sub> 处的高度）<b>总是高于</b>单相曲线上的点 → <b>分相反而升高能量</b> → 保持单相。（课程 Question 17）</p>\n<p><b>三种情况一起记</b>：</p>\n<table class=\"mini\"><thead><tr><th>组成位置</th><th>结果</th></tr></thead><tbody>\n<tr><td>binodal <b>之外</b></td><td><b>单相</b>（本题）</td></tr>\n<tr><td>binodal 与 spinodal 之间</td><td>亚稳单相，需<b>成核-生长</b> → 终态 binodal 组成</td></tr>\n<tr><td>spinodal <b>之内</b></td><td>无势垒自发 <b>SD</b> → 终态仍是 binodal 组成</td></tr>\n</tbody></table>\n<p class=\"trap\"><b>最容易错的一点</b>（课程 Question 13 专门考）：<b>ΔG<sub>mix</sub> &lt; 0 不代表不分相</b>。它只说明“混合比完全不混合好”，但分成两个 binodal 组成<b>可以达到更低的能量</b>。</p>"}, {"n": 13, "lec": "L4", "kind": "理解", "topic": "LCST", "stem": "A polymer solution exhibits a <b>lower critical solution temperature (LCST)</b>, i.e. it phase separates upon <b>heating</b>. Using the empirical relation χ = α/T + β, this behaviour requires:", "opts": ["α positive and β negative, so that χ decreases with temperature", "α negative and β positive, so that χ increases with temperature", "α = 0, so that χ is temperature-independent", "β = 0, so that χ = α/T"], "ans": 1, "exp": "<p><b>理论上</b>：χ = zΔw/kT，温度越高 χ 越小 → 焓的不利影响越弱 → 高温互溶。这给出的是<b>常见的 UCST</b>。</p>\n<p><b>但经验上</b> χ = α/T + β，α、β 可正可负。当 <b>α 为负、β 为正</b>时，T 升高使 α/T 这个负项绝对值变小 → <b>χ 整体变得更正</b> → 焓项更不利 → <b>高温反而分相</b> → LCST。</p>\n<p><b>经典例子</b>（讲义点名）：<b>聚环氧乙烷 PEO / 水</b>。机理是靠<b>氢键</b>溶解，而氢键在高温下变弱。</p>\n<p class=\"note\"><b>记忆</b>：UCST 常见，“升温溶解”，符合直觉；<b>LCST 少见</b>（讲义标题写的就是 “Less Usual Case”），“升温分相”，通常涉及<b>氢键或特异性相互作用</b>。</p>"}, {"n": 14, "lec": "L5", "kind": "计算", "topic": "渗透压", "stem": "A dilute polymer solution of concentration 5.0 g/L has a molar mass of 50,000 g/mol. At 298 K, ignoring virial terms, what height of aqueous solution column would this osmotic pressure support? (ρ = 1000 kg/m³, g = 9.81 m/s²)", "opts": ["0.25 cm", "2.5 cm", "25 cm", "250 cm"], "ans": 1, "exp": "<p><b>① 单位换算（关键）</b>：c 必须是 <b>g/m³</b> 才能得到 Pa。<br>c = 5.0 g/L = <b>5,000 g/m³</b></p>\n<p><b>② 渗透压</b>：Π = RT·c/M = 8.314 × 298 × (5,000 / 50,000) = 8.314 × 298 × 0.1 = <b>248 Pa</b></p>\n<p><b>③ 液柱高度</b>：h = Π / (ρg) = 248 / 9,810 = 0.0253 m = <b>2.5 cm</b></p>\n<p class=\"trap\"><b>最大的坑是单位</b>。若直接代 c = 5 g/L，得 0.248 Pa，差 1000 倍。记住：<b>SI 制下 c 用 g/m³、M 用 g/mol，Π 出来就是 Pa</b>。</p>\n<p class=\"note\"><b>为什么渗透压法好用</b>：248 Pa 很小，但换成液柱是 2.5 cm——肉眼可读，精度高。<br><b>渗透压测 M<sub>n</sub></b>：第一项 RTc/M 只与<b>分子数目</b>有关（依数性），与种类无关。课程 Question 18 就考这点：等浓度葡萄糖和蔗糖溶液渗透压<b>基本相同</b>。</p>"}, {"n": 15, "lec": "L5", "kind": "理解", "topic": "第二维里系数", "stem": "In the osmotic virial expansion Π = RT[c/M + Bc² + …], what is the sign of B for a polymer dissolved in a <b>poor</b> solvent?", "opts": ["B &gt; 0", "B = 0", "B &lt; 0", "B is undefined for poor solvents"], "ans": 2, "exp": "<p>讲义 Lecture 5「Some Conclusions on Osmotic Pressure」原文：</p>\n<table class=\"mini\"><thead><tr><th>溶剂</th><th>B</th><th>原因</th></tr></thead><tbody>\n<tr><td><b>良溶剂</b></td><td><b>B &gt; 0</b></td><td>高分子-溶剂作用有利 → 溶剂<b>更想</b>过膜稀释 → 渗透压高于理想值</td></tr>\n<tr><td><b>θ 溶剂</b></td><td><b>B = 0</b></td><td>中间情形，两种作用抵消</td></tr>\n<tr><td><b>不良溶剂</b></td><td><b>B &lt; 0</b></td><td>溶质-溶质作用更有利 → 溶剂<b>不太想</b>过膜</td></tr>\n</tbody></table>\n<p><b>θ 溶剂的重要性</b>（跨讲考点）：B = 0 时链表现为<b>理想链</b>，R<sub>g</sub> ∝ N<sup>1/2</sup>、Mark-Houwink 的 <b>a = 0.5</b>——排除体积效应刚好被链-链吸引抵消。良溶剂中则是 N<sup>3/5</sup>、a ≈ 0.8。</p>\n<p class=\"note\"><b>实验含义</b>：作 Π/RT 对 c 的图，<b>在低浓度处取斜率 = 1/M</b>。B ≠ 0 会让曲线在高浓度弯曲——这正是必须外推到 c → 0 的原因。（课程 Question 19）</p>"}, {"n": 16, "lec": "L5", "kind": "计算", "topic": "Mark-Houwink 指数", "stem": "Given the Mark-Houwink equation [η] = kM<sup>a</sup>, what is the value of ‘a’ for a polymer that behaves as a <b>rigid rod</b>?", "opts": ["0", "0.5", "0.8", "2"], "ans": 3, "exp": "<p><b>推导链条</b>（要会推，别死记）：</p>\n<p>① Einstein 定律用到高分子：[η] = (5/2) N<sub>Av</sub>V<sub>h</sub> / M<br>\n② 链看作流体力学等效球：V<sub>h</sub> ∝ (4/3)πR<sub>g</sub>³<br>\n③ 所以 [η] ∝ R<sub>g</sub>³ / M<br>\n④ 若 R<sub>g</sub> ∝ N<sup>ν</sup> ∝ M<sup>ν</sup>，则 [η] ∝ M<sup>3ν</sup>/M = M<sup>3ν−1</sup></p>\n<div class=\"fb\">a = 3ν − 1</div>\n<p><b>刚性棒</b>完全伸直，R<sub>g</sub> ∝ N¹，ν = 1 → a = 3(1) − 1 = <b>2</b></p>\n<table class=\"mini\"><thead><tr><th>链形态</th><th>ν</th><th>a</th></tr></thead><tbody>\n<tr><td>致密球</td><td>1/3</td><td><b>0</b></td></tr>\n<tr><td>θ 溶剂 / 理想链</td><td>1/2</td><td><b>0.5</b></td></tr>\n<tr><td>良溶剂</td><td>3/5</td><td><b>0.8</b></td></tr>\n<tr><td>刚性棒</td><td>1</td><td><b>2</b></td></tr>\n</tbody></table>\n<p class=\"note\">课程 Question 21 考的是良溶剂 → a = 0.8。讲义补充：<b>实际大多数 a 落在 0.5–1 之间</b>。<br>注意粘度法测的 <b>M<sub>v</sub> 接近 M<sub>w</sub></b>（不是 M<sub>n</sub>），且 k、a 必须标定或查文献。</p>"}, {"n": 17, "lec": "L6", "kind": "计算", "topic": "Rayleigh λ⁻⁴", "stem": "According to Rayleigh’s equation, what is the ratio of scattered intensity for blue light (450 nm) to that for red light (650 nm) by the same small particle at the same angle?", "opts": ["1.4", "2.1", "4.4", "8.7"], "ans": 2, "exp": "<div class=\"fb\">I<sub>θ</sub>/I<sub>0</sub> = 8π⁴α²(1 + cos²θ) / (λ⁴ r²)　→　I ∝ λ⁻⁴</div>\n<p>I<sub>450</sub> / I<sub>650</sub> = (650/450)⁴ = (1.444)⁴ = <b>4.35</b></p>\n<p class=\"trap\"><b>陷阱</b>：是 <b>λ⁻⁴</b>，比值要<b>四次方</b>。一次方得 1.44（选项 A），二次方得 2.09（选项 B）——错误选项就是这么设计的。还要注意别把分子分母颠倒：<b>波长短的散射强</b>，蓝光在分子上。</p>\n<p><b>天空为什么是蓝的</b>（课程 Question 22，选项很刁）：<br>✅ 蓝光波长短，被空气分子散射得<b>强得多</b>；我们看天空是朝<b>偏离太阳</b>的方向看，看到的是被散射的蓝光。<br>❌ “其他颜色被水蒸气吸收” / “蓝光是海水反射的” / “非蓝光被散射掉了，剩下蓝光”</p>\n<p class=\"note\">(1 + cos²θ) 说明<b>小粒子散射前后对称</b>。但粒子 <b>&gt; λ/20</b> 时，同一粒子不同部位的散射光<b>相消干涉</b>，强度净减少，且<b>前向 &gt; 后向</b>；唯一不受影响的角度是 <b>θ = 0°</b>。正是这个角度依赖让静态光散射能给出 <b>R<sub>g</sub></b>。</p>"}, {"n": 18, "lec": "L6", "kind": "计算", "topic": "Stokes-Einstein", "stem": "In a DLS experiment, the tracer diffusion coefficient of a polymer in water is D<sub>t</sub> = 2.0×10⁻¹¹ m²/s at 298 K. The solvent viscosity is 0.89 mPa·s. What is the hydrodynamic radius R<sub>h</sub>?", "opts": ["1.2 nm", "12 nm", "120 nm", "1.2 μm"], "ans": 1, "exp": "<div class=\"fb\">D<sub>t</sub> = kT / (6π η<sub>s</sub> R<sub>h</sub>)　→　R<sub>h</sub> = kT / (6π η<sub>s</sub> D<sub>t</sub>)</div>\n<p>分子：kT = 1.381×10⁻²³ × 298 = 4.115×10⁻²¹ J<br>\n分母：6π × 0.89×10⁻³ × 2.0×10⁻¹¹ = 3.355×10⁻¹³</p>\n<p>R<sub>h</sub> = 4.115×10⁻²¹ / 3.355×10⁻¹³ = 1.23×10⁻⁸ m = <b>12.3 nm</b></p>\n<p class=\"trap\"><b>单位</b>：0.89 mPa·s = 0.89×10⁻³ Pa·s。漏掉 10⁻³ 差 1000 倍。</p>\n<p><b>DLS 的整条逻辑链</b>：① 布朗运动 → 干涉明暗斑移动 → <b>强度随时间涨落</b>；② <b>小粒子扩散快 → 涨落快</b>（课程 Question 24）；③ 用<b>时间自相关函数</b> C(t′) 提取衰减速率——t′=0 时自乘最大，t′→∞ 时完全不相关、平均为 0，结果是指数衰减 C ∝ e<sup>−2q²D<sub>m</sub>t′</sup>，<b>D 越大衰减越快</b>；④ 外推零浓度得 D<sub>t</sub>，由 Stokes-Einstein 得 R<sub>h</sub>。</p>\n<p class=\"note\"><b>三种“半径”别混</b>：<b>R<sub>g</sub></b> ← 静态光散射；<b>R<sub>h</sub></b> ← 动态光散射；<b>R₀</b> ← 密堆积球，概念上 R<sub>g</sub> &lt; R₀。</p>"}, {"n": 19, "lec": "L7", "kind": "理解", "topic": "SEC 洗脱顺序", "stem": "In size exclusion chromatography (SEC), which molecules elute <b>first</b>, and why?", "opts": ["The smallest, because they diffuse fastest through the column", "The largest, because they are excluded from the pores of the stationary phase", "The smallest, because they are retained least strongly by the stationary phase", "The most polar, because they interact least with the gel"], "ans": 1, "exp": "<p>SEC（也叫 GPC）用<b>多孔凝胶</b>作固定相：<b>大分子进不了孔</b> → 只走孔外体积 → 路径短 → <b>V<sub>R</sub> 小、先出</b>；<b>小分子能进孔</b> → 被滞留 → 后出。</p>\n<p class=\"trap\"><b>注意</b>：SEC 分离<b>不靠化学相互作用</b>（排除 D），也不靠扩散速率（排除 A）。纯粹是<b>空间排阻</b>。</p>\n<p><b>两个固有问题</b>（讲义明确列出）：<br>① SEC 依据是<b>尺寸而非 M</b> → 标样的<b>化学组成和结构必须与未知样相同</b>，否则不准；<br>② <b>比孔还大的分子全部一起出来</b>，V<sub>R</sub> 完全没有区分度。</p>\n<p><b>四种检测器</b>：示差折光（∝浓度）· UV-Vis（Beer-Lambert，需发色团）· 光散射（配合前两者给 M<sub>w</sub>，<b>可不需标样</b>）· 粘度计（同上）。</p>\n<p class=\"note\"><b>高频陷阱</b>（课程 Question 26）：用 <b>UV 检测器</b>时信号高度 <b>∝ n<sub>i</sub>M<sub>i</sub></b>，不是 ∝ n<sub>i</sub>。因为吸光度虽正比于摩尔浓度，但<b>每条链上的发色团数目又正比于分子量</b>。</p>"}, {"n": 20, "lec": "L7", "kind": "计算", "topic": "通用校准", "stem": "Universal calibration is applied to an SEC column. A polystyrene standard (k<sub>s</sub> = 8×10⁻⁵, a<sub>s</sub> = 0.5) with M<sub>s</sub> = 50,000 g/mol elutes at a certain retention volume. An unknown polymer (k<sub>x</sub> = 1×10⁻⁵, a<sub>x</sub> = 0.5) elutes at the <b>same</b> retention volume. What is M<sub>x</sub>?", "opts": ["50,000 g/mol", "100,000 g/mol", "200,000 g/mol", "400,000 g/mol"], "ans": 2, "exp": "<p><b>核心思想</b>：<b>流体力学体积 V<sub>h</sub> 相同的高分子有相同的 V<sub>R</sub></b>（SEC 按尺寸分离）。</p>\n<p>由 [η] = (5/2)N<sub>Av</sub>V<sub>h</sub>/M 和 [η] = kM<sup>a</sup> 得 <b>V<sub>h</sub> ∝ k M<sup>a+1</sup></b>，同一 V<sub>R</sub> ⇒</p>\n<div class=\"fb\">k<sub>s</sub> M<sub>s</sub><sup>a<sub>s</sub>+1</sup> = k<sub>x</sub> M<sub>x</sub><sup>a<sub>x</sub>+1</sup></div>\n<p>代入（a<sub>s</sub> = a<sub>x</sub> = 0.5，指数都是 1.5）：</p>\n<p>8×10⁻⁵ × (50,000)<sup>1.5</sup> = 1×10⁻⁵ × M<sub>x</sub><sup>1.5</sup><br>\nM<sub>x</sub><sup>1.5</sup> = 8 × (50,000)<sup>1.5</sup> → M<sub>x</sub> = 8<sup>2/3</sup> × 50,000 = 4 × 50,000 = <b>200,000</b></p>\n<p class=\"trap\"><b>陷阱</b>：不能直接按 k 的比值 8 倍去乘 M（得 400,000，选项 D）。指数 1/(a+1) = <b>2/3</b> 必须用上。8<sup>2/3</sup> = (∛8)² = 2² = 4。</p>\n<p class=\"note\"><b>为什么需要它</b>：直接用 PS 标样曲线读未知高分子，会因“同样 M 但尺寸不同”而系统偏差。通用校准用 Mark-Houwink 常数修正 y 轴，前提是两种高分子的 k、a 都已知。</p>"}, {"n": 21, "lec": "L7", "kind": "计算", "topic": "MALDI-TOF 飞行时间", "stem": "In a MALDI-TOF-MS experiment, a singly-charged polymer ion of m = 1,000 Da reaches the detector in 20 μs. Under identical accelerating conditions, when does a singly-charged ion of m = 4,000 Da arrive?", "opts": ["10 μs", "40 μs", "80 μs", "320 μs"], "ans": 1, "exp": "<p><b>推导</b>：加速阶段电场做功全转为动能</p>\n<div class=\"fb\">qV = ½mv²　→　v = √(2qV/m) ∝ 1/√m　→　t = L/v ∝ √m</div>\n<p>t₂/t₁ = √(4000/1000) = √4 = 2 → t₂ = 20 × 2 = <b>40 μs</b></p>\n<p class=\"trap\"><b>陷阱</b>：飞行时间 <b>∝ √m，不是 ∝ m</b>。按线性算得 80 μs（选项 C）。</p>\n<p><b>定性理解</b>（课程 Question 27）：F = ma，同样电场、同样电荷（<b>MALDI 几乎只产生单电荷离子</b>，一大优势）→ <b>质量小的加速度大、速度快、先到</b>。</p>\n<p><b>其他必考点</b>：<br>· <b>“软”电离</b>：激光被<b>吸收 337 nm 的芳香族基质</b>吸收，迅速加热汽化，把高分子带进气相并与 Na⁺/K⁺ 或质子结合——<b>避免断裂降解</b>。<br>· <b>只适合含极性基团</b>的高分子（聚酯、丙烯酸酯、酰胺），<b>不适合非极性的 PE、PP</b>。<br>· <b>测得偏低的原因</b>（课程 Question 28，答案“以上皆是”）：高分子量更难汽化 + 可能碎裂 + 检测器被先到的低分子量物种饱和。</p>"}, {"n": 22, "lec": "综合", "kind": "综合", "topic": "哪个方法测哪种平均", "stem": "Which of the following techniques measures the <b>weight-average</b> molecular weight M<sub>w</sub> rather than the number-average M<sub>n</sub>?", "opts": ["Membrane osmometry", "Static light scattering", "End-group analysis", "Vapour-phase osmometry"], "ans": 1, "exp": "<p><b>静态光散射测 M<sub>w</sub></b>，讲义原文理由：<i>“because the scattering by each particle is weighted relative to its mass”</i>——每个粒子的散射按<b>质量</b>加权，大分子贡献更大。</p>\n<p>其余三个都测 <b>M<sub>n</sub></b>，因为都是<b>依数性</b>方法，只数分子<b>个数</b>：膜渗透压（Π = RTc/M）· VPO（ΔT = K(c/M+…)）· 端基分析（数端基 = 数链条数）。</p>\n<table class=\"mini\"><thead><tr><th>方法</th><th>测得</th></tr></thead><tbody>\n<tr><td>膜渗透压、VPO、端基分析</td><td><b>M<sub>n</sub></b></td></tr>\n<tr><td><b>静态光散射</b></td><td><b>M<sub>w</sub></b> + <b>R<sub>g</sub></b></td></tr>\n<tr><td>粘度法（Mark-Houwink）</td><td><b>M<sub>v</sub> ≈ M<sub>w</sub></b></td></tr>\n<tr><td><b>动态光散射 DLS</b></td><td><b>R<sub>h</sub></b>（不给分子量！）</td></tr>\n<tr><td>SEC / GPC</td><td>整个分布 → M<sub>n</sub>、M<sub>w</sub>、PDI（<b>需校准</b>）</td></tr>\n<tr><td>MALDI-TOF-MS</td><td>整个分布 → M<sub>n</sub>、M<sub>w</sub></td></tr>\n</tbody></table>\n<p class=\"note\"><b>记忆诀窍</b>：“数个数”的（依数性）→ M<sub>n</sub>；“按质量/体积响应”的（散射、粘度）→ M<sub>w</sub>；“把分布整个画出来”的（SEC、MALDI）→ 两个都能算。</p>"}, {"n": 23, "lec": "L8", "kind": "理解", "topic": "Tg 是二阶转变", "stem": "Which statement about the glass transition is <b>CORRECT</b>?", "opts": ["T<sub>g</sub> is a first-order transition, showing a discontinuity in volume", "T<sub>g</sub> is a second-order transition: volume is continuous but its temperature derivative jumps", "Faster cooling gives a lower T<sub>g</sub> because there is less time to pack", "T<sub>g</sub> is a material constant, independent of thermal history"], "ans": 1, "exp": "<p>由 (∂G/∂p)<sub>T</sub> = V、(∂G/∂T)<sub>p</sub> = −S，而 α = (1/V)(∂V/∂T)<sub>p</sub>、C<sub>p</sub> = (∂H/∂T)<sub>p</sub>：</p>\n<table class=\"mini\"><thead><tr><th></th><th>熔融 T<sub>m</sub></th><th>玻璃化 T<sub>g</sub></th></tr></thead><tbody>\n<tr><td>阶数</td><td><b>一阶</b></td><td><b>二阶</b></td></tr>\n<tr><td>跳变在</td><td>G 的<b>一阶导</b>（V、H）</td><td>G 的<b>二阶导</b>（α、C<sub>p</sub>）</td></tr>\n<tr><td>V–T 曲线</td><td><b>跳变</b></td><td><b>连续</b>，只有斜率变 → T<sub>g</sub> 需<b>外推交点</b></td></tr>\n<tr><td>α、C<sub>p</sub></td><td>尖峰</td><td><b>台阶</b></td></tr>\n</tbody></table>\n<p>所以 A 错（体积连续，不跳变）。</p>\n<p class=\"trap\"><b>C 和 D 也错，而且说反了</b>：<b>快冷</b> → 分子<b>来不及</b>堆砌 → 体积偏大 → 外推得到的 <b>T<sub>g</sub> 更高</b>（不是更低）。T<sub>g</sub> <b>强烈依赖热历史</b>，不是材料常数。快冷样品静置久了会自行收缩到慢冷样品的体积 → <b>aging 老化</b>（工程上不希望）。因此 <b>TMA 和 DSC 都取第二次热扫描</b>来抹掉热历史。</p>\n<p class=\"note\"><b>两台仪器的数据形式别混</b>：<b>TMA/膨胀计</b> → <b>V vs T</b>（高分子用 <b>Hg</b> 作填充介质；DSC 测不出 T<sub>g</sub> 时特别有用）；<b>DSC</b> → <b>(∂q/∂T)<sub>p</sub> vs T</b>（样品盘 + 空参比盘，减去空盘贡献）。</p>"}, {"n": 24, "lec": "L8", "kind": "计算", "topic": "Flory-Fox 方程", "stem": "Polystyrene obeys the Flory-Fox equation with T<sub>g</sub>(M<sub>∞</sub>) = 100 °C, and a sample with M<sub>n</sub> = 20,000 g/mol has T<sub>g</sub> = 90 °C. What is the T<sub>g</sub> of a sample with M<sub>n</sub> = 10,000 g/mol?", "opts": ["45 °C", "80 °C", "85 °C", "95 °C"], "ans": 1, "exp": "<div class=\"fb\">T<sub>g</sub>(M<sub>n</sub>) = T<sub>g</sub>(M<sub>∞</sub>) − K / M<sub>n</sub></div>\n<p><b>① 求 K</b>：90 = 100 − K/20,000 → K/20,000 = 10 → <b>K = 2×10⁵</b></p>\n<p><b>② 代入 M<sub>n</sub> = 10,000</b>：T<sub>g</sub> = 100 − 2×10⁵/10⁴ = 100 − 20 = <b>80 °C</b></p>\n<p><b>快捷理解</b>：M<sub>n</sub> 减半 → K/M<sub>n</sub> 加倍 → 偏离量从 10 °C 变 20 °C。</p>\n<p class=\"trap\"><b>陷阱</b>：选项 D 把关系当成正比例；选项 A 把 T<sub>g</sub> 也减半了。</p>\n<p><b>物理原因</b>：<b>链端的自由体积比链中间大</b>。分子量越低 → 链端占比越高 → 链段更易运动 → <b>T<sub>g</sub> 越低</b>。同理<b>低分子量增塑剂降低 T<sub>g</sub></b>，<b>交联升高 T<sub>g</sub></b>。</p>\n<p class=\"note\"><b>影响 T<sub>g</sub> 的因素汇总</b>：主链柔性高 ↓ · 刚性芳环主链 ↑（PEEK 143 °C）· 侧基大且刚性（苯基、酯基）↑ · 极性作用（氯、腈、酯）↑ · 分子量 ↑ · 增塑剂 ↓ · 交联 ↑</p>"}, {"n": 25, "lec": "L8", "kind": "计算", "topic": "Fox 方程", "stem": "A miscible blend contains 80 wt% of polymer A (T<sub>g</sub> = 100 °C) and 20 wt% of a plasticizer B (T<sub>g</sub> = −50 °C). Using the Fox equation, estimate the T<sub>g</sub> of the blend.", "opts": ["70 °C", "56 °C", "40 °C", "20 °C"], "ans": 1, "exp": "<div class=\"fb\">1 / T<sub>g</sub> = w<sub>A</sub>/T<sub>g(A)</sub> + w<sub>B</sub>/T<sub>g(B)</sub></div>\n<p><b>① 换算成绝对温度（关键）</b>：T<sub>g(A)</sub> = 373 K，T<sub>g(B)</sub> = 223 K</p>\n<p><b>②</b> 1/T<sub>g</sub> = 0.8/373 + 0.2/223 = 0.002145 + 0.000897 = 0.003042</p>\n<p>T<sub>g</sub> = 1/0.003042 = 328.8 K = <b>55.6 °C ≈ 56 °C</b></p>\n<p class=\"trap\"><b>两个陷阱，选项 A 同时踩中</b>：<br>① <b>Fox 方程必须用绝对温度 K</b>。用摄氏度算完全错，而且 −50 °C 会让分母出负数。<br>② <b>Fox 不是线性加权</b>。线性加权给 0.8(100) + 0.2(−50) = <b>70 °C</b>，正是选项 A。Fox 是<b>倒数的加权平均</b>，结果总是<b>低于</b>线性值。</p>\n<p class=\"note\"><b>物理含义</b>：<b>可混溶共混物只有一个 T<sub>g</sub></b>，介于两组分之间——这本身就是判断两种高分子是否互溶的实验判据（不互溶会看到<b>两个</b> T<sub>g</sub>）。加 20% 增塑剂把 T<sub>g</sub> 从 100 °C 拉到 56 °C，这就是 PVC 从硬管变软管的原理。</p>"}, {"n": 26, "lec": "L9", "kind": "计算", "topic": "杨氏模量", "stem": "A polymer bar with a cross-sectional area of 2.0 mm² and an original length of 50 mm elongates by 1.0 mm under a 100 N load, within the linear elastic region. What is its Young’s modulus?", "opts": ["0.5 GPa", "1.0 GPa", "2.5 GPa", "5.0 GPa"], "ans": 2, "exp": "<p><b>应力</b>：σ<sub>t</sub> = f/A = 100 N / (2.0×10⁻⁶ m²) = 5.0×10⁷ Pa = <b>50 MPa</b></p>\n<p><b>应变</b>：ε = ΔL/L₀ = 1.0/50 = <b>0.020</b></p>\n<p><b>模量</b>：E = σ/ε = 50 MPa / 0.020 = 2500 MPa = <b>2.5 GPa</b></p>\n<p class=\"trap\"><b>单位换算</b>：<b>1 mm² = 10⁻⁶ m²</b>（不是 10⁻³）。这是最常见的失分点。应变无量纲，不用换算。</p>\n<p><b>三类应力-应变行为</b>：</p>\n<table class=\"mini\"><thead><tr><th>类型</th><th>特征</th><th>例子</th></tr></thead><tbody>\n<tr><td><b>A 脆性</b></td><td>E <b>高</b>，近似线性直到断裂，<b>无屈服点</b></td><td>PS、PMMA</td></tr>\n<tr><td><b>B 韧性</b></td><td>升到<b>屈服点</b> → 塑性形变 → <b>应变软化</b> → 断裂前 E 回升（<b>应变硬化</b>）</td><td>PP、PE</td></tr>\n<tr><td><b>C 弹性体</b></td><td>E <b>极低</b>，<b>无屈服点</b>，断裂应变 <b>500–1000%</b></td><td>天然橡胶</td></tr>\n</tbody></table>\n<p class=\"note\"><b>两个强度别混</b>：抗拉强度 = <b>断裂点</b>的最大应力；屈服强度 = 开始<b>不可恢复</b>形变时的应力。<br><b>三种形变机理</b>：<b>Crazing 银纹</b>（裂纹扩展，原纤间 10–20 nm 微孔洞，<b>垂直于应力</b>扩展，散射光发白，<b>能起银纹反而强韧</b>）· <b>Shear banding</b>（与应力成 <b>~45°</b>）· <b>Necking 细颈</b>（屈服点<b>之后</b>立即发生）。</p>"}, {"n": 27, "lec": "L10", "kind": "理解", "topic": "熵弹性", "stem": "When a crosslinked rubber is held at a <b>fixed extension</b> and its temperature is raised, the tensile force f is observed to <b>increase</b>. What does this tell us about the molecular origin of rubber elasticity?", "opts": ["The enthalpy increases strongly with extension, so the restoring force is enthalpic", "The entropy decreases with extension, so the restoring force is entropic", "The entropy increases with extension, so stretching is spontaneous", "The rubber is below its T<sub>g</sub> at this temperature"], "ans": 1, "exp": "<p>由 dG = Vdp − SdT + f dL 及二阶偏导可交换（Maxwell 关系）：</p>\n<div class=\"fb\">(∂f/∂T)<sub>p,L</sub> = − (∂S/∂L)<sub>p,T</sub></div>\n<p><b>实验观察</b>：固定伸长率（讲义用 350%），f 随 T <b>升高</b> → 左边<b>斜率为正</b> → <b>(∂S/∂L) 为负</b> → <b>拉伸使熵下降</b>。</p>\n<p><b>为什么熵下降</b>：伸展的构象是<b>有序</b>的，可及构象数远少于无规线团 → 构象熵减少。</p>\n<p><b>再看截距</b>：由 G = H − TS 得 f = (∂H/∂L)<sub>p,T</sub> − T(∂S/∂L)<sub>p,T</sub>。f–T 直线的 <b>y 轴截距 = (∂H/∂L)</b>，实测<b>接近零</b> → 拉伸几乎不把能量以焓储存 → <b>应力几乎全部用于降低熵</b>。</p>\n<div class=\"fb\">橡胶弹性是<b>熵弹性</b>，不是键的拉伸</div>\n<p class=\"note\"><b>两个必须一起记的推论</b>：① f–T 曲线在低温处的<b>反转点</b> = <b>玻璃化转变</b>（此时已不是弹性体，选项 D 的干扰就在这）；② <b>绝热拉伸橡皮筋会升温</b>：C<sub>V,p</sub>ΔT = AEL²/(2L₀)，弹性功无处可去全变内能。<br><b>弹性体四条件</b>：温度<b>高于 T<sub>g</sub></b> · 结晶度可忽略 · <b>必须交联</b> · 形变完全可恢复。交联靠<b>硫化</b>（硫加热交联 cis-1,4-聚异戊二烯，机理未完全清楚，证据指向<b>离子型反应</b>）。</p>"}, {"n": 28, "lec": "L10", "kind": "计算", "topic": "Bragg 定律", "stem": "An X-ray diffraction pattern of polyethylene recorded with Cu Kα radiation (λ = 1.54 Å) shows a first-order (n = 1) reflection at a diffraction angle 2θ = 21.5°. What is the spacing between the corresponding crystal planes?", "opts": ["2.06 Å", "4.13 Å", "8.26 Å", "0.41 Å"], "ans": 1, "exp": "<div class=\"fb\">2 D sin θ = n λ</div>\n<p><b>① 2θ 除以 2</b>：θ = 21.5° / 2 = <b>10.75°</b>，sin(10.75°) = 0.1865</p>\n<p><b>②</b> D = nλ / (2 sin θ) = 1.54 / (2 × 0.1865) = 1.54 / 0.373 = <b>4.13 Å</b></p>\n<p class=\"trap\"><b>最容易错的地方</b>：题目给的是 <b>2θ（衍射角）</b>，公式里用的是 <b>θ</b>。直接把 21.5° 代进 sin 得 2.10 Å——正是选项 A 的陷阱。<br><b>约定的由来</b>：入射光与晶面成 θ，反射光也成 θ，所以反射光相对入射方向偏折 <b>2θ</b>，实验量的就是这个偏折角。</p>\n<p><b>其他要点</b>：<b>Cu Kα 时 λ = 1.54 Å</b>（可能不给，要记）· <b>单晶</b>花样取决于取向，多方向测量给出唯一结构和空间群 · <b>粉末</b>各取向都有 → <b>同心圆环</b> · 每个峰可能是<b>不同晶面</b>，也可能是<b>高级衍射 n &gt; 1</b>。</p>\n<p class=\"note\"><b>晶体三级结构</b>：<b>Unit Cell 晶胞</b> 每边 <b>2–20 Å</b> → <b>Lamellae 片晶</b> 厚 <b>100–500 Å</b>、宽数微米 → <b>Spherulite 球晶</b> <b>数十至数百微米</b>。约定 <b>c 轴 = 主链方向</b>（fiber axis），单斜晶系例外（是 b 轴）。</p>"}, {"n": 29, "lec": "L10", "kind": "理解", "topic": "Tm 的依赖因素", "stem": "Which of the following changes would <b>lower</b> the melting temperature T<sub>m</sub> of a semicrystalline polymer?", "opts": ["Increasing the lamellar thickness", "Increasing the number-average molecular weight", "Decreasing the lamellar thickness", "Increasing the enthalpy of fusion per unit volume"], "ans": 2, "exp": "<div class=\"fb\">T<sub>m</sub> / T<sub>m</sub><sup>∞</sup> = 1 − (2γ / ΔH<sub>V</sub><sup>b</sup>) · (1/l + 1/r)</div>\n<p>（l 片晶厚度，r 半径，γ 单位面积表面能）</p>\n<p><b>l 或 r 减小 → 1/l + 1/r 增大 → 右边减小 → T<sub>m</sub> 降低。</b>物理原因：晶体越小，<b>表面能占比越大</b>，而熔融要“回收”这部分表面能。</p>\n<p><b>逐项</b>：A 升高 T<sub>m</sub>（更厚的片晶表面占比小）· B 升高（见下）· <b>C 降低 ✓</b> · D 升高（分母变大 → 修正项变小）</p>\n<p><b>分子量的影响</b>（另一条独立推导）：<b>链端相当于杂质，造成熔点降低</b>（凝固点降低的依数性）。每条链 2 个链端，链端摩尔分数 x<sub>B</sub> = 2M₀/M<sub>n</sub>，故 <b>M<sub>n</sub> 越低 → 链端分数越高 → T<sub>m</sub> 越低</b>。</p>\n<p class=\"note\"><b>结晶机理</b>：高分子按<b>成核-生长</b>结晶。片晶厚度由<b>热力学 + 动力学</b>共同决定——热力学上薄片晶 T<sub>m</sub> 低，<b>只有低温才允许</b>；动力学上薄片晶<b>生长更快</b> → <b>低温下薄片晶占主导</b>，更薄的片晶刚被允许时生长速率出现<b>突变</b>。<br><b>能否结晶</b>：<b>立构规整（isotactic、syndiotactic）才能结晶，无规（atactic）不能</b>；例外是带<b>小极性侧基</b>的（PVA、聚氟乙烯）。结晶的好处：强度提高、抗降解、阻隔性好。<br><b>四种形貌</b>：球晶 · hedrite · 枝晶（深过冷）· <b>shish kebab 串晶（流动下结晶）</b>。</p>"}, {"n": 30, "lec": "综合", "kind": "综合", "topic": "折射率不均 → 散射", "stem": "A glassy polymer such as PMMA is optically <b>transparent</b>, whereas a semicrystalline polymer such as high-density polyethylene appears <b>hazy or opaque</b>. What is the reason?", "opts": ["Crystalline regions absorb visible light while amorphous regions do not", "The refractive index difference between crystallites and amorphous regions causes light scattering", "Glassy polymers have a lower refractive index than crystalline ones", "Crystalline polymers have a higher T<sub>g</sub>, which increases absorption"], "ans": 1, "exp": "<p>讲义 Lecture 8 原文：<b>玻璃态高分子光学透明</b>——链<b>无规堆砌（像液体）</b>，折射率<b>处处均一</b>，因此<b>没有散射</b>；<b>半结晶高分子</b>——<b>晶区与非晶区折射率不同</b> → <b>光散射</b> → 发雾/不透明。</p>\n<p class=\"trap\"><b>关键词是“散射”不是“吸收”</b>（排除 A、D）。两种状态化学结构相同、电子跃迁能级相同，可见光吸收本来就差不多；差别完全来自<b>微观结构的光学均一性</b>。</p>\n<p><b>这题串起三讲</b>：<br>① <b>Lecture 6</b>：光散射的根源是<b>折射率不均匀</b>。讲义说 dn/dc 越大散射越强，同一道理——<b>折射率差别越大散射越强</b>（课程 Question 23）。<br>② <b>Lecture 8</b>：玻璃态 vs 半结晶态的光学性质。<br>③ <b>Lecture 9</b>：<b>crazing 银纹</b>也是同一机理——原纤间 10–20 nm 微孔洞与高分子折射率差极大 → 强散射 → <b>应力发白</b>。把塑料尺弯到发白就是在看银纹。</p>\n<p class=\"note\"><b>顺带的加工性对比</b>：玻璃态高分子<b>更易从熔体加工</b>（冷下来就得到了）；结晶高分子需<b>精细控制结晶动力学</b>；结晶高分子通常<b>力学更强</b>，但<b>高 T<sub>g</sub> 的玻璃态</b>对很多应用已够用。</p>"}];
+const KEY = "cm5174.v1";
+const KEYS = ["A","B","C","D"];
+let state = {};
+try{ const r = localStorage.getItem(KEY); if(r) state = JSON.parse(r) || {}; }catch(e){ state = {}; }
+const save = () => { try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} };
+
+const list = document.getElementById("qlist");
+let lecFilter = null, onlyWrong = false, onlyUnans = false;
+
+function card(q){
+  const el = document.createElement("article");
+  el.className = "q"; el.id = "q" + q.n; el.dataset.lec = q.lec; el.dataset.n = q.n;
+  el.innerHTML =
+    '<div class="qhead">' +
+      '<span class="qnum">Q' + String(q.n).padStart(2,"0") + '</span>' +
+      '<span class="qtag">' + q.lec + '</span>' +
+      '<span class="qkind k-' + q.kind + '">' + q.kind + '</span>' +
+      '<span class="qtopic">' + q.topic + '</span>' +
+    '</div>' +
+    '<p class="stem">' + q.stem + '</p>' +
+    '<ul class="opts">' + q.opts.map((o,i) =>
+        '<li><button class="opt" type="button" data-i="' + i + '">' +
+          '<span class="ok-key">' + KEYS[i] + '</span><span class="otext">' + o + '</span>' +
+        '</button></li>').join("") + '</ul>' +
+    '<div class="exp" hidden><p class="exp-h">解析</p>' + q.exp + '</div>';
+  el.querySelectorAll(".opt").forEach(b =>
+    b.addEventListener("click", () => pick(q.n, Number(b.dataset.i))));
+  return el;
+}
+
+function pick(n, i){
+  if(state[n] !== undefined) return;
+  state[n] = i; save(); paint(n); tally();
+}
+
+function paint(n){
+  const q = QS.find(x => x.n === n);
+  const el = document.getElementById("q" + n);
+  const chosen = state[n];
+  el.classList.toggle("is-ok", chosen === q.ans);
+  el.classList.toggle("is-no", chosen !== undefined && chosen !== q.ans);
+  el.querySelectorAll(".opt").forEach((b, i) => {
+    b.className = "opt";
+    b.querySelector(".mark")?.remove();
+    if(chosen === undefined){ b.disabled = false; return; }
+    b.disabled = true;
+    const m = document.createElement("span"); m.className = "mark";
+    if(i === chosen && i === q.ans){ b.classList.add("picked-ok"); m.textContent = "你选的 · 正确"; }
+    else if(i === chosen){ b.classList.add("picked-no"); m.textContent = "你选的"; }
+    else if(i === q.ans){ b.classList.add("reveal-ok"); m.textContent = "正确答案"; }
+    else { b.classList.add("dim"); }
+    if(m.textContent) b.appendChild(m);
+  });
+  el.querySelector(".exp").hidden = (chosen === undefined);
+}
+
+function tally(){
+  let ok = 0, no = 0;
+  QS.forEach(q => { const c = state[q.n];
+    if(c === undefined) return; if(c === q.ans) ok++; else no++; });
+  const done = ok + no;
+  const pct = done ? Math.round(ok / done * 100) + "%" : "—";
+  document.getElementById("s-done").textContent = done;
+  document.getElementById("s-ok").textContent = ok;
+  document.getElementById("s-no").textContent = no;
+  document.getElementById("s-pct").textContent = pct;
+  document.getElementById("bar-ok").style.width = (ok / QS.length * 100) + "%";
+  document.getElementById("bar-no").style.width = (no / QS.length * 100) + "%";
+  document.getElementById("f-ok").textContent = ok;
+  document.getElementById("f-no").textContent = no;
+  document.getElementById("f-left").textContent = QS.length - done;
+  document.getElementById("f-pct").textContent = pct;
+  const w = document.getElementById("wrongs"); w.innerHTML = "";
+  QS.filter(q => state[q.n] !== undefined && state[q.n] !== q.ans).forEach(q => {
+    const b = document.createElement("button");
+    b.className = "wj"; b.type = "button";
+    b.textContent = "Q" + String(q.n).padStart(2,"0") + " " + q.topic;
+    b.addEventListener("click", () => jump(q.n));
+    w.appendChild(b);
+  });
+}
+
+function applyFilter(){
+  let shown = 0;
+  QS.forEach(q => {
+    const el = document.getElementById("q" + q.n);
+    const c = state[q.n];
+    let vis = true;
+    if(lecFilter && q.lec !== lecFilter) vis = false;
+    if(onlyWrong && !(c !== undefined && c !== q.ans)) vis = false;
+    if(onlyUnans && c !== undefined) vis = false;
+    el.hidden = !vis; if(vis) shown++;
+  });
+  document.getElementById("empty").hidden = shown > 0;
+}
+
+function jump(n){
+  lecFilter = null; onlyWrong = false; onlyUnans = false;
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed","false"));
+  document.getElementById("t-wrong").setAttribute("aria-pressed","false");
+  document.getElementById("t-unans").setAttribute("aria-pressed","false");
+  applyFilter();
+  const el = document.getElementById("q" + n);
+  el.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+QS.forEach(q => list.appendChild(card(q)));
+QS.forEach(q => { if(state[q.n] !== undefined) paint(q.n); });
+tally();
+
+document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+  const l = c.dataset.lec;
+  const on = lecFilter === l;
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed","false"));
+  lecFilter = on ? null : l;
+  if(!on) c.setAttribute("aria-pressed","true");
+  applyFilter();
+}));
+document.getElementById("t-wrong").addEventListener("click", e => {
+  onlyWrong = !onlyWrong; if(onlyWrong){ onlyUnans = false;
+    document.getElementById("t-unans").setAttribute("aria-pressed","false"); }
+  e.currentTarget.setAttribute("aria-pressed", String(onlyWrong)); applyFilter();
+});
+document.getElementById("t-unans").addEventListener("click", e => {
+  onlyUnans = !onlyUnans; if(onlyUnans){ onlyWrong = false;
+    document.getElementById("t-wrong").setAttribute("aria-pressed","false"); }
+  e.currentTarget.setAttribute("aria-pressed", String(onlyUnans)); applyFilter();
+});
+document.getElementById("t-reset").addEventListener("click", () => {
+  state = {}; save();
+  QS.forEach(q => paint(q.n));
+  tally(); applyFilter();
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+document.querySelectorAll(".trap-j").forEach(b =>
+  b.addEventListener("click", () => jump(Number(b.dataset.goto))));
+applyFilter();
+</script>
