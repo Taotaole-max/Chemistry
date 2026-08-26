@@ -333,6 +333,10 @@ def build():
                 p_img = doc.add_paragraph()
                 p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 p_img.paragraph_format.space_after = Pt(2)
+                # Keep the image glued to its caption paragraph — without this, Word can
+                # push just the caption to the next page, leaving an orphaned caption line
+                # on an otherwise-blank page (found via PDF visual QA on appendix Fig 19).
+                p_img.paragraph_format.keep_with_next = True
                 run = p_img.add_run()
                 run.add_picture(str(fpath), width=Inches(width_in))
                 fig_used.add(fig_num)

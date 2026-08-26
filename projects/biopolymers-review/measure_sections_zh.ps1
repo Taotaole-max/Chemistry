@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Path = "C:\Users\letaotao\Projects\Chemistry\projects\biopolymers-review\Biopolymers-review-DRAFT-ZH.docx"
 )
 $word = New-Object -ComObject Word.Application
