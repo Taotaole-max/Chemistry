@@ -281,16 +281,18 @@
 
 A biopolymer is a macromolecule synthesised by a living organism: polysaccharides, proteins,
 nucleic acids, *cis*-1,4-polyisoprene and lignin together account for most of the organic polymer
-on Earth [1]. The term is extended here to include polymers made by chemical polymerisation of
-biomass-derived monomers — principally poly(lactic acid) (PLA) — since their properties are best
-understood alongside the true biopolymers. Three structural features set these chains apart from
-synthetic polymers: template-directed biosynthesis fixes chain length and sequence, so proteins
-and nucleic acids are strictly monodisperse (Đ = 1.00); biological monomer pools are
-enantiomerically pure, so chains are stereoregular by default; and hydroxyl/amide/carbonyl groups
-on almost every repeat unit give cohesive energy densities far above the polyolefins'. This
-report's properties and limitations follow from these three features: high stiffness and
-crystallinity, but also brittleness, water sensitivity, and decomposition close to or below the
-melting point (§5.4).
+on Earth [1]. This report also treats polymers made by chemically polymerising biomass-derived
+monomers — chiefly poly(lactic acid) (PLA) — as part of the same picture, since their properties
+are best understood alongside the true biopolymers rather than in isolation.
+
+Three structural features set these chains apart from synthetic polymers. Template-directed
+biosynthesis fixes chain length and sequence, so proteins and nucleic acids come out strictly
+monodisperse (Đ = 1.00). Biological monomer pools are enantiomerically pure, so the resulting
+chains are stereoregular by default. And hydroxyl, amide or carbonyl groups sit on almost every
+repeat unit, pushing cohesive energy densities well above the polyolefins'. The properties and
+limitations examined in this report follow directly from these three features: high stiffness and
+crystallinity, but also brittleness, water sensitivity, and decomposition that arrives close to or
+even below the melting point (§5.4).
 
 ---
 
@@ -326,18 +328,19 @@ synthesised by micro-organisms, or polymerised from bio-based monomers]*
 
 This section examines five biopolymer families along one organising axis: backbone flexibility and
 the intermolecular forces it permits. Cellulose sits at one extreme — an extended, hydrogen-bonded
-backbone locked into a crystalline solid that never melts; natural rubber sits at the other — a
-freely rotating backbone that crystallises only under strain. Between them lie polysaccharides with
-weaker or ionically tunable interchain forces (starch, chitin/chitosan, alginate), semicrystalline
-polyesters whose flexibility permits melt processing but only within narrow thermal windows (PHA,
-PLA), and template-folded proteins whose properties arise from defined secondary/tertiary structure
-rather than simple chain packing. Lignin — an irregularly cross-linked network with no periodic
-chain — closes the section as the structural counterpoint to everything else. The claim tested
-throughout is that backbone chemistry, not biological origin, predicts melting behaviour,
-hydrolytic/enzymatic susceptibility, and mechanical performance (Table 2). Fig. 2 summarises the
-force → consequence → limitation causal chain for every family at a glance; the text below adds
-only mechanism and citations. Each family's monomer and chain-scale structure is drawn directly in
-its own subsection (§3.1–§3.5); Appendix A (Figs. 18/19) collects the full set in one place.
+backbone locked into a crystalline solid that never melts. Natural rubber sits at the other: a
+freely rotating backbone that stays amorphous until strain forces it to crystallise. Between them
+lie three groups — polysaccharides with weaker or ionically tunable interchain forces (starch,
+chitin/chitosan, alginate); semicrystalline polyesters flexible enough to melt-process, but only
+within narrow thermal windows (PHA, PLA); and template-folded proteins, whose properties come from
+defined secondary/tertiary structure rather than simple chain packing. Lignin closes the section as
+the structural counterpoint to all of them — an irregularly cross-linked network with no periodic
+chain at all. The claim tested throughout is that backbone chemistry, not biological origin,
+predicts melting behaviour, hydrolytic/enzymatic susceptibility, and mechanical performance (Table
+2). Fig. 2 summarises the force → consequence → limitation causal chain for every family at a
+glance, so the text below only adds mechanism and citations the figure can't carry. Each family's
+monomer and chain-scale structure is drawn directly in its own subsection (§3.1–§3.5); Appendix A
+(Figs. 18/19) collects the full set in one place.
 
 *[Figure 2 — Structure-property causal chain for all seven families: dominant intermolecular
 force → key consequence → key limitation, colour-coded by backbone class]*
@@ -412,10 +415,10 @@ strain-crystallisation structure is in §7.3's Fig. 17 and not repeated here]*
 Natural rubber is the flexible extreme and this section's one exception to "crystallinity governs
 performance": *cis*-1,4-polyisoprene is amorphous at rest, but strain-induced crystallisation
 (SIC) self-reinforces the network under load — well documented by X-ray diffraction, largely
-absent in synthetic *cis*-polyisoprene [10]. This is not fixed: NR's molecular weight and
-distribution vary measurably between *Hevea* clones and with tree age
+absent in synthetic *cis*-polyisoprene [10]. This is not a fixed material constant, though: NR's
+molecular weight and its distribution vary measurably between *Hevea* clones and with tree age
 [19], and non-rubber protein/gel content is an active, clone-dependent contributor to network
-structure — not an incidental impurity [18]. The organising variable here is therefore not
+structure, not an incidental impurity [18]. The organising variable here is therefore not
 "crystallinity" per se but *intermolecular architecture under the conditions of use* — tested
 directly against a synthetic analogue in §7.3.
 
@@ -555,15 +558,16 @@ routes) → shared countermeasures that widen whichever window exists]*
 
 ### 7.1 Where Biopolymers Genuinely Win
 
-Four advantages are structural, each tracing back to §3: **renewable, non-fossil feedstock** —
-the only one applying uniformly across all families; **biodegradability in leakage-prone contexts**
-(mulch film, fishing gear, disposable foodware), where hydrolytic/enzymatic susceptibility becomes
-desired if the environment matches the material (§5.4); **biocompatibility/bioresorbability** —
-PLA/PGA sutures, collagen/alginate hydrogels, chitosan dressings do what commodity synthetics
-cannot without costly modification, the one space (§8) where biopolymers are the only viable
-class, though not unconditionally (§7.3); and **intrinsic functionality beyond mechanics** —
-chirality (PLA stereocomplexation), pH-responsive charge (chitosan), sequence-encoded bioactivity
-(silk, collagen), all free from biology.
+Four advantages are structural, each tracing back to §3. **Renewable, non-fossil feedstock** is
+the only one that applies uniformly across all five families. **Biodegradability in
+leakage-prone contexts** — mulch film, fishing gear, disposable foodware — turns
+hydrolytic/enzymatic susceptibility from a processing burden into a desired property, provided the
+environment actually matches the material (§5.4). **Biocompatibility and bioresorbability** let
+PLA/PGA sutures, collagen/alginate hydrogels and chitosan dressings do what commodity synthetics
+cannot without costly modification — the one application space (§8) where biopolymers are the only
+viable class, though not unconditionally so (§7.3). And **intrinsic functionality beyond
+mechanics** — chirality (PLA stereocomplexation), pH-responsive charge (chitosan),
+sequence-encoded bioactivity (silk, collagen) — comes free with the biological structure itself.
 
 ### 7.2 Where They Lose — Stated with Numbers, Not Adjectives
 
@@ -814,10 +818,11 @@ performance.
 ## Appendix A: Monomer and Chain-Scale Structures
 
 §3.1–§3.5 now each carry their own compact monomer and chain-scale structure figures (Figs.
-3/4/5/6/7/8/9), placed right where the argument needs them. This appendix is not a new argument —
-it collects every material (including SBR, which appears only in §7.3 and gets no standalone
-monomer figure there) into two complete reference figures in one place — like the References, it
-does **not** count against the 10-page body limit (OUTLINE.md: "10 页，不含参考文献").
+3/4/5/6/7/8/9), placed right where the argument needs them. This appendix does not add a new
+argument; it simply collects every material discussed in the review — including SBR, which
+appears only in §7.3 and gets no standalone monomer figure there — into two complete reference
+figures in one place. Like the References, it does **not** count against the 10-page body limit
+(OUTLINE.md specifies 10 pages excluding references).
 
 *[Figure 18 — Repeat units for fifteen materials: cellulose, amylose, chitosan, PHB, PLLA (as
 Figs. 3/6), alginate M/G (as Fig. 3), natural rubber (as Fig. 9), SBR's two comonomers (appears
