@@ -1,0 +1,2050 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>CM5174 知识点总结</title><style>
+@page { size:A4; margin:17mm 15mm 16mm; }
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{
+  margin:0; font-family:"Noto Sans CJK SC","Noto Sans CJK SC Regular",sans-serif;
+  font-size:9.9pt; line-height:1.62; color:#15202B; background:#fff;
+}
+/* ---- 版心与标题 ---- */
+h1{
+  font-size:20pt; line-height:1.25; margin:0 0 2mm; letter-spacing:-.01em;
+  color:#0F1B26; font-weight:700;
+}
+h2{
+  font-size:13pt; margin:0 0 3mm; padding:0 0 1.6mm; font-weight:700; color:#0F1B26;
+  border-bottom:1.6pt solid #1F4E8C; break-after:avoid; break-inside:avoid;
+}
+h3{
+  font-size:10.8pt; margin:5mm 0 1.8mm; font-weight:700; color:#1F4E8C;
+  break-after:avoid; break-inside:avoid;
+}
+h4{font-size:10pt; margin:4mm 0 1.5mm; font-weight:700; color:#33424F; break-after:avoid}
+p{margin:0 0 2.2mm; orphans:3; widows:3}
+ul,ol{margin:0 0 2.4mm; padding-left:5.2mm}
+li{margin:0 0 1mm}
+b,strong{font-weight:700; color:#0F1B26}
+a{color:#1F4E8C; text-decoration:none}
+hr{border:0; border-top:.5pt solid #D5DDE5; margin:4mm 0}
+sub,sup{font-size:.68em; line-height:0}
+code{font-family:"Noto Sans Mono CJK SC",monospace; font-size:.9em; background:#F1F4F7; padding:.3mm 1mm; border-radius:1mm}
+/* ---- 表格 ---- */
+table{
+  width:100%; border-collapse:collapse; margin:2.6mm 0 3.4mm;
+  font-size:9.1pt; break-inside:avoid;
+}
+th,td{border:.5pt solid #C3CDD8; padding:1.5mm 2.2mm; text-align:left; vertical-align:top}
+th{background:#EDF1F6; font-weight:700; color:#0F1B26}
+/* ---- 公式 ---- */
+.fmb{
+  margin:2.6mm 0; padding:2.4mm 3mm; text-align:center; background:#F5F8FB;
+  border-left:1.6pt solid #1F4E8C; font-size:10.4pt; line-height:2.1;
+  break-inside:avoid; overflow-wrap:anywhere;
+}
+.fmi{white-space:nowrap}
+.fr{display:inline-block; vertical-align:-0.52em; text-align:center; margin:0 .18em}
+.fr-n{display:block; padding:0 .28em}
+.fr-d{display:block; padding:.06em .28em 0; border-top:.7pt solid currentColor}
+.sq{white-space:nowrap}
+.sq-b{border-top:.7pt solid currentColor; padding:0 .12em; margin-left:-.06em}
+.op{font-style:normal; padding:0 .1em}
+.bx{display:inline-block; border:.9pt solid #1F4E8C; border-radius:1.2mm; padding:1mm 2.4mm; background:#fff}
+/* ---- 提示块 ---- */
+blockquote{
+  margin:2.6mm 0; padding:2mm 3mm; border-left:2pt solid #B8843A; background:#FBF6EC;
+  font-size:9.4pt; color:#4A3A22; break-inside:avoid;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote b,blockquote strong{color:#8A5A12}
+/* ---- 封面 ---- */
+.cover{break-after:page; padding-top:24mm}
+.cover .eyebrow{
+  font-size:9pt; letter-spacing:.22em; color:#1F4E8C; font-weight:700; margin:0 0 3mm;
+}
+.cover h1{font-size:27pt; margin:0 0 4mm}
+.cover .tagline{font-size:11.5pt; color:#465563; margin:0 0 10mm}
+.cover .meta{font-size:9.4pt; color:#5A6875; line-height:1.9; border-top:.5pt solid #D5DDE5; padding-top:4mm}
+.cover .meta b{color:#15202B}
+.toc{margin-top:9mm; border-top:.5pt solid #D5DDE5; padding-top:4mm}
+.toc h2{border:0; font-size:10.5pt; margin:0 0 2.5mm; padding:0}
+.toc ol{list-style:none; padding:0; margin:0; font-size:9.4pt; columns:2; column-gap:9mm}
+.toc li{margin:0 0 1.4mm; break-inside:avoid}
+.toc .k{
+  display:inline-block; min-width:8.5mm; font-weight:700; color:#1F4E8C;
+  font-family:"Noto Sans Mono CJK SC",monospace; font-size:8.6pt;
+}
+/* ---- 题目 ---- */
+.q{
+  break-inside:auto; margin:0 0 4.5mm; border:.6pt solid #C9D3DD; border-radius:1.6mm;
+  border-left:2.2pt solid #1F4E8C;
+}
+.q-top{break-inside:avoid; break-after:avoid}
+.q-h{
+  display:flex; align-items:baseline; gap:2.4mm; padding:2mm 3mm 0; flex-wrap:wrap;
+  font-size:8.6pt; color:#5A6875;
+}
+.q-n{
+  font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700; font-size:9.4pt;
+  color:#1F4E8C; background:#E7EEF7; padding:.4mm 1.8mm; border-radius:1mm;
+}
+.q-k{border:.5pt solid #C9D3DD; border-radius:.8mm; padding:.2mm 1.4mm; font-size:8pt}
+.q-t{margin-left:auto; font-size:8.6pt}
+.q-s{padding:1.8mm 3mm 1.4mm; font-size:9.9pt; line-height:1.5}
+.q-o{list-style:none; margin:0; padding:0 3mm 2.4mm; display:block}
+.q-o li{
+  display:flex; gap:2.4mm; align-items:baseline; margin:0 0 1mm;
+  padding:1.1mm 2.2mm; border:.5pt solid #DCE3EA; border-radius:1.2mm; font-size:9.5pt;
+}
+.q-o li.right{border-color:#1B7A52; background:#EDF7F1; font-weight:700}
+.q-o .k{
+  font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700; font-size:9pt;
+  min-width:4.2mm; color:#5A6875;
+}
+.q-o li.right .k{color:#1B7A52}
+.q-o li.right .tick{margin-left:auto; color:#1B7A52; font-size:8.4pt; font-weight:700; white-space:nowrap}
+.q-a{
+  border-top:.5pt solid #DCE3EA; background:#FAFBFD; padding:2.2mm 3mm 2.4mm; font-size:9.3pt;
+}
+.q-a .lab{
+  font-size:8.2pt; letter-spacing:.14em; color:#5A6875; font-weight:700;
+  margin:0 0 1.6mm; display:flex; align-items:center; gap:2mm;
+}
+.q-a .lab::after{content:""; flex:1; height:.5pt; background:#DCE3EA}
+.q-a .ans{color:#1B7A52; font-weight:700}
+.q-a p{margin:0 0 1.6mm}
+.q-a p:last-child{margin-bottom:0}
+.q-a .fb{
+  font-family:"Noto Sans Mono CJK SC",monospace; text-align:center; background:#fff;
+  border:.5pt solid #DCE3EA; border-radius:1.2mm; padding:1.8mm 2.4mm; margin:1.8mm 0;
+  font-size:9.2pt; line-height:1.75; break-inside:avoid; overflow-wrap:anywhere;
+}
+.q-a .trap{
+  background:#FBF3E4; border-left:1.8pt solid #B8843A; border-radius:0 1.2mm 1.2mm 0;
+  padding:1.6mm 2.4mm; margin:1.8mm 0; color:#4A3A22;
+}
+.q-a .trap b{color:#8A5A12}
+.q-a .note{border-left:1.5pt solid #D5DDE5; padding:.4mm 0 .4mm 2.4mm; margin:1.8mm 0; color:#5A6875}
+.q-a .note b{color:#33424F}
+table.mini{margin:1.8mm 0; font-size:8.8pt}
+table.mini th,table.mini td{padding:1.2mm 1.8mm}
+/* ---- 速查/陷阱 ---- */
+.sheet{break-before:page}
+.keytab{font-size:8.8pt}
+.keytab td.a{font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700; color:#1B7A52; text-align:center}
+.keytab td.n{font-family:"Noto Sans Mono CJK SC",monospace; text-align:center; color:#5A6875}
+ol.traps{list-style:none; padding:0; margin:0; counter-reset:t}
+ol.traps li{
+  counter-increment:t; border-left:2pt solid #B8843A; padding:0 0 0 3mm;
+  margin:0 0 3.2mm; break-inside:avoid;
+}
+ol.traps li::before{
+  content:counter(t); font-family:"Noto Sans Mono CJK SC",monospace; font-weight:700;
+  color:#B8843A; font-size:8.4pt; margin-right:2mm;
+}
+ol.traps .t{font-weight:700; font-size:10pt; color:#0F1B26}
+ol.traps .jump{font-family:"Noto Sans Mono CJK SC",monospace; font-size:8.4pt; color:#1F4E8C; margin-left:1.5mm}
+ol.traps .d{margin:.8mm 0 0; font-size:9.2pt; color:#5A6875}
+.lec-break{break-before:page}
+
+
+h1.bigsec{font-size:19pt; border-bottom:2.2pt solid #1F4E8C; padding-bottom:2.5mm; margin:0 0 5mm}
+h1.bigsec + blockquote{margin-top:0}
+blockquote{break-inside:avoid}
+table td, table th{font-size:8.9pt}
+</style></head><body>
+<section class="cover">
+  <p class="eyebrow">CM 5174 · 期末复习</p>
+  <h1>高分子物理化学<br>知识点总结（完整版）</h1>
+  <p class="tagline">Lecture 1–10 全章节 · 公式速查 · 跨讲串联</p>
+  <div class="meta">
+    <b>课程</b>　CM5174 Polymer and Macromolecular Chemistry，NUS · Assoc. Prof. Tan Zhi Kuang<br>
+    <b>依据</b>　Lecture 1–10 全部讲义原文<br>
+    <b>出处</b>　每讲标注对应的讲义文件与页码范围，可直接翻回原文核对<br>
+    <b>三部分</b>　① <b>公式速查表</b>——按讲次汇总全部公式，考前最后一遍看这个<br>
+    　　　　　② <b>十讲正文</b>——保留推导脉络，标出讲义原文结论与常见误解<br>
+    　　　　　③ <b>跨讲串联</b>——12 条贯穿多讲的主线，综合题几乎全出自这里
+  </div>
+  <div class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><span class="k">速查</span>公式速查表</li>
+      <li><span class="k">L1</span>高分子尺寸与构象</li>
+      <li><span class="k">L2</span>混合热力学</li>
+      <li><span class="k">L3</span>Flory-Huggins 溶液理论</li>
+      <li><span class="k">L4</span>相行为</li>
+      <li><span class="k">L5</span>渗透压与粘度法</li>
+      <li><span class="k">L6</span>光散射与动态光散射</li>
+      <li><span class="k">L7</span>SEC 与质谱</li>
+      <li><span class="k">L8</span>玻璃态</li>
+      <li><span class="k">L9</span>力学性质与加工</li>
+      <li><span class="k">L10</span>弹性态与结晶态</li>
+      <li><span class="k">串联</span>跨讲串联 12 条</li>
+    </ol>
+  </div>
+</section><h2>全局地图</h2>
+<table>
+<thead>
+<tr>
+<th>Lecture</th>
+<th>主题</th>
+<th>一句话核心</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Polymer Size and Conformations</td>
+<td>无规线团的平均尺寸 ∝ √N</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Thermodynamics of Mixtures</td>
+<td>小分子混合由熵驱动，ΔG = ΔH − TΔS</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Thermodynamics of Polymer Solutions</td>
+<td>Flory-Huggins：链把混合熵砍掉一大半</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Phase Behavior of Polymer Solutions</td>
+<td>binodal / spinodal / 临界点，两种分相机理</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Osmotic Pressure &amp; Viscometry</td>
+<td>测 Mn（渗透压）和 Mv≈Mw（粘度）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Light Scattering &amp; DLS</td>
+<td>测 Mw + Rg（静态）和 Rh（动态）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SEC &amp; MALDI-TOF-MS</td>
+<td>测整个分布，Mn 和 Mw 都能给</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Glassy State</td>
+<td>Tg 是二阶转变，受结构/分子量/热历史影响</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Mechanical Properties &amp; Processing</td>
+<td>应力-应变、粘弹性、成型工艺</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Elastomeric &amp; Crystalline State</td>
+<td>橡胶弹性是熵驱动；晶体三级结构</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr />
+<h1 class="lec-break bigsec">公式速查表</h1>
+<blockquote>
+<p>考前最后一遍看这一页。展开说明见后面正文。</p>
+</blockquote>
+<h2>L1 · 尺寸与构象</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数均分子量</td>
+<td><span class="fmi">M<sub>n</sub> = <span class="fr"><span class="fr-n">Σn<sub>i</sub>M<sub>i</sub></span><span class="fr-d">Σn<sub>i</sub></span></span></span></td>
+<td>依数性方法测到的</td>
+</tr>
+<tr>
+<td>重均分子量</td>
+<td><span class="fmi">M<sub>w</sub> = <span class="fr"><span class="fr-n">Σn<sub>i</sub>M<sub>i</sub><sup>2</sup></span><span class="fr-d">Σn<sub>i</sub>M<sub>i</sub></span></span></span></td>
+<td><strong>分母是总质量</strong></td>
+</tr>
+<tr>
+<td>分散度</td>
+<td><span class="fmi">PDI=M<sub>w</sub>/M<sub>n</sub></span></td>
+<td>恒 ≥ 1</td>
+</tr>
+<tr>
+<td>自由连接链</td>
+<td><span class="fmi">⟨h<sup>2</sup>⟩=nl<sup>2</sup></span></td>
+<td>交叉项因 ⟨cosθ⟩=0 消失</td>
+</tr>
+<tr>
+<td>固定键角</td>
+<td><span class="fmi">⟨h<sup>2</sup>⟩=nl<sup>2</sup><span class="fr"><span class="fr-n">1+<span class="op">cos</span>θ</span><span class="fr-d">1-<span class="op">cos</span>θ</span></span></span></td>
+<td><strong>θ = 180° − 键角</strong>；sp³ 时因子 ≈ 2</td>
+</tr>
+<tr>
+<td>固定旋转角</td>
+<td>再乘 <span class="fmi"><span class="fr"><span class="fr-n">1+<span class="op">cos</span>φ</span><span class="fr-d">1-<span class="op">cos</span>φ</span></span></span></td>
+<td>形式相同</td>
+</tr>
+<tr>
+<td>统一形式</td>
+<td><span class="fmi">⟨h<sup>2</sup>⟩=C<sub>∞</sub> nl<sup>2</sup>=Nb<sup>2</sup></span></td>
+<td>C∞ 特征比、b 统计链段长</td>
+</tr>
+<tr>
+<td>回转半径</td>
+<td><span class="fmi">R<sub>g</sub><sup>2</sup> = <span class="fr"><span class="fr-n">Nb<sup>2</sup></span><span class="fr-d">6</span></span> = <span class="fr"><span class="fr-n">⟨h<sup>2</sup>⟩</span><span class="fr-d">6</span></span></span></td>
+<td><span class="fmi">⟨h<sup>2</sup>⟩<sup>1/2</sup> = <span class="sq">√<span class="sq-b">6</span></span>R<sub>g</sub>≈2.45R<sub>g</sub></span></td>
+</tr>
+<tr>
+<td>标度</td>
+<td><span class="fmi">R<sub>g</sub>∝N<sup>ν</sup></span></td>
+<td>ν = 1/3 球、1/2 理想、<strong>3/5 良溶剂</strong>、1 棒</td>
+</tr>
+</tbody>
+</table>
+<h2>L2 · 混合热力学</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本方程</td>
+<td><span class="fmi">dU=TdS-p dV+dw<sub>add</sub></span></td>
+</tr>
+<tr>
+<td>定义</td>
+<td><span class="fmi">H=U+pV</span>；<span class="fmi">G=H-TS</span></td>
+</tr>
+<tr>
+<td>化学热力学基本方程</td>
+<td><span class="fmi">dG=V dp-S dT+μ<sub>A</sub> dn<sub>A</sub>+μ<sub>B</sub> dn<sub>B</sub></span></td>
+</tr>
+<tr>
+<td>两个偏导</td>
+<td><span class="fmi">(∂G/∂p)<sub>T</sub>=V</span>；<span class="fmi">(∂G/∂T)<sub>p</sub> = -S</span></td>
+</tr>
+<tr>
+<td>自发判据</td>
+<td><span class="fmi">dG<sub>T,p</sub>=dH-TdS≤0</span></td>
+</tr>
+<tr>
+<td>气体化学势</td>
+<td><span class="fmi">μ=μ<sup>°</sup>+RT<span class="op">ln</span>p</span></td>
+</tr>
+<tr>
+<td><strong>Raoult</strong></td>
+<td><span class="fmi">μ<sub>A</sub>=μ<sub>A</sub><sup>*</sup>+RT<span class="op">ln</span>x<sub>A</sub></span>（恒 <strong>小于</strong> μ*）</td>
+</tr>
+<tr>
+<td>理想混合 ΔG</td>
+<td><span class="fmi">ΔG<sub>mix</sub>=nRT(x<sub>A</sub><span class="op">ln</span>x<sub>A</sub>+x<sub>B</sub><span class="op">ln</span>x<sub>B</sub>)</span></td>
+</tr>
+<tr>
+<td>理想混合 ΔS</td>
+<td><span class="fmi">ΔS<sub>mix</sub> = -nR(x<sub>A</sub><span class="op">ln</span>x<sub>A</sub>+x<sub>B</sub><span class="op">ln</span>x<sub>B</sub>)</span></td>
+</tr>
+<tr>
+<td>理想混合 ΔH</td>
+<td><span class="fmi">ΔH<sub>mix</sub>=0</span></td>
+</tr>
+<tr>
+<td>Boltzmann</td>
+<td><span class="fmi">S=k<span class="op">ln</span>Ω</span>，<span class="fmi">Ω=<span class="fr"><span class="fr-n">m!</span><span class="fr-d">m<sub>A</sub>!m<sub>B</sub>!</span></span></span></td>
+</tr>
+<tr>
+<td>Stirling</td>
+<td><span class="fmi"><span class="op">ln</span>m!≈m<span class="op">ln</span>m-m</span></td>
+</tr>
+<tr>
+<td>交换能</td>
+<td><span class="fmi">Δw=w<sub>AB</sub>-<span class="fr"><span class="fr-n">w<sub>AA</sub></span><span class="fr-d">2</span></span>-<span class="fr"><span class="fr-n">w<sub>BB</sub></span><span class="fr-d">2</span></span></span></td>
+</tr>
+<tr>
+<td><strong>相互作用参数</strong></td>
+<td><span class="fmi">χ=<span class="fr"><span class="fr-n">zΔw</span><span class="fr-d">kT</span></span></span>（∝ 1/T → UCST）</td>
+</tr>
+<tr>
+<td>regular solution</td>
+<td><span class="fmi">ΔG<sub>mix</sub>=nRT[x<sub>A</sub><span class="op">ln</span>x<sub>A</sub>+x<sub>B</sub><span class="op">ln</span>x<sub>B</sub>+x<sub>A</sub>x<sub>B</sub>χ]</span></td>
+</tr>
+<tr>
+<td>混合焓</td>
+<td><span class="fmi">ΔH<sub>mix</sub>=x<sub>A</sub>x<sub>B</sub>χnRT</span></td>
+</tr>
+</tbody>
+</table>
+<h2>L3 · Flory-Huggins</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>格点与体积分数</td>
+<td><span class="fmi">m=m<sub>A</sub>+Nm<sub>B</sub></span>；<span class="fmi">φ<sub>B</sub> = <span class="fr"><span class="fr-n">Nm<sub>B</sub></span><span class="fr-d">m<sub>A</sub>+Nm<sub>B</sub></span></span></span></td>
+</tr>
+<tr>
+<td><strong>混合熵</strong></td>
+<td><span class="fmi">ΔS<sub>mix</sub> = -nR[φ<sub>A</sub><span class="op">ln</span>φ<sub>A</sub>+<span class="fr"><span class="fr-n">φ<sub>B</sub></span><span class="fr-d">N</span></span><span class="op">ln</span>φ<sub>B</sub>]</span></td>
+</tr>
+<tr>
+<td>混合焓</td>
+<td><span class="fmi">ΔH<sub>mix</sub>=φ<sub>A</sub>φ<sub>B</sub>χnRT</span>（<strong>不除 N</strong>）</td>
+</tr>
+<tr>
+<td>混合自由能</td>
+<td><span class="fmi">ΔG<sub>mix</sub>=nRT[φ<sub>A</sub><span class="op">ln</span>φ<sub>A</sub>+<span class="fr"><span class="fr-n">φ<sub>B</sub></span><span class="fr-d">N</span></span><span class="op">ln</span>φ<sub>B</sub>+φ<sub>A</sub>φ<sub>B</sub>χ]</span></td>
+</tr>
+<tr>
+<td>临界值</td>
+<td><span class="fmi">χ<sub>c</sub> = <span class="fr"><span class="fr-n">1</span><span class="fr-d">2</span></span>(1+<span class="fr"><span class="fr-n">1</span><span class="fr-d"><span class="sq">√<span class="sq-b">N</span></span></span></span>)<sup>2</sup>→0.5</span>（小分子是 2）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句话</strong>：只有高分子那一项被 N 削弱，焓项不被削弱 → 分子量越高越难溶。</p>
+<h2>L4 · 相行为</h2>
+<table>
+<thead>
+<tr>
+<th>目标</th>
+<th>判据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否分相</td>
+<td>ΔG 曲线<strong>凹向下</strong>则分相；凹向上则不分</td>
+</tr>
+<tr>
+<td><strong>Binodal</strong></td>
+<td>对 ΔG 曲线作<strong>公切线</strong>，两切点即是</td>
+</tr>
+<tr>
+<td><strong>Spinodal</strong></td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">d<sup>2</sup>ΔG<sub>m</sub></span><span class="fr-d">dx<sub>A</sub><sup>2</sup></span></span>=0</span>（拐点）</td>
+</tr>
+<tr>
+<td><strong>临界点</strong></td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">d<sup>3</sup>ΔG<sub>m</sub></span><span class="fr-d">dx<sub>A</sub><sup>3</sup></span></span>=0</span>（拐点合并）</td>
+</tr>
+<tr>
+<td>LCST</td>
+<td><span class="fmi">χ=<span class="fr"><span class="fr-n">α</span><span class="fr-d">T</span></span>+β</span>，α&lt;0 且 β&gt;0</td>
+</tr>
+</tbody>
+</table>
+<h2>L5 · 渗透压与粘度</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>渗透压出发点</td>
+<td><span class="fmi">V<sub>m</sub>Π=-RT<span class="op">ln</span>x<sub>A</sub></span></td>
+</tr>
+<tr>
+<td><strong>维里展开</strong></td>
+<td><span class="fmi">Π=RT[<span class="fr"><span class="fr-n">c</span><span class="fr-d">M</span></span>+Bc<sup>2</sup>+B<sub>3</sub>c<sup>3</sup>+⋯]</span></td>
+</tr>
+<tr>
+<td>稀溶液</td>
+<td><span class="fmi">Π≈RT<span class="fr"><span class="fr-n">c</span><span class="fr-d">M</span></span></span>（<strong>c 用 g/m³</strong>）；<span class="fmi">h=<span class="fr"><span class="fr-n">Π</span><span class="fr-d">ρg</span></span></span></td>
+</tr>
+<tr>
+<td>B 的符号</td>
+<td>良溶剂 <strong>B&gt;0</strong>；θ 溶剂 <strong>B=0</strong>；不良 <strong>B&lt;0</strong></td>
+</tr>
+<tr>
+<td>VPO</td>
+<td><span class="fmi">ΔT=K[<span class="fr"><span class="fr-n">c</span><span class="fr-d">M</span></span>+Bc<sup>2</sup>+⋯]</span>（需标定 K）</td>
+</tr>
+<tr>
+<td>Newton 粘度</td>
+<td><span class="fmi">σ=η<span class="fr"><span class="fr-n">dv</span><span class="fr-d">dy</span></span></span></td>
+</tr>
+<tr>
+<td>Stokes</td>
+<td><span class="fmi">F<sub>vis</sub>=6πη<sub>s</sub>Rv<sub>0</sub></span>，摩擦因子 <span class="fmi">f=6πη<sub>s</sub>R</span></td>
+</tr>
+<tr>
+<td>Einstein</td>
+<td><span class="fmi">η=η<sub>s</sub>(1+<span class="fr"><span class="fr-n">5</span><span class="fr-d">2</span></span>φ+4φ<sup>2</sup>+⋯)</span>（只依赖 φ）</td>
+</tr>
+<tr>
+<td>特性粘度</td>
+<td><span class="fmi">[η] = <span class="fr"><span class="fr-n">5</span><span class="fr-d">2</span></span><span class="fr"><span class="fr-n">N<sub>Av</sub>V<sub>h</sub></span><span class="fr-d">M</span></span></span>，<span class="fmi">V<sub>h</sub> ∝ <span class="fr"><span class="fr-n">4</span><span class="fr-d">3</span></span>πR<sub>g</sub><sup>3</sup></span></td>
+</tr>
+<tr>
+<td><strong>Mark-Houwink</strong></td>
+<td><span class="fmi">[η]=kM<sup>a</sup></span>，<span class="fmi">a=3ν-1</span></td>
+</tr>
+<tr>
+<td>a 值</td>
+<td>球 0 · <strong>θ 溶剂 0.5</strong> · <strong>良溶剂 0.8</strong> · 棒 2</td>
+</tr>
+<tr>
+<td>Poiseuille</td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">ΔV</span><span class="fr-d">Δt</span></span> = <span class="fr"><span class="fr-n">(ρgL+Δp)πR<sup>4</sup></span><span class="fr-d">8ηL</span></span></span>（R⁴ 极敏感）</td>
+</tr>
+</tbody>
+</table>
+<h2>L6 · 光散射与 DLS</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rayleigh</strong></td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">I<sub>θ</sub></span><span class="fr-d">I<sub>0</sub></span></span> = <span class="fr"><span class="fr-n">8π<sup>4</sup>α<sup>2</sup>(1+<span class="op">cos</span><sup>2</sup>θ)</span><span class="fr-d">λ<sup>4</sup>r<sup>2</sup></span></span></span>（<strong>I ∝ λ⁻⁴</strong>）</td>
+</tr>
+<tr>
+<td>极化率</td>
+<td><span class="fmi">α∝n<sub>0</sub><span class="fr"><span class="fr-n">dn</span><span class="fr-d">dc</span></span>c</span>，故 <span class="fmi">I∝(dn/dc)<sup>2</sup></span></td>
+</tr>
+<tr>
+<td>光学常数</td>
+<td><span class="fmi">K=<span class="fr"><span class="fr-n">2π<sup>2</sup>n<sub>0</sub><sup>2</sup>(dn/dc)<sup>2</sup></span><span class="fr-d">λ<sup>4</sup>N<sub>Av</sub></span></span></span></td>
+</tr>
+<tr>
+<td>气体</td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">I<sub>θ</sub></span><span class="fr-d">I<sub>0</sub></span></span>=KcM<sub>w</sub><span class="fr"><span class="fr-n">1+<span class="op">cos</span><sup>2</sup>θ</span><span class="fr-d">r<sup>2</sup></span></span></span></td>
+</tr>
+<tr>
+<td>溶液</td>
+<td><span class="fmi">M<sub>w</sub> → <span class="fr"><span class="fr-n">1</span><span class="fr-d">1/M<sub>w</sub>+2Bc+⋯</span></span></span>（<strong>同一个 B</strong>）</td>
+</tr>
+<tr>
+<td>大粒子</td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">1</span><span class="fr-d">M<sub>w</sub></span></span>(1+<span class="fr"><span class="fr-n">q<sup>2</sup></span><span class="fr-d">3</span></span>R<sub>g</sub><sup>2</sup>+⋯)</span></td>
+</tr>
+<tr>
+<td>散射矢量</td>
+<td><span class="fmi">q=<span class="fr"><span class="fr-n">4πn</span><span class="fr-d">λ</span></span><span class="op">sin</span><span class="fr"><span class="fr-n">θ</span><span class="fr-d">2</span></span></span>（注意 <strong>θ/2</strong>）</td>
+</tr>
+<tr>
+<td>自相关</td>
+<td><span class="fmi">C(t') = (⟨I<sub>s</sub><sup>2</sup>⟩-⟨I<sub>s</sub>⟩<sup>2</sup>)e<sup>-2q<sup>2</sup>D<sub>m</sub>t'</sup>+⟨I<sub>s</sub>⟩<sup>2</sup></span></td>
+</tr>
+<tr>
+<td><strong>Stokes-Einstein</strong></td>
+<td><span class="fmi">D<sub>t</sub> = <span class="fr"><span class="fr-n">kT</span><span class="fr-d">6πη<sub>s</sub>R<sub>h</sub></span></span></span>（外推 c→0）</td>
+</tr>
+<tr>
+<td>布朗运动</td>
+<td><span class="fmi">⟨r<sup>2</sup>⟩=Nl<sup>2</sup></span>，<span class="fmi">D<sub>t</sub> = <span class="fr"><span class="fr-n">Nl<sup>2</sup></span><span class="fr-d">6t</span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2>L7 · SEC 与质谱</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>校准</td>
+<td><span class="fmi"><span class="op">ln</span>M=kV<sub>R</sub>+c</span>（log M 对 V<sub>R</sub> 线性，<strong>斜率为负</strong>）</td>
+</tr>
+<tr>
+<td>流体力学体积</td>
+<td><span class="fmi">V<sub>h</sub>∝kM<sup>a+1</sup></span></td>
+</tr>
+<tr>
+<td><strong>通用校准</strong></td>
+<td><span class="fmi">k<sub>s</sub>M<sub>s</sub><sup>a<sub>s</sub>+1</sup>=k<sub>x</sub>M<sub>x</sub><sup>a<sub>x</sub>+1</sup></span>（指数是 <strong>a+1</strong>）</td>
+</tr>
+<tr>
+<td>UV 信号</td>
+<td><span class="fmi">h∝n<sub>i</sub>M<sub>i</sub></span>（发色团数随 M 增长）</td>
+</tr>
+<tr>
+<td>由谱图算</td>
+<td><span class="fmi">M<sub>n</sub> = <span class="fr"><span class="fr-n">∫h dM</span><span class="fr-d">∫(h/M) dM</span></span></span>，<span class="fmi">M<sub>w</sub> = <span class="fr"><span class="fr-n">∫hM dM</span><span class="fr-d">∫h dM</span></span></span></td>
+</tr>
+<tr>
+<td>换元</td>
+<td><span class="fmi">dM=k e<sup>kV<sub>R</sub>+c</sup>dV<sub>R</sub></span></td>
+</tr>
+<tr>
+<td><strong>TOF</strong></td>
+<td><span class="fmi">qV=<span class="fr"><span class="fr-n">1</span><span class="fr-d">2</span></span>mv<sup>2</sup></span> → <span class="fmi">v∝1/<span class="sq">√<span class="sq-b">m</span></span></span> → <span class="fmi">t∝<span class="sq">√<span class="sq-b">m</span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2>L8 · 玻璃态</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>热膨胀系数</td>
+<td><span class="fmi">α=<span class="fr"><span class="fr-n">1</span><span class="fr-d">V</span></span>(<span class="fr"><span class="fr-n">∂V</span><span class="fr-d">∂T</span></span>)<sub>p</sub></span>（G 的二阶导）</td>
+</tr>
+<tr>
+<td>热容</td>
+<td><span class="fmi">C<sub>p</sub> = (<span class="fr"><span class="fr-n">∂H</span><span class="fr-d">∂T</span></span>)<sub>p</sub></span>（G 的二阶导）</td>
+</tr>
+<tr>
+<td><strong>Flory-Fox</strong></td>
+<td><span class="fmi">T<sub>g</sub>(M<sub>n</sub>)=T<sub>g</sub>(M<sub>∞</sub>)-<span class="fr"><span class="fr-n">K</span><span class="fr-d">M<sub>n</sub></span></span></span></td>
+</tr>
+<tr>
+<td><strong>Fox（共混）</strong></td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>g</sub></span></span> = <span class="fr"><span class="fr-n">w<sub>A</sub></span><span class="fr-d">T<sub>g(A)</sub></span></span>+<span class="fr"><span class="fr-n">w<sub>B</sub></span><span class="fr-d">T<sub>g(B)</sub></span></span></span>（<strong>必须用 K</strong>）</td>
+</tr>
+<tr>
+<td>熵推导版</td>
+<td><span class="fmi"><span class="op">ln</span>T<sub>g</sub> = <span class="fr"><span class="fr-n">w<sub>A</sub>ΔC<sub>p(A)</sub><span class="op">ln</span>T<sub>g(A)</sub>+w<sub>B</sub>ΔC<sub>p(B)</sub><span class="op">ln</span>T<sub>g(B)</sub></span><span class="fr-d">w<sub>A</sub>ΔC<sub>p(A)</sub>+w<sub>B</sub>ΔC<sub>p(B)</sub></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>转变阶数</strong>：熔融 = 一阶（V、H 跳变）；玻璃化 = <strong>二阶</strong>（α、C<sub>p</sub> 跳变，V 连续需外推）</p>
+<h2>L9 · 力学性质</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应力 / 应变</td>
+<td><span class="fmi">σ<sub>t</sub> = <span class="fr"><span class="fr-n">f</span><span class="fr-d">A</span></span></span>；<span class="fmi">ε=<span class="fr"><span class="fr-n">ΔL</span><span class="fr-d">L<sub>0</sub></span></span></span></td>
+</tr>
+<tr>
+<td>杨氏模量</td>
+<td><span class="fmi">σ<sub>t</sub>=Eε</span>（曲线<strong>初始斜率</strong>）</td>
+</tr>
+<tr>
+<td>泊松比</td>
+<td><span class="fmi">-<span class="fr"><span class="fr-n">Δd</span><span class="fr-d">d</span></span>=ν<span class="fr"><span class="fr-n">ΔL</span><span class="fr-d">L<sub>0</sub></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h2>L10 · 弹性体与结晶</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含弹性功</td>
+<td><span class="fmi">dG=V dp-S dT+f dL</span></td>
+</tr>
+<tr>
+<td><strong>Maxwell 关系</strong></td>
+<td><span class="fmi">(∂f/∂T)<sub>p,L</sub> = -(∂S/∂L)<sub>p,T</sub></span></td>
+</tr>
+<tr>
+<td>熵弹性</td>
+<td><span class="fmi">f=(∂H/∂L)<sub>p,T</sub>-T(∂S/∂L)<sub>p,T</sub></span>，<strong>截距 ≈ 0</strong></td>
+</tr>
+<tr>
+<td>绝热拉伸</td>
+<td><span class="fmi">C<sub>V,p</sub>ΔT=<span class="fr"><span class="fr-n">AEL<sup>2</sup></span><span class="fr-d">2L<sub>0</sub></span></span></span>（拉伸<strong>升温</strong>）</td>
+</tr>
+<tr>
+<td><strong>Bragg</strong></td>
+<td><span class="fmi">2D<span class="op">sin</span>θ=nλ</span>（题目给 <strong>2θ</strong>，先除以 2；Cu Kα λ=1.54 Å）</td>
+</tr>
+<tr>
+<td>T<sub>m</sub> 与片晶尺寸</td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">T<sub>m</sub></span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>=1-<span class="fr"><span class="fr-n">2γ</span><span class="fr-d">ΔH<sub>V</sub><sup>b</sup></span></span>(<span class="fr"><span class="fr-n">1</span><span class="fr-d">l</span></span>+<span class="fr"><span class="fr-n">1</span><span class="fr-d">r</span></span>)</span></td>
+</tr>
+<tr>
+<td>T<sub>m</sub> 与分子量</td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">2M<sub>0</sub></span><span class="fr-d">M<sub>n</sub></span></span> = <span class="fr"><span class="fr-n">ΔH<sub>m</sub></span><span class="fr-d">nR</span></span>(<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub></span></span>-<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>)</span>（每链 <strong>2</strong> 个端）</td>
+</tr>
+</tbody>
+</table>
+<h2>常数</h2>
+<p><span class="fmi">R=8.314 J\,K^{-1}mol^{-1}</span>　<span class="fmi">k=1.381×10<sup>-23</sup> J\,K^{-1}</span>　<span class="fmi">N<sub>Av</sub>=6.022×10<sup>23</sup> mol^{-1}</span>　<span class="fmi">g=9.81 m\,s^{-2}</span></p>
+<p>Cu Kα：<span class="fmi">λ=1.54</span> Å　　水：<span class="fmi">ρ=1000</span> kg/m³，<span class="fmi">η<sub>s</sub>≈0.89</span> mPa·s (25 °C)</p>
+<hr />
+<h2 class="lec-break">Lecture 1 · Polymer Size and Conformations</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_1-4 · p.4–17</p>
+</blockquote>
+<h3>高分子的分类（按热机械性质）</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>特征</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thermoplastics 热塑性</td>
+<td>受热软化/熔融，可反复加工（模压、挤出）</td>
+<td>PS, PP</td>
+</tr>
+<tr>
+<td>Thermosets 热固性</td>
+<td>高度交联，链运动受限；耐热耐溶剂但<strong>不能热加工</strong></td>
+<td>环氧树脂、酚醛树脂</td>
+</tr>
+<tr>
+<td>Elastomers 弹性体</td>
+<td>轻度交联的软橡胶，大形变可恢复</td>
+<td>天然橡胶、硅橡胶</td>
+</tr>
+</tbody>
+</table>
+<h3>平均分子量</h3>
+<div class="fmb">M&lt;sub&gt;n&lt;/sub&gt; = <span class="fr"><span class="fr-n">Σ<sub>i</sub> n&lt;sub&gt;i&lt;/sub&gt;M&lt;sub&gt;i&lt;/sub&gt;</span><span class="fr-d">Σ<sub>i</sub> n&lt;sub&gt;i&lt;/sub&gt;</span></span> = <span class="fr"><span class="fr-n">∫nM dM</span><span class="fr-d">∫n dM</span></span>  
+M&lt;sub&gt;w&lt;/sub&gt; = <span class="fr"><span class="fr-n">Σ<sub>i</sub> n&lt;sub&gt;i&lt;/sub&gt;M&lt;sub&gt;i&lt;/sub&gt;<sup>2</sup></span><span class="fr-d">Σ<sub>i</sub> n&lt;sub&gt;i&lt;/sub&gt;M&lt;sub&gt;i&lt;/sub&gt;</span></span> = <span class="fr"><span class="fr-n">∫nM<sup>2</sup> dM</span><span class="fr-d">∫nM dM</span></span></div>
+<div class="fmb">PDI=<span class="fr"><span class="fr-n">M<sub>w</sub></span><span class="fr-d">M<sub>n</sub></span></span></div>
+<ul>
+<li><strong>Mn 数均</strong>：按分子个数平均，每条链权重相同</li>
+<li><strong>Mw 重均</strong>：按质量加权，<strong>大分子贡献更大</strong>，所以恒有 Mw ≥ Mn</li>
+<li>PDI = 1 单分散；1 &lt; PDI &lt; 1.5 窄分布；PDI &gt; 2 宽分布</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>易错</strong>：Mw 的分母是 Σn<sub>i</sub>M<sub>i</sub>（总质量），不是 Σn<sub>i</sub>。</p>
+</blockquote>
+<h3>末端距（end-to-end distance）</h3>
+<p>链是各向同性的，所以平均<strong>矢量</strong> ⟨<strong>h</strong>⟩ = 0，必须求均方根（RMS）。</p>
+<p>三种模型，全都 ∝ nl²，只差一个前置因子：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>⟨h²⟩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Freely-jointed chain 自由连接链</td>
+<td><span class="fmi">nl<sup>2</sup></span></td>
+</tr>
+<tr>
+<td>固定键角、自由旋转</td>
+<td><span class="fmi">nl<sup>2</sup><span class="fr"><span class="fr-n">1+<span class="op">cos</span>θ</span><span class="fr-d">1-<span class="op">cos</span>θ</span></span></span></td>
+</tr>
+<tr>
+<td>固定键角、固定旋转角 φ</td>
+<td><span class="fmi">nl<sup>2</sup><span class="fr"><span class="fr-n">1+<span class="op">cos</span>θ</span><span class="fr-d">1-<span class="op">cos</span>θ</span></span>·<span class="fr"><span class="fr-n">1+<span class="op">cos</span>φ</span><span class="fr-d">1-<span class="op">cos</span>φ</span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>统一写成：
+<div class="fmb">⟨h<sup>2</sup>⟩ =  C<sub>∞</sub> n l<sup>2</sup>  =  N b<sup>2</sup></div></p>
+<ul>
+<li><strong>C∞</strong> 特征比（characteristic ratio），把局部化学约束全部打包</li>
+<li><strong>b</strong> 统计链段长度（statistical segment length），"有效"单元长度</li>
+<li><strong>N</strong> 聚合度</li>
+</ul>
+<blockquote>
+<p>⚠️⚠️ <strong>最大的坑</strong>：公式里的 <strong>θ 是键角的补角</strong>，不是键角本身。
+sp³ 键角 109.5° → <strong>θ = 180 − 109.5 = 70.5°</strong>，此时因子 (1+cos70.5)/(1−cos70.5) ≈ <strong>2.00</strong>。
+这是过去考题 Question 4 明确设的陷阱。</p>
+</blockquote>
+<h3>回转半径 Rg</h3>
+<p>末端距只看首尾两个单体，Rg 看<strong>所有</strong>单体到质心的均方根距离，而且<strong>Rg 可以被光散射直接测量</strong>。</p>
+<div class="fmb">R<sub>g</sub> = (<span class="fr"><span class="fr-n">1</span><span class="fr-d">N</span></span>Σ<sub>i=1</sub><sup>N</sup>s<sub>i</sub><sup>2</sup>)<sup>1/2</sup>,  
+R<sub>g</sub><sup>2</sup> = <span class="fr"><span class="fr-n">1</span><span class="fr-d">2N<sup>2</sup></span></span>Σ<sub>i</sub>Σ<sub>j</sub> ⟨r<sub>ij</sub><sup>2</sup>⟩</div>
+<p>理想链结果：
+<div class="fmb"><span class="bx">R<sub>g</sub><sup>2</sup> = <span class="fr"><span class="fr-n">Nb<sup>2</sup></span><span class="fr-d">6</span></span> = <span class="fr"><span class="fr-n">⟨h<sup>2</sup>⟩</span><span class="fr-d">6</span></span></span>  ⇒  ⟨h<sup>2</sup>⟩<sup>1/2</sup> = <span class="sq">√<span class="sq-b">6</span></span> R<sub>g</sub>≈2.45 R<sub>g</sub></div></p>
+<p><strong>Rg 恒小于把高分子塞进的那个球的半径 R₀</strong>——因为 Rg 是均方根距离，总有一部分单体比 Rg 更远，Rg 不代表最大空间尺度。（过去考题 Question 5）</p>
+<h3>标度关系（scaling）</h3>
+<div class="fmb">R<sub>g</sub> ∝N<sup>ν</sup></div>
+<table>
+<thead>
+<tr>
+<th>情形</th>
+<th>ν</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>致密球（密堆积）</td>
+<td>1/3</td>
+<td>N ∝ V = (4/3)πR³</td>
+</tr>
+<tr>
+<td>理想链 / θ 溶剂</td>
+<td>1/2</td>
+<td>假设链无体积、可自穿</td>
+</tr>
+<tr>
+<td><strong>良溶剂中的实际链</strong></td>
+<td><strong>3/5</strong></td>
+<td>有排除体积，不能自相交，更伸展</td>
+</tr>
+<tr>
+<td>刚性棒</td>
+<td>1</td>
+<td>完全伸直</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 class="lec-break">Lecture 2 · Thermodynamics of Mixtures</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_1-4 · p.18–36</p>
+</blockquote>
+<h3>基本热力学骨架</h3>
+<div class="fmb">dU=dq+dw+dw<sub>add</sub>, dq<sub>rev</sub>=TdS, dw<sub>rev</sub> = -p dV</div>
+<p><strong>基本方程</strong>：<span class="fmi">dU=TdS-p dV+dw<sub>add</sub></span></p>
+<p><strong>焓</strong> <span class="fmi">H=U+pV ⇒dH=dU+p dV+V dp</span>；恒压下 dH = dq_p</p>
+<p><strong>Gibbs 能</strong> <span class="fmi">G=H-TS ⇒dG=dH-TdS-SdT</span></p>
+<p>自发性判据（Clausius 不等式出发）：
+<div class="fmb">dG<sub>T,p</sub>=dH-TdS≤0</div></p>
+<p>恒温恒压下 <strong>dG = dw_add</strong>，即 dG 是系统能做的最大非膨胀功 → 所以叫 "free energy"。</p>
+<p><strong>化学势</strong> = 偏摩尔 Gibbs 能：
+<div class="fmb">dG=V dp-S dT+μ<sub>A</sub> dn<sub>A</sub>+μ<sub>B</sub> dn<sub>B</sub>+⋯,  G=μ<sub>A</sub> n<sub>A</sub>+μ<sub>B</sub> n<sub>B</sub></div></p>
+<p>两个常用偏导：
+<div class="fmb">(<span class="fr"><span class="fr-n">∂G</span><span class="fr-d">∂p</span></span>)<sub>T,n</sub>=V,  (<span class="fr"><span class="fr-n">∂G</span><span class="fr-d">∂T</span></span>)<sub>p,n</sub> = -S</div></p>
+<h3>气体：G 随压力变化</h3>
+<div class="fmb">G=G<sup>°</sup>+nRT<span class="op">ln</span>p  ⇒  μ=μ<sup>°</sup>+RT<span class="op">ln</span>p</div>
+<h3>液体：Raoult 定律</h3>
+<p>液气平衡 → 化学势相等。纯液体 μ<em>_A 对应蒸气压 p</em>_A，混合后 μ_A 对应 p<sub>A</sub>：</p>
+<div class="fmb">μ<sub>A</sub>-μ<sub>A</sub><sup>*</sup>=RT<span class="op">ln</span><span class="fr"><span class="fr-n">p<sub>A</sub></span><span class="fr-d">p<sub>A</sub><sup>*</sup></span></span>,  <b>Raoult: </b> <span class="fr"><span class="fr-n">p<sub>A</sub></span><span class="fr-d">p<sub>A</sub><sup>*</sup></span></span>=x<sub>A</sub></div>
+<div class="fmb"><span class="bx">μ<sub>A</sub>=μ<sub>A</sub><sup>*</sup>+RT<span class="op">ln</span>x<sub>A</sub></span></div>
+<p>因为 0 &lt; x<sub>A</sub> &lt; 1，ln x<sub>A</sub> &lt; 0，所以<strong>不纯液体的化学势总是低于纯液体</strong>。（过去考题 Question 7）
+这是渗透压、凝固点降低、沸点升高的共同源头。</p>
+<h3>混合的 ΔG、ΔS、ΔH（理想）</h3>
+<p>气体和理想液体的结果<strong>完全相同</strong>：</p>
+<div class="fmb">ΔG<sub>mix</sub>=nRT(x<sub>A</sub><span class="op">ln</span>x<sub>A</sub>+x<sub>B</sub><span class="op">ln</span>x<sub>B</sub>)</div>
+<div class="fmb">ΔS<sub>mix</sub> = -(<span class="fr"><span class="fr-n">∂ΔG<sub>mix</sub></span><span class="fr-d">∂T</span></span>)<sub>p,n</sub> = -nR(x<sub>A</sub><span class="op">ln</span>x<sub>A</sub>+x<sub>B</sub><span class="op">ln</span>x<sub>B</sub>)</div>
+<div class="fmb">ΔH<sub>mix</sub>=ΔG+TΔS=0</div>
+<ul>
+<li>ΔG_mix <strong>恒为负</strong> → 理想混合总是自发</li>
+<li>ΔS_mix <strong>恒为正</strong></li>
+<li><strong>理想体系混合完全由熵驱动</strong>（理想气体无相互作用；理想溶液 A-A、B-B、A-B 作用相同）</li>
+</ul>
+<h3>统计热力学导出同一个结果</h3>
+<div class="fmb">S=k<span class="op">ln</span>Ω,  Ω=<span class="fr"><span class="fr-n">m!</span><span class="fr-d">m<sub>A</sub>! m<sub>B</sub>!</span></span></div>
+<p>用 Stirling 近似 ln m! ≈ m ln m − m，可得 S = −k(m<sub>A</sub> ln x<sub>A</sub> + m<sub>B</sub> ln x<sub>B</sub>)。
+混合前 Ω = 1 → S = 0，所以 ΔS_mix 就等于混合后的 S。换成摩尔量（N_Av·k = R）即回到上式。</p>
+<h3>非理想（regular solution）：交换能与 χ</h3>
+<p>格子模型，z 个近邻，相互作用能 w<sub>A</sub>A、w<sub>B</sub>B、w<sub>A</sub>B：</p>
+<div class="fmb">Δw  =  w<sub>AB</sub>-<span class="fr"><span class="fr-n">w<sub>AA</sub></span><span class="fr-d">2</span></span>-<span class="fr"><span class="fr-n">w<sub>BB</sub></span><span class="fr-d">2</span></span> (exchange energy 交换能)</div>
+<div class="fmb"><span class="bx">χ=<span class="fr"><span class="fr-n">zΔw</span><span class="fr-d">kT</span></span></span> (interaction parameter 相互作用参数)</div>
+<p>χ 就是"每分子交换能除以热能 kT"。</p>
+<div class="fmb">ΔH<sub>mix</sub>=x<sub>A</sub>x<sub>B</sub> χ  nRT</div>
+<div class="fmb"><span class="bx">ΔG<sub>mix</sub>=nRT[x<sub>A</sub><span class="op">ln</span>x<sub>A</sub>+x<sub>B</sub><span class="op">ln</span>x<sub>B</sub>+x<sub>A</sub>x<sub>B</sub>χ]</span></div>
+<ul>
+<li>前两项是熵项，<strong>恒负</strong>，永远有利于混合</li>
+<li><strong>x<sub>A</sub> x<sub>B</sub> χ 是焓项</strong>，χ &gt; 0 时为正，<strong>不利于混合</strong>——油水不互溶就是它。（过去考题 Question 9）</li>
+<li>χ 项在 x = 0.5 时最大</li>
+</ul>
+<hr />
+<h2 class="lec-break">Lecture 3 · Flory-Huggins 高分子溶液理论</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_1-4 · p.37–45</p>
+</blockquote>
+<h3>设定</h3>
+<p>格子模型：m<sub>A</sub> 个溶剂分子，m<sub>B</sub> 条链，每条链聚合度 N。</p>
+<div class="fmb">m=m<sub>A</sub>+Nm<sub>B</sub>,  φ<sub>A</sub> = <span class="fr"><span class="fr-n">m<sub>A</sub></span><span class="fr-d">m<sub>A</sub>+Nm<sub>B</sub></span></span>,  φ<sub>B</sub> = <span class="fr"><span class="fr-n">Nm<sub>B</sub></span><span class="fr-d">m<sub>A</sub>+Nm<sub>B</sub></span></span></div>
+<p><strong>高分子体系用体积分数 φ，不用摩尔分数 x。</strong></p>
+<h3>推导要点（考推导思路，不一定考代数）</h3>
+<p>放第 i+1 条链时：</p>
+<ul>
+<li>第 1 个单体：可选空位 = m − iN</li>
+<li>第 2 个单体：必须放在近邻空位 → z·(m−iN)/m</li>
+<li>第 3 个及以后：少一个被占的近邻 → (z−1)·(m−iN)/m</li>
+</ul>
+<p>总数 ≈ <span class="fmi">(<span class="fr"><span class="fr-n">z-1</span><span class="fr-d">m</span></span>)<sup>N-1</sup>(m-iN)<sup>N</sup></span>，对所有链连乘再除以 m<sub>B</sub>!（链彼此全同）。</p>
+<p>代入 S = k lnΩ，配合 Stirling 近似，最后：</p>
+<div class="fmb"><span class="bx">ΔS<sub>mix</sub> = -nR[φ<sub>A</sub><span class="op">ln</span>φ<sub>A</sub>+<span class="fr"><span class="fr-n">φ<sub>B</sub></span><span class="fr-d">N</span></span><span class="op">ln</span>φ<sub>B</sub>]</span></div>
+<div class="fmb">ΔH<sub>mix</sub>=φ<sub>A</sub>φ<sub>B</sub> χ  nRT</div>
+<div class="fmb"><span class="bx">ΔG<sub>mix</sub>=nRT[φ<sub>A</sub><span class="op">ln</span>φ<sub>A</sub>+<span class="fr"><span class="fr-n">φ<sub>B</sub></span><span class="fr-d">N</span></span><span class="op">ln</span>φ<sub>B</sub>+φ<sub>A</sub>φ<sub>B</sub>χ]</span></div>
+<h3>核心物理</h3>
+<ul>
+<li><strong>只有高分子那一项被 N 除</strong>，溶剂项不变。原因：N 个单体被"绑"在一起，可排布方式大幅减少。（过去考题 Question 10 用"黑球连起来"直观演示：8 格放 2 球，不连 = 28 种，连起来 = 10 种）</li>
+<li>因此 <strong>ΔS_mix 更小 → 溶解不那么自发</strong>。（过去考题 Question 11）</li>
+<li>焓项<strong>不除 N</strong>：焓只取决于溶剂-单体的局部接触，单体连不连成链无所谓。</li>
+<li>N → ∞ 时高分子项趋于 0，只剩溶剂项。</li>
+</ul>
+<blockquote>
+<p>⚠️ 常见误解：以为 ΔS 变成 1/N。实际在 φ = 0.5、N 很大时只减到约 <strong>一半</strong>（因为溶剂那项原封不动）。</p>
+</blockquote>
+<hr />
+<h2 class="lec-break">Lecture 4 · 相行为</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_1-4 · p.46–69</p>
+</blockquote>
+<h3>定义</h3>
+<p><strong>Phase 相</strong>：化学组成和物理状态处处均一的那部分物质。</p>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binodal</strong>（共存曲线）</td>
+<td>其下方分相在热力学上有利，但溶液<strong>可能停在亚稳态</strong></td>
+</tr>
+<tr>
+<td><strong>Spinodal</strong>（稳定极限）</td>
+<td>其下方分相<strong>自发无势垒</strong></td>
+</tr>
+<tr>
+<td><strong>Critical point T<sub>c</sub></strong></td>
+<td>此温度以上，<strong>任何组成都是单相</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>为什么低温会出现"局部极大"</h3>
+<div class="fmb"><span class="fr"><span class="fr-n">ΔG<sub>mix</sub></span><span class="fr-d">RT</span></span> = <span class="fr"><span class="fr-n">ΔH<sub>mix</sub></span><span class="fr-d">RT</span></span>-<span class="fr"><span class="fr-n">ΔS<sub>mix</sub></span><span class="fr-d">R</span></span></div>
+<ul>
+<li>高温：χ = zΔw/kT 小，熵占主导 → ΔG 曲线全程凹向上 → 单相</li>
+<li>低温：焓项相对变大 → ΔG 曲线中间鼓起一个<strong>局部极大</strong> → 可能分相</li>
+</ul>
+<h3>判据（必背）</h3>
+<table>
+<thead>
+<tr>
+<th>目标</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否分相</td>
+<td>ΔG 曲线<strong>凹向下</strong>就分相；凹向上就不分</td>
+</tr>
+<tr>
+<td><strong>Binodal 点</strong></td>
+<td>对 ΔG 曲线画<strong>公切线</strong>，两个切点即 binodal</td>
+</tr>
+<tr>
+<td><strong>Spinodal 点</strong></td>
+<td><strong>拐点</strong>：<span class="fmi"><span class="fr"><span class="fr-n">d<sup>2</sup>ΔG<sub>m</sub></span><span class="fr-d">dx<sub>A</sub><sup>2</sup></span></span>=0</span></td>
+</tr>
+<tr>
+<td><strong>临界点 T<sub>c</sub></strong></td>
+<td>两个拐点合并：<span class="fmi"><span class="fr"><span class="fr-n">d<sup>3</sup>ΔG<sub>m</sub></span><span class="fr-d">dx<sub>A</sub><sup>3</sup></span></span>=0</span></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 关键理解：<strong>ΔG_mix &lt; 0 不代表不分相</strong>。ΔG_mix&lt;0 只说明"混合比不混合好"，但通过分相可能达到<strong>更低</strong>的能量。（过去考题 Question 13）
+反过来，落在两个 binodal 点<strong>之外</strong>的组成不分相。（过去考题 Question 17）</p>
+</blockquote>
+<h3>两种分相机理</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Spinodal Decomposition</strong></th>
+<th><strong>Nucleation and Growth</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发生区域</td>
+<td>spinodal <strong>内</strong></td>
+<td>binodal 内、spinodal <strong>外</strong>（亚稳区）</td>
+</tr>
+<tr>
+<td>空间分布</td>
+<td><strong>整个体积均匀</strong>发生</td>
+<td><strong>零星散发</strong>发生</td>
+</tr>
+<tr>
+<td>活化势垒</td>
+<td><strong>无</strong></td>
+<td><strong>有</strong>（需要一次足够大的涨落）</td>
+</tr>
+<tr>
+<td>微观机理</td>
+<td>任何微小组成涨落都降低 G</td>
+<td>小涨落升高 G，会退回去；只有大涨落越过切线才成核，之后靠扩散长大</td>
+</tr>
+<tr>
+<td>形貌</td>
+<td>互穿网络（interpenetrating network）</td>
+<td>分散的核长大</td>
+</tr>
+<tr>
+<td><strong>最终组成</strong></td>
+<td><strong>binodal 组成</strong></td>
+<td><strong>binodal 组成</strong>（两者相同！）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 两种机理<strong>终态组成都由 binodal 决定</strong>，区别在路径和形貌。（过去考题 Question 15、16）</p>
+</blockquote>
+<h3>高分子相图的特点</h3>
+<p>由 Flory-Huggins：</p>
+<ul>
+<li><strong>N 增大 → 临界点升高</strong>（单相区缩小，越难溶）</li>
+<li><strong>相图向更小的 φ_B 移动</strong> → 只有稀溶液才能溶</li>
+<li>相图<strong>不对称</strong>（因为 φ_B/N 这一项）</li>
+</ul>
+<h3>UCST vs LCST</h3>
+<ul>
+<li><strong>UCST</strong>（常见）：χ = zΔw/kT，温度升高 χ 减小 → 高温互溶</li>
+<li><strong>LCST</strong>（少见）：经验式
+<div class="fmb">χ=<span class="fr"><span class="fr-n">α</span><span class="fr-d">T</span></span>+β</div>
+当 <strong>α 为负、β 为正</strong>时，升温使 χ 更正 → <strong>高温反而分相</strong>。
+例：<strong>聚环氧乙烷（PEO）/ 水</strong>，因为氢键在高温下变弱。</li>
+</ul>
+<hr />
+<h2 class="lec-break">Lecture 5 · 渗透压与粘度法</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_5-7 · p.1–17</p>
+</blockquote>
+<h3>渗透压 Π</h3>
+<p>来源：溶液侧化学势低（μ_A = μ<em>_A + RT ln x<sub>A</sub> &lt; μ</em>_A），溶剂想过膜稀释它。
+液面升高产生压力，抬高溶液侧化学势直到两侧相等：</p>
+<div class="fmb">μ<sub>A</sub>(p<sup>°</sup>+Π)=μ<sub>A</sub>(p<sup>°</sup>)+V<sub>m</sub>Π,  V<sub>m</sub>Π=-RT<span class="op">ln</span>x<sub>A</sub></div>
+<p>用 Taylor 展开 ln(1−x<sub>B</sub>) ≈ −x<sub>B</sub> − x<sub>B</sub>²/2 − … 得 <strong>virial 展开</strong>：</p>
+<div class="fmb"><span class="bx">Π=RT[<span class="fr"><span class="fr-n">c</span><span class="fr-d">M</span></span>+Bc<sup>2</sup>+B<sub>3</sub>c<sup>3</sup>+⋯]</span></div>
+<p><strong>六条结论（讲义原文）</strong>：</p>
+<ol>
+<li>第一项只与<strong>分子数目</strong>有关，与种类无关 → <strong>依数性（colligative property）</strong></li>
+<li>二、三项来自溶质-溶质相互作用（浓度升高才显著）</li>
+<li><strong>良溶剂</strong>：高分子-溶剂作用有利，溶剂更想过膜 → <strong>B &gt; 0</strong></li>
+<li><strong>不良溶剂</strong>：溶质-溶质作用有利 → <strong>B &lt; 0</strong></li>
+<li><strong>B = 0 的溶剂叫 θ 溶剂</strong>（此时链呈理想链行为，Rg ∝ N^1/2）</li>
+<li>多分散体系测到的 M 是 <strong>Mn（数均）</strong></li>
+</ol>
+<p><strong>实验做法</strong>：画 Π/RT vs c，取<strong>低浓度处斜率 = 1/M</strong>。（过去考题 Question 19）</p>
+<p><strong>Vapour-Phase Osmometry (VPO)</strong>：密闭腔内两个热敏电阻，一滴溶液一滴纯溶剂。
+溶液化学势低 → 溶剂蒸气在溶液上冷凝 → 溶液<strong>升温</strong>。
+<div class="fmb">ΔT=K[<span class="fr"><span class="fr-n">c</span><span class="fr-d">M</span></span>+Bc<sup>2</sup>+⋯]</div>
+需要用已知分子量标样标定 K。</p>
+<h3>粘度</h3>
+<p><strong>Newton 粘度定律</strong>：<span class="fmi">σ=η<span class="fr"><span class="fr-n">dv</span><span class="fr-d">dy</span></span></span>（σ 剪切应力 Pa，dv/dy 速度梯度 s⁻¹，η 粘度 Pa·s）
+遵守此式的流体叫 Newtonian；高流速下有些流体会 <strong>shear thinning（剪切变稀）</strong>。</p>
+<p><strong>Stokes 定律</strong>：<span class="fmi">F<sub>vis</sub>=6πη<sub>s</sub> R v<sub>0</sub></span>，其中 6πη_sR 为摩擦因子 f</p>
+<p><strong>Einstein 定律</strong>（悬浮球）：
+<div class="fmb">η=η<sub>s</sub>(1+<span class="fr"><span class="fr-n">5</span><span class="fr-d">2</span></span>φ+4φ<sup>2</sup>+⋯)</div>
+只依赖<strong>体积分数 φ</strong>，与球的大小无关。</p>
+<p><strong>用到高分子</strong>：把链视作流体力学等效球，φ = cN_Av V<sub>h</sub>/M（V<sub>h</sub> 为流体力学体积）：
+<div class="fmb">η=η<sub>s</sub>(1+c[η]+k<sub>h</sub>c<sup>2</sup>[η]<sup>2</sup>+⋯),  <span class="bx">[η] = <span class="fr"><span class="fr-n">5</span><span class="fr-d">2</span></span><span class="fr"><span class="fr-n">N<sub>Av</sub>V<sub>h</sub></span><span class="fr-d">M</span></span></span></div></p>
+<p>[η] 叫<strong>特性粘度（intrinsic viscosity）</strong>，表示粘度随浓度增加的速率。</p>
+<p><strong>Mark-Houwink 方程</strong>：
+<div class="fmb">V<sub>h</sub> ∝ <span class="fr"><span class="fr-n">4</span><span class="fr-d">3</span></span>πR<sub>g</sub><sup>3</sup>  ⇒ [η] ∝ <span class="fr"><span class="fr-n">R<sub>g</sub><sup>3</sup></span><span class="fr-d">M</span></span> ∝ <span class="fr"><span class="fr-n">M<sup>3ν</sup></span><span class="fr-d">M</span></span>=M<sup>3ν-1</sup></div>
+<div class="fmb"><span class="bx">[η]=kM<sup>a</sup>,  a=3ν-1</span></div></p>
+<table>
+<thead>
+<tr>
+<th>链形态</th>
+<th>ν</th>
+<th><strong>a</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>致密球</td>
+<td>1/3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>θ 溶剂 / 理想链</td>
+<td>1/2</td>
+<td><strong>0.5</strong></td>
+</tr>
+<tr>
+<td>良溶剂</td>
+<td>3/5</td>
+<td><strong>0.8</strong></td>
+</tr>
+<tr>
+<td>刚性棒</td>
+<td>1</td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>大多数实际值 <strong>a 在 0.5–1 之间</strong>。粘度法测的分子量 <strong>接近 Mw</strong>，且 k、a 需标定或查文献。</p>
+<p><strong>实验装置</strong>：</p>
+<ul>
+<li><strong>旋转粘度计</strong>：η = C × 扭矩/角速度</li>
+<li><strong>毛细管粘度计（Ubbelohde）</strong>：Poiseuille 方程
+<div class="fmb"><span class="fr"><span class="fr-n">ΔV</span><span class="fr-d">Δt</span></span> = <span class="fr"><span class="fr-n">(ρg L+Δp)πR<sup>4</sup></span><span class="fr-d">8ηL</span></span></div></li>
+</ul>
+<hr />
+<h2 class="lec-break">Lecture 6 · 光散射与动态光散射</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_5-7 · p.18–31</p>
+</blockquote>
+<h3>Rayleigh 散射</h3>
+<p>光的电场极化电子云 → 产生同频振荡偶极 → 向各方向再辐射。</p>
+<div class="fmb"><span class="bx"><span class="fr"><span class="fr-n">I<sub>θ</sub></span><span class="fr-d">I<sub>0</sub></span></span> = <span class="fr"><span class="fr-n">8π<sup>4</sup>α<sup>2</sup>(1+<span class="op">cos</span><sup>2</sup>θ)</span><span class="fr-d">λ<sup>4</sup> r<sup>2</sup></span></span></span></div>
+<ul>
+<li>
+<p><strong>I ∝ 1/λ⁴</strong> → 短波长（蓝光）被散射得多得多 → <strong>天空是蓝的</strong>
+  （正确说法：蓝光被空气分子强散射，我们看的是偏离太阳方向的散射光。不是"其他颜色被吸收/被海水反射"）（过去考题 Question 22）</p>
+</li>
+<li>
+<p>(1+cos²θ) 项：小粒子的散射前后对称</p>
+</li>
+</ul>
+<p>极化率与折射率（Lorentz–Lorenz）：<span class="fmi">α≈<span class="fr"><span class="fr-n">n<sup>2</sup>-n<sub>0</sub><sup>2</sup></span><span class="fr-d">4π</span></span><span class="fr"><span class="fr-n">V</span><span class="fr-d">N</span></span></span>，配合 <span class="fmi">n=n<sub>0</sub>+<span class="fr"><span class="fr-n">dn</span><span class="fr-d">dc</span></span>c</span> 得到</p>
+<p><strong>光学常数</strong>：
+<div class="fmb">K=<span class="fr"><span class="fr-n">2π<sup>2</sup>n<sub>0</sub><sup>2</sup>(<span class="fr"><span class="fr-n">dn</span><span class="fr-d">dc</span></span>)<sup>2</sup></span><span class="fr-d">λ<sup>4</sup> N<sub>Av</sub></span></span></div></p>
+<p>气体：<span class="fmi"><span class="fr"><span class="fr-n">I<sub>θ</sub></span><span class="fr-d">I<sub>0</sub></span></span>=Kc M<sub>w</sub><span class="fr"><span class="fr-n">1+<span class="op">cos</span><sup>2</sup>θ</span><span class="fr-d">r<sup>2</sup></span></span></span></p>
+<p><strong>高分子溶液（小分子量）</strong>：
+<div class="fmb"><span class="fr"><span class="fr-n">I<sub>θ</sub></span><span class="fr-d">I<sub>0</sub></span></span>=Kc <span class="fr"><span class="fr-n">1+<span class="op">cos</span><sup>2</sup>θ</span><span class="fr-d">r<sup>2</sup></span></span>·<span class="fr"><span class="fr-n">1</span><span class="fr-d"><span class="fr"><span class="fr-n">1</span><span class="fr-d">M<sub>w</sub></span></span>+2Bc+⋯</span></span></div>
+注意里面出现的正是渗透压的 <strong>virial 系数 B</strong>。</p>
+<p><strong>大粒子（&gt; λ/20）</strong>：同一粒子不同部位的散射光<strong>相互干涉</strong>（destructive），强度净减少，且<strong>前向散射 &gt; 后向散射</strong>（不对称）；唯一不受影响的角度是 <strong>θ = 0°</strong>。</p>
+<div class="fmb"><span class="fr"><span class="fr-n">I<sub>θ</sub></span><span class="fr-d">I<sub>0</sub></span></span>=Kc<span class="fr"><span class="fr-n">1+<span class="op">cos</span><sup>2</sup>θ</span><span class="fr-d">r<sup>2</sup></span></span>·<span class="fr"><span class="fr-n">1</span><span class="fr-d"><span class="fr"><span class="fr-n">1</span><span class="fr-d">M<sub>w</sub></span></span>(1+<span class="fr"><span class="fr-n">q<sup>2</sup></span><span class="fr-d">3</span></span>R<sub>g</sub><sup>2</sup>+⋯)+2Bc+⋯</span></span>,  q=<span class="fr"><span class="fr-n">4πn</span><span class="fr-d">λ</span></span><span class="op">sin</span><span class="fr"><span class="fr-n">θ</span><span class="fr-d">2</span></span></div>
+<p><strong>所以静态光散射同时给出 M<sub>w</sub> 和 R<sub>g</sub>。</strong></p>
+<p><strong>实验要点</strong>：</p>
+<ul>
+<li>样品必须<strong>无尘</strong></li>
+<li>浓度要低（粒子独立散射）</li>
+<li><strong>dn/dc 越大越好</strong> → 应选<strong>折射率与高分子差别大</strong>的溶剂（过去考题 Question 23）</li>
+<li><strong>测到的是 M<sub>w</sub> 而非 M<sub>n</sub></strong>，因为每个粒子的散射按其质量加权</li>
+</ul>
+<h3>动态光散射 DLS</h3>
+<p>静态测<strong>时间平均</strong>强度 → M<sub>w</sub>、R<sub>g</sub>；动态测<strong>强度随时间的涨落</strong> → <strong>流体力学半径 R<sub>h</sub></strong>。</p>
+<p>粒子运动 → 干涉明暗斑移动 → 强度涨落。<strong>小粒子扩散快 → 涨落快。</strong>（过去考题 Question 24）</p>
+<p><strong>时间自相关函数</strong>：
+<div class="fmb">C(t') = <span class="fr"><span class="fr-n">1</span><span class="fr-d">T</span></span>∫<sub>0</sub><sup>T</sup> I<sub>s</sub>(t)I<sub>s</sub>(t+t') dt</div></p>
+<ul>
+<li>t' = 0：同一条曲线自乘 → 值最大</li>
+<li>t' → ∞：完全不相关 → 涨落乘积正负各半 → 平均为 0</li>
+</ul>
+<p>结果是指数衰减：
+<div class="fmb">C(t') = (⟨I<sub>s</sub><sup>2</sup>⟩-⟨I<sub>s</sub>⟩<sup>2</sup>)e<sup>-2q<sup>2</sup>D<sub>m</sub>t'</sup>+⟨I<sub>s</sub>⟩<sup>2</sup></div></p>
+<p>D<sub>m</sub> 为<strong>互扩散系数</strong>，D<sub>m</sub> 越大衰减越快。外推到零浓度得到<strong>示踪扩散系数 D<sub>t</sub></strong>：</p>
+<div class="fmb"><span class="bx"><span class="op">lim</span><sub>c→0</sub>D<sub>m</sub>=D<sub>t</sub> = <span class="fr"><span class="fr-n">kT</span><span class="fr-d">6πη<sub>s</sub> R<sub>h</sub></span></span></span>  (Stokes-Einstein)</div>
+<p><strong>布朗运动</strong>（与 Lecture 1 末端距同一套数学）：N 步、每步 l，均方位移 = Nl²，定义
+<div class="fmb">D<sub>t</sub> = <span class="fr"><span class="fr-n">Nl<sup>2</sup></span><span class="fr-d">6t</span></span></div>
+（过去考题 Question 25）</p>
+<hr />
+<h2 class="lec-break">Lecture 7 · SEC 与质谱</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_5-7 · p.32–40</p>
+</blockquote>
+<h3>Size Exclusion Chromatography (SEC / GPC)</h3>
+<ul>
+<li>多孔凝胶作固定相，溶液作流动相</li>
+<li><strong>大分子进不了孔 → 先洗脱出来</strong>；小分子被孔滞留 → 后出</li>
+<li>记录<strong>保留体积 V<sub>R</sub></strong>，用已知 M 的标样作<strong>校准曲线</strong>，通常 <strong>log M 对 V<sub>R</sub> 线性</strong></li>
+</ul>
+<p><strong>两个固有问题</strong>：</p>
+<ol>
+<li>SEC 分离依据是<strong>尺寸，不是 M</strong> → 标样的化学组成和结构必须与未知样相同，否则不准</li>
+<li>比孔还大的分子全部一起出来，<strong>V<sub>R</sub> 无区分度</strong></li>
+</ol>
+<p><strong>通用校准（Universal Calibration）</strong>：流体力学体积 V<sub>h</sub> 相同的高分子有相同 V<sub>R</sub>。</p>
+<div class="fmb">[η] = <span class="fr"><span class="fr-n">5</span><span class="fr-d">2</span></span><span class="fr"><span class="fr-n">N<sub>Av</sub>V<sub>h</sub></span><span class="fr-d">M</span></span> 且 [η]=kM<sup>a</sup>  ⇒  V<sub>h</sub>∝kM<sup>a+1</sup></div>
+<div class="fmb"><span class="bx">k<sub>s</sub>M<sub>s</sub><sup>a<sub>s</sub>+1</sup>=k<sub>x</sub>M<sub>x</sub><sup>a<sub>x</sub>+1</sup>  ⇒  M<sub>x</sub> = (<span class="fr"><span class="fr-n">k<sub>s</sub>M<sub>s</sub><sup>a<sub>s</sub>+1</sup></span><span class="fr-d">k<sub>x</sub></span></span>)<sup>1/(a<sub>x</sub>+1)</sup></span></div>
+<p><strong>检测器</strong>：</p>
+<ol>
+<li><strong>示差折光（Refractometer）</strong>——折射量 ∝ 浓度</li>
+<li><strong>UV-Vis</strong>——吸光度 ∝ 浓度（Beer-Lambert），高分子必须有发色团</li>
+<li><strong>光散射</strong>——配合 (1)(2) 可给 M<sub>w</sub>，<strong>可不需分子量标样</strong></li>
+<li><strong>粘度计</strong>——同上</li>
+</ol>
+<blockquote>
+<p>⚠️ 过去考题 Question 26：UV 检测器的<strong>信号高度 ∝ n<sub>i</sub> M<sub>i</sub></strong>。
+理由：吸光度 ∝ 摩尔浓度（∝ n<sub>i</sub>），但<strong>每条链上的发色团数目又正比于分子量</strong>，两者相乘。</p>
+</blockquote>
+<p><strong>从谱图算 Mn、Mw</strong>：由 ln M = kV<sub>R</sub> + c 得 dM = k·exp(kV<sub>R</sub>+c)dV<sub>R</sub>，换元后对信号高度 h 积分：
+<div class="fmb">M<sub>n</sub> = <span class="fr"><span class="fr-n">∫h dM</span><span class="fr-d">∫(h/M) dM</span></span>,  M<sub>w</sub> = <span class="fr"><span class="fr-n">∫hM dM</span><span class="fr-d">∫h dM</span></span></div></p>
+<h3>MALDI-TOF-MS</h3>
+<p><strong>MALDI（基质辅助激光解吸电离）</strong></p>
+<ul>
+<li>激光脉冲作为<strong>"软"电离</strong>手段，防止高分子断裂降解</li>
+<li>高分子 + 阳离子盐（Na⁺、K⁺）分散在<strong>吸收激光波长（通常 337 nm）的芳香族基质</strong>中</li>
+<li>激光被基质吸收 → 迅速加热汽化 → 高分子进入气相，与阳离子或质子结合而带电</li>
+<li><strong>只适合含极性基团的高分子</strong>（聚酯、丙烯酸酯、酰胺），<strong>不适合非极性的 PE、PP</strong></li>
+</ul>
+<p><strong>TOF（飞行时间）</strong></p>
+<ul>
+<li>MALDI 几乎只产生<strong>单电荷</strong>物种（极大优势）</li>
+<li>高压电场加速，<span class="fmi">F=ma</span></li>
+<li>同样电荷、同样电场 → <strong>质量小的加速度大、速度快、先到检测器</strong>（过去考题 Question 27）</li>
+<li>由 <span class="fmi">qV=<span class="fr"><span class="fr-n">1</span><span class="fr-d">2</span></span> mv<sup>2</sup></span> 得 <span class="fmi">v∝1/<span class="sq">√<span class="sq-b">m</span></span></span>，故 <strong>飞行时间 <span class="fmi">t∝<span class="sq">√<span class="sq-b">m</span></span></span></strong></li>
+<li>数据给出各分子量物种的丰度 → <strong>M<sub>n</sub> 和 M<sub>w</sub> 都能算</strong></li>
+</ul>
+<p><strong>MALDI 测得偏低的原因</strong>（过去考题 Question 28，答案是 D "以上皆是"）：</p>
+<ul>
+<li>高分子量物种更难汽化</li>
+<li>高分子量物种在解吸电离时可能碎裂</li>
+<li>检测器被先到的低分子量物种饱和，响应下降</li>
+</ul>
+<h3>各方法测什么 —— 必背对照表</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>给出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>膜渗透压、VPO、端基分析</td>
+<td><strong>M<sub>n</sub></strong>（依数性，数个数）</td>
+</tr>
+<tr>
+<td>静态光散射</td>
+<td><strong>M<sub>w</sub></strong> + <strong>R<sub>g</sub></strong></td>
+</tr>
+<tr>
+<td>粘度法</td>
+<td><strong>M<sub>v</sub> ≈ M<sub>w</sub></strong></td>
+</tr>
+<tr>
+<td>动态光散射 (DLS)</td>
+<td><strong>R<sub>h</sub></strong></td>
+</tr>
+<tr>
+<td>SEC/GPC</td>
+<td>整个分布 → M<sub>n</sub>、M<sub>w</sub>、PDI（需校准）</td>
+</tr>
+<tr>
+<td>MALDI-TOF-MS</td>
+<td>整个分布 → M<sub>n</sub>、M<sub>w</sub></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 class="lec-break">Lecture 8 · 玻璃态</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_8-10 · p.1–14</p>
+</blockquote>
+<h3>玻璃的定义与形成</h3>
+<ul>
+<li>玻璃是<strong>无定形固体</strong>：无长程有序，但<strong>不流动</strong>（区别于液体）</li>
+<li><strong>热力学上不是最稳定态——亚稳态</strong></li>
+<li>高分子中最普遍的状态</li>
+</ul>
+<p><strong>形成</strong>：熔体冷却 → 分子运动变慢、试图堆砌 → 低于某温度时已慢到无法重排到最优堆砌 → 这个温度就是 <strong>T<sub>g</sub></strong>。
+这个过程与<strong>结晶</strong>竞争；只有一部分成功结晶时 → <strong>半结晶态（semi-crystalline）</strong>。</p>
+<h3>玻璃态高分子的性质</h3>
+<ul>
+<li><strong>光学透明</strong>：链无规堆砌（像液体），折射率均一，不散射</li>
+<li><strong>半结晶高分子发白/不透明</strong>：晶区与非晶区折射率不同 → 散射</li>
+<li>玻璃态易于从熔体加工（冷却即得）；结晶高分子需要精细控制结晶动力学</li>
+<li>结晶高分子力学强度通常更高，但高 T<sub>g</sub> 的玻璃态高分子对很多应用已足够</li>
+</ul>
+<h3>体积-温度曲线（要会读图）</h3>
+<table>
+<thead>
+<tr>
+<th>路径</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A→B→D→G</td>
+<td>液体 → 结晶固体：在 <strong>T<sub>m</sub> 处体积跳变</strong>，dV/dT 斜率改变</td>
+</tr>
+<tr>
+<td>A→B→H→I</td>
+<td>液体 → 玻璃态：<strong>体积连续</strong>，T<sub>g</sub> 需<strong>外推</strong>两条线的交点求得</td>
+</tr>
+<tr>
+<td>A→B→C→E→F→G</td>
+<td>液体 → 半结晶：T<sub>m</sub> 起结晶，剩余部分再玻璃化</td>
+</tr>
+<tr>
+<td>A→B→J→K</td>
+<td><strong>更快冷却</strong>：分子来不及堆砌 → 体积更大 → <strong>T<sub>g</sub>′ 更高</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>一阶 vs 二阶转变（高频考点）</h3>
+<div class="fmb">(<span class="fr"><span class="fr-n">∂G</span><span class="fr-d">∂p</span></span>)<sub>T</sub>=V,  (<span class="fr"><span class="fr-n">∂G</span><span class="fr-d">∂T</span></span>)<sub>p</sub> = -S,  
+α=<span class="fr"><span class="fr-n">1</span><span class="fr-d">V</span></span>(<span class="fr"><span class="fr-n">∂V</span><span class="fr-d">∂T</span></span>)<sub>p</sub>,  C&lt;sub&gt;p&lt;/sub&gt; = (<span class="fr"><span class="fr-n">∂H</span><span class="fr-d">∂T</span></span>)<sub>p</sub></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>熔融 T<sub>m</sub></strong></th>
+<th><strong>玻璃化 T<sub>g</sub></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阶数</td>
+<td><strong>一阶转变</strong></td>
+<td><strong>二阶转变</strong></td>
+</tr>
+<tr>
+<td>跳变发生在</td>
+<td>G 的<strong>一阶导</strong>（V、H）</td>
+<td>G 的<strong>二阶导</strong>（α、C<sub>p</sub>）</td>
+</tr>
+<tr>
+<td>V-T 曲线</td>
+<td><strong>跳变</strong></td>
+<td><strong>连续</strong>，只有斜率变</td>
+</tr>
+<tr>
+<td>α、C<sub>p</sub> 曲线</td>
+<td>尖峰</td>
+<td><strong>台阶（跳变）</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>仪器</h3>
+<p><strong>TMA / 膨胀计（Dilatometry）</strong>：测体积膨胀，数据是 <strong>V vs T</strong></p>
+<ul>
+<li>靠精确测高度变化推体积（要求各向同性膨胀）</li>
+<li>不规则样品可用填充介质（高分子用 <strong>Hg</strong>）：必须已知热膨胀系数，且不能与高分子反应/溶胀/溶解</li>
+<li>也用于测热膨胀系数 α；<strong>DSC 测不出 T<sub>g</sub> 时特别有用</strong></li>
+</ul>
+<p><strong>DSC（差示扫描量热）</strong>：数据是 <strong>(∂q/∂T)_p vs T</strong></p>
+<ul>
+<li>样品盘 + 空参比盘各在一个腔室，仪器维持二者温度相同并等速升降温</li>
+<li>记录每升高 1 K 所需热量，减去空盘的贡献</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>T<sub>g</sub> 依赖热历史</strong>：慢冷 → 有更多时间堆砌得更紧密 → 外推得到<strong>更低的 T<sub>g</sub></strong>。
+静置足够久，快冷样品会自行收缩到慢冷样品的体积 —— 这叫 <strong>aging（老化，不希望发生）</strong>。
+为了数据可重复，<strong>TMA 和 DSC 都取第二次热扫描</strong>（heat-cool-heat-cool）来抹掉热历史。</p>
+</blockquote>
+<h3>T<sub>g</sub> 与应用</h3>
+<table>
+<thead>
+<tr>
+<th>T<sub>g</sub> 范围</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低于室温</td>
+<td><strong>弹性体</strong>（交联成永久网络后有极大弹性）</td>
+</tr>
+<tr>
+<td>室温 ~ 100°C 且不结晶</td>
+<td>不适合做块体材料，但适合做<strong>胶粘剂</strong></td>
+</tr>
+<tr>
+<td>接近或高于 100°C</td>
+<td><strong>热塑性塑料</strong>（T<sub>g</sub> 以上加工，冷却成型）</td>
+</tr>
+<tr>
+<td>~200°C</td>
+<td><strong>工程热塑性塑料</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>影响 T<sub>g</sub> 的因素</h3>
+<p><strong>化学结构</strong>（T<sub>g</sub> 是高分子开始软化的温度）</p>
+<ul>
+<li>主链<strong>柔性高 → T<sub>g</sub> 低</strong>；主链<strong>刚性 → T<sub>g</sub> 高</strong>（刚性芳环主链 T<sub>g</sub> 高，如 PEEK T<sub>g</sub> = 143°C）</li>
+<li><strong>侧基越大越刚性 → T<sub>g</sub> 越高</strong>（苯基、酯基等阻碍链运动重排）</li>
+<li>分子间作用弱 → T<sub>g</sub> 低；<strong>极性作用（氯、腈、酯）→ T<sub>g</sub> 高</strong></li>
+</ul>
+<p><strong>分子量</strong> —— <strong>Flory-Fox 方程</strong>：
+<div class="fmb"><span class="bx">T<sub>g</sub>(M<sub>n</sub>)=T<sub>g</sub>(M<sub>∞</sub>)-<span class="fr"><span class="fr-n">K</span><span class="fr-d">M<sub>n</sub></span></span></span></div>
+分子量越低 T<sub>g</sub> 越低（链端自由体积大）。<strong>低分子量增塑剂降低 T<sub>g</sub></strong> 同理。</p>
+<p><strong>交联</strong>：限制链运动 → <strong>T<sub>g</sub> 升高</strong></p>
+<p><strong>共混组成</strong> —— <strong>Fox 方程</strong>：
+<div class="fmb"><span class="bx"><span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>g</sub></span></span> = <span class="fr"><span class="fr-n">w<sub>A</sub></span><span class="fr-d">T<sub>g(A)</sub></span></span>+<span class="fr"><span class="fr-n">w<sub>B</sub></span><span class="fr-d">T<sub>g(B)</sub></span></span></span>  (w 为质量分数)</div></p>
+<p>更精确的熵推导版本：
+<div class="fmb"><span class="op">ln</span>T<sub>g</sub> = <span class="fr"><span class="fr-n">w<sub>A</sub>ΔC<sub>p(A)</sub><span class="op">ln</span>T<sub>g(A)</sub>+w<sub>B</sub>ΔC<sub>p(B)</sub><span class="op">ln</span>T<sub>g(B)</sub></span><span class="fr-d">w<sub>A</sub>ΔC<sub>p(A)</sub>+w<sub>B</sub>ΔC<sub>p(B)</sub></span></span></div></p>
+<blockquote>
+<p>⚠️ <strong>Fox 方程必须用绝对温度 K</strong>，用摄氏度算是错的。</p>
+</blockquote>
+<hr />
+<h2 class="lec-break">Lecture 9 · 力学性质与加工</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_8-10 · p.15–31</p>
+</blockquote>
+<h3>应力、应变、模量</h3>
+<div class="fmb">σ<sub>t</sub> = <span class="fr"><span class="fr-n">f</span><span class="fr-d">A</span></span> (拉伸应力),  ε=<span class="fr"><span class="fr-n">ΔL</span><span class="fr-d">L<sub>0</sub></span></span> (应变),  <span class="bx">σ<sub>t</sub>=Eε</span></div>
+<p><strong>E = Young's Modulus 杨氏模量</strong>，是应力-应变曲线的<strong>初始斜率</strong>（小应变下线性）。</p>
+<ul>
+<li><strong>Tensile strength 抗拉强度</strong> = 断裂点的最大应力</li>
+<li><strong>Yield strength 屈服强度</strong> = 开始出现<strong>不可恢复形变</strong>时的应力</li>
+</ul>
+<p><strong>泊松比 ν</strong>：
+<div class="fmb">-<span class="fr"><span class="fr-n">Δd</span><span class="fr-d">d</span></span> = -<span class="fr"><span class="fr-n">Δh</span><span class="fr-d">h</span></span>=ν<span class="fr"><span class="fr-n">ΔL</span><span class="fr-d">L<sub>0</sub></span></span></div></p>
+<h3>三类应力-应变行为</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特征</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A 脆性 Brittle</strong></td>
+<td>E 高，近似线性直到断裂，无屈服</td>
+<td>PS、PMMA</td>
+</tr>
+<tr>
+<td><strong>B 韧性 Ductile</strong></td>
+<td>应力升到屈服点 → 塑性形变（不可恢复）→ <strong>应变软化</strong>、大幅形变 → 断裂前 E 回升（<strong>应变硬化</strong>）</td>
+<td>PP、PE</td>
+</tr>
+<tr>
+<td><strong>C 弹性体 Elastomeric</strong></td>
+<td>E 极低，<strong>无屈服点</strong>（形变可恢复），断裂应变 <strong>500–1000%</strong></td>
+<td>cis-1,4-聚异戊二烯（天然橡胶）</td>
+</tr>
+</tbody>
+</table>
+<h3>温度与速率的影响</h3>
+<ul>
+<li><strong>升温 → 脆-韧转变（brittle-to-ductile transition）</strong>：韧性需要充分的分子运动和重排</li>
+<li><strong>形变速率越快 → 表现越脆</strong>（分子来不及重排）</li>
+</ul>
+<h3>粘弹性（atactic PS 的模量-温度曲线）</h3>
+<table>
+<thead>
+<tr>
+<th>区间</th>
+<th>状态</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-B</td>
+<td><strong>玻璃态</strong>（低于 T<sub>g</sub>）</td>
+<td>形变可恢复（弹性）</td>
+</tr>
+<tr>
+<td>B-C</td>
+<td><strong>推迟弹性态</strong>（T<sub>g</sub> 在此区）</td>
+<td>T<sub>g</sub> 稍上链运动很慢；应变缓慢增加、缓慢恢复</td>
+</tr>
+<tr>
+<td>C-D</td>
+<td><strong>橡胶态</strong></td>
+<td>模量出现<strong>平台</strong>；瞬时弹性响应 + 粘性流动 + 不完全恢复</td>
+</tr>
+<tr>
+<td>D-E</td>
+<td><strong>橡胶流动态</strong></td>
+<td>模量进一步下降</td>
+</tr>
+<tr>
+<td>E-F</td>
+<td><strong>粘流态</strong></td>
+<td>无弹性响应、无恢复，纯粘性流动</td>
+</tr>
+</tbody>
+</table>
+<h3>形变机理（三种，会区分）</h3>
+<table>
+<thead>
+<tr>
+<th>机理</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Crazing 银纹</strong></td>
+<td>高分子中<strong>裂纹扩展</strong>的机理，导致脆性断裂。在拉伸的原纤（fibril）之间形成 10–20 nm 微孔洞；<strong>沿垂直于应力方向扩展</strong>；原纤最终断裂 → 断裂。银纹散射光 → 发白/发雾。<strong>能起银纹反而使材料强韧</strong>（把高分子拉成原纤的过程耗散了能量）</td>
+</tr>
+<tr>
+<td><strong>Shear Banding 剪切带</strong></td>
+<td>与应力方向成 <strong>~45°</strong>；某小区域一旦剪切位移，因比周围未变形区更弱而继续扩展</td>
+</tr>
+<tr>
+<td><strong>Necking 细颈</strong></td>
+<td>韧性高分子<strong>屈服点之后</strong>立即发生；未成颈区应变小、所需应力低，所以颈部靠拉伸未成颈区而延长；整个样品成颈后模量回升（应变硬化）</td>
+</tr>
+</tbody>
+</table>
+<h3>加工工艺</h3>
+<table>
+<thead>
+<tr>
+<th>工艺</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Extrusion 挤出</strong></td>
+<td>旋转螺杆把固体树脂送入加热料筒 → 熔融压缩 → 经 breaker plate（助压实、挡杂质）→ 通过口模（die）成棒/管/片</td>
+</tr>
+<tr>
+<td><strong>Compression Molding 模压</strong></td>
+<td>树脂放在加热开模下半部，上半部压下，多余料被挤出</td>
+</tr>
+<tr>
+<td><strong>Transfer Molding 传递模塑</strong></td>
+<td>树脂先装入传递腔，柱塞把熔体推入模腔</td>
+</tr>
+<tr>
+<td><strong>Injection Molding 注塑</strong></td>
+<td>合模后往复螺杆把熔体注入模腔（类似挤出），冷却后顶针顶出，在浇口处分离</td>
+</tr>
+<tr>
+<td><strong>Reaction Injection Molding 反应注塑</strong></td>
+<td>单体等先进混合单元，再注入模腔，<strong>聚合反应在模腔内发生</strong></td>
+</tr>
+<tr>
+<td><strong>Thermoforming 热成型</strong></td>
+<td>塑料片加热软化 → 下方抽真空 → 贴合模具</td>
+</tr>
+<tr>
+<td><strong>Blow Molding 吹塑</strong></td>
+<td>先挤出中空管坯（parison）→ 合模 → 吹气膨胀贴合模具</td>
+</tr>
+<tr>
+<td><strong>Calendering 压延</strong></td>
+<td>熔体在两个加热转辊的小间隙中压成薄片</td>
+</tr>
+<tr>
+<td><strong>Coating 涂布</strong></td>
+<td>roll coating（下辊带液）/ blade coating（刮刀控厚）/ slot-die coating（直接挤到移动基材上）；涂层可用热或 UV 交联固化</td>
+</tr>
+<tr>
+<td><strong>Melt Spinning 熔融纺丝</strong></td>
+<td>熔体经喷丝板（spinneret）→ 空气冷却 → 导辊（godet）拉伸 → 卷绕</td>
+</tr>
+<tr>
+<td><strong>Dry Spinning 干法纺丝</strong></td>
+<td>20–40 wt% 溶液经喷丝板 → 热气快速蒸发溶剂</td>
+</tr>
+<tr>
+<td><strong>Wet Spinning 湿法纺丝</strong></td>
+<td>溶液经浸在<strong>非溶剂浴</strong>中的喷丝板 → 纤维凝固 → 辊收集</td>
+</tr>
+<tr>
+<td><strong>Electrospinning 静电纺丝</strong></td>
+<td>高压把带电熔体/溶液从小孔加速射向靶板，可拉到 <strong>100 nm</strong> 级细度；残余电荷随时间耗散</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 class="lec-break">Lecture 10 · 弹性态与结晶态</h2>
+<blockquote>
+<p><strong>出处</strong>：讲义 Lectures_8-10 · p.32–53</p>
+</blockquote>
+<h3>弹性体的必要条件</h3>
+<ul>
+<li>温度<strong>高于 T<sub>g</sub></strong></li>
+<li>结晶度为零或可忽略</li>
+<li><strong>必须交联</strong></li>
+<li>模量远低于脆性/韧性高分子，但<strong>高度拉伸时模量升高</strong></li>
+<li>形变<strong>完全可恢复</strong></li>
+</ul>
+<p>常见弹性体：cis-1,4-聚异戊二烯（天然橡胶）、聚硅氧烷（硅橡胶）、聚丙烯腈-丁二烯（丁腈橡胶）</p>
+<p><strong>硫化（Vulcanization）</strong>：用硫加热交联 cis-1,4-聚异戊二烯。机理尚不完全清楚，证据指向<strong>离子型反应</strong>。每个交联点是两条链之间的<strong>永久锚点</strong>，形成网络、保持形状，使链在形变后能回到原位。</p>
+<h3>橡胶弹性的热力学（重点）</h3>
+<div class="fmb">dG=Vdp-SdT+f dL</div>
+<p>由二阶偏导可交换：
+<div class="fmb"><span class="bx">(<span class="fr"><span class="fr-n">∂f</span><span class="fr-d">∂T</span></span>)<sub>p,L</sub> = -(<span class="fr"><span class="fr-n">∂S</span><span class="fr-d">∂L</span></span>)<sub>p,T</sub></span></div></p>
+<p>固定伸长率（如 350%）下测应力对温度：</p>
+<ul>
+<li><strong>应力随温度升高而增大 → 斜率为正 → (∂S/∂L) 为负 → 拉伸使熵下降</strong></li>
+<li>熵下降的原因：伸展的有序构象<strong>构象数减少</strong></li>
+<li>低温处的<strong>反转点</strong>是<strong>玻璃化转变</strong>——此时已不是弹性体</li>
+</ul>
+<p>由 G = H − TS：
+<div class="fmb">f=(<span class="fr"><span class="fr-n">∂H</span><span class="fr-d">∂L</span></span>)<sub>p,T</sub>-T(<span class="fr"><span class="fr-n">∂S</span><span class="fr-d">∂L</span></span>)<sub>p,T</sub></div></p>
+<ul>
+<li><strong>y 轴截距 = (∂H/∂L)</strong>，实测<strong>接近零</strong> → 拉伸几乎不把能量以焓的形式储存</li>
+<li><strong>应力几乎全部用于降低熵</strong> → 橡胶弹性是<strong>熵弹性</strong></li>
+</ul>
+<p><strong>绝热拉伸</strong>：无热交换，弹性功全变内能：
+<div class="fmb">C<sub>V,p</sub>ΔT=<span class="fr"><span class="fr-n">AEL<sup>2</sup></span><span class="fr-d">2L<sub>0</sub></span></span></div>
+→ <strong>绝热拉伸橡皮筋会升温</strong>（可以用嘴唇试）。</p>
+<h3>结晶</h3>
+<p><strong>能否结晶</strong>：</p>
+<ul>
+<li><strong>立构规整（isotactic 全同、syndiotactic 间同）→ 能结晶</strong>（规整堆入晶胞的前提）</li>
+<li><strong>立构不规整（atactic 无规）→ 不结晶</strong></li>
+<li><strong>例外</strong>：带<strong>小极性侧基</strong>的有时也能结晶，如聚乙烯醇 PVA、聚氟乙烯</li>
+<li>冷却动力学：留给堆砌的时间</li>
+</ul>
+<p><strong>结晶的好处</strong>：力学强度提高、抗降解性更好、阻隔性更好</p>
+<p><strong>三级结构</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>尺度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unit Cell 晶胞</strong></td>
+<td>每边 2–20 Å</td>
+</tr>
+<tr>
+<td><strong>Lamellae 片晶</strong>（晶胞堆成的 2D 薄片）</td>
+<td>厚 100–500 Å，宽数微米</td>
+</tr>
+<tr>
+<td><strong>Spherulite 球晶</strong>（片晶堆成的 3D 球）</td>
+<td>数十至数百微米</td>
+</tr>
+</tbody>
+</table>
+<p>晶胞约定：<strong>c 轴对应高分子主链方向</strong>（也叫 fiber axis），单斜晶系例外（是 b 轴）。
+链先取最低能量构象（PE 是全反式），再尽量紧密堆砌。</p>
+<h3>XRD</h3>
+<div class="fmb"><span class="bx">2D<span class="op">sin</span>θ=nλ</span>  (Bragg 定律)</div>
+D 晶面间距，<strong>2θ 是衍射角</strong>，λ 波长，n 整数。<strong>Cu Kα 时 λ = 1.54 Å</strong>。</p>
+<ul>
+<li><strong>单晶</strong>：衍射花样取决于取向，多方向测量可给出唯一晶体结构和空间群</li>
+<li><strong>粉末</strong>：各种取向的微晶都有 → 花样是<strong>同心圆环</strong></li>
+<li>高分子样品容易做成粉末；2θ 由圆环到中心的距离得到；每个峰对应某个晶面或某个高级衍射（n &gt; 1）</li>
+</ul>
+<blockquote>
+<p>⚠️ 题目给的通常是 <strong>2θ</strong>，代入公式前<strong>必须除以 2</strong>。</p>
+</blockquote>
+<h3>T<sub>m</sub> 依赖片晶尺寸</h3>
+<p>盘状片晶，半径 r、厚度 l。熔融时 ΔG_m = ΔG_b + ΔG_s = 0：</p>
+<p><div class="fmb">ΔG<sub>b</sub>=πr<sup>2</sup> l ΔG<sub>V</sub><sup>b</sup>,  ΔG<sub>s</sub> = -(2πr<sup>2</sup>+2πrl)γ</div>
+<p>代入 <span class="fmi">ΔG<sub>V</sub><sup>b</sup>=ΔH<sub>V</sub><sup>b</sup>(1-<span class="fr"><span class="fr-n">T<sub>m</sub></span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>)</span> 并整理：</p>
+<div class="fmb"><span class="bx"><span class="fr"><span class="fr-n">T<sub>m</sub></span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>=1-<span class="fr"><span class="fr-n">2γ</span><span class="fr-d">ΔH<sub>V</sub><sup>b</sup></span></span>(<span class="fr"><span class="fr-n">1</span><span class="fr-d">l</span></span>+<span class="fr"><span class="fr-n">1</span><span class="fr-d">r</span></span>)</span></div>
+<p>→ <strong>片晶越薄越小，T<sub>m</sub> 越低</strong>（表面能占比越大）。</p>
+<h3>T<sub>m</sub> 依赖分子量</h3>
+<p><strong>链端相当于杂质，造成熔点（凝固点）降低。</strong></p>
+<div class="fmb"><span class="op">ln</span>x<sub>A</sub> = -<span class="fr"><span class="fr-n">ΔH<sub>m</sub></span><span class="fr-d">nR</span></span>(<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub></span></span>-<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>),  
+x<sub>B</sub> = <span class="fr"><span class="fr-n">2M<sub>0</sub></span><span class="fr-d">M<sub>n</sub></span></span></div>
+<p>（每条链两个链端，M₀ 为重复单元分子量）</p>
+<div class="fmb"><span class="fr"><span class="fr-n">2M<sub>0</sub></span><span class="fr-d">M<sub>n</sub></span></span> = <span class="fr"><span class="fr-n">ΔH<sub>m</sub></span><span class="fr-d">nR</span></span>(<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub></span></span>-<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>)</div>
+<p>→ <strong>M<sub>n</sub> 越低，链端分数越高，T<sub>m</sub> 越低。</strong></p>
+<h3>结晶机理与形貌</h3>
+<p>高分子按<strong>成核-生长（nucleation and growth）</strong>结晶：先出现稳定核，再从非晶相吸收链而长大。
+片晶厚度由<strong>热力学 + 动力学</strong>共同决定：</p>
+<ul>
+<li>热力学上：薄片晶 T<sub>m</sub> 低 → <strong>低温才允许薄晶生长</strong></li>
+<li>动力学上：薄片晶生长<strong>更快</strong></li>
+<li>→ <strong>低温下薄片晶占主导</strong>；当更薄的片晶在热力学上刚被允许时，生长速率会出现<strong>突变</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>形貌</th>
+<th>形成条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spherulite 球晶</strong></td>
+<td>成核-生长的常规产物（如聚 L-乳酸）</td>
+</tr>
+<tr>
+<td><strong>Hedrite</strong></td>
+<td>片晶从中心张开时</td>
+</tr>
+<tr>
+<td><strong>Dendrite 枝晶</strong></td>
+<td>更深过冷下的无序生长</td>
+</tr>
+<tr>
+<td><strong>Shish kebab 串晶</strong></td>
+<td><strong>在流动条件下结晶</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 class="lec-break bigsec">跨讲串联</h1>
+<blockquote>
+<p>这门课有几条主线反复出现在不同讲次里。认出它们，十讲就不是十个孤立的知识块。
+综合题几乎全部出自这里。</p>
+</blockquote>
+<h2>串联 1 · θ 溶剂的五种等价说法</h2>
+<p>同一个物理状态，在五讲里有五个名字。<strong>看到任何一个，其余四个都成立</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th>出自</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="fmi">B=0</span></td>
+<td>L5 渗透压</td>
+<td>第二维里系数为零</td>
+</tr>
+<tr>
+<td><span class="fmi">χ=0.5</span></td>
+<td>L3 Flory-Huggins</td>
+<td>恰好等于高 N 的临界值</td>
+</tr>
+<tr>
+<td><span class="fmi">ν=1/2</span></td>
+<td>L1 标度</td>
+<td><span class="fmi">R<sub>g</sub>∝N<sup>1/2</sup></span>，理想链</td>
+</tr>
+<tr>
+<td><span class="fmi">a=0.5</span></td>
+<td>L5 Mark-Houwink</td>
+<td><span class="fmi">a=3ν-1</span></td>
+</tr>
+<tr>
+<td>链呈理想链行为</td>
+<td>—</td>
+<td>排除体积排斥与链-链吸引<strong>恰好抵消</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>良溶剂</strong>对应的一整套：<span class="fmi">B&gt;0</span>、<span class="fmi">χ&lt;0.5</span>、<span class="fmi">ν=3/5</span>、<span class="fmi">a≈0.8</span>、链<strong>膨胀</strong>。
+<strong>不良溶剂</strong>：<span class="fmi">B&lt;0</span>、<span class="fmi">χ&gt;0.5</span>、链<strong>塌缩</strong>或分相。</p>
+<h2>串联 2 · 散射的根源永远是折射率不均匀</h2>
+<table>
+<thead>
+<tr>
+<th>讲次</th>
+<th>现象</th>
+<th>折射率差来自</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L6</strong></td>
+<td>溶液散射强弱由 <span class="fmi">dn/dc</span> 决定</td>
+<td>高分子 vs 溶剂</td>
+</tr>
+<tr>
+<td><strong>L6</strong></td>
+<td>天空是蓝的（<span class="fmi">I∝λ<sup>-4</sup></span>）</td>
+<td>空气分子 vs 真空</td>
+</tr>
+<tr>
+<td><strong>L8</strong></td>
+<td>玻璃态<strong>透明</strong>、半结晶<strong>发白</strong></td>
+<td>晶区 vs 非晶区</td>
+</tr>
+<tr>
+<td><strong>L9</strong></td>
+<td>银纹造成<strong>应力发白</strong></td>
+<td>10–20 nm 微孔洞 vs 高分子</td>
+</tr>
+<tr>
+<td><strong>L4</strong></td>
+<td>分相时溶液<strong>变浑浊</strong>（浊点法测 binodal）</td>
+<td>两个新相之间</td>
+</tr>
+</tbody>
+</table>
+<p><strong>推论</strong>：折射率完全匹配 → <span class="fmi">dn/dc=0</span> → 不散射 → "隐形"。
+半结晶高分子若晶粒远小于波长，也会变透明。</p>
+<h2>串联 3 · 随机行走的 √N 定律</h2>
+<p><strong>同一个数学问题，出现在空间和时间两个场景</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>讲次</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>链在<strong>空间</strong>中随机走 n 步</td>
+<td>L1</td>
+<td><span class="fmi">⟨h<sup>2</sup>⟩=nl<sup>2</sup></span></td>
+</tr>
+<tr>
+<td>粒子在<strong>时间</strong>中随机走 N 步</td>
+<td>L6</td>
+<td><span class="fmi">⟨r<sup>2</sup>⟩=Nl<sup>2</sup></span>，<span class="fmi">D<sub>t</sub> = <span class="fr"><span class="fr-n">Nl<sup>2</sup></span><span class="fr-d">6t</span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>两处的推导<strong>完全相同</strong>：平方后交叉项 <span class="fmi">⟨<span class="op">cos</span>θ⟩=0</span> 而消失，只剩 n 个自点积。
+讲义在 DLS 那题明确写着 <em>"Derivation can be found in lecture on polymer end-to-end distance"</em>。</p>
+<h2>串联 4 · 链端是同一个"杂质"</h2>
+<table>
+<thead>
+<tr>
+<th>讲次</th>
+<th>影响</th>
+<th>机理</th>
+<th>关系式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L8</strong></td>
+<td><span class="fmi">T<sub>g</sub></span> 降低</td>
+<td>链端<strong>自由体积大</strong></td>
+<td><span class="fmi">T<sub>g</sub>=T<sub>g</sub>(∞)-<span class="fr"><span class="fr-n">K</span><span class="fr-d">M<sub>n</sub></span></span></span></td>
+</tr>
+<tr>
+<td><strong>L10</strong></td>
+<td><span class="fmi">T<sub>m</sub></span> 降低</td>
+<td>链端<strong>相当于杂质</strong>（依数性）</td>
+<td><span class="fmi"><span class="fr"><span class="fr-n">2M<sub>0</sub></span><span class="fr-d">M<sub>n</sub></span></span> = <span class="fr"><span class="fr-n">ΔH<sub>m</sub></span><span class="fr-d">nR</span></span>(<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub></span></span>-<span class="fr"><span class="fr-n">1</span><span class="fr-d">T<sub>m</sub><sup>∞</sup></span></span>)</span></td>
+</tr>
+</tbody>
+</table>
+<p>两者<strong>都是 <span class="fmi">1/M<sub>n</sub></span> 的形式</strong>，都在高分子量时趋于平台值，都用 <span class="fmi">M<sub>n</sub></span>（因为链端数正比于链的条数）。</p>
+<h2>串联 5 · 成核-生长出现两次</h2>
+<table>
+<thead>
+<tr>
+<th>讲次</th>
+<th>过程</th>
+<th>势垒来自</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L4</strong></td>
+<td>亚稳区的<strong>相分离</strong></td>
+<td>小涨落升高 G（曲线凹向上）</td>
+</tr>
+<tr>
+<td><strong>L10</strong></td>
+<td>高分子<strong>结晶</strong></td>
+<td>小晶核的<strong>表面能</strong>代价</td>
+</tr>
+</tbody>
+</table>
+<p>两处都是"大尺度有利、小尺度不利"→ 必须等一次足够大的涨落越过势垒。</p>
+<p><strong>注意区别</strong>：相分离有<strong>两种</strong>机理（SD 无势垒 / N&amp;G 有势垒），
+<strong>结晶只有一种</strong>——只走成核-生长。</p>
+<h2>串联 6 · 依数性贯穿三讲</h2>
+<p>起点都是 <strong>L2 的 <span class="fmi">μ<sub>A</sub>=μ<sub>A</sub><sup>*</sup>+RT<span class="op">ln</span>x<sub>A</sub></span></strong>（不纯液体化学势更低）：</p>
+<table>
+<thead>
+<tr>
+<th>讲次</th>
+<th>现象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L5</strong></td>
+<td><strong>渗透压</strong>：溶液侧 μ 低 → 溶剂过膜 → 只数分子个数 → 测 <span class="fmi">M<sub>n</sub></span></td>
+</tr>
+<tr>
+<td><strong>L5</strong></td>
+<td><strong>VPO</strong>：溶液 μ 低 → 溶剂蒸气冷凝 → 升温</td>
+</tr>
+<tr>
+<td><strong>L10</strong></td>
+<td><strong><span class="fmi">T<sub>m</sub></span> 降低</strong>：链端当杂质 → 凝固点降低</td>
+</tr>
+<tr>
+<td>（物化）</td>
+<td>沸点升高、凝固点降低</td>
+</tr>
+</tbody>
+</table>
+<p><strong>共同特征</strong>：只与溶质<strong>数目</strong>有关，与<strong>种类无关</strong>（葡萄糖 = 蔗糖）。</p>
+<h2>串联 7 · dw_add 的三次具体化</h2>
+<p>L2 的基本方程 <span class="fmi">dU=TdS-p dV+dw<sub>add</sub></span> 里，那个抽象的"额外功"被具体化了三次：</p>
+<table>
+<thead>
+<tr>
+<th>取法</th>
+<th>讲次</th>
+<th>引出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组成变化 <span class="fmi">μ dn</span></td>
+<td>L2</td>
+<td><strong>化学势</strong>，进而是全部混合热力学</td>
+</tr>
+<tr>
+<td>电功</td>
+<td>L2</td>
+<td>Gibbs "<strong>自由</strong>"能的含义</td>
+</tr>
+<tr>
+<td>弹性功 <span class="fmi">f dL</span></td>
+<td>L10</td>
+<td><span class="fmi">f=(∂G/∂L)<sub>p,T</sub></span>，进而是<strong>熵弹性</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>串联 8 · 把难测的参数打包</h2>
+<table>
+<thead>
+<tr>
+<th>讲次</th>
+<th>打包</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1</strong></td>
+<td>键角、旋转角等局部约束</td>
+<td><span class="fmi">C<sub>∞</sub></span>（特征比）、<span class="fmi">b</span>（统计链段长）</td>
+</tr>
+<tr>
+<td><strong>L2</strong></td>
+<td>近邻数 z 与交换能 Δw</td>
+<td><span class="fmi">χ=zΔw/kT</span>（<strong>单一可测参数</strong>）</td>
+</tr>
+<tr>
+<td><strong>L6</strong></td>
+<td><span class="fmi">n<sub>0</sub></span>、<span class="fmi">dn/dc</span>、λ</td>
+<td>光学常数 <span class="fmi">K</span></td>
+</tr>
+<tr>
+<td><strong>L3</strong></td>
+<td>—</td>
+<td>z 在熵项中<strong>相消</strong>，只经 χ 留在焓项</td>
+</tr>
+</tbody>
+</table>
+<p><strong>共同思路</strong>：把无法独立测量的微观量组合成一个<strong>可由实验拟合</strong>的宏观参数。</p>
+<h2>串联 9 · 各表征方法测什么（最高频综合题）</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>给出</th>
+<th>加权方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>膜渗透压 / VPO / 端基分析</td>
+<td><strong><span class="fmi">M<sub>n</sub></span></strong></td>
+<td>数<strong>个数</strong>（依数性）</td>
+</tr>
+<tr>
+<td><strong>静态</strong>光散射（多角度）</td>
+<td><strong><span class="fmi">M<sub>w</sub></span> + <span class="fmi">R<sub>g</sub></span></strong></td>
+<td>按<strong>质量</strong>加权</td>
+</tr>
+<tr>
+<td><strong>动态</strong>光散射 DLS</td>
+<td><strong><span class="fmi">R<sub>h</sub></span></strong>（<strong>不给分子量</strong>）</td>
+<td>涨落快慢 → 扩散系数</td>
+</tr>
+<tr>
+<td>粘度法</td>
+<td><strong><span class="fmi">M<sub>v</sub>≈M<sub>w</sub></span></strong></td>
+<td><span class="fmi">[η]=kM<sup>a</sup></span>，需标定</td>
+</tr>
+<tr>
+<td>SEC / GPC</td>
+<td>整个分布 → <span class="fmi">M<sub>n</sub></span>、<span class="fmi">M<sub>w</sub></span>、PDI</td>
+<td>按尺寸分离，需校准</td>
+</tr>
+<tr>
+<td>MALDI-TOF-MS</td>
+<td>整个分布 → <span class="fmi">M<sub>n</sub></span>、<span class="fmi">M<sub>w</sub></span></td>
+<td>按质量，仅限<strong>极性</strong>高分子</td>
+</tr>
+</tbody>
+</table>
+<p><strong>三个"半径"别混</strong>：<span class="fmi">R<sub>g</sub></span>（回转，SLS）· <span class="fmi">R<sub>h</sub></span>（流体力学，DLS）· <span class="fmi">R<sub>0</sub></span>（密堆积球，恒有 <span class="fmi">R<sub>g</sub>&lt;R<sub>0</sub></span>）</p>
+<p><strong>只有 SEC 和 MALDI 能给出分布</strong>，因而只有它们能算 PDI。</p>
+<h2>串联 10 · 洗脱/到达顺序正好相反</h2>
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>谁先出</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SEC</strong></td>
+<td><strong>大分子</strong></td>
+<td>被孔排阻，只走孔外空隙，路径短</td>
+</tr>
+<tr>
+<td><strong>MALDI-TOF</strong></td>
+<td><strong>小分子</strong></td>
+<td>同样电场同样电荷 → 质量小加速度大</td>
+</tr>
+</tbody>
+</table>
+<p>记忆法：<strong>SEC 是"大的走捷径"，TOF 是"轻的跑得快"。</strong></p>
+<h2>串联 11 · 温度与时间等效</h2>
+<table>
+<thead>
+<tr>
+<th>讲次</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L8</strong></td>
+<td><strong>快冷</strong> → 分子来不及堆砌 → 体积大、<span class="fmi">T<sub>g</sub></span> <strong>高</strong></td>
+</tr>
+<tr>
+<td><strong>L9</strong></td>
+<td><strong>快速形变</strong> → 来不及重排 → 表现更<strong>脆</strong></td>
+</tr>
+<tr>
+<td><strong>L9</strong></td>
+<td><strong>升温</strong> → 活动性增强 → <strong>脆-韧转变</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>升温</strong>和<strong>放慢速率</strong>效果相同——都给了分子更多"动"的机会。
+工程含义：塑料件慢慢弯能弯很大，<strong>猛敲就碎</strong>；抗冲击必须用高速试验测。</p>
+<h2>串联 12 · N 增大的连锁后果</h2>
+<p>Flory-Huggins 里"只有高分子项被 N 削弱"这一个不对称，推出一连串结论：</p>
+<div class="fmb">Nuparrow  ⇒  ΔS<sub>mix</sub>downarrow  ⇒  溶解性downarrow</div>
+<table>
+<thead>
+<tr>
+<th>后果</th>
+<th>讲次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>临界温度 <span class="fmi">T<sub>c</sub></span> <strong>升高</strong></td>
+<td>L4</td>
+</tr>
+<tr>
+<td>相图向<strong>更小的 <span class="fmi">φ<sub>B</sub></span></strong> 移动（只能配稀溶液）</td>
+<td>L4</td>
+</tr>
+<tr>
+<td>相图<strong>不对称</strong>（小分子体系是对称的）</td>
+<td>L4</td>
+</tr>
+<tr>
+<td>临界值 <span class="fmi">χ<sub>c</sub>→0.5</span>（小分子是 2，容忍度只有 1/4）</td>
+<td>L3</td>
+</tr>
+<tr>
+<td>高分子<strong>共混</strong>两项都被削弱 → 绝大多数高分子对<strong>不相容</strong></td>
+<td>L3 / L8</td>
+</tr>
+</tbody>
+</table></body></html>
