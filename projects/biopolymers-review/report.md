@@ -4,6 +4,104 @@
 
 > **AI Tool Declaration** — *(final wording to be added on the first page before submission)*
 
+<!-- STATUS (2026-08-26, figure overhaul + §3 per-polymer figures + renumbering 1-19): §1-§10
+     complete, 19 figures / 5 tables / 32 references.
+
+     USER ASKED (verbatim, translated): (1) every polymer discussed in §3 needs its own monomer
+     figure AND chain/spatial-structure figure placed IN that subsection, not confined to the
+     appendix; (2) Fig. 6 (degradation) split into three standalone figures, not one 3-panel
+     figure; (3) figure sizing across the document was inconsistent/messy, fix it; (4) Fig. 10
+     (processing flowchart) didn't read as a professional journal figure, restyle it; (5) Fig. 3
+     (cellulose hierarchy) had a text/image overlap bug; (6) Fig. 11 (the combined 1x4 strip
+     duplicating Fig.4/5/6/8) is no longer wanted, split it apart / remove it, and turn its
+     panel (d) — the NR/SBR scorecard — into a real table. User was away and explicitly said not
+     to ask further questions; every judgement call below was made autonomously.
+
+     WHAT CHANGED (this took two fork attempts — a session-limit interruption killed the first
+     mid-task; a WIP checkpoint commit `4fd7703` preserved the work and a second fork resumed
+     from git state, since a completed/killed fork's transcript cannot be resumed via SendMessage
+     once it drops off ListAgents — spawn fresh and resume from git, don't retry the resume):
+
+     (1) Fig. 6 split into `fig6a_polyester_hydrolysis.py` (now Fig. 13), `fig6b_enzymatic_
+     degradation.py` (Fig. 14), `fig6c_hydrolysis_barriers.py` (Fig. 15) — each single-panel,
+     own caption, still appearing back-to-back in §5.4's prose.
+     (2) Fig. 11 (`combine_1x4.py`'s stitched strip) deleted as an entity — decoupled from
+     `make_all.py`, removed from `FIGURE_FILES`, removed from both report files. The script
+     itself is left in `figures/` unused, not deleted.
+     (3) Fig. 8's scorecard panel became **Table 5** (native Word three-line table, same
+     favourable/context-dependent/risk categories, still carries every citation number) — the
+     remaining structure-schematic panel is now its own standalone figure, Fig. 17, cross-
+     referencing the fuller version at appendix Fig. 19(f).
+     (4) Fig. 10 (now Fig. 16) restyled: thin borders + colour accent bars replacing solid
+     rounded colour blocks, matching the sober look of Fig. 2/11/12/16's analytical style.
+     Content/logic unchanged, visual language only.
+     (5) Fig. 3 (now Fig. 4, cellulose hierarchy) — text/geometry overlaps in panels (a) and (c)
+     fixed via spacing/repositioning, re-rendered and visually confirmed clean via PDF export.
+     (6) Six new compact figures added for §3.1-3.5, one (Fig. 6 gets both monomer+chain in one
+     figure) to two per subsection: Fig. 3 (`fig_polysaccharide_monomers.py`), Fig. 5
+     (`fig_polysaccharide_chains.py`), Fig. 6 (`fig_polyester_structures.py`), Fig. 7
+     (`fig_protein_structures.py`), Fig. 8 (`fig_lignin_monomers.py`), Fig. 9
+     (`fig_rubber_monomer.py`). All reuse already-verified SMILES imported from
+     `fig2_repeat_units.py` / `fig12_appendix_monomers.py` / `fig13_appendix_chain_structures.py`
+     — no stereochemistry was retyped or re-derived from scratch. The appendix (Fig. 18/19,
+     renumbered from 12/13) was kept as a complete reference gallery rather than trimmed, since
+     it doesn't count against the body page budget and several in-body figures (e.g. Fig. 9,
+     rubber monomer only) deliberately omit content shown fully in the appendix (e.g. NR/SBR's
+     complete 6-panel comparison lives only at Fig. 19(f), Fig. 17 is the compact §7.3 version).
+     (7) All 19 figures + Table 5 renumbered in strict first-appearance reading order, in BOTH
+     report_zh.md (edited first, per the Chinese-first convention) and report.md — every caption,
+     every in-prose cross-reference, `FIGURE_FILES`, `FIGURE_MAX_HEIGHT_IN`, `make_all.py`'s
+     module list, and FIGURES.md all updated consistently. `fig2_repeat_units.py` (old Fig 2) is
+     unused now (its 5 structures were redistributed into Fig. 3 and Fig. 6) but left in
+     `figures/` for reference, not deleted.
+     (8) Figure sizing unified into a 3-band system replacing the old ad hoc per-figure heights:
+     `FIGURE_HEIGHT_S/M/L` = 1.3/1.9/2.3in in `build_docx.py`, applied to every body figure (the
+     one documented exception is appendix Fig. 19 at 4.2in, a 6-panel gallery that isn't subject
+     to page-budget sizing anyway).
+     (9) A real, general layout bug found via PDF visual QA (not just script-exit-code trust):
+     Word could push a figure's caption paragraph alone onto the next page while the image
+     stayed on the previous one — caught on appendix Fig. 19, whose caption landed alone on an
+     otherwise-blank page 17. Fixed by setting `keep_with_next = True` on every figure's image
+     paragraph in `build_docx.py` (applies to all 19 figures, not just the one it was caught on).
+     (10) A real pre-existing bug fixed along the way: the Fig. 4/5 (thermal/mechanical) CSV
+     loaders lacked `encoding="utf-8"`, breaking under a non-UTF8 console codepage.
+
+     PAGE BUDGET: body (§1-§10) now spans pages 1-13 in BOTH languages (EN and ZH matched
+     exactly after the keep_with_next fix — previously ZH was 1 page shorter than EN). This is a
+     real +2 page regression from the previously-defended 11-page body (10-page nominal target).
+     Tried to claw this back per the agreed priority order: the two M-band new figures (Fig. 5,
+     Fig. 7) were checked against the S band and found already near-minimum legible size in the
+     PDF render (shrinking further risked illegibility for negligible page gain); no single
+     obviously-redundant sentence was found whose removal would meaningfully move a 2-page gap
+     (unlike the ~30-word trims that closed 1-page gaps in earlier passes — this gap is an order
+     of magnitude larger because six genuinely new required figures were added, not a
+     rounding-error pagination fragility). Judgement call: did NOT contort the document further
+     to chase 10 or 11 pages — the user's explicit content instruction (every §3 subsection gets
+     its own figures) takes priority, and 13 pages for 19 figures / 5 tables covering every
+     polymer discussed is a proportionate, honestly-reported outcome, not a bug to keep hunting.
+     EN total 17 pages (body 1-13, references 14-?, appendix to 17). ZH total 15 pages (same
+     13-page body; shorter overall due to CJK character density in refs/appendix, not a
+     different word count). Verified via `measure_sections.ps1` / `measure_sections_zh.ps1` (the
+     latter had its own bug: the file was saved without a UTF-8 BOM, so Windows PowerShell 5.1
+     misparsed the Chinese string literals as the system codepage and threw parser errors —
+     fixed by rewriting it via .NET `File.ReadAllText(path, Encoding.UTF8)` / `WriteAllText` with
+     an explicit UTF8 BOM encoding; if a `.ps1` file with non-ASCII literals ever fails to parse
+     with garbled-looking token errors, check its encoding first, same class of issue as the
+     UTF-16LE `~/.claude/CLAUDE.md` gotcha already in claude-memory).
+
+     QA: did a full PDF-export visual pass (not just trusting script exit codes) on the changed/
+     new figures — §3.1-3.5 pages (Fig. 3-9), the split Fig. 6 (13-15), Fig. 16's restyle, Fig.
+     17 + Table 5, and the appendix (Fig. 18/19, where the keep_with_next bug above was caught
+     and fixed). All rendered cleanly on the second pass; sizing reads as a consistent system
+     now, not the "inconsistent, messy" state the user flagged.
+
+     One caveat carried forward unchanged: alginate G (guluronic acid)'s absolute configuration
+     is still only verified as "the C5 epimer of M" (a literature-established relationship), not
+     independently CIP-matched — flagged in Fig. 18's caption and in the appendix prose, needs a
+     ChemDraw/literature cross-check before submission.
+
+     Both Desktop docx files updated and confirmed via file timestamp/size after this pass.
+-->
 <!-- STATUS (2026-08-26, Fig 6 text trim + Fig 8 case-study structure panel): §1-§10 complete,
      13 figures total, same count as the prior pass (Fig. 8 gained a panel, no new figure number).
 
