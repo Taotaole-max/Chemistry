@@ -4,6 +4,58 @@
 
 > **AI Tool Declaration** — *(final wording to be added on the first page before submission)*
 
+<!-- STATUS (2026-08-26, prose polish + a real CJK formatting bug fix): §1-§10 complete, 19
+     figures / 5 tables / 32 references, page counts unchanged from the prior pass.
+
+     User asked (verbatim, translated): "the phrasing is stiff/awkward in places, and there are
+     formatting problems" — no further specifics given, full judgement-call authority delegated
+     as in prior passes.
+
+     PROSE: targeted the passages with the most mechanical, repetitive architecture (the clearest
+     tell of AI-drafted prose: identical "claim — dash-elaboration — semicolon-chained evidence"
+     shape repeated paragraph after paragraph) rather than rewriting everything — introduction
+     (broken into two paragraphs, the three structural features turned from one semicolon-chained
+     sentence into three short enumerated ones), the §3 family-overview paragraph (the "X sits at
+     one extreme — ...; Y sits at the other — ..." pattern was used identically twice plus a third
+     dash for lignin — varied it), §3.5's "This is not fixed:" (ambiguous — could mean "not yet
+     fixed" — reworded to "not a fixed material constant, though:"), §7.1's four advantages
+     (previously one 100+-word sentence with four dash-elaborated semicolon-joined bullets crammed
+     in — split into four separate sentences), and §7.3's NR/SBR paragraph in report_zh.md, which
+     had stacked THREE em-dashes in one sentence (genuinely hard to parse) — restructured the
+     "不是A而是B" contrast without dashes. Chinese-first per the standing convention, English
+     ported afterward. Preserved every citation, figure/table cross-reference, and data value
+     exactly; nothing factual was touched.
+
+     FORMATTING — one real, systemic bug found and fixed, not just cosmetic tweaks: build_docx.py's
+     paragraph-joining (`gather_paragraph()`, the blockquote handler, and the figure-caption
+     multi-line merge) joined hard-wrapped source lines with a literal `" ".join(...)`. That's
+     correct for English (words need the space) but wrong for Chinese: every hard-wrap point in
+     report_zh.md's source was rendering as a visible, spurious gap in the middle of a Chinese
+     sentence, since CJK text has no inter-character spaces — confirmed via PDF visual QA on
+     report_zh's page 1 before the fix (e.g. "木质素，合计 构成了地球上" had a stray gap that
+     doesn't exist in the source's intended reading). This was NOT specific to my prose edits —
+     it silently affected every hard-wrapped Chinese paragraph in the document, existing text
+     included, likely since the original gather_paragraph() fix months ago (which was written and
+     tested against English wrapping). Fixed with a new `smart_join()` helper: joins with no
+     separator when both sides of a wrap point are CJK characters, falls back to a space
+     otherwise (so English text, and Latin terms/citations embedded in Chinese sentences, still
+     get their necessary space). Re-verified via PDF export afterward — the gaps are gone on every
+     inspected page; English pages render identically to before (smart_join is a no-op for
+     all-ASCII text). Also found one Chinese-text-in-English-body leak: Appendix A's prose quoted
+     `OUTLINE.md`'s Chinese requirement text ("10 页，不含参考文献") directly inside the English
+     submission document — translated to English in report.md ("10 pages excluding references").
+     Also checked and found consistent: citation bracket format ([N], [N,M], [N–M] throughout, no
+     stray parenthetical-citation style), figure/table caption markup, heading levels.
+
+     PAGE COUNT: unchanged from the prior pass — EN 17 total (body 1-13, same as before), ZH 15
+     total (body also 1-13) — re-measured via measure_sections.ps1/measure_sections_zh.ps1 after
+     every edit batch. The smart_join fix actually removes characters (spurious spaces) from the
+     Chinese doc, so if anything it very slightly *helped* the page budget, not hurt it.
+
+     Both Desktop docx files updated and confirmed via file timestamp/size after this pass. New
+     helper script `export_pdf_zh.ps1` added (export_pdf.ps1 only ever exported the English docx;
+     needed a Chinese-docx equivalent to do the required visual QA pass on report_zh.md).
+-->
 <!-- STATUS (2026-08-26, figure overhaul + §3 per-polymer figures + renumbering 1-19): §1-§10
      complete, 19 figures / 5 tables / 32 references.
 

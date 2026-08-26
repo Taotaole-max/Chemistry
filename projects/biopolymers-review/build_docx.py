@@ -139,6 +139,29 @@ def add_inline_runs(paragraph, text, base_italic=False, base_bold=False):
             run.bold = base_bold
 
 
+CJK_RE = re.compile(r"[一-鿿　-〿＀-￯]")
+
+
+def smart_join(parts):
+    """Join hard-wrapped source-line fragments back into one logical string.
+
+    A plain " ".join() is correct for English (words need the space) but wrong
+    for Chinese: it leaves a visible, spurious gap wherever the source happened
+    to wrap a line, since CJK text has no inter-character spaces. Only insert a
+    space when the join point isn't CJK-to-CJK (so English words, and Latin
+    terms embedded in Chinese text, still get their necessary space).
+    """
+    out = parts[0]
+    for part in parts[1:]:
+        if not part:
+            continue
+        if out and CJK_RE.match(out[-1]) and CJK_RE.match(part[0]):
+            out += part
+        else:
+            out += " " + part
+    return out
+
+
 def is_special_line_start(s):
     """True if a stripped line begins a new block element (not a wrapped continuation
     of the previous paragraph/list-item/reference-entry)."""
@@ -179,7 +202,7 @@ def gather_paragraph(lines, i, n):
             break
         buf.append(nxt)
         i += 1
-    return " ".join(buf), i
+    return smart_join(buf), i
 
 
 def parse_md_table(lines):
@@ -203,7 +226,11 @@ def build():
     buf = None
     for ln in raw_lines:
         if buf is not None:
-            buf += " " + ln.strip()
+            nxt = ln.strip()
+            if buf and nxt and CJK_RE.match(buf[-1]) and CJK_RE.match(nxt[0]):
+                buf += nxt
+            else:
+                buf += " " + nxt
             if buf.rstrip().endswith("]*"):
                 lines.append(buf)
                 buf = None
@@ -314,7 +341,7 @@ def build():
                 parts.append(lines[i].strip().lstrip(">").strip())
                 i += 1
             p = doc.add_paragraph()
-            add_inline_runs(p, " ".join(parts), base_italic=True)
+            add_inline_runs(p, smart_join(parts), base_italic=True)
             continue
 
         # Figure placeholder line: *[Figure N — ...]* or *[图 N — ...]*
