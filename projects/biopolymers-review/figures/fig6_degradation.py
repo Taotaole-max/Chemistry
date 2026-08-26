@@ -1,13 +1,17 @@
-"""Fig 6 · 两条降解路径与酯水解的能量图（示意）。
+"""Fig 6/7/8（原 Fig 6 的三个面板）· 两条降解路径与酯水解的能量图（示意），拆成三张
+独立的图，各自有完整图注和独立图号，不再挤在一张图的三个子面板里。
 
-(a) 聚酯：主链酯键水解，产物含羧基端，羧基降低局部 pH 反过来加速水解——自催化，
-    因此厚制品从内部先坏，表现为本体侵蚀而不是表面侵蚀。
-(b) 多糖与蛋白：酶解，酶只能接触无定形区，结晶区把酶挡在外面，
-    所以结晶度直接设定降解速率——同一个结晶度既给强度、又挡水、也挡降解。
-(c) 酯水解三种条件的能垒次序（示意图，不含计算值）：碱催化 < 酸催化 < 中性水。
+(a) → 独立输出 fig6a_polyester_hydrolysis：聚酯主链酯键水解，产物含羧基端，羧基降低
+    局部 pH 反过来加速水解——自催化，因此厚制品从内部先坏，表现为本体侵蚀而不是表面侵蚀。
+(b) → 独立输出 fig6b_enzymatic_degradation：多糖与蛋白的酶解，酶只能接触无定形区，
+    结晶区把酶挡在外面，所以结晶度直接设定降解速率——同一个结晶度既给强度、又挡水、
+    也挡降解。
+(c) → 独立输出 fig6c_hydrolysis_barriers：酯水解三种条件的能垒次序（示意图，不含
+    计算值）：碱催化 < 酸催化 < 中性水，用线型区分路径、颜色沿用聚酯的橙色。
 
-(c) 用线型区分路径、颜色沿用聚酯的橙色，黑白打印也能区分。
-(a) 和 (b) 的画布长宽比刻意做成一致，标题才能对齐。
+图内注释压到最短——正文 §5.4 已经把这三段机理讲清楚了，图上只留一句话当标签，
+不重复解释，避免图文冗余。三张图各自的正文图号在 report.md / report_zh.md 里赋值，
+本脚本内部仍按 a/b/c 组织便于维护，但绘图函数名保留、只是分别单独 save()。
 """
 
 import io
@@ -16,7 +20,6 @@ from pathlib import Path
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.gridspec import GridSpec
 from matplotlib.patches import Rectangle
 from rdkit.Chem import rdChemReactions
 from rdkit.Chem.Draw import rdMolDraw2D
@@ -32,33 +35,14 @@ PANEL_ASPECT = 2.0          # 两个上方面板共用的长宽比
 PX_W = 1200
 PX_H = int(PX_W / PANEL_ASPECT)
 
-NOTE_A = (
-    "Chain scission gives one carboxyl and one hydroxyl end. The\n"
-    "carboxyl end lowers the local pH and accelerates further\n"
-    "hydrolysis (autocatalysis), so thick parts degrade from the\n"
-    "inside out — bulk erosion rather than surface erosion."
-)
-NOTE_B = (
-    "Enzymes are large and hydrolyse only segments they can reach,\n"
-    "so scission is confined to accessible disordered regions.\n"
-    "Crystallinity sets the rate: the same order that provides\n"
-    "strength and moisture resistance also blocks degradation."
-)
-NOTE_C = (
-    "Ordering only; no calculated values are implied. Quantitative barriers for the three regimes, and for the "
-    "autocatalytic route in (a),\nare obtained from DFT with an implicit solvation model."
-)
+NOTE_A = "Acid end product autocatalyses further hydrolysis — bulk erosion."
+NOTE_B = "Enzymes reach only amorphous regions — crystallinity sets the rate."
+NOTE_C = "Ordering only — no calculated values implied."
 
 
-def title(ax, tag, text, colour):
-    ax.text(0.0, 1.06, f"({tag}) {text}", transform=ax.transAxes, fontsize=7.5,
+def title(ax, text, colour):
+    ax.text(0.0, 1.06, text, transform=ax.transAxes, fontsize=7.5,
             weight="bold", color=colour, ha="left", va="bottom")
-
-
-def note(ax, text):
-    ax.axis("off")
-    ax.text(0.0, 1.0, text, transform=ax.transAxes, fontsize=6.3, color=INK,
-            ha="left", va="top", linespacing=1.7)
 
 
 def panel_a(ax):
@@ -72,14 +56,16 @@ def panel_a(ax):
     drawer.FinishDrawing()
     ax.imshow(mpimg.imread(io.BytesIO(drawer.GetDrawingText()), format="png"))
     ax.axis("off")
-    title(ax, "a", "Polyesters: backbone hydrolysis", C_POLYESTER)
+    title(ax, "Polyesters: backbone hydrolysis", C_POLYESTER)
+    ax.text(0.0, -0.06, NOTE_A, transform=ax.transAxes, fontsize=6.5,
+            color=INK, ha="left", va="top", linespacing=1.5)
 
 
 def panel_b(ax):
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100 / PANEL_ASPECT)
     ax.axis("off")
-    title(ax, "b", "Polysaccharides and proteins: enzymatic attack", C_POLYSACCHARIDE)
+    title(ax, "Polysaccharides and proteins: enzymatic attack", C_POLYSACCHARIDE)
 
     blocks = [("crystalline", 18), ("amorphous", 10), ("crystalline", 22),
               ("amorphous", 10), ("crystalline", 16)]
@@ -115,6 +101,9 @@ def panel_b(ax):
             ax.plot([cx], [ey - 4.2], marker="x", markersize=4.4,
                     markeredgewidth=1.1, color=INK_MUTED, zorder=5)
 
+    ax.text(0.0, -0.10, NOTE_B, transform=ax.transAxes, fontsize=6.5,
+            color=INK, ha="left", va="top", linespacing=1.5)
+
 
 def profile(barrier):
     x = np.linspace(0, 1, 400)
@@ -122,7 +111,7 @@ def profile(barrier):
 
 
 def panel_c(ax):
-    title(ax, "c", "Relative barriers for ester hydrolysis (schematic)", C_POLYESTER)
+    title(ax, "Relative barriers for ester hydrolysis (schematic)", C_POLYESTER)
 
     routes = [
         ("neutral water", 1.00, (0, ()), 0.50),
@@ -151,23 +140,27 @@ def panel_c(ax):
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
 
-    ax.text(0.0, -0.30, NOTE_C, transform=ax.transAxes, fontsize=6.3,
+    ax.text(0.0, -0.16, NOTE_C, transform=ax.transAxes, fontsize=6.3,
             color=INK_SECONDARY, ha="left", va="top", linespacing=1.5)
 
 
 def main():
     apply_style()
-    fig = plt.figure(figsize=(170 * MM, 132 * MM))
-    gs = GridSpec(3, 2, figure=fig, height_ratios=[1.0, 0.40, 1.05],
-                  hspace=0.28, wspace=0.16)
 
-    panel_a(fig.add_subplot(gs[0, 0]))
-    panel_b(fig.add_subplot(gs[0, 1]))
-    note(fig.add_subplot(gs[1, 0]), NOTE_A)
-    note(fig.add_subplot(gs[1, 1]), NOTE_B)
-    panel_c(fig.add_subplot(gs[2, :]))
+    fig_a = plt.figure(figsize=(100 * MM, 44 * MM))
+    panel_a(fig_a.add_subplot(1, 1, 1))
+    fig_a.subplots_adjust(top=0.80, bottom=0.30, left=0.02, right=0.98)
+    save(fig_a, "fig6a_polyester_hydrolysis", OUT)
 
-    save(fig, "fig6_degradation", OUT)
+    fig_b = plt.figure(figsize=(100 * MM, 44 * MM))
+    panel_b(fig_b.add_subplot(1, 1, 1))
+    fig_b.subplots_adjust(top=0.80, bottom=0.30, left=0.02, right=0.98)
+    save(fig_b, "fig6b_enzymatic_degradation", OUT)
+
+    fig_c = plt.figure(figsize=(120 * MM, 78 * MM))
+    panel_c(fig_c.add_subplot(1, 1, 1))
+    fig_c.subplots_adjust(top=0.88, bottom=0.20)
+    save(fig_c, "fig6c_hydrolysis_barriers", OUT)
 
 
 if __name__ == "__main__":

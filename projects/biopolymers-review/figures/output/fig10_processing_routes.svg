@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-25T22:15:28.545813</dc:date>
+    <dc:date>2026-08-26T18:59:00.239178</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -148,131 +148,171 @@ z
 " style="fill: #52514e; stroke: #52514e; stroke-width: 0.9; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
-    <path d="M 101.177008 36.362835 
-L 270.773858 36.362835 
-Q 273.849449 36.362835 273.849449 33.307087 
-L 273.849449 8.861102 
-Q 273.849449 5.805354 270.773858 5.805354 
-L 101.177008 5.805354 
-Q 98.101417 5.805354 98.101417 8.861102 
-L 98.101417 33.307087 
-Q 98.101417 36.362835 101.177008 36.362835 
+    <path d="M 98.870315 36.362835 
+L 273.080551 36.362835 
+Q 273.849449 36.362835 273.849449 35.598898 
+L 273.849449 6.569291 
+Q 273.849449 5.805354 273.080551 5.805354 
+L 98.870315 5.805354 
+Q 98.101417 5.805354 98.101417 6.569291 
+L 98.101417 35.598898 
+Q 98.101417 36.362835 98.870315 36.362835 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #f4f4f1; stroke: #52514e; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #52514e; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_14">
-    <path d="M 13.302992 84.381732 
-L 121.388031 84.381732 
-Q 124.463622 84.381732 124.463622 81.325984 
-L 124.463622 61.245354 
-Q 124.463622 58.189606 121.388031 58.189606 
-L 13.302992 58.189606 
-Q 10.227402 58.189606 10.227402 61.245354 
-L 10.227402 81.325984 
-Q 10.227402 84.381732 13.302992 84.381732 
+    <path d="M 10.996299 84.381732 
+L 123.694724 84.381732 
+Q 124.463622 84.381732 124.463622 83.617795 
+L 124.463622 58.953543 
+Q 124.463622 58.189606 123.694724 58.189606 
+L 10.996299 58.189606 
+Q 10.227402 58.189606 10.227402 58.953543 
+L 10.227402 83.617795 
+Q 10.227402 84.381732 10.996299 84.381732 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #2a78d6; stroke: #2a78d6; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #2a78d6; stroke: #2a78d6; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
-    <path d="M 250.562835 84.381732 
-L 358.647874 84.381732 
-Q 361.723465 84.381732 361.723465 81.325984 
-L 361.723465 61.245354 
-Q 361.723465 58.189606 358.647874 58.189606 
-L 250.562835 58.189606 
-Q 247.487244 58.189606 247.487244 61.245354 
-L 247.487244 81.325984 
-Q 247.487244 84.381732 250.562835 84.381732 
+    <path d="M 248.256142 84.381732 
+L 360.954567 84.381732 
+Q 361.723465 84.381732 361.723465 83.617795 
+L 361.723465 58.953543 
+Q 361.723465 58.189606 360.954567 58.189606 
+L 248.256142 58.189606 
+Q 247.487244 58.189606 247.487244 58.953543 
+L 247.487244 83.617795 
+Q 247.487244 84.381732 248.256142 84.381732 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #eb6834; stroke: #eb6834; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #eb6834; stroke: #eb6834; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_16">
-    <path d="M 13.302992 121.487244 
-L 121.388031 121.487244 
-Q 124.463622 121.487244 124.463622 118.431496 
-L 124.463622 96.168189 
-Q 124.463622 93.112441 121.388031 93.112441 
-L 13.302992 93.112441 
-Q 10.227402 93.112441 10.227402 96.168189 
-L 10.227402 118.431496 
-Q 10.227402 121.487244 13.302992 121.487244 
+    <path d="M 10.996299 121.487244 
+L 123.694724 121.487244 
+Q 124.463622 121.487244 124.463622 120.723307 
+L 124.463622 93.876378 
+Q 124.463622 93.112441 123.694724 93.112441 
+L 10.996299 93.112441 
+Q 10.227402 93.112441 10.227402 93.876378 
+L 10.227402 120.723307 
+Q 10.227402 121.487244 10.996299 121.487244 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #ffffff; stroke: #2a78d6; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #2a78d6; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_17">
-    <path d="M 13.302992 158.592756 
-L 121.388031 158.592756 
-Q 124.463622 158.592756 124.463622 155.537008 
-L 124.463622 133.273701 
-Q 124.463622 130.217953 121.388031 130.217953 
-L 13.302992 130.217953 
-Q 10.227402 130.217953 10.227402 133.273701 
-L 10.227402 155.537008 
-Q 10.227402 158.592756 13.302992 158.592756 
+    <path d="M 10.996299 158.592756 
+L 123.694724 158.592756 
+Q 124.463622 158.592756 124.463622 157.828819 
+L 124.463622 130.98189 
+Q 124.463622 130.217953 123.694724 130.217953 
+L 10.996299 130.217953 
+Q 10.227402 130.217953 10.227402 130.98189 
+L 10.227402 157.828819 
+Q 10.227402 158.592756 10.996299 158.592756 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #ffffff; stroke: #2a78d6; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #2a78d6; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_18">
-    <path d="M 250.562835 112.756535 
-L 358.647874 112.756535 
-Q 361.723465 112.756535 361.723465 109.700787 
-L 361.723465 91.802835 
-Q 361.723465 88.747087 358.647874 88.747087 
-L 250.562835 88.747087 
-Q 247.487244 88.747087 247.487244 91.802835 
-L 247.487244 109.700787 
-Q 247.487244 112.756535 250.562835 112.756535 
+    <path d="M 248.256142 112.756535 
+L 360.954567 112.756535 
+Q 361.723465 112.756535 361.723465 111.992598 
+L 361.723465 89.511024 
+Q 361.723465 88.747087 360.954567 88.747087 
+L 248.256142 88.747087 
+Q 247.487244 88.747087 247.487244 89.511024 
+L 247.487244 111.992598 
+Q 247.487244 112.756535 248.256142 112.756535 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #ffffff; stroke: #eb6834; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #eb6834; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_19">
-    <path d="M 250.562835 145.496693 
-L 358.647874 145.496693 
-Q 361.723465 145.496693 361.723465 142.440945 
-L 361.723465 124.542992 
-Q 361.723465 121.487244 358.647874 121.487244 
-L 250.562835 121.487244 
-Q 247.487244 121.487244 247.487244 124.542992 
-L 247.487244 142.440945 
-Q 247.487244 145.496693 250.562835 145.496693 
+    <path d="M 248.256142 145.496693 
+L 360.954567 145.496693 
+Q 361.723465 145.496693 361.723465 144.732756 
+L 361.723465 122.251181 
+Q 361.723465 121.487244 360.954567 121.487244 
+L 248.256142 121.487244 
+Q 247.487244 121.487244 247.487244 122.251181 
+L 247.487244 144.732756 
+Q 247.487244 145.496693 248.256142 145.496693 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #ffffff; stroke: #eb6834; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #eb6834; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_20">
-    <path d="M 250.562835 178.23685 
-L 358.647874 178.23685 
-Q 361.723465 178.23685 361.723465 175.181102 
-L 361.723465 157.28315 
-Q 361.723465 154.227402 358.647874 154.227402 
-L 250.562835 154.227402 
-Q 247.487244 154.227402 247.487244 157.28315 
-L 247.487244 175.181102 
-Q 247.487244 178.23685 250.562835 178.23685 
+    <path d="M 248.256142 178.23685 
+L 360.954567 178.23685 
+Q 361.723465 178.23685 361.723465 177.472913 
+L 361.723465 154.991339 
+Q 361.723465 154.227402 360.954567 154.227402 
+L 248.256142 154.227402 
+Q 247.487244 154.227402 247.487244 154.991339 
+L 247.487244 177.472913 
+Q 247.487244 178.23685 248.256142 178.23685 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #ffffff; stroke: #eb6834; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #eb6834; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_21">
-    <path d="M 52.846299 215.342362 
-L 319.104567 215.342362 
-Q 322.180157 215.342362 322.180157 212.286614 
-L 322.180157 187.84063 
-Q 322.180157 184.784882 319.104567 184.784882 
-L 52.846299 184.784882 
-Q 49.770709 184.784882 49.770709 187.84063 
-L 49.770709 212.286614 
-Q 49.770709 215.342362 52.846299 215.342362 
+    <path d="M 50.539606 215.342362 
+L 321.41126 215.342362 
+Q 322.180157 215.342362 322.180157 214.578425 
+L 322.180157 185.548819 
+Q 322.180157 184.784882 321.41126 184.784882 
+L 50.539606 184.784882 
+Q 49.770709 184.784882 49.770709 185.548819 
+L 49.770709 214.578425 
+Q 49.770709 215.342362 50.539606 215.342362 
 z
-" clip-path="url(#p6dc47c3883)" style="fill: #f4f4f1; stroke: #52514e; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p1abd06ec4e)" style="fill: #ffffff; stroke: #52514e; stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(116.193792 19.46593)">Does a stable melt window exist above Tm</text>
-    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(103.168964 26.91665)">and below decomposition/hydrolysis onset? (§5.1)</text>
-   </g>
-   <g id="text_2">
     <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a19" x="67.345512" y="46.184882" transform="rotate(-0 67.345512 46.184882)">No</text>
    </g>
-   <g id="text_3">
+   <g id="text_2">
     <text style="font-weight: 700; font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a19" x="304.605354" y="46.184882" transform="rotate(-0 304.605354 46.184882)">Yes</text>
+   </g>
+   <g id="patch_22">
+    <path d="M 10.227402 121.487244 
+L 12.204567 121.487244 
+L 12.204567 93.112441 
+L 10.227402 93.112441 
+z
+" clip-path="url(#p1abd06ec4e)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 10.227402 158.592756 
+L 12.204567 158.592756 
+L 12.204567 130.217953 
+L 10.227402 130.217953 
+z
+" clip-path="url(#p1abd06ec4e)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 247.487244 112.756535 
+L 249.464409 112.756535 
+L 249.464409 88.747087 
+L 247.487244 88.747087 
+z
+" clip-path="url(#p1abd06ec4e)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 247.487244 145.496693 
+L 249.464409 145.496693 
+L 249.464409 121.487244 
+L 247.487244 121.487244 
+z
+" clip-path="url(#p1abd06ec4e)" style="fill: #eb6834"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 247.487244 178.23685 
+L 249.464409 178.23685 
+L 249.464409 154.227402 
+L 247.487244 154.227402 
+z
+" clip-path="url(#p1abd06ec4e)" style="fill: #eb6834"/>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(116.193792 19.46593)">Does a stable melt window exist above Tm</text>
+    <text style="font-weight: 700; font-size: 6.9px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(103.168964 26.91665)">and below decomposition/hydrolysis onset? (§5.1)</text>
    </g>
    <g id="text_4">
     <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="67.345512" y="73.148669" transform="rotate(-0 67.345512 73.148669)">Solution processing</text>
@@ -281,24 +321,24 @@ z
     <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="304.605354" y="73.104794" transform="rotate(-0 304.605354 73.104794)">Melt processing</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(27.454512 105.203936)">Cellulose → NMMO/Lyocell,</text>
-    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(36.224512 113.344249)">LiCl/DMAc dissolution</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(28.443094 105.203936)">Cellulose → NMMO/Lyocell,</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(37.213094 113.344249)">LiCl/DMAc dissolution</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(18.256012 142.527948)">Chitosan → dilute-acid dissolution,</text>
-    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(39.778512 149.815261)">wet/dry-jet spinning</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(19.244594 142.527948)">Chitosan → dilute-acid dissolution,</text>
+    <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(40.767094 149.815261)">wet/dry-jet spinning</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(261.827675 98.752244)">PBS → wide window (~110 °C),</text>
-    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(284.267573 106.477144)">least restrictive</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(262.816257 98.752244)">PBS → wide window (~110 °C),</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(285.256156 106.477144)">least restrictive</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(260.079643 131.492402)">PHB → narrow window (~25 °C),</text>
-    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(277.823018 138.611114)">tight thermal control</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(261.068226 131.492402)">PHB → narrow window (~25 °C),</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(278.811601 138.611114)">tight thermal control</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(259.01119 164.442723)">PLA → must be dried first, or melt</text>
-    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(268.336565 171.388443)">hydrolysis erodes MW (§4)</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(259.999773 164.442723)">PLA → must be dried first, or melt</text>
+    <text style="font-size: 6.1px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(269.325148 171.388443)">hydrolysis erodes MW (§4)</text>
    </g>
    <g id="text_11">
     <text style="font-size: 6.4px; font-family: 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; fill: #1a1a19" transform="translate(32.556933 197.965716)">Widen whichever window exists: plasticisers (cost: stiffness) · nucleating agents (speed PLA crystallisation) ·</text>
@@ -307,7 +347,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p6dc47c3883">
+  <clipPath id="p1abd06ec4e">
    <rect x="1.44" y="1.44" width="369.070866" height="218.267717"/>
   </clipPath>
  </defs>

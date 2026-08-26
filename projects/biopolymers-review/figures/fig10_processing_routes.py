@@ -3,24 +3,37 @@
 §6 原来是一整段密文字：有没有熔融窗口决定走熔融加工还是溶液加工，具体材料举例，
 再加一句"拓宽窗口"的通用对策。改成一张判定流程图之后，正文只保留判定逻辑本身
 说不清楚、图上放不下的那一句话（多数所谓性能不足其实是加工窗口不足）。
+
+配色/画法改成和 Fig 4/5/7/9 一致的克制风格：白底细边框 + 左侧色条做类别标记，
+不再用大面积实心圆角色块——那种画法更像幻灯片而不是期刊图。
 """
 
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
+from matplotlib.patches import FancyBboxPatch, Rectangle
 
 from style import CLASS_COLOR, INK, INK_SECONDARY, MM, apply_style, save
 
 OUT = Path(__file__).parent / "output"
 
 
-def box(ax, x, y, w, h, text, facecolor, edgecolor, textcolor, fontsize=7.2, weight="normal"):
+def box(ax, x, y, w, h, text, colour, fontsize=6.6, weight="normal",
+        filled=False, accent=True):
+    """白底细边框 + 左侧色条（默认）；filled=True 用于两条判定分支的表头，
+    改成细色边框 + 加粗深色文字，不再整块填色。"""
+    facecolor = colour if filled else "#ffffff"
+    edgecolor = colour
+    textcolor = "#ffffff" if filled else INK
     ax.add_patch(FancyBboxPatch(
-        (x, y), w, h, boxstyle="round,pad=0,rounding_size=1.4",
-        linewidth=0.8, facecolor=facecolor, edgecolor=edgecolor, zorder=2))
-    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fontsize,
-            color=textcolor, weight=weight, zorder=3, linespacing=1.25)
+        (x, y), w, h, boxstyle="round,pad=0,rounding_size=0.35",
+        linewidth=0.9, facecolor=facecolor, edgecolor=edgecolor, zorder=2))
+    if accent and not filled:
+        ax.add_patch(Rectangle((x, y), 0.9, h, facecolor=colour,
+                                edgecolor="none", zorder=3))
+    ax.text(x + w / 2 + (0.45 if (accent and not filled) else 0), y + h / 2, text,
+            ha="center", va="center", fontsize=fontsize,
+            color=textcolor, weight=weight, zorder=4, linespacing=1.25)
 
 
 def varrow(ax, x, y0, y1, colour=INK_SECONDARY, lw=0.9):
@@ -54,15 +67,17 @@ def main():
     # root question
     box(ax, 44, 84, 80, 14,
         "Does a stable melt window exist above Tm\nand below decomposition/hydrolysis onset? (§5.1)",
-        "#f4f4f1", INK_SECONDARY, INK, fontsize=6.9, weight="bold")
+        INK_SECONDARY, fontsize=6.9, weight="bold", accent=False)
     ax.text(LX_C, 79.5, "No", fontsize=7.5, color=INK, weight="bold", ha="center")
     ax.text(RX_C, 79.5, "Yes", fontsize=7.5, color=INK, weight="bold", ha="center")
     diag_arrow(ax, 60, 84, LX_C, 76)
     diag_arrow(ax, 108, 84, RX_C, 76)
 
     # lane headers
-    box(ax, LX, 62, LANE_W, 12, "Solution processing", C_sacc, C_sacc, "#ffffff", weight="bold")
-    box(ax, RX, 62, LANE_W, 12, "Melt processing", C_poly, C_poly, "#ffffff", weight="bold")
+    box(ax, LX, 62, LANE_W, 12, "Solution processing", C_sacc, weight="bold",
+        filled=True, fontsize=7.2)
+    box(ax, RX, 62, LANE_W, 12, "Melt processing", C_poly, weight="bold",
+        filled=True, fontsize=7.2)
     varrow(ax, LX_C, 76, 74)
     varrow(ax, RX_C, 76, 74)
 
@@ -73,7 +88,7 @@ def main():
     ]
     varrow(ax, LX_C, 62, 59)
     for y, text in left_items:
-        box(ax, LX, y, LANE_W, 13, text, "#ffffff", C_sacc, INK, fontsize=6.4)
+        box(ax, LX, y, LANE_W, 13, text, C_sacc, fontsize=6.4)
     varrow(ax, LX_C, 45, 42)
 
     # right lane items (3)
@@ -84,7 +99,7 @@ def main():
     ]
     varrow(ax, RX_C, 62, 60)
     for y, text in right_items:
-        box(ax, RX, y, LANE_W, 11, text, "#ffffff", C_poly, INK, fontsize=6.1)
+        box(ax, RX, y, LANE_W, 11, text, C_poly, fontsize=6.1)
     varrow(ax, RX_C, 49, 46)
     varrow(ax, RX_C, 34, 31)
 
@@ -93,7 +108,7 @@ def main():
         "Widen whichever window exists: plasticisers (cost: stiffness) · nucleating agents "
         "(speed PLA crystallisation) ·\ncompatibilised blends (PLA/PBAT, PLA/TPS) · "
         "nanocellulose/nanochitin reinforcement",
-        "#f4f4f1", INK_SECONDARY, INK, fontsize=6.4)
+        INK_SECONDARY, fontsize=6.4, accent=False)
     diag_arrow(ax, LX_C, 28, 60, 17)
     diag_arrow(ax, RX_C, 19, 108, 17)
 

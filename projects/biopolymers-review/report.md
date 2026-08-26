@@ -4,7 +4,102 @@
 
 > **AI Tool Declaration** — *(final wording to be added on the first page before submission)*
 
-<!-- STATUS (2026-08-25, figures + classification pass): §1-§10 complete, 10 figures / 4 tables /
+<!-- STATUS (2026-08-26, Fig 6 text trim + Fig 8 case-study structure panel): §1-§10 complete,
+     13 figures total, same count as the prior pass (Fig. 8 gained a panel, no new figure number).
+
+     User asked (1) Fig. 6 to carry less in-figure text, (2) the §7.3 case study to get a structure
+     figure placed IN the body, not only in the appendix.
+
+     (1) Fig. 6 (`figures/fig6_degradation.py`): NOTE_A/B/C were each a multi-line paragraph
+     largely restating §5.4's body prose. Cut to one short phrase each (5-9 words) — the panels
+     (reaction diagram, crystalline/amorphous bar, three labelled energy curves) now carry the
+     content, prose only labels. Shrank the GridSpec row heights to match (dead whitespace was
+     opening up under the shorter notes); native image aspect changed from ~0.68 to ~0.59
+     (h/w), `FIGURE_MAX_HEIGHT_IN[6]` dropped 2.1 -> 1.7in accordingly.
+     (2) Fig. 8 (`figures/fig8_nr_sbr_comparison.py`): added panel (a), a compact chain-scale
+     schematic — amorphous coil at rest -> SIC-aligned crystalline bundles under strain for NR
+     (solid grey), stays amorphous under strain for SBR (dashed grey, deliberately NOT a 6th
+     palette colour — style.py's CLASS_COLOR is fixed at 5 for colour-blind-safety reasons).
+     Existing scorecard became panel (b). Cross-references Fig. 13(f) in the appendix (the fuller
+     version of the same mechanism) both ways. Kept the SAME figure number (avoided renumbering
+     9-13, which would have touched cross-references in both language files) rather than adding a
+     separate "Fig. 8b".
+     (3) Pagination regression, found and fixed: adding Fig. 8's new panel at first attempt
+     (`FIGURE_MAX_HEIGHT_IN[8]` raised 2.3 -> 2.6in to keep it legible) pushed §10 Conclusions from
+     page 11 to page 12 in EN — confirmed the height-cap change was the direct cause by reverting
+     it alone and re-measuring (12 -> 11). Reverted the cap back to 2.3in (the structure panel is
+     smaller within the same footprint, still legible in the PDF render). ZH needed an *additional*
+     fix beyond matching the EN cap revert — even at cap 2.3, ZH's Conclusions stayed on page 12,
+     traced to the new Fig. 8/§7.3 caption and prose text alone (Chinese character width made the
+     same edit costlier in ZH than EN); trimmed the Fig. 8 caption and §7.3/§9 prose in
+     report_zh.md (edited first, ported the equivalent trim to report.md for content parity even
+     though EN didn't strictly need it for page budget) until `measure_sections.ps1`/manual Chinese-
+     heading search confirmed 结论 back on page 11. Confirms the prior STATUS note's warning: this
+     margin really is a hair's-breadth, and it costs DIFFERENT amounts of slack per language for
+     the same edit — always re-measure BOTH docs after a body change, not just one.
+     PAGE COUNT (re-verified via measure_sections.ps1 + PDF visual QA of the touched pages): EN
+     total 15 pages, body 1-11 (§10 spills past 10, unchanged), refs 12-13, appendix 14-15 —
+     unchanged from the prior pass. ZH total 13 pages, body also 1-11 — unchanged. Both Desktop
+     docx files updated.
+
+-->
+<!-- STATUS (2026-08-26, appendix + submission-readiness pass): §1-§10 complete, 13 figures total
+     (10 in the body + Fig. 11 composite + 2 new appendix figures) / 4 tables / 32 references.
+
+     THIS PASS, done autonomously per user instruction ("我要出去一下 ... 你自己去决定"):
+     (1) Added Appendix A after References — Fig. 12 (RDKit repeat units for the 10 materials §3/
+     §7.3 discuss but Fig. 2 never drew: alginate M/G, natural rubber, SBR's two comonomers, the
+     three monolignols, silk's (Gly-Ala)n backbone, collagen's Gly-Pro-Hyp backbone) and Fig. 13
+     (matplotlib chain-scale schematics for 6 families: amylose helix, alginate egg-box, PHA/PLA
+     helix, silk β-sheet, collagen triple helix, NR-vs-SBR strain crystallisation). Verified via a
+     new `figures/verify_appendix_stereochemistry.py` (same refuse-to-render-on-failure pattern as
+     Fig. 2's verifier) before every render. One honest caveat, flagged in both the figure and the
+     appendix prose: alginate G (guluronic acid)'s absolute configuration is only verified as "the
+     C5 epimer of M" (a literature-established relationship, confirmed via epimer-derivation from
+     the already-verified D-glucose scaffold + an uncap() round-trip check) — no independent
+     literature CIP string was available to cross-check it directly, unlike every other structure
+     in Fig. 12; flagged for a ChemDraw/literature cross-check before submission. Appendix A does
+     NOT count against the 10-page body limit (same treatment as References, per OUTLINE.md).
+     (2) Submission-readiness pass: word count checked (~3090 words for §1-10 vs. OUTLINE.md's
+     2900-word budget — only ~6% over, much closer than the ~5800-word state flagged 2026-08-24,
+     so no aggressive trimming was warranted); grepped both language files for stale editorial
+     artifacts — found only the already-intentional, already-documented PROVISIONAL/[cite]/VERIFY
+     flags on CSV data and the §7.2 pricing citation, nothing stale to clean up; checked figure/
+     table numbering consistency 1-13 / 1-4 across both languages, no gaps or stray references.
+     (3) Found and fixed a real, if minor, pagination fragility: §10 Conclusions was landing on
+     page 12 (not page 11 as the previous STATUS note claimed) — confirmed via a git-history
+     baseline rebuild that this was already true at HEAD before this session touched anything (the
+     Table 2 scatter-plot-image commit likely caused it; the STATUS note just hadn't been
+     re-verified since). This turned out to be razor-thin: Word's widow/orphan control was pushing
+     the entire Conclusions heading+paragraph to page 12 because the remaining space on page 11
+     couldn't fit even 2 lines together — NOT a bug, just genuinely tight pagination (confirmed by
+     testing `keep_with_next=True` on headings, which made it worse by forcing the whole heading to
+     move too; reverted). Fixed by trimming two small, purely-redundant sentences (~30 words total,
+     one in §7.2's price bullet restating a fact §7.3 already makes with a citation, one in §3.2
+     dropping a tangential PEF-barrier aside) in BOTH report_zh.md (edited first, per the
+     Chinese-first workflow rule) and report.md — restores body to 11 pages (§10 spilling 1 page
+     past the nominal 10, same as the previously-documented "accepted" state), verified via
+     `measure_sections.ps1` after every edit. This is genuinely a hair's-breadth margin — a future
+     content edit of even ~15-20 words in the wrong place could tip it back to 12; re-run
+     `measure_sections.ps1` after any body edit rather than assuming the 11-page state holds.
+     (4) Did a full visual QA pass (PDF export + page renders) on BOTH language docs: title page,
+     Table 1/4, §9-10 boundary, appendix Fig. 12/13 pages, references, and (ZH only) the
+     translator's-note blockquote — all rendered cleanly, no overlapping/truncated content, no
+     regression of the three previously-fixed build_docx.py bugs (paragraph-joining, blockquote-
+     joining, table column-width starvation). (5) Proofread report.md's English prose for grammar/
+     clarity — found nothing needing correction (regex checks for repeated words / missing spaces
+     came up clean too); it was already in solid shape from prior compression passes.
+
+     PAGE COUNT (Word-measured via measure_sections.ps1 / measure_pages.ps1, not estimated): EN
+     total 15 pages — body (§1-§10) spans pages 1-11 (only §10 spills past page 10), References
+     span pages 12-13, Appendix A spans pages 14-15. ZH total 13 pages — body also 11 pages
+     (References start page 12); ZH is shorter overall due to CJK character density, not a
+     different word count. `measure_sections.ps1`'s "References -> page X" line is a KNOWN false
+     positive (Word's Find matches the literal substring "the References" inside §7.3's body text,
+     which appears earlier than the actual heading) — trust the heading-adjacent section pages and
+     `measure_pages.ps1`'s dedicated References-page logic instead, not that one line.
+
+     PRIOR PASS (2026-08-25, figures + classification pass): §1-§10 complete, 10 figures / 4 tables /
      32 references.
 
      THIS PASS: (1) redesigned Fig. 1 and Table 1 — the old classification tree put *origin*
@@ -124,7 +219,7 @@ on; origin (extracted / microbial / bio-monomer) is a secondary property, not th
 | Polyisoprene | C–C | natural rubber | elastomeric; strain-induced crystallisation |
 
 *[Figure 1 — Classification by backbone chemistry (primary branches, coloured, matching Table 1
-and Fig. 7), with each material's origin shown as a small E/M/S tag: extracted from biomass,
+and Fig. 2), with each material's origin shown as a small E/M/S tag: extracted from biomass,
 synthesised by micro-organisms, or polymerised from bio-based monomers]*
 
 ---
@@ -141,24 +236,25 @@ PLA), and template-folded proteins whose properties arise from defined secondary
 rather than simple chain packing. Lignin — an irregularly cross-linked network with no periodic
 chain — closes the section as the structural counterpoint to everything else. The claim tested
 throughout is that backbone chemistry, not biological origin, predicts melting behaviour,
-hydrolytic/enzymatic susceptibility, and mechanical performance (Table 2). Fig. 7 summarises the
+hydrolytic/enzymatic susceptibility, and mechanical performance (Table 2). Fig. 2 summarises the
 force → consequence → limitation causal chain for every family at a glance; the text below adds
-only mechanism and citations.
+only mechanism and citations. Each family's monomer and chain-scale structure is drawn directly in
+its own subsection (§3.1–§3.5); Appendix A (Figs. 18/19) collects the full set in one place.
 
-*[Figure 7 — Structure-property causal chain for all seven families: dominant intermolecular
+*[Figure 2 — Structure-property causal chain for all seven families: dominant intermolecular
 force → key consequence → key limitation, colour-coded by backbone class]*
 
-*[Figure 2 — Five representative repeat units (cellulose, amylose, chitosan, PHB, PLLA) drawn from
-verified SMILES, wedge bonds showing stereochemistry]*
-
 ### 3.1 Polysaccharides
+
+*[Figure 3 — Polysaccharide monomers: cellulose, amylose, chitosan, alginate M/G, drawn from the
+same verified SMILES as Fig. 18; (a)/(b) differ only at C1, (d)/(e) only at C5]*
 
 Polysaccharides span the rigid end of the spectrum. **Cellulose** — linear β-(1→4)-D-glucopyranose
 — forms an extended ribbon locked by hydrogen bonding into sheets (Iα, Iβ); processing is
 restricted to solution routes (NMMO/Lyocell, LiCl/DMAc), and nanocrystals/nanofibrils exploit its
 crystal modulus as fillers [2].
 
-*[Figure 3 — Cellulose's three-tier structure: intrachain H-bond → interchain sheet → interlayer
+*[Figure 4 — Cellulose's three-tier structure: intrachain H-bond → interchain sheet → interlayer
 stacking, with a closing line connecting this hierarchy to the 300 °C decomposition-before-melting
 result]*
 
@@ -169,7 +265,14 @@ alkaline step that raises DD cleaves the backbone [3]. **Alginate** gels via Ca�
 "egg-box" GG-blocks [4], G-content setting the stiffness–brittleness trade-off (§8). **Others** —
 hyaluronic acid, carrageenan, xanthan, pectin — follow the same linkage-chemistry logic (§8).
 
+*[Figure 5 — Amylose's left-handed helix, alginate's Ca²⁺ egg-box junction, and chitosan's
+acetylation pattern breaking up the regular H-bond network, three panels; cellulose's chain-scale
+structure is already covered in Fig. 4 and not repeated here]*
+
 ### 3.2 Polyesters: PHA and PLA
+
+*[Figure 6 — PHB and PLLA repeat units, and PHA/PLA's helical packing (2₁/10₃ helices), drawn
+from the same verified SMILES as Fig. 18]*
 
 **PHA** (bacterial storage granules; PHB the archetype) is highly crystalline (55–70%) but
 decomposes via six-membered-ring *cis*-elimination only tens of degrees above Tm [5] — the
@@ -177,9 +280,12 @@ narrowest processing window in this report; PHBV/PHBHHx copolymers widen it at t
 stiffness. **PLA**: ring-opening polymerisation of lactide (Sn(Oct)₂) reaches useful MW where
 direct polycondensation cannot; PLLA crystallises slowly, but the PLLA/PDLA stereocomplex
 co-crystallises with Tm ~50 °C above either homocrystal via tighter enantiomeric packing [6,7].
-PBS/PEF follow the same ester logic; PEF is a bio-based PET analogue with superior barrier (§8).
+PBS/PEF follow the same ester logic (§8).
 
 ### 3.3 Protein-based Polymers
+
+*[Figure 7 — Silk fibroin's (Gly-Ala)ₙ and collagen's Gly-Pro-Hyp backbone repeat units, and each
+material's secondary structure: silk's β-sheet nanocrystallite, collagen's triple helix]*
 
 Protein properties come from sequence-directed fold, not chain packing. **Silk fibroin's**
 β-sheet nanocrystallites (2–4 nm, required for its combined strength and toughness [8]) sit in a
@@ -190,13 +296,20 @@ unmatched by any non-templated biopolymer (§4).
 
 ### 3.4 Lignin and Other Aromatics
 
+*[Figure 8 — The three monolignol precursors: p-coumaryl alcohol (0 methoxy groups), coniferyl
+alcohol (1), sinapyl alcohol (2)]*
+
 Lignin is cellulose's counterpoint: rigid *because* regular vs. amorphous *because* irregular.
 Radical-coupled monolignols give a randomly cross-linked network (β-O-4 ether ~45–60% of linkages
 [9]) whose composition varies by species and — for industrial use — extraction method (kraft,
 organosolv, lignosulfonate), which is why no single "lignin" has one structure–property
-relationship.
+relationship. Lignin has no periodic chain, so only the monomers are drawn here — unlike the other
+families, an irregularly cross-linked network has no single "typical chain" to picture.
 
 ### 3.5 Natural Rubber
+
+*[Figure 9 — Natural rubber's monomer: cis-1,4-polyisoprene repeat unit; the chain-scale
+strain-crystallisation structure is in §7.3's Fig. 17 and not repeated here]*
 
 Natural rubber is the flexible extreme and this section's one exception to "crystallinity governs
 performance": *cis*-1,4-polyisoprene is amorphous at rest, but strain-induced crystallisation
@@ -212,22 +325,12 @@ directly against a synthetic analogue in §7.3.
 representative biopolymers discussed in §3 (order-of-magnitude ranges, cross-checked against the
 comparative review of biobased thermoplastics by de Beukelaer et al. [11] and, for PBS
 specifically, Aliotta et al. [12]; source data in `figures/data/*.csv`; several individual `ref`
-entries still need a material-specific citation before submission — see Fig. 4–5).
+entries still need a material-specific citation before submission — see Fig. 11–12).
 
 *[TableImage — table2_scatter_en.png]*
 
-*All values PROVISIONAL — teaching-level ranges used to make Fig. 4/5 and this table internally
+*All values PROVISIONAL — teaching-level ranges used to make Fig. 11/12 and this table internally
 consistent; must be replaced with cited literature values before submission.*
-
-Fig. 11 combines the four property figures scattered across §5.1/5.2/5.4/7.3 into one
-cross-section overview strip: (a) thermal processing windows (detail in §5.1, Fig. 4), (b)
-mechanical Ashby map (§5.2, Fig. 5), (c) degradation mechanisms (§5.4, Fig. 6), (d) NR/SBR
-elasticity scorecard (§7.3, Fig. 8). The full discussion for each panel remains in its own
-section; this is a navigation aid only.
-
-*[Figure 11 — Property overview: (a) thermal windows (b) mechanical Ashby map (c) degradation
-mechanisms (d) NR/SBR elasticity comparison, four panels stitched horizontally; see the
-corresponding Fig. 4/5/6/8 sections for detail]*
 
 ---
 
@@ -237,14 +340,14 @@ Molecular weight is reported casually in most surveys — "high molecular weight
 *distribution*, not just the average, is where the biology shows through. Mn, Mw, dispersity Đ =
 Mw/Mn, and degree of polymerisation (DP) are standard descriptors; Đ matters because it, not Mn
 alone, determines processing behaviour and the breadth of mechanical property distribution within
-a batch. **Dispersity is a readout of synthesis mechanism, not noise** (Fig. 9): template-controlled
+a batch. **Dispersity is a readout of synthesis mechanism, not noise** (Fig. 10): template-controlled
 biosynthesis gives proteins and nucleic acids Đ = 1.0 exactly, while every non-templated route —
 extraction (cellulose, chitosan, natural rubber) or catalysed polymerisation (PHA, PLA) — broadens
 the distribution to a degree set by how tightly that route is controlled. Natural rubber is the
 extreme case: because it is extracted rather than chain-grown, Mw and MWD vary between *Hevea*
 clones and with tree age [19] — an agricultural variability with no synthetic-polymer analogue.
 
-*[Figure 9 — Dispersity Đ across families on a common axis: a point at Đ=1 for templated
+*[Figure 10 — Dispersity Đ across families on a common axis: a point at Đ=1 for templated
 biosynthesis, ranges for PLA/PHA/chitosan/cellulose, an open-ended arrow for natural rubber's
 unquantified variability]*
 
@@ -262,7 +365,7 @@ literature — an artefact of method more than genuine variation, so meaningful 
 the method too.
 
 **Table 3.** Typical number-average molecular weight for representative biopolymers, with the
-standard method by which each is measured (dispersity Đ is plotted in Fig. 9 instead of repeated
+standard method by which each is measured (dispersity Đ is plotted in Fig. 10 instead of repeated
 here).
 
 | Material | Typical Mn | Standard method (key limitation) |
@@ -286,26 +389,26 @@ pattern holds across all of them.
 
 ### 5.1 Thermal Behaviour
 
-A decomposition temperature at or below the melting point is close to the rule here (Fig. 4): the
+A decomposition temperature at or below the melting point is close to the rule here (Fig. 11): the
 same network that gives stiffness also raises the melting energy toward the bond-breaking energy,
 crowding the two transitions together — cellulose, chitosan and silk fibroin never melt at all.
 Among the polyesters this crowding is quantitative: PHB's window spans only ~25 °C, PHBV widens it
-to ~55 °C, and PLLA's is wider still (§3.2). Fig. 4 plots the TGA onset conservatively — for PLLA
+to ~55 °C, and PLLA's is wider still (§3.2). Fig. 11 plots the TGA onset conservatively — for PLLA
 and PHB the usable window is narrower still, since melt hydrolysis (§4) begins earlier.
 
-*[Figure 4 — Thermal properties and processing windows: Tg/Tm/Td for each material on a common
+*[Figure 11 — Thermal properties and processing windows: Tg/Tm/Td for each material on a common
 temperature axis, window width labelled directly]*
 
 ### 5.2 Mechanical Behaviour
 
-The same logic sets the mechanical envelope (Fig. 5): high crystallinity and dense hydrogen
+The same logic sets the mechanical envelope (Fig. 12): high crystallinity and dense hydrogen
 bonding raise modulus but remove the flexible segments that let polyolefins draw before breaking,
 so biopolymers cluster toward high modulus, low elongation relative to PE/PP/PET. Natural rubber
 is the exception — no modulus at rest, performance generated on demand by SIC (§3.5, §7.3). Fig.
-5's windows are regions, not points: sample form, moisture, crystallinity and thermal history each
+12's windows are regions, not points: sample form, moisture, crystallinity and thermal history each
 shift a material's data by an order of magnitude, recurring as "batch variability" in §7.2.
 
-*[Figure 5 — Ashby-style modulus vs. elongation-at-break map, region ellipses in log–log space,
+*[Figure 12 — Ashby-style modulus vs. elongation-at-break map, region ellipses in log–log space,
 PE/PP/PET plotted for reference]*
 
 ### 5.3 Hydrophilicity and Barrier Properties
@@ -318,29 +421,33 @@ specified with a storage-humidity condition, not a fixed barrier rating.
 
 ### 5.4 Degradation as a Material Property
 
-Degradation is a rate process governed by structure (Fig. 6). Polyesters degrade by autocatalytic
-ester hydrolysis (each scission's acid end catalyses further hydrolysis, so interiors degrade
-faster than surfaces); polysaccharides and proteins instead degrade by enzymatic attack, which can
-only reach amorphous segments, so rate is set by accessible surface area, not bulk chemistry.
-Crystallinity therefore recurs as this report's central trade-off — the same feature that sets
-modulus (§5.2) and blocks water uptake (§5.3) also blocks the attack that would degrade the
-material. ⚙️ Computed barrier heights for neutral/acid/base-catalysed hydrolysis reproduce the
-qualitative rate ordering in Fig. 6(c), which is illustrative only.
+Degradation is a rate process governed by structure (Figs. 13-15). Polyesters degrade by
+autocatalytic ester hydrolysis (each scission's acid end catalyses further hydrolysis, so
+interiors degrade faster than surfaces; Fig. 13); polysaccharides and proteins instead degrade by
+enzymatic attack, which can only reach amorphous segments, so rate is set by accessible surface
+area, not bulk chemistry (Fig. 14). Crystallinity therefore recurs as this report's central
+trade-off — the same feature that sets modulus (§5.2) and blocks water uptake (§5.3) also blocks
+the attack that would degrade the material. ⚙️ Computed barrier heights for neutral/acid/
+base-catalysed hydrolysis reproduce the qualitative rate ordering in Fig. 15, which is illustrative
+only.
 
-*[Figure 6 — (a) polyester hydrolysis mechanism, autocatalytic bulk erosion; (b) polysaccharide/
-protein enzymatic degradation limited to amorphous regions; (c) qualitative energy-barrier ordering
-for neutral/acid/base-catalysed ester hydrolysis, no values implied]*
+*[Figure 13 — Polyester backbone ester hydrolysis mechanism, autocatalytic bulk erosion]*
+
+*[Figure 14 — Polysaccharide/protein enzymatic degradation, limited to amorphous regions]*
+
+*[Figure 15 — Qualitative energy-barrier ordering for neutral/acid/base-catalysed ester
+hydrolysis, no values implied]*
 
 ---
 
 ## 6. Processing
 
-Fig. 10 turns §5.1's windows into a processing decision: whether a stable melt window exists at all
+Fig. 16 turns §5.1's windows into a processing decision: whether a stable melt window exists at all
 sets melt vs. solution processing, and each material's window width then sets how tightly that
 process must be controlled. The recurring judgement this yields: most reported "performance
 shortfalls" are processing-window shortfalls, not material-property shortfalls (§5.1–5.2).
 
-*[Figure 10 — Processing decision flowchart: stable melt window? → melt processing (PBS/PHB/PLA,
+*[Figure 16 — Processing decision flowchart: stable melt window? → melt processing (PBS/PHB/PLA,
 window width sets control tightness) or solution processing (cellulose/chitosan dissolution
 routes) → shared countermeasures that widen whichever window exists]*
 
@@ -366,8 +473,7 @@ chirality (PLA stereocomplexation), pH-responsive charge (chitosan), sequence-en
 citation before submission.)*
 
 - **Price.** PE/PP ~$1–1.5/kg; PLA several times higher; PHA typically priciest. `[cite market
-  report]` Not fixed, though — §7.3 shows NR pricing can be more volatile than SBR's for reasons
-  unrelated to polymer chemistry.
+  report]`
 - **Heat/barrier.** PLA's HDT (~55–65 °C) sits well below PP's ~100 °C+ without stereocomplexation
   (§3.2) [13]; its O₂/CO₂ transmission is comparable to PET's, but water-vapour barrier is worse,
   and starch films worse again [14] — the correct critique is moisture sensitivity (§5.3), not a
@@ -386,12 +492,25 @@ citation before submission.)*
 NR and styrene–butadiene rubber (SBR) are compounded, filled and vulcanised the same way and
 compete directly in the same applications (tyre tread, damping, conveyor belting) — the cleanest
 same-application comparison here, since differences trace to backbone chemistry, not processing.
-Fig. 8 scores both across seven dimensions against a literature set compiled for this comparison;
-citation numbers for every cell are printed on the figure and expand in the References [10,18–32].
+Fig. 17 draws out the chain-scale origin of that difference (SIC; full comparison in Fig. 19(f));
+Table 5 then scores both across seven dimensions, with citation numbers for every row, expanded in
+the References [10,18–32].
 
-*[Figure 8 — NR vs. SBR scorecard across structure/MW, SIC and tear resistance, blend performance,
-Tg/cure network, biocompatibility, environmental footprint and price stability; colour marks each
-cell as structurally favourable, formulation-dependent, or a documented risk]*
+*[Figure 17 — Chain-scale structure of NR and SBR at rest vs. under strain, a direct picture of
+SIC; full version also in Appendix Fig. 19(f)]*
+
+**Table 5.** Natural rubber (NR) vs. SBR, dimension by dimension — structurally favourable /
+formulation- or context-dependent / documented risk or caveat.
+
+| Dimension | Natural rubber (NR) | SBR |
+|---|---|---|
+| Structure / MW control | Context-dependent: extracted; varies by clone & tree age [19] | Favourable: engineered via emulsion/solution copolymerisation [20,21] |
+| SIC & tear resistance | Favourable: strong strain-induced crystallisation [10,23] | Context-dependent: crystallises far less; relies on filler/cure [24] |
+| Blend performance | Context-dependent: SIC weakens as SBR fraction rises [22] | Context-dependent: reaches parity via reinforcement, not backbone [24] |
+| Tg / cure network | Context-dependent: depends on formulation & cure conditions [25,26] | Context-dependent: depends on formulation & cure conditions [25,26] |
+| Biocompatibility | Context-dependent: real potential, but latex protein allergy risk [27,28] | Risk: no unconditional biocompatibility claim [27,28] |
+| Environmental footprint | Context-dependent: renewable, but LCA shows real land/energy cost [29,30] | Risk: fossil feedstock; biodegradable grades emerging [31] |
+| Price stability | Risk: historically the more volatile of the two [32] | Context-dependent: steadier, but tied to petrochemical supply chain [32] |
 
 NR is extracted, so its structure and SIC contribution are agricultural variables (clone, tree
 age); SBR's composition is instead engineered by emulsion/solution copolymerisation in a
@@ -435,14 +554,13 @@ substrates trade predictability for intrinsic adhesion, biodegradability, or bio
 ## 9. Current Status, Challenges and Outlook
 
 Global bio-based plastics capacity was ~2.31 million tonnes in 2025 — under 1% of global plastics —
-projected to double by 2030 [16]. Growth concentrates in bio-based PE/PP (drop-in substitutes, none
-of this report's structural limitations) and PHA, expanding fastest despite remaining priciest
-(§7.2) [16]. The bottlenecks are the same three properties organising §5 — processing windows,
-humidity-dependent performance, batch variability — none solved by scale alone. Two directions look
-most promising: enzymatic depolymerisation back to monomer (recent hydrolase/oxidase cocktails
-reached ~60% lactic-acid recovery from post-consumer PLA within 72 hours [17]); and ⚙️ data-driven
-property prediction (QSPR/ML models) to shorten the trial-and-error cycle of matching backbone
-chemistry to a processing window.
+projected to double by 2030 [16]. Growth concentrates in bio-based PE/PP and PHA, expanding fastest
+despite remaining priciest (§7.2) [16]. The bottlenecks are the same three properties organising §5
+— processing windows, humidity-dependent performance, batch variability — none solved by scale
+alone. Two directions look most promising: enzymatic depolymerisation back to monomer (recent
+enzyme cocktails reached ~60% lactic-acid recovery from post-consumer PLA within 72 hours [17]);
+and ⚙️ data-driven property prediction (QSPR/ML) to shorten the trial-and-error cycle of matching
+backbone chemistry to a processing window.
 
 ---
 
@@ -592,3 +710,30 @@ performance.
          the reference-count gap. Do this pass with full library/Google Scholar access; the
          WebSearch + Crossref/Europe PMC API lookups used in this drafting session found a correct
          DOI on nearly every attempt across both reference passes today. -->
+
+---
+
+## Appendix A: Monomer and Chain-Scale Structures
+
+§3.1–§3.5 now each carry their own compact monomer and chain-scale structure figures (Figs.
+3/4/5/6/7/8/9), placed right where the argument needs them. This appendix is not a new argument —
+it collects every material (including SBR, which appears only in §7.3 and gets no standalone
+monomer figure there) into two complete reference figures in one place — like the References, it
+does **not** count against the 10-page body limit (OUTLINE.md: "10 页，不含参考文献").
+
+*[Figure 18 — Repeat units for fifteen materials: cellulose, amylose, chitosan, PHB, PLLA (as
+Figs. 3/6), alginate M/G (as Fig. 3), natural rubber (as Fig. 9), SBR's two comonomers (appears
+only here — §7.3 does not draw SBR's monomer separately), the three monolignols (as Fig. 8), and
+the silk/collagen backbones (as Fig. 7), drawn by RDKit from verified SMILES. Alginate G
+(guluronic acid)'s absolute configuration is verified only as "the C5 epimer of M" (a
+literature-established relationship) — no independent literature CIP string was available to
+cross-check it directly; check against ChemDraw/a literature structure before submission, see the
+header of `figures/verify_appendix_stereochemistry.py`]*
+
+*[Figure 19 — Chain-scale spatial structure for six families, collected: (a) amylose's
+left-handed helix (as Fig. 5a) (b) alginate's Ca²⁺ "egg-box" junction (as Fig. 5b) (c) PHA/PLA
+helical packing, 2₁/10₃ helices (as Fig. 6c) (d) silk fibroin's β-sheet nanocrystallites (as Fig.
+7c) (e) collagen's Gly-X-Y triple helix (as Fig. 7d) (f) natural rubber vs. SBR under strain, the
+structural core of the §7.3 case study — a compact version already sits in Fig. 17 next to the
+argument it supports, this is the full version; cellulose's chain-scale structure is already
+covered in its own three-panel figure (Fig. 4) and not repeated here]*

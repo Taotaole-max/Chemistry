@@ -25,31 +25,61 @@ EAST_ASIA_FONT = sys.argv[3] if len(sys.argv) > 3 else "Times New Roman"
 
 FIGURE_FILES = {
     1: "fig1_classification.png",
-    2: "fig2_repeat_units.png",
-    3: "fig3_cellulose_hierarchy.png",
-    4: "fig4_thermal_windows.png",
-    5: "fig5_property_map.png",
-    6: "fig6_degradation.png",
-    7: "fig7_causality_chain.png",
-    8: "fig8_nr_sbr_comparison.png",
-    9: "fig9_dispersity.png",
-    10: "fig10_processing_routes.png",
-    11: "combined_1x4.png",
+    2: "fig7_causality_chain.png",
+    3: "fig_polysaccharide_monomers.png",
+    4: "fig3_cellulose_hierarchy.png",
+    5: "fig_polysaccharide_chains.png",
+    6: "fig_polyester_structures.png",
+    7: "fig_protein_structures.png",
+    8: "fig_lignin_monomers.png",
+    9: "fig_rubber_monomer.png",
+    10: "fig9_dispersity.png",
+    11: "fig4_thermal_windows.png",
+    12: "fig5_property_map.png",
+    13: "fig6a_polyester_hydrolysis.png",
+    14: "fig6b_enzymatic_degradation.png",
+    15: "fig6c_hydrolysis_barriers.png",
+    16: "fig10_processing_routes.png",
+    17: "fig8_nr_sbr_comparison.png",
+    18: "fig12_appendix_monomers.png",
+    19: "fig13_appendix_chain_structures.png",
 }
 
 # Page-budget control: never insert a figure at native/full text width — cap its
-# *height* instead, and derive width from the image's own aspect ratio. Content-rich
-# multi-panel or multi-row figures get a taller cap; everything else gets the default.
-FIGURE_MAX_HEIGHT_IN_DEFAULT = 1.55
+# *height* instead, and derive width from the image's own aspect ratio.
+#
+# Unified 3-band system (2026-08-26 pass, replacing the earlier ad hoc per-figure
+# values that ranged 1.55-4.2in with no consistent logic and looked inconsistent in
+# print): S = simple/small single-panel figure, M = standard content figure,
+# L = dense multi-panel or multi-row figure. Every BODY figure (1-17) takes one of
+# exactly these three values. Appendix figures (18-19) are exempt from the body's
+# 10-page budget (OUTLINE.md), so they may exceed L where legibility calls for it —
+# F19 is the one documented exception, a genuinely dense 6-panel schematic.
+FIGURE_HEIGHT_S = 1.3
+FIGURE_HEIGHT_M = 1.9
+FIGURE_HEIGHT_L = 2.3
+FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
-    1: 2.1,   # 5-branch classification tree + origin-tag legend
-    2: 2.2,   # repeat-unit structures need legible detail
-    6: 2.1,   # three-panel degradation diagram
-    7: 2.3,   # 7-row causality chain
-    8: 2.3,   # 7-row NR/SBR scorecard
-    9: 1.8,   # 6-row dispersity comparison with annotations
-    10: 2.0,  # processing decision flowchart
-    11: 1.55, # 1x4 strip is width-capped regardless (aspect ~5.8:1); kept explicit for clarity
+    1: FIGURE_HEIGHT_L,   # classification tree + origin-tag legend, multi-row
+    2: FIGURE_HEIGHT_L,   # 7-row causality-chain table
+    3: FIGURE_HEIGHT_S,   # polysaccharide monomer strip, wide/short
+    4: FIGURE_HEIGHT_M,   # cellulose chain->sheet->crystal, 3 panels
+    5: FIGURE_HEIGHT_M,   # amylose/alginate/chitosan chain structures, 3 panels
+    6: FIGURE_HEIGHT_S,   # PHB/PLLA monomers + helix packing, 3 panels
+    7: FIGURE_HEIGHT_M,   # silk/collagen monomers + 2° structure, 2x2
+    8: FIGURE_HEIGHT_S,   # 3 monolignols
+    9: FIGURE_HEIGHT_S,   # single small monomer
+    10: FIGURE_HEIGHT_M,  # 6-row dispersity comparison with annotations
+    11: FIGURE_HEIGHT_M,  # thermal windows, one row per material
+    12: FIGURE_HEIGHT_M,  # Ashby-style mechanical map
+    13: FIGURE_HEIGHT_S,  # single hydrolysis reaction scheme
+    14: FIGURE_HEIGHT_S,  # crystalline/amorphous accessibility bar
+    15: FIGURE_HEIGHT_M,  # energy-barrier curves + axes
+    16: FIGURE_HEIGHT_M,  # processing decision flowchart
+    17: FIGURE_HEIGHT_S,  # NR/SBR chain-scale structure, 4 small panels
+    18: FIGURE_HEIGHT_L,  # appendix: 10-panel monomer gallery, wide and short
+    19: 4.2,               # appendix: 6-panel chain-structure schematic, tall —
+                            # documented exception, see comment above
 }
 FIGURE_MAX_WIDTH_IN = 6.2
 
@@ -57,7 +87,7 @@ FIGURE_MAX_WIDTH_IN = 6.2
 # "**Table N.**"/"**表 N.**" caption, in place of the markdown pipe table. The filename
 # is literal (not looked up by number) so report.md and report_zh.md can each point at
 # their own language-specific render of the same data.
-TABLE_IMAGE_MAX_HEIGHT_IN = 4.0
+TABLE_IMAGE_MAX_HEIGHT_IN = 3.4
 
 
 def strip_html_comments(text: str) -> str:

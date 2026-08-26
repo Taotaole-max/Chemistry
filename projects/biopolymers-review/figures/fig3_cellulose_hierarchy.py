@@ -58,18 +58,20 @@ def main():
     ax.text(x0 + 14.7, y0 + 4.6, "O", fontsize=6.5, color=HBOND, ha="center",
             va="bottom", zorder=4)
     pyranose(ax, x0 + 16.5, y0, label="C4")
-    ax.text(x0 + 14.9, y0 - 2.6, r"$\beta$(1$\rightarrow$4) glycosidic bond",
-            fontsize=6.5, color=INK_SECONDARY, ha="center", va="top")
+    ax.text(x0 + 14.9, y0 - 2.6,
+            r"$\beta$(1$\rightarrow$4) glycosidic bond; a second H-bond,"
+            "\n" r"O2$-$H$\cdots$O6$'$, further rigidifies the linkage",
+            fontsize=6.0, color=INK_SECONDARY, ha="center", va="top", linespacing=1.5)
 
-    # 链内氢键：跨糖苷键的两条
-    for (xa, xb, dy, tag) in [(x0 + 9.5, x0 + 20.0, 8.4, r"O3$-$H$\cdots$O5$'$"),
-                              (x0 + 6.0, x0 + 23.5, 12.0, r"O2$-$H$\cdots$O6$'$")]:
-        ax.plot([xa, xb], [y0 + dy, y0 + dy], color=HBOND, lw=0.9,
-                linestyle=(0, (1.6, 1.6)), zorder=2)
-        ax.plot([xa, xa], [y0 + 7.0, y0 + dy], color=HBOND, lw=0.7, zorder=2)
-        ax.plot([xb, xb], [y0 + 7.0, y0 + dy], color=HBOND, lw=0.7, zorder=2)
-        ax.text((xa + xb) / 2, y0 + dy + 0.6, tag, fontsize=6.2, color=HBOND,
-                ha="center", va="bottom")
+    # 链内氢键：只画一条清楚的（O3-H...O5'），第二条（O2-H...O6'）改成文字说明，
+    # 避免两条括号线和标签在这么窄的面板里彼此压字（这里之前有重叠）
+    xa, xb, dy = x0 + 9.5, x0 + 20.0, 9.5
+    ax.plot([xa, xb], [y0 + dy, y0 + dy], color=HBOND, lw=0.9,
+            linestyle=(0, (1.6, 1.6)), zorder=2)
+    ax.plot([xa, xa], [y0 + 7.0, y0 + dy], color=HBOND, lw=0.7, zorder=2)
+    ax.plot([xb, xb], [y0 + 7.0, y0 + dy], color=HBOND, lw=0.7, zorder=2)
+    ax.text((xa + xb) / 2, y0 + dy + 0.9, r"O3$-$H$\cdots$O5$'$", fontsize=6.2,
+            color=HBOND, ha="center", va="bottom")
 
     # ---- (b) 片层：链间氢键 ----
     x1 = 62.0
@@ -94,16 +96,16 @@ def main():
     # ---- (c) 晶体：片层堆叠 ----
     x2 = 118.0
     panel_label(ax, x2, 54.0, "c", "Crystal: stacked sheets")
-    ax.text(x2, 52.0,
-            "dispersion-dominated stacking\n"
-            r"I$\alpha$ triclinic (1 chain per cell)" + "\n"
-            r"I$\beta$ monoclinic (2 chains per cell)",
-            fontsize=6.5, color=INK_SECONDARY, ha="left", va="top",
+    ax.text(x2, 50.0,
+            "dispersion-dominated stacking; "
+            r"I$\alpha$ triclinic (1 chain/cell)," "\n"
+            r"I$\beta$ monoclinic (2 chains/cell)",
+            fontsize=6.0, color=INK_SECONDARY, ha="left", va="top",
             linespacing=1.5)
 
     sheet_w, sheet_h = 34.0, 3.4
     for i in range(4):
-        y = y0 + 12.0 - i * 6.4
+        y = y0 + 6.0 - i * 6.0
         shift = i * 2.6
         ax.add_patch(Polygon(np.array([
             [x2 + shift, y], [x2 + shift + sheet_w, y],
@@ -115,7 +117,7 @@ def main():
                         [y - 1.1, y - 1.9, y - 2.7],
                         marker=".", markersize=1.6, linestyle="none",
                         color=VDW, zorder=4)
-    ax.text(x2 + sheet_w / 2 + 4.0, y0 - 9.2,
+    ax.text(x2 + sheet_w / 2 + 4.0, 17.0,
             "van der Waals / CH$\\cdots$O stacking", fontsize=6.2, color=VDW,
             ha="center", va="top")
     # ---- 结论条 ----

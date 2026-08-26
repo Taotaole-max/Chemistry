@@ -1,19 +1,23 @@
 # 图是怎么做的
 
-题目第 5 条要求"不要大量搬网图，欢迎自己画"。所以这里 10 张图**全部由代码生成**，
+题目第 5 条要求"不要大量搬网图，欢迎自己画"。所以这里全部图**都由代码生成**，
 脚本、数据、输出一起进仓库：图形是原创的，数据来自文献并逐条标注来源，
-任何人（包括评卷人）都能重跑一遍验证。
+任何人（包括评卷人）都能重跑一遍验证。正文 10 张图（Fig 1-10，Fig 11 是
+其中四张的拼接总览）之外，附录 A 又加了两张（Fig 12/13）——附录不计入正文
+10 页限制，专门用来把正文提到、但正文图里没画出来的材料结构补全。
 
 ```
 figures/
-├── make_all.py                  # 一条命令生成全部 10 张图
-├── style.py                     # 统一配色、字号、线宽、导出规格
-├── verify_stereochemistry.py    # 机器核对糖类与聚酯的构型（Fig 2 出图前自动跑）
-├── fig1_classification.py       ├── fig6_degradation.py
-├── fig2_repeat_units.py         ├── fig7_causality_chain.py
-├── fig3_cellulose_hierarchy.py  ├── fig8_nr_sbr_comparison.py
-├── fig4_thermal_windows.py      ├── fig9_dispersity.py
-├── fig5_property_map.py         └── fig10_processing_routes.py
+├── make_all.py                        # 一条命令生成全部图
+├── style.py                           # 统一配色、字号、线宽、导出规格
+├── verify_stereochemistry.py          # 机器核对 Fig 2 里糖类与聚酯的构型
+├── verify_appendix_stereochemistry.py # 机器核对 Fig 12 里附录新增结构的构型/几何
+├── fig1_classification.py       ├── fig7_causality_chain.py
+├── fig2_repeat_units.py         ├── fig8_nr_sbr_comparison.py
+├── fig3_cellulose_hierarchy.py  ├── fig9_dispersity.py
+├── fig4_thermal_windows.py      ├── fig10_processing_routes.py
+├── fig5_property_map.py         ├── fig12_appendix_monomers.py
+├── fig6_degradation.py          └── fig13_appendix_chain_structures.py
 ├── data/
 │   ├── thermal_properties.csv       # Fig 4 数据（附 ref 列）
 │   └── mechanical_properties.csv    # Fig 5 数据（附 ref 列）
@@ -43,7 +47,7 @@ cd figures && python3 make_all.py
 这四色在 all-pairs 模式下最差色盲对 ΔE 9.2、最差常视力对 ΔE 16.3，均达标；
 绿色对白底对比度偏低，所以凡用到绿色的地方都配了直接标注。超过四类的一律折进灰色，不新增色相。
 
-## 十张图
+## 正文十张图
 
 ### Fig 1 · 分类树（§2）
 手工计算坐标的层级图。**主分支是主链化学类别**（五类，和 Table 1、Fig 7 完全对齐），
@@ -126,6 +130,45 @@ RDKit 从 SMILES 绘制，链接点画成波浪键（聚合物重复单元的通
 §6 原来是一整段密文字：有没有熔融窗口决定走熔融加工还是溶液加工，具体材料举例，
 再加一句"拓宽窗口"的通用对策。改成判定流程图之后，正文只留判定逻辑本身说不清楚、
 图上放不下的一句话（多数所谓性能不足其实是加工窗口不足）。
+
+## 附录两张图（Fig 12/13）
+
+用户原话"把文章里出现的每一个高分子的单体 还有链的空间结构都作图表示出来"——
+Fig 2 只画了纤维素/直链淀粉/壳聚糖/PHB/PLLA 五种重复单元，Fig 3 只画了纤维素一家的
+链尺度结构，正文其余提到的材料（海藻酸盐、天然橡胶、SBR、木质素、丝素蛋白、
+胶原蛋白）一直没有配图。因为正文已经踩线 10 页限制（§10 结论只能挤在页 11 末尾，
+稍微加点东西就会顶到页 12——这次实测验证过，见 `report.md` 顶部 STATUS 注释），
+新增的这两张图放进了参考文献之后的"附录 A"，和参考文献一样不计入 10 页限制，
+不跟正文抢空间。
+
+### Fig 12 · 十种材料的重复单元（附录 A）
+和 Fig 2 同一套方法：RDKit 从 SMILES 画，链接点画波浪键。补的十个结构是：
+海藻酸盐的 M（β-D-甘露糖醛酸）和 G（α-L-古洛糖醛酸）、天然橡胶（*顺*-1,4-聚异戊二烯）、
+SBR 的两种共聚单体（丁二烯、苯乙烯）、木质素的三种木质醇前体（对香豆醇/松柏醇/
+芥子醇，分别 0/1/2 个甲氧基）、丝素蛋白的 (Gly-Ala)ₙ 主链、胶原蛋白的 Gly-Pro-Hyp
+主链。
+
+**立体化学怎么核对**（`verify_appendix_stereochemistry.py`，Fig 12 出图前自动跑，
+不通过就报错停下）：天然橡胶的顺式几何、SBR 两种共聚单体、三种木质醇、丝素/胶原蛋白
+的手性碳都核对到了和文献一致（脯氨酸 (S)、4-羟脯氨酸 (2S,4R)——胶原蛋白实际用的
+异构体——都是先穷举 @/@@ 组合再核对，不是凭记忆直接断言）。**唯一一处没有完全核实
+的地方**：海藻酸盐 G（古洛糖醛酸）的绝对构型，只核对了"是 M 的 C5 差向异构体"这个
+文献公认的关系（通过在已核对过的 β-D-葡萄糖骨架上做单点差向异构推导，用
+`verify_stereochemistry.py` 现成的 `uncap()` 回溯核对确认没有手滑翻转别的手性中心），
+但手头没有独立的文献 CIP 字符串可以比对 G 的绝对构型——图注和 `report.md`/`report_zh.md`
+里都老实标出了这一点，建议提交前找 ChemDraw 或文献结构图再核一遍。
+
+### Fig 13 · 六个家族的链尺度空间结构（附录 A）
+matplotlib 手绘示意图，和 Fig 3 同一路数（不用 RDKit——这是链/二级结构层面的排列，
+不是单个重复单元的原子连接），六格：(a) 直链淀粉的左手螺旋，和 Fig 3(a) 纤维素的
+伸展带状链对照；(b) 海藻酸盐 Ca²⁺"蛋盒"结构——正文 §3.1 提了名字但没画机理，这张图
+补上；(c) PHA/PLA 的螺旋堆积（2₁/10₃ 螺旋）；(d) 丝素蛋白 β-折叠纳米晶体（反平行
+β-链氢键成片，片靠 Ala 甲基堆叠）；(e) 胶原蛋白 Gly-X-Y 三螺旋（甘氨酸为什么必须每
+三个残基出现一次——核心太拥挤，只有 H 能塞进去）；(f) 天然橡胶与 SBR 的应变结晶
+对比，§7.3 案例研究的结构内核。纤维素已经在 Fig 3 讲完，这里不重复。
+
+第一版每格塞了 3-4 段浮动文字，窄格里彼此压字，返工过一次；现在每格严格三段——
+标题、图形、一段固定锚点的说明文字，其余想说的话都并进这一段。
 
 ## 表格
 

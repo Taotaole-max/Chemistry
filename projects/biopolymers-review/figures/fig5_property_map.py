@@ -39,7 +39,7 @@ OFFSET = {
 
 
 def load():
-    with DATA.open() as fh:
+    with DATA.open(encoding="utf-8") as fh:
         rows = [line for line in fh if not line.startswith("#") and line.strip()]
     return list(csv.DictReader(rows))
 

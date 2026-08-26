@@ -31,7 +31,8 @@ $targets = @(
     "Table 4.",
     "9. Current Status",
     "10. Conclusions",
-    "References"
+    "References",
+    "Appendix A"
 )
 
 foreach ($t in $targets) {

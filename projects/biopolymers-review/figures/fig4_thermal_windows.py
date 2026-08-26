@@ -21,7 +21,7 @@ DATA = HERE / "data" / "thermal_properties.csv"
 
 def load():
     rows = []
-    with DATA.open() as fh:
+    with DATA.open(encoding="utf-8") as fh:
         for line in fh:
             if line.startswith("#") or not line.strip():
                 continue
