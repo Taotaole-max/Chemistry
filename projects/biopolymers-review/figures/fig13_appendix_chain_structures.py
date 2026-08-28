@@ -58,9 +58,9 @@ def setup(ax):
 
 
 # ---------------------------------------------------------------------------
-def panel_amylose(ax):
+def panel_amylose(ax, tag="a"):
     setup(ax)
-    panel_label(ax, "a", "Amylose: left-handed helix")
+    panel_label(ax, tag, "Amylose: left-handed helix")
     colour = C_POLYSACCHARIDE
     cx = 50
     theta = np.linspace(0, 4.4 * np.pi, 300)
@@ -83,9 +83,9 @@ def panel_amylose(ax):
 
 
 # ---------------------------------------------------------------------------
-def panel_alginate(ax):
+def panel_alginate(ax, tag="b"):
     setup(ax)
-    panel_label(ax, "b", "Alginate: Ca$^{2+}$ egg-box")
+    panel_label(ax, tag, "Alginate: Ca$^{2+}$ egg-box")
     colour = C_POLYSACCHARIDE
     xs = np.linspace(8, 88, 9)
 
@@ -115,9 +115,9 @@ def panel_alginate(ax):
 
 
 # ---------------------------------------------------------------------------
-def panel_pha_pla(ax):
+def panel_pha_pla(ax, tag="c"):
     setup(ax)
-    panel_label(ax, "c", "PHA / PLA: helical packing")
+    panel_label(ax, tag, "PHA / PLA: helical packing")
     colour = C_POLYESTER
     for k, cx in enumerate([30, 70]):
         theta = np.linspace(0, 3.6 * np.pi, 220)

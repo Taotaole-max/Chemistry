@@ -7,31 +7,28 @@ Fig 2 / Fig 12 出图前会先跑立体化学核对，构型不对就直接报�
 import importlib
 import sys
 
-# 顺序 == Word 正文图号 1–15。2026-08-28 大改：
-#  - 删掉附录 A（原 Fig 18/19 两张合集图）——§3.1–3.5 每节已有自己的单体/链结构图，
-#    附录纯属重复。附录独有的 SBR 两个共聚单体并进了 fig8_nr_sbr_comparison（Fig 15）。
-#  - 原 Fig 13/14/15（降解三张零碎图）：13+14 合并成 fig6_degradation 的一张两面板图，
-#    15（能垒示意曲线，仅示意无数值）删掉，正文 §5.4 一句话带过。
+# 顺序 == Word 正文图号 1–8。2026-08-28 第二轮大改：把 15 张独立图合并成 8 张多面板图
+# （真实论文的做法：一个 Figure 8-12 个子面板、一个图注），省下 ~2 页而不删任何论证。
+#  - 旧 Fig 3/6/7/8/9（各家族单体）→ fig_repeat_units_all（Fig 3，13 面板）
+#  - 旧 Fig 4/5/6c/7cd（各家族高阶结构）→ fig_higher_order_all（Fig 4，6 面板）
+#  - 旧 Fig 11/12（热窗口 + Ashby）→ fig_property_maps（Fig 5，2 面板）
+#  - 旧 Fig 14（加工流程图）删掉，§6 文字保留判定逻辑（加工不是题目必答子题）
 MODULES = [
-    "fig1_classification",            # Fig 1
-    "fig7_causality_chain",           # Fig 2
-    "fig_polysaccharide_monomers",    # Fig 3
-    "fig3_cellulose_hierarchy",       # Fig 4
-    "fig_polysaccharide_chains",      # Fig 5
-    "fig_polyester_structures",       # Fig 6
-    "fig_protein_structures",         # Fig 7
-    "fig_lignin_monomers",            # Fig 8
-    "fig_rubber_monomer",             # Fig 9
-    "fig9_dispersity",                # Fig 10
-    "fig4_thermal_windows",           # Fig 11
-    "fig5_property_map",              # Fig 12
-    "fig6_degradation",               # Fig 13  (single 2-panel output: fig_degradation)
-    "fig10_processing_routes",        # Fig 14
-    "fig8_nr_sbr_comparison",         # Fig 15
+    "fig1_classification",       # Fig 1  分类树
+    "fig7_causality_chain",      # Fig 2  结构–性质因果链
+    "fig_repeat_units_all",      # Fig 3  各家族重复单元（13 面板合集）
+    "fig_higher_order_all",      # Fig 4  各家族高阶结构（6 面板合集）
+    "fig_property_maps",         # Fig 5  热窗口 + Ashby（2 面板）
+    "fig9_dispersity",           # Fig 6  分散度 Đ
+    "fig6_degradation",          # Fig 7  降解两路径（输出 fig_degradation）
+    "fig8_nr_sbr_comparison",    # Fig 8  NR vs SBR
 ]
-# 保留但不参与构建（仅作为 SMILES / panel 函数的共享来源被 import）：
-#   fig2_repeat_units.py, fig12_appendix_monomers.py, fig13_appendix_chain_structures.py
-# 已废弃：combine_1x4.py, fig6c_hydrolysis_barriers（原 Fig 15 能垒图）
+# 保留但不参与构建（作为 SMILES / panel 函数 / draw() 的共享来源被 import）：
+#   fig2_repeat_units.py, fig12_appendix_monomers.py, fig13_appendix_chain_structures.py,
+#   fig3_cellulose_hierarchy.py, fig_polysaccharide_*.py, fig_polyester_structures.py,
+#   fig_protein_structures.py, fig_lignin_monomers.py, fig_rubber_monomer.py,
+#   fig4_thermal_windows.py, fig5_property_map.py, fig10_processing_routes.py
+# 已废弃：combine_1x4.py, fig6c_hydrolysis_barriers
 
 
 def main():

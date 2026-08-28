@@ -4,8 +4,19 @@
 
 > **AI Tool Declaration** — *(final wording to be added on the first page before submission)*
 
-<!-- STATUS (2026-08-28, figure consolidation + cleanup): §1-§10 complete, now **15 figures /
-     5 tables / 32 references**, body **10 pages** (was 13; refs start p.11, EN total 16 / ZH 14).
+<!-- STATUS (2026-08-28c, figures merged into multi-panel composites): §1-§10 complete,
+     **8 figures / 5 tables / 56 references**. Figures went 15 -> 8 by combining related ones
+     into single multi-panel figures (real-paper style, one caption each): old Fig 3/6/7/8/9
+     (all repeat units) -> Fig 3 (13 panels); old Fig 4/5/6c/7cd (higher-order structure) ->
+     Fig 4 (6 panels); old Fig 11/12 (thermal + Ashby) -> Fig 5 (2 panels); old Fig 14
+     (processing flowchart) dropped, its logic folded into §6 prose. Also a whole-document
+     prose-tightening pass (-250 words). Body page count still being measured after this pass;
+     the earlier "10 pages" reading was a measure_pages.ps1 bug (matched "References" in §7.3
+     body text) — real body was 13, now targeting ~10-11. Still open: CSV values PROVISIONAL;
+     §7.2 $/kg needs a market report; first-page author names + AI declaration; references.zip;
+     alginate G config cross-check. report_zh.md prose/renumber not yet re-synced with this pass.
+
+     ---- prior STATUS (2026-08-28, figure consolidation): 15 figures, dropped Appendix A. ----
      User asked to make the figures less cluttered and the document cleaner. This pass:
      (1) DELETED Appendix A and its two gallery figures (old Fig 18/19) — every material they
          showed already has an in-body §3.1-3.5 figure; SBR's two comonomers (the one thing only
@@ -408,100 +419,84 @@ from defined fold, not chain packing; lignin is the counterpoint — an irregula
 with no periodic chain. The claim tested throughout: backbone chemistry, not biological origin,
 predicts melting, hydrolytic/enzymatic susceptibility and mechanical performance (Table 2). Fig. 2
 carries the force → consequence → limitation chain for each family, so the text below adds only
-mechanism and citations; each family's monomer and chain-scale structure is drawn in its subsection.
+mechanism and citations. All repeat units are collected in Fig. 3 and all higher-order (chain,
+secondary, tertiary) structures in Fig. 4; the subsections point to the relevant panels.
 
 *[Figure 2 — Structure–property causal chain, one row per family: dominant intermolecular force →
-key consequence → key limitation. The five backbone classes of Table 1 appear as seven rows here
-(polysaccharides and polyesters are each split into two, since their two members behave
-distinctly). Colour follows the backbone-chemistry class; the arrows read left to right as one
-causal chain per family.]*
+key consequence → key limitation. The five backbone classes of Table 1 appear as seven rows
+(polysaccharides and polyesters are each split into two, since their two members behave distinctly).
+Colour follows the backbone-chemistry class; arrows read left to right as one causal chain per
+family.]*
+
+*[Figure 3 — Repeat units of the biopolymers discussed in §3, drawn by the authors with RDKit from
+SMILES checked by `verify_stereochemistry.py`, colour-coded by backbone class. Polysaccharides
+(blue): (a) cellulose, (b) amylose, (c) chitosan, (d) alginate M, (e) alginate G — (a)/(b) differ
+only at C1, the centre separating cellulose's crystalline ribbon from amylose's water-plasticised
+helix, and (d)/(e) only at C5, the M/G ratio setting alginate's stiffness–brittleness trade-off.
+Polyesters (orange): (f) PHB, (g) PLLA, with (R)/(S) marked. Proteins (green): (h) silk fibroin
+(Gly-Ala)ₙ, (i) collagen Gly-Pro-Hyp. Lignin precursors (grey): (j) p-coumaryl, (k) coniferyl,
+(l) sinapyl alcohol (0/1/2 methoxy groups). Rubber: (m) cis-1,4-polyisoprene. Alginate G's absolute
+configuration is verified only as the C5 epimer of M — cross-check before submission.]*
+
+*[Figure 4 — Higher-order structure across the families, drawn by the authors: (a) cellulose —
+intra- and inter-chain hydrogen bonds lock the ribbon into a sheet, sheets stack by van der Waals
+into the Iα/Iβ crystal, and the accumulated cohesive energy exceeds the backbone, so cellulose
+decomposes near 300 °C before melting; (b) amylose's left-handed helix, whose cavity is plasticised
+by water/I₂; (c) alginate's Ca²⁺-bridged "egg-box" G-block junction — ionic and reversible, its
+density (G-content) setting stiffness vs. brittleness; (d) PHA/PLA helical packing (PHB 2₁, PLLA
+10₃) — a helix that crystallises but still melts; (e) silk's antiparallel β-sheet nanocrystallites
+(2–4 nm) in a compliant amorphous matrix, the source of its strength–toughness combination;
+(f) collagen's Gly-X-Y triple helix, in which glycine at every third position is the only residue
+small enough for the crowded core.]*
 
 ### 3.1 Polysaccharides
 
-*[Figure 3 — Polysaccharide repeat units drawn by the authors with RDKit from verified SMILES:
-(a) cellulose (β-1,4-D-glucan), (b) amylose (α-1,4-D-glucan), (c) chitosan (2-amino-2-deoxy-D-glucan),
-(d) alginate M (β-D-mannuronate), (e) alginate G (α-L-guluronate). (a) and (b) differ only in the
-configuration at C1 — the single centre that separates cellulose's extended, 60–70% crystalline
-ribbon from amylose's water-plasticised helix; (d) and (e) differ only at C5, and the M/G ratio
-sets alginate's stiffness–brittleness trade-off (§8). Alginate G's absolute configuration is
-verified only as the C5 epimer of M — cross-check against a literature structure before submission.]*
-
 Polysaccharides span the rigid end of the spectrum. **Cellulose** — linear β-(1→4)-D-glucopyranose
-— forms an extended ribbon hydrogen-bonded into sheets (Iα, Iβ) [33,34]; it cannot be melt-processed
-and is handled only by solution routes (NMMO/Lyocell [37], LiCl/DMAc), while nanocrystals and
-nanofibrils exploit its ~130–150 GPa axial crystal modulus [35] as fillers [2].
-
-*[Figure 4 — Cellulose's three-tier structure, drawn by the authors: (a) the intrachain
-O3–H···O5′ hydrogen bond that locks the ribbon conformation, (b) interchain hydrogen bonding
-within a sheet, (c) van der Waals / CH···O stacking of sheets into the Iα (triclinic) / Iβ
-(monoclinic) crystal. Cohesive energy accumulated over (a)–(c) exceeds the strength of the
-glycosidic backbone, so cellulose decomposes near 300 °C before any melting transition and
-dissolves only in solvents that break the hydrogen-bond network.]*
+(Fig. 3a) — forms an extended ribbon hydrogen-bonded into sheets (Iα, Iβ) [33,34]; the cohesive
+energy of that sheet-then-crystal hierarchy (Fig. 4a) is why it cannot be melt-processed and is
+handled only by solution routes (NMMO/Lyocell [37], LiCl/DMAc), while nanocrystals and nanofibrils
+exploit its ~130–150 GPa axial crystal modulus [35] as fillers [2].
 
 **Starch's** amylose/amylopectin topology (not chemistry) gives it weaker, humidity-reversible
 crystallinity and retrogradation on storage [38] (hence TPS/PLA/PBAT blends). **Chitosan's** degree
 of deacetylation (DD) sets solubility, charge and antimicrobial activity [39], but high-DD chitosan
 is typically low-MW because the alkaline step that raises DD also cleaves the backbone [3].
-**Alginate** gels via Ca²⁺-coordinated "egg-box" GG-blocks [4], G-content setting a
-stiffness–brittleness trade-off (§8); hyaluronic acid, carrageenan, xanthan and pectin follow the
-same linkage-chemistry logic.
-
-*[Figure 5 — Polysaccharide chain-scale structure, drawn by the authors: (a) amylose's left-handed
-helix (contrast cellulose's extended ribbon in Fig. 4; I₂ and water enter the cavity and plasticise
-the chain), (b) alginate's Ca²⁺-bridged "egg-box" G-block junction — ionic and reversible with a
-chelator, G-content setting junction density and hence stiffness vs. brittleness, (c) chitosan's
-irregular deacetylation breaking the regular hydrogen-bond register cellulose relies on, so
-solubility rises but crystallinity falls. Cellulose's own chain-scale structure is in Fig. 4.]*
+**Alginate** gels via Ca²⁺-coordinated "egg-box" GG-blocks [4] (Fig. 4c), G-content setting a
+stiffness–brittleness trade-off (§8); amylose coils into a water-plasticised helix (Fig. 4b), and
+chitosan's irregular deacetylation breaks the hydrogen-bond register cellulose relies on, so its
+solubility rises as crystallinity falls. Hyaluronic acid, carrageenan, xanthan and pectin follow
+the same linkage-chemistry logic.
 
 ### 3.2 Polyesters: PHA and PLA
 
-*[Figure 6 — Polyester structure: (a) PHB and (b) PLLA repeat units (drawn by the authors with
-RDKit from verified SMILES; (R)/(S) marked because the chiral centre is not adjacent to a chain
-end), and (c) PHA/PLA helical packing (PHB 2₁, PLLA 10₃ helices) — a helix that crystallises but
-still melts, unlike cellulose's hydrogen-bonded ribbon, which decomposes first.]*
-
-**PHA** (bacterial storage granules; PHB the archetype) is highly crystalline (55–70%) but
+**PHA** (bacterial storage granules; PHB the archetype, Fig. 3f) is highly crystalline (55–70%) but
 decomposes by six-membered-ring *cis*-elimination only tens of degrees above Tm [5] — the narrowest
 processing window here; PHBV/PHBHHx copolymers widen it at the cost of stiffness. **PLA**:
 ring-opening polymerisation of lactide by a Sn(Oct)₂ coordination–insertion mechanism [40,41]
 reaches useful MW where polycondensation cannot; PLLA crystallises slowly, but the PLLA/PDLA
 stereocomplex co-crystallises ~50 °C above either homocrystal through tighter enantiomeric packing
-[6,7]. PBS and PEF follow the same ester logic (§8).
+[6,7]. Both pack as helices that still melt (Fig. 4d); PBS and PEF follow the same ester logic (§8).
 
 ### 3.3 Protein-based Polymers
 
-*[Figure 7 — Protein structure, drawn by the authors: (a) silk fibroin's (Gly-Ala)ₙ and (b)
-collagen's Gly-Pro-Hyp backbone repeat units (RDKit); (c) silk's antiparallel β-sheet
-nanocrystallites (2–4 nm, hydrogen-bonded, dispersed in a compliant amorphous matrix — the source
-of silk's combined strength and toughness); (d) collagen's Gly-X-Y triple helix, in which glycine
-at every third position is the only residue small enough for the crowded core.]*
-
-Protein properties come from sequence-directed fold, not chain packing. **Silk fibroin** owes its
-rare strength–toughness combination to β-sheet nanocrystallites in a compliant amorphous matrix
-[8]. **Collagen's** Gly-X-Y triple helix, stabilised by the stereoelectronic effect of
-hydroxyproline [45], denatures irreversibly into gelatin; zein, casein and soy are film-forming,
-not structural (§8). Ribosomal synthesis fixes every protein molecule's length and sequence exactly
-(Đ = 1.0) — unmatched by any non-templated biopolymer (§4).
+Protein properties come from sequence-directed fold, not chain packing. **Silk fibroin** (Fig. 3h)
+owes its rare strength–toughness combination to β-sheet nanocrystallites in a compliant amorphous
+matrix (Fig. 4e) [8]. **Collagen's** Gly-X-Y triple helix (Fig. 4f), stabilised by the
+stereoelectronic effect of hydroxyproline [45], denatures irreversibly into gelatin; zein, casein
+and soy are film-forming, not structural (§8). Ribosomal synthesis fixes every protein molecule's
+length and sequence exactly (Đ = 1.0) — unmatched by any non-templated biopolymer (§4).
 
 ### 3.4 Lignin and Other Aromatics
 
-*[Figure 8 — The three monolignol precursors, drawn by the authors with RDKit: (a) p-coumaryl
-alcohol (0 methoxy groups), (b) coniferyl alcohol (1), (c) sinapyl alcohol (2). Radical coupling
-of these gives a randomly cross-linked network with no periodic chain, so only the monomers are
-drawn.]*
-
-Lignin is cellulose's counterpoint: amorphous *because* irregular. Radical-coupled monolignols form
-a randomly cross-linked network (β-O-4 ether ~45–60% of linkages [9]) whose composition varies by
-species and, industrially, by extraction method — kraft, organosolv, lignosulfonate [54] — so no
-single "lignin" has one structure–property relationship.
+Lignin is cellulose's counterpoint: amorphous *because* irregular. Radical coupling of the three
+monolignols (Fig. 3j–l) forms a cross-linked network (β-O-4 ether ~45–60% of linkages [9]) with no
+periodic chain, whose composition varies by species and, industrially, by extraction method —
+kraft, organosolv, lignosulfonate [54] — so no single "lignin" has one structure–property
+relationship.
 
 ### 3.5 Natural Rubber
 
-*[Figure 9 — Natural rubber's repeat unit, cis-1,4-polyisoprene (drawn by the authors with RDKit
-from verified SMILES). Its chain-scale strain-induced-crystallisation structure appears in the
-§7.3 case study, Fig. 15.]*
-
-Natural rubber is the flexible extreme and the one exception to "crystallinity governs
+Natural rubber (Fig. 3m) is the flexible extreme and the one exception to "crystallinity governs
 performance": *cis*-1,4-polyisoprene is amorphous at rest, but strain-induced crystallisation
 (SIC) self-reinforces the network under load — well documented by X-ray diffraction and largely
 absent in synthetic *cis*-polyisoprene [10]. This is not a fixed material constant: NR's molecular
@@ -528,9 +523,9 @@ mass loss under N₂; "–" = no melting transition; per-row sources in `figures
 | Natural rubber (vulcanised) | ~−70 | – | – | 0.001–0.005 | 500–800 |
 | PET (fossil reference) | ~78 | ~255 | ~400 | 2.0–4.0 | 50–300 |
 
-*All values PROVISIONAL — teaching-level ranges used to keep Fig. 11/12 and this table internally
-consistent; each must be replaced with a cited literature value, and matched to a stated test
-condition (sample form, moisture, thermal history), before submission.*
+*All values PROVISIONAL — teaching-level ranges used to keep Fig. 5 and this table internally
+consistent; each must be replaced with a cited literature value, matched to a stated test condition
+(sample form, moisture, thermal history), before submission.*
 
 ---
 
@@ -540,16 +535,17 @@ Most surveys report molecular weight casually — "high molecular weight" — bu
 not the average, is where the biology shows. Of the standard descriptors (Mn, Mw, dispersity
 Đ = Mw/Mn [46], DP), Đ matters most: it, not Mn alone, sets processing behaviour and the spread of
 mechanical properties within a batch. **Dispersity is a readout of synthesis mechanism, not noise**
-(Fig. 10): template-controlled biosynthesis gives proteins and nucleic acids Đ = 1.0 exactly, while
+(Fig. 6): template-controlled biosynthesis gives proteins and nucleic acids Đ = 1.0 exactly, while
 every non-templated route — extraction (cellulose, chitosan, natural rubber) or catalysed
 polymerisation (PHA, PLA) — broadens the distribution in proportion to how loosely it is
 controlled. Natural rubber is the extreme: because it is extracted, not chain-grown, its Mw and MWD
 vary between *Hevea* clones and with tree age [19] — an agricultural variability with no
 synthetic-polymer analogue.
 
-*[Figure 10 — Dispersity Đ across families on a common axis: a point at Đ=1 for templated
-biosynthesis, ranges for PLA/PHA/chitosan/cellulose, an open-ended arrow for natural rubber's
-unquantified variability]*
+*[Figure 6 — Dispersity Đ across families on a common axis (colour by backbone class): an exact
+point at Đ = 1 for templated biosynthesis, literature ranges for PLA/PHA/chitosan/cellulose, and an
+open-ended arrow for natural rubber, whose Đ is not consistently quantified. Ranges reproduce those
+in Table 3, not new measurements.]*
 
 **Why molecular weight controls performance.** Mechanical integrity depends on chain entanglement
 above a characteristic Mc [48]; below it, strength and toughness collapse. Above Mc, tensile
@@ -563,7 +559,7 @@ Reported MW for one material therefore often spans an order of magnitude in the 
 artefact of method more than real variation, so a MW figure is only comparable alongside its method.
 
 **Table 3.** Typical number-average molecular weight for representative biopolymers, with the
-standard method by which each is measured (dispersity Đ is plotted in Fig. 10 instead of repeated
+standard method by which each is measured (dispersity Đ is plotted in Fig. 6 instead of repeated
 here).
 
 | Material | Typical Mn | Standard method (key limitation) |
@@ -588,27 +584,28 @@ holds across all of them.
 
 ### 5.1 Thermal Behaviour
 
-A decomposition temperature at or below the melting point is close to the rule (Fig. 11): the same
+A decomposition temperature at or below the melting point is close to the rule (Fig. 5a): the same
 network that gives stiffness raises the melting energy toward the bond-breaking energy, crowding
 the two transitions — cellulose, chitosan and silk fibroin never melt at all. Among the polyesters
 the crowding is quantitative: PHB's window is only ~25 °C, PHBV's ~55 °C, PLLA's wider still [44].
-Fig. 11 plots the TGA onset, so the usable window for PLLA and PHB is narrower still, since melt
+Fig. 5a plots the TGA onset, so the usable window for PLLA and PHB is narrower still, since melt
 hydrolysis (§4) sets in earlier.
-
-*[Figure 11 — Thermal properties and processing windows: Tg/Tm/Td for each material on a common
-temperature axis, window width labelled directly]*
 
 ### 5.2 Mechanical Behaviour
 
-The same logic sets the mechanical envelope (Fig. 12): high crystallinity and dense hydrogen
+The same logic sets the mechanical envelope (Fig. 5b): high crystallinity and dense hydrogen
 bonding raise modulus but remove the flexible segments that let polyolefins draw before breaking,
 so biopolymers sit at high modulus, low elongation relative to PE/PP/PET [11,43]. Natural rubber is
 the exception — no modulus at rest, performance generated on demand by SIC (§3.5, §7.3). The
-regions in Fig. 12 are ranges, not points: sample form, moisture, crystallinity and thermal history
-each move a material's data by an order of magnitude, recurring as "batch variability" in §7.2.
+ellipses in Fig. 5b are ranges, not points: sample form, moisture, crystallinity and thermal
+history each move a material's data by an order of magnitude, recurring as "batch variability" in
+§7.2.
 
-*[Figure 12 — Ashby-style modulus vs. elongation-at-break map, region ellipses in log–log space,
-PE/PP/PET plotted for reference]*
+*[Figure 5 — Thermal and mechanical envelopes, drawn by the authors from `figures/data/*.csv`.
+(a) Tg (open circle), Tm (diamond) and TGA decomposition onset (bar) on one temperature axis; the
+shaded band is the melt-processing window (Tm→Td), its width labelled — cellulose, native starch,
+chitosan and silk have none. (b) Modulus vs. elongation at break, log–log; ellipses are the range
+of literature values for the stated sample form (not error bars), PE/PP/PET shown for reference.]*
 
 ### 5.3 Hydrophilicity and Barrier Properties
 
@@ -620,7 +617,7 @@ fixed barrier rating.
 
 ### 5.4 Degradation as a Material Property
 
-Degradation is a rate process governed by structure (Fig. 13). Polyesters degrade by autocatalytic
+Degradation is a rate process governed by structure (Fig. 7). Polyesters degrade by autocatalytic
 ester hydrolysis — each scission's acid end accelerates the next, so interiors erode faster than
 surfaces once the part is below a critical thickness (bulk erosion [49]); polysaccharides and
 proteins degrade by enzymatic attack, which reaches only amorphous segments, so rate is set by
@@ -629,23 +626,24 @@ trade-off: the feature that sets modulus (§5.2) and blocks water uptake (§5.3)
 attack that would degrade the material. ⚙️ Computed ester-hydrolysis barriers fall in the order
 base-catalysed < acid-catalysed < neutral, matching the observed pH-dependence of the rate.
 
-*[Figure 13 — Two degradation routes, drawn by the authors: (a) polyester backbone ester
-hydrolysis — the carboxylic-acid end group autocatalyses further hydrolysis, so thick parts erode
-from the inside (bulk erosion); (b) enzymatic attack on polysaccharides and proteins reaches only
-amorphous regions, so crystallinity sets the rate.]*
+*[Figure 7 — Two degradation routes, drawn by the authors: (a) polyester backbone ester hydrolysis
+— the carboxylic-acid end group autocatalyses further hydrolysis, so thick parts erode from the
+inside (bulk erosion); (b) enzymatic attack on polysaccharides and proteins reaches only amorphous
+regions, so crystallinity sets the rate.]*
 
 ---
 
 ## 6. Processing
 
-Fig. 14 turns §5.1's windows into a processing decision: whether a stable melt window exists sets
-melt vs. solution processing, and its width sets how tightly the process must be controlled. The
-judgement this yields: most reported "performance shortfalls" are processing-window shortfalls, not
-material-property shortfalls (§5.1–5.2).
-
-*[Figure 14 — Processing decision flowchart: stable melt window? → melt processing (PBS/PHB/PLA,
-window width sets control tightness) or solution processing (cellulose/chitosan dissolution
-routes) → shared countermeasures that widen whichever window exists.]*
+The thermal windows of §5.1 become a two-way processing decision. If a stable melt window exists
+above Tm and below the decomposition/hydrolysis onset — PBS (wide), PLA (must be dried first or MW
+collapses, §4), PHB (only ~25 °C, so tight thermal control) — the material is melt-processed, and
+the window width sets how tightly. If not — cellulose, chitosan — only solution routes work
+(NMMO/Lyocell, dilute-acid dissolution and wet/dry-jet spinning). Either way the countermeasures
+are shared: plasticisers, nucleating agents, compatibilised blends (PLA/PBAT, PLA/TPS) and
+nanocellulose reinforcement all widen whichever window exists. The recurring judgement: most
+reported "performance shortfalls" are processing-window shortfalls, not material-property
+shortfalls (§5.1–5.2).
 
 ---
 
@@ -686,10 +684,10 @@ structure.
 NR and styrene–butadiene rubber (SBR) are compounded, filled and vulcanised the same way and
 compete in the same applications (tyre tread, damping, conveyor belting) — the cleanest
 same-application comparison here, since differences trace to backbone chemistry, not processing.
-Fig. 15 shows the chain-scale origin of that difference (SIC); Table 5 scores both across six
+Fig. 8 shows the chain-scale origin of that difference (SIC); Table 5 scores both across five
 dimensions [10,18–32].
 
-*[Figure 15 — NR and SBR structure, drawn by the authors: (a) NR (cis-1,4-polyisoprene), (b) SBR's
+*[Figure 8 — NR and SBR structure, drawn by the authors: (a) NR (cis-1,4-polyisoprene), (b) SBR's
 1,4-butadiene unit, (c) SBR's styrene unit (RDKit, verified SMILES); (d) at chain scale,
 stereoregular NR aligns into crystalline bundles under strain (SIC, X-ray confirmed) while SBR's
 irregular backbone stays amorphous even when stretched — the structural basis of the "SIC & tear
@@ -803,9 +801,9 @@ the same ones used throughout to explain performance.
 11. de Beukelaer, H.; Hilhorst, M.; Workala, Y.; Maaskant, E.; Post, W. Overview of the
     mechanical, thermal and barrier properties of biobased and/or biodegradable thermoplastic
     materials. *Polym. Test.* **2022**, *116*, 107803. DOI: 10.1016/j.polymertesting.2022.107803.
-    <!-- Primary comparative data source for Table 2 and Fig. 4-5; full text was not accessible
-         in this drafting environment (403), so individual numeric values in the CSV data files
-         still need to be checked line-by-line against it rather than assumed consistent. -->
+    <!-- Primary comparative data source for Table 2 and Fig. 5; full text was not accessible in
+         this drafting environment (403), so individual numeric values in the CSV data files still
+         need to be checked line-by-line against it rather than assumed consistent. -->
 12. Aliotta, L.; Seggiani, M.; Lazzeri, A.; Gigante, V.; Cinelli, P. A brief review of
     poly(butylene succinate) (PBS) and its main copolymers: synthesis, blends, composites,
     biodegradability, and applications. *Polymers* **2022**, *14*, 844.

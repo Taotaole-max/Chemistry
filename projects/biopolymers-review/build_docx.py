@@ -26,19 +26,12 @@ EAST_ASIA_FONT = sys.argv[3] if len(sys.argv) > 3 else "Times New Roman"
 FIGURE_FILES = {
     1: "fig1_classification.png",
     2: "fig7_causality_chain.png",
-    3: "fig_polysaccharide_monomers.png",
-    4: "fig3_cellulose_hierarchy.png",
-    5: "fig_polysaccharide_chains.png",
-    6: "fig_polyester_structures.png",
-    7: "fig_protein_structures.png",
-    8: "fig_lignin_monomers.png",
-    9: "fig_rubber_monomer.png",
-    10: "fig9_dispersity.png",
-    11: "fig4_thermal_windows.png",
-    12: "fig5_property_map.png",
-    13: "fig_degradation.png",          # 原 Fig 13+14 合并的一张两面板图
-    14: "fig10_processing_routes.png",  # 原 Fig 16
-    15: "fig8_nr_sbr_comparison.png",   # 原 Fig 17，现含 SBR 单体（原附录内容）
+    3: "fig_repeat_units_all.png",      # 13-panel monomer collage (was 5 figures)
+    4: "fig_higher_order_all.png",      # 6-panel chain/2°/3° structure (was 4 figures)
+    5: "fig_property_maps.png",         # thermal windows + Ashby, 2 panels (was 2 figures)
+    6: "fig9_dispersity.png",
+    7: "fig_degradation.png",           # hydrolysis + enzymatic, 2 panels
+    8: "fig8_nr_sbr_comparison.png",
 }
 
 # Page-budget control: never insert a figure at native/full text width — cap its
@@ -58,21 +51,14 @@ FIGURE_HEIGHT_M = 1.9
 FIGURE_HEIGHT_L = 2.4
 FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
-    1: FIGURE_HEIGHT_M,   # classification tree, multi-row
+    1: FIGURE_HEIGHT_M,   # classification tree
     2: FIGURE_HEIGHT_M,   # 7-row causality-chain
-    3: FIGURE_HEIGHT_S,   # polysaccharide monomer strip, wide/short
-    4: FIGURE_HEIGHT_M,   # cellulose 3-panel hierarchy
-    5: FIGURE_HEIGHT_M,   # amylose/alginate/chitosan chain structures, 3 panels
-    6: FIGURE_HEIGHT_M,   # PHB/PLLA monomers + helix packing, 3 panels
-    7: FIGURE_HEIGHT_M,   # silk/collagen monomers + 2° structure, 2x2
-    8: FIGURE_HEIGHT_S,   # 3 monolignols
-    9: FIGURE_HEIGHT_S,   # single monomer, wide/short
-    10: FIGURE_HEIGHT_L,  # dispersity comparison
-    11: FIGURE_HEIGHT_M,  # thermal windows
-    12: FIGURE_HEIGHT_M,  # Ashby mechanical map
-    13: FIGURE_HEIGHT_S,  # degradation, 2 panels, wide/short
-    14: FIGURE_HEIGHT_L,  # processing flowchart
-    15: FIGURE_HEIGHT_L,  # NR/SBR: 3 monomers + chain-scale panel
+    3: 3.9,              # 13-panel monomer collage, 3 rows
+    4: 3.0,              # 6-panel chain/2°/3° structure, 2 rows
+    5: FIGURE_HEIGHT_M,   # thermal windows + Ashby, 2 panels
+    6: FIGURE_HEIGHT_M,   # dispersity comparison
+    7: FIGURE_HEIGHT_S,   # degradation, 2 panels, wide/short
+    8: FIGURE_HEIGHT_L,   # NR/SBR: 3 monomers + chain-scale panel
 }
 FIGURE_MAX_WIDTH_IN = 6.5
 

@@ -33,12 +33,10 @@ def num(value):
     return float(value) if value not in ("", None) else None
 
 
-def main():
-    apply_style()
+def draw(ax):
+    """把热窗口图画进给定的 ax——被 fig_property_maps.py 复用，也被本脚本 main() 用。"""
     records = load()
     records.reverse()  # CSV 自上而下 → 图上自下而上，参照物落在最下面
-
-    fig, ax = plt.subplots(figsize=(170 * MM, 78 * MM), layout="constrained")
 
     for i, row in enumerate(records):
         colour = CLASS_COLOR[row["class"]]
@@ -72,7 +70,7 @@ def main():
     ax.set_yticklabels([r["material"] for r in records], fontsize=7)
     ax.set_xlabel("Temperature (°C)")
     ax.set_xlim(-160, 520)
-    ax.set_ylim(-0.8, len(records) - 0.2)
+    ax.set_ylim(-0.8, len(records) + 1.3)   # 顶部留一行空白给面板标题
     ax.set_xticks(range(-150, 451, 50))
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)
@@ -92,9 +90,14 @@ def main():
                   label="melt-processing window"),
     ]
     ax.legend(handles=handles, loc="upper left", frameon=False, ncol=2,
-              handletextpad=0.6, columnspacing=1.4, borderpad=0.2)
+              handletextpad=0.6, columnspacing=1.4, borderpad=0.2,
+              bbox_to_anchor=(0.0, 0.98))
 
-    # 颜色键 + "窗口以 TGA 分解起始为界，PLLA/PHB 实际可用窗口更窄" 的说明进 report.md 图注。
+
+def main():
+    apply_style()
+    fig, ax = plt.subplots(figsize=(170 * MM, 78 * MM), layout="constrained")
+    draw(ax)
     save(fig, "fig4_thermal_windows", OUT)
 
 

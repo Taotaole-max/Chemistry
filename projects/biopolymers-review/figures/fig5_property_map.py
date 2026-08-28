@@ -44,11 +44,9 @@ def load():
     return list(csv.DictReader(rows))
 
 
-def main():
-    apply_style()
+def draw(ax):
+    """把 Ashby 图画进给定的 ax——被 fig_property_maps.py 复用，也被本脚本 main() 用。"""
     records = load()
-
-    fig, ax = plt.subplots(figsize=(170 * MM, 82 * MM), layout="constrained")
 
     seen = []
     for row in records:
@@ -73,7 +71,7 @@ def main():
     ax.set_xlabel("Elongation at break (%)")
     ax.set_ylabel("Tensile modulus (GPa)")
     ax.set_xlim(np.log10(1.2), np.log10(1600))
-    ax.set_ylim(np.log10(0.0006), np.log10(90))
+    ax.set_ylim(np.log10(0.0006), np.log10(240))   # 顶部留白给面板标题
 
     xticks = [1, 3, 10, 30, 100, 300, 1000]
     ax.set_xticks(np.log10(xticks))
@@ -86,9 +84,7 @@ def main():
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
 
-    # 读图导引：两个角落的定性说明
-    ax.text(np.log10(1.5), np.log10(55), "stiff and brittle", fontsize=6.8,
-            color=INK_SECONDARY, style="italic", ha="left", va="center")
+    # 读图导引：右下角一句（左上角那句删掉，给面板标题让位）
     ax.text(np.log10(1200), np.log10(0.0009), "soft and extensible", fontsize=6.8,
             color=INK_SECONDARY, style="italic", ha="right", va="center")
 
@@ -98,7 +94,11 @@ def main():
     ax.legend(handles=handles, loc="lower left", frameon=False, ncol=2,
               handletextpad=0.5, columnspacing=1.2, borderpad=0.2)
 
-    # "椭圆是文献区间不是误差棒" 的说明进 report.md 图注。
+
+def main():
+    apply_style()
+    fig, ax = plt.subplots(figsize=(170 * MM, 82 * MM), layout="constrained")
+    draw(ax)
     save(fig, "fig5_property_map", OUT)
 
 
