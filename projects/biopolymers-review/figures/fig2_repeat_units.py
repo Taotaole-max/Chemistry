@@ -1,4 +1,9 @@
-"""Fig 2 · 五种代表性生物聚合物的重复单元。
+"""[数据模块] 五种生物聚合物的重复单元 SMILES + 名称，定义在 PANELS 里。
+最终报告的 Fig 3（`fig_repeat_units_all.py`）import 这个 PANELS。本文件自己的 main()
+是早期版本、不再参与构建，留着只是为了 PANELS 常量和它的立体化学核对逻辑。
+
+---- 原始说明 ----
+Fig 2 · 五种代表性生物聚合物的重复单元。
 
 结构由 RDKit 从 SMILES 绘制，链接点画成波浪键（聚合物重复单元的通用画法）。
 立体化学由 verify_stereochemistry.py 机器核对后才允许出图——本脚本开头会调用它。

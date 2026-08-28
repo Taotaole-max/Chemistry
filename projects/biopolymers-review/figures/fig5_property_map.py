@@ -1,4 +1,8 @@
-"""=== Word Figure 12 ===  性能图：拉伸模量 vs 断裂伸长率（Ashby 式）。
+"""最终报告的 Fig 5(b) —— 模量 vs 断裂伸长率（Ashby 式）。绘图逻辑在 draw(ax) 里，被
+`fig_property_maps.py` 复用。数据：data/mechanical_properties.csv。
+
+---- 原始说明 ----
+Word Figure 12 · 性能图：拉伸模量 vs 断裂伸长率（Ashby 式）。
 
 画区间椭圆而不是单点——生物聚合物的力学数据本身就分散，单点会假装它有确定值。
 读法：左上角是又硬又脆，右下角是又软又韧。生物聚合物几乎全部落在左侧（伸长率低），

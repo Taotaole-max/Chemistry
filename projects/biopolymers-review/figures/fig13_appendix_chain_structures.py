@@ -1,4 +1,9 @@
-"""Fig 13 (附录) · 链尺度的空间/构象结构，六个家族各一格。
+"""[面板模块] 链/二级/三级结构的手绘 matplotlib 面板函数（panel_amylose、panel_alginate、
+panel_pha_pla、panel_silk、panel_collagen 等）。最终报告的 Fig 4
+（`fig_higher_order_all.py`）import 这些函数。本文件的 main() 是早期版本、不再参与构建。
+
+---- 原始说明 ----
+Fig 13 (附录) · 链尺度的空间/构象结构，六个家族各一格。
 
 Fig 3 已经用一整张图讲清楚了纤维素的链→片层→晶体三级结构；这张图补的是 Fig 3
 没有覆盖、但正文 §3 反复用来解释性质的"链怎么摆"这件事本身——直链淀粉为什么会
