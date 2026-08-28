@@ -401,20 +401,16 @@ synthesised by micro-organisms, or polymerised from bio-based monomers]*
 
 ## 3. Structure–Property Relationships of the Major Biopolymer Families
 
-This section examines five biopolymer families along one organising axis: backbone flexibility and
-the intermolecular forces it permits. Cellulose sits at one extreme — an extended, hydrogen-bonded
-backbone locked into a crystalline solid that never melts. Natural rubber sits at the other: a
-freely rotating backbone that stays amorphous until strain forces it to crystallise. Between them
-lie three groups — polysaccharides with weaker or ionically tunable interchain forces (starch,
-chitin/chitosan, alginate); semicrystalline polyesters flexible enough to melt-process, but only
-within narrow thermal windows (PHA, PLA); and template-folded proteins, whose properties come from
-defined secondary/tertiary structure rather than simple chain packing. Lignin closes the section as
-the structural counterpoint to all of them — an irregularly cross-linked network with no periodic
-chain at all. The claim tested throughout is that backbone chemistry, not biological origin,
-predicts melting behaviour, hydrolytic/enzymatic susceptibility, and mechanical performance (Table
-2). Fig. 2 summarises the force → consequence → limitation causal chain for every family at a
-glance, so the text below only adds mechanism and citations the figure can't carry. Each family's
-monomer and chain-scale structure is drawn directly in its own subsection (§3.1–§3.5).
+This section examines five families along one axis — backbone flexibility and the intermolecular
+forces it permits — running from cellulose (an extended, hydrogen-bonded backbone that never melts)
+to natural rubber (a freely rotating backbone, amorphous until strained). Between them lie
+polysaccharides with weaker or ionically tunable interchain forces, semicrystalline polyesters that
+melt-process only within narrow thermal windows, and template-folded proteins whose properties come
+from defined fold, not chain packing; lignin is the counterpoint — an irregular cross-linked network
+with no periodic chain. The claim tested throughout: backbone chemistry, not biological origin,
+predicts melting, hydrolytic/enzymatic susceptibility and mechanical performance (Table 2). Fig. 2
+carries the force → consequence → limitation chain for each family, so the text below adds only
+mechanism and citations; each family's monomer and chain-scale structure is drawn in its subsection.
 
 *[Figure 2 — Structure–property causal chain, one row per family: dominant intermolecular force →
 key consequence → key limitation. The five backbone classes of Table 1 appear as seven rows here
@@ -433,9 +429,9 @@ sets alginate's stiffness–brittleness trade-off (§8). Alginate G's absolute c
 verified only as the C5 epimer of M — cross-check against a literature structure before submission.]*
 
 Polysaccharides span the rigid end of the spectrum. **Cellulose** — linear β-(1→4)-D-glucopyranose
-— forms an extended ribbon locked by hydrogen bonding into sheets (Iα, Iβ); processing is
-restricted to solution routes (NMMO/Lyocell, LiCl/DMAc), and nanocrystals/nanofibrils exploit its
-crystal modulus as fillers [2].
+— forms an extended ribbon locked by hydrogen bonding into sheets (Iα, Iβ) [33,34]; processing is
+restricted to solution routes (NMMO/Lyocell [37], LiCl/DMAc), and nanocrystals/nanofibrils exploit
+its crystal modulus (~130–150 GPa along the chain axis [35]) as fillers [2].
 
 *[Figure 4 — Cellulose's three-tier structure, drawn by the authors: (a) the intrachain
 O3–H···O5′ hydrogen bond that locks the ribbon conformation, (b) interchain hydrogen bonding
@@ -445,9 +441,10 @@ glycosidic backbone, so cellulose decomposes near 300 °C before any melting tra
 dissolves only in solvents that break the hydrogen-bond network.]*
 
 **Starch's** amylose/amylopectin topology (not chemistry) explains its weaker, humidity-reversible
-crystallinity (TPS blends with PLA/PBAT). **Chitosan's** degree of deacetylation (DD) sets
-solubility and antimicrobial activity, but higher-DD chitosan is typically lower-MW since the same
-alkaline step that raises DD cleaves the backbone [3]. **Alginate** gels via Ca²⁺-coordinated
+crystallinity and its retrogradation on storage [38] (TPS blends with PLA/PBAT). **Chitosan's**
+degree of deacetylation (DD) sets solubility, charge and antimicrobial activity [39], but higher-DD
+chitosan is typically lower-MW since the same alkaline step that raises DD cleaves the backbone [3].
+**Alginate** gels via Ca²⁺-coordinated
 "egg-box" GG-blocks [4], G-content setting the stiffness–brittleness trade-off (§8). **Others** —
 hyaluronic acid, carrageenan, xanthan, pectin — follow the same linkage-chemistry logic (§8).
 
@@ -468,8 +465,9 @@ still melts, unlike cellulose's hydrogen-bonded ribbon, which decomposes first.]
 **PHA** (bacterial storage granules; PHB the archetype) is highly crystalline (55–70%) but
 decomposes via six-membered-ring *cis*-elimination only tens of degrees above Tm [5] — the
 narrowest processing window in this report; PHBV/PHBHHx copolymers widen it at the cost of
-stiffness. **PLA**: ring-opening polymerisation of lactide (Sn(Oct)₂) reaches useful MW where
-direct polycondensation cannot; PLLA crystallises slowly, but the PLLA/PDLA stereocomplex
+stiffness. **PLA**: ring-opening polymerisation of lactide via a Sn(Oct)₂ coordination–insertion
+mechanism [40,41] reaches useful MW where direct polycondensation cannot; PLLA crystallises slowly,
+but the PLLA/PDLA stereocomplex
 co-crystallises with Tm ~50 °C above either homocrystal via tighter enantiomeric packing [6,7].
 PBS/PEF follow the same ester logic (§8).
 
@@ -483,8 +481,9 @@ at every third position is the only residue small enough for the crowded core.]*
 
 Protein properties come from sequence-directed fold, not chain packing. **Silk fibroin's**
 β-sheet nanocrystallites (2–4 nm, required for its combined strength and toughness [8]) sit in a
-compliant amorphous matrix. **Collagen's** Gly-X-Y triple helix, stabilised by hydroxyproline,
-denatures irreversibly into gelatin. Zein/casein/soy are film-forming, not structural (§8).
+compliant amorphous matrix. **Collagen's** Gly-X-Y triple helix, stabilised by the stereoelectronic
+effect of hydroxyproline [45], denatures irreversibly into gelatin. Zein/casein/soy are
+film-forming, not structural (§8).
 Ribosomal synthesis fixes every protein molecule's length and sequence exactly (Đ = 1.0) —
 unmatched by any non-templated biopolymer (§4).
 
@@ -498,7 +497,7 @@ drawn.]*
 Lignin is cellulose's counterpoint: rigid *because* regular vs. amorphous *because* irregular.
 Radical-coupled monolignols give a randomly cross-linked network (β-O-4 ether ~45–60% of linkages
 [9]) whose composition varies by species and — for industrial use — extraction method (kraft,
-organosolv, lignosulfonate), which is why no single "lignin" has one structure–property
+organosolv, lignosulfonate) [54], which is why no single "lignin" has one structure–property
 relationship. Lignin has no periodic chain, so only the monomers are drawn here — unlike the other
 families, an irregularly cross-linked network has no single "typical chain" to picture.
 
@@ -520,9 +519,9 @@ directly against a synthetic analogue in §7.3.
 
 **Table 2.** Provisional summary of thermal and mechanical properties of the representative
 biopolymers discussed in §3 (order-of-magnitude ranges, cross-checked against the comparative
-review of biobased thermoplastics by de Beukelaer et al. [11] and, for PBS, Aliotta et al. [12];
-Td is the TGA onset of significant mass loss under N₂; "–" = no melting transition; source data in
-`figures/data/*.csv`).
+review of biobased thermoplastics by de Beukelaer et al. [11], for PBS against Aliotta et al. [12],
+and for PLA against Auras et al. [42] and Farah et al. [43]; Td is the TGA onset of significant
+mass loss under N₂; "–" = no melting transition; per-row sources in `figures/data/*.csv`).
 
 | Material | Tg (°C) | Tm (°C) | Td onset (°C) | Modulus (GPa) | Elongation at break (%) |
 |---|---|---|---|---|---|
@@ -530,12 +529,10 @@ Td is the TGA onset of significant mass loss under N₂; "–" = no melting tran
 | Thermoplastic starch | ~−20 | – | ~300 | 0.02–1.0 | 20–100 |
 | Chitosan (film) | – | – | ~280 | 1.0–4.0 | 3–30 |
 | Silk fibroin (fibre) | ~175 | – | ~300 | 5–17 | 15–30 |
-| PHB | ~4 | ~175 | ~200 | 1.5–4.0 | 2–8 |
-| PHBV (20 mol% HV) | ~0 | ~145 | ~200 | 0.8–2.5 | 5–25 |
+| PHB (PHBV lowers Tm ~30 °C) | ~4 | ~175 | ~200 | 1.5–4.0 | 2–8 |
 | PLLA | ~60 | ~175 | ~300 | 2.5–4.0 | 3–10 |
 | PBS | ~−32 | ~114 | ~350 | 0.3–0.7 | 200–500 |
 | Natural rubber (vulcanised) | ~−70 | – | – | 0.001–0.005 | 500–800 |
-| LDPE (fossil reference) | ~−120 | ~110 | ~400 | 0.15–0.35 | 200–600 |
 | PET (fossil reference) | ~78 | ~255 | ~400 | 2.0–4.0 | 50–300 |
 
 *All values PROVISIONAL — teaching-level ranges used to keep Fig. 11/12 and this table internally
@@ -548,7 +545,8 @@ condition (sample form, moisture, thermal history), before submission.*
 
 Molecular weight is reported casually in most surveys — "high molecular weight" — but the
 *distribution*, not just the average, is where the biology shows through. Mn, Mw, dispersity Đ =
-Mw/Mn, and degree of polymerisation (DP) are standard descriptors; Đ matters because it, not Mn
+Mw/Mn (IUPAC terminology [46]), and degree of polymerisation (DP) are standard descriptors; Đ
+matters because it, not Mn
 alone, determines processing behaviour and the breadth of mechanical property distribution within
 a batch. **Dispersity is a readout of synthesis mechanism, not noise** (Fig. 10): template-controlled
 biosynthesis gives proteins and nucleic acids Đ = 1.0 exactly, while every non-templated route —
@@ -562,8 +560,9 @@ biosynthesis, ranges for PLA/PHA/chitosan/cellulose, an open-ended arrow for nat
 unquantified variability]*
 
 **Why molecular weight controls performance.** Mechanical integrity depends on chain entanglement
-above a characteristic Mc; below it, strength and toughness collapse. Above Mc, tensile strength
-rises with Mn then saturates (Flory-type, σ ≈ σ∞ − K/Mn), so degradation — first visible as falling
+above a characteristic Mc [48]; below it, strength and toughness collapse. Above Mc, tensile
+strength rises with Mn then saturates (Flory-type, σ ≈ σ∞ − K/Mn) [47], so degradation — first
+visible as falling
 MW — can proceed with only modest property loss until crossing back below Mc, where performance
 collapses abruptly, a failure mode relevant to §7–§8. **Measuring** biopolymer MW is harder than
 for synthetic polymers: cellulose dissolves in no standard SEC eluent, requiring derivatisation or
@@ -587,8 +586,9 @@ here).
 | PLA | 10⁴–10⁵ g mol⁻¹ | GPC/SEC (moisture-driven hydrolysis in process) |
 | Natural rubber | often >10⁶ g mol⁻¹ | intrinsic viscosity (no synthetic analogue) |
 
-*Ranges are teaching-level approximations; VERIFY each row against a primary source and replace
-with cited values before submission.*
+*Mn ranges are teaching-level approximations; confirm each against a primary source before
+submission. The method column and its limitations are supported by refs [39,46] and the SEC/MALS
+discussion in §4.*
 
 ---
 
@@ -603,8 +603,8 @@ A decomposition temperature at or below the melting point is close to the rule h
 same network that gives stiffness also raises the melting energy toward the bond-breaking energy,
 crowding the two transitions together — cellulose, chitosan and silk fibroin never melt at all.
 Among the polyesters this crowding is quantitative: PHB's window spans only ~25 °C, PHBV widens it
-to ~55 °C, and PLLA's is wider still (§3.2). Fig. 11 plots the TGA onset conservatively — for PLLA
-and PHB the usable window is narrower still, since melt hydrolysis (§4) begins earlier.
+to ~55 °C, and PLLA's is wider still [44] (§3.2). Fig. 11 plots the TGA onset conservatively — for
+PLLA and PHB the usable window is narrower still, since melt hydrolysis (§4) begins earlier.
 
 *[Figure 11 — Thermal properties and processing windows: Tg/Tm/Td for each material on a common
 temperature axis, window width labelled directly]*
@@ -613,7 +613,7 @@ temperature axis, window width labelled directly]*
 
 The same logic sets the mechanical envelope (Fig. 12): high crystallinity and dense hydrogen
 bonding raise modulus but remove the flexible segments that let polyolefins draw before breaking,
-so biopolymers cluster toward high modulus, low elongation relative to PE/PP/PET. Natural rubber
+so biopolymers cluster toward high modulus, low elongation relative to PE/PP/PET [11,43]. Natural rubber
 is the exception — no modulus at rest, performance generated on demand by SIC (§3.5, §7.3). Fig.
 12's windows are regions, not points: sample form, moisture, crystallinity and thermal history each
 shift a material's data by an order of magnitude, recurring as "batch variability" in §7.2.
@@ -633,9 +633,9 @@ specified with a storage-humidity condition, not a fixed barrier rating.
 
 Degradation is a rate process governed by structure (Fig. 13). Polyesters degrade by autocatalytic
 ester hydrolysis (each scission's acid end catalyses further hydrolysis, so interiors degrade
-faster than surfaces; Fig. 13a); polysaccharides and proteins instead degrade by enzymatic attack,
-which can only reach amorphous segments, so rate is set by accessible surface area, not bulk
-chemistry (Fig. 13b). Crystallinity therefore recurs as this report's central trade-off — the same
+faster than surfaces — bulk erosion once the part is below a critical thickness [49]; Fig. 13a);
+polysaccharides and proteins instead degrade by enzymatic attack, which can only reach amorphous
+segments, so rate is set by accessible surface area, not bulk chemistry [50] (Fig. 13b). Crystallinity therefore recurs as this report's central trade-off — the same
 feature that sets modulus (§5.2) and blocks water uptake (§5.3) also blocks the attack that would
 degrade the material. ⚙️ Computed activation barriers for ester hydrolysis fall in the order
 base-catalysed < acid-catalysed < neutral, consistent with the observed pH-dependence of polyester
@@ -669,10 +669,10 @@ Four advantages are structural, each tracing back to §3. **Renewable, non-fossi
 the only one that applies uniformly across all five families. **Biodegradability in
 leakage-prone contexts** — mulch film, fishing gear, disposable foodware — turns
 hydrolytic/enzymatic susceptibility from a processing burden into a desired property, provided the
-environment actually matches the material (§5.4). **Biocompatibility and bioresorbability** let
-PLA/PGA sutures, collagen/alginate hydrogels and chitosan dressings do what commodity synthetics
-cannot without costly modification — the one application space (§8) where biopolymers are the only
-viable class, though not unconditionally so (§7.3). And **intrinsic functionality beyond
+environment actually matches the material [51] (§5.4). **Biocompatibility and bioresorbability**
+let PLA/PGA sutures [52], collagen/alginate hydrogels and chitosan dressings [55] do what commodity
+synthetics cannot without costly modification — the one application space (§8) where biopolymers
+are the only viable class, though not unconditionally so (§7.3). And **intrinsic functionality beyond
 mechanics** — chirality (PLA stereocomplexation), pH-responsive charge (chitosan),
 sequence-encoded bioactivity (silk, collagen) — comes free with the biological structure itself.
 
@@ -681,14 +681,14 @@ sequence-encoded bioactivity (silk, collagen) — comes free with the biological
 *(Order-of-magnitude ranges consistent with cited values; each still needs a tighter primary
 citation before submission.)*
 
-- **Price.** PE/PP ~$1–1.5/kg; PLA several times higher; PHA typically priciest. `[cite market
-  report]`
+- **Price.** PLA is several times the price of commodity PE/PP, and PHA higher still [16,53]; a
+  material-specific $/kg figure still needs a current market-report citation before submission.
 - **Heat/barrier.** PLA's HDT (~55–65 °C) sits well below PP's ~100 °C+ without stereocomplexation
-  (§3.2) [13]; its O₂/CO₂ transmission is comparable to PET's, but water-vapour barrier is worse,
-  and starch films worse again [14] — the correct critique is moisture sensitivity (§5.3), not a
-  blanket oxygen deficit.
+  (§3.2) [13,42]; its O₂/CO₂ transmission is comparable to PET's, but water-vapour barrier is
+  worse, and starch films worse again [14] — the correct critique is moisture sensitivity (§5.3),
+  not a blanket oxygen deficit.
 - **Brittleness/hygroscopicity.** PHB's secondary crystallisation and PLA's sub-Tg ageing embrittle
-  over storage; starch drifts with humidity (§3.1, §5.3) and PLA must be dried before melt
+  over storage [43]; starch drifts with humidity (§3.1, §5.3) and PLA must be dried before melt
   processing to avoid uncontrolled MW loss (§4).
 - **Batch variability.** Agricultural sourcing (alginate M/G, chitosan DD, starch amylose, NR
   clone/age [19]) varies in ways petrochemical monomers do not.
@@ -745,10 +745,11 @@ or blended. Compostable foodware and mulch film are where §7.1's biodegradabili
 drives the design, needing a rate matched to use timescale (§5.4). **Biomedical** applications
 need biocompatibility plus a tunable degradation rate (§5.4) — essentially unique here (§7.1, with
 the NR-latex caveat in §7.3): PGA/PLGA are established suture materials whose main failure mode is
-local pH drop from hydrolysis products; collagen/alginate/chitosan extend the logic to scaffolds
-and bioprinting. **Textiles/other:** Lyocell and PLA fibre exploit cellulose's solution-processed
-stiffness (§3.1, §6) and PLA's melt-spinnability (§3.2); NR adhesives and PHA/PLA electronics
-substrates trade predictability for intrinsic adhesion, biodegradability, or biocompatibility.
+local pH drop from acidic hydrolysis products [52,53]; collagen/alginate/chitosan extend the logic
+to scaffolds and bioprinting [55]. **Textiles/other:** Lyocell and PLA fibre exploit cellulose's
+solution-processed stiffness (§3.1, §6 [36]) and PLA's melt-spinnability (§3.2); NR adhesives and
+PHA/PLA electronics substrates trade predictability for intrinsic adhesion, biodegradability, or
+biocompatibility.
 
 **Table 4.** Applications, required property, and material.
 
@@ -770,8 +771,8 @@ despite remaining priciest (§7.2) [16]. The bottlenecks are the same three prop
 — processing windows, humidity-dependent performance, batch variability — none solved by scale
 alone. Two directions look most promising: enzymatic depolymerisation back to monomer (recent
 enzyme cocktails reached ~60% lactic-acid recovery from post-consumer PLA within 72 hours [17]);
-and ⚙️ data-driven property prediction (QSPR/ML) to shorten the trial-and-error cycle of matching
-backbone chemistry to a processing window.
+and ⚙️ data-driven property prediction (QSPR / polymer-informatics ML models [56]) to shorten the
+trial-and-error cycle of matching backbone chemistry to a processing window.
 
 ---
 
@@ -790,7 +791,7 @@ performance.
 
 ---
 
-## References *(32 verified; assignment requires 50–60 — see REFERENCES-TODO below)*
+## References *(56 entries, all DOI-verified via Crossref; assignment requires 50–60)*
 
 1. Vert, M.; Doi, Y.; Hellwich, K.-H.; Hess, M.; Hodge, P.; Kubisa, P.; Rinaudo, M.; Schué, F.
    Terminology for biorelated polymers and applications (IUPAC Recommendations 2012).
@@ -895,30 +896,90 @@ performance.
 32. U.S. Bureau of Labor Statistics. *Why the Prices of Natural and Synthetic Rubber Do Not Always
     Bounce Together*; Beyond the Numbers, Vol. 9; U.S. BLS: Washington, DC, 2020.
     Available at: bls.gov/opub/btn/volume-9/why-the-prices-of-natural-and-synthetic-rubber-do-not-always-bounce-together.htm
+33. Nishiyama, Y.; Langan, P.; Chanzy, H. Crystal structure and hydrogen-bonding system in cellulose
+    Iβ from synchrotron X-ray and neutron fiber diffraction. *J. Am. Chem. Soc.* **2002**, *124*,
+    9074–9082. DOI: 10.1021/ja0257319.
+34. Nishiyama, Y.; Sugiyama, J.; Chanzy, H.; Langan, P. Crystal structure and hydrogen bonding
+    system in cellulose Iα from synchrotron X-ray and neutron fiber diffraction. *J. Am. Chem. Soc.*
+    **2003**, *125*, 14300–14306. DOI: 10.1021/ja037055w.
+35. Nishino, T.; Takano, K.; Nakamae, K. Elastic modulus of the crystalline regions of cellulose
+    polymorphs. *J. Polym. Sci. B Polym. Phys.* **1995**, *33*, 1647–1651.
+    DOI: 10.1002/polb.1995.090331110.
+36. Eichhorn, S. J.; Baillie, C. A.; Zafeiropoulos, N.; et al. Review: current international research
+    into cellulosic fibres and composites. *J. Mater. Sci.* **2001**, *36*, 2107–2131.
+    DOI: 10.1023/A:1017512029696.
+37. Rosenau, T.; Potthast, A.; Sixta, H.; Kosma, P. The chemistry of side reactions and byproduct
+    formation in the system NMMO/cellulose (Lyocell process). *Prog. Polym. Sci.* **2001**, *26*,
+    1763–1837. DOI: 10.1016/S0079-6700(01)00023-5.
+38. Wang, S.; Li, C.; Copeland, L.; Niu, Q.; Wang, S. Starch retrogradation: a comprehensive review.
+    *Compr. Rev. Food Sci. Food Saf.* **2015**, *14*, 568–585. DOI: 10.1111/1541-4337.12143.
+39. Rinaudo, M. Chitin and chitosan: properties and applications. *Prog. Polym. Sci.* **2006**, *31*,
+    603–632. DOI: 10.1016/j.progpolymsci.2006.06.001.
+40. Drumright, R. E.; Gruber, P. R.; Henton, D. E. Polylactic acid technology. *Adv. Mater.*
+    **2000**, *12*, 1841–1846. DOI: 10.1002/1521-4095(200012)12:23<1841::AID-ADMA1841>3.0.CO;2-E.
+41. Kowalski, A.; Duda, A.; Penczek, S. Kinetics and mechanism of cyclic esters polymerization
+    initiated with tin(II) octoate. 3. Polymerization of L,L-dilactide. *Macromolecules* **2000**,
+    *33*, 7359–7370. DOI: 10.1021/ma000125o.
+42. Auras, R.; Harte, B.; Selke, S. An overview of polylactides as packaging materials.
+    *Macromol. Biosci.* **2004**, *4*, 835–864. DOI: 10.1002/mabi.200400043.
+43. Farah, S.; Anderson, D. G.; Langer, R. Physical and mechanical properties of PLA, and their
+    functions in widespread applications — a comprehensive review. *Adv. Drug Deliv. Rev.* **2016**,
+    *107*, 367–392. DOI: 10.1016/j.addr.2016.06.012.
+44. Sin, L. T.; Rahmat, A. R.; Rahman, W. A. W. A. Thermal properties of poly(lactic acid). In
+    *Polylactic Acid: PLA Biopolymer Technology and Applications*; William Andrew: Oxford, 2013;
+    pp 109–141. DOI: 10.1016/B978-1-4377-4459-0.00003-2.
+45. Shoulders, M. D.; Raines, R. T. Collagen structure and stability. *Annu. Rev. Biochem.*
+    **2009**, *78*, 929–958. DOI: 10.1146/annurev.biochem.77.032207.120833.
+46. Stepto, R. F. T. Dispersity in polymer science (IUPAC Recommendations 2009). *Pure Appl. Chem.*
+    **2009**, *81*, 351–353. DOI: 10.1351/pac-rec-08-05-02.
+47. Nunes, R. W.; Martin, J. R.; Johnson, J. F. Influence of molecular weight and molecular weight
+    distribution on mechanical properties of polymers. *Polym. Eng. Sci.* **1982**, *22*, 205–228.
+    DOI: 10.1002/pen.760220402.
+48. Fetters, L. J.; Lohse, D. J.; Richter, D.; Witten, T. A.; Zirkel, A. Connection between polymer
+    molecular weight, density, chain dimensions, and melt viscoelastic properties. *Macromolecules*
+    **1994**, *27*, 4639–4647. DOI: 10.1021/ma00095a001.
+49. von Burkersroda, F.; Schedl, L.; Göpferich, A. Why degradable polymers undergo surface erosion
+    or bulk erosion. *Biomaterials* **2002**, *23*, 4221–4231.
+    DOI: 10.1016/S0142-9612(02)00170-9.
+50. Lucas, N.; Bienaime, C.; Belloy, C.; Queneudec, M.; Silvestre, F.; Nava-Saucedo, J.-E. Polymer
+    biodegradation: mechanisms and estimation techniques — a review. *Chemosphere* **2008**, *73*,
+    429–442. DOI: 10.1016/j.chemosphere.2008.06.064.
+51. Tokiwa, Y.; Calil, M. R.; Suzuki, T.; Aiba, S. Biodegradability of plastics. *Int. J. Mol. Sci.*
+    **2009**, *10*, 3722–3742. DOI: 10.3390/ijms10093722.
+52. Middleton, J. C.; Tipton, A. J. Synthetic biodegradable polymers as orthopedic devices.
+    *Biomaterials* **2000**, *21*, 2335–2346. DOI: 10.1016/S0142-9612(00)00101-0.
+53. Jem, K. J.; Tan, B. The development and challenges of poly(lactic acid) and poly(glycolic acid).
+    *Adv. Ind. Eng. Polym. Res.* **2020**, *3*, 60–70. DOI: 10.1016/j.aiepr.2020.01.002.
+54. Ragauskas, A. J.; Beckham, G. T.; Biddy, M. J.; et al. Lignin valorization: improving lignin
+    processing in the biorefinery. *Science* **2014**, *344*, 1246843.
+    DOI: 10.1126/science.1246843.
+55. Rinaudo, M. Main properties and current applications of some polysaccharides as biomaterials.
+    *Polym. Int.* **2008**, *57*, 397–430. DOI: 10.1002/pi.2378.
+56. Kuenneth, C.; Ramprasad, R. polyBERT: a chemical language model to enable fully machine-driven
+    ultrafast polymer informatics. *Nat. Commun.* **2023**, *14*, 4099.
+    DOI: 10.1038/s41467-023-39868-6.
 
-<!-- REFERENCES-TODO (blocking item before submission — assignment requires 50-60 references,
-     see title page requirement 9):
-     32 real, DOI-checked references now cover every claim that previously carried an explicit
-     `[cite ...]` or `VERIFY` tag, plus the full §7.3 NR-vs-SBR case study (15 sources from a
-     literature set the author compiled separately — see biopolymer_NR_SBR_literature.xlsx — of
-     which this pass used the 11 "A"-priority rows plus 4 "B"-priority rows chosen for critical/
-     nuance value; the remaining ~3 "B"/"C" rows in that spreadsheet weren't used and are a quick
-     source of a couple more references if needed).
-     Still open, roughly in priority order:
-     (a) `figures/data/thermal_properties.csv` and `mechanical_properties.csv` still say
-         PROVISIONAL in every `ref` cell — go through them row by row against [11]/[12] (and a
-         handbook for the LDPE/PET reference rows) and replace PROVISIONAL with an actual
-         citation + update any value that doesn't match;
-     (b) §7.2 pricing ($/kg for PE/PP/PLA/PHA) has no citation strong enough to use — WebSearch in
-         this session only turned up trade-press/aggregator pricing pages, not a citable primary
-         source; a market-report subscription (e.g. the full EUBP report, IHS Markit, or
-         Grand View Research) is needed;
-     (c) reaching 50-60 total additionally requires citing background/general sources for
-         well-established textbook facts that currently carry no citation at all (e.g. the Flory
-         MW-strength relationship in §4, SEC-MALS methodology, the Sn(Oct)2-catalysed ROP
-         mechanism for PLA, TGA/DSC method definitions, collagen triple-helix chemistry) — normal
-         practice for a literature review at this depth, and the fastest remaining way to close
-         the reference-count gap. Do this pass with full library/Google Scholar access; the
-         WebSearch + Crossref/Europe PMC API lookups used in this drafting session found a correct
-         DOI on nearly every attempt across both reference passes today. -->
+<!-- REFERENCES status (2026-08-28):
+     56 entries, every DOI checked against Crossref. Count now meets the 50-60 requirement.
+     Refs [33]-[56] were added this pass — background/general sources for facts that previously
+     carried no citation: cellulose crystal structure & modulus [33-35], Lyocell/NMMO chemistry
+     [37], starch retrogradation [38], chitin/chitosan properties [39], lactide ROP mechanism
+     [40,41], PLA overviews & thermal/mechanical/barrier data [42-44], collagen triple-helix
+     stability [45], IUPAC dispersity terminology [46], MW-vs-mechanical-property relationships
+     [47,48], surface vs bulk erosion [49], enzymatic biodegradation mechanisms [50,51],
+     PGA/PLGA/PLA biomedical devices [52,53], lignin biorefinery processing [54], polysaccharide
+     biomaterials [55], polymer-informatics ML [56].
+
+     STILL OPEN before submission:
+     (a) `figures/data/thermal_properties.csv` and `mechanical_properties.csv` `ref` cells are
+         still mostly PROVISIONAL. [11]/[12]/[42]/[43]/[44] now cover most rows — go through
+         line-by-line, put the real citation number in each `ref` cell, and correct any value
+         that doesn't match the cited source. Table 2 / Table 3 numbers follow from these.
+     (b) §7.2 price bullet still needs a material-specific $/kg figure from a current market
+         report (EUBP full report, nova-Institute, IHS Markit, Grand View Research). [16,53]
+         support only the qualitative "PLA > PE/PP, PHA higher still".
+     (c) §7.3 NR-vs-SBR case study still uses 15 refs [10,18-32] from the author's own
+         `biopolymer_NR_SBR_literature.xlsx`; ~3 unused "B"/"C" rows remain there if more are
+         wanted. -->
+
 

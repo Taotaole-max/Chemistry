@@ -58,18 +58,18 @@ FIGURE_HEIGHT_M = 1.9
 FIGURE_HEIGHT_L = 2.4
 FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
-    1: FIGURE_HEIGHT_L,   # classification tree, multi-row
-    2: FIGURE_HEIGHT_L,   # 7-row causality-chain
+    1: FIGURE_HEIGHT_M,   # classification tree, multi-row
+    2: FIGURE_HEIGHT_M,   # 7-row causality-chain
     3: FIGURE_HEIGHT_S,   # polysaccharide monomer strip, wide/short
     4: FIGURE_HEIGHT_M,   # cellulose 3-panel hierarchy
     5: FIGURE_HEIGHT_M,   # amylose/alginate/chitosan chain structures, 3 panels
     6: FIGURE_HEIGHT_M,   # PHB/PLLA monomers + helix packing, 3 panels
-    7: FIGURE_HEIGHT_L,   # silk/collagen monomers + 2° structure, 2x2
+    7: FIGURE_HEIGHT_M,   # silk/collagen monomers + 2° structure, 2x2
     8: FIGURE_HEIGHT_S,   # 3 monolignols
     9: FIGURE_HEIGHT_S,   # single monomer, wide/short
     10: FIGURE_HEIGHT_L,  # dispersity comparison
-    11: FIGURE_HEIGHT_L,  # thermal windows
-    12: FIGURE_HEIGHT_L,  # Ashby mechanical map
+    11: FIGURE_HEIGHT_M,  # thermal windows
+    12: FIGURE_HEIGHT_M,  # Ashby mechanical map
     13: FIGURE_HEIGHT_S,  # degradation, 2 panels, wide/short
     14: FIGURE_HEIGHT_L,  # processing flowchart
     15: FIGURE_HEIGHT_L,  # NR/SBR: 3 monomers + chain-scale panel

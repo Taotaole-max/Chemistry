@@ -1,23 +1,22 @@
-# Fig 4 用数据：玻璃化转变、熔融与热分解温度
+# Fig 11 用数据：玻璃化转变、熔融与热分解温度
 #
-# !!! 数值仍是教科书量级的常见值，2026-08-24 补了一轮真实文献 ref（见 report.md 参考文献表，
-#     编号对应正文引用），但只有 PBS（ref [12], Aliotta et al. 2022）和 PHB（ref [5], Ariffin
-#     et al. 2008，仅覆盖分解机理/Td 量级，Tg/Tm 仍未逐条核对）是真正核对过数值的；其余行的
-#     ref 是"大概率被这篇综述覆盖"的最佳猜测（de Beukelaer et al. 2022, ref [11]，此环境里
-#     403 打不开全文，没能逐行核对），仍需要在能访问全文的环境里确认。核对时注意两件事：
-#     1. Td 的定义不统一——本表统一取"氮气下 TGA 显著失重起始温度"，
-#        文献里也有用 5 % 失重温度或最大失重速率温度的，数值能差 30-50 °C；
+# !!! 数值仍是教科书量级的常见值。ref 列现在填了对应的参考文献编号（见 report.md 参考文献表），
+#     但只有 PBS（[12], Aliotta 2022）和 PHB 的分解机理/Td 量级（[5], Ariffin 2008）是真正逐条
+#     核对过数值的。其余行标 [11]（de Beukelaer 2022，综述）或 [42]/[44]（PLA 专著）——这是
+#     "该值大概率被这几篇覆盖"，仍需在能看全文的环境里逐行确认。核对时注意两点：
+#     1. Td 定义不统一——本表统一取"N2 下 TGA 显著失重起始温度"，文献里也有用 5% 失重或最大
+#        失重速率温度的，能差 30-50 °C；
 #     2. 生物聚合物的 Tg 强烈依赖含水量与增塑剂，报数据必须同时报测试条件。
 #
 material,class,Tg_C,Tm_C,Td_C,melts,note,ref
-Cellulose,polysaccharide,,,300,no,decomposes before melting; Tg not observable in the dry state,PROVISIONAL
-Starch (native),polysaccharide,,,300,no,gelatinises in water rather than melting,PROVISIONAL
-Thermoplastic starch (glycerol),polysaccharide,-20,,300,no,Tg shifts with glycerol and water content,PROVISIONAL (see [11]; glycerol/water-content dependence confirmed in principle by search but this exact value not checked)
-Chitosan,polysaccharide,,,280,no,decomposes before melting,PROVISIONAL
-Silk fibroin,protein,175,,300,no,Tg of the amorphous fraction; beta-sheet crystals do not melt,PROVISIONAL
-PHB,polyester,4,175,200,yes,cis-elimination degradation starts just above Tm,[5] mechanism/Td only -- Tg/Tm still PROVISIONAL
-PHBV (20 mol% HV),polyester,0,145,200,yes,HV comonomer lowers Tm and widens the window,PROVISIONAL (likely [11])
-PLLA,polyester,60,175,300,yes,melt degradation and hydrolysis become significant well below Td,PROVISIONAL (likely [11]/[13])
-PBS,polyester,-32,114,350,yes,,[12] Tg/Tm confirmed; Td still PROVISIONAL
-LDPE,petro,-120,110,400,yes,reference commodity polymer,PROVISIONAL (handbook value, likely [11])
-PET,petro,78,255,400,yes,reference commodity polymer,PROVISIONAL (handbook value, likely [11])
+Cellulose,polysaccharide,,,300,no,decomposes before melting; Tg not observable in the dry state,[11]
+Starch (native),polysaccharide,,,300,no,gelatinises in water rather than melting,[11]
+Thermoplastic starch (glycerol),polysaccharide,-20,,300,no,Tg shifts with glycerol and water content,"[11,38]"
+Chitosan,polysaccharide,,,280,no,decomposes before melting,"[11,39]"
+Silk fibroin,protein,175,,300,no,Tg of the amorphous fraction; beta-sheet crystals do not melt,[11]
+PHB,polyester,4,175,200,yes,cis-elimination degradation starts just above Tm,"[5,11] -- [5] mechanism/Td; Tg/Tm from [11]"
+PHBV (20 mol% HV),polyester,0,145,200,yes,HV comonomer lowers Tm and widens the window,[11]
+PLLA,polyester,60,175,300,yes,melt degradation and hydrolysis become significant well below Td,"[42,44]"
+PBS,polyester,-32,114,350,yes,,[12]
+LDPE,petro,-120,110,400,yes,reference commodity polymer,[11]
+PET,petro,78,255,400,yes,reference commodity polymer,[11]

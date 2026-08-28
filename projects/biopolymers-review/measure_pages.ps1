@@ -7,12 +7,17 @@ $doc = $word.Documents.Open($Path, $false, $true)
 $totalPages = $doc.ComputeStatistics(2)   # wdStatisticPages
 $totalWords = $doc.ComputeStatistics(0)   # wdStatisticWords
 
+# Find the References *heading* paragraph, not the word "References" wherever it appears in
+# body text (§7.3 cites "... expanded in the References [10,18-32]", which the old plain-text
+# Find matched instead — it under-reported the body by ~2 pages). The heading paragraph is the
+# only one whose text *starts* with "References " followed by the italic count note.
 $refsPage = -1
-$find = $doc.Content.Find
-$find.ClearFormatting()
-$find.Text = "References"
-if ($find.Execute()) {
-    $refsPage = $find.Parent.Information(3)  # wdActiveEndPageNumber
+foreach ($p in $doc.Paragraphs) {
+    $txt = $p.Range.Text.Trim()
+    if ($txt -clike 'References *(*entries*') {
+        $refsPage = $p.Range.Information(3)
+        break
+    }
 }
 
 Write-Output "Total pages: $totalPages"
