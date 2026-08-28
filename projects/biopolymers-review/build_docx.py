@@ -51,14 +51,14 @@ FIGURE_HEIGHT_M = 1.9
 FIGURE_HEIGHT_L = 2.4
 FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
-    1: 1.8,             # classification tree
-    2: 2.0,             # 7-row causality-chain
-    3: 3.05,            # 13-panel monomer collage, 3 rows
-    4: 2.4,             # 6-panel chain/2°/3° structure, 2 rows
-    5: 1.85,            # thermal windows + Ashby, 2 panels
-    6: 1.65,            # dispersity comparison
-    7: 1.3,             # degradation, 2 panels, wide/short
-    8: 1.6,             # NR/SBR: 3 monomers + chain-scale panel
+    1: 1.6,             # classification tree
+    2: 1.75,            # 7-row causality-chain
+    3: 2.7,             # 13-panel monomer collage, 3 rows
+    4: 2.1,             # 6-panel chain/2°/3° structure, 2 rows
+    5: 1.7,             # thermal windows + Ashby, 2 panels
+    6: 1.5,             # dispersity comparison
+    7: 1.2,             # degradation, 2 panels, wide/short
+    8: 1.5,             # NR/SBR: 3 monomers + chain-scale panel
 }
 FIGURE_MAX_WIDTH_IN = 6.5
 
