@@ -14,7 +14,9 @@ $totalWords = $doc.ComputeStatistics(0)   # wdStatisticWords
 $refsPage = -1
 foreach ($p in $doc.Paragraphs) {
     $txt = $p.Range.Text.Trim()
-    if ($txt -clike 'References *(*entries*') {
+    # The "References" heading is now clean ("## References"); it is the only paragraph in the
+    # built doc that is exactly "References" (the §7.3 in-text mention was reworded away).
+    if ($txt -ceq 'References') {
         $refsPage = $p.Range.Information(3)
         break
     }

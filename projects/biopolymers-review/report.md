@@ -2,7 +2,10 @@
 
 *CM3254 Project Report · [Author 1, Matric No.] · [Author 2, Matric No.] · [Date]*
 
-> **AI Tool Declaration** — *(final wording to be added on the first page before submission)*
+> **AI Tool Declaration.** We used Claude (Anthropic) to draft and revise prose, to write the
+> Python/RDKit/Matplotlib code that generates the figures, to find and cross-check references
+> against Crossref, and to condense the report. The authors checked all chemistry, data and
+> arguments and are responsible for the content and quality of the submitted work.
 
 <!-- STATUS (2026-08-28c, figures merged into multi-panel composites): §1-§10 complete,
      **8 figures / 5 tables / 56 references**. Figures went 15 -> 8 by combining related ones
@@ -428,25 +431,23 @@ key consequence → key limitation. The five backbone classes of Table 1 appear 
 Colour follows the backbone-chemistry class; arrows read left to right as one causal chain per
 family.]*
 
-*[Figure 3 — Repeat units of the biopolymers discussed in §3, drawn by the authors with RDKit from
-SMILES checked by `verify_stereochemistry.py`, colour-coded by backbone class. Polysaccharides
-(blue): (a) cellulose, (b) amylose, (c) chitosan, (d) alginate M, (e) alginate G — (a)/(b) differ
-only at C1, the centre separating cellulose's crystalline ribbon from amylose's water-plasticised
-helix, and (d)/(e) only at C5, the M/G ratio setting alginate's stiffness–brittleness trade-off.
-Polyesters (orange): (f) PHB, (g) PLLA, with (R)/(S) marked. Proteins (green): (h) silk fibroin
-(Gly-Ala)ₙ, (i) collagen Gly-Pro-Hyp. Lignin precursors (grey): (j) p-coumaryl, (k) coniferyl,
-(l) sinapyl alcohol (0/1/2 methoxy groups). Rubber: (m) cis-1,4-polyisoprene. Alginate G's absolute
-configuration is verified only as the C5 epimer of M — cross-check before submission.]*
+*[Figure 3 — Repeat units of the biopolymers of §3, drawn by the authors with RDKit from
+stereochemistry-checked SMILES, coloured by backbone class. Polysaccharides: (a) cellulose,
+(b) amylose, (c) chitosan, (d) alginate M, (e) alginate G — (a)/(b) differ only at C1, (d)/(e)
+only at C5. Polyesters: (f) PHB, (g) PLLA, (R)/(S) marked. Proteins: (h) silk fibroin (Gly-Ala)ₙ,
+(i) collagen Gly-Pro-Hyp. Lignin precursors: (j)–(l) p-coumaryl / coniferyl / sinapyl alcohol
+(0/1/2 methoxy). Rubber: (m) cis-1,4-polyisoprene. Alginate G is verified only as the C5 epimer of
+M — cross-check before submission.]*
 
 *[Figure 4 — Higher-order structure across the families, drawn by the authors: (a) cellulose —
-intra- and inter-chain hydrogen bonds lock the ribbon into a sheet, sheets stack by van der Waals
-into the Iα/Iβ crystal, and the accumulated cohesive energy exceeds the backbone, so cellulose
-decomposes near 300 °C before melting; (b) amylose's left-handed helix, whose cavity is plasticised
-by water/I₂; (c) alginate's Ca²⁺-bridged "egg-box" G-block junction — ionic and reversible, its
-density (G-content) setting stiffness vs. brittleness; (d) PHA/PLA helical packing (PHB 2₁, PLLA
+intra- and inter-chain hydrogen bonds lock the ribbon into a sheet, sheets van-der-Waals-stack into
+the Iα/Iβ crystal, and the cumulative cohesive energy (exceeding the backbone) is why it decomposes
+near 300 °C before melting; (b) amylose's left-handed helix, cavity plasticised by water/I₂;
+(c) alginate's Ca²⁺ "egg-box" G-block junction — ionic, reversible, its density setting stiffness
+vs. brittleness; (d) PHA/PLA helical packing (PHB 2₁, PLLA
 10₃) — a helix that crystallises but still melts; (e) silk's antiparallel β-sheet nanocrystallites
-(2–4 nm) in a compliant amorphous matrix, the source of its strength–toughness combination;
-(f) collagen's Gly-X-Y triple helix, in which glycine at every third position is the only residue
+(2–4 nm) in a compliant amorphous matrix — the source of its strength–toughness combination;
+(f) collagen's Gly-X-Y triple helix, where glycine at every third position is the only residue
 small enough for the crowded core.]*
 
 ### 3.1 Polysaccharides
@@ -542,10 +543,9 @@ controlled. Natural rubber is the extreme: because it is extracted, not chain-gr
 vary between *Hevea* clones and with tree age [19] — an agricultural variability with no
 synthetic-polymer analogue.
 
-*[Figure 6 — Dispersity Đ across families on a common axis (colour by backbone class): an exact
-point at Đ = 1 for templated biosynthesis, literature ranges for PLA/PHA/chitosan/cellulose, and an
-open-ended arrow for natural rubber, whose Đ is not consistently quantified. Ranges reproduce those
-in Table 3, not new measurements.]*
+*[Figure 6 — Dispersity Đ across families (colour by backbone class): an exact point at Đ = 1 for
+templated biosynthesis, literature ranges for PLA/PHA/chitosan/cellulose, and an open arrow for
+natural rubber, whose Đ is not consistently quantified.]*
 
 **Why molecular weight controls performance.** Mechanical integrity depends on chain entanglement
 above a characteristic Mc [48]; below it, strength and toughness collapse. Above Mc, tensile
@@ -562,14 +562,14 @@ artefact of method more than real variation, so a MW figure is only comparable a
 standard method by which each is measured (dispersity Đ is plotted in Fig. 6 instead of repeated
 here).
 
-| Material | Typical Mn | Standard method (key limitation) |
+| Material | Typical Mn (g mol⁻¹) | Standard method (key limitation) |
 |---|---|---|
 | Proteins / DNA / RNA | sequence-specific | mass spectrometry (none — templated) |
-| Cellulose (native/Lyocell) | 10⁴–10⁶ g mol⁻¹ | viscometry/SEC-MALS after derivatisation (insoluble in std. eluents) |
-| Chitosan | 10⁴–10⁶ g mol⁻¹ | intrinsic viscosity (DD/MW trade-off, §3.1) |
-| PHA (PHB/PHBV) | 10⁵–10⁶ g mol⁻¹ | GPC/SEC vs polystyrene (calibration mismatch) |
-| PLA | 10⁴–10⁵ g mol⁻¹ | GPC/SEC (moisture-driven hydrolysis in process) |
-| Natural rubber | often >10⁶ g mol⁻¹ | intrinsic viscosity (no synthetic analogue) |
+| Cellulose | 10⁴–10⁶ | viscometry / SEC-MALS after derivatisation (SEC-insoluble) |
+| Chitosan | 10⁴–10⁶ | intrinsic viscosity (DD/MW trade-off, §3.1) |
+| PHA (PHB/PHBV) | 10⁵–10⁶ | GPC/SEC vs polystyrene (calibration mismatch) |
+| PLA | 10⁴–10⁵ | GPC/SEC (in-process moisture hydrolysis) |
+| Natural rubber | >10⁶ | intrinsic viscosity (no synthetic analogue) |
 
 *Mn ranges are teaching-level approximations; confirm each against a primary source before
 submission. The method column and its limitations are supported by refs [39,46] and the SEC/MALS
@@ -602,18 +602,18 @@ history each move a material's data by an order of magnitude, recurring as "batc
 §7.2.
 
 *[Figure 5 — Thermal and mechanical envelopes, drawn by the authors from `figures/data/*.csv`.
-(a) Tg (open circle), Tm (diamond) and TGA decomposition onset (bar) on one temperature axis; the
-shaded band is the melt-processing window (Tm→Td), its width labelled — cellulose, native starch,
-chitosan and silk have none. (b) Modulus vs. elongation at break, log–log; ellipses are the range
-of literature values for the stated sample form (not error bars), PE/PP/PET shown for reference.]*
+(a) Tg (open circle), Tm (diamond) and TGA decomposition onset (bar) on one axis; the shaded band
+is the melt-processing window (Tm→Td), its width labelled — cellulose, native starch, chitosan and
+silk have none. (b) Modulus vs. elongation at break (log–log); ellipses span literature values for
+the stated sample form (not error bars), PE/PP/PET for reference.]*
 
 ### 5.3 Hydrophilicity and Barrier Properties
 
-The polar groups behind the strength in §5.1–5.2 have a third consequence: strong hygroscopicity.
+The polar groups behind the strength of §5.1–5.2 have a third consequence: strong hygroscopicity.
 Absorbed water plasticises the amorphous fraction and swells free volume, so barrier performance
-falls as humidity rises. ⚙️ Atomistic free-volume/diffusion modelling can predict this ahead of a
-packaging trial — which is why PLA and starch films must carry a storage-humidity condition, not a
-fixed barrier rating.
+falls as humidity rises — which is why PLA and starch films must carry a storage-humidity condition,
+not a fixed barrier rating. ⚙️ Atomistic free-volume/diffusion modelling can predict this ahead of
+a packaging trial.
 
 ### 5.4 Degradation as a Material Property
 
@@ -626,10 +626,10 @@ trade-off: the feature that sets modulus (§5.2) and blocks water uptake (§5.3)
 attack that would degrade the material. ⚙️ Computed ester-hydrolysis barriers fall in the order
 base-catalysed < acid-catalysed < neutral, matching the observed pH-dependence of the rate.
 
-*[Figure 7 — Two degradation routes, drawn by the authors: (a) polyester backbone ester hydrolysis
-— the carboxylic-acid end group autocatalyses further hydrolysis, so thick parts erode from the
-inside (bulk erosion); (b) enzymatic attack on polysaccharides and proteins reaches only amorphous
-regions, so crystallinity sets the rate.]*
+*[Figure 7 — Two degradation routes, drawn by the authors: (a) polyester ester hydrolysis — the
+acid end group autocatalyses further scission, so thick parts erode from the inside (bulk erosion);
+(b) enzymatic attack on polysaccharides/proteins reaches only amorphous regions, so crystallinity
+sets the rate.]*
 
 ---
 
@@ -651,15 +651,14 @@ shortfalls (§5.1–5.2).
 
 ### 7.1 Where Biopolymers Genuinely Win
 
-Four advantages are structural, each tracing to §3. **Renewable, non-fossil feedstock** is the only
-one uniform across all five families. **Biodegradability in leakage-prone contexts** — mulch film,
-fishing gear, disposable foodware — turns hydrolytic/enzymatic susceptibility from a burden into a
-desired property, provided the environment matches the material [51] (§5.4). **Biocompatibility and
-bioresorbability** let PLA/PGA sutures [52] and collagen/alginate/chitosan hydrogels and dressings
-[55] do what commodity synthetics cannot without costly modification — the one space (§8) where
-biopolymers are the only viable class, though not unconditionally (§7.3). And **intrinsic
-functionality beyond mechanics** — chirality (PLA stereocomplexation), pH-responsive charge
-(chitosan), sequence-encoded bioactivity (silk, collagen) — comes free with the biological
+Four advantages are structural, each tracing to §3. **Renewable feedstock** is the only one uniform
+across all five families. **Biodegradability in leakage-prone contexts** (mulch film, fishing gear,
+disposable foodware) turns hydrolytic/enzymatic susceptibility from a burden into a desired property
+when the environment matches the material [51] (§5.4). **Biocompatibility and bioresorbability** let
+PLA/PGA sutures [52] and collagen/alginate/chitosan hydrogels and dressings [55] do what commodity
+synthetics cannot without costly modification — the one space (§8) where biopolymers are the only
+viable class, though not unconditionally (§7.3). And **intrinsic functionality beyond mechanics** —
+chirality, pH-responsive charge, sequence-encoded bioactivity — comes free with the biological
 structure.
 
 ### 7.2 Where They Lose — Stated with Numbers, Not Adjectives
@@ -682,19 +681,17 @@ structure.
 ### 7.3 Case Study: Natural Rubber vs. a Synthetic Analogue (SBR)
 
 NR and styrene–butadiene rubber (SBR) are compounded, filled and vulcanised the same way and
-compete in the same applications (tyre tread, damping, conveyor belting) — the cleanest
-same-application comparison here, since differences trace to backbone chemistry, not processing.
-Fig. 8 shows the chain-scale origin of that difference (SIC); Table 5 scores both across five
-dimensions [10,18–32].
+compete in the same applications (tyre tread, damping, belting) — the cleanest same-application
+comparison here, since differences trace to backbone chemistry, not processing. Fig. 8 shows the
+chain-scale origin (SIC); Table 5 scores both across five dimensions [10,18–32].
 
-*[Figure 8 — NR and SBR structure, drawn by the authors: (a) NR (cis-1,4-polyisoprene), (b) SBR's
-1,4-butadiene unit, (c) SBR's styrene unit (RDKit, verified SMILES); (d) at chain scale,
-stereoregular NR aligns into crystalline bundles under strain (SIC, X-ray confirmed) while SBR's
-irregular backbone stays amorphous even when stretched — the structural basis of the "SIC & tear
-resistance" row of Table 5.]*
+*[Figure 8 — NR vs. SBR, drawn by the authors: (a) NR (cis-1,4-polyisoprene), (b) SBR 1,4-butadiene
+unit, (c) SBR styrene unit; (d) at chain scale, stereoregular NR aligns into crystalline bundles
+under strain (SIC, X-ray confirmed) while SBR's irregular backbone stays amorphous — the basis of
+Table 5's "SIC & tear resistance" row.]*
 
-**Table 5.** Natural rubber (NR) vs. SBR, dimension by dimension — structurally favourable /
-formulation- or context-dependent / documented risk or caveat.
+**Table 5.** NR vs. SBR — structurally favourable / formulation- or context-dependent / documented
+risk.
 
 | Dimension | Natural rubber (NR) | SBR |
 |---|---|---|
@@ -705,9 +702,9 @@ formulation- or context-dependent / documented risk or caveat.
 | Price stability | Historically the more volatile of the two [32] | Steadier, but tied to the petrochemical supply chain [32] |
 
 Under matched compounding, NR's SIC gives better tear and crack-growth resistance to start with
-[10,23], but SBR reaches comparable wear resistance through reinforcement and cure design, not
-backbone crystallisation [24] — the clearest case here of backbone chemistry trading off against
-formulation (§6). The "natural is better" story does not survive the literature, though: NR latex
+[10,23], but SBR reaches comparable wear resistance through reinforcement and cure design [24] —
+the clearest case here of backbone chemistry trading off against formulation (§6). The "natural is
+better" story does not survive the literature, though: NR latex
 carries a real, SBR-absent allergy risk [27,28], its renewability does not automatically mean a
 lower LCA footprint [29,30], and NR pricing has historically been the more volatile of the two, for
 climate and disease reasons unrelated to polymer chemistry [32].
@@ -767,7 +764,10 @@ the same ones used throughout to explain performance.
 
 ---
 
-## References *(56 entries, all DOI-verified via Crossref; assignment requires 50–60)*
+## References
+
+*56 entries; every DOI checked against Crossref. References, tables of contents and appendices do
+not count toward the 10-page body limit.*
 
 1. Vert, M.; Doi, Y.; Hellwich, K.-H.; Hess, M.; Hodge, P.; Kubisa, P.; Rinaudo, M.; Schué, F.
    Terminology for biorelated polymers and applications (IUPAC Recommendations 2012).
