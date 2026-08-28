@@ -1,4 +1,4 @@
-"""Fig 4 · 热性质与熔融加工窗口。
+"""=== Word Figure 11 ===  热性质与熔融加工窗口。
 
 一张图回答"这类材料为什么难加工"：每种材料把 Tg、Tm、分解起始温度画在同一温标上，
 Tm 到 Td 之间的阴影就是熔融加工窗口。PHB 的窗口只有几十度，纤维素和壳聚糖根本没有窗口
@@ -38,7 +38,7 @@ def main():
     records = load()
     records.reverse()  # CSV 自上而下 → 图上自下而上，参照物落在最下面
 
-    fig, ax = plt.subplots(figsize=(170 * MM, 78 * MM))
+    fig, ax = plt.subplots(figsize=(170 * MM, 78 * MM), layout="constrained")
 
     for i, row in enumerate(records):
         colour = CLASS_COLOR[row["class"]]
@@ -94,18 +94,7 @@ def main():
     ax.legend(handles=handles, loc="upper left", frameon=False, ncol=2,
               handletextpad=0.6, columnspacing=1.4, borderpad=0.2)
 
-    ax.text(0.0, 1.05,
-            "Colour: blue = polysaccharide, orange = polyester, green = polypeptide, "
-            "violet = fossil-based reference",
-            transform=ax.transAxes, fontsize=6.5, color=INK_SECONDARY,
-            ha="left", va="bottom")
-    ax.text(0.0, -0.20,
-            "Windows are bounded by the TGA decomposition onset; the practically usable window is "
-            "narrower wherever melt hydrolysis or\nmolecular-weight loss sets in earlier, as it does "
-            "for PLLA and PHB.",
-            transform=ax.transAxes, fontsize=6.3, color=INK_SECONDARY,
-            ha="left", va="top", linespacing=1.5)
-
+    # 颜色键 + "窗口以 TGA 分解起始为界，PLLA/PHB 实际可用窗口更窄" 的说明进 report.md 图注。
     save(fig, "fig4_thermal_windows", OUT)
 
 

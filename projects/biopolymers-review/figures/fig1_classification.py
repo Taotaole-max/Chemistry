@@ -1,4 +1,4 @@
-"""Fig 1 · 生物聚合物分类：主链化学（主分支）× 来源（叶子标签）。
+"""=== Word Figure 1 ===  生物聚合物分类：主链化学（主分支）× 来源（叶子标签）。
 
 上一版把"来源"（提取/微生物/单体聚合）当第一层分支、主链化学只做叶子颜色——
 和正文 §2 的论断正好反了："origin predicts behaviour poorly ... the repeating
@@ -43,8 +43,8 @@ BRANCHES = [
 
 ORIGIN_LEGEND = [
     ("E", "Extracted from biomass"),
-    ("M", "Synthesised by micro-organisms"),
-    ("S", "Polymerised from bio-based monomers"),
+    ("M", "Microbially synthesised"),
+    ("S", "From bio-based monomers"),
 ]
 
 ROW = 6.4
@@ -81,10 +81,13 @@ def main():
     n_branches = len(BRANCHES)
     LEGEND_H = 13.0  # 图底部整行图例专用条带，不再和树重叠
     height = n_leaves * ROW + (n_branches - 1) * BRANCH_GAP + 16.0 + LEGEND_H
-    width = 158.0
+    content_w = 150.0  # data 坐标横向范围：树到 ~144，底部图例三项到 ~140，留点余量
 
-    fig, ax = plt.subplots(figsize=(width * MM, height * MM))
-    ax.set_xlim(0, width)
+    # 图物理宽度锁死 170 mm（通栏），data 坐标 0..content_w 映射到整宽 → 内容占满、
+    # 高度按比例缩放。轻微横向拉伸对示意树不可见。
+    fig, ax = plt.subplots(figsize=(170 * MM, 170 * MM * height / content_w))
+    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
+    ax.set_xlim(0, content_w)
     ax.set_ylim(0, height)
     ax.axis("off")
 
@@ -139,7 +142,7 @@ def main():
         ax.text(lx + 3.6, ly, label, fontsize=6.6, color=INK_SECONDARY,
                 ha="left", va="center")
         lx += 3.6 + len(label) * 1.55 + 5.0
-    ax.plot([0, width], [LEGEND_H - 1.5, LEGEND_H - 1.5], color="#e2e2de", lw=0.6)
+    ax.plot([0, content_w], [LEGEND_H - 1.5, LEGEND_H - 1.5], color="#e2e2de", lw=0.6)
 
     save(fig, "fig1_classification", OUT)
 

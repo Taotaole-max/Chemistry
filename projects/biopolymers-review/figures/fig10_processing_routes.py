@@ -1,4 +1,4 @@
-"""Fig 10 · 加工路线决策图（§6 的配图）。
+"""=== Word Figure 14 ===  加工路线决策图（§6 的配图）。
 
 §6 原来是一整段密文字：有没有熔融窗口决定走熔融加工还是溶液加工，具体材料举例，
 再加一句"拓宽窗口"的通用对策。改成一张判定流程图之后，正文只保留判定逻辑本身
@@ -52,8 +52,9 @@ def diag_arrow(ax, x0, y0, x1, y1, colour=INK_SECONDARY, lw=0.9):
 
 def main():
     apply_style()
-    W, H = 168.0, 100.0
+    W, H = 170.0, 100.0
     fig, ax = plt.subplots(figsize=(W * MM, H * MM))
+    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis("off")

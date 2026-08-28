@@ -1,4 +1,4 @@
-"""Fig 7 · 结构–性质因果链一览（§3 总览图）。
+"""=== Word Figure 2 ===  结构–性质因果链一览（§3 总览图）。
 
 把 §3 里七段文字各自的"重复单元化学 → 主导分子间作用力 → 关键性质结果 → 关键局限"
 压成一行，七个家族排成一张表状信息图，颜色跟 CLASS_COLOR 走。
@@ -59,8 +59,9 @@ def main():
     row_h = 1.0
     fig_h_mm = 20 + n * 15.5
     fig, ax = plt.subplots(figsize=(170 * MM, fig_h_mm * MM))
+    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
     ax.set_xlim(0, 10.9)
-    ax.set_ylim(-0.3, n + 1.1)
+    ax.set_ylim(-0.15, n + 1.1)
     ax.axis("off")
 
     # header
@@ -91,11 +92,7 @@ def main():
         if i < n - 1:
             ax.plot([0, 10.9], [y - 0.5, y - 0.5], color="#ececea", lw=0.7)
 
-    ax.text(0, -0.15,
-            "Colour follows backbone-chemistry class (Table 1); arrows read "
-            "left to right as one causal chain per family.",
-            fontsize=6.3, color=INK_SECONDARY, ha="left", va="top")
-
+    # 颜色/箭头的说明（原来在图底）挪进 report.md 图注。
     save(fig, "fig7_causality_chain", OUT)
 
 

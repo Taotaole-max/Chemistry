@@ -1,4 +1,4 @@
-"""Fig 3 · 纤维素的三级结构：链内氢键 → 片层内链间氢键 → 片层间堆叠。
+"""=== Word Figure 4 ===  纤维素的三级结构：链内氢键 → 片层内链间氢键 → 片层间堆叠。
 
 这张图要回答一个具体问题：为什么纤维素在到达熔点之前就分解？
 答案是三级结构累积起来的内聚能超过了主链键能——分子级、片层级、晶体级各贡献一部分。
@@ -43,6 +43,7 @@ def main():
     apply_style()
     W, H = 170.0, 66.0
     fig, ax = plt.subplots(figsize=(W * MM, H * MM))
+    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)  # data 坐标铺满整图，不留默认边距
     ax.set_xlim(0, W)
     ax.set_ylim(0, H)
     ax.axis("off")

@@ -36,13 +36,9 @@ FIGURE_FILES = {
     10: "fig9_dispersity.png",
     11: "fig4_thermal_windows.png",
     12: "fig5_property_map.png",
-    13: "fig6a_polyester_hydrolysis.png",
-    14: "fig6b_enzymatic_degradation.png",
-    15: "fig6c_hydrolysis_barriers.png",
-    16: "fig10_processing_routes.png",
-    17: "fig8_nr_sbr_comparison.png",
-    18: "fig12_appendix_monomers.png",
-    19: "fig13_appendix_chain_structures.png",
+    13: "fig_degradation.png",          # 原 Fig 13+14 合并的一张两面板图
+    14: "fig10_processing_routes.png",  # 原 Fig 16
+    15: "fig8_nr_sbr_comparison.png",   # 原 Fig 17，现含 SBR 单体（原附录内容）
 }
 
 # Page-budget control: never insert a figure at native/full text width — cap its
@@ -55,33 +51,30 @@ FIGURE_FILES = {
 # exactly these three values. Appendix figures (18-19) are exempt from the body's
 # 10-page budget (OUTLINE.md), so they may exceed L where legibility calls for it —
 # F19 is the one documented exception, a genuinely dense 6-panel schematic.
+# 2026-08-28：所有图导出时已锁死 170 mm 宽（figures/style.py），高度按内容比例定。
+# 这里只按三档给一个"嵌入高度上限"，宽度由图自身宽高比反推、封顶 6.5 in（≈ 正文宽）。
 FIGURE_HEIGHT_S = 1.3
 FIGURE_HEIGHT_M = 1.9
-FIGURE_HEIGHT_L = 2.3
+FIGURE_HEIGHT_L = 2.4
 FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
-    1: FIGURE_HEIGHT_L,   # classification tree + origin-tag legend, multi-row
-    2: FIGURE_HEIGHT_L,   # 7-row causality-chain table
+    1: FIGURE_HEIGHT_L,   # classification tree, multi-row
+    2: FIGURE_HEIGHT_L,   # 7-row causality-chain
     3: FIGURE_HEIGHT_S,   # polysaccharide monomer strip, wide/short
-    4: FIGURE_HEIGHT_M,   # cellulose chain->sheet->crystal, 3 panels
+    4: FIGURE_HEIGHT_M,   # cellulose 3-panel hierarchy
     5: FIGURE_HEIGHT_M,   # amylose/alginate/chitosan chain structures, 3 panels
-    6: FIGURE_HEIGHT_S,   # PHB/PLLA monomers + helix packing, 3 panels
-    7: FIGURE_HEIGHT_M,   # silk/collagen monomers + 2° structure, 2x2
+    6: FIGURE_HEIGHT_M,   # PHB/PLLA monomers + helix packing, 3 panels
+    7: FIGURE_HEIGHT_L,   # silk/collagen monomers + 2° structure, 2x2
     8: FIGURE_HEIGHT_S,   # 3 monolignols
-    9: FIGURE_HEIGHT_S,   # single small monomer
-    10: FIGURE_HEIGHT_M,  # 6-row dispersity comparison with annotations
-    11: FIGURE_HEIGHT_M,  # thermal windows, one row per material
-    12: FIGURE_HEIGHT_M,  # Ashby-style mechanical map
-    13: FIGURE_HEIGHT_S,  # single hydrolysis reaction scheme
-    14: FIGURE_HEIGHT_S,  # crystalline/amorphous accessibility bar
-    15: FIGURE_HEIGHT_M,  # energy-barrier curves + axes
-    16: FIGURE_HEIGHT_M,  # processing decision flowchart
-    17: FIGURE_HEIGHT_S,  # NR/SBR chain-scale structure, 4 small panels
-    18: FIGURE_HEIGHT_L,  # appendix: 10-panel monomer gallery, wide and short
-    19: 4.2,               # appendix: 6-panel chain-structure schematic, tall —
-                            # documented exception, see comment above
+    9: FIGURE_HEIGHT_S,   # single monomer, wide/short
+    10: FIGURE_HEIGHT_L,  # dispersity comparison
+    11: FIGURE_HEIGHT_L,  # thermal windows
+    12: FIGURE_HEIGHT_L,  # Ashby mechanical map
+    13: FIGURE_HEIGHT_S,  # degradation, 2 panels, wide/short
+    14: FIGURE_HEIGHT_L,  # processing flowchart
+    15: FIGURE_HEIGHT_L,  # NR/SBR: 3 monomers + chain-scale panel
 }
-FIGURE_MAX_WIDTH_IN = 6.2
+FIGURE_MAX_WIDTH_IN = 6.5
 
 # Table-as-image placeholder: "*[TableImage — <filename>]*" placed right after a
 # "**Table N.**"/"**表 N.**" caption, in place of the markdown pipe table. The filename

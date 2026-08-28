@@ -1,4 +1,4 @@
-"""Fig 5 · 性能图：拉伸模量 vs 断裂伸长率（Ashby 式）。
+"""=== Word Figure 12 ===  性能图：拉伸模量 vs 断裂伸长率（Ashby 式）。
 
 画区间椭圆而不是单点——生物聚合物的力学数据本身就分散，单点会假装它有确定值。
 读法：左上角是又硬又脆，右下角是又软又韧。生物聚合物几乎全部落在左侧（伸长率低），
@@ -48,7 +48,7 @@ def main():
     apply_style()
     records = load()
 
-    fig, ax = plt.subplots(figsize=(170 * MM, 96 * MM))
+    fig, ax = plt.subplots(figsize=(170 * MM, 82 * MM), layout="constrained")
 
     seen = []
     for row in records:
@@ -98,13 +98,7 @@ def main():
     ax.legend(handles=handles, loc="lower left", frameon=False, ncol=2,
               handletextpad=0.5, columnspacing=1.2, borderpad=0.2)
 
-    ax.text(0.0, -0.13,
-            "Ellipses span the range of values reported for the stated sample form; they are not "
-            "error bars. Values for the plasticised and\nmoisture-sensitive materials shift with "
-            "formulation and conditioning, which is why ranges rather than single points are shown.",
-            transform=ax.transAxes, fontsize=6.3, color=INK_SECONDARY,
-            ha="left", va="top", linespacing=1.5)
-
+    # "椭圆是文献区间不是误差棒" 的说明进 report.md 图注。
     save(fig, "fig5_property_map", OUT)
 
 

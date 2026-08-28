@@ -33,6 +33,11 @@ IONIC = "#b8860b"
 
 CAPTION_TOP_Y = 24  # 每格说明文字的固定锚点（top-anchored，图形区在这条线以上）
 
+# 附录 Fig 19 是独立速查图，每格保留一句机理说明；但正文 §3 复用这些 panel 函数时
+# （fig_polysaccharide_chains / fig_polyester_structures / fig_protein_structures）
+# 说明文字应该走 Word 图注，不在图上重复——那几个脚本会把这个开关置 False。
+DRAW_CAPTIONS = True
+
 
 def panel_label(ax, tag, title):
     ax.text(2, 97, f"({tag}) {title}", fontsize=7.3, weight="bold",
@@ -40,6 +45,8 @@ def panel_label(ax, tag, title):
 
 
 def caption(ax, text):
+    if not DRAW_CAPTIONS:
+        return
     ax.text(50, CAPTION_TOP_Y, text, fontsize=6, color=INK_SECONDARY,
             ha="center", va="top", linespacing=1.45)
 

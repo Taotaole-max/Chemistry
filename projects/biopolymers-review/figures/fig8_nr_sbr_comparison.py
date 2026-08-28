@@ -1,14 +1,13 @@
-"""NR vs SBR 链尺度结构对比（§7.3 案例研究配图，正文图号在 report.md 里赋值）。
+"""=== Word Figure 15 ===  §7.3 案例研究：NR vs SBR 的结构基础。
 
-静置时两者都是无规卷曲链；受力时 NR 的链段能局部规整排列、结晶成束（应变诱导结晶
-SIC），SBR 结构不规整（无规共聚、支化），受力后仍然保持无序——这是 §7.3 记分卡里
-"SIC & tear resistance"一行的结构起源。颜色不借用主链化学配色（NR 不是"其他"类的
-木质素/核酸，SBR 也不在五类配色里），两条链都用中性灰、靠实线/虚线区分，避免暗示
-一个新的第六个颜色类别。附录图（原 Fig 13(f)，现已重新编号）有完整版。
+上排：三个重复单元——NR（cis-1,4-聚异戊二烯）、SBR 的 1,4-丁二烯单元、SBR 的苯乙烯
+单元。SBR 这两个共聚单体原来只在附录出现，附录删掉后并进这里。
+下排：链尺度对比——静置时两者都是无规卷曲；受力时 NR 的规整链段局部结晶成束
+（应变诱导结晶 SIC），SBR 无规共聚 + 支化，受力后仍无序。这是 Table 5 里
+"SIC & tear resistance"一行的结构起源。
 
-原本这张图还带一个七行定性记分卡（面板 b），现在改成 report.md/report_zh.md 里的
-一张原生 Word 表格（Table 5），不再用 matplotlib 画状态圆点——表格比图片更紧凑，
-也更符合"结构用图、数据比较用表"的分工。
+颜色：NR/SBR 不套主链化学五色（都不属于那五类），两条链用中性深/浅灰、靠实线/虚线
+区分，不暗示第六个颜色类别。图内不写大标题——进 Word 图注。
 """
 
 from pathlib import Path
@@ -16,24 +15,26 @@ from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 
-from style import INK, INK_MUTED, INK_SECONDARY, MM, apply_style, save
+import verify_appendix_stereochemistry
+from fig12_appendix_monomers import PANELS as FIG12_PANELS
+from style import (FIG_W, FS_PANEL_SUB, H_L, INK, INK_MUTED, INK_SECONDARY,
+                   apply_style, draw_mol, panel_title, save)
 
 HERE = Path(__file__).parent
 OUT = HERE / "output"
+BY_NAME_12 = {p[1]: p for p in FIG12_PANELS}
 
-NR_COLOUR = "#4a4a47"     # neutral dark grey — solid line
-SBR_COLOUR = "#8a8a85"    # neutral mid grey — dashed line (style.C_OTHER)
+NR_COLOUR = "#4a4a47"
+SBR_COLOUR = "#8a8a85"
 
-
-def panel_tag(ax, text, colour=INK):
-    ax.text(0.0, 1.05, text, transform=ax.transAxes, fontsize=7.5,
-            weight="bold", color=colour, ha="left", va="bottom")
+MONOMERS = [
+    ("a", "Natural rubber", "Natural rubber"),
+    ("b", "SBR: butadiene", "SBR: butadiene"),
+    ("c", "SBR: styrene", "SBR: styrene"),
+]
 
 
 def chain_bundle(ax, x0, y0, w, h, ordered, colour, linestyle):
-    """Schematic chain segments: 'ordered'=True draws aligned, tightly-packed
-    wavy strands (crystalline bundle); False draws loosely coiled, out-of-phase
-    strands (amorphous). Not to scale — mechanism only, same convention as Fig 3."""
     n_strands = 5
     xs = np.linspace(x0 + 0.5, x0 + w - 0.5, 50)
     for k in range(n_strands):
@@ -51,19 +52,21 @@ def chain_bundle(ax, x0, y0, w, h, ordered, colour, linestyle):
 
 
 def structure_box(ax, x0, w, label, ordered, colour, linestyle):
-    y0, h = 2.0, 15.0
+    y0, h = 3.0, 15.0
     ax.add_patch(plt.Rectangle((x0, y0), w, h, facecolor="#f7f7f5",
-                                edgecolor=INK_MUTED, linewidth=0.6, zorder=2))
+                               edgecolor=INK_MUTED, linewidth=0.6, zorder=2))
     chain_bundle(ax, x0, y0, w, h, ordered, colour, linestyle)
-    ax.text(x0 + w / 2, y0 - 2.2, label, fontsize=6.3, color=INK_SECONDARY,
+    ax.text(x0 + w / 2, y0 - 1.6, label, fontsize=FS_PANEL_SUB, color=INK_SECONDARY,
             ha="center", va="top", linespacing=1.2)
 
 
 def panel_structure(ax):
     ax.set_xlim(0, 106)
-    ax.set_ylim(-9.0, 22.5)
+    ax.set_ylim(-6.0, 24.0)
     ax.axis("off")
-    panel_tag(ax, "Chain-scale origin of SIC: NR vs. SBR, at rest vs. under strain")
+    ax.text(0.0, 1.0, "(d) Chain scale: at rest vs. under strain",
+            transform=ax.transAxes, fontsize=8, fontweight="bold", color=INK,
+            ha="left", va="top")
 
     box_w, gap = 19.0, 6.0
     xs = [2.0, 2.0 + box_w + gap, 2.0 + 2 * (box_w + gap) + 8.0,
@@ -79,20 +82,27 @@ def panel_structure(ax):
                   False, SBR_COLOUR, (0, (3, 2)))
 
     for x in (xs[1], xs[3]):
-        ax.annotate("strain", xy=(x + box_w / 2, 17.6), xytext=(x + box_w / 2, 20.6),
+        ax.annotate("strain", xy=(x + box_w / 2, 18.6), xytext=(x + box_w / 2, 22.0),
                     ha="center", va="bottom", fontsize=6.0, color=INK_SECONDARY,
                     arrowprops=dict(arrowstyle="-|>", color=INK_SECONDARY, lw=0.9))
-
-    ax.plot([xs[1] + box_w + gap / 2] * 2, [1.0, 17.0], color="#dedeD9", lw=0.8, zorder=1)
-    ax.text(53.0, -8.5, "Full comparison in the Appendix.",
-            fontsize=6.0, color=INK_MUTED, ha="center", va="bottom", style="italic")
+    ax.plot([xs[1] + box_w + gap / 2] * 2, [2.0, 18.0], color="#deded9", lw=0.8, zorder=1)
 
 
 def main():
+    verify_appendix_stereochemistry.main()
+
     apply_style()
-    fig, ax = plt.subplots(figsize=(150 * MM, 46 * MM))
-    panel_structure(ax)
-    fig.subplots_adjust(top=0.86, bottom=0.14, left=0.01, right=0.99)
+    fig = plt.figure(figsize=(FIG_W, H_L / 25.4), layout="constrained")
+    gs = fig.add_gridspec(2, 3, height_ratios=[1.0, 1.25])
+
+    for j, (tag, key, name) in enumerate(MONOMERS):
+        ax = fig.add_subplot(gs[0, j])
+        _, _n, _chem, smiles, _colour, _annotate = BY_NAME_12[key]
+        ax.imshow(draw_mol(smiles, annotate_cip=False))
+        ax.axis("off")
+        panel_title(ax, tag, name, INK_SECONDARY)
+
+    panel_structure(fig.add_subplot(gs[1, :]))
     save(fig, "fig8_nr_sbr_comparison", OUT)
 
 

@@ -1,4 +1,4 @@
-"""Fig 9 · 分散度 (Đ) 跨家族对比（§4 / Table 3 的配图）。
+"""=== Word Figure 10 ===  分散度 (Đ) 跨家族对比（§4 / Table 3 的配图）。
 
 把 Table 3 里散在文字和表格里的 Đ 范围画成一条线一眼看的图，蛋白质/核酸精确等于
 1.00（模板合成），天然橡胶没有可靠的文献定量值，画成开口箭头并在图上明确写"未定量"
@@ -27,7 +27,8 @@ ROWS = [
 def main():
     apply_style()
     n = len(ROWS)
-    fig, ax = plt.subplots(figsize=(170 * MM, (14 * n + 22) * MM))
+    fig, ax = plt.subplots(figsize=(170 * MM, (11 * n + 16) * MM),
+                           layout="constrained")
 
     for i, (name, cls, lo, hi, note) in enumerate(ROWS):
         colour = CLASS_COLOR[cls]
@@ -65,13 +66,7 @@ def main():
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)
 
-    ax.text(0.0, 1.05,
-            "Colour: blue = polysaccharide, orange = polyester, green = protein, "
-            "grey = other backbone. Open arrow = no reliable\nliterature range exists; "
-            "ranges reproduce those stated in Table 3, not new measurements.",
-            transform=ax.transAxes, fontsize=6.3, color=INK_SECONDARY,
-            ha="left", va="bottom", linespacing=1.5)
-
+    # 颜色键 + "开口箭头 = 无可靠文献范围" 的说明挪进 report.md 图注。
     save(fig, "fig9_dispersity", OUT)
 
 

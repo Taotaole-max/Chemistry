@@ -4,6 +4,29 @@
 
 > **AI Tool Declaration** — *(final wording to be added on the first page before submission)*
 
+<!-- STATUS (2026-08-28, figure consolidation + cleanup): §1-§10 complete, now **15 figures /
+     5 tables / 32 references**, body **10 pages** (was 13; refs start p.11, EN total 16 / ZH 14).
+     User asked to make the figures less cluttered and the document cleaner. This pass:
+     (1) DELETED Appendix A and its two gallery figures (old Fig 18/19) — every material they
+         showed already has an in-body §3.1-3.5 figure; SBR's two comonomers (the one thing only
+         the appendix had) were folded into the §7.3 figure (now Fig 15).
+     (2) The three sparse degradation figures (old Fig 13/14/15) → old 13+14 merged into one
+         2-panel figure (now Fig 13, `figures/fig6_degradation.py` -> `fig_degradation.png`);
+         old Fig 15 (schematic energy-barrier curve, "no values implied", a ⚙️ computational
+         aside) deleted, replaced by one sentence in §5.4.
+     (3) Every figure re-exported at a fixed 170 mm width via a rewritten `figures/style.py`
+         (no more `bbox_inches="tight"`, shared `draw_mol()`, in-figure titles/prose removed and
+         moved into the Word captions here). Figures now read as one consistent set.
+     (4) **Table 2** converted from a scatter-plot image back to a real Word three-line table
+         (built from the CSV data; still PROVISIONAL, flagged).
+     (5) Figures renumbered 1-15 throughout; "seven families" wording in the §3 / Fig 2 area
+         reconciled ("five backbone classes, shown as seven rows").
+     Still open (unchanged from before, separate tasks): references 32 -> 50-60 required;
+     all Table 2 / Table 3 / §7.2 numbers are PROVISIONAL and need cited values; author names,
+     matric numbers, date, and the AI Tool Declaration wording are placeholders; the
+     `yourname-references.zip` (title-page requirement 9) is not built; alginate G absolute
+     configuration needs a ChemDraw cross-check. -->
+
 <!-- STATUS (2026-08-26, prose polish + a real CJK formatting bug fix): §1-§10 complete, 19
      figures / 5 tables / 32 references, page counts unchanged from the prior pass.
 
@@ -391,25 +414,35 @@ chain at all. The claim tested throughout is that backbone chemistry, not biolog
 predicts melting behaviour, hydrolytic/enzymatic susceptibility, and mechanical performance (Table
 2). Fig. 2 summarises the force → consequence → limitation causal chain for every family at a
 glance, so the text below only adds mechanism and citations the figure can't carry. Each family's
-monomer and chain-scale structure is drawn directly in its own subsection (§3.1–§3.5); Appendix A
-(Figs. 18/19) collects the full set in one place.
+monomer and chain-scale structure is drawn directly in its own subsection (§3.1–§3.5).
 
-*[Figure 2 — Structure-property causal chain for all seven families: dominant intermolecular
-force → key consequence → key limitation, colour-coded by backbone class]*
+*[Figure 2 — Structure–property causal chain, one row per family: dominant intermolecular force →
+key consequence → key limitation. The five backbone classes of Table 1 appear as seven rows here
+(polysaccharides and polyesters are each split into two, since their two members behave
+distinctly). Colour follows the backbone-chemistry class; the arrows read left to right as one
+causal chain per family.]*
 
 ### 3.1 Polysaccharides
 
-*[Figure 3 — Polysaccharide monomers: cellulose, amylose, chitosan, alginate M/G, drawn from the
-same verified SMILES as Fig. 18; (a)/(b) differ only at C1, (d)/(e) only at C5]*
+*[Figure 3 — Polysaccharide repeat units drawn by the authors with RDKit from verified SMILES:
+(a) cellulose (β-1,4-D-glucan), (b) amylose (α-1,4-D-glucan), (c) chitosan (2-amino-2-deoxy-D-glucan),
+(d) alginate M (β-D-mannuronate), (e) alginate G (α-L-guluronate). (a) and (b) differ only in the
+configuration at C1 — the single centre that separates cellulose's extended, 60–70% crystalline
+ribbon from amylose's water-plasticised helix; (d) and (e) differ only at C5, and the M/G ratio
+sets alginate's stiffness–brittleness trade-off (§8). Alginate G's absolute configuration is
+verified only as the C5 epimer of M — cross-check against a literature structure before submission.]*
 
 Polysaccharides span the rigid end of the spectrum. **Cellulose** — linear β-(1→4)-D-glucopyranose
 — forms an extended ribbon locked by hydrogen bonding into sheets (Iα, Iβ); processing is
 restricted to solution routes (NMMO/Lyocell, LiCl/DMAc), and nanocrystals/nanofibrils exploit its
 crystal modulus as fillers [2].
 
-*[Figure 4 — Cellulose's three-tier structure: intrachain H-bond → interchain sheet → interlayer
-stacking, with a closing line connecting this hierarchy to the 300 °C decomposition-before-melting
-result]*
+*[Figure 4 — Cellulose's three-tier structure, drawn by the authors: (a) the intrachain
+O3–H···O5′ hydrogen bond that locks the ribbon conformation, (b) interchain hydrogen bonding
+within a sheet, (c) van der Waals / CH···O stacking of sheets into the Iα (triclinic) / Iβ
+(monoclinic) crystal. Cohesive energy accumulated over (a)–(c) exceeds the strength of the
+glycosidic backbone, so cellulose decomposes near 300 °C before any melting transition and
+dissolves only in solvents that break the hydrogen-bond network.]*
 
 **Starch's** amylose/amylopectin topology (not chemistry) explains its weaker, humidity-reversible
 crystallinity (TPS blends with PLA/PBAT). **Chitosan's** degree of deacetylation (DD) sets
@@ -418,14 +451,19 @@ alkaline step that raises DD cleaves the backbone [3]. **Alginate** gels via Ca�
 "egg-box" GG-blocks [4], G-content setting the stiffness–brittleness trade-off (§8). **Others** —
 hyaluronic acid, carrageenan, xanthan, pectin — follow the same linkage-chemistry logic (§8).
 
-*[Figure 5 — Amylose's left-handed helix, alginate's Ca²⁺ egg-box junction, and chitosan's
-acetylation pattern breaking up the regular H-bond network, three panels; cellulose's chain-scale
-structure is already covered in Fig. 4 and not repeated here]*
+*[Figure 5 — Polysaccharide chain-scale structure, drawn by the authors: (a) amylose's left-handed
+helix (contrast cellulose's extended ribbon in Fig. 4; I₂ and water enter the cavity and plasticise
+the chain), (b) alginate's Ca²⁺-bridged "egg-box" G-block junction — ionic and reversible with a
+chelator, G-content setting junction density and hence stiffness vs. brittleness, (c) chitosan's
+irregular deacetylation breaking the regular hydrogen-bond register cellulose relies on, so
+solubility rises but crystallinity falls. Cellulose's own chain-scale structure is in Fig. 4.]*
 
 ### 3.2 Polyesters: PHA and PLA
 
-*[Figure 6 — PHB and PLLA repeat units, and PHA/PLA's helical packing (2₁/10₃ helices), drawn
-from the same verified SMILES as Fig. 18]*
+*[Figure 6 — Polyester structure: (a) PHB and (b) PLLA repeat units (drawn by the authors with
+RDKit from verified SMILES; (R)/(S) marked because the chiral centre is not adjacent to a chain
+end), and (c) PHA/PLA helical packing (PHB 2₁, PLLA 10₃ helices) — a helix that crystallises but
+still melts, unlike cellulose's hydrogen-bonded ribbon, which decomposes first.]*
 
 **PHA** (bacterial storage granules; PHB the archetype) is highly crystalline (55–70%) but
 decomposes via six-membered-ring *cis*-elimination only tens of degrees above Tm [5] — the
@@ -437,8 +475,11 @@ PBS/PEF follow the same ester logic (§8).
 
 ### 3.3 Protein-based Polymers
 
-*[Figure 7 — Silk fibroin's (Gly-Ala)ₙ and collagen's Gly-Pro-Hyp backbone repeat units, and each
-material's secondary structure: silk's β-sheet nanocrystallite, collagen's triple helix]*
+*[Figure 7 — Protein structure, drawn by the authors: (a) silk fibroin's (Gly-Ala)ₙ and (b)
+collagen's Gly-Pro-Hyp backbone repeat units (RDKit); (c) silk's antiparallel β-sheet
+nanocrystallites (2–4 nm, hydrogen-bonded, dispersed in a compliant amorphous matrix — the source
+of silk's combined strength and toughness); (d) collagen's Gly-X-Y triple helix, in which glycine
+at every third position is the only residue small enough for the crowded core.]*
 
 Protein properties come from sequence-directed fold, not chain packing. **Silk fibroin's**
 β-sheet nanocrystallites (2–4 nm, required for its combined strength and toughness [8]) sit in a
@@ -449,8 +490,10 @@ unmatched by any non-templated biopolymer (§4).
 
 ### 3.4 Lignin and Other Aromatics
 
-*[Figure 8 — The three monolignol precursors: p-coumaryl alcohol (0 methoxy groups), coniferyl
-alcohol (1), sinapyl alcohol (2)]*
+*[Figure 8 — The three monolignol precursors, drawn by the authors with RDKit: (a) p-coumaryl
+alcohol (0 methoxy groups), (b) coniferyl alcohol (1), (c) sinapyl alcohol (2). Radical coupling
+of these gives a randomly cross-linked network with no periodic chain, so only the monomers are
+drawn.]*
 
 Lignin is cellulose's counterpoint: rigid *because* regular vs. amorphous *because* irregular.
 Radical-coupled monolignols give a randomly cross-linked network (β-O-4 ether ~45–60% of linkages
@@ -461,8 +504,9 @@ families, an irregularly cross-linked network has no single "typical chain" to p
 
 ### 3.5 Natural Rubber
 
-*[Figure 9 — Natural rubber's monomer: cis-1,4-polyisoprene repeat unit; the chain-scale
-strain-crystallisation structure is in §7.3's Fig. 17 and not repeated here]*
+*[Figure 9 — Natural rubber's repeat unit, cis-1,4-polyisoprene (drawn by the authors with RDKit
+from verified SMILES). Its chain-scale strain-induced-crystallisation structure appears in the
+§7.3 case study, Fig. 15.]*
 
 Natural rubber is the flexible extreme and this section's one exception to "crystallinity governs
 performance": *cis*-1,4-polyisoprene is amorphous at rest, but strain-induced crystallisation
@@ -474,16 +518,29 @@ structure, not an incidental impurity [18]. The organising variable here is ther
 "crystallinity" per se but *intermolecular architecture under the conditions of use* — tested
 directly against a synthetic analogue in §7.3.
 
-**Table 2.** Provisional summary of thermal, mechanical and structural properties of the
-representative biopolymers discussed in §3 (order-of-magnitude ranges, cross-checked against the
-comparative review of biobased thermoplastics by de Beukelaer et al. [11] and, for PBS
-specifically, Aliotta et al. [12]; source data in `figures/data/*.csv`; several individual `ref`
-entries still need a material-specific citation before submission — see Fig. 11–12).
+**Table 2.** Provisional summary of thermal and mechanical properties of the representative
+biopolymers discussed in §3 (order-of-magnitude ranges, cross-checked against the comparative
+review of biobased thermoplastics by de Beukelaer et al. [11] and, for PBS, Aliotta et al. [12];
+Td is the TGA onset of significant mass loss under N₂; "–" = no melting transition; source data in
+`figures/data/*.csv`).
 
-*[TableImage — table2_scatter_en.png]*
+| Material | Tg (°C) | Tm (°C) | Td onset (°C) | Modulus (GPa) | Elongation at break (%) |
+|---|---|---|---|---|---|
+| Cellulose (regenerated fibre) | – | – | ~300 | 10–30 | 8–15 |
+| Thermoplastic starch | ~−20 | – | ~300 | 0.02–1.0 | 20–100 |
+| Chitosan (film) | – | – | ~280 | 1.0–4.0 | 3–30 |
+| Silk fibroin (fibre) | ~175 | – | ~300 | 5–17 | 15–30 |
+| PHB | ~4 | ~175 | ~200 | 1.5–4.0 | 2–8 |
+| PHBV (20 mol% HV) | ~0 | ~145 | ~200 | 0.8–2.5 | 5–25 |
+| PLLA | ~60 | ~175 | ~300 | 2.5–4.0 | 3–10 |
+| PBS | ~−32 | ~114 | ~350 | 0.3–0.7 | 200–500 |
+| Natural rubber (vulcanised) | ~−70 | – | – | 0.001–0.005 | 500–800 |
+| LDPE (fossil reference) | ~−120 | ~110 | ~400 | 0.15–0.35 | 200–600 |
+| PET (fossil reference) | ~78 | ~255 | ~400 | 2.0–4.0 | 50–300 |
 
-*All values PROVISIONAL — teaching-level ranges used to make Fig. 11/12 and this table internally
-consistent; must be replaced with cited literature values before submission.*
+*All values PROVISIONAL — teaching-level ranges used to keep Fig. 11/12 and this table internally
+consistent; each must be replaced with a cited literature value, and matched to a stated test
+condition (sample form, moisture, thermal history), before submission.*
 
 ---
 
@@ -574,35 +631,33 @@ specified with a storage-humidity condition, not a fixed barrier rating.
 
 ### 5.4 Degradation as a Material Property
 
-Degradation is a rate process governed by structure (Figs. 13-15). Polyesters degrade by
-autocatalytic ester hydrolysis (each scission's acid end catalyses further hydrolysis, so
-interiors degrade faster than surfaces; Fig. 13); polysaccharides and proteins instead degrade by
-enzymatic attack, which can only reach amorphous segments, so rate is set by accessible surface
-area, not bulk chemistry (Fig. 14). Crystallinity therefore recurs as this report's central
-trade-off — the same feature that sets modulus (§5.2) and blocks water uptake (§5.3) also blocks
-the attack that would degrade the material. ⚙️ Computed barrier heights for neutral/acid/
-base-catalysed hydrolysis reproduce the qualitative rate ordering in Fig. 15, which is illustrative
-only.
+Degradation is a rate process governed by structure (Fig. 13). Polyesters degrade by autocatalytic
+ester hydrolysis (each scission's acid end catalyses further hydrolysis, so interiors degrade
+faster than surfaces; Fig. 13a); polysaccharides and proteins instead degrade by enzymatic attack,
+which can only reach amorphous segments, so rate is set by accessible surface area, not bulk
+chemistry (Fig. 13b). Crystallinity therefore recurs as this report's central trade-off — the same
+feature that sets modulus (§5.2) and blocks water uptake (§5.3) also blocks the attack that would
+degrade the material. ⚙️ Computed activation barriers for ester hydrolysis fall in the order
+base-catalysed < acid-catalysed < neutral, consistent with the observed pH-dependence of polyester
+degradation rate.
 
-*[Figure 13 — Polyester backbone ester hydrolysis mechanism, autocatalytic bulk erosion]*
-
-*[Figure 14 — Polysaccharide/protein enzymatic degradation, limited to amorphous regions]*
-
-*[Figure 15 — Qualitative energy-barrier ordering for neutral/acid/base-catalysed ester
-hydrolysis, no values implied]*
+*[Figure 13 — Two degradation routes, drawn by the authors: (a) polyester backbone ester
+hydrolysis — the carboxylic-acid end group autocatalyses further hydrolysis, so thick parts erode
+from the inside (bulk erosion); (b) enzymatic attack on polysaccharides and proteins reaches only
+amorphous regions, so crystallinity sets the rate.]*
 
 ---
 
 ## 6. Processing
 
-Fig. 16 turns §5.1's windows into a processing decision: whether a stable melt window exists at all
+Fig. 14 turns §5.1's windows into a processing decision: whether a stable melt window exists at all
 sets melt vs. solution processing, and each material's window width then sets how tightly that
 process must be controlled. The recurring judgement this yields: most reported "performance
 shortfalls" are processing-window shortfalls, not material-property shortfalls (§5.1–5.2).
 
-*[Figure 16 — Processing decision flowchart: stable melt window? → melt processing (PBS/PHB/PLA,
+*[Figure 14 — Processing decision flowchart: stable melt window? → melt processing (PBS/PHB/PLA,
 window width sets control tightness) or solution processing (cellulose/chitosan dissolution
-routes) → shared countermeasures that widen whichever window exists]*
+routes) → shared countermeasures that widen whichever window exists.]*
 
 ---
 
@@ -646,12 +701,14 @@ citation before submission.)*
 NR and styrene–butadiene rubber (SBR) are compounded, filled and vulcanised the same way and
 compete directly in the same applications (tyre tread, damping, conveyor belting) — the cleanest
 same-application comparison here, since differences trace to backbone chemistry, not processing.
-Fig. 17 draws out the chain-scale origin of that difference (SIC; full comparison in Fig. 19(f));
-Table 5 then scores both across seven dimensions, with citation numbers for every row, expanded in
-the References [10,18–32].
+Fig. 15 draws out the chain-scale origin of that difference (SIC); Table 5 then scores both across
+seven dimensions, with citation numbers for every row, expanded in the References [10,18–32].
 
-*[Figure 17 — Chain-scale structure of NR and SBR at rest vs. under strain, a direct picture of
-SIC; full version also in Appendix Fig. 19(f)]*
+*[Figure 15 — NR and SBR structure, drawn by the authors: (a) NR (cis-1,4-polyisoprene), (b) SBR's
+1,4-butadiene unit, (c) SBR's styrene unit (RDKit, verified SMILES); (d) at chain scale,
+stereoregular NR aligns into crystalline bundles under strain (SIC, X-ray confirmed) while SBR's
+irregular backbone stays amorphous even when stretched — the structural basis of the "SIC & tear
+resistance" row of Table 5.]*
 
 **Table 5.** Natural rubber (NR) vs. SBR, dimension by dimension — structurally favourable /
 formulation- or context-dependent / documented risk or caveat.
@@ -865,30 +922,3 @@ performance.
          WebSearch + Crossref/Europe PMC API lookups used in this drafting session found a correct
          DOI on nearly every attempt across both reference passes today. -->
 
----
-
-## Appendix A: Monomer and Chain-Scale Structures
-
-§3.1–§3.5 now each carry their own compact monomer and chain-scale structure figures (Figs.
-3/4/5/6/7/8/9), placed right where the argument needs them. This appendix does not add a new
-argument; it simply collects every material discussed in the review — including SBR, which
-appears only in §7.3 and gets no standalone monomer figure there — into two complete reference
-figures in one place. Like the References, it does **not** count against the 10-page body limit
-(OUTLINE.md specifies 10 pages excluding references).
-
-*[Figure 18 — Repeat units for fifteen materials: cellulose, amylose, chitosan, PHB, PLLA (as
-Figs. 3/6), alginate M/G (as Fig. 3), natural rubber (as Fig. 9), SBR's two comonomers (appears
-only here — §7.3 does not draw SBR's monomer separately), the three monolignols (as Fig. 8), and
-the silk/collagen backbones (as Fig. 7), drawn by RDKit from verified SMILES. Alginate G
-(guluronic acid)'s absolute configuration is verified only as "the C5 epimer of M" (a
-literature-established relationship) — no independent literature CIP string was available to
-cross-check it directly; check against ChemDraw/a literature structure before submission, see the
-header of `figures/verify_appendix_stereochemistry.py`]*
-
-*[Figure 19 — Chain-scale spatial structure for six families, collected: (a) amylose's
-left-handed helix (as Fig. 5a) (b) alginate's Ca²⁺ "egg-box" junction (as Fig. 5b) (c) PHA/PLA
-helical packing, 2₁/10₃ helices (as Fig. 6c) (d) silk fibroin's β-sheet nanocrystallites (as Fig.
-7c) (e) collagen's Gly-X-Y triple helix (as Fig. 7d) (f) natural rubber vs. SBR under strain, the
-structural core of the §7.3 case study — a compact version already sits in Fig. 17 next to the
-argument it supports, this is the full version; cellulose's chain-scale structure is already
-covered in its own three-panel figure (Fig. 4) and not repeated here]*
