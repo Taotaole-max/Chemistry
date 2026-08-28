@@ -53,8 +53,8 @@ FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
     1: 1.8,             # classification tree
     2: 2.0,             # 7-row causality-chain
-    3: 3.2,             # 13-panel monomer collage, 3 rows
-    4: 2.5,             # 6-panel chain/2°/3° structure, 2 rows
+    3: 3.05,            # 13-panel monomer collage, 3 rows
+    4: 2.4,             # 6-panel chain/2°/3° structure, 2 rows
     5: 1.85,            # thermal windows + Ashby, 2 panels
     6: 1.65,            # dispersity comparison
     7: 1.3,             # degradation, 2 panels, wide/short
@@ -230,6 +230,17 @@ def build():
     section.bottom_margin = Cm(2.54)
     section.left_margin = Cm(2.54)
     section.right_margin = Cm(2.54)
+
+    # Centred page number in the footer (OUTLINE.md: "页码 页脚居中").
+    footer_p = section.footer.paragraphs[0]
+    footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    fld_begin = OxmlElement("w:fldChar"); fld_begin.set(qn("w:fldCharType"), "begin")
+    instr = OxmlElement("w:instrText"); instr.set(qn("xml:space"), "preserve"); instr.text = " PAGE "
+    fld_end = OxmlElement("w:fldChar"); fld_end.set(qn("w:fldCharType"), "end")
+    run = footer_p.add_run()
+    run.font.name = "Times New Roman"
+    run.font.size = Pt(10)
+    run._r.append(fld_begin); run._r.append(instr); run._r.append(fld_end)
 
     normal = doc.styles["Normal"]
     normal.font.name = "Times New Roman"
