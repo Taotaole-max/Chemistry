@@ -24,14 +24,13 @@ OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else BASE / "Biopolymers-review-DRA
 EAST_ASIA_FONT = sys.argv[3] if len(sys.argv) > 3 else "Times New Roman"
 
 FIGURE_FILES = {
-    1: "fig1_classification.png",
-    2: "fig7_causality_chain.png",
-    3: "fig_repeat_units_all.png",      # 13-panel monomer collage (was 5 figures)
-    4: "fig_higher_order_all.png",      # 6-panel chain/2°/3° structure (was 4 figures)
+    1: "fig7_causality_chain.png",      # structure-to-property chain, one row per family
+    2: "fig_repeat_units_all.png",      # 13-panel monomer collage (was 5 figures)
+    3: "fig_higher_order_all.png",      # 6-panel chain/2°/3° structure (was 4 figures)
+    4: "fig9_dispersity.png",           # dispersity Đ across families
     5: "fig_property_maps.png",         # thermal windows + Ashby, 2 panels (was 2 figures)
-    6: "fig9_dispersity.png",
-    7: "fig_degradation.png",           # hydrolysis + enzymatic, 2 panels
-    8: "fig8_nr_sbr_comparison.png",
+    6: "fig_degradation.png",           # hydrolysis + enzymatic, 2 panels
+    7: "fig8_nr_sbr_comparison.png",
 }
 
 # Page-budget control: never insert a figure at native/full text width — cap its
@@ -51,14 +50,13 @@ FIGURE_HEIGHT_M = 1.9
 FIGURE_HEIGHT_L = 2.4
 FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
 FIGURE_MAX_HEIGHT_IN = {
-    1: 1.6,             # classification tree
-    2: 1.75,            # 7-row causality-chain
-    3: 2.7,             # 13-panel monomer collage, 3 rows
-    4: 2.1,             # 6-panel chain/2°/3° structure, 2 rows
+    1: 1.75,            # 7-row causality-chain
+    2: 2.7,             # 13-panel monomer collage, 3 rows
+    3: 2.1,             # 6-panel chain/2°/3° structure, 2 rows
+    4: 1.5,             # dispersity comparison
     5: 1.7,             # thermal windows + Ashby, 2 panels
-    6: 1.5,             # dispersity comparison
-    7: 1.2,             # degradation, 2 panels, wide/short
-    8: 1.5,             # NR/SBR: 3 monomers + chain-scale panel
+    6: 1.2,             # degradation, 2 panels, wide/short
+    7: 1.5,             # NR/SBR: 3 monomers + chain-scale panel
 }
 FIGURE_MAX_WIDTH_IN = 6.5
 

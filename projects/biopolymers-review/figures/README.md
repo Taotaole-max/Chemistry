@@ -15,25 +15,27 @@ by the authors.
 
 ```bash
 pip install -r ../requirements.txt      # matplotlib, numpy, rdkit
-python make_all.py                       # writes 8 figures to output/  (SVG + 600-dpi PNG)
+python make_all.py                       # writes the figures to output/  (SVG + 600-dpi PNG)
 ```
 
 `make_all.py` runs each figure script in turn. The two `verify_*.py` scripts run first
 and **abort the build if any stereochemistry check fails**, so a wrong structure can
 never be silently produced.
 
-## The 8 figures
+## The 7 figures
 
 | Report | Script | What it draws |
 |---|---|---|
-| Fig 1 | `fig1_classification.py` | classification tree (backbone chemistry × origin) |
-| Fig 2 | `fig7_causality_chain.py` | structure → property causal chain, one row per family |
-| Fig 3 | `fig_repeat_units_all.py` | 13-panel grid of repeat units (RDKit from SMILES) |
-| Fig 4 | `fig_higher_order_all.py` | 6-panel grid of chain / secondary / tertiary structure |
+| Fig 1 | `fig7_causality_chain.py` | structure → property chain, one row per family |
+| Fig 2 | `fig_repeat_units_all.py` | 13-panel grid of repeat units (RDKit from SMILES) |
+| Fig 3 | `fig_higher_order_all.py` | 6-panel grid of chain / secondary / tertiary structure |
+| Fig 4 | `fig9_dispersity.py` | dispersity Đ across families |
 | Fig 5 | `fig_property_maps.py` | (a) Tg/Tm/Td + processing windows, (b) modulus–elongation map |
-| Fig 6 | `fig9_dispersity.py` | dispersity Đ across families |
-| Fig 7 | `fig6_degradation.py` | ester hydrolysis + enzymatic degradation, 2 panels |
-| Fig 8 | `fig8_nr_sbr_comparison.py` | NR vs SBR: 3 repeat units + chain-scale strain crystallisation |
+| Fig 6 | `fig6_degradation.py` | ester hydrolysis + enzymatic degradation, 2 panels |
+| Fig 7 | `fig8_nr_sbr_comparison.py` | NR vs SBR: 3 repeat units + chain-scale strain crystallisation |
+
+`fig1_classification.py` is kept in the folder but is **no longer used in the report** —
+the classification is now given by Table 1 alone, to save a page.
 
 ### Shared / helper modules (imported, not run directly)
 
@@ -48,7 +50,7 @@ never be silently produced.
 ## Data
 
 - `data/thermal_properties.csv`, `data/mechanical_properties.csv` — the numbers behind
-  Fig 5. **These values are still teaching-level order-of-magnitude ranges.** Each row's
+  Fig 5 and Table 2. **These values are still teaching-level order-of-magnitude ranges.** Each row's
   `ref` column points at the reference it should come from (mostly ref [11], the
   de Beukelaer et al. 2022 comparative review, plus [5], [10], [12], [42], [43]); the
   full text of [11] was not accessible while drafting, so every row still needs to be
@@ -58,7 +60,7 @@ never be silently produced.
   `verify_stereochemistry.py` / `verify_appendix_stereochemistry.py` against the expected
   CIP labels and cis/trans geometry. The **one** structure not fully cross-checked is
   alginate G (α-L-guluronic acid): its absolute configuration is verified only as "the
-  C5 epimer of M", a literature-established relationship — flagged in Fig 3's caption.
+  C5 epimer of M", a literature-established relationship — flagged in Fig 2's caption.
 
 ## Output
 

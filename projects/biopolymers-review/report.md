@@ -29,363 +29,6 @@ against their expected stereochemistry.
 **Keywords:** biopolymers; cellulose; poly(lactic acid); polyhydroxyalkanoates; molecular-weight
 distribution; biodegradation; structure-property relationships
 
-<!-- STATUS (2026-08-28c, figures merged into multi-panel composites): §1-§10 complete,
-     **8 figures / 5 tables / 56 references**. Figures went 15 -> 8 by combining related ones
-     into single multi-panel figures (real-paper style, one caption each): old Fig 3/6/7/8/9
-     (all repeat units) -> Fig 3 (13 panels); old Fig 4/5/6c/7cd (higher-order structure) ->
-     Fig 4 (6 panels); old Fig 11/12 (thermal + Ashby) -> Fig 5 (2 panels); old Fig 14
-     (processing flowchart) dropped, its logic folded into §6 prose. Also a whole-document
-     prose-tightening pass (-250 words). Body page count still being measured after this pass;
-     the earlier "10 pages" reading was a measure_pages.ps1 bug (matched "References" in §7.3
-     body text) — real body was 13, now targeting ~10-11. Still open: CSV values PROVISIONAL;
-     §7.2 $/kg needs a market report; first-page author names + AI declaration; references.zip;
-     alginate G config cross-check. report_zh.md prose/renumber not yet re-synced with this pass.
-
-     ---- prior STATUS (2026-08-28, figure consolidation): 15 figures, dropped Appendix A. ----
-     User asked to make the figures less cluttered and the document cleaner. This pass:
-     (1) DELETED Appendix A and its two gallery figures (old Fig 18/19) — every material they
-         showed already has an in-body §3.1-3.5 figure; SBR's two comonomers (the one thing only
-         the appendix had) were folded into the §7.3 figure (now Fig 15).
-     (2) The three sparse degradation figures (old Fig 13/14/15) → old 13+14 merged into one
-         2-panel figure (now Fig 13, `figures/fig6_degradation.py` -> `fig_degradation.png`);
-         old Fig 15 (schematic energy-barrier curve, "no values implied", a ⚙️ computational
-         aside) deleted, replaced by one sentence in §5.4.
-     (3) Every figure re-exported at a fixed 170 mm width via a rewritten `figures/style.py`
-         (no more `bbox_inches="tight"`, shared `draw_mol()`, in-figure titles/prose removed and
-         moved into the Word captions here). Figures now read as one consistent set.
-     (4) **Table 2** converted from a scatter-plot image back to a real Word three-line table
-         (built from the CSV data; still PROVISIONAL, flagged).
-     (5) Figures renumbered 1-15 throughout; "seven families" wording in the §3 / Fig 2 area
-         reconciled ("five backbone classes, shown as seven rows").
-     Still open (unchanged from before, separate tasks): references 32 -> 50-60 required;
-     all Table 2 / Table 3 / §7.2 numbers are PROVISIONAL and need cited values; author names,
-     matric numbers, date, and the AI Tool Declaration wording are placeholders; the
-     `yourname-references.zip` (title-page requirement 9) is not built; alginate G absolute
-     configuration needs a ChemDraw cross-check. -->
-
-<!-- STATUS (2026-08-26, prose polish + a real CJK formatting bug fix): §1-§10 complete, 19
-     figures / 5 tables / 32 references, page counts unchanged from the prior pass.
-
-     User asked (verbatim, translated): "the phrasing is stiff/awkward in places, and there are
-     formatting problems" — no further specifics given, full judgement-call authority delegated
-     as in prior passes.
-
-     PROSE: targeted the passages with the most mechanical, repetitive architecture (the clearest
-     tell of AI-drafted prose: identical "claim — dash-elaboration — semicolon-chained evidence"
-     shape repeated paragraph after paragraph) rather than rewriting everything — introduction
-     (broken into two paragraphs, the three structural features turned from one semicolon-chained
-     sentence into three short enumerated ones), the §3 family-overview paragraph (the "X sits at
-     one extreme — ...; Y sits at the other — ..." pattern was used identically twice plus a third
-     dash for lignin — varied it), §3.5's "This is not fixed:" (ambiguous — could mean "not yet
-     fixed" — reworded to "not a fixed material constant, though:"), §7.1's four advantages
-     (previously one 100+-word sentence with four dash-elaborated semicolon-joined bullets crammed
-     in — split into four separate sentences), and §7.3's NR/SBR paragraph in report_zh.md, which
-     had stacked THREE em-dashes in one sentence (genuinely hard to parse) — restructured the
-     "不是A而是B" contrast without dashes. Chinese-first per the standing convention, English
-     ported afterward. Preserved every citation, figure/table cross-reference, and data value
-     exactly; nothing factual was touched.
-
-     FORMATTING — one real, systemic bug found and fixed, not just cosmetic tweaks: build_docx.py's
-     paragraph-joining (`gather_paragraph()`, the blockquote handler, and the figure-caption
-     multi-line merge) joined hard-wrapped source lines with a literal `" ".join(...)`. That's
-     correct for English (words need the space) but wrong for Chinese: every hard-wrap point in
-     report_zh.md's source was rendering as a visible, spurious gap in the middle of a Chinese
-     sentence, since CJK text has no inter-character spaces — confirmed via PDF visual QA on
-     report_zh's page 1 before the fix (e.g. "木质素，合计 构成了地球上" had a stray gap that
-     doesn't exist in the source's intended reading). This was NOT specific to my prose edits —
-     it silently affected every hard-wrapped Chinese paragraph in the document, existing text
-     included, likely since the original gather_paragraph() fix months ago (which was written and
-     tested against English wrapping). Fixed with a new `smart_join()` helper: joins with no
-     separator when both sides of a wrap point are CJK characters, falls back to a space
-     otherwise (so English text, and Latin terms/citations embedded in Chinese sentences, still
-     get their necessary space). Re-verified via PDF export afterward — the gaps are gone on every
-     inspected page; English pages render identically to before (smart_join is a no-op for
-     all-ASCII text). Also found one Chinese-text-in-English-body leak: Appendix A's prose quoted
-     `OUTLINE.md`'s Chinese requirement text ("10 页，不含参考文献") directly inside the English
-     submission document — translated to English in report.md ("10 pages excluding references").
-     Also checked and found consistent: citation bracket format ([N], [N,M], [N–M] throughout, no
-     stray parenthetical-citation style), figure/table caption markup, heading levels.
-
-     PAGE COUNT: unchanged from the prior pass — EN 17 total (body 1-13, same as before), ZH 15
-     total (body also 1-13) — re-measured via measure_sections.ps1/measure_sections_zh.ps1 after
-     every edit batch. The smart_join fix actually removes characters (spurious spaces) from the
-     Chinese doc, so if anything it very slightly *helped* the page budget, not hurt it.
-
-     Both Desktop docx files updated and confirmed via file timestamp/size after this pass. New
-     helper script `export_pdf_zh.ps1` added (export_pdf.ps1 only ever exported the English docx;
-     needed a Chinese-docx equivalent to do the required visual QA pass on report_zh.md).
--->
-<!-- STATUS (2026-08-26, figure overhaul + §3 per-polymer figures + renumbering 1-19): §1-§10
-     complete, 19 figures / 5 tables / 32 references.
-
-     USER ASKED (verbatim, translated): (1) every polymer discussed in §3 needs its own monomer
-     figure AND chain/spatial-structure figure placed IN that subsection, not confined to the
-     appendix; (2) Fig. 6 (degradation) split into three standalone figures, not one 3-panel
-     figure; (3) figure sizing across the document was inconsistent/messy, fix it; (4) Fig. 10
-     (processing flowchart) didn't read as a professional journal figure, restyle it; (5) Fig. 3
-     (cellulose hierarchy) had a text/image overlap bug; (6) Fig. 11 (the combined 1x4 strip
-     duplicating Fig.4/5/6/8) is no longer wanted, split it apart / remove it, and turn its
-     panel (d) — the NR/SBR scorecard — into a real table. User was away and explicitly said not
-     to ask further questions; every judgement call below was made autonomously.
-
-     WHAT CHANGED (this took two fork attempts — a session-limit interruption killed the first
-     mid-task; a WIP checkpoint commit `4fd7703` preserved the work and a second fork resumed
-     from git state, since a completed/killed fork's transcript cannot be resumed via SendMessage
-     once it drops off ListAgents — spawn fresh and resume from git, don't retry the resume):
-
-     (1) Fig. 6 split into `fig6a_polyester_hydrolysis.py` (now Fig. 13), `fig6b_enzymatic_
-     degradation.py` (Fig. 14), `fig6c_hydrolysis_barriers.py` (Fig. 15) — each single-panel,
-     own caption, still appearing back-to-back in §5.4's prose.
-     (2) Fig. 11 (`combine_1x4.py`'s stitched strip) deleted as an entity — decoupled from
-     `make_all.py`, removed from `FIGURE_FILES`, removed from both report files. The script
-     itself is left in `figures/` unused, not deleted.
-     (3) Fig. 8's scorecard panel became **Table 5** (native Word three-line table, same
-     favourable/context-dependent/risk categories, still carries every citation number) — the
-     remaining structure-schematic panel is now its own standalone figure, Fig. 17, cross-
-     referencing the fuller version at appendix Fig. 19(f).
-     (4) Fig. 10 (now Fig. 16) restyled: thin borders + colour accent bars replacing solid
-     rounded colour blocks, matching the sober look of Fig. 2/11/12/16's analytical style.
-     Content/logic unchanged, visual language only.
-     (5) Fig. 3 (now Fig. 4, cellulose hierarchy) — text/geometry overlaps in panels (a) and (c)
-     fixed via spacing/repositioning, re-rendered and visually confirmed clean via PDF export.
-     (6) Six new compact figures added for §3.1-3.5, one (Fig. 6 gets both monomer+chain in one
-     figure) to two per subsection: Fig. 3 (`fig_polysaccharide_monomers.py`), Fig. 5
-     (`fig_polysaccharide_chains.py`), Fig. 6 (`fig_polyester_structures.py`), Fig. 7
-     (`fig_protein_structures.py`), Fig. 8 (`fig_lignin_monomers.py`), Fig. 9
-     (`fig_rubber_monomer.py`). All reuse already-verified SMILES imported from
-     `fig2_repeat_units.py` / `fig12_appendix_monomers.py` / `fig13_appendix_chain_structures.py`
-     — no stereochemistry was retyped or re-derived from scratch. The appendix (Fig. 18/19,
-     renumbered from 12/13) was kept as a complete reference gallery rather than trimmed, since
-     it doesn't count against the body page budget and several in-body figures (e.g. Fig. 9,
-     rubber monomer only) deliberately omit content shown fully in the appendix (e.g. NR/SBR's
-     complete 6-panel comparison lives only at Fig. 19(f), Fig. 17 is the compact §7.3 version).
-     (7) All 19 figures + Table 5 renumbered in strict first-appearance reading order, in BOTH
-     report_zh.md (edited first, per the Chinese-first convention) and report.md — every caption,
-     every in-prose cross-reference, `FIGURE_FILES`, `FIGURE_MAX_HEIGHT_IN`, `make_all.py`'s
-     module list, and FIGURES.md all updated consistently. `fig2_repeat_units.py` (old Fig 2) is
-     unused now (its 5 structures were redistributed into Fig. 3 and Fig. 6) but left in
-     `figures/` for reference, not deleted.
-     (8) Figure sizing unified into a 3-band system replacing the old ad hoc per-figure heights:
-     `FIGURE_HEIGHT_S/M/L` = 1.3/1.9/2.3in in `build_docx.py`, applied to every body figure (the
-     one documented exception is appendix Fig. 19 at 4.2in, a 6-panel gallery that isn't subject
-     to page-budget sizing anyway).
-     (9) A real, general layout bug found via PDF visual QA (not just script-exit-code trust):
-     Word could push a figure's caption paragraph alone onto the next page while the image
-     stayed on the previous one — caught on appendix Fig. 19, whose caption landed alone on an
-     otherwise-blank page 17. Fixed by setting `keep_with_next = True` on every figure's image
-     paragraph in `build_docx.py` (applies to all 19 figures, not just the one it was caught on).
-     (10) A real pre-existing bug fixed along the way: the Fig. 4/5 (thermal/mechanical) CSV
-     loaders lacked `encoding="utf-8"`, breaking under a non-UTF8 console codepage.
-
-     PAGE BUDGET: body (§1-§10) now spans pages 1-13 in BOTH languages (EN and ZH matched
-     exactly after the keep_with_next fix — previously ZH was 1 page shorter than EN). This is a
-     real +2 page regression from the previously-defended 11-page body (10-page nominal target).
-     Tried to claw this back per the agreed priority order: the two M-band new figures (Fig. 5,
-     Fig. 7) were checked against the S band and found already near-minimum legible size in the
-     PDF render (shrinking further risked illegibility for negligible page gain); no single
-     obviously-redundant sentence was found whose removal would meaningfully move a 2-page gap
-     (unlike the ~30-word trims that closed 1-page gaps in earlier passes — this gap is an order
-     of magnitude larger because six genuinely new required figures were added, not a
-     rounding-error pagination fragility). Judgement call: did NOT contort the document further
-     to chase 10 or 11 pages — the user's explicit content instruction (every §3 subsection gets
-     its own figures) takes priority, and 13 pages for 19 figures / 5 tables covering every
-     polymer discussed is a proportionate, honestly-reported outcome, not a bug to keep hunting.
-     EN total 17 pages (body 1-13, references 14-?, appendix to 17). ZH total 15 pages (same
-     13-page body; shorter overall due to CJK character density in refs/appendix, not a
-     different word count). Verified via `measure_sections.ps1` / `measure_sections_zh.ps1` (the
-     latter had its own bug: the file was saved without a UTF-8 BOM, so Windows PowerShell 5.1
-     misparsed the Chinese string literals as the system codepage and threw parser errors —
-     fixed by rewriting it via .NET `File.ReadAllText(path, Encoding.UTF8)` / `WriteAllText` with
-     an explicit UTF8 BOM encoding; if a `.ps1` file with non-ASCII literals ever fails to parse
-     with garbled-looking token errors, check its encoding first, same class of issue as the
-     UTF-16LE `~/.claude/CLAUDE.md` gotcha already in claude-memory).
-
-     QA: did a full PDF-export visual pass (not just trusting script exit codes) on the changed/
-     new figures — §3.1-3.5 pages (Fig. 3-9), the split Fig. 6 (13-15), Fig. 16's restyle, Fig.
-     17 + Table 5, and the appendix (Fig. 18/19, where the keep_with_next bug above was caught
-     and fixed). All rendered cleanly on the second pass; sizing reads as a consistent system
-     now, not the "inconsistent, messy" state the user flagged.
-
-     One caveat carried forward unchanged: alginate G (guluronic acid)'s absolute configuration
-     is still only verified as "the C5 epimer of M" (a literature-established relationship), not
-     independently CIP-matched — flagged in Fig. 18's caption and in the appendix prose, needs a
-     ChemDraw/literature cross-check before submission.
-
-     Both Desktop docx files updated and confirmed via file timestamp/size after this pass.
--->
-<!-- STATUS (2026-08-26, Fig 6 text trim + Fig 8 case-study structure panel): §1-§10 complete,
-     13 figures total, same count as the prior pass (Fig. 8 gained a panel, no new figure number).
-
-     User asked (1) Fig. 6 to carry less in-figure text, (2) the §7.3 case study to get a structure
-     figure placed IN the body, not only in the appendix.
-
-     (1) Fig. 6 (`figures/fig6_degradation.py`): NOTE_A/B/C were each a multi-line paragraph
-     largely restating §5.4's body prose. Cut to one short phrase each (5-9 words) — the panels
-     (reaction diagram, crystalline/amorphous bar, three labelled energy curves) now carry the
-     content, prose only labels. Shrank the GridSpec row heights to match (dead whitespace was
-     opening up under the shorter notes); native image aspect changed from ~0.68 to ~0.59
-     (h/w), `FIGURE_MAX_HEIGHT_IN[6]` dropped 2.1 -> 1.7in accordingly.
-     (2) Fig. 8 (`figures/fig8_nr_sbr_comparison.py`): added panel (a), a compact chain-scale
-     schematic — amorphous coil at rest -> SIC-aligned crystalline bundles under strain for NR
-     (solid grey), stays amorphous under strain for SBR (dashed grey, deliberately NOT a 6th
-     palette colour — style.py's CLASS_COLOR is fixed at 5 for colour-blind-safety reasons).
-     Existing scorecard became panel (b). Cross-references Fig. 13(f) in the appendix (the fuller
-     version of the same mechanism) both ways. Kept the SAME figure number (avoided renumbering
-     9-13, which would have touched cross-references in both language files) rather than adding a
-     separate "Fig. 8b".
-     (3) Pagination regression, found and fixed: adding Fig. 8's new panel at first attempt
-     (`FIGURE_MAX_HEIGHT_IN[8]` raised 2.3 -> 2.6in to keep it legible) pushed §10 Conclusions from
-     page 11 to page 12 in EN — confirmed the height-cap change was the direct cause by reverting
-     it alone and re-measuring (12 -> 11). Reverted the cap back to 2.3in (the structure panel is
-     smaller within the same footprint, still legible in the PDF render). ZH needed an *additional*
-     fix beyond matching the EN cap revert — even at cap 2.3, ZH's Conclusions stayed on page 12,
-     traced to the new Fig. 8/§7.3 caption and prose text alone (Chinese character width made the
-     same edit costlier in ZH than EN); trimmed the Fig. 8 caption and §7.3/§9 prose in
-     report_zh.md (edited first, ported the equivalent trim to report.md for content parity even
-     though EN didn't strictly need it for page budget) until `measure_sections.ps1`/manual Chinese-
-     heading search confirmed 结论 back on page 11. Confirms the prior STATUS note's warning: this
-     margin really is a hair's-breadth, and it costs DIFFERENT amounts of slack per language for
-     the same edit — always re-measure BOTH docs after a body change, not just one.
-     PAGE COUNT (re-verified via measure_sections.ps1 + PDF visual QA of the touched pages): EN
-     total 15 pages, body 1-11 (§10 spills past 10, unchanged), refs 12-13, appendix 14-15 —
-     unchanged from the prior pass. ZH total 13 pages, body also 1-11 — unchanged. Both Desktop
-     docx files updated.
-
--->
-<!-- STATUS (2026-08-26, appendix + submission-readiness pass): §1-§10 complete, 13 figures total
-     (10 in the body + Fig. 11 composite + 2 new appendix figures) / 4 tables / 32 references.
-
-     THIS PASS, done autonomously per user instruction ("我要出去一下 ... 你自己去决定"):
-     (1) Added Appendix A after References — Fig. 12 (RDKit repeat units for the 10 materials §3/
-     §7.3 discuss but Fig. 2 never drew: alginate M/G, natural rubber, SBR's two comonomers, the
-     three monolignols, silk's (Gly-Ala)n backbone, collagen's Gly-Pro-Hyp backbone) and Fig. 13
-     (matplotlib chain-scale schematics for 6 families: amylose helix, alginate egg-box, PHA/PLA
-     helix, silk β-sheet, collagen triple helix, NR-vs-SBR strain crystallisation). Verified via a
-     new `figures/verify_appendix_stereochemistry.py` (same refuse-to-render-on-failure pattern as
-     Fig. 2's verifier) before every render. One honest caveat, flagged in both the figure and the
-     appendix prose: alginate G (guluronic acid)'s absolute configuration is only verified as "the
-     C5 epimer of M" (a literature-established relationship, confirmed via epimer-derivation from
-     the already-verified D-glucose scaffold + an uncap() round-trip check) — no independent
-     literature CIP string was available to cross-check it directly, unlike every other structure
-     in Fig. 12; flagged for a ChemDraw/literature cross-check before submission. Appendix A does
-     NOT count against the 10-page body limit (same treatment as References, per OUTLINE.md).
-     (2) Submission-readiness pass: word count checked (~3090 words for §1-10 vs. OUTLINE.md's
-     2900-word budget — only ~6% over, much closer than the ~5800-word state flagged 2026-08-24,
-     so no aggressive trimming was warranted); grepped both language files for stale editorial
-     artifacts — found only the already-intentional, already-documented PROVISIONAL/[cite]/VERIFY
-     flags on CSV data and the §7.2 pricing citation, nothing stale to clean up; checked figure/
-     table numbering consistency 1-13 / 1-4 across both languages, no gaps or stray references.
-     (3) Found and fixed a real, if minor, pagination fragility: §10 Conclusions was landing on
-     page 12 (not page 11 as the previous STATUS note claimed) — confirmed via a git-history
-     baseline rebuild that this was already true at HEAD before this session touched anything (the
-     Table 2 scatter-plot-image commit likely caused it; the STATUS note just hadn't been
-     re-verified since). This turned out to be razor-thin: Word's widow/orphan control was pushing
-     the entire Conclusions heading+paragraph to page 12 because the remaining space on page 11
-     couldn't fit even 2 lines together — NOT a bug, just genuinely tight pagination (confirmed by
-     testing `keep_with_next=True` on headings, which made it worse by forcing the whole heading to
-     move too; reverted). Fixed by trimming two small, purely-redundant sentences (~30 words total,
-     one in §7.2's price bullet restating a fact §7.3 already makes with a citation, one in §3.2
-     dropping a tangential PEF-barrier aside) in BOTH report_zh.md (edited first, per the
-     Chinese-first workflow rule) and report.md — restores body to 11 pages (§10 spilling 1 page
-     past the nominal 10, same as the previously-documented "accepted" state), verified via
-     `measure_sections.ps1` after every edit. This is genuinely a hair's-breadth margin — a future
-     content edit of even ~15-20 words in the wrong place could tip it back to 12; re-run
-     `measure_sections.ps1` after any body edit rather than assuming the 11-page state holds.
-     (4) Did a full visual QA pass (PDF export + page renders) on BOTH language docs: title page,
-     Table 1/4, §9-10 boundary, appendix Fig. 12/13 pages, references, and (ZH only) the
-     translator's-note blockquote — all rendered cleanly, no overlapping/truncated content, no
-     regression of the three previously-fixed build_docx.py bugs (paragraph-joining, blockquote-
-     joining, table column-width starvation). (5) Proofread report.md's English prose for grammar/
-     clarity — found nothing needing correction (regex checks for repeated words / missing spaces
-     came up clean too); it was already in solid shape from prior compression passes.
-
-     PAGE COUNT (Word-measured via measure_sections.ps1 / measure_pages.ps1, not estimated): EN
-     total 15 pages — body (§1-§10) spans pages 1-11 (only §10 spills past page 10), References
-     span pages 12-13, Appendix A spans pages 14-15. ZH total 13 pages — body also 11 pages
-     (References start page 12); ZH is shorter overall due to CJK character density, not a
-     different word count. `measure_sections.ps1`'s "References -> page X" line is a KNOWN false
-     positive (Word's Find matches the literal substring "the References" inside §7.3's body text,
-     which appears earlier than the actual heading) — trust the heading-adjacent section pages and
-     `measure_pages.ps1`'s dedicated References-page logic instead, not that one line.
-
-     PRIOR PASS (2026-08-25, figures + classification pass): §1-§10 complete, 10 figures / 4 tables /
-     32 references.
-
-     THIS PASS: (1) redesigned Fig. 1 and Table 1 — the old classification tree put *origin*
-     (extracted/microbial/bio-monomer) as the primary branch and backbone chemistry as leaf
-     colour only, which directly contradicted §2's own claim that backbone chemistry, not origin,
-     is "the better predictor ... this review is organised on that basis." Fig. 1 now branches on
-     backbone chemistry first (5 classes, matching Table 1 and Fig. 7 exactly), with origin
-     demoted to a small E/M/S tag per leaf; dropped materials never discussed in §3 (bacterial
-     cellulose, xanthan, PEF, bio-PE, DNA/RNA) that the old tree had scope-crept in. (2) added two
-     new figures that each replace prose rather than sit alongside it: Fig. 9 (dispersity Đ across
-     families, §4 — let Table 3 drop its Đ column) and Fig. 10 (processing decision flowchart,
-     §6 — replaced a dense paragraph). (3) fixed a real table-layout bug in build_docx.py: column
-     widths were proportional to raw character count, which starved short columns (e.g. Table 1's
-     "Backbone class") into wrapping single words next to a long free-text column; now uses
-     sqrt-weighted proportions with a per-column longest-word floor (search `col_word_len` in
-     build_docx.py).
-
-     PAGE COUNT: real, Word-measured (not estimated) page count is 14 total; body (§1-§10, before
-     References) still spans pages 1-11 — only §10 Conclusions spills past page 10, unchanged from
-     the previous pass. The +1 total page vs. the previous 13-page state is entirely inside the
-     References section (OUTLINE.md: "10 页，不含参考文献" — references are explicitly NOT counted
-     against the limit), not a body regression; the two new figures/table trims roughly offset
-     each other on body length. Started the *previous* pass at a genuinely broken 31 pages; see
-     below for those two real bugs if this recurs after further edits. Further squeezing §10 onto
-     page 10 was attempted (headings/spacing/table-caption trims) without success; it looks like
-     normal pagination (heading fits at the bottom of page 10, the paragraph after it doesn't),
-     not a bug — pick this back up only if it actually matters at submission time.
-
-     Two real bugs found and fixed along the way, in case this recurs after further edits:
-     (1) build_docx.py was putting each hard-wrapped markdown source line into its own Word
-     paragraph instead of joining wrapped lines back into one logical paragraph (report.md
-     hard-wraps prose at ~90-100 chars/line for readability — standard markdown expects that
-     joined back together). This alone was costing roughly 10 pages. Fixed via
-     `gather_paragraph()` / `is_special_line_start()` in build_docx.py — any new block type added
-     to report.md's markdown must stay compatible with that function's block-start detection or it
-     will silently re-fragment paragraphs again.
-     (2) Figures were inserted at a fixed 6.2in width regardless of native aspect ratio, so tall
-     figures (fig6/7/8) ate 4.5-5.5in of vertical space each. Fixed via FIGURE_MAX_HEIGHT_IN /
-     FIGURE_MAX_HEIGHT_IN_DEFAULT in build_docx.py, which derives width from a target max height
-     instead — currently tuned quite tight (1.55in default / 2.1-2.3in for content-rich figures);
-     loosen these first if the figures ever look too small once opened in Word.
-
-     Tables also got fixed-width proportional columns (search `table.autofit` in build_docx.py)
-     instead of Word's default autofit, and table cells + the reference list were switched to
-     single line-spacing (OUTLINE.md's own spec: tables/captions/references are single-spaced,
-     only body text is 1.5x).
-
-     TOOLING (all in this folder): `measure_pages.ps1` (total pages/words) and
-     `measure_sections.ps1` (page number at every ## / ### heading and every Table N. caption, via
-     Word COM Find + wdActiveEndPageNumber) give an exact, fast page-count readout after any edit
-     — do NOT trust word-count arithmetic alone for this document, real layout cost has repeatedly
-     diverged from that estimate. `export_pdf.ps1` renders the current .docx to PDF for visual
-     spot-checks (then e.g. `pip install pymupdf; python -c "import fitz; fitz.open(...).load_page(n).get_pixmap(dpi=110).save('page.png')"`
-     to eyeball one page). Workflow: edit report.md -> run
-     `python build_docx.py report.md Biopolymers-review-DRAFT.docx "Times New Roman"` -> run
-     `powershell -ExecutionPolicy Bypass -File measure_sections.ps1` -> repeat. Word must be
-     installed (it is, on this machine) for the .ps1 scripts to work; close any open copy of the
-     target .docx first or the Python build step will fail to overwrite it.
-
-     Reference count is 32/50-60 required. Still open: Fig.4-5/Table 2 CSV data is still mostly
-     PROVISIONAL; §7.2 pricing for PE/PP/PLA/PHA has no citable primary source yet; general
-     textbook-level citations (Flory relation, SEC-MALS, ROP mechanism, TGA/DSC definitions)
-     aren't in yet either — see REFERENCES-TODO at the end.
-     Table numbering still deviates from OUTLINE.md (1-4 here vs. its "3 tables"), unchanged from
-     before — the §2 classification table isn't in the outline's budget.
-
-     report_zh.md is now a full resync with this version (retranslated end-to-end, not patched —
-     the previous zh draft was translated from a much longer pre-compression English draft and had
-     drifted too far to patch). User instruction as of 2026-08-25: going forward, edit report_zh.md
-     FIRST for any content change, then port to report.md — Chinese is now the priority draft.
-     While doing that resync, found and fixed a third real build_docx.py bug: the blockquote
-     handler (`s.startswith(">")`) processed one source line at a time like the pre-fix paragraph
-     handler used to, so a hard-wrapped multi-line ">" blockquote (the zh translator's note) came
-     out as one Word paragraph per source line. Fixed by gathering consecutive ">" lines the same
-     way gather_paragraph() does for regular text (stops at a blank/bare ">" line too, so an
-     intentional paragraph break inside a blockquote still works). -->
-
 ---
 
 ## 1. Introduction and Definition
@@ -419,7 +62,7 @@ polymerised from a bio-based monomer. Origin is a poor guide to behaviour, thoug
 the same origin can process and degrade in completely different ways, and two of different origins
 can behave the same. The repeating linkage in the backbone is a better guide, because it decides
 whether the material survives melting and how it degrades. This review is therefore organised by
-backbone chemistry (Table 1, Fig. 1). Origin is kept only as a small label on each material,
+backbone chemistry (Table 1). Origin is kept only as a small label on each material,
 because it still explains why molecular weight and purity vary within a class (§4).
 
 **Table 1.** Classification of biopolymers by backbone chemistry, the axis this review is organised
@@ -433,21 +76,17 @@ on. Origin (extracted / microbial / bio-monomer) is a secondary property, not th
 | Polyphenolic | β-O-4 ether, C–C | lignin | irregular, cross-linked, amorphous; chemically recalcitrant |
 | Polyisoprene | C–C | natural rubber | elastomeric; strain-induced crystallisation |
 
-*[Figure 1 — Classification by backbone chemistry (primary branches, coloured, matching Table 1
-and Fig. 2), with each material's origin shown as a small E/M/S tag: extracted from biomass,
-synthesised by micro-organisms, or polymerised from bio-based monomers]*
-
 ---
 
 ## 3. Structure-Property Relationships of the Major Biopolymer Families
 
 For each material below, the key property and its use come first, then the structural reason. The
 point tested throughout is that backbone chemistry, not biological origin, predicts melting
-behaviour, attack by water or enzymes, and mechanical performance. Numbers are in Table 2; Fig. 2
-gives the force, consequence and limitation for each family on one row; Fig. 3 collects the repeat
-units and Fig. 4 the higher-order structures.
+behaviour, attack by water or enzymes, and mechanical performance. Numbers are in Table 2; Fig. 1
+gives the force, consequence and limitation for each family on one row; Fig. 2 collects the repeat
+units and Fig. 3 the higher-order structures.
 
-*[Figure 2 — Structure-to-property chain, one row per family. Each row reads left to right from the
+*[Figure 1 — Structure-to-property chain, one row per family. Each row reads left to right from the
 dominant intermolecular force, to the key consequence, to the key limitation. The five backbone
 classes of Table 1 appear as seven rows, because polysaccharides and polyesters are each split into
 two members that behave differently. Colour follows the backbone-chemistry class.]*
@@ -458,8 +97,8 @@ two members that behave differently. Colour follows the backbone-chemistry class
 150 GPa, and regenerated fibres of 10 to 30 GPa [35]. It never melts and decomposes near 300 °C.
 With no melt step, it is shaped from solution, as Lyocell and viscose fibre [36], transparent film,
 and nanocrystals or nanofibrils used as reinforcing filler [2]. The reason is structural. The
-linear β-(1→4) chain (Fig. 3a) forms a flat ribbon, and hydrogen bonds lock these ribbons into
-stacked Iα and Iβ sheets (Fig. 4a). The energy holding the sheets together exceeds the backbone
+linear β-(1→4) chain (Fig. 2a) forms a flat ribbon, and hydrogen bonds lock these ribbons into
+stacked Iα and Iβ sheets (Fig. 3a). The energy holding the sheets together exceeds the backbone
 bond strength [33,34], so cellulose dissolves only in solvents that break the hydrogen-bond
 network, such as NMMO in the Lyocell process [37] or LiCl in DMAc.
 
@@ -468,7 +107,7 @@ is humidity-sensitive and recrystallises slowly on storage (retrogradation) [38]
 mostly in blends with PLA or PBAT, for compostable bags, foamed trays and mulch film. The cause is
 chain arrangement, not chemistry. Linear amylose and branched amylopectin together give only a
 weak, humidity-reversible crystallinity, and the amylose coils into a helix that water can enter
-and plasticise (Fig. 4b).
+and plasticise (Fig. 3b).
 
 **Chitosan** is used less for its mechanical properties (film modulus 1 to 4 GPa) than for being a
 polycation in dilute acid. That makes it antimicrobial, metal-binding and mucoadhesive, so it is
@@ -477,13 +116,13 @@ deacetylation sets solubility and charge. Raising it in alkali also cuts the bac
 high-deacetylation grades have a low molecular weight [3].
 
 **Alginate** forms a soft ionic gel at room temperature when Ca²⁺ ions bridge its guluronate
-blocks in an "egg-box" junction [4] (Fig. 4c); a chelating agent reverses it. This is the basis of
+blocks in an "egg-box" junction [4] (Fig. 3c); a chelating agent reverses it. This is the basis of
 alginate hydrogels for wound dressings, cell encapsulation and bioprinting, and of its use as a
 food thickener. The fraction of guluronate blocks sets the balance between stiffness and
 brittleness (§7). Hyaluronic acid, carrageenan, xanthan and pectin follow the same
 linkage-chemistry logic.
 
-*[Figure 3 — Repeat units, drawn by the authors with RDKit from stereochemistry-checked SMILES,
+*[Figure 2 — Repeat units, drawn by the authors with RDKit from stereochemistry-checked SMILES,
 coloured by backbone class. Polysaccharides (a) to (e): cellulose, amylose, chitosan, alginate M,
 alginate G; (a) and (b) differ only at C1, (d) and (e) only at C5. Polyesters (f) to (g): PHB,
 PLLA, with (R) and (S) marked. Proteins (h) to (i): silk fibroin (Gly-Ala)ₙ, collagen Gly-Pro-Hyp.
@@ -507,17 +146,17 @@ enantiomers pack together more tightly [6,7]. Both polymers pack as helices that
 
 ### 3.3 Protein-based Polymers
 
-**Silk fibroin** (Fig. 3h) is strong and tough at once, which is rare for any polymer, so it is
+**Silk fibroin** (Fig. 2h) is strong and tough at once, which is rare for any polymer, so it is
 used as a premium suture and tissue-scaffold material and as a model tough fibre. The toughness
-comes from β-sheet nanocrystallites, 2 to 4 nm across, held in a soft amorphous matrix (Fig. 4e)
+comes from β-sheet nanocrystallites, 2 to 4 nm across, held in a soft amorphous matrix (Fig. 3e)
 [8]. **Collagen** and its denatured form **gelatin** are used as hydrogels, tissue scaffolds and
-encapsulants. Collagen has a Gly-X-Y triple helix (Fig. 4f) stabilised by a stereoelectronic
+encapsulants. Collagen has a Gly-X-Y triple helix (Fig. 3f) stabilised by a stereoelectronic
 effect from hydroxyproline [45]; on heating it unfolds into gelatin and does not refold. Zein,
 casein and soy proteins form films but are not structural (§7). Every protein chain is built on a
 ribosomal template, so all chains have the same length (Đ = 1.0), which no non-templated biopolymer
 matches (§4).
 
-*[Figure 4 — Higher-order structure, drawn by the authors: (a) cellulose ribbon, then
+*[Figure 3 — Higher-order structure, drawn by the authors: (a) cellulose ribbon, then
 hydrogen-bonded sheet, then Iα/Iβ crystal; (b) amylose left-handed helix; (c) alginate Ca²⁺
 "egg-box" G-block junction; (d) PHA and PLA helical packing (PHB 2₁, PLLA 10₃); (e) silk
 antiparallel β-sheet nanocrystallites (2 to 4 nm) in an amorphous matrix; (f) collagen Gly-X-Y
@@ -578,7 +217,7 @@ weight-average Mw, the dispersity Đ = Mw/Mn [46], and the degree of polymerisat
 useful of these, because it controls how the material processes and how widely its mechanical
 properties scatter within one batch; Mn on its own does not.
 
-The value of Đ follows directly from how the polymer was made (Fig. 6). Proteins and nucleic acids
+The value of Đ follows directly from how the polymer was made (Fig. 4). Proteins and nucleic acids
 are built on a template, so every chain has the same length and Đ is exactly 1.0. Every other
 route broadens the distribution. Extraction (cellulose, chitosan, natural rubber) and catalysed
 polymerisation (PHA, PLA) each give a Đ that depends on how tightly the route is controlled.
@@ -586,7 +225,7 @@ Natural rubber is the extreme case: it is harvested rather than chain-grown, so 
 distribution change from one *Hevea* clone to another and with the age of the tree [19]. No
 synthetic polymer varies this way.
 
-*[Figure 6 — Dispersity Đ across families (colour by backbone class): an exact point at Đ = 1 for
+*[Figure 4 — Dispersity Đ across families (colour by backbone class): an exact point at Đ = 1 for
 templated biosynthesis, literature ranges for PLA/PHA/chitosan/cellulose, and an open arrow for
 natural rubber, whose Đ is not consistently quantified.]*
 
@@ -606,7 +245,7 @@ same material often differ by a factor of ten. This is mostly an artefact of the
 molecular weight is only meaningful when the method is reported with it.
 
 **Table 3.** Typical number-average molecular weight for representative biopolymers, with the
-standard method by which each is measured (dispersity Đ is plotted in Fig. 6 instead of repeated
+standard method by which each is measured (dispersity Đ is plotted in Fig. 4 instead of repeated
 here).
 
 | Material | Typical Mn (g mol⁻¹) | Standard method (key limitation) |
@@ -672,7 +311,7 @@ free-volume and diffusion modelling can predict this before a packaging trial is
 
 ### 5.4 Degradation as a Material Property
 
-Degradation is a rate process that structure controls (Fig. 7). Polyesters degrade by ester
+Degradation is a rate process that structure controls (Fig. 6). Polyesters degrade by ester
 hydrolysis that catalyses itself. The acid end left by each scission speeds up the next one, so
 once a part is below a critical thickness its interior erodes faster than its surface. This is bulk
 erosion [49]. Polysaccharides and proteins degrade instead by enzymes, which reach only the
@@ -682,7 +321,7 @@ that sets the modulus (§5.2) and keeps water out (§5.3) also keeps out the att
 degrade the material. ⚙️ Computed ester-hydrolysis barriers rise in the order base-catalysed, then
 acid-catalysed, then neutral, which matches the measured pH dependence of the rate.
 
-*[Figure 7 — Two degradation routes, drawn by the authors. (a) Polyester ester hydrolysis: the
+*[Figure 6 — Two degradation routes, drawn by the authors. (a) Polyester ester hydrolysis: the
 acid end group catalyses further scission, so thick parts erode from the inside (bulk erosion).
 (b) Enzymatic attack on polysaccharides and proteins reaches only the amorphous regions, so
 crystallinity sets the rate.]*
@@ -727,10 +366,10 @@ sequence-encoded bioactivity, comes with the biological structure at no extra co
 NR and styrene-butadiene rubber (SBR) are compounded, filled and vulcanised the same way, and they
 compete in the same applications, such as tyre tread, damping and belting. This makes it the
 cleanest same-application comparison in the review, because the differences trace to backbone
-chemistry rather than to processing. Fig. 8 shows where the difference starts at the chain scale
+chemistry rather than to processing. Fig. 7 shows where the difference starts at the chain scale
 (strain-induced crystallisation). Table 5 scores both materials across five dimensions [10,18–32].
 
-*[Figure 8 — NR and SBR, drawn by the authors. (a) NR (cis-1,4-polyisoprene), (b) SBR
+*[Figure 7 — NR and SBR, drawn by the authors. (a) NR (cis-1,4-polyisoprene), (b) SBR
 1,4-butadiene unit, (c) SBR styrene unit. (d) At the chain scale, stereoregular NR aligns into
 crystalline bundles under strain (strain-induced crystallisation, confirmed by X-ray), while SBR's
 irregular backbone stays amorphous. This is the basis of the "SIC and tear resistance" row of
@@ -835,9 +474,6 @@ not count toward the 10-page body limit.*
 11. de Beukelaer, H.; Hilhorst, M.; Workala, Y.; Maaskant, E.; Post, W. Overview of the
     mechanical, thermal and barrier properties of biobased and/or biodegradable thermoplastic
     materials. *Polym. Test.* **2022**, *116*, 107803. DOI: 10.1016/j.polymertesting.2022.107803.
-    <!-- Primary comparative data source for Table 2 and Fig. 5; full text was not accessible in
-         this drafting environment (403), so individual numeric values in the CSV data files still
-         need to be checked line-by-line against it rather than assumed consistent. -->
 12. Aliotta, L.; Seggiani, M.; Lazzeri, A.; Gigante, V.; Cinelli, P. A brief review of
     poly(butylene succinate) (PBS) and its main copolymers: synthesis, blends, composites,
     biodegradability, and applications. *Polymers* **2022**, *14*, 844.
@@ -895,9 +531,6 @@ not count toward the 10-page body limit.*
 29. Cucci, G.; Valentini, F.; Dorigato, A. Cradle to gate life cycle assessment of tyre-grade
     natural rubber produced in Thailand. *Sci. Total Environ.* **2025**, *987*, 179653.
     DOI: 10.1016/j.scitotenv.2025.179653.
-    <!-- Journal name corrected from the source spreadsheet, which listed "Journal of Cleaner
-         Production" — Crossref confirms this title/DOI is in Science of the Total Environment;
-         titles otherwise match closely enough to be confident it's the same paper. -->
 30. Dunuwila, P.; et al. Revealing the environmental footprint of crepe rubber production: a life
     cycle assessment. *Sustainability* **2025**, *17*, 1239. DOI: 10.3390/su17031239.
 31. Boon, Z. H.; et al. Recent development of biodegradable synthetic rubbers and bio-based
@@ -968,28 +601,4 @@ not count toward the 10-page body limit.*
 56. Kuenneth, C.; Ramprasad, R. polyBERT: a chemical language model to enable fully machine-driven
     ultrafast polymer informatics. *Nat. Commun.* **2023**, *14*, 4099.
     DOI: 10.1038/s41467-023-39868-6.
-
-<!-- REFERENCES status (2026-08-28):
-     56 entries, every DOI checked against Crossref. Count now meets the 50-60 requirement.
-     Refs [33]-[56] were added this pass — background/general sources for facts that previously
-     carried no citation: cellulose crystal structure & modulus [33-35], Lyocell/NMMO chemistry
-     [37], starch retrogradation [38], chitin/chitosan properties [39], lactide ROP mechanism
-     [40,41], PLA overviews & thermal/mechanical/barrier data [42-44], collagen triple-helix
-     stability [45], IUPAC dispersity terminology [46], MW-vs-mechanical-property relationships
-     [47,48], surface vs bulk erosion [49], enzymatic biodegradation mechanisms [50,51],
-     PGA/PLGA/PLA biomedical devices [52,53], lignin biorefinery processing [54], polysaccharide
-     biomaterials [55], polymer-informatics ML [56].
-
-     STILL OPEN before submission:
-     (a) `figures/data/thermal_properties.csv` and `mechanical_properties.csv` `ref` cells are
-         still mostly PROVISIONAL. [11]/[12]/[42]/[43]/[44] now cover most rows — go through
-         line-by-line, put the real citation number in each `ref` cell, and correct any value
-         that doesn't match the cited source. Table 2 / Table 3 numbers follow from these.
-     (b) §7.2 price bullet still needs a material-specific $/kg figure from a current market
-         report (EUBP full report, nova-Institute, IHS Markit, Grand View Research). [16,53]
-         support only the qualitative "PLA > PE/PP, PHA higher still".
-     (c) §7.3 NR-vs-SBR case study still uses 15 refs [10,18-32] from the author's own
-         `biopolymer_NR_SBR_literature.xlsx`; ~3 unused "B"/"C" rows remain there if more are
-         wanted. -->
-
 
