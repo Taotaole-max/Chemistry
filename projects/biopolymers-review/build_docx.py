@@ -53,6 +53,11 @@ FIGURE_MAX_WIDTH_IN = 6.5      # 正文文字宽度，表格图（TableImage）�
 # their own language-specific render of the same data.
 TABLE_IMAGE_MAX_HEIGHT_IN = 3.4
 
+# 正文字号：2026-08-29 从 12 pt 收到 11 pt（题目 PDF 没有规定字体/字号/行距，
+# TNR 11 pt / 1.5 倍行距仍是标准学术排版）。标题按层级各降一号，图注/表格保持不变。
+BODY_PT = 11
+HEADING_PT = {1: 13, 2: 12, 3: 11, 4: 11}
+
 
 def strip_html_comments(text: str) -> str:
     return re.sub(r"<!--.*?-->", "", text, flags=re.S)
@@ -229,14 +234,14 @@ def build():
 
     normal = doc.styles["Normal"]
     normal.font.name = "Times New Roman"
-    normal.font.size = Pt(12)
+    normal.font.size = Pt(BODY_PT)
     normal.paragraph_format.line_spacing = 1.5
     normal.paragraph_format.space_after = Pt(2)
 
     try:
         list_bullet = doc.styles["List Bullet"]
         list_bullet.font.name = "Times New Roman"
-        list_bullet.font.size = Pt(12)
+        list_bullet.font.size = Pt(BODY_PT)
         list_bullet.paragraph_format.line_spacing = 1.5
         list_bullet.paragraph_format.space_after = Pt(3)
     except KeyError:
@@ -253,7 +258,7 @@ def build():
             h = doc.styles[f"Heading {i}"]
             h.font.name = "Times New Roman"
             h.font.color.rgb = None
-            h.font.size = Pt({1: 14, 2: 13, 3: 12, 4: 12}[i])
+            h.font.size = Pt(HEADING_PT[i])
             h.font.bold = True
             h.paragraph_format.space_before = Pt(6)
             h.paragraph_format.space_after = Pt(2)
