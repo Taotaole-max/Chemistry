@@ -24,12 +24,13 @@ OUT = Path(__file__).parent / "output"
 
 def main():
     apply_style()
-    fig, axes = plt.subplots(1, 2, figsize=(FIG_W, 82 / 25.4))
+    fig, axes = plt.subplots(1, 2, figsize=(FIG_W, 74 / 25.4))
     # 手工边距：两个子图因此严格等宽等高。
-    #   left  0.155 → 给 (a) 的 y 轴材料名留 ~1.04 in
-    #   wspace 0.36 → 子图间距，容下 (b) 旋转的 "Tensile modulus (GPa)" + 刻度
+    #   left  0.135 → 给 (a) 的 y 轴材料名留位
+    #   wspace 0.16 → 子图间距只留刚好容下 (b) 的 "Tensile modulus (GPa)" + 刻度，
+    #                 不留多余空白（用户反馈中间留白太大）
     #   top/bottom 给面板标题和 x 轴标题留位
-    fig.subplots_adjust(left=0.155, right=0.988, top=0.885, bottom=0.145, wspace=0.36)
+    fig.subplots_adjust(left=0.15, right=0.99, top=0.90, bottom=0.155, wspace=0.14)
 
     thermal.draw(axes[0])
     axes[0].set_title("(a) Thermal transitions and melt windows",

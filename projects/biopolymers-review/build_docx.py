@@ -54,7 +54,7 @@ FIGURE_MAX_HEIGHT_IN = {
     2: 2.7,             # 13-panel monomer collage, 3 rows
     3: 2.1,             # 6-panel chain/2°/3° structure, 2 rows
     4: 1.5,             # dispersity comparison
-    5: 1.7,             # thermal windows + Ashby, 2 panels
+    5: 3.0,             # thermal windows + Ashby, 2 panels — 满页宽嵌入才看得清
     6: 1.2,             # degradation, 2 panels, wide/short
     7: 1.5,             # NR/SBR: 3 monomers + chain-scale panel
 }

@@ -75,7 +75,7 @@ def draw(ax):
     ax.set_yticklabels([r["material"] for r in records], fontsize=7)
     ax.set_xlabel("Temperature (°C)")
     ax.set_xlim(-160, 520)
-    ax.set_ylim(-0.8, len(records) + 0.9)   # 顶部留一点空白给图例
+    ax.set_ylim(-0.8, len(records) + 1.15)   # 顶部留一点空白给图例
     ax.set_xticks(range(-150, 451, 50))
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)
@@ -95,8 +95,8 @@ def draw(ax):
                   label="melt-processing window"),
     ]
     ax.legend(handles=handles, loc="upper left", frameon=False, ncol=2,
-              handletextpad=0.6, columnspacing=1.4, borderpad=0.2,
-              bbox_to_anchor=(0.0, 0.98))
+              fontsize=6.5, handletextpad=0.5, columnspacing=1.2, borderpad=0.15,
+              labelspacing=0.25, bbox_to_anchor=(0.0, 1.0))
 
 
 def main():
