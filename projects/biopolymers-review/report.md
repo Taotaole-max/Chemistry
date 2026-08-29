@@ -292,8 +292,9 @@ erosion [49]. Polysaccharides and proteins degrade instead by enzymes, which rea
 amorphous segments, so the rate depends on the accessible surface area rather than on the bulk
 chemistry [50]. Crystallinity is therefore the central trade-off of this review. The same feature
 that sets the modulus (§5.2) and keeps water out (§5.3) also keeps out the attack that would
-degrade the material. Computed activation barriers match the measured pH dependence of ester
-hydrolysis: the base-catalysed path lies well below the water-assisted neutral one [59,60].
+degrade the material. Quantum-chemical calculations have mapped both the base-catalysed and the
+water-assisted neutral hydrolysis paths, and reproduce why polyesters hydrolyse far faster in acid
+or base than at neutral pH [59,60].
 
 *[Figure 5 — Two degradation routes, drawn by the authors. (a) Polyester ester hydrolysis: the
 acid end group catalyses further scission, so thick parts erode from the inside (bulk erosion).
