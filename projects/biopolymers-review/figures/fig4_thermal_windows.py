@@ -75,7 +75,7 @@ def draw(ax):
     ax.set_yticklabels([r["material"] for r in records], fontsize=7)
     ax.set_xlabel("Temperature (°C)")
     ax.set_xlim(-160, 520)
-    ax.set_ylim(-0.8, len(records) + 1.3)   # 顶部留一行空白给面板标题
+    ax.set_ylim(-0.8, len(records) + 0.9)   # 顶部留一点空白给图例
     ax.set_xticks(range(-150, 451, 50))
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)

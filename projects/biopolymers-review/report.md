@@ -430,7 +430,7 @@ formulation alone. Third, a molecular-weight figure means little without the met
 it (§4). The features that make molecular weight hard to measure are the same ones that explain
 performance.
 
-Bio-based plastics were about 2.31 Mt of capacity in 2025, under 1% of all plastics [16]. Scaling
+Bio-based plastics were about 2.31 Mt of capacity in 2025, roughly 0.5% of all plastics [16]. Scaling
 up will not by itself fix the processing window, the humidity sensitivity or the batch variability;
 the nearer-term routes to those are enzymatic depolymerisation back to monomer [17] and ⚙️
 data-driven property prediction [56].
