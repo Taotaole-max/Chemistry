@@ -33,32 +33,18 @@ FIGURE_FILES = {
     7: "fig8_nr_sbr_comparison.png",
 }
 
-# Page-budget control: never insert a figure at native/full text width — cap its
-# *height* instead, and derive width from the image's own aspect ratio.
+# 图片排版：**全文所有正文图统一同一个嵌入宽度**（见下）。
 #
-# Unified 3-band system (2026-08-26 pass, replacing the earlier ad hoc per-figure
-# values that ranged 1.55-4.2in with no consistent logic and looked inconsistent in
-# print): S = simple/small single-panel figure, M = standard content figure,
-# L = dense multi-panel or multi-row figure. Every BODY figure (1-17) takes one of
-# exactly these three values. Appendix figures (18-19) are exempt from the body's
-# 10-page budget (OUTLINE.md), so they may exceed L where legibility calls for it —
-# F19 is the one documented exception, a genuinely dense 6-panel schematic.
-# 2026-08-28：所有图导出时已锁死 170 mm 宽（figures/style.py），高度按内容比例定。
-# 这里只按三档给一个"嵌入高度上限"，宽度由图自身宽高比反推、封顶 6.5 in（≈ 正文宽）。
-FIGURE_HEIGHT_S = 1.3
-FIGURE_HEIGHT_M = 1.9
-FIGURE_HEIGHT_L = 2.4
-FIGURE_MAX_HEIGHT_IN_DEFAULT = FIGURE_HEIGHT_M
-FIGURE_MAX_HEIGHT_IN = {
-    1: 1.75,            # 7-row causality-chain
-    2: 2.7,             # 13-panel monomer collage, 3 rows
-    3: 2.1,             # 6-panel chain/2°/3° structure, 2 rows
-    4: 1.5,             # dispersity comparison
-    5: 3.0,             # thermal windows + Ashby, 2 panels — 满页宽嵌入才看得清
-    6: 1.2,             # degradation, 2 panels, wide/short
-    7: 1.5,             # NR/SBR: 3 monomers + chain-scale panel
-}
-FIGURE_MAX_WIDTH_IN = 6.5
+# 所有图在 figures/style.py 里都锁死 170 mm 画布宽、同一套字号，所以只要在 Word 里
+# 也用同一个显示宽度插入，跨图的线宽、字号、留白就完全一致——这是"图片格式要统一"
+# 的正解。高度不强求一致（各图内容不同，强行等高会把宽高比不同的图压变形），
+# 但因为宽度一致，左右页边距对齐，视觉上就是一套。
+#
+# 之前这里是每张图一个 max-height 上限，导致每张图在页面上宽度都不一样
+# （2.3 in 到 6.5 in 乱跳），看起来很不整齐。2026-08-29 改成单一宽度。
+FIGURE_WIDTH_IN = 5.5          # 全文正文图统一宽度
+FIGURE_MAX_HEIGHT_IN = 4.4     # 安全上限：真按比例算出来比这更高就压窄这一张（目前没有图触发）
+FIGURE_MAX_WIDTH_IN = 6.5      # 正文文字宽度，表格图（TableImage）用
 
 # Table-as-image placeholder: "*[TableImage — <filename>]*" placed right after a
 # "**Table N.**"/"**表 N.**" caption, in place of the markdown pipe table. The filename
@@ -343,8 +329,10 @@ def build():
             if fpath and fpath.exists():
                 native_w, native_h = Image.open(fpath).size
                 aspect_h_over_w = native_h / native_w
-                max_h = FIGURE_MAX_HEIGHT_IN.get(fig_num, FIGURE_MAX_HEIGHT_IN_DEFAULT)
-                width_in = min(FIGURE_MAX_WIDTH_IN, max_h / aspect_h_over_w)
+                # 统一宽度；只有当按比例算出来的高度超过安全上限时，才单独把这张压窄
+                width_in = FIGURE_WIDTH_IN
+                if width_in * aspect_h_over_w > FIGURE_MAX_HEIGHT_IN:
+                    width_in = FIGURE_MAX_HEIGHT_IN / aspect_h_over_w
                 p_img = doc.add_paragraph()
                 p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 p_img.paragraph_format.space_after = Pt(2)
