@@ -2,7 +2,7 @@
 
 *[Author One] ([Matric No.]) and [Author Two] ([Matric No.])*
 
-*CM3254 group project · MSc Industrial Chemistry, National University of Singapore · [Date]*
+*CM5174 group project · MSc Industrial Chemistry, National University of Singapore · [Date]*
 
 > **AI Tool Declaration.** We used Claude (Anthropic) to draft, revise and copy-edit the prose,
 > to write the Python/RDKit/Matplotlib code that generates the figures, to find and cross-check
@@ -279,8 +279,9 @@ for reference.]*
 The polar groups that give the strength in §5.1 and §5.2 have a third effect. They make the
 material take up water. Absorbed water plasticises the amorphous fraction and opens up free volume,
 so the barrier performance drops as the humidity rises. This is why the barrier rating of a PLA or
-starch film has to be quoted with a storage humidity rather than as a single number. Atomistic
-free-volume and diffusion modelling can predict this before a packaging trial is run.
+starch film has to be quoted with a storage humidity rather than as a single number. Molecular
+dynamics simulations of oxygen and water transport in PLA reproduce this dependence by tracking the
+fractional free volume, and can screen a film before a packaging trial is run [57,58].
 
 ### 5.4 Degradation as a Material Property
 
@@ -291,8 +292,8 @@ erosion [49]. Polysaccharides and proteins degrade instead by enzymes, which rea
 amorphous segments, so the rate depends on the accessible surface area rather than on the bulk
 chemistry [50]. Crystallinity is therefore the central trade-off of this review. The same feature
 that sets the modulus (§5.2) and keeps water out (§5.3) also keeps out the attack that would
-degrade the material. Computed ester-hydrolysis barriers rise in the order base-catalysed <
-acid-catalysed < neutral, matching the measured pH dependence of the rate.
+degrade the material. Computed activation barriers match the measured pH dependence of ester
+hydrolysis: the base-catalysed path lies well below the water-assisted neutral one [59,60].
 
 *[Figure 5 — Two degradation routes, drawn by the authors. (a) Polyester ester hydrolysis: the
 acid end group catalyses further scission, so thick parts erode from the inside (bulk erosion).
@@ -409,7 +410,7 @@ and data-driven property prediction [56].
 
 ## References
 
-*56 entries; every DOI verified against Crossref.*
+*60 entries; every DOI verified against Crossref.*
 
 1. Vert, M.; Doi, Y.; Hellwich, K.-H.; Hess, M.; Hodge, P.; Kubisa, P.; Rinaudo, M.; Schué, F.
    Terminology for biorelated polymers and applications (IUPAC Recommendations 2012).
@@ -570,4 +571,15 @@ and data-driven property prediction [56].
 56. Kuenneth, C.; Ramprasad, R. polyBERT: a chemical language model to enable fully machine-driven
     ultrafast polymer informatics. *Nat. Commun.* **2023**, *14*, 4099.
     DOI: 10.1038/s41467-023-39868-6.
+57. Lightfoot, J. C.; Castro-Dominguez, B.; Buchard, A.; Parker, S. C. A molecular dynamics approach
+    to modelling oxygen diffusion in PLA and PLA clay nanocomposites. *Mater. Adv.* **2023**, *4*,
+    2281–2291. DOI: 10.1039/D3MA00158J.
+58. Wang, X.; Li, J.; Zhang, L. Understanding self-accelerated water diffusion within poly-lactic
+    acid via molecular dynamics simulation. *Chin. J. Chem. Eng.* **2019**, *27*, 759–764.
+    DOI: 10.1016/j.cjche.2018.09.009.
+59. Zhan, C.-G.; Landry, D. W.; Ornstein, R. L. Reaction pathways and energy barriers for alkaline
+    hydrolysis of carboxylic acid esters in water studied by a hybrid supermolecule-polarizable
+    continuum approach. *J. Am. Chem. Soc.* **2000**, *122*, 2621–2627. DOI: 10.1021/ja9937932.
+60. Yamabe, S.; Tsuchida, N.; Hayashida, Y. Reaction paths of the water-assisted neutral hydrolysis
+    of ethyl acetate. *J. Phys. Chem. A* **2005**, *109*, 7216–7224. DOI: 10.1021/jp058029i.
 
