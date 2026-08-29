@@ -42,7 +42,7 @@ FIGURE_FILES = {
 #
 # 之前这里是每张图一个 max-height 上限，导致每张图在页面上宽度都不一样
 # （2.3 in 到 6.5 in 乱跳），看起来很不整齐。2026-08-29 改成单一宽度。
-FIGURE_WIDTH_IN = 5.5          # 全文正文图统一宽度
+FIGURE_WIDTH_IN = 5.0          # 全文正文图统一宽度（2026-08-29 从 5.5 收窄一档）
 FIGURE_MAX_HEIGHT_IN = 4.4     # 安全上限：真按比例算出来比这更高就压窄这一张（目前没有图触发）
 FIGURE_MAX_WIDTH_IN = 6.5      # 正文文字宽度，表格图（TableImage）用
 
