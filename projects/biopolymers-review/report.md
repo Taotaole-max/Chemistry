@@ -182,7 +182,7 @@ mass loss under N₂; "–" = no melting transition; per-row sources in `figures
 | PLLA | ~60 | ~175 | ~300 | 2.5–4.0 | 3–10 |
 | PBS | ~−30 | ~116 | ~350 | 0.3–0.7 | 200–500 |
 | Natural rubber (vulcanised) | ~−70 | – | – | 0.001–0.005 | 500–800 |
-| PET (fossil reference) | ~78 | ~255 | ~400 | 2.0–4.0 | 50–300 |
+| PET (fossil reference) | ~78 | ~245 | ~400 | 2.0–4.0 | 50–300 |
 
 *Ranges are indicative and depend on sample form, moisture and thermal history; each row is tied to
 its source and test condition in `figures/data/*.csv`.*
@@ -322,11 +322,11 @@ sequence-encoded bioactivity, comes with the biological structure at no extra co
 
 The disadvantages are equally structural. On cost, PLA typically sells at several times the price of
 commodity PE and PP, and PHA higher still [16,53]. On heat resistance, PLA without stereocomplexation
-(§3.2) has a heat deflection temperature of only about 55 to 65 °C, well below the 100 °C-plus of PP
-[13,42]. Its oxygen and CO₂ barrier matches that of PET, but its water-vapour barrier is worse, and
+(§3.2) has a heat deflection temperature of only about 55 to 65 °C, well below the roughly 100 °C of
+PP [11,13]. Its oxygen and CO₂ barrier matches that of PET, but its water-vapour barrier is worse, and
 starch films are worse again [14]. The real barrier weakness is therefore moisture sensitivity
 (§5.3) rather than oxygen permeation. Ageing compounds both: PHB embrittles on storage through
-secondary crystallisation and PLA through sub-Tg physical ageing [43], while starch properties drift
+secondary crystallisation [61] and PLA through sub-Tg physical ageing [43], while starch properties drift
 with humidity and PLA must be dried before melt processing or its molecular weight falls out of
 control (§4).
 
@@ -412,7 +412,7 @@ and data-driven property prediction [56].
 
 ## References
 
-*60 entries; every DOI verified against Crossref.*
+*61 entries; every DOI verified against Crossref.*
 
 1. Vert, M.; Doi, Y.; Hellwich, K.-H.; Hess, M.; Hodge, P.; Kubisa, P.; Rinaudo, M.; Schué, F.
    Terminology for biorelated polymers and applications (IUPAC Recommendations 2012).
@@ -584,4 +584,7 @@ and data-driven property prediction [56].
     continuum approach. *J. Am. Chem. Soc.* **2000**, *122*, 2621–2627. DOI: 10.1021/ja9937932.
 60. Yamabe, S.; Tsuchida, N.; Hayashida, Y. Reaction paths of the water-assisted neutral hydrolysis
     of ethyl acetate. *J. Phys. Chem. A* **2005**, *109*, 7216–7224. DOI: 10.1021/jp058029i.
+61. de Koning, G. J. M.; Lemstra, P. J. Crystallization phenomena in bacterial poly[(R)-3-hydroxy-
+    butyrate]: 2. Embrittlement and rejuvenation. *Polymer* **1993**, *34*, 4089–4094.
+    DOI: 10.1016/0032-3861(93)90671-V.
 

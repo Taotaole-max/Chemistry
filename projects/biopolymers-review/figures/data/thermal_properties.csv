@@ -1,24 +1,28 @@
-# Fig 11 用数据：玻璃化转变、熔融与热分解温度
+# Fig 4a 用数据：玻璃化转变、熔融与热分解温度
 #
-# !!! 数值仍是教科书量级的常见值。ref 列现在填了对应的参考文献编号（见 report.md 参考文献表），
-#     2026-08-29 更新：de Beukelaer [11] 全文（https://edepot.wur.nl/579301）已拿到并逐行核对。
-#     PHB(Tg5/Tm182)、PBS(Tg-30/Tm118)、PET(Tg76/Tm245) 已按 [11] Table 6 校正；PLLA 保留
-#     [42]/[44] 的高结晶牌号数值（[11] 那支是低结晶商用 PLA，Tm 145）；PHBV 是代表性中/高 HV
-#     牌号（[11] 只测了 2 mol% HV，Tm 180）。Td 全部另找（[11] 没做 TGA）：PHB/PHA 用 [5]。
+# !!! 数值是教科书量级的常见值。ref 列填对应的参考文献编号（见 report.md 参考文献表）。
+#     2026-08-29：de Beukelaer [11] 全文（https://edepot.wur.nl/579301）已拿到并逐行核对。
+#     2026-08-30：核实修正——
+#       - PET Tm 255 -> 245，与 [11] Table 6 实测一致（原来注释说已改，其实没改）。
+#       - Cellulose / Starch / Chitosan / Silk fibroin：[11] 没测这些材料，ref 改成各自可用的
+#         文献；这几行的 Td 是取自一般文献的代表性 TGA 起始温度（report.md 表 2 图注已说明）。
+#     PHB(Tg5/Tm182)、PBS(Tg-30/Tm118) 按 [11] Table 6；PLLA 保留 [42]/[44] 的高结晶牌号数值
+#     （[11] 那支是低结晶商用 PLA，Tm 145）；PHBV 是代表性中/高 HV 牌号（[11] 只测了 2 mol% HV，
+#     Tm 180）。Td 全部另找（[11] 没做 TGA）：PHB/PHA 用 [5]，PLLA 用 [44]。
 #     核对时注意两点：
 #     1. Td 定义不统一——本表统一取"N2 下 TGA 显著失重起始温度"，文献里也有用 5% 失重或最大
 #        失重速率温度的，能差 30-50 °C；
 #     2. 生物聚合物的 Tg 强烈依赖含水量与增塑剂，报数据必须同时报测试条件。
 #
 material,class,Tg_C,Tm_C,Td_C,melts,note,ref
-Cellulose,polysaccharide,,,300,no,decomposes before melting; Tg not observable in the dry state,[11]
-Starch (native),polysaccharide,,,300,no,gelatinises in water rather than melting,[11]
-Thermoplastic starch,polysaccharide,-20,,300,no,Tg shifts with glycerol and water content,"[11,38]"
-Chitosan,polysaccharide,,,280,no,decomposes before melting,"[11,39]"
-Silk fibroin,protein,175,,300,no,Tg of the amorphous fraction; beta-sheet crystals do not melt,[11]
+Cellulose,polysaccharide,,,300,no,does not melt; Td ~300 representative TGA onset (general lit.),[36]
+Starch (native),polysaccharide,,,300,no,gelatinises in water rather than melting; Td representative,[38]
+Thermoplastic starch,polysaccharide,-20,,300,no,Tg shifts with glycerol and water content; Td representative,[38]
+Chitosan,polysaccharide,,,280,no,decomposes before melting; Td ~280 per Rinaudo,[39]
+Silk fibroin,protein,175,,300,no,Tg of the amorphous fraction (representative); beta-sheet crystals do not melt,[8]
 PHB,polyester,5,180,200,yes,cis-elimination degradation starts just above Tm,"[5,11] -- [5] mechanism/Td; Tg 5 / Tm 182 from [11] Table 6"
 PHBV,polyester,0,145,200,yes,representative HV/HHx copolymer; HV comonomer lowers Tm and widens the window (cf. [11] 2 mol% HV: Tm 180),[11]
 PLLA,polyester,60,175,300,yes,melt degradation and hydrolysis become significant well below Td,"[42,44]"
 PBS,polyester,-30,116,350,yes,Tg -30 / Tm 118 in [11] Table 6; [12] similar,"[11,12]"
 LDPE,petro,-120,110,400,yes,reference commodity polymer,[11]
-PET,petro,78,255,400,yes,reference commodity polymer,[11]
+PET,petro,78,245,400,yes,reference commodity polymer; Tm 245 per [11] Table 6,[11]
