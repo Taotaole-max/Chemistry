@@ -79,7 +79,7 @@ repeat units and Fig. 2 the higher-order structures.
 ### 3.1 Polysaccharides
 
 **Cellulose** is the stiffest material in this review: an axial crystal modulus of about 130 to
-150 GPa, and regenerated fibres of 10 to 30 GPa [35]. It never melts and decomposes near 300 °C, so
+150 GPa [35], and regenerated fibres of 10 to 30 GPa [36]. It never melts and decomposes near 300 °C, so
 it is shaped from solution: as Lyocell and viscose fibre [36], transparent film, and nanocrystals
 or nanofibrils used as reinforcing filler [2]. The reason is structural: the linear β-(1→4) chain
 (Fig. 1a) forms a flat ribbon, and hydrogen bonds lock these ribbons into stacked Iα and Iβ sheets
@@ -168,8 +168,9 @@ fraction plays an active, clone-dependent part in the network rather than acting
 
 **Table 2.** Thermal and mechanical properties of the biopolymers discussed in §3 (order-of-magnitude
 ranges; Tg/Tm and tensile data cross-checked against de Beukelaer et al. [11], PBS against Aliotta et
-al. [12], PLA against [42,43], and decomposition onsets against [5,44]; Td = TGA onset of mass loss
-under N₂; "–" = no melting transition; per-row sources in `figures/data/*.csv`).
+al. [12], PLA against [42,43], and polyester decomposition onsets against [5,44]; the polysaccharide
+and protein Td values are representative TGA onsets from the general literature. Td = TGA onset of
+mass loss under N₂; "–" = no melting transition; per-row sources in `figures/data/*.csv`).
 
 | Material | Tg (°C) | Tm (°C) | Td onset (°C) | Modulus (GPa) | Elongation at break (%) |
 |---|---|---|---|---|---|
