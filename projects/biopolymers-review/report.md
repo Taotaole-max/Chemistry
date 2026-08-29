@@ -142,7 +142,7 @@ sutures (as PLGA). Its modulus is 2.5 to 4 GPa, but its low glass transition of 
 low heat ceiling (§6.2). A useful molecular weight needs ring-opening polymerisation of lactide,
 catalysed by Sn(Oct)₂ [40,41]. A PLLA/PDLA stereocomplex melts about 50 °C higher, because the two
 enantiomers pack together more tightly [6,7]. Both polymers pack as helices that still melt (Fig.
-4d). PBS and PEF follow the same ester logic (§7).
+3d). PBS and PEF follow the same ester logic (§7).
 
 ### 3.3 Protein-based Polymers
 
@@ -168,7 +168,7 @@ triple helix, with glycine at every third position. Each structure is discussed 
 is used as a filler, as a carbon-fibre precursor and as an antioxidant or UV additive, and there is
 active work on using it to replace part of the phenol-formaldehyde resin in wood products. Lignin
 has no single structure-property relationship. Radical coupling of the three monolignols (Fig.
-3j-l) builds an irregular cross-linked network with no repeating chain. The β-O-4 ether accounts
+2j–l) builds an irregular cross-linked network with no repeating chain. The β-O-4 ether accounts
 for about 45 to 60% of the linkages [9]. The composition changes with the plant species and with
 the extraction method, which may be kraft, organosolv or lignosulfonate [54].
 
@@ -296,9 +296,9 @@ ten; this reappears as "batch variability" in §6.2.
 
 *[Figure 5 — Thermal and mechanical envelopes, drawn by the authors from `figures/data/*.csv`.
 (a) Tg (open circle), Tm (diamond) and TGA decomposition onset (bar) on one axis. The shaded band
-is the melt-processing window (Tm to Td), with its width labelled; cellulose, native starch,
+is the melt-processing window (Tm to Td), with its width labelled; cellulose, starch,
 chitosan and silk have no window. (b) Modulus against elongation at break (log-log axes). The
-ellipses span literature values for the stated sample form and are not error bars. PE, PP and PET
+ellipses span literature values for the stated sample form and are not error bars. LDPE, PP and PET
 are shown for reference.]*
 
 ### 5.3 Hydrophilicity and Barrier Properties

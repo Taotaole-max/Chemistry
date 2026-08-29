@@ -16,7 +16,7 @@ Thermoplastic starch,polysaccharide,0.02,1.0,20,100,glycerol-plasticised film,be
 Chitosan film,polysaccharide,1.0,4.0,3,30,solvent-cast film,right,"[11,39]"
 Silk fibroin fibre,protein,5,17,15,30,degummed fibre,right,"[8,11]"
 PHB,polyester,1.5,4.0,2,8,injection moulded,left,"[11,43]"
-PHBV (20 mol% HV),polyester,0.8,2.5,5,25,injection moulded,below,[11]
+PHBV,polyester,0.8,2.5,5,25,injection moulded,below,[11]
 PLLA,polyester,2.5,4.0,3,10,injection moulded,above,"[42,43]"
 PBS,polyester,0.3,0.7,200,500,film,above,[12]
 Natural rubber,other,0.001,0.005,500,800,vulcanised,above,[10]

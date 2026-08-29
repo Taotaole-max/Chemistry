@@ -11,11 +11,11 @@
 material,class,Tg_C,Tm_C,Td_C,melts,note,ref
 Cellulose,polysaccharide,,,300,no,decomposes before melting; Tg not observable in the dry state,[11]
 Starch (native),polysaccharide,,,300,no,gelatinises in water rather than melting,[11]
-Thermoplastic starch (glycerol),polysaccharide,-20,,300,no,Tg shifts with glycerol and water content,"[11,38]"
+Thermoplastic starch,polysaccharide,-20,,300,no,Tg shifts with glycerol and water content,"[11,38]"
 Chitosan,polysaccharide,,,280,no,decomposes before melting,"[11,39]"
 Silk fibroin,protein,175,,300,no,Tg of the amorphous fraction; beta-sheet crystals do not melt,[11]
 PHB,polyester,4,175,200,yes,cis-elimination degradation starts just above Tm,"[5,11] -- [5] mechanism/Td; Tg/Tm from [11]"
-PHBV (20 mol% HV),polyester,0,145,200,yes,HV comonomer lowers Tm and widens the window,[11]
+PHBV,polyester,0,145,200,yes,HV comonomer lowers Tm and widens the window,[11]
 PLLA,polyester,60,175,300,yes,melt degradation and hydrolysis become significant well below Td,"[42,44]"
 PBS,polyester,-32,114,350,yes,,[12]
 LDPE,petro,-120,110,400,yes,reference commodity polymer,[11]

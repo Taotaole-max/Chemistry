@@ -20,7 +20,10 @@ OUT = Path(__file__).parent / "output"
 
 def main():
     apply_style()
-    fig, axes = plt.subplots(1, 2, figsize=(FIG_W, 78 / 25.4), layout="constrained")
+    # width_ratios 补偿：面板 (a) 的 y 轴刻度是长材料名，会吃掉左侧一截，
+    # 给它多分一点画布宽度，让两个面板的**数据框**宽度接近一致。
+    fig, axes = plt.subplots(1, 2, figsize=(FIG_W, 78 / 25.4), layout="constrained",
+                             gridspec_kw={"width_ratios": [1.12, 1.0]})
 
     thermal.draw(axes[0])
     axes[0].set_title("(a) Thermal transitions and melt-processing windows",
