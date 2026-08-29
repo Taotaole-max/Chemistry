@@ -24,14 +24,15 @@ OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else BASE / "Biopolymers-review-DRA
 EAST_ASIA_FONT = sys.argv[3] if len(sys.argv) > 3 else "Times New Roman"
 
 FIGURE_FILES = {
-    1: "fig7_causality_chain.png",      # structure-to-property chain, one row per family
-    2: "fig_repeat_units_all.png",      # 13-panel monomer collage (was 5 figures)
-    3: "fig_higher_order_all.png",      # 6-panel chain/2°/3° structure (was 4 figures)
-    4: "fig9_dispersity.png",           # dispersity Đ across families
-    5: "fig_property_maps.png",         # thermal windows + Ashby, 2 panels (was 2 figures)
-    6: "fig_degradation.png",           # hydrolysis + enzymatic, 2 panels
-    7: "fig8_nr_sbr_comparison.png",
+    1: "fig_repeat_units_all.png",      # 13-panel monomer collage (was 5 figures)
+    2: "fig_higher_order_all.png",      # 6-panel chain/2°/3° structure (was 4 figures)
+    3: "fig9_dispersity.png",           # dispersity Đ across families
+    4: "fig_property_maps.png",         # thermal windows + Ashby, 2 panels (was 2 figures)
+    5: "fig_degradation.png",           # hydrolysis + enzymatic, 2 panels
+    6: "fig8_nr_sbr_comparison.png",    # NR vs SBR
 }
+# 2026-08-29: dropped the causality-chain figure (old Fig 1) — it only restated §3's
+# opening paragraph and Table 1 as a diagram. Figures renumbered 1-6.
 
 # 图片排版：**全文所有正文图统一同一个嵌入宽度**（见下）。
 #

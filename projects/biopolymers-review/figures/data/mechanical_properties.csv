@@ -1,9 +1,9 @@
 # Fig 12 用数据：拉伸模量与断裂伸长率的文献区间
 #
-# !!! 数值仍是教科书量级的常见区间。ref 列填了对应参考文献编号（见 report.md）。真正逐条核对过
-#     数值的只有 PBS（[12]）；PLA 行现在指向 [42]/[43]（Auras 2004 / Farah 2016），天然橡胶指向
-#     [10]（只覆盖 SIC 机理，不是模量/伸长率数值本身）。其余标 [11] 的仍需在能看全文的环境里
-#     逐行确认。生物聚合物力学数据分散度大，取值时注意：
+# !!! 数值是教科书量级的常见区间。2026-08-29：de Beukelaer [11] 全文已核对，PBS/PET/LDPE/PP/PHB
+#     的注塑件拉伸数据落在本表区间内（[11] Table 3）；PHB 下限按 [11] 的 1.6% 从 2 调到 1.5。
+#     PLA 行指向 [42]/[43]（高结晶 PLLA），天然橡胶指向 [10]（SIC 机理，非数值本身）。
+#     纤维素/壳聚糖/丝素 [11] 没测，仍是各自文献。生物聚合物力学数据分散度大，取值时注意：
 #     - 试样形态（纤维 / 流延膜 / 注塑件）差别可达一个数量级；
 #     - 含水量与增塑剂含量必须随数据一起报告，尤其淀粉和壳聚糖；
 #     - 结晶度与热历史（退火、拉伸取向）同样决定数值。
@@ -15,7 +15,7 @@ Cellulose (Lyocell fibre),polysaccharide,10,30,8,15,regenerated fibre,above,"[11
 Thermoplastic starch,polysaccharide,0.02,1.0,20,100,glycerol-plasticised film,below,[11]
 Chitosan film,polysaccharide,1.0,4.0,3,30,solvent-cast film,right,"[11,39]"
 Silk fibroin fibre,protein,5,17,15,30,degummed fibre,right,"[8,11]"
-PHB,polyester,1.5,4.0,2,8,injection moulded,left,"[11,43]"
+PHB,polyester,1.5,4.0,1.5,8,injection moulded,left,"[11,43] -- [11] Table 3: E 3.5 GPa, eps_break 1.6%"
 PHBV,polyester,0.8,2.5,5,25,injection moulded,below,[11]
 PLLA,polyester,2.5,4.0,3,10,injection moulded,above,"[42,43]"
 PBS,polyester,0.3,0.7,200,500,film,above,[12]
