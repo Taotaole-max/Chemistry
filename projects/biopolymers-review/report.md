@@ -303,7 +303,7 @@ crystallinity sets the rate.]*
 
 ## 6. Advantages and Disadvantages Compared with Synthetic Polymers
 
-### 6.1 Where Biopolymers Genuinely Win
+### 6.1 Advantages
 
 Four advantages come from the structure. A renewable feedstock is the only one uniform across all
 five families. Biodegradability matters where material is likely to leak into the environment, as
@@ -315,24 +315,24 @@ modification; this is the one area (§7) where biopolymers are the only workable
 unconditionally (§6.3). Function beyond mechanics, such as chirality, pH-responsive charge and
 sequence-encoded bioactivity, comes with the biological structure at no extra cost.
 
-### 6.2 Where They Lose, Stated with Numbers
+### 6.2 Disadvantages
 
-- **Price.** PLA typically sells at several times the price of commodity PE and PP, and PHA higher
-  still [16,53].
-- **Heat and barrier.** Without stereocomplexation (§3.2), PLA's heat deflection temperature of
-  about 55 to 65 °C sits well below PP's, which is above 100 °C [13,42]. PLA's O₂ and CO₂
-  transmission matches that of PET, but its water-vapour barrier is worse, and starch films are
-  worse again [14]. The real weakness is moisture sensitivity (§5.3), not oxygen barrier.
-- **Brittleness and water uptake.** PHB embrittles on storage through secondary crystallisation,
-  and PLA through sub-Tg ageing [43]. Starch properties drift with humidity, and PLA must be dried
-  before melt processing or its molecular weight drops out of control (§4).
-- **Batch variability.** Agricultural sourcing varies in ways petrochemical monomers do not. This
-  covers alginate M and G fractions, chitosan deacetylation, starch amylose content, and NR clone
-  and tree age [19].
-- **Recycling compatibility.** A 2022 study found PLA present at only 0 to 0.019% of PET recycling
-  streams, held by near-infrared sorting below the roughly 1% level that measurably affects
-  recycled PET [15]. This is a dependence on sorting infrastructure, not an inherent
-  incompatibility.
+The disadvantages are equally structural. On cost, PLA typically sells at several times the price of
+commodity PE and PP, and PHA higher still [16,53]. On heat resistance, PLA without stereocomplexation
+(§3.2) has a heat deflection temperature of only about 55 to 65 °C, well below the 100 °C-plus of PP
+[13,42]; its oxygen and CO₂ barrier matches that of PET, but its water-vapour barrier is worse and
+starch films are worse again [14], so the real barrier weakness is moisture sensitivity (§5.3)
+rather than oxygen permeation. Ageing compounds both: PHB embrittles on storage through secondary
+crystallisation and PLA through sub-Tg physical ageing [43], while starch properties drift with
+humidity and PLA must be dried before melt processing or its molecular weight falls out of control
+(§4).
+
+Agricultural sourcing also introduces batch-to-batch variability that petrochemical monomers do not
+show, in the alginate M and G fractions, the chitosan degree of deacetylation, the starch amylose
+content, and the natural-rubber clone and tree age [19]. Compatibility with existing recycling
+streams is a further limitation: a 2022 study found PLA present at only 0 to 0.019% of PET recycling
+streams, kept there by near-infrared sorting below the roughly 1% level that measurably degrades
+recycled PET [15] — a dependence on sorting infrastructure rather than an inherent incompatibility.
 
 ### 6.3 Case Study: Natural Rubber and a Synthetic Analogue (SBR)
 
