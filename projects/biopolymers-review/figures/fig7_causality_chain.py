@@ -1,11 +1,3 @@
-"""=== Word Figure 2 ===  结构–性质因果链一览（§3 总览图）。
-
-把 §3 里七段文字各自的"重复单元化学 → 主导分子间作用力 → 关键性质结果 → 关键局限"
-压成一行，七个家族排成一张表状信息图，颜色跟 CLASS_COLOR 走。
-目的：替掉正文里大段的机理复述，读者扫一眼这张图就能抓住每个家族的因果链条，
-正文只需要留最独特、图上放不下的那一两句事实。
-"""
-
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -16,7 +8,6 @@ from style import CLASS_COLOR, INK, INK_SECONDARY, MM, apply_style, save
 HERE = Path(__file__).parent
 OUT = HERE / "output"
 
-# (family label, class color key, intermolecular force, consequence, limitation)
 ROWS = [
     ("Cellulose", "polysaccharide",
      "dense inter- & intrachain\nH-bonding, sheet stacking",
@@ -52,7 +43,6 @@ COL_X = [0.5, 3.15, 5.75, 8.35]
 COL_W = 2.45
 HEADERS = ["Family", "Intermolecular force", "Consequence", "Limitation"]
 
-
 def main():
     apply_style()
     n = len(ROWS)
@@ -64,7 +54,6 @@ def main():
     ax.set_ylim(-0.15, n + 1.1)
     ax.axis("off")
 
-    # header
     for x, h in zip(COL_X, HEADERS):
         ax.text(x, n + 0.55, h, fontsize=7.2, fontweight="bold", color=INK,
                 ha="left", va="center")
@@ -92,9 +81,7 @@ def main():
         if i < n - 1:
             ax.plot([0, 10.9], [y - 0.5, y - 0.5], color="#ececea", lw=0.7)
 
-    # 颜色/箭头的说明（原来在图底）挪进 report.md 图注。
     save(fig, "fig7_causality_chain", OUT)
-
 
 if __name__ == "__main__":
     main()

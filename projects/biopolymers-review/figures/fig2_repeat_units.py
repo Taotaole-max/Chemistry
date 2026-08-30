@@ -1,18 +1,3 @@
-"""[数据模块] 五种生物聚合物的重复单元 SMILES + 名称，定义在 PANELS 里。
-最终报告的 Fig 3（`fig_repeat_units_all.py`）import 这个 PANELS。本文件自己的 main()
-是早期版本、不再参与构建，留着只是为了 PANELS 常量和它的立体化学核对逻辑。
-
----- 原始说明 ----
-Fig 2 · 五种代表性生物聚合物的重复单元。
-
-结构由 RDKit 从 SMILES 绘制，链接点画成波浪键（聚合物重复单元的通用画法）。
-立体化学由 verify_stereochemistry.py 机器核对后才允许出图——本脚本开头会调用它。
-
-关于立体标注：PHB / PLLA 的手性碳不与哑原子相邻，CIP 规则适用，图上标出 (R)/(S)；
-糖类的端基碳与哑原子相邻，CIP 优先级失去意义，标出来反而是错的，所以糖类不加标注，
-构型信息由楔形键承载。
-"""
-
 import io
 from pathlib import Path
 
@@ -28,7 +13,6 @@ from style import (C_POLYESTER, C_POLYSACCHARIDE, INK, INK_SECONDARY, MM,
 
 OUT = Path(__file__).parent / "output"
 
-# (标号, 名称, 化学名, SMILES, 颜色, 是否标 CIP)
 PANELS = [
     ("a", "Cellulose", r"$\beta$(1$\rightarrow$4)-D-glucan",
      "OC[C@H]1O[C@@H](*)[C@H](O)[C@@H](O)[C@@H]1O*", C_POLYSACCHARIDE, False),
@@ -53,14 +37,13 @@ NOTE = (
 
 PX_W, PX_H = 960, 560
 
-
 def render(smiles, annotate_cip):
     mol = Chem.MolFromSmiles(smiles)
     rdDepictor.SetPreferCoordGen(True)
     rdDepictor.Compute2DCoords(mol)
     drawer = rdMolDraw2D.MolDraw2DCairo(PX_W, PX_H)
     opts = drawer.drawOptions()
-    opts.dummiesAreAttachments = True      # 链接点画成波浪键
+    opts.dummiesAreAttachments = True
     opts.addStereoAnnotation = annotate_cip
     opts.bondLineWidth = 3
     opts.fixedFontSize = 42
@@ -69,9 +52,8 @@ def render(smiles, annotate_cip):
     drawer.FinishDrawing()
     return mpimg.imread(io.BytesIO(drawer.GetDrawingText()), format="png")
 
-
 def main():
-    verify_stereochemistry.main()   # 立体化学不过就不出图
+    verify_stereochemistry.main()
 
     apply_style()
     fig, axes = plt.subplots(2, 3, figsize=(170 * MM, 96 * MM))
@@ -92,7 +74,6 @@ def main():
 
     fig.subplots_adjust(hspace=0.40, wspace=0.04, top=0.90, bottom=0.02)
     save(fig, "fig2_repeat_units", OUT)
-
 
 if __name__ == "__main__":
     main()

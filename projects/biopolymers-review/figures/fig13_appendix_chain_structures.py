@@ -1,28 +1,3 @@
-"""[面板模块] 链/二级/三级结构的手绘 matplotlib 面板函数（panel_amylose、panel_alginate、
-panel_pha_pla、panel_silk、panel_collagen 等）。最终报告的 Fig 4
-（`fig_higher_order_all.py`）import 这些函数。本文件的 main() 是早期版本、不再参与构建。
-
----- 原始说明 ----
-Fig 13 (附录) · 链尺度的空间/构象结构，六个家族各一格。
-
-Fig 3 已经用一整张图讲清楚了纤维素的链→片层→晶体三级结构；这张图补的是 Fig 3
-没有覆盖、但正文 §3 反复用来解释性质的"链怎么摆"这件事本身——直链淀粉为什么会
-被水增塑（螺旋，不是带状）、海藻酸盐怎么靠 Ca2+ 交联（"蛋盒"结构，正文只提了名字
-没画机理）、PHA/PLA 为什么能熔融加工（螺旋堆积，不是带状晶体）、丝素蛋白的强度
-韧性从哪来（β-折叠纳米晶体）、胶原蛋白的三螺旋为什么必须每三个残基就有一个甘氨酸、
-天然橡胶和 SBR 在应变下到底谁结晶谁不结晶（§7.3 案例研究的结构内核）。
-
-和 Fig 3 一样：全部示意性（matplotlib 手绘几何图形），几何比例不代表真实键长键角/
-螺距/晶胞参数，只保证拓扑关系和"谁比谁更规整"这类定性事实正确。不用 RDKit——
-这些是链尺度、二级/三级结构层面的排列，RDKit 画的是单个重复单元的原子连接，
-两者互补，不是重复。
-
-布局约定（每格严格三段，避免文字互相压字——这张图第一版因为每格塞了 3-4 段
-浮动注释文字，在窄格里彼此重叠，返工过一次）：标题固定在顶部；图形本身画在
-中段；机理说明只放一处、固定锚在底部同一条基线上，其余想说的话都并进这一段，
-不再额外散布浮动短句。
-"""
-
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -36,18 +11,13 @@ OUT = Path(__file__).parent / "output"
 HBOND = "#c0392b"
 IONIC = "#b8860b"
 
-CAPTION_TOP_Y = 24  # 每格说明文字的固定锚点（top-anchored，图形区在这条线以上）
+CAPTION_TOP_Y = 24
 
-# 附录 Fig 19 是独立速查图，每格保留一句机理说明；但正文 §3 复用这些 panel 函数时
-# （fig_polysaccharide_chains / fig_polyester_structures / fig_protein_structures）
-# 说明文字应该走 Word 图注，不在图上重复——那几个脚本会把这个开关置 False。
 DRAW_CAPTIONS = True
-
 
 def panel_label(ax, tag, title):
     ax.text(2, 97, f"({tag}) {title}", fontsize=7.3, weight="bold",
             color=INK, ha="left", va="top")
-
 
 def caption(ax, text):
     if not DRAW_CAPTIONS:
@@ -55,14 +25,11 @@ def caption(ax, text):
     ax.text(50, CAPTION_TOP_Y, text, fontsize=6, color=INK_SECONDARY,
             ha="center", va="top", linespacing=1.45)
 
-
 def setup(ax):
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.axis("off")
 
-
-# ---------------------------------------------------------------------------
 def panel_amylose(ax, tag="a"):
     setup(ax)
     panel_label(ax, tag, "Amylose: left-handed helix")
@@ -86,8 +53,6 @@ def panel_amylose(ax, tag="a"):
                 "ribbon (§3.1 figure). I$_2$/water enters the cavity and\n"
                 "plasticises the chain (§3.1).")
 
-
-# ---------------------------------------------------------------------------
 def panel_alginate(ax, tag="b"):
     setup(ax)
     panel_label(ax, tag, "Alginate: Ca$^{2+}$ egg-box")
@@ -118,8 +83,6 @@ def panel_alginate(ax, tag="b"):
                 "chains — ionic, reversible with a chelator; G-content\n"
                 "sets junction density, i.e. stiffness vs. brittleness (§3.1, §8).")
 
-
-# ---------------------------------------------------------------------------
 def panel_pha_pla(ax, tag="c"):
     setup(ax)
     panel_label(ax, tag, "PHA / PLA: helical packing")
@@ -138,8 +101,6 @@ def panel_pha_pla(ax, tag="c"):
                 "still melts (§5.1), unlike cellulose's H-bonded\n"
                 "ribbon (§3.1), which decomposes before melting (§3.2).")
 
-
-# ---------------------------------------------------------------------------
 def panel_silk(ax, tag="d"):
     setup(ax)
     panel_label(ax, tag, "Silk: β-sheet nanocrystal")
@@ -161,8 +122,6 @@ def panel_silk(ax, tag="d"):
                 "2–4 nm nanocrystallites in a compliant amorphous\n"
                 "matrix — source of silk's strength + toughness (§3.3).")
 
-
-# ---------------------------------------------------------------------------
 def panel_collagen(ax, tag="e"):
     setup(ax)
     panel_label(ax, tag, "Collagen: Gly-X-Y triple helix")
@@ -171,7 +130,7 @@ def panel_collagen(ax, tag="e"):
     theta = np.linspace(0, 3.4 * np.pi, 260)
     y = 30 + theta * (60 / theta.max())
     r = 13
-    for off in (0, 2.09, 4.19):  # 3 strands, 120 deg apart
+    for off in (0, 2.09, 4.19):
         x = cx + r * np.sin(theta + off)
         front = np.cos(theta + off) > 0.15
         ax.plot(np.where(front, x, np.nan), y, color=colour, lw=1.6, alpha=0.95, zorder=4)
@@ -185,8 +144,6 @@ def panel_collagen(ax, tag="e"):
                 "triple helix; Gly (dots) at every 3rd position is the\n"
                 "only residue small enough for the crowded core (§3.3).")
 
-
-# ---------------------------------------------------------------------------
 def _tangle(ax, cx, cy, spread, colour, n=4, seed=0):
     rng = np.random.default_rng(seed)
     t = np.linspace(0, 2 * np.pi, 60)
@@ -197,7 +154,6 @@ def _tangle(ax, cx, cy, spread, colour, n=4, seed=0):
         x = cx + r0 * np.cos(t + ph) + 0.15 * spread * np.sin(wob * t)
         y = cy + r0 * np.sin(t + ph) + 0.15 * spread * np.cos(wob * t)
         ax.plot(x, y, color=colour, lw=1.0, alpha=0.75, zorder=3)
-
 
 def panel_sic(ax):
     setup(ax)
@@ -226,7 +182,6 @@ def panel_sic(ax):
                 "under strain (SIC, X-ray confirmed); SBR's irregular\n"
                 "backbone stays amorphous even stretched — core of §7.3.")
 
-
 def main():
     apply_style()
     fig, axes = plt.subplots(2, 3, figsize=(190 * MM, 128 * MM))
@@ -241,7 +196,6 @@ def main():
     fig.subplots_adjust(hspace=0.28, wspace=0.18, top=0.97, bottom=0.02,
                         left=0.02, right=0.98)
     save(fig, "fig13_appendix_chain_structures", OUT)
-
 
 if __name__ == "__main__":
     main()

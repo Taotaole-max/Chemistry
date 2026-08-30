@@ -1,10 +1,3 @@
-"""=== Word Figure 10 ===  分散度 (Đ) 跨家族对比（§4 / Table 3 的配图）。
-
-把 Table 3 里散在文字和表格里的 Đ 范围画成一条线一眼看的图，蛋白质/核酸精确等于
-1.00（模板合成），天然橡胶没有可靠的文献定量值，画成开口箭头并在图上明确写"未定量"
-——不编造精度。放这张图之后，Table 3 就不用再重复 Đ 这一列，只留 Mn 和测量方法/局限。
-"""
-
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -13,7 +6,6 @@ from style import CLASS_COLOR, INK, INK_MUTED, INK_SECONDARY, MM, apply_style, s
 
 OUT = Path(__file__).parent / "output"
 
-# (material, class, D_low, D_high, note)  D_high=None -> open-ended (unquantified)
 ROWS = [
     ("Natural rubber", "other", 2.0, None, "clone- and age-dependent, not\nconsistently quantified"),
     ("PLA", "polyester", 1.1, 2.5, "near-living to broad,\ncatalyst-dependent"),
@@ -22,7 +14,6 @@ ROWS = [
     ("Cellulose (regenerated)", "polysaccharide", 1.5, 3.0, "native cellulose is broader\nand rarely quantified"),
     ("Protein / DNA / RNA", "protein", 1.0, 1.0, "template-synthesised —\nexact, not a range"),
 ]
-
 
 def main():
     apply_style()
@@ -66,9 +57,7 @@ def main():
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)
 
-    # 颜色键 + "开口箭头 = 无可靠文献范围" 的说明挪进 report.md 图注。
     save(fig, "fig9_dispersity", OUT)
-
 
 if __name__ == "__main__":
     main()
