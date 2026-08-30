@@ -85,66 +85,59 @@ coniferyl and sinapyl alcohol (0, 1, 2 methoxy groups). (m) cis-1,4-polyisoprene
 
 ### 3.1 Polysaccharides
 
-Nothing else in the review is as stiff as cellulose. Its crystal modulus along the chain axis is
-around 130 to 150 GPa [35], and even regenerated fibres reach 10 to 30 GPa [36]. There is no
-melting step to use: cellulose starts to decompose near 300 °C, so it has to be shaped from
-solution, as Lyocell and viscose fibre [36], as clear film, or as the nanocrystals and nanofibrils
-now added as reinforcing filler [2]. The linear β-(1→4) chain drawn in Fig. 1a is behind all of
-this. It lies flat as a ribbon, hydrogen bonds stack the ribbons into the Iα and Iβ sheets of
-Fig. 2a, and pulling the sheets apart costs more energy than breaking a backbone bond [33,34]. Only
-solvents that dismantle that hydrogen-bond network will dissolve it, such as NMMO in the Lyocell
-process [37] or LiCl in DMAc.
+Nothing in the review is as stiff as cellulose. Its crystal modulus along the chain axis is around
+130 to 150 GPa [35], and even regenerated fibres reach 10 to 30 GPa [36]. There is no melting step
+to use: cellulose decomposes near 300 °C, so it is shaped from solution, as Lyocell and viscose
+fibre [36], clear film, or the nanocrystals and nanofibrils now used as filler [2]. The linear
+β-(1→4) chain of Fig. 1a explains this. It lies flat as a ribbon, hydrogen bonds stack the ribbons
+into the Iα and Iβ sheets of Fig. 2a, and pulling those sheets apart costs more than breaking a
+backbone bond [33,34]. Only solvents that dismantle the hydrogen-bond network dissolve it, such as
+NMMO in the Lyocell process [37] or LiCl in DMAc.
 
-Starch is almost the opposite. Plasticised into thermoplastic starch it is soft and very cheap,
-with a modulus of only 0.02 to 1 GPa, but it takes up moisture and slowly recrystallises on the
-shelf, a process called retrogradation [38]. For that reason it is seldom used alone; the usual
-form is a blend with PLA or PBAT, made into compostable bags, foamed trays and mulch film. Here it
-is the arrangement of the chains rather than their chemistry that matters. Amylose and amylopectin
-give only a weak crystallinity that humidity undoes, and as Fig. 2b shows, the amylose coils into a
-helix loose enough for water to enter and soften it.
+Starch is almost the opposite. As thermoplastic starch it is soft and very cheap, with a modulus of
+only 0.02 to 1 GPa, but it takes up moisture and slowly recrystallises on the shelf, a process
+called retrogradation [38]. So it is seldom used alone; the usual form is a blend with PLA or PBAT,
+for compostable bags, foamed trays and mulch film. Here the arrangement of the chains matters more
+than their chemistry: amylose and amylopectin give only a weak, humidity-reversible crystallinity,
+and the amylose coils into a helix loose enough for water to enter and soften it (Fig. 2b).
 
-The remaining two polysaccharides are used for chemistry, not for load-bearing. Once dissolved in
-dilute acid, chitosan, whose films run 1 to 4 GPa in modulus, becomes a polycation, and that alone
-makes it antimicrobial, able to bind metal ions, and adhesive to mucosa, which is why it appears in
-wound dressings, antimicrobial coatings and water treatment [39]. Its degree of deacetylation fixes
-both solubility and charge, and since raising it with alkali also cuts the chain, the most
-deacetylated grades are the ones with the lowest molecular weight [3]. Alginate works differently
-again: as sketched in Fig. 2c, a soft gel forms the moment Ca²⁺ ions bridge its guluronate blocks
-into an egg-box junction [4], and a chelating agent pulls the gel apart again. That reversibility
-is the basis of alginate hydrogels for wound dressings, cell encapsulation and bioprinting, and of
-its use as a food thickener, with the guluronate fraction setting how stiff or brittle the gel
-turns out. Hyaluronic acid, carrageenan, xanthan and pectin follow the same linkage-chemistry
-logic.
+The other two polysaccharides are used for chemistry, not load-bearing. In dilute acid, chitosan,
+whose films run 1 to 4 GPa in modulus, becomes a polycation, which makes it antimicrobial,
+metal-binding and mucoadhesive, hence its use in wound dressings, antimicrobial coatings and water
+treatment [39]; its degree of deacetylation fixes solubility and charge, and because raising it
+with alkali also cuts the chain, the most deacetylated grades have the lowest molecular weight [3].
+Alginate is different again: a soft gel forms the moment Ca²⁺ ions bridge its guluronate blocks
+into an egg-box junction (Fig. 2c) [4], and a chelating agent reverses it. That reversibility
+underlies alginate hydrogels for wound dressings, cell encapsulation and bioprinting, and its use
+as a food thickener, with the guluronate fraction setting how stiff or brittle the gel is.
+Hyaluronic acid, carrageenan, xanthan and pectin follow the same logic.
 
 ### 3.2 Polyesters: PHA and PLA
 
-Two polyesters matter here, and they are not alike. PHB, the archetype of the PHA family and shown
-in Fig. 1f, is stiff at 1.5 to 4 GPa, brittle with an elongation at break of only 1.5 to 8%, fully
+Two polyesters matter here, and they are not alike. PHB, the archetype of PHA and drawn in Fig. 1f,
+is stiff at 1.5 to 4 GPa, brittle with an elongation at break of only 1.5 to 8%, fully
 biodegradable, and used for rigid packaging, coatings and compostable items. Its processing window
-is the narrowest of anything in the review, only about 20 °C, because PHB breaks up by a
-six-membered-ring *cis*-elimination as soon as it is heated past melting [5]; the PHBV and PHBHHx
-copolymers stretch that window to around 55 °C but lose stiffness doing it. The polyester that is
-actually used at scale, though, is PLA, which turns up as 3D-printer filament, food serviceware,
-fibre and, as the copolymer PLGA, resorbable sutures. Its modulus of 2.5 to 4 GPa is respectable,
-but a glass transition near 60 °C keeps its heat ceiling low, a point taken up in Section 6.2. A
-useful molecular weight needs ring-opening polymerisation of lactide catalysed by Sn(Oct)₂ [40,41],
-and mixing the two enantiomers gives a PLLA/PDLA stereocomplex that melts about 50 °C higher
-because the opposite-handed chains pack more tightly [6,7]. Fig. 2d shows that both polyesters
-crystallise as helices that still melt rather than decompose. PBS and PEF run on the same ester
-logic.
+is the narrowest in the review, about 20 °C, because PHB breaks up by a six-membered-ring
+*cis*-elimination as soon as it is heated past melting [5]; the PHBV and PHBHHx copolymers stretch
+it to around 55 °C at some cost in stiffness. The polyester used at scale, though, is PLA:
+3D-printer filament, food serviceware, fibre, and resorbable sutures as the copolymer PLGA. Its
+modulus is 2.5 to 4 GPa, but a glass transition near 60 °C keeps its heat ceiling low. A useful
+molecular weight needs ring-opening polymerisation of lactide over Sn(Oct)₂ [40,41], and mixing the
+two enantiomers gives a PLLA/PDLA stereocomplex that melts about 50 °C higher because the
+opposite-handed chains pack more tightly [6,7]. As Fig. 2d shows, both polyesters crystallise as
+helices that still melt rather than decompose. PBS and PEF run on the same ester logic.
 
 ### 3.3 Protein-based Polymers
 
-Being strong and tough at once is rare in a polymer, and silk fibroin, drawn in Fig. 1h, manages
-both, which is why it is used as a premium suture, as tissue scaffold, and as a benchmark for tough
-fibres. As Fig. 2e sets out, the mechanism is β-sheet nanocrystallites a few nanometres across,
-dispersed in a soft amorphous matrix [8]. Collagen and its denatured form, gelatin, go into
-hydrogels, scaffolds and encapsulants; a stereoelectronic effect from hydroxyproline holds the
-Gly-X-Y triple helix of collagen together, as in Fig. 2f [45], and once heat has unwound it into
-gelatin it does not fold back. Zein, casein and soy protein will form films but bear no real load.
-One thing sets this family apart: every chain is copied from a ribosomal template, so the chains
-are close to identical in length, with a dispersity near the theoretical limit of 1, which nothing
-non-templated comes near.
+Being strong and tough at once is rare in a polymer, and silk fibroin (Fig. 1h) manages both, which
+is why it serves as a premium suture, tissue scaffold and benchmark tough fibre. The mechanism, in
+Fig. 2e, is β-sheet nanocrystallites a few nanometres across in a soft amorphous matrix [8].
+Collagen and its denatured form gelatin go into hydrogels, scaffolds and encapsulants; a
+stereoelectronic effect from hydroxyproline holds the Gly-X-Y triple helix of collagen together
+(Fig. 2f) [45], and once heat unwinds it into gelatin it does not fold back. Zein, casein and soy
+protein form films but bear no real load. One thing sets this family apart: every chain is copied
+from a ribosomal template, so the chains are close to a single length, with a dispersity near the
+ideal value of 1, which nothing non-templated comes near.
 
 ### 3.4 Lignin
 
@@ -159,16 +152,16 @@ route, be it kraft, organosolv or lignosulfonate [54].
 
 ### 3.5 Natural Rubber
 
-At rest, natural rubber has almost no modulus, roughly 0.001 to 0.005 GPa. Put it under load,
-though, and its tear and fatigue resistance is excellent, which is what keeps it in tyres, engine
-mounts, gloves and adhesives even with synthetic rubbers competing for the same jobs. The stiffness
-is made on demand. Relaxed *cis*-1,4-polyisoprene is amorphous, but stretching it drives the chains
-to crystallise, and those crystallites stiffen the network. X-ray diffraction has documented this
-strain-induced crystallisation, abbreviated SIC below, and it is largely absent from synthetic
-*cis*-polyisoprene [10]. None of this is a fixed material constant. Both the molecular weight and
-its spread vary from one *Hevea* clone to the next and with the age of the tree [19], and the
-non-rubber protein and gel fraction is not really an impurity but an active, clone-dependent part
-of the network [18]. Section 6.3 sets natural rubber directly against a synthetic counterpart.
+At rest, natural rubber has almost no modulus, roughly 0.001 to 0.005 GPa. Under load, though, its
+tear and fatigue resistance is excellent, which keeps it in tyres, engine mounts, gloves and
+adhesives despite synthetic competition. The stiffness is made on demand: relaxed
+*cis*-1,4-polyisoprene is amorphous, but stretching drives the chains to crystallise, and the
+crystallites stiffen the network. X-ray diffraction has documented this strain-induced
+crystallisation, abbreviated SIC below, and it is largely absent from synthetic *cis*-polyisoprene
+[10]. None of this is a fixed constant: the molecular weight and its spread vary between *Hevea*
+clones and with tree age [19], and the non-rubber protein and gel fraction is an active,
+clone-dependent part of the network rather than an impurity [18]. Section 6.3 sets natural rubber
+against a synthetic counterpart.
 
 *[Figure 2 — Higher-order structure, drawn by the authors: (a) cellulose ribbon → hydrogen-bonded
 sheet → Iα/Iβ crystal; (b) amylose left-handed helix; (c) alginate Ca²⁺ "egg-box" G-block junction;
@@ -207,32 +200,30 @@ polymerisation. Of these, Đ carries the most information, because it is what go
 material processes and how far its mechanical properties scatter from batch to batch. Mn by itself
 does neither.
 
-As Fig. 3 shows, where Đ ends up is essentially a record of how the polymer was made. Template
-synthesis, as in proteins and nucleic acids, brings the chains close to a single length and a Đ
-approaching the ideal value of 1. Every other route widens the distribution, by an amount that
-tracks how tightly the polymerisation is controlled. Natural rubber is the extreme: it is
-harvested, not grown chain by chain, and its Mw and its distribution move around between *Hevea*
-clones and with the age of the tree [19] in a way that has no synthetic parallel.
+Where Đ ends up is essentially a record of how the polymer was made (Fig. 3). Template synthesis,
+in proteins and nucleic acids, brings the chains close to a single length and a Đ near the ideal
+value of 1; every other route widens the distribution, by an amount that tracks how tightly the
+polymerisation is controlled. Natural rubber is the extreme: harvested rather than grown chain by
+chain, its Mw and distribution shift between *Hevea* clones and with tree age [19] in a way no
+synthetic polymer matches.
 
 *[Figure 3 — Dispersity Đ across families, coloured by backbone class: a point near Đ = 1 for
 templated biosynthesis, literature ranges for PLA, PHA, chitosan and cellulose, and an open arrow
 for natural rubber, whose Đ is not consistently quantified.]*
 
-The route from molecular weight to performance runs through chain entanglement. A polymer only
-reaches its full strength and toughness once the chains are long enough to entangle, which means
-above a critical value Mc [48]. Below Mc both properties collapse, while above it tensile strength
-climbs with Mn and then flattens out, following a Flory-type relation σ ≈ σ∞ − K/Mn [47]. When a
-material degrades, the first sign is a drop in molecular weight, and for a while that costs almost
-no strength; the failure comes suddenly, once the chains fall back below Mc.
+Molecular weight reaches performance through chain entanglement. A polymer develops its full
+strength and toughness only once the chains are long enough to entangle, above a critical value Mc
+[48]. Below Mc both collapse; above it, tensile strength climbs with Mn and then levels off, roughly
+as σ ≈ σ∞ − K/Mn [47]. Degradation shows up first as a fall in molecular weight, which costs little
+strength until the chains drop back below Mc, at which point performance fails abruptly.
 
-Actually measuring the molecular weight is harder for a biopolymer than for a synthetic one.
-Cellulose will not dissolve in any standard SEC eluent, so it has to be derivatised first or forced
-into an aggressive solvent, and even then aggregation and branching pull the result away from an
-SEC calibrated on linear standards. SEC-MALS and Mark-Houwink viscometry get around the calibration
-problem, but the Mark-Houwink parameters have never been measured for a lot of biopolymer and
-solvent combinations. The upshot is that published values for one and the same material often
-differ by a factor of ten. Most of that spread is an artefact of the method, which is why a number
-is only worth anything when it is quoted together with how it was obtained.
+Measuring that molecular weight is harder for a biopolymer than for a synthetic one. Cellulose
+dissolves in no standard SEC eluent and has to be derivatised or forced into an aggressive solvent
+first, and even then aggregation and branching distort an SEC calibrated on linear standards.
+SEC-MALS and Mark-Houwink viscometry avoid the calibration problem, but Mark-Houwink parameters are
+missing for many biopolymer/solvent pairs. Published values for one material therefore often differ
+by a factor of ten, mostly as an artefact of method, which is why a number only means something
+quoted together with how it was obtained.
 
 **Table 3.** Typical number-average molecular weight for representative biopolymers, with the
 standard method by which each is measured (dispersity Đ is plotted in Fig. 3 instead of repeated
@@ -257,33 +248,30 @@ Having gone through the families one by one, it is worth stepping back to what t
 
 ### 5.1 Thermal Behaviour
 
-In most biopolymers, decomposition begins at or below the melting point, as Fig. 4a sets out. The
-cause is the same hydrogen bonding and dense polar-group content that makes them stiff to begin
-with: it raises the energy needed to melt the crystal until that figure approaches the energy
-needed to break a backbone bond, and the two processes then run into each other. Cellulose,
-chitosan and silk fibroin never get as far as melting and decompose first. Among the polyesters the
-margin is thin but real, with a melt-processing window of about 20 °C for PHB, about 55 °C for PHBV
-and a little more for PLLA [44]. Fig. 4a is drawn to the TGA decomposition onset, but the usable
-window for PHB and PLLA is tighter still, because melt hydrolysis of the kind described in Section 4
-sets in before that onset is reached.
+In most biopolymers, decomposition begins at or below the melting point (Fig. 4a). The cause is the
+hydrogen bonding and dense polar groups that make them stiff in the first place: they raise the
+energy needed to melt the crystal until it approaches the energy needed to break a backbone bond,
+and the two events overlap. Cellulose, chitosan and silk fibroin decompose before they melt. Among
+the polyesters the margin is thin but real, with a melt-processing window of about 20 °C for PHB,
+55 °C for PHBV and a little more for PLLA [44]. Fig. 4a marks the TGA decomposition onset, but the
+usable window for PHB and PLLA is tighter, because melt hydrolysis sets in first.
 
-That window also decides how the material is processed. PBS, PLA and PHB can be melt-processed;
-cellulose and chitosan, with no window to work in, have to be shaped from solution instead, by
-Lyocell or by dilute-acid spinning. Plasticisers, nucleating agents and compatibilised blends are
-all really just ways of prising a narrow window open, so a lot of what gets reported as a
-"performance shortfall" is really a processing-window shortfall.
+The width of that window also decides the processing route. PBS, PLA and PHB can be melt-processed;
+cellulose and chitosan, with no window at all, are shaped from solution instead, by Lyocell or
+dilute-acid spinning. Plasticisers, nucleating agents and compatibilised blends are all ways of
+prising a narrow window open, so a lot of what gets called a "performance shortfall" is really a
+processing-window shortfall.
 
 ### 5.2 Mechanical Behaviour
 
-Mechanical behaviour traces to the same place, and Fig. 4b maps it out. Crystallinity and hydrogen
-bonding raise the modulus, but they leave the chain with very few flexible segments, so a
-biopolymer will not draw out before it breaks the way polyethylene or polypropylene does. Most of
-them therefore sit in the same corner of the map as LDPE, PP and PET are plotted against: high
-modulus, low elongation [11,43]. Natural rubber is the outlier, with almost no modulus when relaxed
-and its properties showing up only under load through SIC, as Sections 3.5 and 6.3 discuss. The
-shapes in Fig. 4b are ranges rather than points; sample form, moisture, crystallinity and thermal
-history can each move a material's data by as much as a factor of ten, and the same scatter returns
-as batch variability in Section 6.2.
+Mechanical behaviour traces to the same place (Fig. 4b). Crystallinity and hydrogen bonding raise
+the modulus but leave the chain with few flexible segments, so a biopolymer will not draw out
+before it breaks the way polyethylene or polypropylene does. Most of them sit in the high-modulus,
+low-elongation corner of the map, away from LDPE, PP and PET [11,43]. Natural rubber is the
+outlier, with almost no modulus when relaxed and its properties appearing only under load through
+SIC. The shapes in Fig. 4b are ranges, not points: sample form, moisture, crystallinity and
+thermal history can each shift a material's data by up to a factor of ten, the scatter that
+returns as batch variability in Section 6.2.
 
 *[Figure 4 — Thermal and mechanical envelopes, drawn by the authors. (a) Tg (open circle), Tm
 (diamond) and TGA decomposition onset (bar) on one temperature axis; the shaded band is the
@@ -293,37 +281,31 @@ for reference.]*
 
 ### 5.3 Hydrophilicity and Barrier Properties
 
-The polar groups that give biopolymers their strength also make them take up water, and how much
-depends on the group. Cellulose and starch carry a hydroxyl on nearly every ring and sit at the
-wet end, holding a large fraction of their own weight in water at high humidity; proteins, with an
-amide per residue, behave much the same. Polyesters have only one ester per repeat unit and absorb
-far less, on the order of a percent for PLA, but even that is enough to matter.
-
-Absorbed water acts in two ways. It plasticises the amorphous fraction and lowers the glass
-transition, which is why a starch article that is stiff when dry goes limp and tacky as humidity
-rises and why its properties keep drifting in storage. It also opens up free volume, so gas
-molecules diffuse through more quickly. A dry PLA film has an oxygen permeability close to that of
-PET [11], but the value rises as the surrounding humidity increases, and its water-vapour barrier
-is poorer than PET to start with [14]; a plain cellulose or starch film is barely a moisture
-barrier at all. A barrier figure for a biopolymer film therefore says little without the
-humidity it was measured at, and in practice moisture-sensitive goods are packed behind a thin
-synthetic barrier layer rather than the biopolymer alone. Molecular-dynamics simulations of oxygen
-and water in PLA reproduce this humidity dependence by tracking the fractional free volume and can
-rank candidate films before a packaging trial is run [57,58].
+The polar groups that make biopolymers strong also make them take up water, and the hydroxyl- and
+amide-rich families take up the most: cellulose, starch and the proteins can hold a large fraction
+of their weight in water at high humidity, while a polyester such as PLA absorbs only about a
+percent. Even that percent matters. Absorbed water plasticises the amorphous fraction and lowers
+the glass transition, which is why a starch article that is stiff when dry turns limp as humidity
+rises and keeps drifting in storage. It also opens up free volume, so gases pass through faster: a
+dry PLA film has an oxygen permeability close to PET's [11], but the value climbs with humidity,
+and PLA's water-vapour barrier is poorer than PET's to begin with [14], while a plain cellulose or
+starch film is barely a barrier at all. A barrier rating for a biopolymer film therefore says
+little without the humidity it was measured at, and moisture-sensitive goods are usually packed
+behind a thin synthetic layer rather than the biopolymer alone. Molecular-dynamics simulations of
+oxygen and water in PLA reproduce the humidity dependence through the fractional free volume and
+can rank films before a packaging trial [57,58].
 
 ### 5.4 Degradation as a Material Property
 
-Degradation is a rate process, and structure sets the rate, as Fig. 5 lays out. Polyesters go by
-an ester hydrolysis that feeds itself: the acid chain end left behind by each scission speeds up
-the next one, so below a certain part thickness the inside erodes faster than the surface, a
-pattern known as bulk erosion [49]. Polysaccharides and proteins take a different route, through
-enzymes that can only reach the amorphous segments, so the rate is set by how much surface is
-accessible rather than by the bulk chemistry [50]. This is why crystallinity ends up as the
-trade-off at the centre of the review: the same order that raises the modulus and keeps water out,
-in Sections 5.2 and 5.3, also keeps out whatever would degrade the material. Quantum-chemical
-calculations have traced both the base-catalysed path and the water-assisted neutral one, and
-between them they reproduce why polyesters hydrolyse so much faster in acid or base than at neutral
-pH [59,60].
+Degradation is a rate process that structure controls, as Fig. 5 lays out. Polyesters go by a
+self-feeding ester hydrolysis: the acid chain end from each scission speeds up the next, so past a
+certain thickness a part erodes from the inside, which is bulk erosion [49]. Polysaccharides and
+proteins instead need enzymes, which reach only the amorphous segments, so their rate follows the
+accessible surface rather than the bulk chemistry [50]. This is why crystallinity is the trade-off
+at the centre of the review: the order that raises the modulus and keeps water out also keeps out
+what would degrade the material. Quantum-chemical work has mapped the base-catalysed and the
+water-assisted neutral paths, reproducing why polyesters hydrolyse far faster in acid or base than
+at neutral pH [59,60].
 
 *[Figure 5 — Two degradation routes, drawn by the authors. (a) Polyester ester hydrolysis: the
 acid end group catalyses further scission, so thick parts erode from the inside (bulk erosion).
@@ -337,44 +319,40 @@ crystallinity sets the rate.]*
 ### 6.1 Advantages
 
 Biopolymers bring four broad advantages over commodity synthetics. Only one holds for every
-family: the feedstock renews itself. Biodegradability counts mainly where the material is likely to
-end up loose in the environment, in mulch film, fishing gear or disposable foodware, and there the
+family: the feedstock renews itself. Biodegradability counts mainly where the material ends up
+loose in the environment, in mulch film, fishing gear or disposable foodware, and there the
 readiness to hydrolyse or be broken down by enzymes is the point rather than a defect, so long as
-the disposal route suits the material, as Section 5.4 argues [51]. Biocompatibility and
-bioresorbability then let PLA and PGA sutures [52], and hydrogels and dressings based on collagen,
-alginate and chitosan [55], do jobs a commodity plastic could reach only after expensive
-modification. This is the one area, taken up in Section 7, where biopolymers really are the only
-practical class, though even there with conditions attached. And function beyond mechanics,
-chirality, a charge that responds to pH, or bioactivity written into the sequence, arrives with the
-biological structure for free.
+the disposal route suits the material [51]. Biocompatibility and bioresorbability let PLA and PGA
+sutures [52], and hydrogels and dressings of collagen, alginate and chitosan [55], do jobs a
+commodity plastic could reach only after costly modification; this is the one area where
+biopolymers are the only practical class, though even there with conditions. And function beyond
+mechanics, chirality, a pH-dependent charge, bioactivity in the sequence, comes with the biological
+structure for free.
 
 ### 6.2 Disadvantages
 
-The disadvantages are as real as the advantages. PLA usually costs several times what commodity PE
-and PP cost, and PHA more again [16,53]. On heat, PLA that has not been stereocomplexed has a heat
-deflection temperature of only about 55 to 65 °C, well under the roughly 100 °C of PP [11,13]. Its
-oxygen and CO₂ barrier matches PET, but the water-vapour barrier is worse and a starch film worse
-still [14], so the barrier problem that really bites is moisture sensitivity rather than oxygen
-getting through. Ageing makes matters worse on both counts: PHB embrittles in storage as secondary
-crystallisation proceeds [61], PLA through physical ageing below its Tg [43], starch properties
-wander with the humidity, and PLA has to be dried before melt processing or its molecular weight
-runs away.
+The disadvantages are as real as the advantages. PLA usually costs several times commodity PE and
+PP, PHA more again [16,53]. Un-stereocomplexed PLA has a heat deflection temperature of only about
+55 to 65 °C, against roughly 100 °C for PP [11,13]. Its oxygen and CO₂ barrier matches PET's, but
+the water-vapour barrier is worse and a starch film worse still [14], so the real barrier weakness
+is moisture, not oxygen. Ageing adds to both: PHB embrittles through secondary crystallisation
+[61], PLA through sub-Tg physical ageing [43], starch drifts with humidity, and PLA must be dried
+before melt processing or its molecular weight runs away.
 
-Sourcing from agriculture also brings a batch-to-batch variability that petrochemical monomers
-simply do not have, showing up in the M and G fractions of alginate, the degree of deacetylation of
-chitosan, the amylose content of starch, and the clone and tree age behind natural rubber [19].
-Fitting into existing recycling streams is another limit. A 2022 study put PLA at only 0 to 0.019%
-of PET recycling streams, held down there by near-infrared sorting and below the roughly 1% level
-at which it measurably degrades recycled PET [15]. That is a reliance on sorting infrastructure,
-not an inherent incompatibility.
+Agricultural sourcing also brings a batch-to-batch variability that petrochemical monomers lack, in
+the M/G ratio of alginate, the deacetylation of chitosan, the amylose content of starch and the
+clone and age of the rubber tree [19]. Recycling fit is another limit: a 2022 study found PLA at
+only 0 to 0.019% of PET recycling streams, held there by near-infrared sorting and below the
+roughly 1% that measurably degrades recycled PET [15], a dependence on sorting infrastructure
+rather than a true incompatibility.
 
 ### 6.3 Case Study: Natural Rubber and a Synthetic Analogue (SBR)
 
-NR and styrene-butadiene rubber (SBR) are compounded, filled and vulcanised in the same way, and
-they compete for the same jobs, tyre tread, damping, belting, so whatever separates them has to
-come from the backbone rather than from processing. That makes it the cleanest same-application
-comparison in the review. Fig. 6 shows where the difference begins at the scale of the chain;
-Table 4 scores the two materials on five counts [10,18–32].
+NR and styrene-butadiene rubber (SBR) are compounded, filled and vulcanised the same way and
+compete for the same jobs, tyre tread, damping, belting, so whatever separates them comes from the
+backbone, not processing. It is the cleanest same-application comparison in the review. Fig. 6
+shows where the difference starts at the chain scale; Table 4 scores the two on five counts
+[10,18–32].
 
 *[Figure 6 — NR and SBR, drawn by the authors. (a) NR cis-1,4-polyisoprene; (b) SBR butadiene
 unit; (c) SBR styrene unit. (d) Under strain, stereoregular NR aligns into crystalline bundles
@@ -392,28 +370,26 @@ formulation- or context-dependent outcome, or a documented risk.
 | Environmental footprint | Renewable, but LCA shows real land/energy cost [29,30] | Fossil feedstock; biodegradable grades emerging [31] |
 | Price stability | Historically the more volatile of the two [32] | Steadier, but tied to the petrochemical supply chain [32] |
 
-With the compounding matched, the SIC in NR gives it the better tear and crack-growth resistance to
-start with [10,23], and SBR then catches up on wear resistance through reinforcement and cure
-design [24]. It is the clearest instance in the review of backbone chemistry and formulation
-trading against each other. The "natural is better" line does not hold up against the literature.
-NR latex brings a genuine protein-allergy risk that SBR does not [27,28], being renewable is no
-guarantee of a smaller life-cycle footprint [29,30], and NR has historically been the more volatile
-of the two on price, for reasons of climate and crop disease that have nothing to do with polymer
-chemistry [32].
+With compounding matched, NR's SIC gives it better initial tear and crack-growth resistance
+[10,23], and SBR catches up on wear resistance through reinforcement and cure design [24]. It is
+the review's clearest case of backbone chemistry trading against formulation. The "natural is
+better" story does not survive the literature: NR latex carries a real protein-allergy risk that
+SBR does not [27,28], renewability does not guarantee a smaller life-cycle footprint [29,30], and
+NR has been the more price-volatile of the two, for climate and crop-disease reasons unrelated to
+polymer chemistry [32].
 
 ---
 
 ## 7. Applications
 
-Table 5 lines up each application with the property it calls for and the material that supplies it.
-A couple of things stand out. Packaging asks for an oxygen barrier, a water-vapour barrier,
-toughness and heat resistance above PLA's heat deflection temperature all at once, and since no
-single biopolymer manages the whole set, a packaging structure is nearly always multilayer or
-blended. Biomedical use is the one place where biopolymers come close to being irreplaceable,
-because they combine biocompatibility with a degradation rate that can be tuned. Even there, PGA
-and PLGA sutures still fail mostly through the local drop in pH as their acidic hydrolysis products
-build up [52,53], and collagen, alginate and chitosan carry the same logic across to scaffolds and
-bioprinting [55].
+Table 5 pairs each application with the property it needs and the material that meets it. Two
+things stand out. Packaging needs an oxygen barrier, a water-vapour barrier, toughness and heat
+resistance above PLA's heat deflection temperature all at once, and since no single biopolymer
+manages the whole set, the structure is nearly always multilayer or blended. Biomedical use is the
+one place biopolymers are close to irreplaceable, combining biocompatibility with a degradation
+rate that can be tuned; even there, PGA and PLGA sutures fail mostly through the local pH drop from
+their acidic products [52,53], and collagen, alginate and chitosan carry the same logic to
+scaffolds and bioprinting [55].
 
 **Table 5.** Applications, required property, and material.
 
@@ -429,31 +405,21 @@ bioprinting [55].
 
 ## 8. Conclusions
 
-This review has sorted biopolymers by the linkage that repeats along the backbone and taken the
-properties and uses of each family before its structure. Across the polysaccharides, polyesters,
-proteins, lignin and natural rubber, a wide spread of behaviour comes from a small set of causes:
-cellulose and the proteins are stiff and infusible, starch and the polyesters are softer and
-melt-processable, rubber is elastomeric, and lignin has no repeat unit to speak of. In each case it
-was the backbone chemistry, not the biological origin, that fixed the melting behaviour, the
-degradation route and the mechanical envelope.
+Sorted by backbone linkage, the five families cover a wide range of behaviour from a short list of
+causes: cellulose and the proteins are stiff and infusible, starch and the polyesters softer and
+melt-processable, rubber elastomeric, and lignin has no repeat unit at all. In each case it was
+backbone chemistry, not biological origin, that set the melting behaviour, the degradation route
+and the mechanical range. Three patterns held throughout: performance is capped by heat and water,
+not strength; crystallinity runs one three-way trade-off, since the order that stiffens a polymer
+also keeps water and degradation out; and a molecular weight means little without its method.
 
-Three patterns ran through the families. Performance is capped by thermal stability and by
-sensitivity to water rather than by any lack of strength, so most biopolymers match synthetic
-polymers on stiffness and lose on the processing window and on moisture. Crystallinity governs one
-three-way trade-off, because the order that raises the modulus also keeps water and degradative
-attack out, and the natural-rubber and SBR comparison reaches the same trade-off through compounding
-alone. A molecular weight means little without its method, since the insolubility and missing
-calibration data that make it hard to measure come from the same associating structure that sets
-the properties.
-
-Weighed against synthetic polymers, the advantages that hold up are a renewable feedstock,
-biodegradability where it is wanted, biocompatibility, and function beyond mechanics; the costs are
-price, low heat resistance, moisture, ageing and agricultural variability. Packaging is therefore
-almost always blended or multilayer, while resorbable sutures and scaffolds remain the clearest
-thing biopolymers do that a commodity plastic cannot. Bio-based plastics were about 2.31 Mt of
-capacity in 2025, near 0.5% of all plastics [16]; scale alone will not fix limits that are set by
-structure, and the nearer-term routes are enzymatic depolymerisation back to monomer [17] and
-data-driven property prediction [56].
+Against synthetic polymers, the advantages that survive are a renewable feedstock, biodegradability
+where it helps, biocompatibility and function beyond mechanics; the costs are price, heat
+resistance, moisture, ageing and agricultural variability. Packaging is nearly always blended or
+multilayer, and resorbable sutures and scaffolds stay the clearest thing biopolymers do that
+commodity plastics cannot. Bio-based plastics reached only about 2.31 Mt of capacity in 2025, near
+0.5% of all plastics [16]; scale alone will not lift the structural limits, and the nearer-term
+routes are enzymatic depolymerisation to monomer [17] and data-driven property prediction [56].
 
 ---
 

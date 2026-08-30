@@ -236,7 +236,7 @@ def build():
     normal.font.name = "Times New Roman"
     normal.font.size = Pt(BODY_PT)
     normal.paragraph_format.line_spacing = 1.5
-    normal.paragraph_format.space_after = Pt(2)
+    normal.paragraph_format.space_after = Pt(1)
 
     try:
         list_bullet = doc.styles["List Bullet"]
@@ -260,7 +260,7 @@ def build():
             h.font.color.rgb = None
             h.font.size = Pt(HEADING_PT[i])
             h.font.bold = True
-            h.paragraph_format.space_before = Pt(6)
+            h.paragraph_format.space_before = Pt(3)
             h.paragraph_format.space_after = Pt(2)
             h.paragraph_format.line_spacing = 1.0
             h.paragraph_format.keep_with_next = False
