@@ -260,8 +260,8 @@ def build():
             h.font.color.rgb = None
             h.font.size = Pt(HEADING_PT[i])
             h.font.bold = True
-            h.paragraph_format.space_before = Pt(3)
-            h.paragraph_format.space_after = Pt(2)
+            h.paragraph_format.space_before = Pt(2)
+            h.paragraph_format.space_after = Pt(1)
             h.paragraph_format.line_spacing = 1.0
             h.paragraph_format.keep_with_next = False
             h.paragraph_format.keep_together = False
