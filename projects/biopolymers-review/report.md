@@ -195,11 +195,11 @@ its source and test condition in `figures/data/*.csv`.*
 ## 4. Molecular Weight and Its Measurement
 
 A lot of reviews report biopolymer molecular weight as simply "high", when the thing that actually
-matters is the shape of the whole distribution. The descriptors in normal use are the
-number-average Mn, the weight-average Mw, the dispersity Đ = Mw/Mn [46], and the degree of
-polymerisation. Of these, Đ carries the most information, because it is what governs how the
-material processes and how far its mechanical properties scatter from batch to batch. Mn by itself
-does neither.
+matters is the shape of the whole distribution. The number-average Mn,
+the weight-average Mw and the dispersity Đ = Mw/Mn [46] provide complementary information: Mn is
+the number-average, Mw weights the longer chains more heavily, and Đ measures the breadth of the
+molecular-weight distribution. Đ is the descriptor most often tied to processing behaviour and to
+batch-to-batch scatter in mechanical properties.
 
 Where Đ ends up is essentially a record of how the polymer was made (Fig. 3). Template synthesis,
 in proteins and nucleic acids, brings the chains close to a single length and a Đ near the ideal
@@ -212,10 +212,10 @@ set by the biological source rather than by a controlled process.
 templated biosynthesis, literature ranges for PLA, PHA, chitosan and cellulose, and an open arrow
 for natural rubber, whose Đ is not consistently quantified.]*
 
-Molecular weight reaches performance through chain entanglement. A polymer develops its full
-strength and toughness only once the chains are long enough to entangle, above a critical value Mc
-[48]. Below Mc both collapse; above it, tensile strength climbs with Mn and then levels off, roughly
-as σ ≈ σ∞ − K/Mn [47]. Degradation shows up first as a fall in molecular weight, which costs little
+Molecular weight reaches performance through chain entanglement. Strength and toughness develop
+only once the chains are long enough to entangle, above a critical value Mc [48]. Below Mc both
+collapse; above it, tensile strength climbs with Mn and then levels off, roughly as σ ≈ σ∞ − K/Mn
+[47]. Degradation shows up first as a fall in molecular weight, which costs little
 strength until the chains drop back below Mc, at which point performance fails abruptly.
 
 Measuring that molecular weight is harder for a biopolymer than for a synthetic one. Cellulose
@@ -232,12 +232,12 @@ here).
 
 | Material | Typical Mn (g mol⁻¹) | Standard method (key limitation) |
 |---|---|---|
-| Proteins / DNA / RNA | sequence-specific | mass spectrometry (no limitation; templated) |
+| Proteins / DNA / RNA | sequence-specific | mass spectrometry / sequence-based methods |
 | Cellulose | 10⁴–10⁶ | viscometry / SEC-MALS after derivatisation (SEC-insoluble) |
 | Chitosan | 10⁴–10⁶ | intrinsic viscosity (DD/MW trade-off, Section 3.1) |
 | PHA (PHB/PHBV) | 10⁵–10⁶ | GPC/SEC vs polystyrene (calibration mismatch) |
 | PLA | 10⁴–10⁵ | GPC/SEC (in-process moisture hydrolysis) |
-| Natural rubber | >10⁶ | intrinsic viscosity (no synthetic analogue) |
+| Natural rubber | >10⁶ | intrinsic viscosity (Mark-Houwink calibration; gel fraction) |
 
 *Mn values are order-of-magnitude; the method column and its limitations follow refs [39,46] and Section 4.*
 
@@ -313,8 +313,8 @@ at neutral pH [59,60].
 
 *[Figure 5 — Two degradation routes. (a) Polyester ester hydrolysis: the
 acid end group catalyses further scission, so thick parts erode from the inside (bulk erosion).
-(b) Enzymatic attack on polysaccharides and proteins reaches only the amorphous regions, so
-crystallinity sets the rate.]*
+(b) Enzymatic attack on polysaccharides and proteins occurs preferentially in accessible amorphous
+regions, so increasing crystallinity generally slows degradation.]*
 
 ---
 
@@ -419,7 +419,8 @@ method.
 Against synthetic polymers, the surviving advantages are a renewable feedstock, useful
 biodegradability, biocompatibility and function beyond mechanics; the costs are price, heat
 resistance, moisture, ageing and agricultural variability. Packaging stays blended or multilayer,
-and resorbable sutures and scaffolds remain what biopolymers do that commodity plastics cannot.
+and resorbable sutures and scaffolds remain applications in which biopolymers offer particularly
+distinctive advantages.
 Bio-based plastics were only about 2.31 Mt of capacity in 2025, near 0.5% of all plastics [16];
 scale alone will not lift the structural limits, and the promising directions are enzymatic
 depolymerisation [17] and data-driven property prediction [56].
