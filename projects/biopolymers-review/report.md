@@ -78,8 +78,8 @@ Fig. 2 the higher-order structures. The point that keeps coming back is that bac
 more than the biological source, is a useful first predictor of melting, attack by water or
 enzymes, and mechanical behaviour.
 
-*[Figure 1 — Repeat units, drawn by the authors with RDKit from stereochemistry-checked SMILES,
-coloured by backbone class. (a–e) polysaccharides cellulose, amylose, chitosan, alginate M, alginate
+*[Figure 1 — Repeat units generated with RDKit from stereochemistry-checked SMILES, coloured by
+backbone class. (a–e) polysaccharides cellulose, amylose, chitosan, alginate M, alginate
 G; (a)/(b) differ only at C1, (d)/(e) only at C5. (f–g) polyesters PHB, PLLA, with (R)/(S) marked.
 (h–i) proteins silk fibroin (Gly-Ala)ₙ, collagen Gly-Pro-Hyp. (j–l) lignin precursors p-coumaryl,
 coniferyl and sinapyl alcohol (0, 1, 2 methoxy groups). (m) cis-1,4-polyisoprene.]*
@@ -164,7 +164,7 @@ clones and with tree age [19], and the non-rubber protein and gel fraction is an
 clone-dependent part of the network rather than an impurity [18]. Section 6.3 sets natural rubber
 against a synthetic counterpart.
 
-*[Figure 2 — Higher-order structure, drawn by the authors: (a) cellulose ribbon → hydrogen-bonded
+*[Figure 2 — Higher-order structure: (a) cellulose ribbon → hydrogen-bonded
 sheet → Iα/Iβ crystal; (b) amylose left-handed helix; (c) alginate Ca²⁺ "egg-box" G-block junction;
 (d) PHA and PLA helical packing (PHB 2₁, PLLA 10₃); (e) silk antiparallel β-sheet nanocrystallites
 (2–4 nm) in an amorphous matrix; (f) collagen Gly-X-Y triple helix.]*
@@ -276,7 +276,7 @@ SIC. The shapes in Fig. 4b are ranges, not points: sample form, moisture, crysta
 thermal history can each shift a material's data by up to a factor of ten, the scatter that
 returns as batch variability in Section 6.2.
 
-*[Figure 4 — Thermal and mechanical envelopes, drawn by the authors. (a) Tg (open circle), Tm
+*[Figure 4 — Thermal and mechanical envelopes. (a) Tg (open circle), Tm
 (diamond) and TGA decomposition onset (bar) on one temperature axis; the shaded band is the
 melt-processing window, labelled with its width. (b) Modulus vs. elongation at break (log-log axes);
 ellipses span literature ranges for the stated sample form, not error bars. LDPE, PP and PET shown
@@ -311,7 +311,7 @@ what would degrade the material. Quantum-chemical work has mapped the base-catal
 water-assisted neutral paths, reproducing why polyesters hydrolyse far faster in acid or base than
 at neutral pH [59,60].
 
-*[Figure 5 — Two degradation routes, drawn by the authors. (a) Polyester ester hydrolysis: the
+*[Figure 5 — Two degradation routes. (a) Polyester ester hydrolysis: the
 acid end group catalyses further scission, so thick parts erode from the inside (bulk erosion).
 (b) Enzymatic attack on polysaccharides and proteins reaches only the amorphous regions, so
 crystallinity sets the rate.]*
@@ -359,7 +359,7 @@ backbone, not processing, which makes it the cleanest same-application compariso
 shows where the difference starts at the chain scale; Table 4 scores the two on five counts
 [10,18–32].
 
-*[Figure 6 — NR and SBR, drawn by the authors. (a) NR cis-1,4-polyisoprene; (b) SBR butadiene
+*[Figure 6 — NR and SBR. (a) NR cis-1,4-polyisoprene; (b) SBR butadiene
 unit; (c) SBR styrene unit. (d) Under strain, stereoregular NR aligns into crystalline bundles
 (strain-induced crystallisation, X-ray confirmed) while SBR's irregular backbone stays amorphous,
 the basis of the SIC row of Table 4.]*
