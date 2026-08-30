@@ -265,16 +265,15 @@ reached.
 That window also decides how the material is processed. PBS, PLA and PHB can be melt-processed;
 cellulose and chitosan, with no window to work in, have to be shaped from solution instead, by
 Lyocell or by dilute-acid spinning. Plasticisers, nucleating agents and compatibilised blends are
-all, in the end, ways of prising a narrow window open, so a good many of the "performance
-shortfalls" in the literature are really processing-window shortfalls.
+all really just ways of prising a narrow window open, so a lot of the "performance shortfalls" you
+see in the literature are actually processing-window shortfalls.
 
 ### 5.2 Mechanical Behaviour
 
 Mechanical behaviour traces to the same place (Fig. 4b). Crystallinity and hydrogen bonding raise
 the modulus, but they leave the chain with very few flexible segments, so a biopolymer will not
-draw out before it breaks the way polyethylene or polypropylene does. Most of
-them therefore land in the same corner of the map: high modulus, low elongation, measured against
-LDPE, PP and PET [11,43]. Natural rubber is the outlier, with almost no modulus when relaxed and
+draw out before it breaks the way polyethylene or polypropylene does. So most of them sit in the
+same corner of the map next to LDPE, PP and PET: high modulus, low elongation [11,43]. Natural rubber is the outlier, with almost no modulus when relaxed and
 its properties showing up only under load, through SIC (Sections 3.5 and 6.3). The shapes in
 Fig. 4b are ranges rather than points. Sample form, moisture, crystallinity and thermal history can
 each move a material's data by as much as a factor of ten, and the same scatter comes back as
@@ -303,9 +302,9 @@ hydrolysis that feeds itself: the acid chain end left behind by each scission sp
 one, so below a certain part thickness the inside erodes faster than the surface. This is bulk
 erosion [49]. Polysaccharides and proteins take a different route, through enzymes that can only
 reach the amorphous segments, so here the rate is set by how much surface is accessible rather than
-by the bulk chemistry [50]. That is what makes crystallinity the trade-off at the centre of this
-review. Whatever raises the modulus (Section 5.2) and holds water out (Section 5.3) also holds out
-the attack that would degrade the material. Quantum-chemical calculations have traced both the
+by the bulk chemistry [50]. This is why crystallinity ends up being the trade-off at the centre of
+the review: the same order that raises the modulus (Section 5.2) and keeps water out (Section 5.3)
+also keeps out whatever would degrade the material. Quantum-chemical calculations have traced both the
 base-catalysed path and the water-assisted neutral one, and between them they reproduce why
 polyesters hydrolyse so much faster in acid or base than at neutral pH [59,60].
 
@@ -388,10 +387,10 @@ chemistry [32].
 
 ## 7. Applications
 
-Table 5 sets out each application against the property it calls for and the material that supplies
-it. Two patterns stand out. Packaging wants an O₂ and an H₂O barrier, toughness, and heat
-resistance above PLA's heat deflection temperature, all at once (Section 6.2); no single biopolymer
-covers all three (Section 5.3), so packaging is nearly always multilayer or blended. Biomedical use
+Table 5 lines up each application with the property it calls for and the material that supplies it.
+A couple of things stand out. Packaging wants an O₂ and an H₂O barrier, toughness, and heat
+resistance above PLA's heat deflection temperature, all at once (Section 6.2), and since no single
+biopolymer covers all three (Section 5.3), packaging is nearly always multilayer or blended. Biomedical use
 is the one place where biopolymers come close to being irreplaceable, since they put
 biocompatibility and a tunable degradation rate in the same material (Section 5.4). Even there, PGA
 and PLGA sutures still fail mostly through a local drop in pH as their acidic hydrolysis products
@@ -457,9 +456,11 @@ to the monomer [17] and data-driven prediction of properties [56].
 8. Keten, S.; Xu, Z.; Ihle, B.; Buehler, M. J. Nanoconfinement controls stiffness, strength and
    mechanical toughness of β-sheet crystals in silk. *Nat. Mater.* **2010**, *9*, 359–367.
    DOI: 10.1038/nmat2704.
-9. Odili, C. C.; Ajibola, A. M.; Sojobi, J. W.; et al. Chemistry of lignin. In *Lignin Renewable
-   Materials — Chemistry, Trends, Technology and Application*; Ngo, T.-D., Ahvazi, B., Eds.;
-   IntechOpen, 2025. DOI: 10.5772/intechopen.1013010.
+9. Odili, C. C.; Ajibola, A. M.; Sojobi, J. W.; Ogunbiyi, O. O.; Ogunsanya, A. O.; Okoubulu, A. B.;
+   Igbinigie, G. O.-A.; Daramola, D. O.-G.; Kayode, O. E.; Oyegunle, T. S.; Ayegba, T. A.; Salami,
+   O. T.; Akinyemi, O. O.; Oyedepo, S. O. Chemistry of lignin. In *Lignin Renewable Materials —
+   Chemistry, Trends, Technology and Application*; Ngo, T.-D., Ahvazi, B., Eds.; IntechOpen, 2025.
+   DOI: 10.5772/intechopen.1013010.
 10. Huneau, B. Strain-induced crystallization of natural rubber: a review of X-ray diffraction
     investigations. *Rubber Chem. Technol.* **2011**, *84*, 425–452. DOI: 10.5254/1.3601131.
 11. de Beukelaer, H.; Hilhorst, M.; Workala, Y.; Maaskant, E.; Post, W. Overview of the
@@ -487,15 +488,17 @@ to the monomer [17] and data-driven prediction of properties [56].
     Repurposing commercial hydrolytic and oxidative enzymes toward synergistic PLA
     depolymerization. *ACS Sustain. Chem. Eng.* **2025**, *13*, 20705–20716.
     DOI: 10.1021/acssuschemeng.5c06901.
-18. Huang, S.-Q.; et al. Revealing the structure-property difference of natural rubber prepared by
-    different methods: protein and gel content are key factors. *Chin. J. Polym. Sci.* **2024**,
-    *42*, 457–467. DOI: 10.1007/s10118-024-3071-2.
-19. Xin, S.; et al. Comparative analysis of latex transcriptomes reveals the potential mechanisms
-    underlying rubber molecular weight variations between *Hevea brasiliensis* clones RRIM600 and
-    Reyan7-33-97. *BMC Plant Biol.* **2021**, *21*, 244. DOI: 10.1186/s12870-021-03022-5.
-20. Dhanorkar, R. J.; et al. Synthesis of functionalized styrene butadiene rubber and its
-    applications in S-SBR–silica composites for high-performance tire applications.
-    *Ind. Eng. Chem. Res.* **2021**, *60*, 4517–4535. DOI: 10.1021/acs.iecr.0c06155.
+18. Huang, S.-Q.; Zhang, J.-Q.; Zhu, Y.; Kong, L.-M.; Liao, L.-S.; Zhang, F.-Q.; Xie, Z.-T.; Wu,
+    J.-R. Revealing the structure-property difference of natural rubber prepared by different
+    methods: protein and gel content are key factors. *Chin. J. Polym. Sci.* **2024**, *42*,
+    457–467. DOI: 10.1007/s10118-024-3071-2.
+19. Xin, S.; Hua, Y.; Li, J.; Dai, X.; Yang, X.; Udayabhanu, J.; Huang, H.; Huang, T. Comparative
+    analysis of latex transcriptomes reveals the potential mechanisms underlying rubber molecular
+    weight variations between *Hevea brasiliensis* clones RRIM600 and Reyan7-33-97. *BMC Plant
+    Biol.* **2021**, *21*, 244. DOI: 10.1186/s12870-021-03022-5.
+20. Dhanorkar, R. J.; Mohanty, S.; Gupta, V. K. Synthesis of functionalized styrene butadiene
+    rubber and its applications in S-SBR–silica composites for high-performance tire applications.
+    *Ind. Eng. Chem. Res.* **2021**, *60*, 4517–4535. DOI: 10.1021/acs.iecr.1c00013.
 21. Zubov, A.; Pokorny, J.; Kosek, J. Styrene–butadiene rubber (SBR) production by emulsion
     polymerization: dynamic modeling and intensification of the process. *Chem. Eng. J.* **2012**,
     *207–208*, 414–420. DOI: 10.1016/j.cej.2012.06.144.
@@ -503,30 +506,32 @@ to the monomer [17] and data-driven prediction of properties [56].
     natural rubber and styrene-butadiene rubber blends reinforced with different carbon black
     grades for tire tread production. *Sci. Rep.* **2026**, *16*, 24902.
     DOI: 10.1038/s41598-026-65435-2.
-23. Noguchi, F.; et al. Effect of strain-induced crystallization on the tear strength of natural
-    rubber/styrene butadiene rubber blend. *Adv. Polym. Technol.* **2018**, *37*, 1850–1858.
-    DOI: 10.1002/adv.21843.
+23. Noguchi, F.; Zhou, Y.; Kosugi, K.; Yamamoto, Y.; Nghia, P. T.; Fukuda, M.; Kawahara, S. Effect
+    of strain-induced crystallization on the tear strength of natural rubber/styrene butadiene
+    rubber blend. *Adv. Polym. Technol.* **2018**, *37*, 1850–1858. DOI: 10.1002/adv.21843.
 24. Tangudom, P.; Thongsang, S.; Sombatsompop, N. Cure and mechanical properties and abrasive wear
     behavior of natural rubber, styrene-butadiene rubber and their blends reinforced with silica
     hybrid fillers. *Mater. Des.* **2014**, *53*, 856–864. DOI: 10.1016/j.matdes.2013.07.024.
-25. Goyanes, S.; et al. Thermal properties in cured natural rubber/styrene butadiene rubber
-    blends. *Eur. Polym. J.* **2008**, *44*, 1525–1534. DOI: 10.1016/j.eurpolymj.2008.02.016.
+25. Goyanes, S.; Lopez, C. C.; Rubiolo, G. H.; Quasso, F.; Marzocca, A. J. Thermal properties in
+    cured natural rubber/styrene butadiene rubber blends. *Eur. Polym. J.* **2008**, *44*,
+    1525–1534. DOI: 10.1016/j.eurpolymj.2008.02.016.
 26. Tang, S.; Li, Z.; Sun, W.; Liu, Y.; Wang, J.; Wang, X.; Lin, J. Natural rubber/styrene–butadiene
     rubber blend composites potentially applied in damping bearings. *Polymers* **2024**, *16*,
     1945. DOI: 10.3390/polym16131945.
-27. Floriano, J. F.; et al. Biocompatibility studies of natural rubber latex from different tree
-    clones and collection methods. *J. Mater. Sci. Mater. Med.* **2014**, *25*, 461–470.
-    DOI: 10.1007/s10856-013-5089-9.
-28. Nucera, E.; et al. Latex allergy: current status and future perspectives.
-    *J. Asthma Allergy* **2020**, *13*, 385–398. DOI: 10.2147/JAA.S242058.
+27. Floriano, J. F.; da Mota, L. S. L. S.; Furtado, E. L.; Rossetto, V. J. V.; Graeff, C. F. O.
+    Biocompatibility studies of natural rubber latex from different tree clones and collection
+    methods. *J. Mater. Sci. Mater. Med.* **2014**, *25*, 461–470. DOI: 10.1007/s10856-013-5089-9.
+28. Nucera, E.; Aruanno, A.; Rizzi, A.; Centrone, M. Latex allergy: current status and future
+    perspectives. *J. Asthma Allergy* **2020**, *13*, 385–398. DOI: 10.2147/JAA.S242058.
 29. Cucci, G.; Valentini, F.; Dorigato, A. Cradle to gate life cycle assessment of tyre-grade
     natural rubber produced in Thailand. *Sci. Total Environ.* **2025**, *987*, 179653.
     DOI: 10.1016/j.scitotenv.2025.179653.
-30. Dunuwila, P.; et al. Revealing the environmental footprint of crepe rubber production: a life
-    cycle assessment. *Sustainability* **2025**, *17*, 1239. DOI: 10.3390/su17031239.
-31. Boon, Z. H.; et al. Recent development of biodegradable synthetic rubbers and bio-based
-    rubbers using sustainable materials from biological sources. *RSC Adv.* **2022**, *12*,
-    34028–34052. DOI: 10.1039/D2RA06602E.
+30. Dunuwila, P.; Munasinghe, E.; Rodrigo, V. H. L.; Gong, W. T.; Daigo, I.; Goto, N. Revealing the
+    environmental footprint of crepe rubber production: a life cycle assessment. *Sustainability*
+    **2025**, *17*, 1239. DOI: 10.3390/su17031239.
+31. Boon, Z. H.; Teo, Y. Y.; Ang, D. T.-C. Recent development of biodegradable synthetic rubbers and
+    bio-based rubbers using sustainable materials from biological sources. *RSC Adv.* **2022**,
+    *12*, 34028–34052. DOI: 10.1039/D2RA06602E.
 32. U.S. Bureau of Labor Statistics. *Why the Prices of Natural and Synthetic Rubber Do Not Always
     Bounce Together*; Beyond the Numbers, Vol. 9; U.S. BLS: Washington, DC, 2020.
     Available at: bls.gov/opub/btn/volume-9/why-the-prices-of-natural-and-synthetic-rubber-do-not-always-bounce-together.htm
@@ -539,9 +544,10 @@ to the monomer [17] and data-driven prediction of properties [56].
 35. Nishino, T.; Takano, K.; Nakamae, K. Elastic modulus of the crystalline regions of cellulose
     polymorphs. *J. Polym. Sci. B Polym. Phys.* **1995**, *33*, 1647–1651.
     DOI: 10.1002/polb.1995.090331110.
-36. Eichhorn, S. J.; Baillie, C. A.; Zafeiropoulos, N.; et al. Review: current international research
-    into cellulosic fibres and composites. *J. Mater. Sci.* **2001**, *36*, 2107–2131.
-    DOI: 10.1023/A:1017512029696.
+36. Eichhorn, S. J.; Baillie, C. A.; Zafeiropoulos, N.; Mwaikambo, L. Y.; Ansell, M. P.; Dufresne,
+    A.; Entwistle, K. M.; Herrera-Franco, P. J.; Escamilla, G. C.; Groom, L.; Hughes, M.; Hill, C.;
+    Rials, T. G.; Wild, P. M. Review: current international research into cellulosic fibres and
+    composites. *J. Mater. Sci.* **2001**, *36*, 2107–2131. DOI: 10.1023/A:1017512029696.
 37. Rosenau, T.; Potthast, A.; Sixta, H.; Kosma, P. The chemistry of side reactions and byproduct
     formation in the system NMMO/cellulose (Lyocell process). *Prog. Polym. Sci.* **2001**, *26*,
     1763–1837. DOI: 10.1016/S0079-6700(01)00023-5.
@@ -584,9 +590,10 @@ to the monomer [17] and data-driven prediction of properties [56].
     *Biomaterials* **2000**, *21*, 2335–2346. DOI: 10.1016/S0142-9612(00)00101-0.
 53. Jem, K. J.; Tan, B. The development and challenges of poly(lactic acid) and poly(glycolic acid).
     *Adv. Ind. Eng. Polym. Res.* **2020**, *3*, 60–70. DOI: 10.1016/j.aiepr.2020.01.002.
-54. Ragauskas, A. J.; Beckham, G. T.; Biddy, M. J.; et al. Lignin valorization: improving lignin
-    processing in the biorefinery. *Science* **2014**, *344*, 1246843.
-    DOI: 10.1126/science.1246843.
+54. Ragauskas, A. J.; Beckham, G. T.; Biddy, M. J.; Chandra, R.; Chen, F.; Davis, M. F.; Davison,
+    B. H.; Dixon, R. A.; Gilna, P.; Keller, M.; Langan, P.; Naskar, A. K.; Saddler, J. N.;
+    Tschaplinski, T. J.; Tuskan, G. A.; Wyman, C. E. Lignin valorization: improving lignin
+    processing in the biorefinery. *Science* **2014**, *344*, 1246843. DOI: 10.1126/science.1246843.
 55. Rinaudo, M. Main properties and current applications of some polysaccharides as biomaterials.
     *Polym. Int.* **2008**, *57*, 397–430. DOI: 10.1002/pi.2378.
 56. Kuenneth, C.; Ramprasad, R. polyBERT: a chemical language model to enable fully machine-driven
