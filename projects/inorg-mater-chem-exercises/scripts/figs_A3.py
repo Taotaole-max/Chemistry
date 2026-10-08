@@ -87,7 +87,7 @@ def a3_2():
 
 def a3_3():
     fig, ax = plt.subplots(figsize=(12, 4.6))
-    ax.axis("off"); ax.set_xlim(1.4, 4.2); ax.set_ylim(-2.3, 2.0)
+    ax.axis("off"); ax.set_xlim(1.4, 4.2); ax.set_ylim(-2.3, 2.5)
     ax.annotate("", xy=(4.15, 0), xytext=(1.45, 0), arrowprops=dict(arrowstyle="->", lw=1.5))
     ax.text(4.15, -0.25, "Pauling 电负性 χ", ha="right", fontsize=10)
     els = [("Al", 1.61), ("Si", 1.90), ("Ge", 2.01), ("B", 2.04), ("P", 2.19), ("C", 2.55), ("S", 2.58), ("N", 3.04),
@@ -98,9 +98,9 @@ def a3_3():
         ax.plot([x, x], [0, y - 0.1], color=c, lw=1)
         ax.text(x, y, f"{e}\n{x}", ha="center", fontsize=9.5, color=c)
     ax.plot([2.2, 2.2], [-0.3, 1.5], color="k", ls="--")
-    ax.text(2.20, 1.6, "H  χ = 2.20", ha="center", fontsize=11, fontweight="bold")
-    ax.text(1.75, 1.35, "E 比 H 电负性小\nE(δ+)–H(δ−)：“氢负性”（hydridic）", ha="center", fontsize=10, color=C_BLUE)
-    ax.text(3.45, 1.35, "E 比 H 电负性大\nE(δ−)–H(δ+)：“质子性”（protic）", ha="center", fontsize=10, color=C_RED)
+    ax.text(2.20, 1.62, "H  χ = 2.20", ha="center", fontsize=11, fontweight="bold")
+    ax.text(1.75, 2.0, "E 比 H 电负性小\nE(δ+)–H(δ−)：“氢负性”（hydridic）", ha="center", fontsize=10, color=C_BLUE)
+    ax.text(3.45, 2.0, "E 比 H 电负性大\nE(δ−)–H(δ+)：“质子性”（protic）", ha="center", fontsize=10, color=C_RED)
     ax.text(1.55, -0.75, "典型反应：H⁻ 转移 / 还原 / 与质子性试剂放 H₂\n"
                          "SiH₄ + 2H₂O → SiO₂ + 4H₂（碱催化）\n"
                          "SiH₄ + 2O₂ → SiO₂ + 2H₂O（空气中自燃）\n"

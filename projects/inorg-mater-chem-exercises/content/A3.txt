@@ -1,0 +1,200 @@
+# A3 | 氢、氢化物与重要元素的工业制备
+>>> 本部分是“工业无机化学”：每个流程都要能写出关键方程式，并说清楚每一步**为什么**这么做（热力学 / 酸碱性 / 挥发性 / 电极电位）。讲义标注 2026 年跳过 A3.2、A3.3、A3.5，这里仍给出简答供参考。
+
+@@ 1 | Give two industrial processes for hydrogen production. Name one advantage and one disadvantage of each process.
+?? 举出两种工业制氢方法，并各说一个优点和一个缺点。
+>> **① 甲烷水蒸气重整（steam methane reforming, SMR）+ 水煤气变换（water–gas shift）**
+- [[CH4 + H2O]] → [[CO + 3H2]]（Ni 催化，700–900 °C，20–30 bar，ΔH = +206 kJ/mol）
+- [[CO + H2O]] → [[CO2 + H2]]（Fe–Cr / Cu–Zn 催化，ΔH = −41 kJ/mol），再用变压吸附（PSA）提纯
+- 优点：**成本最低、技术成熟、规模大**（世界上大部分 H₂ 来自此法）；缺点：**以化石燃料为原料、排放大量 CO₂**（约 9–10 kg CO₂ / kg H₂），且强吸热、需高温。
+
+**② 电解水（water electrolysis，碱性或 PEM 电解槽）**
+- 阴极 [[2H2O + 2e^-]] → [[H2 + 2OH^-]]，阳极 [[4OH^-]] → [[O2 + 2H2O + 4e^-]]；总 [[2H2O]] → [[2H2 + O2]]
+- 优点：**H₂ 纯度高；用可再生电力时几乎零 CO₂**（“绿氢”）；缺点：**耗电大**（约 50 kWh/kg H₂，理论 1.23 V 实际需 1.8–2.0 V），成本高，PEM 需要 Pt、Ir 等贵金属。
+
+（其他可答：煤 / 焦炭气化 [[C + H2O]] → [[CO + H2]]（水煤气，原料便宜但 CO₂ 更多）；氯碱工业副产 H₂（不额外耗能，但产量受 NaOH/Cl₂ 需求限制）。）
+!! A3_01_hydrogen_production.png | (a) SMR + WGS 流程；(b) 碱性电解槽：H₂ 在阴极、O₂ 在阳极
+## 为什么 SMR 要高温低压？重整反应吸热且气体分子数增加（2 → 4），按 Le Chatelier 原理高温、低压有利；工业上为了设备产能仍用 20–30 bar，用更高温度补偿。为什么接着做变换反应？把 CO 转成更多 H₂，同时把难分离的 CO 变成易吸附除去的 CO₂；它放热，所以在较低温度的第二个反应器进行。
+
+电解水为什么实际电压远大于 1.23 V？电极上有过电位（尤其析氧反应 OER 动力学很慢）以及溶液欧姆压降，这就是耗电大的原因。
+** 题目要的是“一优一缺”，答题时每个流程写一个方程式 + 一优一缺即可得满分；SMR 的总反应 [[CH4 + 2H2O]] → [[CO2 + 4H2]] 值得记。
+
+@@ 2 | Give an example for a covalent, ionic and metallic hydride compound.
+%% skip
+?? 分别举一个共价型、离子型和金属型氢化物的例子。
+>>
+- **共价型（分子型）**：[[CH4]]、[[SiH4]]、[[B2H6]]、[[NH3]]、[[H2O]]、HCl（p 区元素）
+- **离子型（盐型）**：LiH、NaH、[[CaH2]]（碱金属和 Ca、Sr、Ba；含 H⁻）
+- **金属型（间隙型）**：[[PdH_x]]（x ≈ 0.6）、[[TiH2]]、[[LaH2]]、[[LaNi5H6]]（d 区 / f 区金属，常为非整比）
+!! A3_02_hydride_types_periodic_table.png | 三类氢化物在周期表中的分布；Be、Mg、Al 为过渡的聚合型，第 7–11 族中部基本不形成稳定的二元氢化物
+## 分类依据是 E–H 键的性质，主要由电负性差决定：H 的电负性 2.20；电负性很小的碱金属/碱土金属把电子给 H → H⁻ 离子晶体（LiH 为 NaCl 型）；电负性相近的 p 区元素 → 共价分子；过渡金属则让 H 原子溶入金属晶格的间隙，仍保持金属导电性。
+** 离子型氢化物遇水剧烈放 H₂：[[NaH + H2O]] → [[NaOH + H2]]（H⁻ 是强碱/强还原剂）。
+
+@@ 3 | What is the typical reactivity of a covalent hydride? Give an example.
+%% skip
+?? 共价氢化物的典型反应性是什么？举例。
+>> 取决于 E–H 键的极性（E 与 H 的电负性比较）：
+- **E 比 H 电负性小**（B、Al、Si、Ge）：[[E^{δ+}–H^{δ−}]]，H 呈“氢负性”（hydridic）→ **还原剂 / 给出 H⁻**，与水、醇等质子性试剂反应放出 H₂，常可自燃。例：[[SiH4 + 2H2O]] → [[SiO2 + 4H2]]（碱催化）；[[SiH4 + 2O2]] → [[SiO2 + 2H2O]]（空气中自燃）；[[B2H6 + 6H2O]] → [[2B(OH)3 + 6H2]]。缺电子的 [[B2H6]] 还是 Lewis 酸（与 NH₃、CO 加合）。
+- **E 比 H 电负性大**（N、O、F、S、Cl）：[[E^{δ−}–H^{δ+}]]，H 呈“质子性”（protic）→ **Brønsted 酸**、形成氢键。例：[[HCl + H2O]] → [[H3O^+ + Cl^-]]。
+- **两者相近**（C、P）：几乎不极化，如 [[CH4]] 相当惰性。
+!! A3_03_covalent_hydride_reactivity.png | 以 H（χ = 2.20）为分界：左边的氢化物 H 带负电，右边的带正电
+## 一句话概括：共价氢化物的“典型”反应就是看 H 端带什么电荷——带负电则像 H⁻（还原、放 H₂），带正电则像 H⁺（酸）。考试若只要求一个例子，写 SiH₄ 或 B₂H₆ 水解放氢最典型。
+** 硅烷比甲烷活泼得多：Si 电负性 1.90 < H 2.20（Si–H 极性反过来），而且 Si 有空 d 轨道/更大半径便于亲核进攻。
+
+@@ 4 | Give two starting materials that are used for the industrial production of lithium. Name one advantage and one disadvantage of each process.
+?? 举出两种工业生产锂的原料，并各说一个优缺点。
+>> **① 盐湖卤水（brine，如智利 Atacama 盐湖，Li⁺ 约 0.1–0.2 %）**
+- 日晒蒸发池浓缩（NaCl、KCl 先析出）→ 除 Mg²⁺、硼 → 加 [[Na2CO3]]：[[2Li^+ + Na2CO3]] → [[Li2CO3]]↓ + [[2Na^+]]
+- 优点：**能耗低、成本低**（用太阳能蒸发）；缺点：**周期长（12–24 个月）、在干旱地区大量耗水、受地理和气候限制**，Mg/Li 比高时难提纯。
+
+**② 锂辉石矿（spodumene，[[LiAlSi2O6]]，澳大利亚硬岩矿）**
+- 浮选精矿（约 6 % [[Li2O]]）→ 约 1050 °C 煅烧 α→β 转变 → 250 °C 硫酸焙烧：[[2LiAlSi2O6 + H2SO4]] → [[Li2SO4 + H2O·Al2O3·4SiO2]] → 水浸 → 加 [[Na2CO3]] 得 [[Li2CO3]]
+- 优点：**生产快、不受气候限制、原料品位高、易扩产**；缺点：**高温煅烧能耗大、CO₂ 排放多、消耗大量酸碱试剂**，开采成本高。
+
+**金属锂**：[[Li2CO3 + 2HCl]] → [[2LiCl + H2O + CO2]]，再**熔盐电解 LiCl–KCl 共晶**（约 420 °C）：阴极 [[Li^+ + e^-]] → Li，阳极 [[2Cl^-]] → [[Cl2 + 2e^-]]。
+!! A3_04_lithium_production_routes.png | 两条路线都汇合到 Li₂CO₃，再经 LiCl 熔盐电解得到金属锂
+## 几个“为什么”：
+- 为什么 α→β 煅烧？天然 α-锂辉石结构致密、几乎不溶于酸；转成 β 型后体积膨胀约 30 %、结构疏松，Li⁺ 才能被 H⁺ 置换出来。
+- 为什么用 Li₂CO₃ 沉淀？它是锂盐里溶解度最小的之一，且溶解度随温度升高而**降低**，所以在 80–90 °C 沉淀收率高。
+- 为什么加 KCl 电解？LiCl 熔点 610 °C，与 KCl 形成共晶后约 350 °C 熔化，降温省能、减少 Li 挥发和腐蚀；K⁺ 的析出电位更负，不会一起析出。
+- 为什么不能电解水溶液？Li⁺/Li 的 E° = −3.04 V，水先被还原放 H₂。
+** 锂的两大来源“盐湖 vs 矿石”的对比是常考点，核心就是“便宜慢 vs 快贵”。
+
+@@ 5 | Why possesses LiH a higher density than elemental Li?
+%% skip
+?? 为什么 LiH 的密度比金属 Li 还大？
+>> 金属 Li（bcc，a = 3.51 Å）密度只有 **0.534 g/cm³**；LiH（NaCl 型，a = 4.08 Å）密度 **0.78 g/cm³**。原因：
+- 金属 Li 中每个原子带着一个**弥散的 2s 价电子**，金属半径 152 pm，原子堆得“很松”（bcc，CN 8）；
+- 在 LiH 中 Li 把 2s 电子交给 H，变成很小的 **Li⁺（76 pm）**，H⁻（约 140 pm）作 fcc 堆积、Li⁺ 填八面体空隙，再加上强的**离子键库仑吸引**把晶格拉紧；
+- 结果单位体积里的 Li 原子数反而**增加**：Li 金属 2/43.2 Å³ = 46 个/nm³，LiH 4/68.0 Å³ = 59 个/nm³，再加上 H 的质量 → 密度更大。
+!! A3_05_LiH_vs_Li_density.png | 两种晶胞按真实尺寸比例画出；LiH 中紫色小球为 Li⁺
+## 验算：ρ(LiH) = 4 × 7.95 g/mol / (6.022×10²³ × 68.0×10⁻²⁴ cm³) = 0.78 g/cm³；ρ(Li) = 2 × 6.94 / (6.022×10²³ × 43.2×10⁻²⁴) = 0.533 g/cm³ ✓。
+
+“加了东西反而更密”是离子化导致体积收缩的典型例子，同理 NaH（1.39）也比 Na（0.97 g/cm³）密。
+** 关键词：Li → Li⁺ 半径大幅缩小、价电子不再占体积、离子键比金属键“紧”。
+
+@@ 6 | Describe the extraction of Na from NaCl.
+?? 描述由 NaCl 制取金属钠的过程。
+>> **Downs 法：电解熔融 NaCl**
+- 电解质：NaCl + CaCl₂（约 40 : 60）混合熔盐，约 **600 °C**（纯 NaCl 熔点 801 °C）；
+- 阴极（铁，环形）：[[Na^+ + e^-]] → Na(l)，液态 Na 密度小、浮到上方经收集管导出；
+- 阳极（石墨，中心）：[[2Cl^-]] → [[Cl2(g) + 2e^-]]，Cl₂ 从罩子顶部引出；
+- 阴、阳极之间用**钢网隔膜**隔开，防止 Na 与 Cl₂ 重新化合；
+- 总反应：**[[2NaCl(l)]] → [[2Na(l) + Cl2(g)]]**。
+!! A3_06_downs_cell_sodium.png | Downs 电解槽剖面：中心石墨阳极放 Cl₂，环形铁阴极析出液态 Na
+## 为什么必须电解**熔盐**而不是 NaCl 水溶液？E°(Na⁺/Na) = −2.71 V，比水的还原电位负得多，在水溶液中阴极只会放 H₂（那就是氯碱工业 A3.7）。
+
+为什么加 CaCl₂？降低熔点约 200 °C → 省能；Na 的沸点只有 883 °C，降温也减少 Na 的挥发和起火。少量 Ca 会同时析出，Na 冷却时 Ca 先结晶、过滤除去。
+** 方程式 + “熔融 + CaCl₂ 降熔点 + 隔膜”三个要点。
+
+@@ 7 | Describe the extraction of NaOH from NaCl.
+?? 描述由 NaCl 制取 NaOH 的过程。
+>> **氯碱工业：电解饱和 NaCl 水溶液（brine）**，现代用**离子交换膜法**：
+- 阳极（DSA，钛涂 RuO₂/TiO₂）：[[2Cl^-]] → [[Cl2 + 2e^-]]
+- 阴极（Ni 或钢）：[[2H2O + 2e^-]] → [[H2 + 2OH^-]]
+- **阳离子交换膜（Nafion）**只让 Na⁺ 从阳极室迁移到阴极室，与 OH⁻ 组成 NaOH（约 32 %）
+- 总反应：**[[2NaCl + 2H2O]] → [[2NaOH + Cl2 + H2]]**（同时得到三种产品）
+
+历史上的其他工艺：隔膜法（石棉隔膜，NaOH 含 NaCl 杂质）、汞阴极法（生成 Na 汞齐，再与水反应得纯 NaOH；因汞污染已淘汰）。
+!! A3_07_chloralkali_membrane_cell.png | 离子交换膜电解槽：Na⁺ 穿过膜，Cl⁻ 和 OH⁻ 被挡住
+## 为什么需要膜？
+- 阻止 OH⁻ 进入阳极室，否则 [[Cl2 + 2OH^-]] → [[Cl^- + OCl^- + H2O]]，产品被消耗；
+- 把 H₂ 和 Cl₂ 分开（混合会爆炸）；
+- 让 NaOH 中几乎不含 NaCl。
+
+为什么阳极放 Cl₂ 而不是 O₂（热力学上 O₂ 更容易）？O₂ 在 RuO₂ 阳极上的**过电位**很大，而 Cl⁻ 浓度高、放 Cl₂ 动力学快，所以实际得到 Cl₂。
+** 和 A3.6 对比：同样是 NaCl，熔融电解得 Na + Cl₂，水溶液电解得 NaOH + Cl₂ + H₂——区别在于阴极上是 Na⁺ 还是 H₂O 被还原。
+
+@@ 8 | Describe the extraction of Al from bauxite.
+?? 描述由铝土矿制取铝的过程。
+>> **两步：Bayer 法提纯 Al₂O₃ → Hall–Héroult 熔盐电解**
+- **① 溶出**：铝土矿（[[Al(OH)3]] / AlO(OH)，含 [[Fe2O3]]、[[SiO2]]、[[TiO2]]）与浓 NaOH 在 150–250 °C 加压反应：[[Al(OH)3 + OH^-]] → [[[Al(OH)4]^-]]
+- **② 过滤**：[[Fe2O3]]、[[TiO2]] 不溶，作为“赤泥”（red mud）除去
+- **③ 分解**：降温、加 [[Al(OH)3]] 晶种：[[[Al(OH)4]^-]] → [[Al(OH)3]]↓ + [[OH^-]]（NaOH 循环使用）
+- **④ 煅烧**：1100–1200 °C，[[2Al(OH)3]] → [[Al2O3 + 3H2O]]
+- **⑤ 电解**：[[Al2O3]] 溶于熔融冰晶石 [[Na3AlF6]]（约 960 °C），碳阳极：阴极 [[Al^3+ + 3e^-]] → Al(l)；阳极 [[C + 2O^2-]] → [[CO2 + 4e^-]]；总 **[[2Al2O3 + 3C]] → [[4Al + 3CO2]]**
+!! A3_08_aluminium_bayer_hall_heroult.png | (a) Bayer 法流程；(b) Hall–Héroult 电解槽
+## 关键原理：
+- Bayer 法利用 **Al(OH)₃ 的两性**：能溶于强碱，而铁的氧化物是碱性氧化物、不溶 → 实现 Al/Fe 分离（A3.11 的核心）。
+- 为什么用冰晶石？[[Al2O3]] 熔点 2050 °C，直接熔融电解能耗、腐蚀都不可接受；冰晶石能溶解 Al₂O₃ 且导电，把操作温度降到约 960 °C。
+- 为什么不能像 Fe 那样用碳还原？Al₂O₃ 太稳定（Ellingham 图上 Al 线远低于 C 线，见图 A3.11），需要 > 2000 °C，且会生成 Al₄C₃。
+- 碳阳极被消耗（约 0.4 t C / t Al），电耗约 13–15 kWh/kg Al，所以铝的回收非常节能（只需约 5 %）。
+** 写全两步、两个核心方程（溶出 + 电解总反应），并点出“两性”和“冰晶石降熔点”。
+
+@@ 9 | Describe the process by chemical equations how metallurgical silicon as well as hyperpure polycrystalline silicon is obtained.
+?? 用化学方程式描述冶金级硅和高纯多晶硅的制备过程。
+>> **冶金级硅（MG-Si，98–99 %）**：石英砂与焦炭在电弧炉中约 2000 °C 碳热还原
+- **[[SiO2 + 2C]] → [[Si + 2CO]]**（副反应 [[SiO2 + 3C]] → [[SiC + 2CO]]，[[2SiC + SiO2]] → [[3Si + 2CO]]）
+
+**高纯多晶硅（Siemens 法，9N–11N）**：
+- ① 氢氯化（约 300 °C，流化床）：**[[Si + 3HCl]] → [[HSiCl3 + H2]]**
+- ② 精馏提纯 [[HSiCl3]]（沸点 31.8 °C），与 [[BCl3]]、[[PCl3]]、[[FeCl3]]、[[AlCl3]] 等按沸点分离
+- ③ CVD 沉积：在通电加热到约 1100 °C 的细硅棒上 **[[HSiCl3 + H2]] → [[Si + 3HCl]]**（副反应 [[4HSiCl3]] → [[Si + 3SiCl4 + 2H2]]）
+- 之后再用 Czochralski 法或区熔法拉成单晶。
+!! A3_09_silicon_production.png | 左：从石英砂到电子级多晶硅的完整流程；右：Siemens 反应器示意
+## 为什么要绕道 HSiCl₃？固体硅无法直接深度提纯；把 Si 变成**挥发性液体** HSiCl₃ 后，杂质元素也变成各自的氯化物，沸点不同 → 可用精馏把杂质降到 ppb 以下；最后再把纯 HSiCl₃ 还原回 Si。这和 A3.12 氯化法制 TiO₂、B3 的化学气相输运是同一思路——“变成气体/液体来提纯”。
+
+为什么碳热还原要 2000 °C？SiO₂ 很稳定，Ellingham 图上 C/CO 线约在 1900 K 以上才降到 Si/SiO₂ 线以下（图 A3.11），而且 CO 是气体，生成后被带走，推动平衡。
+** 三个方程（碳热还原、氢氯化、Siemens 沉积）是必写；B、P 是半导体中最有害的杂质，精馏要特别除掉。
+
+@@ 10 | Give three relevant reactions during steel production. At what stage do they occur?
+?? 举出炼钢过程中的三个相关反应，并说明发生在哪个阶段。
+>> **阶段 1：高炉炼铁（得到含约 4 % C 的生铁）**
+- 风口区（约 1900 °C）：**[[C + O2]] → [[CO2]]**（燃烧供热），随即 **[[CO2 + C]] → [[2CO]]**（Boudouard 反应，生成还原剂 CO）
+- 炉身（400–900 °C，间接还原）：**[[Fe2O3 + 3CO]] → [[2Fe + 3CO2]]**（分步：[[3Fe2O3 + CO]] → [[2Fe3O4 + CO2]]；[[Fe3O4 + CO]] → [[3FeO + CO2]]；[[FeO + CO]] → [[Fe + CO2]]）
+- 炉腹高温区：直接还原 [[FeO + C]] → [[Fe + CO]]；造渣 [[CaCO3]] → [[CaO + CO2]]，**[[CaO + SiO2]] → [[CaSiO3]]**
+
+**阶段 2：转炉炼钢（LD / 碱性氧气转炉，把 C 降到 < 2 %）**
+- 向铁水吹 O₂：**[[2C + O2]] → [[2CO]]**；[[Si + O2]] → [[SiO2]]（→ 炉渣）；[[4P + 5O2]] → [[2P2O5]]，[[P2O5 + 3CaO]] → [[Ca3(PO4)2]]（脱磷入渣）；[[2Mn + O2]] → [[2MnO]]
+- 最后脱氧：[[3FeO + 2Al]] → [[Al2O3 + 3Fe]]（或加 Si、Mn）
+
+答题只需选三个，例如：①高炉中 CO 还原铁矿石；②高炉中 CaO + SiO₂ 造渣；③转炉中吹氧脱碳 2C + O₂ → 2CO。
+!! A3_10_blast_furnace_converter.png | (a) 高炉各温区的主要反应；(b) 吹氧转炉
+## 为什么分两步？高炉里大量焦炭既是燃料又是还原剂，生成的铁会溶解大量碳（约 4 %），生铁脆、不能锻造；转炉再用 O₂ 把多余的 C 以及 Si、P、Mn 氧化掉，得到 C < 2 % 的钢。转炉反应本身强烈放热，不需额外燃料。
+
+为什么高炉里真正的还原剂主要是 CO 而不是 C？矿石是固体、焦炭也是固体，固–固接触很差；CO 是气体，可以渗透到矿石颗粒内部。
+** 阶段要写清楚：还原（高炉） vs 氧化精炼（转炉）。石灰石的作用：造渣除 SiO₂、脱 S/P。
+
+@@ 11 | Compare the removal of iron in the case of the Al and Ti production. Which are the chemical principles that allow the removal of iron?
+?? 比较铝生产和钛生产中除铁的方法，各利用了什么化学原理？
+>>
+| | 铝（Bayer 法） | 钛（TiO₂ / Ti 生产） |
+| 做法 | 浓 NaOH 溶出，[[Al(OH)3]] 溶为 [[[Al(OH)4]^-]]，[[Fe2O3]] 不溶 → 赤泥滤除 | **氯化法**：碳氯化得 [[TiCl4]] 和 [[FeCl3]]，冷凝/精馏分开；**硫酸法**：溶于 H₂SO₄ 后加铁屑把 Fe³⁺ 还原成 Fe²⁺，冷却析出 [[FeSO4·7H2O]]；**钛渣法**：电炉中用 C 把 FeO 还原成金属 Fe 分离 |
+| 化学原理 | **酸碱性差异（两性）**：Al 的氢氧化物两性，Fe(III) 氧化物/氢氧化物为碱性 | **挥发性差异**（TiCl₄ 为分子型液体，沸点 136 °C；FeCl₃ 约 315 °C 升华，先凝成固体）；**溶解度 + 氧化还原**（Fe²⁺ 不随 TiO²⁺ 水解共沉淀，绿矾可结晶除去）；**氧化物稳定性差异**（FeO 易被 C 还原，TiO₂ 很稳定——Ellingham 图） |
+!! A3_11_iron_removal_Al_vs_Ti.png | (a) 简化 Ellingham 图（近似值）：FeO 约 1020 K 以上即可被 C 还原，TiO₂、SiO₂、Al₂O₃ 需要高得多的温度；(b) 四种除铁方式的原理
+## 共同点：都利用 Fe 与目标元素**化学性质的差别**，把二者分进不同的相（固/液、液/气、金属/渣）。
+- Bayer 法：Al³⁺ 小、电荷高，Al(OH)₃ 的酸性足以溶于 OH⁻；Fe³⁺ 的则不行。
+- 氯化法：同为 MCl₄/MCl₃，TiCl₄ 是四面体分子（分子间只有范德华力）→ 低沸点；FeCl₃ 是层状结构、挥发性低。
+- 硫酸法：Fe³⁺ 在 Ti 水解的 pH 下也会水解共沉淀，而 Fe²⁺ 不会 → 先还原成 Fe²⁺ 再分离。
+- 钛渣法：Ellingham 图上 Fe/FeO 的线在 C/CO 线之上（高温下可被还原），Ti/TiO₂ 的线远在其下 → 选择性只还原 Fe。
+** 关键词：amphoteric（两性）、volatility（挥发性）、redox / solubility、selective carbothermal reduction。
+
+@@ 12 | Describe the extraction of TiO<sub>2</sub> from FeTiO<sub>3</sub> (ilmenite).
+?? 描述由钛铁矿 FeTiO₃ 制取 TiO₂ 的过程。
+>> **方法一：硫酸法（sulfate process）**
+- ① 浓硫酸分解（150–200 °C）：**[[FeTiO3 + 2H2SO4]] → [[TiOSO4 + FeSO4 + 2H2O]]**
+- ② 加铁屑把 Fe³⁺ 还原：[[2Fe^3+ + Fe]] → [[3Fe^2+]]
+- ③ 冷却结晶除去 [[FeSO4·7H2O]]（绿矾）
+- ④ 加热水解：**[[TiOSO4 + (n+1)H2O]] → [[TiO2·nH2O]]↓ + [[H2SO4]]**
+- ⑤ 800–1000 °C 煅烧 → [[TiO2]]（锐钛矿，或加晶种得金红石）
+
+**方法二：氯化法（chloride process）**
+- ① 碳氯化（900–1000 °C，流化床）：**[[2FeTiO3 + 7Cl2 + 6C]] → [[2TiCl4 + 2FeCl3 + 6CO]]**（工业上多先把钛铁矿升级为钛渣/人造金红石，再 [[TiO2 + 2Cl2 + 2C]] → [[TiCl4 + 2CO]]）
+- ② 冷凝除去 [[FeCl3]]，精馏得纯 [[TiCl4]]
+- ③ 燃烧氧化（约 1000–1400 °C）：**[[TiCl4 + O2]] → [[TiO2 + 2Cl2]]**，Cl₂ 循环使用 → 金红石型颜料
+!! A3_12_TiO2_from_ilmenite.png | 两条工艺路线对比及优缺点
+## 为什么氯化法要加碳？[[TiO2 + 2Cl2]] → [[TiCl4 + O2]] 本身 ΔG° > 0（TiO₂ 太稳定）；加入 C 把 O 变成 CO，生成 CO 的熵增和放热使总反应强烈自发（“耦合反应”）。
+
+两法比较：硫酸法设备简单、可用低品位矿，但每吨 TiO₂ 产生数吨废酸和绿矾；氯化法产品纯度高、Cl₂ 循环、三废少，是现代主流。
+** TiCl₄ 也是 Kroll 法制金属钛的原料：[[TiCl4 + 2Mg]] → [[Ti + 2MgCl2]]（800–900 °C，Ar 气氛）。
+
+@@ 13 | Which molecular structure do you expect for SiCl<sub>4</sub> and TiCl<sub>4</sub>?
+?? 预测 SiCl₄ 和 TiCl₄ 的分子结构。
+>> **两者都是正四面体（T<sub>d</sub>）分子**，键角 109.5°：
+- [[SiCl4]]：Si 4 个价电子全部成键，4 对成键电子、无孤对 → VSEPR AX₄ → 四面体；Si–Cl 2.02 Å；无色液体，沸点 57.6 °C。
+- [[TiCl4]]：Ti(IV) 为 **d⁰**，同样 4 对成键电子、无孤对、无 d 电子 → 四面体；Ti–Cl 2.17 Å；无色液体，沸点 136 °C。
+!! A3_13_SiCl4_TiCl4_structures.png | 两种分子均为正四面体；右侧为异同点
+## 为什么 TiCl₄ 不是平面正方形或其他构型？d⁰ 中心没有 d 电子，不存在晶体场稳定化对几何的偏好，只剩配体间排斥 → 与主族的 SiCl₄ 一样取四面体。两者都是分子型、低沸点（可蒸馏，见 A3.9、A3.12），在潮湿空气中剧烈水解冒白烟：[[SiCl4 + 2H2O]] → [[SiO2 + 4HCl]]，[[TiCl4 + 2H2O]] → [[TiO2 + 4HCl]]。
+
+不同点：Ti 有空的 3d 轨道、半径更大，TiCl₄ 是更强的 Lewis 酸，容易扩展到六配位（如 [[TiCl4·2THF]]、[[[TiCl6]^2-]]），这也是它能作 Ziegler–Natta 催化剂前体的原因；SiCl₄ 的 Lewis 酸性弱得多。
+** 同族/对角关系的经典对比：C、Si、Ge、Sn 与 Ti、Zr、Hf 的四氯化物都是四面体分子；TiCl₄ 沸点更高源于分子量更大和更强的范德华作用。

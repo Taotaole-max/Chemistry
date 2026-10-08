@@ -1,0 +1,120 @@
+# B2 | 相图、固溶体与晶体点缺陷
+>>> 本部分两条主线：① 二元相图（读图：区域、线、相数、杠杆规则）；② 点缺陷与掺杂（Schottky / Frenkel、Kröger–Vink 记号、异价掺杂的电荷补偿）。相律（恒压）：F = C − P + 1。
+
+@@ 1 | What does the term „border solubility” mean?
+?? “边缘溶解度（border solubility）”是什么意思？
+>> 边缘溶解度（德语 Randlöslichkeit，英文也叫 terminal / limited solid solubility）指：**两种组分在固态只能有限互溶时，一种组分在另一种组分晶格中所能溶解的最大量**——即相图两侧边缘（靠近纯组分处）单相固溶体区（α、β）的组成范围。超过这个极限就会析出第二相。
+- 例：Pb–Sn（焊锡）：Sn 在 Pb 中最多溶 18.3 %，Pb 在 Sn 中最多溶 2.2 %（质量分数，183 °C 共晶温度时）；
+- 边缘溶解度一般随温度降低而减小，相图上表现为固溶度线（solvus）向纯组分方向弯回。
+!! B2_01_border_solubility_PbSn.png | Pb–Sn 相图示意：蓝色 α、橙色 β 两个边缘固溶体区；绿色虚线为固溶度线
+## 为什么只能“有限”互溶？Hume-Rothery 规则：两种金属要完全互溶，需要①原子半径差 < 15 %、②晶体结构相同、③电负性相近、④价态相同。Pb（fcc）与 Sn（四方 β-Sn）结构不同、半径也差较多，所以只能在边缘溶一点。
+
+溶解度随温度下降而减小是**时效（沉淀）硬化**的基础：高温固溶 → 淬火得到过饱和固溶体 → 低温时效时细小第二相析出，阻碍位错，使合金变硬（如 Al–Cu 硬铝）。
+** 与 B2.3 对比：Mo–W 满足 Hume-Rothery 全部条件 → 完全互溶，没有“边缘”一说。
+
+@@ 2 | Construct a schematic phase diagram (composition <i>versus</i> temperature) of two metals <b>A</b> and <b>B</b> under the conditions that <b>A</b> and <b>B</b> completely mix (solid solution) and that <b>B</b> has the lower melting point. - denote the two axes - name the two lines - give the aggregate state of the three areas - give the number of phases that occur in each of the areas.
+?? 画出 A、B 两种金属完全互溶（形成连续固溶体）、且 B 熔点较低的示意相图：标出两个坐标轴，命名两条线，给出三个区域的聚集态和各区的相数。
+>> 相图为“透镜”（雪茄）形的**匀晶相图**：
+- **坐标轴**：横轴 = 组成（B 的摩尔分数 x<sub>B</sub> 或质量分数，左端纯 A、右端纯 B）；纵轴 = 温度 T（压力恒定）。左端点 T<sub>m</sub>(A) 高于右端点 T<sub>m</sub>(B)。
+- **两条线**：上面的**液相线（liquidus）**、下面的**固相线（solidus）**，二者在两个纯组分的熔点处相交。
+- **三个区域**：
+| 区域 | 位置 | 聚集态 | 相数 |
+| ① | 液相线以上 | 液态熔体 L | 1 |
+| ② | 两线之间（透镜内） | 液体 + 固溶体（L + α） | 2 |
+| ③ | 固相线以下 | 固态固溶体 α（A、B 在同一晶格中随机混合） | 1 |
+!! B2_02_complete_solid_solution_lens.png | 匀晶相图；黑色连结线两端分别给出共存的固相和液相组成
+## 读图要点：
+- 在两相区内任取一点，作水平连结线（tie line），与固相线交点 = 固溶体组成，与液相线交点 = 液相组成；两相的量由杠杆规则（B2.4）决定。
+- 固相总是比液相**更富含高熔点组分 A**（固相线在液相线左下方）——这是区域熔炼提纯的原理。
+- 相律检验：两相区 C = 2、P = 2 → F = 2 − 2 + 1 = 1（只能自由选一个变量：定了 T，两相组成就定了）；单相区 F = 2。
+** 必须“标轴 + 两线名称 + 三区聚集态 + 相数”四项都写，缺一项扣分。
+
+@@ 3 | Mo and W adopt both the bcc structure. In the Mo/W alloy the components are fully miscible (form a solid solution). Sketch the phase diagram. Describe the distribution of the atoms in the crystal structure. If a Mo/W alloy of an unknown composition is given. How can we determine the Mo/W ratio by powder diffraction.
+?? Mo 和 W 都是 bcc 结构，Mo/W 合金完全互溶。画相图；描述原子在晶体结构中的分布；对于未知组成的 Mo/W 合金，如何用粉末衍射确定 Mo/W 比？
+>> **① 相图**：与 B2.2 相同的透镜形匀晶相图，左端 Mo（2623 °C）、右端 W（3422 °C）；液相线以上为 L，两线之间 L + bcc，固相线以下在**全部组成范围**内都是单相 bcc 固溶体 (Mo,W)。
+
+**② 原子分布**：**置换型无序固溶体**——bcc 的每个格位被 Mo 或 W **统计（随机）占据**，占据概率等于各自的摩尔分数；没有长程有序，平均结构仍是 bcc（Im3̄m，a 介于两者之间）。
+
+**③ 粉末衍射测组成：Vegard 定律**
+- 晶格常数随组成线性变化：**a(x) = (1 − x)·a(Mo) + x·a(W)**，a(Mo) = 3.1470 Å，a(W) = 3.1652 Å；
+- 由衍射峰位置用 Bragg 公式 λ = 2d sinθ 和立方晶系 d = a/√(h² + k² + l²) 求出 a（多个峰最小二乘精修）；
+- 再反算 **x(W) = (a − a<sub>Mo</sub>)/(a<sub>W</sub> − a<sub>Mo</sub>)**。例：a = 3.1561 Å → x(W) = 0.50。
+!! B2_03_MoW_alloy_vegard_XRD.png | (a) Mo–W 相图（理想溶液模型计算）；(b) 随机分布的 bcc 固溶体；(c) Vegard 定律；(d) Cu Kα 下的计算衍射峰位：高角度峰随组成移动更明显
+## 为什么能完全互溶？Mo 和 W 同族、都是 bcc、价电子数相同，而且由于**镧系收缩**，W 的原子半径（139 pm）与 Mo（139 pm）几乎相等——完全满足 Hume-Rothery 规则。
+
+实验要注意：两者晶格常数只差 0.018 Å（0.6 %），在 2θ = 40° 附近的 110 峰只移动约 0.25°，所以要：
+- 用**高角度衍射峰**（如 321 峰，Mo→W 移动约 1.5°）——因为 Δd/d 一定时，Δθ = −tanθ·(Δd/d)，θ 越大 tanθ 越大；
+- 加**内标**（如 Si 粉）校正零点和样品偏移误差；
+- Vegard 定律只是近似，最好先用已知组成的样品做校准曲线。
+
+为什么不用峰强度？无序 bcc 中所有允许的反射（h + k + l 偶数）的结构因子都是 F = 2f̄（平均散射因子），组成变化只改变总体强度，不产生新的峰，难以准确定量。（若出现 CsCl 型有序化，会出现 h + k + l 为奇数的超结构峰——Mo–W 中没有。）
+** 关键词：substitutional, statistically disordered solid solution；Vegard's law；Bragg equation。
+
+@@ 4 | In a system of two components a liquid phase and a solid phase are in an equilibrium at 1500 °C. The System consists of 40% A (60 % B). The liquid phase consists of 32% A, the solid phase of 45% A. How much appears as the liquid phase?
+?? 两组分体系在 1500 °C 时液相与固相平衡。体系总组成 40 % A（60 % B），液相含 32 % A，固相含 45 % A。液相占多少？
+>> 用**杠杆规则（lever rule）**：
+- 液相分数 = (x<sub>s</sub> − x<sub>0</sub>) / (x<sub>s</sub> − x<sub>l</sub>) = (45 − 40) / (45 − 32) = 5/13 ≈ **0.385，即约 38.5 % 为液相**；
+- 固相分数 = (40 − 32) / (45 − 32) = 8/13 ≈ 61.5 %。
+!! B2_04_lever_rule.png | 1500 °C 的连结线：支点在体系组成 40 % A，液相占“对面”那段臂长 5/13
+## 推导（质量守恒）：设液相分数为 f，则 A 的总量：0.40 = f·0.32 + (1 − f)·0.45 → 0.40 − 0.45 = f(0.32 − 0.45) → f = 0.05/0.13 = 0.385。
+
+“杠杆”记忆法：把连结线看成杠杆，支点在体系组成处；某一相的量与**对面**那段臂的长度成正比。体系组成离固相点近（只差 5），所以固相多、液相少。
+验算：0.385 × 32 + 0.615 × 45 = 12.3 + 27.7 = 40.0 % A ✓。
+** 注意若题目给的是质量分数，算出来的是质量分数；摩尔分数同理。别把分子分母弄反（离哪个相远，哪个相就少）。
+
+@@ 5 | Put the following expressions to a given phase diagram (if applicable): liquid area, liquidus line, solidus line, one-phase area, two-phase area, eutectic solid.
+?? 在给定相图上标出（若适用）：液相区、液相线、固相线、单相区、两相区、共晶固体。
+>> （练习卷上未附具体相图，以讲义中两类典型相图为例。）
+**(a) 简单共晶相图**（如 Bi–Cd：固态完全不互溶）：
+- 液相区 L（一相区）：两条液相线以上；
+- 液相线：从 T<sub>m</sub>(A) 和 T<sub>m</sub>(B) 下降、交于共晶点 E 的两条曲线；
+- 固相线：共晶温度 T<sub>E</sub> 处的水平线（加上两端纯组分的竖线）；
+- 两相区：L + A(s)、L + B(s)（液相线与共晶线之间），A(s) + B(s)（共晶线以下）；
+- 共晶固体：在 E 点组成凝固时同时析出的 A、B 细晶交替混合物（L → A + B）；共晶线以下非共晶组成处为“初晶 A（或 B）+ 共晶固体”。
+**(b) 完全互溶（匀晶）相图**：液相区、液相线、固相线、单相区（L 和 α 固溶体）、两相区（L + α）都有，但**没有共晶点 → “共晶固体”不适用**。
+!! B2_05_phase_diagram_terms.png | (a) 简单共晶相图上六个术语的位置；(b) 匀晶相图上“共晶固体”不适用
+## 判别方法：
+- 单相 / 两相：在区域内画水平线，能直接碰到两条边界线并且两端是不同的相 → 两相区；
+- 共晶点 E 是三相（L、A、B）共存点：恒压下 F = 2 − 3 + 1 = 0，所以共晶在恒定温度下进行，冷却曲线上出现平台；
+- 有边缘固溶度的共晶体系（如 B2.1 的 Pb–Sn）两侧还多出 α、β 两个单相区。
+** “固相线”在共晶相图中就是那条水平的共晶线——很多人只标液相线而漏掉它。
+
+@@ 6 | Crystal point defects a) Name and describe the two main types of crystal point defects. b) Give for each defect type a concrete example (chemical formula) in which the defect is observed. c) Use the Kröger-Vink notation to describe the defects in the examples given in b).
+?? 晶体点缺陷：a) 说出并描述两种主要的点缺陷；b) 各举一个出现该缺陷的具体化合物；c) 用 Kröger–Vink 记号描述 b) 中的缺陷。
+>> **a)**
+- **Schottky 缺陷**：按化学计量比成对出现的**阳离子空位 + 阴离子空位**（离子跑到晶体表面），保持电中性；晶体密度略降低。多见于阴、阳离子大小相近、配位数高的离子晶体。
+- **Frenkel 缺陷**：一个离子（通常是较小的阳离子）离开正常格位进入**间隙位**，形成**空位 + 间隙离子**对；密度不变。多见于阳离子小、易极化、配位数低的晶体。（阴离子进入间隙的称反 Frenkel 缺陷，如 CaF₂。）
+
+**b)** Schottky：**NaCl**（也有 KCl、CsCl）；Frenkel：**AgCl**（AgBr 中 Ag⁺ 进间隙）；反 Frenkel：CaF₂（F⁻ 进间隙）。
+
+**c)**
+- NaCl 中的 Schottky 缺陷：**null → KV(V,Na,') + KV(V,Cl,.)**
+- AgCl 中的 Frenkel 缺陷：**KV(Ag,Ag,x) → KV(Ag,i,.) + KV(V,Ag,')**
+- （CaF₂ 中的反 Frenkel：KV(F,F,x) → KV(F,i,') + KV(V,F,.)）
+!! B2_06_point_defects_schottky_frenkel.png | (a) Schottky：成对空位；(b) Frenkel：Ag⁺ 从格位跳入间隙；右侧为 Kröger–Vink 记号规则
+## Kröger–Vink 记号 M<sub>S</sub><sup>C</sup>：M = 什么（原子/离子，空位写 V），S = 在哪个格位（间隙写 i），C = **有效电荷 = 实际电荷 − 该格位正常应有的电荷**：•（+1）、′（−1）、×（0）。
+- Na⁺ 格位空了：实际 0 − 正常 +1 = −1 → KV(V,Na,')；Cl⁻ 格位空了：0 − (−1) = +1 → KV(V,Cl,.)；
+- Ag⁺ 在间隙：+1 − 0 = +1 → KV(Ag,i,.)。
+缺陷方程必须同时满足：质量守恒、格位比守恒、电荷守恒（两边有效电荷之和相等）。
+
+为什么 AgCl 是 Frenkel 而 NaCl 是 Schottky？Ag⁺ 半径小、可极化性大，能和间隙周围的 Cl⁻ 形成部分共价作用，进入间隙的代价低；NaCl 中离子都较“硬”，挤进间隙代价太大，而成对空位的形成能较低。
+
+点缺陷数量随温度指数增加：n/N ≈ exp(−ΔH<sub>f</sub>/2kT)（Schottky），它们是离子晶体中离子导电和扩散的载体。
+** 写方程时别忘了 Frenkel 方程左边是 KV(Ag,Ag,x)（正常格位上的 Ag），Schottky 左边写 null（或“完美晶体”）。
+
+@@ 7 | Give the notation as chemical formula when the following doping occurs: a) Doping of NaCl with CaCl<sub>2</sub> (assume Na<sup>+</sup> and Ca<sup>2+</sup> have nearly the same ionic radii) b) Doping of CaF<sub>2</sub> mit YF<sub>3</sub> (assume Ca<sup>2+</sup> and Y<sup>3+</sup> have nearly the same ionic radii)
+?? 写出下列掺杂后的化学式：a) NaCl 掺 CaCl₂（Na⁺ 与 Ca²⁺ 半径相近）；b) CaF₂ 掺 YF₃（Ca²⁺ 与 Y³⁺ 半径相近）。
+>> **a) NaCl : CaCl₂** —— Ca²⁺ 取代 Na⁺，多出的 +1 电荷由 **Na⁺ 空位**补偿：
+- 化学式：**[[Na_{1−2x}Ca_x□_xCl]]**（□ = 阳离子空位）
+- 缺陷方程：[[CaCl2]] →(NaCl) KV(Ca,Na,.) + KV(V,Na,') + 2KV(Cl,Cl,x)
+
+**b) CaF₂ : YF₃** —— Y³⁺ 取代 Ca²⁺，多出的 +1 电荷由**间隙 F⁻** 补偿：
+- 化学式：**[[Ca_{1−x}Y_xF_{2+x}]]**（阴离子过量的萤石型固溶体）
+- 缺陷方程：[[YF3]] →(CaF2) KV(Y,Ca,.) + KV(F,i,') + 2KV(F,F,x)
+!! B2_07_doping_NaCl_Ca_CaF2_Y.png | (a) 每个 Ca²⁺ 产生一个 Na⁺ 空位；(b) 每个 Y³⁺ 带入一个间隙 F⁻，占据萤石中空着的 F₈ 立方体中心
+## 异价掺杂（aliovalent doping）必须电荷补偿，补偿方式选择“代价最小”的缺陷：
+- NaCl 中：可以选阳离子空位，或间隙 Cl⁻。Cl⁻ 很大，挤进 NaCl 的间隙代价极高 → 选 **Na⁺ 空位**。计量：1 个 Ca²⁺ 取代 2 个 Na⁺ 的位置——一个被占、一个空着，所以 Na 减少 2x。
+- CaF₂ 中：萤石结构里 F⁻ 构成简单立方，只有一半的 F₈ 立方体中心被 Ca²⁺ 占据，**另一半是空的大间隙**，正好容纳额外的 F⁻ → 选 **F⁻ 间隙**（实验上也确认如此，形成 F⁻ 间隙簇）。另一种可能是 Ca²⁺ 空位 [[Ca_{1−3x/2}Y_x□_{x/2}F2]]，但能量更高。
+
+应用：这些人为引入的空位 / 间隙大大提高离子电导率——NaCl:Ca 的低温电导由 Na⁺ 空位迁移主导；同理 ZrO₂ 掺 Y₂O₃（YSZ）产生氧空位，是燃料电池和氧传感器的固体电解质。
+** 检查化学式三件事：总电荷为零、格位数之比保持母体结构（NaCl 中阳:阴 = 1:1 算上空位）、x 系数正确。

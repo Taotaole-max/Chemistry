@@ -1,0 +1,142 @@
+# B4 | 固体中的化学键与能带理论
+>>> 本部分从“化学键”过渡到“能带”：键型与方向性 → 金属与半导体的导电机理 → 一维链的能带图、晶体轨道与态密度 → 直接/间接带隙、掺杂 → 二维正方网格的能带。讲义标注 2026 年跳过 B4.8–B4.10，这里仍给出答案。核心公式：σ = n·e·μ。
+
+@@ 1 | Explain which type of chemical bonds appear in solids? Which are directional /non directional? Which are of long /short range order? Which are anisotropic?
+?? 固体中有哪些类型的化学键？哪些有方向性/无方向性？哪些是长程/短程作用？哪些是各向异性的？
+>> 固体中有五种键合：**离子键、共价键、金属键、范德华力、氢键**。
+| 键型 | 方向性 | 作用程 | 各向异性 | 例子 |
+| 离子键 | 无方向性（库仑力球对称） | **长程**（∝ 1/r） | 各向同性 | NaCl、MgO |
+| 共价键 | **有方向性**（轨道重叠，固定键角） | 短程（需轨道重叠） | **各向异性** | 金刚石、Si |
+| 金属键 | 无方向性（离域电子“海”） | 中等（电子离域但被屏蔽） | 基本各向同性 | Cu、Fe、Na |
+| 范德华力 | 无方向性 | **很短程**（∝ 1/r⁶） | 各向同性 | 固态 Ar、石墨层间 |
+| 氢键 | **有方向性**（D–H···A 趋近直线） | 短程 | **各向异性** | 冰 |
+
+要点：**方向性的 = 共价键、氢键；长程的 = 离子键（库仑）；各向异性的 = 共价键、氢键**，以及由不同键型组合成的层状/链状固体（如石墨：层内共价、层间范德华 → 性质强烈各向异性）。
+!! B4_01_bond_types_in_solids.png | (a) 库仑作用 1/r 衰减最慢（长程），范德华 1/r⁶ 和共价重叠衰减很快（短程）；(b) 五种键的示意与比较
+## 为什么离子键是“长程”？库仑势 ∝ 1/r，在 r = 3 倍最近邻距离处仍有 1/3 的强度，所以晶格能要把很远的离子都加进来（Madelung 常数，见 A2.7）；而范德华势 ∝ 1/r⁶，r = 3 时只剩 0.14 %，基本只算最近邻。
+
+为什么共价键有方向性？共价键来自原子轨道的重叠，s、p、d 轨道本身有方向，最大重叠方向就是成键方向（sp³ → 109.5°）。离子和金属的成键电子分布是球对称或离域的，没有特定方向——所以离子晶体、金属倾向于高配位数的密堆积结构，而共价晶体配位数低（金刚石 CN 4）。
+** 注意题目中的“long / short range order”实际是在问作用的“程”（range of interaction）；若理解为“有序”，则晶体都有长程有序，非晶只有短程有序——答题时可以两层都点一下。
+
+@@ 2 | Give an example of an anisotropic metal.
+?? 举一个各向异性金属的例子。
+>>
+- **一维金属 KCP：[[K2[Pt(CN)4]Br_{0.3}·3H2O]]**（Krogmann 盐）。平面 [Pt(CN)₄] 单元沿 c 轴堆叠成 Pt 链，Pt–Pt 只有 2.88 Å，Pt 的 d<sub>z²</sub> 轨道沿链重叠成能带；部分氧化（Pt 约 +2.3）使能带未填满 → **沿链方向是金属**，垂直方向几乎绝缘，σ<sub>∥</sub>/σ<sub>⊥</sub> ≈ 10⁵。
+- **Zn、Cd**：hcp 但 c/a = 1.856（Zn）、1.886（Cd），远大于理想 1.633，层内键合强、层间弱 → 热膨胀、弹性、塑性变形强烈各向异性（只沿基面滑移）。
+- 其他：**石墨**（半金属，层内导电比层间高约 10³–10⁴ 倍）、Bi、α-Ga。
+!! B4_02_anisotropic_metals_KCP_Zn.png | (a) KCP 中沿链的 Pt–Pt 相互作用（红虚线）；(b) Zn 的 hcp 晶胞沿 c 方向被拉长
+## 金属为什么通常是各向同性的？金属键无方向性、多为立方密堆积，立方晶系的电导率张量本身就是各向同性的。要得到明显各向异性，结构本身必须低维：链（KCP、TTF-TCNQ）或层（石墨），使电子只能在某些方向上离域。
+
+KCP 的“为什么是金属”：完整的 K₂[Pt(CN)₄] 中 d<sub>z²</sub> 带全满 → 绝缘体；用 Br 部分氧化拿走 0.3 个电子 → 能带部分空出 → 金属。低温下会发生 Peierls 畸变（链二聚化打开带隙）变成半导体。
+** 举例时最好说出“结构是低维的 → 能带只在一个方向有色散”。
+
+@@ 3 | Discuss the influence of the charge carrier concentration and their mobility on the conductivity in metals as compared to semiconductors and also in dependency on the temperature.
+?? 讨论载流子浓度和迁移率对金属与半导体电导率的影响，以及它们随温度的变化。
+>> 电导率 **σ = n·e·μ**（n：载流子浓度，μ：迁移率；半导体中 σ = e(nμ<sub>e</sub> + pμ<sub>h</sub>)）。
+| | 金属 | 半导体 |
+| 载流子浓度 n | 极高（约 10²²–10²³ cm⁻³，每个原子约 1 个电子），**几乎与 T 无关** | 低（本征 Si 约 10¹⁰ cm⁻³；掺杂 10¹⁵–10¹⁹），**随 T 指数增大**：n ∝ T<sup>3/2</sup>·exp(−E<sub>g</sub>/2kT) |
+| 迁移率 μ | 较低（Cu 约 40 cm²/V·s），**随 T 升高下降**（声子散射，∝ 1/T） | 可以较高（Si 电子 1400 cm²/V·s），也随 T 升高下降（∝ T<sup>−3/2</sup>） |
+| σ 随 T | n 不变、μ 下降 → **σ 随 T 升高而下降**（ρ ∝ T） | n 的指数增长压倒 μ 的下降 → **σ 随 T 升高而迅速增大** |
+| 数量级 | Cu：6×10⁷ S/m | 本征 Si：约 4×10⁻⁴ S/m |
+
+掺杂半导体的 n(T) 分三个区：低温**冻析区**（施主未电离，n 随 T 指数上升）→ 中温**饱和（非本征）区**（施主全部电离，n ≈ N<sub>D</sub> 基本不变，此时 σ 随 T 略降，像金属）→ 高温**本征区**（跨带隙激发占主导，n 再次迅速增大）。
+!! B4_03_conductivity_vs_temperature.png | (a) 金属：σ 随 T 下降；(b) 本征半导体：ln σ 对 1/T 成直线，斜率 −E<sub>g</sub>/2k；(c) n 型 Si（N<sub>D</sub> = 10¹⁶ cm⁻³）载流子浓度的三个温区
+## 物理图像：
+- 金属的费米能级落在部分填充的能带中，能导电的电子数由能带填充决定，温度几乎改变不了它；升温只让晶格振动（声子）更强，散射更频繁 → 电阻变大。
+- 半导体在 0 K 时价带满、导带空，没有可动载流子；载流子要靠热激发跨过带隙（或从杂质能级激发），激发概率 ∝ exp(−E/kT)，所以对温度极敏感——这正是热敏电阻（NTC）的原理。
+- 计算验证：Cu 的 μ = σ/(ne) = 5.96×10⁷ / (8.5×10²⁸ × 1.6×10⁻¹⁹) ≈ 4.4×10⁻³ m²/V·s = 44 cm²/V·s——金属导电好靠的是 n 大，而不是 μ 大。
+** 一句话：金属看 μ（随 T 降），半导体看 n（随 T 指数升）。
+
+@@ 4 | Give an approximate number (with units) of the band gap of an insulator, semiconductor and metal.
+?? 给出绝缘体、半导体和金属带隙的大致数值（带单位）。
+>>
+- **绝缘体**：E<sub>g</sub> **> 4 eV**（常见 5–10 eV），如金刚石 5.5 eV、NaCl 约 8.5 eV、SiO₂ 约 9 eV；
+- **半导体**：E<sub>g</sub> 约 **0.1–3 eV**（典型约 1 eV），如 Ge 0.66 eV、Si 1.12 eV、GaAs 1.42 eV；
+- **金属**：E<sub>g</sub> = **0 eV**（能带部分填充，或价带与导带重叠）。
+!! B4_04_band_gaps_classes.png | 三类固体的能带示意：价带（蓝，已占据）、导带（白，空）；金属的费米能级 E<sub>F</sub> 落在能带内部
+## 为什么 ~3–4 eV 是分界？室温热能 kT ≈ 0.026 eV，能被热激发的载流子数 ∝ exp(−E<sub>g</sub>/2kT)：E<sub>g</sub> = 1 eV 时约 10⁻⁹ 量级（掺杂后足以导电）；E<sub>g</sub> = 5 eV 时约 10⁻⁴²，实际上为零。此外 E<sub>g</sub> > 3.1 eV 的材料不吸收可见光，看起来透明/白色（NaCl、金刚石），E<sub>g</sub> 在 1.8–3.1 eV 的呈各种颜色（CdS 黄色 2.4 eV），< 1.8 eV 的呈黑色/金属光泽（Si）。
+** 单位是 eV（1 eV = 96.5 kJ/mol）。分界并不绝对，宽禁带半导体（GaN 3.4 eV、SiC 3.3 eV、ZnO 3.4 eV）介于两者之间。
+
+@@ 5 | Assume a linear chain of metal atoms that propagates along the z-direction. a) Sketch a band structure diagram “energy <i>versus</i> k” (k = 0 and k = π/a) for the <b>d<sub>xy</sub> orbitals</b>. b) Draw the crystal orbitals at k = 0 and k = π/a. c) Sketch the density of states (DOS) for the band structure of the <b>d<sub>xy</sub></b> orbitals.
+?? 沿 z 方向的金属原子线性链：a) 画出 d<sub>xy</sub> 轨道的能带图 E–k（k = 0 到 π/a）；b) 画出 k = 0 和 k = π/a 的晶体轨道；c) 画出 d<sub>xy</sub> 能带的态密度。
+>> **a) 能带图**：E(k) = α + 2β<sub>δ</sub>·cos(ka)，β<sub>δ</sub> < 0 → **从 k = 0（最低）单调上升到 k = π/a（最高）**；由于 d<sub>xy</sub> 之间只有 **δ 型**重叠（最弱），**带宽 W = 4|β<sub>δ</sub>| 很窄**。（对比：d<sub>z²</sub> 为 σ 重叠，带宽最大、也向上；d<sub>xz</sub>/d<sub>yz</sub> 为 π 重叠，向下走。）
+
+**b) 晶体轨道**：ψ<sub>k</sub> = Σ<sub>n</sub> e<sup>ikna</sup>·χ<sub>n</sub>(d<sub>xy</sub>)
+- **k = 0**：所有系数 e⁰ = 1 → 每个原子的 d<sub>xy</sub> 同相，相邻原子同号瓣“面对面”相对 → **δ 成键**，原子之间没有节面 → 能量最低；
+- **k = π/a**：系数 e<sup>iπn</sup> = (−1)ⁿ → + − + − 交替 → 相邻原子异号瓣相对 → **δ 反键**，每两个原子之间都有节面 → 能量最高。
+
+**c) 态密度**：DOS(E) ∝ 1/|dE/dk|。窄带 → 所有态集中在很小的能量范围内，DOS **又窄又高**；在带底（k = 0）和带顶（k = π/a）处 dE/dk = 0，一维 DOS 发散（van Hove 奇点），带中间 DOS 最小——形状为“两头翘起的 U 形”（∝ 1/√((W/2)² − (E − α)²)）。
+!! B4_05_dxy_chain_band_DOS.png | (a) E(k)：粗蓝线为 d<sub>xy</sub>（δ，窄），灰线为 d<sub>z²</sub>、d<sub>xz</sub> 对比；(c) DOS；(b1)(b2) k = 0 与 k = π/a 的晶体轨道（蓝 = +，红 = −，瓣位于垂直链轴的平面内）
+## 判断能带“往上走还是往下走”的方法：看 k = 0 时（所有轨道同号）相邻轨道是成键还是反键。
+- d<sub>xy</sub> 的四个瓣都在 xy 平面里，沿 z 方向的相邻原子上的 d<sub>xy</sub> 是平行“叠放”的：+ 瓣正对 + 瓣、− 瓣正对 − 瓣 → 成键 → k = 0 能量最低 → 带向上走。
+- 对比 p<sub>z</sub>（σ 头碰头）：k = 0 时一个原子的 + 瓣对着下一个原子的 − 瓣 → 反键 → 带向下走。
+
+为什么窄？带宽 ∝ 重叠积分，σ > π > δ：δ 重叠需要四个瓣同时侧向重叠，且 d<sub>xy</sub> 的瓣指向远离链轴的方向，与相邻原子的重叠很小 → 色散很小。窄带意味着电子“重”（有效质量大）、DOS 高，这类窄 d 带常与磁性、强关联有关。
+** 三个图要对应起来：E–k 曲线越平的地方，DOS 越高；k = 0 和 π/a 处切线水平 → DOS 峰。
+
+@@ 6 | Discuss the differences of an indirect and a direct band gap?
+?? 讨论间接带隙和直接带隙的区别。
+>>
+- **直接带隙（direct gap）**：价带顶（VBM）和导带底（CBM）在**同一 k 值**（通常是 Γ 点，k = 0）。光子的动量相对电子可忽略，吸收或发射一个光子就能完成**竖直跃迁** → 光吸收强、辐射复合（发光）效率高。例：**GaAs（1.42 eV）**、GaN（3.4 eV）、InP、CdTe → LED、激光二极管、薄膜太阳能电池。
+- **间接带隙（indirect gap）**：VBM 与 CBM 在**不同 k 值**（Si 的 CBM 在 Γ→X 方向约 85 % 处，Ge 在 L 点）。跃迁除了光子（提供能量）还必须有**声子**参与（提供动量 Δk）——二级过程，概率小 → 带边附近吸收弱、几乎不发光、载流子寿命长。例：**Si（1.12 eV）**、Ge（0.66 eV）、GaP（2.26 eV）。
+!! B4_06_direct_vs_indirect_gap.png | (a) 直接带隙：竖直跃迁；(b) 间接带隙：光子（竖直）+ 声子（水平，补充动量）
+## 为什么光子不能提供动量？可见/近红外光子的动量 p = h/λ 极小（λ ~ 1 µm 对应 k ~ 10⁻³ Å⁻¹），而布里渊区的尺度是 π/a ~ 1 Å⁻¹，相差三个数量级。所以光跃迁在 E–k 图上几乎是竖直的；需要动量变化时只能由晶格振动（声子，动量可以很大）来提供。
+
+后果：Si 太阳能电池需要约 100–200 µm 厚才能吸收足够的光，而 GaAs 只需约 1–2 µm；Si 做不成高效 LED/激光器（硅光子学的难点）。
+** 答题四要素：VBM/CBM 是否同 k；是否需要声子；吸收/发光强弱；各举例。
+
+@@ 7 | What is n and p doping? Give an example.
+?? 什么是 n 型和 p 型掺杂？举例。
+>>
+- **n 型掺杂**：掺入比基质**多一个价电子**的杂质（**施主 donor**）。例：**Si 中掺 P**（或 As、Sb）。P 有 5 个价电子，4 个与周围 Si 成键，第 5 个只被弱束缚（施主能级在导带下约 0.045 eV），室温下即被激发到导带 → **多数载流子是电子**，E<sub>F</sub> 移向导带。
+- **p 型掺杂**：掺入**少一个价电子**的杂质（**受主 acceptor**）。例：**Si 中掺 B**（或 Al、Ga）。B 只有 3 个价电子，一根 Si–B 键缺一个电子；受主能级在价带上约 0.045 eV，价带电子被激发进入受主能级，在价带留下**空穴 h⁺** → **多数载流子是空穴**，E<sub>F</sub> 移向价带。
+- 化合物半导体：GaAs 中 Si 占 Ga 位（n 型）、Zn 占 Ga 位（p 型）。
+!! B4_07_n_p_doping.png | (a) Si:P 多出的电子；(b) Si:B 缺电子形成空穴；(c) 施主/受主能级与费米能级位置
+## 为什么杂质能级离带边这么近（约 0.05 eV）？多出的电子被 P⁺ 束缚，像一个“氢原子”，但处在介电常数 ε<sub>r</sub> ≈ 11.7 的 Si 中、有效质量 m* ≈ 0.26m<sub>e</sub>，结合能 ≈ 13.6 eV × (m*/m<sub>e</sub>)/ε<sub>r</sub>² ≈ 0.03 eV 量级——远小于 kT 的几倍，所以室温下几乎全部电离。
+
+掺杂的意义：极少量的掺杂（10⁻⁶ 量级原子分数）就能把载流子浓度提高 10⁶ 倍，而且可以人为选择载流子类型——p–n 结、二极管、晶体管、太阳能电池都建立在此基础上。
+** 判断口诀：比基质多价电子 → 施主 → n 型；少价电子 → 受主 → p 型。注意掺杂后材料整体仍电中性。
+
+@@ 8 | Discuss the size of the band gap comparing Si and Ge?
+%% skip
+?? 比较 Si 和 Ge 的带隙大小。
+>> **E<sub>g</sub>(Si) = 1.12 eV > E<sub>g</sub>(Ge) = 0.66 eV**（300 K，均为间接带隙）。两者都是金刚石结构；Ge 原子更大、键更长（Ge–Ge 2.45 Å vs Si–Si 2.35 Å）、价轨道更弥散 → 轨道重叠（β）更小 → 成键（价带）与反键（导带）之间的分裂更小 → 带隙更小。第 14 族整体趋势：C（金刚石）5.5 eV > Si 1.12 > Ge 0.66 > α-Sn ≈ 0 eV。
+!! B4_08_Si_vs_Ge_gap.png | (a) 第 14 族金刚石结构单质的带隙随键长增大而减小；(b) 成键–反键分裂示意
+## 化学图像：把半导体看成由 sp³ 杂化轨道组成的成键/反键对。价带来自 σ 成键轨道，导带来自 σ* 反键轨道，带隙大致反映 σ–σ* 的分裂。沿族向下，原子半径增大，同样的“共价键”越来越弱、金属性增强，分裂减小，最终 α-Sn 带隙接近零、Pb 成为金属。
+** 一般规律：同族同结构，越往下带隙越小（周期表中“越重越金属”）。
+
+@@ 9 | Discuss the size of the band gap comparing <b>Ge</b> and GaAs?
+%% skip
+?? 比较 Ge 和 GaAs 的带隙大小。
+>> **E<sub>g</sub>(GaAs) = 1.42 eV（直接）> E<sub>g</sub>(Ge) = 0.66 eV（间接）**。GaAs 与 Ge **等电子**（Ga 3 + As 5 = 2 × 4 个价电子）、位于同一周期、晶格常数几乎相同（5.653 vs 5.658 Å），结构相同（闪锌矿 vs 金刚石）。差别在于 GaAs 中 Ga、As 电负性不同（1.81 vs 2.18）→ 键带有**离子性**：成键态（价带）更多分布在 As 上、能量更低，反键态（导带）更多在 Ga 上、能量更高 → 分裂更大 → 带隙更大。
+!! B4_09_10_isoelectronic_gaps.png | (a) 第 4 周期同电子系列的带隙随离子性增大；(b) 同核 vs 异核：两原子轨道能量不同使成键–反键分裂增大
+## 定量的经验关系（Phillips–Van Vechten）：E<sub>g</sub>² ≈ E<sub>h</sub>² + C²，E<sub>h</sub> 是“共价（同极）部分”，主要由键长决定（几乎相同），C 是“离子（异极）部分”，随电负性差增大。Ge 的 C = 0，GaAs 的 C > 0 → GaAs 的带隙更大。这与双原子分子 MO 理论一致：两个原子轨道能量差越大，成键–反键分裂越大。
+** 与 B4.8 区分：B4.8 是“同族往下 → 键长增大 → 带隙减小”；B4.9/10 是“同周期 → 键长不变、离子性增大 → 带隙增大”。
+
+@@ 10 | Order the following compounds according to increasing band gap: ZnSe, GaAs, Ge.
+%% skip
+?? 按带隙递增排列：ZnSe、GaAs、Ge。
+>> **Ge（0.66 eV）< GaAs（1.42 eV）< ZnSe（2.7 eV）**。三者都是第 4 周期的等电子系列（IV–IV → III–V → II–VI），晶格常数几乎相同（5.66 / 5.65 / 5.67 Å），电负性差依次增大（0 → 0.37 → 0.90），离子性增大 → 带隙增大。（继续延伸：CuBr（I–VII）约 2.9–3.0 eV。）
+!! B4_09_10_isoelectronic_gaps.png | 同 B4.9 的图：同一周期等电子系列，E<sub>g</sub> 随离子性单调增大
+## 颜色验证：Ge 黑色金属光泽（吸收全部可见光）；GaAs 黑灰色（1.42 eV 对应 870 nm 近红外）；ZnSe 黄色（2.7 eV ≈ 460 nm，只吸收蓝紫光）——带隙越大，吸收边越往蓝移。
+** 排序题的依据要写出来：“等电子、同周期、离子性增大”。
+
+@@ 11 | What changes should occur in the band structure of the square net (Fig. 10.12, see below) when it is compressed in the x direction? What are the consequences for the property?
+?? 正方网格（图 10.12）沿 x 方向压缩时，能带结构会发生什么变化？对性质有什么影响？
+>> **能带的变化**：
+- 沿 x 方向原子间距变短 → x 方向的轨道重叠（s 的 β、p 的 σ、π 相互作用）**增强**，y 方向不变（或因体积守恒略减弱）；
+- 正方网格中 X（k<sub>x</sub> = π/a）与 X′/Y（k<sub>y</sub> = π/a）点由四重对称性等价；压缩后对称性从正方降到矩形，**X 与 Y 不再等价**；
+- 沿 **Γ → X**（压缩方向）的能带**色散增大、带变宽**：成键组合（如 Γ 点的 s）更低，反键组合更高；沿 Γ → Y 色散基本不变；
+- 原来由对称性保证的**简并被解除**：Γ 点和 M 点的 p<sub>x</sub>/p<sub>y</sub> 不再简并——p<sub>x</sub> 在 Γ 点是 x 方向 σ 反键（σ*）组合，被推高；p<sub>y</sub> 在 Γ 点沿 x 是 π 成键，被压低。
+
+**对性质的影响**：
+- **各向异性**：x 方向能带更宽 → 电子有效质量更小、费米速度更大 → **沿 x 方向电导率更高**，σ<sub>x</sub> > σ<sub>y</sub>；光学性质也变成各向异性（二向色性）；
+- 费米面形状改变（从四重对称变为二重），能带交叠/带隙可能改变：若能带填充合适，压缩可能使原来分开的能带交叠（更金属化），或解除简并后打开带隙（向半导体转变）——即可能发生金属–绝缘体转变。
+!! B4_11_square_net_compressed.png | 用紧束缚模型计算的 s、p 能带：(a) 正方网格，Γ→X 与 Γ→Y 完全相同；(b) 沿 x 压缩（x 方向相互作用 × 1.6），Γ→X 色散变大，Γ 点 p<sub>x</sub>/p<sub>y</sub> 简并解除
+## 紧束缚表达式（a<sub>x</sub>、a<sub>y</sub> 为两个方向的晶格常数）：
+- s 带：E = α<sub>s</sub> + 2β<sub>x</sub>cos(k<sub>x</sub>a<sub>x</sub>) + 2β<sub>y</sub>cos(k<sub>y</sub>a<sub>y</sub>)（β < 0）
+- p<sub>x</sub> 带：E = α<sub>p</sub> + 2σ<sub>x</sub>cos(k<sub>x</sub>a<sub>x</sub>) − 2π<sub>y</sub>cos(k<sub>y</sub>a<sub>y</sub>)；p<sub>y</sub> 带：E = α<sub>p</sub> − 2π<sub>x</sub>cos(k<sub>x</sub>a<sub>x</sub>) + 2σ<sub>y</sub>cos(k<sub>y</sub>a<sub>y</sub>)
+正方网格 β<sub>x</sub> = β<sub>y</sub>、σ<sub>x</sub> = σ<sub>y</sub>、π<sub>x</sub> = π<sub>y</sub>，所以 Γ 点 p<sub>x</sub>、p<sub>y</sub> 能量相同（图 10.12 中两者都标 σ*, π）。压缩 x 后 |β<sub>x</sub>|、σ<sub>x</sub>、π<sub>x</sub> 变大：Γ 点 p<sub>x</sub>（σ<sub>x</sub>* 为主）升高，p<sub>y</sub>（π<sub>x</sub> 成键为主）降低。带宽 W = 4(|t<sub>x</sub>| + |t<sub>y</sub>|) 中 x 方向的贡献变大。
+
+这就是“结构 ↔ 能带 ↔ 性质”的链条：原子间距 → 重叠积分 → 能带宽度/色散 → 有效质量和导电性。类似的现象：对一维导体施压（如 KCP）会增强链间耦合；Peierls 畸变则是反过来——链上原子交替靠近/远离，打开带隙。
+** 关键词：dispersion increases along Γ–X、degeneracy lifted、X ≠ Y、anisotropic conductivity。
