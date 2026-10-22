@@ -23,6 +23,8 @@ ol, ul { margin: 4px 0 4px 1.3em; padding: 0; } li { margin: 2px 0; }
 table { border-collapse: collapse; width: 100%; margin: 6px 0; font-size: 9.6pt; break-inside: avoid; }
 th, td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle; text-align: left; }
 th { background: #e0e7ff; color: #1e3a8a; }
+table.cheat { break-inside: auto; }
+table.cheat tr { break-inside: avoid; }
 table.cheat td:first-child { width: 22%; font-weight: bold; color: #1e3a8a; }
 table.cheat td:nth-child(2) { width: 46%; }
 .fig { text-align: center; margin: 8px 0; break-inside: avoid; }
@@ -37,6 +39,7 @@ table.cheat td:nth-child(2) { width: 46%; }
 .ans { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 6px 10px; margin: 6px 0 2px; }
 .ans b.h { color: #15803d; }
 .note { font-size: 9.2pt; color: #6b7280; }
+.eq { font-family: "DejaVu Sans", sans-serif; font-size: 1.05em; }
 mjx-container[display="true"] { margin: 6px 0 !important; }
 .cover { border: 2px solid #1e3a8a; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; }
 .toc { columns: 2; font-size: 10pt; margin: 6px 0 0; }
@@ -46,23 +49,27 @@ mjx-container[display="true"] { margin: 6px 0 !important; }
 <div class="cover">
 <h1>表面吸附与表面反应动力学</h1>
 <div class="sub">公式 · 推导 · 应用 · 题库（每题后紧跟答案）　|　中文讲解，关键术语附英文</div>
-<p><b>主线：</b>气体分子撞上表面（撞墙通量）→ 有一部分粘住（粘附概率、吸附速率）→ 又有一部分离开（脱附、TPD）→ 吸附和脱附达到平衡（Langmuir 等温式）→ 表面上的物种发生反应（LH / ER 机理）→ 从实验数据反推机理（表观级数、表观活化能、速控步）。</p>
+<p><b>主线：</b>气体分子撞上表面（撞墙通量）→ 有一部分粘住（粘附概率、吸附速率）→ 又有一部分离开（脱附、TPD）→ 吸附和脱附达到平衡（Langmuir 等温式）→ 表面上的物种发生反应（LH / ER 机理）→ 从实验数据反推机理（表观级数、表观活化能、速控步）→ 选择性与催化剂结构（竞争吸附、连串反应、SMSI）。</p>
 <div class="toc">
-0　一页速查<br>
+0　速查表<br>
 1　撞墙通量（Hertz–Knudsen）<br>
 2　粘附概率与吸附速率<br>
 3　脱附：停留时间与 TPD<br>
-4　Langmuir 等温式（缔合 / 解离 / 竞争）与吸附热<br>
-5　Langmuir–Hinshelwood 单分子反应<br>
-6　Langmuir–Hinshelwood 双分子反应<br>
-7　Eley–Rideal 机理<br>
-8　表观活化能<br>
-9　速控步判断总表<br>
-10　题库（17 题，含答案与解析）
+4　Langmuir 等温式与吸附热<br>
+5　LH 单分子反应<br>
+6　LH 双分子反应（含解离吸附、级数之和）<br>
+7　Eley–Rideal 机理与双位点 LH<br>
+8　Mars–van Krevelen 机理<br>
+9　表观活化能<br>
+10　速控步判断总表<br>
+11　吸附方式、覆盖度与机理<br>
+12　综合对比总表<br>
+13　选择性与 SMSI<br>
+14　题库（26 题，含答案与解析）
 </div>
 </div>
 
-<h2>0　一页速查</h2>
+<h2>0　速查表</h2>
 <table class="cheat">
 <tr><th>名称</th><th>公式</th><th>要点 / 适用条件</th></tr>
 <tr><td>撞墙通量</td><td>\(Z_W=\dfrac{p}{\sqrt{2\pi m k_BT}}=2.63\times10^{24}\dfrac{p}{\sqrt{MT}}\)</td><td>单位 m⁻²s⁻¹；p 用 Pa，M 用 g/mol，T 用 K；m 是<b>一个分子</b>的质量（kg）</td></tr>
@@ -81,6 +88,14 @@ mjx-container[display="true"] { margin: 6px 0 !important; }
 <tr><td>LH 双分子 A+B</td><td>\(r=\dfrac{kK_AK_Bp_Ap_B}{(1+K_Ap_A+K_Bp_B)^2}\)</td><td>n_A = 1 − 2θ_A（可为负）；最大值在 K_Ap_A = 1 + K_Bp_B（θ_A = 1/2）</td></tr>
 <tr><td>Eley–Rideal</td><td>\(r=\dfrac{kK_Ap_Ap_B}{1+K_Ap_A}\)</td><td>n_A = 1 − θ_A，n_B = 1；对 p_A 只饱和、无最大值</td></tr>
 <tr><td>表观活化能</td><td>\(E_{app}=E_{true}+\sum_i n_i\,\Delta H_{ads,i}\)</td><td>n_i 是对 i 的表观级数；低覆盖 E_app 偏小，强吸附抑制物使 E_app 偏大</td></tr>
+<tr><td>LH（B₂ 解离）</td><td>\(r=\dfrac{kK_Ap_A\sqrt{K_Bp_B}}{(1+K_Ap_A+\sqrt{K_Bp_B})^2}\)</td><td>n_A = 1 − 2θ_A，n_B = ½ − θ_B</td></tr>
+<tr><td>级数之和</td><td>\(n_A+n_B=2\theta_*\)（LH 竞争）</td><td>B 解离时 n_A + 2n_B = 2θ_*；ER 对气相物恒为 1；MvK 两者之和恒为 1</td></tr>
+<tr><td>双位点 LH</td><td>\(r=k\dfrac{K_Ap_A}{1+K_Ap_A}\cdot\dfrac{K_Bp_B}{1+K_Bp_B}\)</td><td>n = 1 − θ，都在 0–1；无最大值</td></tr>
+<tr><td>Mars–van Krevelen</td><td>\(\theta_{Ox}=\dfrac{k_Bp_B}{k_Ap_A+k_Bp_B},\ \ \dfrac1r=\dfrac1{k_Ap_A}+\dfrac1{k_Bp_B}\)</td><td>n_A = θ_Ox，n_B = 1 − θ_Ox；分母无 1（没有空位状态）</td></tr>
+<tr><td>稳态覆盖度</td><td>\(K_{eff}=\dfrac{k_a}{k_d+k_r}\)</td><td>k_r ≪ k_d 时 = K（吸附准平衡）；动力学拟合得到的是 K_eff</td></tr>
+<tr><td>平行竞争选择性</td><td>\(\dfrac{r_A}{r_B}=\dfrac{k_AK_Ap_A}{k_BK_Bp_B}\)</td><td>同一种位点，分母约掉；看 kK 不只看 k</td></tr>
+<tr><td>连串点选择性</td><td>\(S=1-\dfrac{k_2K_Bp_B}{k_1K_Ap_A}\)</td><td>A → B → C，要 B；转化越深 S 越低</td></tr>
+<tr><td>温度与选择性</td><td>\(\dfrac{r_2}{r_1}\propto e^{-(E_{app,2}-E_{app,1})/RT}\)</td><td>升温有利于表观活化能大的路径</td></tr>
 <tr><td>两点求级数</td><td>\(n=\dfrac{\ln(r_2/r_1)}{\ln(p_2/p_1)}\)</td><td>得到的是 \(p=\sqrt{p_1p_2}\) 处的级数</td></tr>
 </table>
 <p class="note">符号：θ 覆盖度；θ_* 空位比例；s 粘附概率（s₀ 为零覆盖时的初始值）；K 吸附平衡常数（单位 压力⁻¹）；ΔH_ads 吸附焓（&lt; 0）；ν 指前因子（一级约 10¹³ s⁻¹）；β 升温速率。</p>

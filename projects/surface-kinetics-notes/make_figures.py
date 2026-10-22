@@ -10,7 +10,7 @@ for f in font_manager.findSystemFonts():
     if "wqy-zenhei" in f.lower() or "wqy_zenhei" in f.lower():
         font_manager.fontManager.addfont(f)
 plt.rcParams.update({
-    "font.family": ["WenQuanYi Zen Hei", "DejaVu Sans"],
+    "font.family": ["DejaVu Sans", "WenQuanYi Zen Hei"],
     "axes.unicode_minus": False,
     "font.size": 10.5,
     "axes.spines.top": False,
@@ -78,7 +78,7 @@ fig, ax = plt.subplots(figsize=(6.2, 3.4))
 ax.plot(xa, lh / lh.max(), color=BLUE, lw=2, label="LH：r ∝ K_A p_A K_B p_B /(1+K_A p_A+K_B p_B)²")
 ax.plot(xa, er / er.max(), color=ORANGE, lw=2, label="ER：r ∝ K_A p_A p_B /(1+K_A p_A)")
 ax.axvline(1 + KbPb, color=GREY, ls=":", lw=1)
-ax.text(1 + KbPb + 0.1, 0.12, "最大值：K_A p_A = 1 + K_B p_B\n（此时 θ_A = 1/2）", fontsize=9, color=GREY)
+ax.text(1 + KbPb + 0.15, 0.36, "最大值：K_A p_A = 1 + K_B p_B\n（此时 θ_A = 1/2）", fontsize=9, color=GREY)
 ax.set_xlabel("K_A p_A（固定 K_B p_B = 1）"); ax.set_ylabel("相对速率")
 ax.legend(frameon=False, fontsize=8.5, loc="lower right"); ax.set_ylim(0, 1.08)
 ax.set_title("固定 p_B、增大 p_A：LH 先升后降，ER 升到平台")
@@ -157,3 +157,60 @@ ax[1].set_xlabel("T / K"); ax[1].set_ylabel("脱附速率（任意单位）"); a
 ax[1].legend(frameon=False, fontsize=9); ax[1].set_title("二级（复合）脱附：θ₀ 越大峰越靠低温")
 save("F7_TPD")
 print("figures done")
+
+# F8 同一反应 A + B 的四种机理：速率、对 A 的级数、对 B 的级数随 p_A 变化
+pl = np.logspace(-2, 2, 400)
+KA8 = 2.0
+th_lh = KA8 * pl / (1 + KA8 * pl + 1.0); thB_lh = 1.0 / (1 + KA8 * pl + 1.0)
+th_1 = KA8 * pl / (1 + KA8 * pl)
+tox = 1.0 / (KA8 * pl + 1.0)
+curves = {
+    "LH 竞争（同一位点）": (th_lh * thB_lh, 1 - 2 * th_lh, 1 - 2 * thB_lh, BLUE, "-"),
+    "LH 双位点（不竞争）": (th_1 * 0.5, 1 - th_1, np.full_like(pl, 0.5), GREEN, "-"),
+    "ER（A 吸附，B 气相）": (th_1 * 1.0, 1 - th_1, np.ones_like(pl), ORANGE, "--"),
+    "MvK（A 还原，B 再氧化）": (KA8 * pl * tox, tox, 1 - tox, RED, "-."),
+}
+fig, ax = plt.subplots(1, 3, figsize=(10.5, 3.4))
+for name, (r, nA, nB, c, ls) in curves.items():
+    ax[0].semilogx(pl, r / r.max(), color=c, ls=ls, lw=2, label=name)
+    ax[1].semilogx(pl, nA, color=c, ls=ls, lw=2)
+    ax[2].semilogx(pl, nB, color=c, ls=ls, lw=2)
+ax[0].set_ylabel("相对速率"); ax[0].set_title("速率：只有 LH 竞争有最大值")
+ax[1].set_ylabel("n_A"); ax[1].set_title("对 A 的级数：只有 LH 竞争能变负")
+ax[2].set_ylabel("n_B"); ax[2].set_title("对 B 的级数：区分其余三种")
+for a in ax:
+    a.set_xlabel("p_A / bar（对数）"); a.axhline(0, color=GREY, lw=0.8, ls=":")
+ax[1].set_ylim(-1.05, 1.05); ax[2].set_ylim(-0.05, 1.1)
+fig.legend(*ax[0].get_legend_handles_labels(), loc="lower center", ncol=4, frameon=False, fontsize=9, bbox_to_anchor=(0.5, -0.06))
+plt.tight_layout(rect=(0, 0.06, 1, 1))
+plt.savefig("fig/F8_mechanisms.png", bbox_inches="tight"); plt.close()
+
+# F9 LH 双分子吸附强弱区图：n_A 的等值线
+xa = np.logspace(-2, 2, 300); xb = np.logspace(-2, 2, 300)
+XA, XB = np.meshgrid(xa, xb)
+NA = 1 - 2 * XA / (1 + XA + XB)
+fig, ax = plt.subplots(figsize=(6.0, 4.6))
+cs = ax.contourf(XA, XB, NA, levels=np.linspace(-1, 1, 21), cmap="RdBu")
+ax.contour(XA, XB, NA, levels=[0], colors="k", linewidths=1.2)
+ax.set_xscale("log"); ax.set_yscale("log")
+ax.set_xlabel("K_A p_A"); ax.set_ylabel("K_B p_B")
+cb = plt.colorbar(cs, ax=ax); cb.set_label("对 A 的级数 n_A = 1 − 2θ_A")
+for (x, y, t) in ((0.03, 0.03, "都弱\n(1, 1)"), (40, 0.03, "A 强 B 弱\n(−1, 1)"), (0.03, 40, "A 弱 B 强\n(1, −1)"), (40, 40, "都强\nn_A + n_B ≈ 0")):
+    ax.text(x, y, t, ha="center", va="center", fontsize=9.5, bbox=dict(boxstyle="round", fc="white", ec=GREY, alpha=0.9))
+ax.text(1.6, 0.6, "n_A = 0（速率最大）", fontsize=8.5, rotation=40)
+ax.set_title("LH 双分子：四个极限区（括号内为 n_A, n_B）")
+save("F9_LH_regimes")
+
+# F10 连串加氢的选择性：S = 1 − (k2 K_E p_E)/(k1 K_A p_A)
+ratio = np.linspace(0, 700, 400)
+fig, ax = plt.subplots(figsize=(6.2, 3.4))
+for KK, c, lab in ((1000, BLUE, "普通 Pd：K_A/K_E = 1000"), (5000, GREEN, "Pd–Ag：K_A/K_E = 5000（乙烯吸附更弱）")):
+    ax.plot(ratio, 1 - 2 * ratio / KK, color=c, lw=2, label=lab)
+ax.axhline(0, color=GREY, lw=1, ls=":")
+ax.fill_between(ratio, -0.5, 0, color=RED, alpha=0.06)
+ax.text(520, -0.3, "S < 0：乙烯被净消耗", fontsize=9, color=RED)
+ax.set_xlabel("p(乙烯) / p(乙炔)　（转化率越高越往右）"); ax.set_ylabel("点选择性 S")
+ax.set_ylim(-0.5, 1.05); ax.legend(frameon=False, fontsize=9, loc="lower left")
+ax.set_title("乙炔选择加氢：k₂/k₁ = 2 时选择性随转化下降")
+save("F10_consecutive")
+print("new figures done")

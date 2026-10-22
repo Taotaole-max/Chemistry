@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const parts = ['head.html', 'part1.html', 'part2.html', 'part3.html', 'part4.html', 'tail.html'];
+const parts = ['head.html', 'part1.html', 'part2.html', 'part2b.html', 'part3.html', 'part4.html', 'part5.html', 'tail.html'];
 let html = parts.filter(p => fs.existsSync(p)).map(p => fs.readFileSync(p, 'utf8')).join('\n');
 
 require('mathjax').init({

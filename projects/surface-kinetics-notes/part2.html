@@ -1,7 +1,7 @@
 
-<h2 class="part">5　Langmuir–Hinshelwood 单分子反应　A → B</h2>
+<h2>5　Langmuir–Hinshelwood 单分子反应　A → B</h2>
 <div class="box m"><span class="lab">机理</span>
-A + * ⇌ A*（快，平衡）　→　A* → B*（<b>慢，速控步</b>，速率常数 k）　→　B* ⇌ B + *（快，平衡）<br>
+A + * <span class="eq">⇌</span> A*（快，平衡）　→　A* → B*（<b>慢，速控步</b>，速率常数 k）　→　B* <span class="eq">⇌</span> B + *（快，平衡）<br>
 "吸附平衡"意味着 θ_A、θ_B 可以直接用 4.3 节的竞争 Langmuir 式。
 </div>
 <div class="box f"><span class="lab">公式</span>
@@ -46,7 +46,25 @@ $$n_A=1-2\theta_A,\qquad n_B=1-2\theta_B$$
 <div class="box d"><span class="lab">推导 2：速率最大值</span>
 固定 p_B，令 ∂r/∂p_A = 0（等价于 n_A = 0）：
 $$(1+K_Ap_A+K_Bp_B)-2K_Ap_A=0\ \Rightarrow\ K_Ap_A=1+K_Bp_B$$
-此时 \(\theta_A=\dfrac{1+K_Bp_B}{2(1+K_Bp_B)}=\dfrac12\)。也就是说，A 占满一半位点时速率最大；再多就把 B 挤走了。
+此时 \(\theta_A=\dfrac{1+K_Bp_B}{2(1+K_Bp_B)}=\dfrac12\)。也就是说，A 占满一半位点时速率最大；再多就把 B 挤走了。<br>
+<b>为什么最大点的级数是 0</b>：级数是 ln r–ln p 曲线的斜率，\(n=\dfrac{p}{r}\dfrac{dr}{dp}\)。山顶处 dr/dp = 0，所以 n = 0；山顶左边速率随 p_A 上升（n &gt; 0），右边下降（n &lt; 0）。
+</div>
+<div class="box d"><span class="lab">推导 1 的另一种看法：拆成两部分</span>
+因为 r = kθ_Aθ_B，对 A 的级数 = θ_A 对 p_A 的级数 + θ_B 对 p_A 的级数：
+<ul>
+<li>A 自己的覆盖度 θ_A = K_Ap_A/D：和单分子一样，级数 <b>1 − θ_A</b>（A 越多越接近饱和）。</li>
+<li>B 的覆盖度 θ_B = K_Bp_B/D：分子不含 p_A，只有分母变大，加 A 只会把 B 挤走，级数 <b>−θ_A</b>。</li>
+</ul>
+合起来 \(n_A=(1-\theta_A)+(-\theta_A)=1-2\theta_A\)：<b>加 A 的好处减去挤走 B 的损失</b>。单分子反应没有"挤走 B"这一项，所以只有 1 − θ_A。
+</div>
+<div class="box f"><span class="lab">级数之和：从两个级数直接读出空位比例</span>
+$$n_A+n_B=(1-2\theta_A)+(1-2\theta_B)=2(1-\theta_A-\theta_B)=2\theta_*$$
+测出对 A、对 B 的两个级数，就能直接得到空位比例 θ_* = (n_A + n_B)/2，不需要知道任何 K。两种吸附物都很强时 θ_* → 0，于是 n_A ≈ −n_B。
+</div>
+<div class="box f"><span class="lab">B 解离吸附（B₂ + 2* <span class="eq">⇌</span> 2B*）时</span>
+$$\theta_B=\frac{\sqrt{K_Bp_B}}{D},\quad D=1+K_Ap_A+\sqrt{K_Bp_B},\qquad r=\frac{k\,K_Ap_A\sqrt{K_Bp_B}}{D^2}$$
+$$n_A=1-2\theta_A,\qquad n_B=\tfrac12-\theta_B,\qquad n_A+2n_B=2\theta_*$$
+n_B 的来历：分子 √p_B 给 ½；分母里 √(K_Bp_B) 对 ln p_B 求导也带 ½，乘上系数 −2 得 −θ_B。解离吸附的级数整体减半：范围是 +½ 到 −½。典型例子：Pt 上乙烯加氢（H₂ 解离），见题 20。
 </div>
 <div class="box m"><span class="lab">物理图像</span>反应要求 A* 和 B* 挨在一起。A 太少没得反应，A 太多 B 没地方待——"<b>自中毒</b>"（self-poisoning）。这也是 Sabatier 原理的动力学版本：吸附既不能太弱，也不能太强。</div>
 <div class="box a"><span class="lab">应用：Pt 上 CO 氧化</span>
@@ -58,18 +76,58 @@ $$(1+K_Ap_A+K_Bp_B)-2K_Ap_A=0\ \Rightarrow\ K_Ap_A=1+K_Bp_B$$
 <div class="box f"><span class="lab">公式</span>
 $$r=k\,\theta_A\,p_B=\frac{k\,K_Ap_A\,p_B}{1+K_Ap_A},\qquad n_A=1-\theta_A\ (0\sim1),\qquad n_B=1$$
 </div>
+<div class="box f"><span class="lab">变体</span>
+<b>A 解离吸附的 ER</b>：\(r=k\,p_B\,\dfrac{\sqrt{K_Ap_A}}{1+\sqrt{K_Ap_A}}\)，\(n_A=\tfrac12(1-\theta_A)\)，n_B = 1。<br>
+<b>双位点 LH</b>（A、B 吸附在两种不同的位点上，互不竞争）：\(r=k\,\dfrac{K_Ap_A}{1+K_Ap_A}\cdot\dfrac{K_Bp_B}{1+K_Bp_B}\)，n_A = 1 − θ_A，n_B = 1 − θ_B，都在 0 到 1 之间。
+</div>
 <div class="box m"><span class="lab">LH 与 ER 的区分</span>
 <table>
-<tr><th>实验：固定 p_B，逐渐增大 p_A</th><th>LH 双分子</th><th>ER</th></tr>
-<tr><td>速率曲线</td><td>先升后降，有最大值</td><td>升到平台，无最大值</td></tr>
-<tr><td>对 A 的级数范围</td><td>+1 → −1</td><td>+1 → 0</td></tr>
-<tr><td>对 B 的级数</td><td>+1 → −1（看 θ_B）</td><td>恒为 1</td></tr>
+<tr><th>实验：固定 p_B，逐渐增大 p_A</th><th>LH 竞争（同一位点）</th><th>LH 双位点</th><th>ER</th></tr>
+<tr><td>速率曲线</td><td>先升后降，有最大值</td><td>升到平台</td><td>升到平台</td></tr>
+<tr><td>对 A 的级数范围</td><td>+1 → −1</td><td>+1 → 0</td><td>+1 → 0</td></tr>
+<tr><td>对 B 的级数</td><td>+1 → −1（看 θ_B）</td><td>1 − θ_B，不随 p_A 变</td><td>恒为 1</td></tr>
 </table>
+<b>负级数只可能来自"两种吸附物抢同一种位点"</b>。如果速率随 p_A 单调上升并饱和，说明 A 没有挤走 B：要么是 ER（B 不吸附），要么是双位点 LH。再看对 B 的级数：ER 恒为 1，双位点 LH 会随 p_B 从 1 降到 0。<br>
 真实的 ER 反应很少见（例如气相 H 原子直接夺取吸附的 H 或 D），大多数多相催化反应是 LH 型。
 </div>
 <div class="fig half"><img src="fig/F3_LH_vs_ER.png"><div class="cap">图 F3　固定 p_B 时 LH 与 ER 速率对 p_A 的不同响应</div></div>
 
-<h2>8　表观活化能</h2>
+<h2>8　Mars–van Krevelen 机理（氧化还原机理）</h2>
+<div class="box m"><span class="lab">机理</span>
+用于氧化物催化剂上的选择氧化（V₂O₅、MoO₃、钼酸铋、CeO₂ 等）。位点不是"空/被占"，而是"<b>氧化态 / 还原态</b>"：
+<ol>
+<li><b>还原</b>：反应物 A 夺走表面晶格氧生成产物，氧化态位点变成还原态。速率 \(k_Ap_A\,\theta_{Ox}\)。</li>
+<li><b>再氧化</b>：O₂（记作 B）把还原态位点重新氧化。速率 \(k_Bp_B\,\theta_{Red}\)。</li>
+</ol>
+证据：用 ¹⁸O₂ 做实验，产物里最先出现的是晶格里的 ¹⁶O——氧来自催化剂本身，而不是直接来自气相 O₂。
+</div>
+<div class="box d"><span class="lab">推导</span>
+每个位点非氧化即还原：\(\theta_{Ox}+\theta_{Red}=1\)。稳态时被还原的速率 = 被氧化的速率（否则 θ_Ox 会一直变）：
+$$k_Ap_A\,\theta_{Ox}=k_Bp_B\,(1-\theta_{Ox})\ \Rightarrow\ \theta_{Ox}=\frac{k_Bp_B}{k_Ap_A+k_Bp_B}$$
+$$r=k_Ap_A\,\theta_{Ox}=\frac{k_Ak_B\,p_Ap_B}{k_Ap_A+k_Bp_B}\qquad\Longleftrightarrow\qquad \frac1r=\frac{1}{k_Ap_A}+\frac{1}{k_Bp_B}$$
+倒数形式像<b>串联电阻</b>：还原和再氧化两步串联，哪一步慢，总速率就由哪一步决定。<br>
+级数：\(n_A=1-\dfrac{k_Ap_A}{k_Ap_A+k_Bp_B}=\theta_{Ox}\)，\(n_B=1-\theta_{Ox}=\theta_{Red}\)，所以 <b>n_A + n_B = 1</b>，两者都在 0 到 1 之间，不会出现负级数。
+</div>
+<div class="box w"><span class="lab">为什么分母里没有"1"</span>
+两种模型的分母都是"位点所有状态的权重之和"。Langmuir 竞争吸附里位点有三种状态：空位（权重 1）、A*（K_Ap_A）、B*（K_Bp_B），所以分母是 1 + K_Ap_A + K_Bp_B，<b>那个 1 就是空位</b>。MvK 里位点只有氧化态（权重 k_Bp_B）和还原态（权重 k_Ap_A），没有"空着"这个状态，所以没有 1。
+<table>
+<tr><th></th><th>Langmuir 竞争吸附（LH、ER 用）</th><th>Mars–van Krevelen</th></tr>
+<tr><td>位点状态</td><td>空位、A*、B*</td><td>氧化态、还原态</td></tr>
+<tr><td>覆盖度由什么定</td><td>吸附<b>平衡</b></td><td>两个反应步骤的<b>稳态</b></td></tr>
+<tr><td>常数</td><td>平衡常数 K（大写）</td><td>速率常数 k（小写）</td></tr>
+<tr><td>分母</td><td>1 + K_Ap_A + K_Bp_B</td><td>k_Ap_A + k_Bp_B</td></tr>
+<tr><td>级数特征</td><td>可以为负；n_A + n_B = 2θ_*</td><td>不会为负；n_A + n_B = 1</td></tr>
+</table>
+</div>
+<div class="box m"><span class="lab">两种极限</span>
+<ul>
+<li>k_Ap_A ≪ k_Bp_B：表面几乎全是氧化态（θ_Ox → 1），<b>还原步骤</b>决速，r ≈ k_Ap_A，对 A 一级、对 O₂ 零级。很多选择氧化对 O₂ 呈零级，就是这种情况。</li>
+<li>k_Ap_A ≫ k_Bp_B：表面几乎全是还原态，<b>再氧化</b>决速，r ≈ k_Bp_B，对 A 零级、对 O₂ 一级。</li>
+</ul>
+若每转化 1 个 A 需要 γ 个 O₂、对 O₂ 的级数为 m，常写成 \(r=\dfrac{k_Ap_A\,k_Bp_B^{\,m}}{\gamma k_Ap_A+k_Bp_B^{\,m}}\)，结构不变。
+</div>
+
+<h2>9　表观活化能</h2>
 <div class="box f"><span class="lab">公式</span>
 $$E_{app}\equiv-R\,\frac{\partial\ln r}{\partial(1/T)}=E_{true}+\sum_i n_i\,\Delta H_{ads,i}$$
 </div>
@@ -89,20 +147,23 @@ $$E_{app}=E_{true}+(1-\theta)\,\Delta H_{ads}=E_{true}+n\,\Delta H_{ads}$$
 </div>
 <div class="fig"><img src="fig/F6_Eapp.png"><div class="cap">图 F6　LH 单分子反应的 Arrhenius 图与 E_app 随温度的变化（E_true = 100，ΔH_ads = −80 kJ/mol）</div></div>
 
-<h2>9　速控步判断总表（单分子 A → B，单一位点）</h2>
+<h2>10　速控步判断总表（单分子 A → B，单一位点）</h2>
+<p>三步：① A + * <span class="eq">⇌</span> A*（K_A）；② A* <span class="eq">⇌</span> B*（表面反应，平衡常数 K_s = θ_B/θ_A）；③ B* <span class="eq">⇌</span> B + *（K_B）。哪一步慢，其余两步就处于平衡，用平衡关系求各覆盖度：</p>
 <table>
-<tr><th>速控步</th><th>表面状态</th><th>初速率 r₀ 对 p_A</th><th>判据</th></tr>
-<tr><td>A 的吸附</td><td>A* 一上来就被转化，表面几乎是空的（或只有产物）</td><td>r₀ ≈ k_a p_A，<b>一直一级</b></td><td>高压下也不饱和</td></tr>
-<tr><td>表面反应</td><td>A 吸附平衡，θ_A 按 Langmuir 变化</td><td>r₀ = kK_Ap_A/(1+K_Ap_A)，<b>1 → 0</b></td><td>级数随压力连续下降，n = 1 − θ</td></tr>
-<tr><td>B 的脱附</td><td>表面被 B* 占满</td><td>通常<b>近零级</b></td><td>速率基本与 p_A 无关</td></tr>
+<tr><th>速控步</th><th>平衡的两步给出</th><th>速率式（远离总平衡）</th><th>表面主要是</th><th>对 A 的级数</th><th>加入产物 B</th></tr>
+<tr><td>A 的吸附</td><td>θ_B = K_Bp_Bθ_*，θ_A = θ_B/K_s</td><td>\(r=\dfrac{k_ap_A}{1+K_Bp_B(1+1/K_s)}\)</td><td>空位（无产物时）</td><td><b>恒为 1</b></td><td>抑制，n_B = −(θ_A + θ_B)</td></tr>
+<tr><td>表面反应</td><td>θ_A = K_Ap_Aθ_*，θ_B = K_Bp_Bθ_*</td><td>\(r=\dfrac{k_sK_Ap_A}{1+K_Ap_A+K_Bp_B}\)</td><td>A*</td><td><b>1 − θ_A（1 → 0）</b></td><td>抑制，n_B = −θ_B</td></tr>
+<tr><td>B 的脱附</td><td>θ_A = K_Ap_Aθ_*，θ_B = K_sθ_A</td><td>\(r=\dfrac{k_dK_sK_Ap_A}{1+(1+K_s)K_Ap_A}\)</td><td>B*</td><td><b>θ_*（常接近 0）</b></td><td>基本无影响，n_B ≈ 0</td></tr>
 </table>
+<p class="note">脱附控制时 θ_B 由 A 的平衡决定；气相 B 重新吸附是慢步骤的逆过程，同样很慢，所以远离平衡时加入产物几乎不影响速率。数值对比见题 22。</p>
 <div class="box w"><span class="lab">注意</span>
-这是 Hougen–Watson 初速率分析的标准结论。严格地说，如果表面反应 A* ⇌ B* 的平衡常数不大，脱附控制时 θ_B 也会随 p_A 按 Langmuir 形式变化，同样表现为 1 → 0。这时还要看<b>产物分压</b>、<b>总压</b>或<b>温度</b>的影响才能分清。考试按上表作答即可，但要会说出这个前提。
+这是 Hougen–Watson 初速率分析的标准结论。严格地说，如果表面反应 A* <span class="eq">⇌</span> B* 的平衡常数不大，脱附控制时 θ_B 也会随 p_A 按 Langmuir 形式变化，同样表现为 1 → 0。这时还要看<b>产物分压</b>、<b>总压</b>或<b>温度</b>的影响才能分清。考试按上表作答即可，但要会说出这个前提。
 </div>
 <div class="box a"><span class="lab">从数据判断机理的步骤</span>
 <ol>
 <li>测不同 p_A 下的初速率，两点或作图求表观级数 n。</li>
-<li>看 n 是否随压力变化：恒为 1 → 吸附控制或弱吸附；1 → 0 → 表面反应控制（LH 单分子）；出现负值 → 双分子 LH 自中毒。</li>
+<li>看 n 是否随压力变化：恒为 1 → 吸附控制或弱吸附；1 → 0 → 表面反应控制（LH 单分子）；接近 0 且加产物不变 → 脱附控制；出现负值 → 双分子 LH 自中毒。</li>
+<li>双分子反应再测对 B 的级数：n_A + n_B = 2θ_*（LH 竞争）；n_B 恒为 1（ER）；n_A + n_B = 1（MvK）。</li>
 <li>线性化（1/r 对 1/p）求 k 和 K，检验两段算出的 K 是否一致——一致说明模型自洽。</li>
 <li>测不同温度：由 E_app 与 n 的关系 \(E_{app}=E_{true}+n\Delta H_{ads}\) 分离出真实活化能和吸附热。</li>
 </ol>

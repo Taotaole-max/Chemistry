@@ -1,0 +1,127 @@
+
+<h3 style="margin-top:18px">机理、选择性与综合对比题（题 18–26）</h3>
+
+<div class="q"><div class="qh">题 18　由速率最大值反求吸附常数 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+一个不可逆 LH 反应 A + B，固定 p_B = 1 bar，改变 p_A，发现速率在 p_A = 0.5 bar 处达到最大。另外已知 K_B = 3 bar⁻¹。(a) 求 K_A；(b) 在这个最大点，对 B 的级数是多少？(c) 如果实验中速率始终随 p_A 单调上升并饱和，能说明什么？
+<div class="ans"><b class="h">答案</b><br>
+(a) 最大点 n_A = 1 − 2θ_A = 0（山顶斜率为 0），所以 θ_A = ½，即 K_Ap_A = 1 + K_Bp_B = 1 + 3 = 4，<b>K_A = 4/0.5 = 8 bar⁻¹</b>。<br>
+(b) 分母 = 1 + 4 + 3 = 8：θ_A = 4/8 = 0.5，θ_B = 3/8 = 0.375，θ_* = 1/8。<b>n_B = 1 − 2 × 0.375 = 0.25</b>。<br>
+检验：n_A + n_B = 0 + 0.25 = 2θ_* = 2/8 ✓。对 A 级数为 0 不代表对 B 也是 0——最大值只是对 A 而言。n_B 为正但很小：再加 B 还会稍快一点，但 B 也已经比较挤了。<br>
+(c) 单调饱和、没有最大值，说明 A 没有把 B 挤走，<b>不是"同一种位点竞争"的 LH</b>。可能是 ER（B 不吸附）或双位点 LH（A、B 各占一种位点）。再固定 p_A 改变 p_B：ER 对 B 恒为一级；双位点 LH 对 B 也会从 1 降到 0。
+</div></div></div>
+
+<div class="q"><div class="qh">题 19　Mars–van Krevelen 机理 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+某氧化物催化剂上的选择氧化按 MvK 机理进行：A 还原表面（速率 k_Ap_Aθ_Ox），O₂（记作 B）再氧化（速率 k_Bp_Bθ_Red）。(a) 推导 θ_Ox 和速率式；(b) 分别求 k_Ap_A : k_Bp_B = 1 : 1、4 : 1、1 : 4 时的 θ_Ox、速率（以 s⁻¹·位点计，取 k_Bp_B = 1 s⁻¹ 或 k_Ap_A = 1 s⁻¹）和两个级数，并指出哪一步决速；(c) 为什么 θ_Ox 的分母里没有"1"？
+<div class="ans"><b class="h">答案</b><br>
+(a) 稳态：k_Ap_Aθ_Ox = k_Bp_B(1 − θ_Ox) → \(\theta_{Ox}=\dfrac{k_Bp_B}{k_Ap_A+k_Bp_B}\)，\(r=k_Ap_A\theta_{Ox}=\dfrac{k_Ak_Bp_Ap_B}{k_Ap_A+k_Bp_B}\)，即 \(\dfrac1r=\dfrac1{k_Ap_A}+\dfrac1{k_Bp_B}\)。<br>
+(b) n_A = θ_Ox，n_B = 1 − θ_Ox：
+<table>
+<tr><th>k_Ap_A : k_Bp_B</th><th>θ_Ox</th><th>r</th><th>n_A</th><th>n_B</th><th>表面 / 决速步</th></tr>
+<tr><td>1 : 1</td><td>0.50</td><td>0.50</td><td>0.50</td><td>0.50</td><td>一半氧化一半还原，两步同样重要</td></tr>
+<tr><td>4 : 1</td><td>0.20</td><td>0.80</td><td>0.20</td><td>0.80</td><td>大部分被还原，<b>再氧化</b>决速</td></tr>
+<tr><td>1 : 4</td><td>0.80</td><td>0.80</td><td>0.80</td><td>0.20</td><td>大部分是氧化态，<b>还原</b>决速</td></tr>
+</table>
+注意后两种情况速率相同（串联电阻：1/r = 1/4 + 1/1），但级数正好对调——光看速率分不出哪步慢，要看级数。三种情况都满足 n_A + n_B = 1。<br>
+(c) 分母是"位点所有状态的权重之和"。Langmuir 里的 1 是<b>空位</b>的权重；MvK 的位点只有氧化态（权重 k_Bp_B）和还原态（权重 k_Ap_A），没有空着的状态，所以没有 1。而且 MvK 的 θ 来自两个反应的稳态，用速率常数 k；Langmuir 来自吸附平衡，用平衡常数 K。
+</div></div></div>
+
+<div class="q"><div class="qh">题 20　Pt 上乙烯加氢：由级数反推表面状态 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+Pt 上乙烯加氢（LH，H₂ 解离吸附），实测 n(C₂H₄) = −0.3，n(H₂) = 0.50。(a) 求 θ_C₂H₄、θ_H 和 θ_*；(b) 描述此时表面"长什么样"；(c) 为什么这组数据能排除 ER 机理？
+<div class="ans"><b class="h">答案</b><br>
+速率式：\(r=k\theta_E\theta_H=\dfrac{kK_Ep_E\sqrt{K_Hp_H}}{D^2}\)，D = 1 + K_Ep_E + √(K_Hp_H)。级数 n_E = 1 − 2θ_E，n_H = ½ − θ_H（第 6 节）。<br>
+(a) 1 − 2θ_E = −0.3 → <b>θ_E = 0.65</b>；½ − θ_H = 0.50 → <b>θ_H ≈ 0</b>；θ_* = 1 − 0.65 − 0 ≈ <b>0.35</b>。<br>
+检验：n_E + 2n_H = −0.3 + 1.0 = 0.7 = 2θ_* ✓。<br>
+(b) 约 2/3 被乙烯占据，H 原子很少，约 1/3 是空位。H 少的原因：θ_H/θ_* = √(K_Hp_H) ≈ 0，H₂ 相对乙烯吸附弱；而且 H₂ 解离要两个相邻空位，空位只有 35%，相邻的更少。于是：对 H₂ 是 0.5 级（H 处于稀少的线性区，θ_H ∝ √p_H）；对乙烯是负级数（乙烯已多到在挤占 H 的位置）。也可以从动力学角度理解：若加氢很快，H 的稳态覆盖度被反应拉低（第 11 节 K_eff）。<br>
+(c) ER 两种形式：乙烯吸附、H₂ 气相，n_E = 1 − θ_E ≥ 0，n_H = 1；或 H 吸附、乙烯气相，n_E = 1，n_H = ½(1 − θ_H) ≥ 0。所有级数都 ≥ 0。<b>负级数只能来自两种吸附物抢同一种位点</b>，所以排除 ER。
+</div></div></div>
+
+<div class="q"><div class="qh">题 21　同一个反应、五种机理：占位、级数、速率对比 <span class="tag zh">综合</span></div><div class="qb">
+反应 A + B → P，K_A = 2 bar⁻¹，K_B = 1 bar⁻¹，p_A = p_B = 1 bar（MvK 取 k_Ap_A = k_Bp_B = 1 s⁻¹）。分别按下列机理计算 θ_A、θ_B、θ_*、速率（以各自的 k 为单位）、n_A、n_B：① LH 竞争（都缔合）；② LH 竞争（B₂ 解离，√(K_Bp_B) = 1）；③ 双位点 LH；④ ER（A 吸附、B 气相）；⑤ MvK。(a) 填表；(b) 把 p_A 加倍到 2 bar，各机理的速率怎样变化？(c) 实验上怎样把它们区分开？
+<div class="ans"><b class="h">答案</b><br>
+(a)
+<table>
+<tr><th>机理</th><th>θ_A</th><th>θ_B</th><th>空位</th><th>r</th><th>n_A</th><th>n_B</th><th>和</th></tr>
+<tr><td>① LH 竞争</td><td>2/4 = 0.50</td><td>1/4 = 0.25</td><td>0.25</td><td>0.125k</td><td>0</td><td>0.50</td><td>0.50 = 2θ_*</td></tr>
+<tr><td>② LH，B₂ 解离</td><td>0.50</td><td>0.25</td><td>0.25</td><td>0.125k</td><td>0</td><td>½ − 0.25 = 0.25</td><td>n_A + 2n_B = 0.50</td></tr>
+<tr><td>③ 双位点 LH</td><td>2/3 = 0.67</td><td>1/2 = 0.50</td><td>A 位 0.33，B 位 0.50</td><td>0.33k</td><td>0.33</td><td>0.50</td><td>0.83</td></tr>
+<tr><td>④ ER</td><td>0.67</td><td>0（不吸附）</td><td>0.33</td><td>0.67k</td><td>0.33</td><td>1</td><td>1.33</td></tr>
+<tr><td>⑤ MvK</td><td colspan="3">θ_Ox = 1/(1+1) = 0.50</td><td>0.50 s⁻¹</td><td>0.50</td><td>0.50</td><td>1</td></tr>
+</table>
+① 和 ② 覆盖度完全相同（这里 K_Bp_B 与 √(K_Bp_B) 恰好都等于 1），但对 B 的级数不同——解离吸附让级数减半。<br>
+(b) p_A = 2 bar 时：① ② D = 1 + 4 + 1 = 6，r = (4/6)(1/6)k = 0.111k，<b>下降 11%</b>（原来正处在最大点，往哪边走都下降）；③ θ_A = 0.8，r = 0.40k，<b>+20%</b>；④ θ_A = 0.8，r = 0.80k，<b>+20%</b>；⑤ θ_Ox = 1/3，r = 2 × 1/3 = 0.667，<b>+33%</b>。<br>
+注意：不同机理的 k 含义和单位不同（ER 的 k 多一个压力⁻¹），所以不能横向比较速率的绝对大小，只能比较它们随压力的<b>相对变化</b>——这正是级数所描述的。<br>
+(c) 测两个级数并看它们随压力怎样变（图 F8）：出现负级数 → ①②；对 B 级数 ≤ ½ → B 解离（②）；对 B 恒为 1 → ④；n_A + n_B = 1 且 n_B 随 p_A 增大 → ⑤；n_B 不随 p_A 变 → ③。
+</div></div></div>
+
+<div class="q"><div class="qh">题 22　同一个单分子反应、三种速控步：占位、级数、产物影响 <span class="tag zh">综合</span></div><div class="qb">
+A → B 在单一位点上进行：① A + * <span class="eq">⇌</span> A*（K_A = 1 bar⁻¹）；② A* <span class="eq">⇌</span> B*（K_s = θ_B/θ_A = 9）；③ B* <span class="eq">⇌</span> B + *（B 的吸附常数 K_B = 2 bar⁻¹）。p_A = 1 bar。分别假设 ①、②、③ 为速控步：(a) 求 p_B = 0 时的 θ_A、θ_B、θ_*、速率和对 A 的级数；(b) 加入 p_B = 0.5 bar 产物后速率如何变化？(c) 总结三者的区别。
+<div class="ans"><b class="h">答案</b>（慢步骤以外的两步处于平衡，速率式见第 10 节）
+<table>
+<tr><th>速控步</th><th>p_B = 0：θ_A / θ_B / θ_*</th><th>r</th><th>n_A</th><th>p_B = 0.5：θ_A / θ_B / θ_*</th><th>r 变为</th><th>n_B</th></tr>
+<tr><td>① 吸附</td><td>0 / 0 / 1</td><td>1.00k_a</td><td>1</td><td>0.053 / 0.474 / 0.474</td><td>0.474k_a（47%）</td><td>−0.53</td></tr>
+<tr><td>② 表面反应</td><td>0.50 / 0 / 0.50</td><td>0.50k_s</td><td>0.50</td><td>0.333 / 0.333 / 0.333</td><td>0.333k_s（67%）</td><td>−0.33</td></tr>
+<tr><td>③ 脱附</td><td>0.091 / 0.818 / 0.091</td><td>0.818k_d</td><td>0.09</td><td>不变</td><td>不变</td><td>≈ 0</td></tr>
+</table>
+计算过程：<br>
+① θ_B = K_Bp_Bθ_*，θ_A = θ_B/K_s；p_B = 0 时全空，r = k_ap_A；p_B = 0.5 时 θ_* = 1/[1 + 1 × (1 + 1/9)] = 0.474。<br>
+② θ_A = K_Ap_A/D：p_B = 0 时 D = 2；p_B = 0.5 时 D = 1 + 1 + 1 = 3。<br>
+③ θ_A = K_Ap_Aθ_*，θ_B = 9θ_A，θ_* = 1/[1 + 1 × (1 + 9)] = 1/11；n_A = θ_* = 0.09。θ_B 由 A 的平衡决定，B 重新吸附是慢步骤的逆过程，所以产物几乎没有影响。<br>
+(c) 表面主要物种：<b>空位 / A* / B*</b>；对 A 的级数：<b>1 / 1 − θ_A / ≈ 0</b>；产物影响：<b>抑制 / 抑制 / 几乎无</b>。只看对 A 的级数时，② 与 ③ 在高压下都可能接近零级，加入产物是区分它们的好办法。
+</div></div></div>
+
+<div class="q"><div class="qh">题 23　LH 双分子的四个极限区 <span class="tag zh">综合</span></div><div class="qb">
+LH 竞争（都缔合）A + B → P，在下列四组条件下：(a) K_Ap_A = 0.01，K_Bp_B = 0.02；(b) 50，0.1；(c) 0.1，40；(d) 30，20。求各自的 θ_A、θ_B、θ_*、n_A、n_B，写出近似速率式，并验证 n_A + n_B = 2θ_*。(e) 在 (b) 区表观活化能和真实活化能是什么关系？
+<div class="ans"><b class="h">答案</b>
+<table>
+<tr><th></th><th>θ_A</th><th>θ_B</th><th>θ_*</th><th>n_A</th><th>n_B</th><th>近似速率式</th></tr>
+<tr><td>(a) 都弱</td><td>0.010</td><td>0.019</td><td>0.971</td><td>0.98</td><td>0.96</td><td>kK_AK_Bp_Ap_B，(1, 1)</td></tr>
+<tr><td>(b) A 强</td><td>0.978</td><td>0.002</td><td>0.020</td><td>−0.96</td><td>1.00</td><td>kK_Bp_B/(K_Ap_A)，(−1, 1)</td></tr>
+<tr><td>(c) B 强</td><td>0.002</td><td>0.973</td><td>0.024</td><td>1.00</td><td>−0.95</td><td>kK_Ap_A/(K_Bp_B)，(1, −1)</td></tr>
+<tr><td>(d) 都强</td><td>0.588</td><td>0.392</td><td>0.020</td><td>−0.18</td><td>+0.22</td><td>kK_AK_Bp_Ap_B/(K_Ap_A + K_Bp_B)²</td></tr>
+</table>
+级数之和：(a) 1.94 ≈ 2 × 0.971；(b) 0.04 ≈ 2 × 0.020；(c) 0.05 ≈ 2 × 0.024；(d) 0.04 ≈ 2 × 0.020 ✓。(d) 中几乎没有空位，所以 n_A ≈ −n_B：多一点 A 就少一点 B。<br>
+(e) \(E_{app}=E_{true}+n_A\Delta H_A+n_B\Delta H_B\approx E_{true}-\Delta H_A+\Delta H_B=E_{true}+|\Delta H_A|-|\Delta H_B|\)。A 吸附越强，表观活化能越高：每次反应都要先等一个 A 脱附腾出位点（与 Pt 上 CO 氧化的情形相同，题 16）。
+</div></div></div>
+
+<div class="q"><div class="qh">题 24　平行竞争的选择性 <span class="tag js">计算</span><span class="tag zh">综合</span></div><div class="qb">
+A、B 在同一种位点上竞争加氢（H 的覆盖度对两者相同）。本征速率常数 k_A = 1、k_B = 5（同单位），吸附常数 K_A = 20 bar⁻¹、K_B = 1 bar⁻¹，等摩尔进料 p_A = p_B = 0.1 bar，温度 400 K。(a) 求 r_A/r_B；(b) B 单独反应和在混合物中反应，速率差多少？(c) 若 A、B 加氢的表观活化能分别为 60 和 100 kJ/mol，升温到 500 K 后 r_B/r_A 变为多少？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(\dfrac{r_A}{r_B}=\dfrac{k_AK_Ap_A}{k_BK_Bp_B}=\dfrac{1\times20\times0.1}{5\times1\times0.1}=\mathbf{4}\)。B 的本征速率是 A 的 5 倍，A 却反应得快 4 倍——因为 A 吸附强 20 倍，抢占了位点。<br>
+(b) B 单独：r_B = k_BK_Bp_B/(1 + K_Bp_B) = 0.5/1.1 = 0.455；混合物中：D = 1 + 2 + 0.1 = 3.1，r_B = 0.5/3.1 = 0.161，只剩 <b>35%</b>。<br>
+(c) r_B/r_A 乘以 \(\exp\left[\dfrac{100000-60000}{8.314}\left(\dfrac1{400}-\dfrac1{500}\right)\right]=e^{2.41}\approx11.1\)：从 400 K 的 0.25 变为约 <b>2.8</b>，选择性反转为 B 占优。升温有利于表观活化能大的路径。<br>
+<b>要点</b>：竞争吸附时选择性由 kK 决定；表观活化能里含吸附热，所以选择性随温度的变化要用表观值判断。
+</div></div></div>
+
+<div class="q"><div class="qh">题 25　连串反应的选择性：乙炔选择加氢 <span class="tag js">计算</span><span class="tag zh">综合</span></div><div class="qb">
+乙烯物流中的微量乙炔加氢：乙炔 → 乙烯（k₁）→ 乙烷（k₂），乙炔和乙烯竞争同一种 Pd 位点，k₂/k₁ = 2，K_乙炔/K_乙烯 = 1000。(a) 推导乙烯的点选择性 S；(b) 求 p(乙烯)/p(乙炔) = 10、200、500 时的 S；(c) 超过 500 以后会怎样？对操作有什么启示？(d) 改用 Pd–Ag 催化剂使 K_乙炔/K_乙烯 = 5000，再求比值为 200 和 500 时的 S。
+<div class="ans"><b class="h">答案</b><br>
+(a) r₁ = k₁θ_Aθ_H，r₂ = k₂θ_Eθ_H，θ_A、θ_E 分母相同，θ_H 也相同：
+\(S=\dfrac{r_1-r_2}{r_1}=1-\dfrac{k_2K_Ep_E}{k_1K_Ap_A}\)。<br>
+(b) S = 1 − 2 × (p_E/p_A)/1000：比值 10 → <b>0.98</b>；200 → <b>0.60</b>；500 → <b>0</b>。<br>
+(c) 比值超过 500 时 S &lt; 0：乙烯被消耗得比生成得快，发生"过度加氢"，损失产品。乙炔快耗尽时 p_E/p_A 急剧增大，所以不能追求乙炔 100% 转化，要控制在接近完全但留有余量的地方。<br>
+(d) S = 1 − 2 × 比值/5000：200 → <b>0.92</b>；500 → <b>0.80</b>（图 F10）。Ag 把 Pd 原子隔开、削弱乙烯吸附，乙烯更不容易留在表面被继续加氢。工业上也常加少量 CO 作调节剂，达到类似效果。
+</div></div></div>
+
+<div class="q"><div class="qh">题 26　强金属–载体相互作用（SMSI） <span class="tag lj">理解</span></div><div class="qb">
+Pt/TiO₂ 在 500 °C 的 H₂ 中还原后，H₂ 化学吸附量下降了 90%，但 TEM 显示 Pt 颗粒尺寸不变。(a) 解释原因；(b) 如何恢复吸附能力？(c) 这一处理对乙烷氢解和巴豆醛加氢分别有什么影响？(d) 同样的处理用在 Pt/SiO₂ 上会怎样？
+<div class="ans"><b class="h">答案</b><br>
+(a) 这是 SMSI。H₂ 在 Pt 上解离，H 原子溢流到 TiO₂ 上，把 Ti⁴⁺ 还原成 Ti³⁺、生成氧空位，得到能移动的 TiOₓ。TiOₓ 与 Pt 作用强、又能降低表面能，于是爬上来把 Pt 包住，挡住了吸附位点。颗粒大小没变，所以不是烧结。<br>
+(b) 在 O₂ 中氧化，使 TiOₓ 变回 TiO₂，与 Pt 作用减弱、包覆层收缩；再在低温下还原，吸附能力恢复。<br>
+(c) 乙烷氢解需要一大片连续的 Pt 原子（集团效应），包覆层把表面切碎，氢解被<b>强烈抑制</b>。巴豆醛加氢中，Pt–TiOₓ 界面的 Ti³⁺/氧空位能抓住 C=O 的 O 原子、活化 C=O 键，生成巴豆醇（不饱和醇）的<b>选择性提高</b>。<br>
+(d) SiO₂ 不可还原，生成不了能移动的低价氧化物，没有 SMSI；若吸附量下降，应考虑烧结，电镜会看到颗粒长大。
+</div></div></div>
+
+<div class="box m" style="margin-top:14px"><span class="lab">考前最后一遍</span>
+<ol>
+<li>撞墙通量：p/√(2πmkT)，m 用 kg、p 用 Pa。</li>
+<li>解离吸附看三处：粘附 (1−θ)²、等温式 √(Kp)、TPD 二级；级数减半（单分子 ½(1−θ)，LH 双分子 ½ − θ）。</li>
+<li>表观级数 = 对数斜率：LH 单分子 1 − θ，LH 双分子 1 − 2θ，产物 −θ_B；最大点级数为 0，此时 θ_A = ½。</li>
+<li>级数之和：LH 竞争 n_A + n_B = 2θ_*；MvK 恒为 1；ER 对气相反应物恒为 1。负级数 ⇒ 同一位点竞争的 LH。</li>
+<li>MvK：θ_Ox = k_Bp_B/(k_Ap_A + k_Bp_B)，分母无 1（没有空位状态），1/r = 1/(k_Ap_A) + 1/(k_Bp_B)。</li>
+<li>两点求级数对应 p = √(p₁p₂)；K = θ/[p(1−θ)]；动力学拟合的是 K_eff = k_a/(k_d + k_r)。</li>
+<li>速控步：吸附控制恒一级且受产物抑制；表面反应 1 → 0；脱附控制近零级且不受产物影响。</li>
+<li>E_app = E_true + Σ nᵢΔHᵢ：低覆盖偏小，自中毒偏大，Arrhenius 图会弯。</li>
+<li>选择性：平行竞争看 kK；连串 S = 1 − k₂K_Bp_B/(k₁K_Ap_A)，转化越深越差；升温有利于 E_app 大的路径。</li>
+<li>SMSI：可还原载体 + 高温还原 → 包覆、吸附量降但颗粒不长大；抑制氢解、促进 C=O 加氢；氧化可逆。</li>
+</ol>
+</div>
