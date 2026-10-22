@@ -1,0 +1,88 @@
+
+<h2 class="part">10　题库（每题后紧跟答案与解析）</h2>
+<p class="note">标签：<span class="tag jc">基础</span> 直接套公式　<span class="tag lj">理解</span> 说清为什么　<span class="tag js">计算</span> 需要算数　<span class="tag zh">综合</span> 跨节综合。常数：k_B = 1.381×10⁻²³ J/K，N_A = 6.022×10²³ mol⁻¹，R = 8.314 J mol⁻¹K⁻¹。</p>
+
+<div class="q"><div class="qh">题 1　超高真空与单层形成时间 <span class="tag jc">基础</span><span class="tag js">计算</span></div><div class="qb">
+N₂（M = 28.0 g/mol）在 300 K。(a) p = 1.0×10⁻⁴ Pa 时撞墙通量是多少？(b) 若 s = 1、位点密度 N_s = 1.0×10¹⁹ m⁻²，多久覆盖一个单层？(c) p = 1.0×10⁻⁸ Pa 时呢？由此说明为什么表面实验要在超高真空下做。
+<div class="ans"><b class="h">答案</b><br>
+(a) \(Z_W=2.63\times10^{24}\times\dfrac{1.0\times10^{-4}}{\sqrt{28.0\times300}}=\dfrac{2.63\times10^{20}}{91.7}\approx\mathbf{2.9\times10^{18}\ m^{-2}s^{-1}}\)。<br>
+(b) \(\tau_{ML}=N_s/(sZ_W)=1.0\times10^{19}/2.87\times10^{18}\approx\mathbf{3.5\ s}\)。<br>
+(c) Z_W ∝ p，压力降 10⁴ 倍，时间升 10⁴ 倍：τ ≈ 3.5×10⁴ s ≈ <b>10 h</b>。<br>
+<b>解析</b>：一次表面实验（清洁、表征、反应）要几个小时。10⁻⁴ Pa 下几秒就被残余气体盖满，测到的是污染层；只有 10⁻⁸ Pa 量级的超高真空才能让干净表面维持足够长的时间。
+</div></div></div>
+
+<div class="q"><div class="qh">题 2　H₂ 解离吸附的覆盖速度 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+H₂（1×10⁻⁵ Pa，300 K）撞击干净金属表面，位点密度 1.5×10¹⁹ m⁻²，初始粘附概率 s₀ = 0.1，解离吸附。(a) 求碰撞速率；(b) 估算覆盖 10% 位点所需时间；(c) 为什么解离吸附随覆盖度减慢得更快？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(m=2.016\times10^{-3}/6.022\times10^{23}=3.35\times10^{-27}\ \mathrm{kg}\)；
+\(Z_W=\dfrac{1\times10^{-5}}{\sqrt{2\pi\times3.35\times10^{-27}\times1.381\times10^{-23}\times300}}=\dfrac{10^{-5}}{9.34\times10^{-24}}\approx\mathbf{1.07\times10^{18}\ m^{-2}s^{-1}}\)。<br>
+(b) 每粘住一个 H₂ 就断成 2 个 H、占 2 个位点：初始占位速率 = 2 × s₀ × Z_W = 2.14×10¹⁷ 位点 m⁻²s⁻¹。10% 位点 = 1.5×10¹⁸ m⁻²。按初始速率估算 t ≈ 1.5×10¹⁸ / 2.14×10¹⁷ ≈ <b>7 s</b>。<br>
+<b>更精确</b>：考虑 s = s₀(1−θ)²，积分得 \(\dfrac{1}{1-\theta}-1=\dfrac{t}{\tau'}\)，\(\tau'=\dfrac{N_s}{2s_0Z_W}=70\ \mathrm{s}\)。θ = 0.1 时 t = 0.111 × 70 ≈ <b>7.8 s</b>。覆盖度低，两者只差约 10%。<br>
+(c) 解离吸附需要<b>两个相邻空位</b>，概率是 (1−θ)²；缔合吸附只需一个，(1−θ)。θ = 0.5 时前者只剩初始速率的 25%，后者还有 50%（图 F4）。
+</div></div></div>
+
+<div class="q"><div class="qh">题 3　撞墙通量的三个"为什么" <span class="tag lj">理解</span></div><div class="qb">
+(a) Z_W = n v̄/4 中的 1/4 是怎么来的？(b) 压力不变，把气体从 300 K 加热到 1200 K，Z_W 变为原来的几倍？分子明明跑得更快，为什么撞得更少？(c) 同温同压下 H₂ 与 CO 的撞墙通量之比？
+<div class="ans"><b class="h">答案</b><br>
+(a) 墙附近只有一半分子朝墙运动（½）；朝墙运动的分子方向随机，垂直分量平均是 v̄ 的一半（½）。½ × ½ = ¼。<br>
+(b) Z_W ∝ p/√T，所以变为 (1200/300)^−1/2 = <b>1/2</b>。速率 ∝ √T 增加 2 倍，但等压下密度 n = p/kT 降为 1/4，净效果减半。<br>
+(c) Z_W ∝ M^−1/2：Z(H₂)/Z(CO) = √(28.0/2.016) ≈ <b>3.7</b>。
+</div></div></div>
+
+<div class="q"><div class="qh">题 4　停留时间：物理吸附 vs 化学吸附 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+取 τ₀ = 10⁻¹³ s。分别计算 E_des = 25 kJ/mol 和 120 kJ/mol 的吸附物在 300 K、500 K 下的平均停留时间，并说明这对催化反应温度的选择有什么启示。
+<div class="ans"><b class="h">答案</b>（τ = τ₀ e^(E/RT)）
+<table>
+<tr><th></th><th>300 K</th><th>500 K</th></tr>
+<tr><td>25 kJ/mol（物理吸附）</td><td>e^10.0 → 2.3×10⁻⁹ s</td><td>e^6.0 → 4.1×10⁻¹¹ s</td></tr>
+<tr><td>120 kJ/mol（化学吸附）</td><td>e^48.1 → 7.8×10⁷ s（约 2.5 年）</td><td>e^28.9 → 0.34 s</td></tr>
+</table>
+<b>解析</b>：停留时间对 E 和 T 呈指数依赖。强吸附的产物在室温下根本不走，会把位点堵死；升温到几百摄氏度才能让它们及时脱附、腾出位点。但温度太高又会让反应物也停留不住（θ 太低）——催化剂工作温度就在这两者之间折中。
+</div></div></div>
+
+<div class="q"><div class="qh">题 5　Redhead 公式与升温速率 <span class="tag js">计算</span></div><div class="qb">
+某分子一级脱附的 TPD 峰温 T_p = 450 K，升温速率 β = 5 K/s，ν = 10¹³ s⁻¹。(a) 估算 E_des；(b) 若 β 提高到 50 K/s，峰温如何变化？(c) 不知道 ν 时，怎样用多个升温速率求 E_des？
+<div class="ans"><b class="h">答案</b><br>
+(a) ln(νT_p/β) = ln(10¹³×450/5) = ln(9×10¹⁴) = 34.43；减 3.64 得 30.79；E ≈ 8.314×450×30.79 ≈ <b>115 kJ/mol</b>（严格解峰值方程得 116 kJ/mol）。<br>
+(b) 峰温<b>升高</b>，由峰值方程解得约 <b>484 K</b>（升高约 34 K）。原因：升温越快，在每个温度停留的时间越短，要到更高温度脱附速率才追得上。<br>
+(c) 峰值方程 \(\dfrac{E}{RT_p^2}=\dfrac{\nu}{\beta}e^{-E/RT_p}\) 取对数整理成
+$$\ln\frac{T_p^2}{\beta}=\frac{E}{R}\cdot\frac{1}{T_p}+\ln\frac{E}{R\nu}$$
+用几个不同 β 测 T_p，以 ln(T_p²/β) 对 1/T_p 作图，<b>斜率 = E/R</b>，不需要事先假设 ν。
+</div></div></div>
+
+<div class="q"><div class="qh">题 6　从 TPD 峰位移判断吸附方式 <span class="tag lj">理解</span></div><div class="qb">
+H₂ 在 Pt 表面的 TPD 实验中，随着初始暴露量增加，H₂ 脱附峰逐渐移向低温，峰形近似对称。这说明什么？
+<div class="ans"><b class="h">答案</b><br>
+峰温随 θ₀ 增大而降低、峰形对称，是<b>二级脱附</b>的特征：\(r_{des}=\nu_2\theta^2e^{-E/RT}\)，峰值条件 \(E/RT_p^2=(\nu_2\theta_0/\beta)e^{-E/RT_p}\) 里含 θ₀，θ₀ 越大，越早达到峰值。<br>
+二级意味着脱附是 2H* → H₂ 的<b>复合脱附</b>，反过来说明 H₂ 在 Pt 上是<b>解离吸附</b>。直观理解：覆盖度高时，H 原子更容易碰到伙伴，所以更早结合离开。<br>
+对比：CO 在 Pt 上分子吸附，TPD 是一级，低覆盖时峰温基本不随 θ₀ 变（高覆盖时因相互作用峰会变宽、移向低温，那是另一回事）。
+</div></div></div>
+
+<div class="q"><div class="qh">题 7　Langmuir 线性化求单层容量和位点数 <span class="tag js">计算</span></div><div class="qb">
+CO 在某负载金属催化剂上的化学吸附数据（273 K）：
+<table><tr><th>p / kPa</th><td>2</td><td>5</td><td>10</td><td>20</td><td>40</td></tr>
+<tr><th>V / cm³(STP) g⁻¹</th><td>7.14</td><td>12.50</td><td>16.67</td><td>20.00</td><td>22.22</td></tr></table>
+(a) 验证数据符合 Langmuir 等温式，求 V_m 和 K；(b) 每个 CO 占一个位点，求每克催化剂的吸附位点数；(c) 多大压力下覆盖度达到 0.9？
+<div class="ans"><b class="h">答案</b><br>
+(a) 计算 p/V（kPa·g/cm³）：0.28、0.40、0.60、1.00、1.80。对 p 作图是一条直线（任意两点斜率相同）：斜率 = (1.80 − 0.28)/(40 − 2) = <b>0.040</b> g/cm³ → <b>V_m = 25.0 cm³/g</b>；截距 = 0.28 − 0.040×2 = 0.20 = 1/(KV_m) → <b>K = 0.20 kPa⁻¹</b>。<br>
+(b) 位点数 = (25.0/22414) × 6.022×10²³ ≈ <b>6.7×10²⁰ g⁻¹</b>。<br>
+(c) θ/(1−θ) = Kp → 9 = 0.20 p → <b>p = 45 kPa</b>。注意从 θ = 0.8（20 kPa）到 0.9 要多加一倍多的压力——越接近饱和越难填。<br>
+<b>解析</b>：用 p/V 对 p 作图，而不是直接看 V–p 曲线是否"像饱和"，因为很多等温式都会弯曲；只有线性化后成直线才说明符合 Langmuir。
+</div></div></div>
+
+<div class="q"><div class="qh">题 8　H₂ 在 Ni 上的低压吸附 <span class="tag lj">理解</span></div><div class="qb">
+低压下测得 H₂ 在 Ni 上的覆盖度 θ ∝ p^0.5。(a) 这说明什么？请用推导解释。(b) 应该用什么作图来求 K 和 V_m？(c) 预测它的 TPD 级数。
+<div class="ans"><b class="h">答案</b><br>
+(a) 说明 H₂ <b>解离吸附</b>。平衡 \(k_ap(1-\theta)^2=k_d\theta^2\) 给出 \(\theta=\sqrt{Kp}/(1+\sqrt{Kp})\)，低压时 θ ≈ √(Kp) ∝ p^1/2。缔合吸附的低压极限是 θ ∝ p¹。<br>
+(b) \(\dfrac{1}{V}=\dfrac{1}{V_m}+\dfrac{1}{V_m\sqrt K}\,p^{-1/2}\)：1/V 对 p^−1/2 作图，截距 1/V_m，斜率 1/(V_m√K)。<br>
+(c) 复合脱附 2H* → H₂，<b>二级</b>，峰温随初始覆盖度增大而降低（题 6）。<br>
+<b>延伸</b>：加氢反应中常见对 H₂ 的表观级数约 0.5，原因相同——参与反应的是 H*，而 θ_H ∝ p_H₂^1/2。
+</div></div></div>
+
+<div class="q"><div class="qh">题 9　等量吸附热 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+某气体在催化剂上达到同一覆盖度 θ = 0.3 所需的压力：400 K 时 1.0×10⁻³ bar，500 K 时 1.0 bar。(a) 求等量吸附热；(b) 这是物理吸附还是化学吸附？(c) 若换成 θ = 0.7 算出的值明显变小，说明什么？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(\ln\dfrac{p_2}{p_1}=\dfrac{\Delta H_{ads}}{R}\left(\dfrac1{T_2}-\dfrac1{T_1}\right)\)：ln(1000) = 6.91 = (ΔH/8.314) × (1/500 − 1/400) = (ΔH/8.314) × (−5.0×10⁻⁴)，得 <b>ΔH_ads ≈ −115 kJ/mol</b>。<br>
+(b) |ΔH| 远大于 40 kJ/mol，属于<b>化学吸附</b>。<br>
+(c) Langmuir 假设吸附热与覆盖度无关。吸附热随 θ 增大而减小，说明位点不均匀（强位点先被占）或吸附物之间存在排斥，这时 Temkin 或 Freundlich 等温式更合适。
+</div></div></div>

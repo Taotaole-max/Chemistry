@@ -1,0 +1,90 @@
+
+<div class="q"><div class="qh">题 10　BET 比表面积 <span class="tag jc">基础</span><span class="tag js">计算</span></div><div class="qb">
+某多孔氧化物在 77 K 下的 N₂ 吸附数据，在 p/p₀ = 0.05–0.30 范围内按 BET 式作图，得斜率 8.30×10⁻³ g/cm³、截距 5.0×10⁻⁵ g/cm³（V 以 cm³(STP)/g 计）。(a) 求 V_m、c 和比表面积；(b) 为什么这里不用 Langmuir 式？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(V_m=\dfrac{1}{\text{slope}+\text{intercept}}=\dfrac{1}{8.35\times10^{-3}}\approx\mathbf{120\ cm^3/g}\)；\(c=\dfrac{\text{slope}}{\text{intercept}}+1=\mathbf{167}\)；S ≈ 4.35 × 119.8 ≈ <b>522 m²/g</b>。<br>
+(b) N₂ 在 77 K 接近其沸点，是<b>物理吸附</b>，第一层上面还会继续吸附第二层、第三层；Langmuir 只考虑单层，不适用。BET 只在 p/p₀ ≈ 0.05–0.3 范围内可靠：太低受强吸附位点影响，太高会发生毛细凝聚。
+</div></div></div>
+
+<div class="q" style="break-inside:auto"><div class="qh">题 11（J3-1）　从速率数据求级数和覆盖度 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+单分子表面反应 A → B，测得初速率（相对值）：p_A = 0.1 bar 时 0.167；0.4 bar 时 0.444；1.6 bar 时 0.762。(a) 分别求 0.1→0.4 bar 和 0.4→1.6 bar 两段的表观级数；(b) 级数为什么在变？是哪种速控步？(c) 用 n = 1 − θ 估算两段中点（p 的几何平均 0.2 和 0.8 bar）处的覆盖度，并求出 K_A。
+<div class="ans"><b class="h">答案</b><br>
+(a) \(n=\ln(r_2/r_1)/\ln(p_2/p_1)\)：第一段 ln(2.67)/ln 4 = 0.98/1.39 = <b>0.71</b>；第二段 ln(1.71)/ln 4 = 0.54/1.39 = <b>0.39</b>。<br>
+(b) 级数随压力从接近 1 向 0 连续变化，是 Langmuir 型饱和：\(r=kK_Ap_A/(1+K_Ap_A)\)，压力升高表面越来越满。这最符合<b>表面反应控制</b>（按初速率判据：吸附控制一直一级，脱附控制近零级；严格的前提见第 9 节"注意"）。<br>
+(c) 级数的严格定义 \(n=d\ln r/d\ln p=1-\theta\)（第 5 节推导）。两点斜率对应 ln p 的中点，即 \(p=\sqrt{p_1p_2}\)：0.2 bar 和 0.8 bar。<br>
+p = 0.2 bar：θ ≈ 1 − 0.71 = 0.29；p = 0.8 bar：θ ≈ 1 − 0.39 = 0.61。<br>
+由 θ = Kp/(1+Kp) 得 K = θ/[p(1−θ)]：0.29/(0.2×0.71) ≈ 2.0；0.61/(0.8×0.39) ≈ 2.0 → <b>K_A ≈ 2 bar⁻¹</b>。两段一致，说明模型自洽。<br>
+<b>验算</b>：1/r 对 1/p 作图（右图），斜率 ≈ 0.50、截距 ≈ 1.0，K = 截距/斜率 ≈ 2.0 bar⁻¹，k ≈ 1。代回 θ = 2p/(1+2p) 正好得到 0.167、0.444、0.762——数据就是按 K = 2 生成的。
+</div>
+<div class="fig"><img src="fig/F5_J31_plots.png"><div class="cap">图 F5　左：ln r–ln p，两段斜率即表观级数；右：1/r–1/p 线性化</div></div>
+</div></div>
+
+<div class="q"><div class="qh">题 12　产物抑制 <span class="tag lj">理解</span><span class="tag js">计算</span></div><div class="qb">
+LH 单分子反应 A → B，K_A = 1 bar⁻¹，产物 B 吸附更强，K_B = 10 bar⁻¹。p_A = 1 bar。(a) 比较 p_B = 0 和 p_B = 0.5 bar 时的速率；(b) 求 p_B = 0.5 bar 时对 A、对 B 的表观级数；(c) 为什么工业上常要及时移走产物？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(r=kK_Ap_A/(1+K_Ap_A+K_Bp_B)\)。p_B = 0：r = k×1/2 = 0.50k；p_B = 0.5：r = k×1/(1+1+5) = 0.14k，只剩 <b>29%</b>。<br>
+(b) θ_A = 1/7 = 0.14，θ_B = 5/7 = 0.71：<b>n_A = 1 − θ_A ≈ 0.86</b>，<b>n_B = −θ_B ≈ −0.71</b>。<br>
+有意思的是：产物在场时对 A 的级数反而更接近 1。因为 B 占了大部分位点，A 的覆盖度很低，处在"线性区"。<br>
+(c) 产物把位点占住，转化率越高（产物越多）反应越慢；及时移走产物（或选择产物吸附弱的催化剂）才能维持速率。
+</div></div></div>
+
+<div class="q"><div class="qh">题 13　LH 双分子的速率最大值 <span class="tag js">计算</span></div><div class="qb">
+A + B → P 按 LH 双分子机理进行，K_A = 2 bar⁻¹，K_B = 0.5 bar⁻¹，固定 p_B = 2 bar。(a) p_A 为多少时速率最大？(b) 求 p_A = 0.2 bar 和 5 bar 时对 A 的表观级数；(c) 比较这两个压力下的速率。
+<div class="ans"><b class="h">答案</b><br>
+(a) 最大值条件 K_Ap_A = 1 + K_Bp_B = 1 + 1 = 2 → <b>p_A = 1 bar</b>（此时 θ_A = 1/2）。<br>
+(b) n_A = 1 − 2θ_A。p_A = 0.2：θ_A = 0.4/(1+0.4+1) = 0.167 → <b>n_A = +0.67</b>；p_A = 5：θ_A = 10/(1+10+1) = 0.833 → <b>n_A = −0.67</b>。<br>
+(c) r ∝ K_Ap_A·K_Bp_B/(1+K_Ap_A+K_Bp_B)²：p_A = 0.2 时 0.4/2.4² = 0.069；p_A = 5 时 10/12² = 0.069，<b>两者相等</b>；最大值 p_A = 1 时 2/4² = 0.125，约为它们的 1.8 倍。<br>
+<b>解析</b>：两点相等不是巧合。两者的 K_Ap_A 乘积 0.4 × 10 = 4 = (1 + K_Bp_B)²，速率曲线在 ln p_A 坐标上关于最大值点对称。所以只测一个点无法判断自己在最大值的哪一侧，要看级数的正负。
+</div></div></div>
+
+<div class="q"><div class="qh">题 14　设计实验区分 LH 和 ER <span class="tag lj">理解</span></div><div class="qb">
+某反应 A + B → P 可能是 LH 机理，也可能是 ER 机理（A 吸附，B 从气相直接反应）。(a) 设计一组动力学实验加以区分，并画出预期曲线的形状；(b) 若发现对 B 的级数在高 p_B 下变为负值，能得出什么结论？
+<div class="ans"><b class="h">答案</b><br>
+(a) <b>固定 p_B，测速率随 p_A 的变化</b>（覆盖足够宽的压力范围）。LH：先升后降，存在最大值，对 A 的级数从 +1 变到 −1；ER：\(r=kK_Ap_Ap_B/(1+K_Ap_A)\)，升到平台不再下降，级数从 +1 变到 0（图 F3）。<br>
+再固定 p_A 测对 p_B 的依赖：ER 中对 B <b>恒为一级</b>；LH 中对 B 的级数随 θ_B 变化。<br>
+(b) 对 B 出现负级数，说明 B 也吸附在表面上并与 A 争夺位点，ER 机理（B 不吸附）无法解释，应是 <b>LH 机理</b>。
+</div></div></div>
+
+<div class="q"><div class="qh">题 15　表观活化能与弯曲的 Arrhenius 图 <span class="tag js">计算</span><span class="tag lj">理解</span></div><div class="qb">
+LH 单分子反应，真实活化能 E_true = 120 kJ/mol，A 的吸附焓 ΔH_ads = −60 kJ/mol。(a) 分别求低覆盖、高覆盖以及 θ = 0.3 时的表观活化能；(b) Arrhenius 图会怎样弯曲？(c) 某同学只在高温、低压下测得 E_app = 60 kJ/mol，就断定"表面反应能垒只有 60 kJ/mol"，错在哪里？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(E_{app}=E_{true}+(1-\theta)\Delta H_{ads}\)：低覆盖（θ→0）<b>60 kJ/mol</b>；高覆盖（θ→1）<b>120 kJ/mol</b>；θ = 0.3：120 − 0.7×60 = <b>78 kJ/mol</b>。<br>
+(b) 低温时 θ 高，斜率对应 120；高温时 θ 低，斜率对应 60。所以 ln r–1/T 图在<b>低温段（右侧）陡、高温段（左侧）缓</b>，中间弯曲（图 F6）。<br>
+(c) 高温、低压下 θ → 0，测到的是 E_true + ΔH_ads：温度升高时 k 增大，但吸附量减少，两者抵消了一部分。真实能垒应加回吸附热：60 + 60 = 120 kJ/mol。要得到 E_true，应在零级区（高覆盖）测，或同时测出 ΔH_ads 再扣除。
+</div></div></div>
+
+<div class="q"><div class="qh">题 16　Pt 上 CO 氧化：负级数与"起燃" <span class="tag zh">综合</span></div><div class="qb">
+CO + ½O₂ → CO₂ 在 Pt 上按 LH 机理进行（O₂ 解离吸附）。低温下实验发现速率随 p_CO 增大而<b>下降</b>。(a) 用 LH 速率式解释负级数；(b) 这一区间测得的表观活化能为什么特别大？(c) 解释升温时速率突然跃升（起燃）的现象；(d) 若想让催化剂在更低温度起燃，应朝哪个方向改性？
+<div class="ans"><b class="h">答案</b><br>
+(a) \(r=k\,\theta_{CO}\theta_O\)，\(\theta_O=\sqrt{K_Op_{O_2}}\,\theta_*\)，\(\theta_*=1/(1+K_{CO}p_{CO}+\sqrt{K_Op_{O_2}})\)。低温下 CO 吸附极强，θ_CO ≈ 1，θ_* ≈ 1/(K_CO p_CO)，于是
+$$r\approx\frac{k\sqrt{K_Op_{O_2}}}{K_{CO}\,p_{CO}}\ \Rightarrow\ n_{CO}=-1$$
+CO 越多，空位越少，O 越吸附不上去——CO <b>自中毒</b>。（实验上常观察到 r ∝ p_O₂/p_CO，对 O₂ 的级数比简单 LH 预测的 ½ 高，说明 O₂ 在 CO 覆盖的表面上的吸附本身也是慢步骤；简单 LH 只是近似。）<br>
+(b) 由 \(E_{app}=E_{true}+\sum n_i\Delta H_{ads,i}\)，n_CO = −1 给出 +|ΔH_CO| 项：表观活化能里包含了 CO 的吸附热，量级与 CO 在 Pt 上的吸附热（约 100–140 kJ/mol）相当。物理含义：每一次反应都要先等一个 CO 脱附，腾出位点。<br>
+(c) 升温使 CO 脱附加快（停留时间指数下降，见题 4），θ_CO 从接近 1 开始下降，空位出现，O 吸附进来，速率迅速上升；反应放热又让局部温度更高，进一步加速——表现为在某一温度附近速率突然跃升。此后进入 CO 低覆盖区，级数转为正值。<br>
+(d) 减弱 CO 的吸附强度（例如合金化、改变载体或粒径），使低温下 θ_CO 不至于接近 1——这就是 Sabatier 原理："吸附强度适中"的催化剂最好。
+</div></div></div>
+
+<div class="q"><div class="qh">题 17　用初速率–压力曲线判断速控步 <span class="tag zh">综合</span></div><div class="qb">
+对反应 A → B 测了三种催化剂的初速率随 p_A（0–20 bar）的变化：I 一直线性上升；II 先上升后趋于平台；III 几乎与 p_A 无关。(a) 分别判断速控步；(b) 写出各自的速率式；(c) 若要进一步确认 II 和 III 的判断，还可以做什么实验？
+<div class="ans"><b class="h">答案</b><br>
+(a)(b)
+<table>
+<tr><th>催化剂</th><th>速控步</th><th>速率式</th><th>理由</th></tr>
+<tr><td>I</td><td>A 的吸附</td><td>r₀ ≈ k_a p_A</td><td>A* 一吸附就被转化，表面几乎空，速率只取决于吸附速率 ∝ p_A</td></tr>
+<tr><td>II</td><td>表面反应</td><td>r₀ = kK_Ap_A/(1+K_Ap_A)</td><td>吸附平衡，θ_A 按 Langmuir 饱和，级数 1 → 0</td></tr>
+<tr><td>III</td><td>B 的脱附</td><td>r₀ ≈ k_d</td><td>表面被 B* 占满，速率只取决于 B 多快离开</td></tr>
+</table>
+(c) ① 对 II 作 1/r–1/p 线性化，检验是否成直线，并在不同压力段求 K 看是否一致；② 加入产物 B：表面反应控制时速率按 −θ_B 规律下降，并可由此求 K_B；③ 变温：II 的表观活化能随覆盖度在 E_true + ΔH_ads 与 E_true 之间变化，III 的表观活化能接近 B 的脱附能；④ 原位红外或 TPD 直接看反应条件下表面上主要是 A* 还是 B*。<br>
+<b>注意</b>：若表面反应 A* ⇌ B* 的平衡常数不大，脱附控制也会呈现 Langmuir 型饱和，所以单凭 II 的曲线形状不能完全排除脱附控制，需要 ②–④ 的佐证。
+</div></div></div>
+
+<div class="box m" style="margin-top:14px"><span class="lab">考前最后一遍</span>
+<ol>
+<li>撞墙通量：p/√(2πmkT)，m 用 kg、p 用 Pa。</li>
+<li>解离吸附看三处：粘附 (1−θ)²、等温式 √(Kp)、TPD 二级。</li>
+<li>表观级数 = 对数斜率：单分子 1 − θ，双分子 1 − 2θ，产物 −θ_B。</li>
+<li>两点求级数对应 p = √(p₁p₂)；K = θ/[p(1−θ)]，两段一致才自洽。</li>
+<li>E_app = E_true + Σ nᵢΔHᵢ：低覆盖偏小，自中毒偏大，Arrhenius 图会弯。</li>
+<li>速控步：吸附控制一直一级，表面反应 1 → 0，脱附控制近零级；LH 双分子有最大值，ER 没有。</li>
+</ol>
+</div>

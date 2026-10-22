@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>表面吸附与表面反应动力学</title>
+<style>
+@page { size: A4; }
+* { box-sizing: border-box; }
+body { font-family: "WenQuanYi Zen Hei", sans-serif; font-size: 10.6pt; line-height: 1.62; color: #1f2937; margin: 0; }
+h1 { font-size: 22pt; margin: 0 0 4px; color: #1e3a8a; }
+h2 { font-size: 15pt; color: #1e3a8a; border-bottom: 2.5px solid #1e3a8a; padding-bottom: 3px; margin: 18px 0 10px; break-after: avoid; }
+h2.part { break-before: page; }
+h3 { font-size: 12pt; color: #1e40af; margin: 14px 0 6px; break-after: avoid; }
+p { margin: 5px 0; }
+.sub { color: #4b5563; font-size: 10pt; margin-bottom: 10px; }
+.box { border-left: 4px solid; border-radius: 4px; padding: 6px 10px 6px 11px; margin: 7px 0; break-inside: avoid; }
+.box .lab { display: inline-block; font-weight: bold; font-size: 9.5pt; padding: 0 7px; border-radius: 3px; color: #fff; margin-right: 6px; }
+.f { border-color: #2563eb; background: #eff6ff; } .f .lab { background: #2563eb; }
+.d { border-color: #6b7280; background: #f9fafb; } .d .lab { background: #6b7280; }
+.m { border-color: #16a34a; background: #f0fdf4; } .m .lab { background: #16a34a; }
+.a { border-color: #ea580c; background: #fff7ed; } .a .lab { background: #ea580c; }
+.w { border-color: #dc2626; background: #fef2f2; } .w .lab { background: #dc2626; }
+.d.long { break-inside: auto; }
+ol, ul { margin: 4px 0 4px 1.3em; padding: 0; } li { margin: 2px 0; }
+table { border-collapse: collapse; width: 100%; margin: 6px 0; font-size: 9.6pt; break-inside: avoid; }
+th, td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle; text-align: left; }
+th { background: #e0e7ff; color: #1e3a8a; }
+table.cheat td:first-child { width: 22%; font-weight: bold; color: #1e3a8a; }
+table.cheat td:nth-child(2) { width: 46%; }
+.fig { text-align: center; margin: 8px 0; break-inside: avoid; }
+.fig img { width: 100%; }
+.fig.half img { width: 68%; }
+.cap { font-size: 9pt; color: #6b7280; margin-top: 2px; }
+.q { border: 1px solid #c7d2fe; border-radius: 6px; margin: 12px 0; break-inside: avoid-page; }
+.q .qh { background: #eef2ff; padding: 5px 10px; font-weight: bold; color: #1e3a8a; border-radius: 6px 6px 0 0; }
+.q .qb { padding: 6px 10px; }
+.tag { display: inline-block; font-size: 8.5pt; color: #fff; padding: 0 6px; border-radius: 3px; margin-left: 4px; font-weight: normal; vertical-align: 1px; }
+.jc { background: #16a34a; } .lj { background: #7c3aed; } .js { background: #ea580c; } .zh { background: #dc2626; }
+.ans { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 6px 10px; margin: 6px 0 2px; }
+.ans b.h { color: #15803d; }
+.note { font-size: 9.2pt; color: #6b7280; }
+mjx-container[display="true"] { margin: 6px 0 !important; }
+.cover { border: 2px solid #1e3a8a; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; }
+.toc { columns: 2; font-size: 10pt; margin: 6px 0 0; }
+</style></head>
+<body>
+
+<div class="cover">
+<h1>表面吸附与表面反应动力学</h1>
+<div class="sub">公式 · 推导 · 应用 · 题库（每题后紧跟答案）　|　中文讲解，关键术语附英文</div>
+<p><b>主线：</b>气体分子撞上表面（撞墙通量）→ 有一部分粘住（粘附概率、吸附速率）→ 又有一部分离开（脱附、TPD）→ 吸附和脱附达到平衡（Langmuir 等温式）→ 表面上的物种发生反应（LH / ER 机理）→ 从实验数据反推机理（表观级数、表观活化能、速控步）。</p>
+<div class="toc">
+0　一页速查<br>
+1　撞墙通量（Hertz–Knudsen）<br>
+2　粘附概率与吸附速率<br>
+3　脱附：停留时间与 TPD<br>
+4　Langmuir 等温式（缔合 / 解离 / 竞争）与吸附热<br>
+5　Langmuir–Hinshelwood 单分子反应<br>
+6　Langmuir–Hinshelwood 双分子反应<br>
+7　Eley–Rideal 机理<br>
+8　表观活化能<br>
+9　速控步判断总表<br>
+10　题库（17 题，含答案与解析）
+</div>
+</div>
+
+<h2>0　一页速查</h2>
+<table class="cheat">
+<tr><th>名称</th><th>公式</th><th>要点 / 适用条件</th></tr>
+<tr><td>撞墙通量</td><td>\(Z_W=\dfrac{p}{\sqrt{2\pi m k_BT}}=2.63\times10^{24}\dfrac{p}{\sqrt{MT}}\)</td><td>单位 m⁻²s⁻¹；p 用 Pa，M 用 g/mol，T 用 K；m 是<b>一个分子</b>的质量（kg）</td></tr>
+<tr><td>吸附速率</td><td>\(r_{ads}=s\,Z_W,\quad s=s_0(1-\theta)^n\)</td><td>n = 1 缔合（占 1 个位），n = 2 解离（占 2 个相邻位）</td></tr>
+<tr><td>覆盖度增长</td><td>\(\dfrac{d\theta}{dt}=\dfrac{x\,s_0(1-\theta)^n Z_W}{N_s}\)</td><td>x = 每个分子占几个位点（解离吸附 x = 2）；N_s = 位点面密度</td></tr>
+<tr><td>脱附速率</td><td>\(r_{des}=\nu\,\theta^n e^{-E_{des}/RT}\)</td><td>Polanyi–Wigner；n = 1 分子脱附，n = 2 复合脱附（2H* → H₂）</td></tr>
+<tr><td>停留时间</td><td>\(\tau=\tau_0\,e^{E_{des}/RT}\)</td><td>τ₀ ≈ 10⁻¹³ s；物理吸附 ns 级以下，化学吸附可达小时以上</td></tr>
+<tr><td>Redhead（TPD）</td><td>\(E_{des}\approx RT_p\left[\ln\dfrac{\nu T_p}{\beta}-3.64\right]\)</td><td>一级脱附，ν/β 在 10⁸–10¹³ K⁻¹；一级峰位与 θ₀ 无关，二级峰随 θ₀ 增大移向低温</td></tr>
+<tr><td>Langmuir（缔合）</td><td>\(\theta=\dfrac{Kp}{1+Kp}\)</td><td>低压 θ ≈ Kp；p = 1/K 时 θ = 1/2</td></tr>
+<tr><td>Langmuir（解离）</td><td>\(\theta=\dfrac{\sqrt{Kp}}{1+\sqrt{Kp}}\)</td><td>低压 θ ∝ p^1/2 —— 判断是否解离</td></tr>
+<tr><td>竞争吸附</td><td>\(\theta_i=\dfrac{K_ip_i}{1+\sum_j K_jp_j},\ \ \theta_*=\dfrac{1}{1+\sum_j K_jp_j}\)</td><td>解离吸附的物种在分母里写 \(\sqrt{K_jp_j}\)</td></tr>
+<tr><td>线性化</td><td>\(\dfrac{p}{V}=\dfrac{1}{KV_m}+\dfrac{p}{V_m}\)</td><td>p/V 对 p 作图：斜率 1/V_m，截距 1/(KV_m)</td></tr>
+<tr><td>等量吸附热</td><td>\(\ln\dfrac{p_2}{p_1}=\dfrac{\Delta H_{ads}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\)</td><td>两条等温线上<b>同一 θ</b> 的两点</td></tr>
+<tr><td>BET 比表面</td><td>\(\dfrac{p}{V(p_0-p)}=\dfrac{1}{cV_m}+\dfrac{c-1}{cV_m}\dfrac{p}{p_0}\)</td><td>N₂ 77 K，p/p₀ ≈ 0.05–0.3；S(m²/g) ≈ 4.35 × V_m(cm³ STP/g)</td></tr>
+<tr><td>LH 单分子 A→B</td><td>\(r=\dfrac{kK_Ap_A}{1+K_Ap_A+K_Bp_B}\)</td><td>n_A = 1 − θ_A（1 → 0），n_B = −θ_B（产物抑制）</td></tr>
+<tr><td>LH 双分子 A+B</td><td>\(r=\dfrac{kK_AK_Bp_Ap_B}{(1+K_Ap_A+K_Bp_B)^2}\)</td><td>n_A = 1 − 2θ_A（可为负）；最大值在 K_Ap_A = 1 + K_Bp_B（θ_A = 1/2）</td></tr>
+<tr><td>Eley–Rideal</td><td>\(r=\dfrac{kK_Ap_Ap_B}{1+K_Ap_A}\)</td><td>n_A = 1 − θ_A，n_B = 1；对 p_A 只饱和、无最大值</td></tr>
+<tr><td>表观活化能</td><td>\(E_{app}=E_{true}+\sum_i n_i\,\Delta H_{ads,i}\)</td><td>n_i 是对 i 的表观级数；低覆盖 E_app 偏小，强吸附抑制物使 E_app 偏大</td></tr>
+<tr><td>两点求级数</td><td>\(n=\dfrac{\ln(r_2/r_1)}{\ln(p_2/p_1)}\)</td><td>得到的是 \(p=\sqrt{p_1p_2}\) 处的级数</td></tr>
+</table>
+<p class="note">符号：θ 覆盖度；θ_* 空位比例；s 粘附概率（s₀ 为零覆盖时的初始值）；K 吸附平衡常数（单位 压力⁻¹）；ΔH_ads 吸附焓（&lt; 0）；ν 指前因子（一级约 10¹³ s⁻¹）；β 升温速率。</p>
